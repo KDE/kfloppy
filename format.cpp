@@ -25,6 +25,7 @@
 #include <stdlib.h>
 
 #include <qtimer.h>
+#include <qregexp.h>
 
 #include <klocale.h>
 #include <kprocess.h>
@@ -352,7 +353,7 @@ bool FloppyAction::startProcess()
 	connect(theProcess,SIGNAL(receivedStderr(KProcess *,char *,int)),
 		this,SLOT(processStdErr(KProcess *,char *,int)));
 
-
+        theProcess->setEnvironment( "LC_ALL", "C" ); // We need the untranslated output of the tool
 	return theProcess->start(KProcess::NotifyOnExit,
 		KProcess::AllOutput);
 }
@@ -400,7 +401,6 @@ bool FDFormat::configure(bool v)
 
 	if (theProcess) delete theProcess;
 	theProcess = new KProcess;
-
 
 	formatTrackCount=0;
 
@@ -471,6 +471,18 @@ void FDFormat::processStdOut(KProcess *, char *b, int l)
 	}
 #elif defined(ANY_LINUX)
 	s = QString::fromLatin1(b,l);
+#if 1
+        QRegExp regexp( "([0-9]+)" );
+        if ( regexp.search(s) > -1 )
+        {
+            const int p = regexp.cap(1).toInt();
+            if ((p>0) && (p<deviceInfo->tracks))
+            {
+                    emit status(QString::null,
+                            p * 100 / deviceInfo->tracks);
+            }
+        }
+#else
 	int p;
 	if ((p=s.find("track")) != -1)
 	{
@@ -479,13 +491,9 @@ void FDFormat::processStdOut(KProcess *, char *b, int l)
 		if (s[p].isDigit())
 		{
 			p=s.mid(p,8).toInt();
-			if ((p>0) && (p<deviceInfo->tracks))
-			{
-				emit status(QString::null,
-					p * 100 / deviceInfo->tracks);
-			}
 		}
 	}
+#endif
 	else if (s.contains("ioctl(FDFMTBEG)"))
 	{
 		goto ioError;
