@@ -1,0 +1,183 @@
+<!DOCTYPE book PUBLIC "-//KDE//DTD DocBook V3.1-Based Variant V1.0//EN" [
+ <!ENTITY kfloppy "<application>kfloppy</application>">
+]>
+<book lang="en">
+<bookinfo>
+<title>The KFloppy Formatter Handbook</title>
+<authorgroup>
+<author>
+<surname>David Rugge and Bernd Johannes Wuebben</surname>
+</author>
+</authorgroup>
+<date>Version 1.1.0, January 24, 1999</date>
+<releaseinfo><!-- information about this particular version --></releaseinfo>
+<abstract>
+<para>This Handbook describes KFloppy Formatter Version 1.1.0</para>
+<para>KFloppy</para><!-- Merge this with the previous paragraph; it comes from <META NAME="description" CONTENT="..."> --></abstract>
+<keywordset>
+<keyword>KDE</keyword>
+<keyword>kfloppy</keyword>
+</keywordset>
+</bookinfo>
+
+<chapter id="introduction">
+<title>Introduction</title>
+
+<para>KFloppy Formatter is a program that lets you format 3.5" and 5.25" floppy disks. </para>
+
+<para>I hope you will enjoy this little tool. Please report any problems or feature requests to the KDE
+mailing lists.</para>
+
+<para>Bernd Johannes Wuebben <ulink url="mailto:wuebben@kde.org">&lt;wuebben@math.cornell.edu&gt;</ulink></para>
+</chapter>
+
+<chapter id="installation">
+<title>Installation</title>
+
+<sect1 id="howtoobtainkfloppyformatter">
+<title>How to obtain KFloppy Formatter</title>
+
+<para>KFloppy Formatter is part of the KDE project <ulink url="http://www.kde.org">http://www.kde.org</ulink>.
+KFloppy Formatter can be found in the kdeutils package on <ulink url="ftp://ftp.kde.org/pub/kde/">ftp://ftp.kde.org/pub/kde/</ulink>, 
+the main ftp site of the KDE project.</para>
+</sect1>
+
+<sect1 id="requirements">
+<title>Requirements</title>
+
+<para>In order to successfully compile KFloppy Formatter, you need the latest versions 
+of the KDE libraries. All required libraries as well as KFloppy Formatter itself can be found
+on <ulink url="ftp://ftp.kde.org/pub/kde/">ftp://ftp.kde.org/pub/kde/</ulink>. </para>
+</sect1>
+
+<sect1 id="compilationandinstallation">
+<title>Compilation and installation</title>
+
+<para>In order to compile and install KFloppy Formatter on your system, type the following in the base 
+directory of the KFloppy distribution:
+<screen>% ./configure
+% make
+% make install
+</screen>
+</para>
+
+<para>Since KFloppy Formatter uses <literal remap="tt">autoconf</literal> you should have not trouble compiling it.
+Should you run into problems please report them to the KDE mailing lists.</para>
+</sect1>
+</chapter>
+
+<chapter id="formattingdiskswithkfloppy">
+<title>Formatting Disks with KFloppy</title>
+
+<para>To use KFloppy you must have either a 5.25" or 3.5" disk drive connected to your
+system.  Insert the disk you want to format. <emphasis remap="bf">Do not mount it</emphasis>. Then, select the appropriate
+options as described below.</para>
+
+<sect1 id="floppydrive">
+<title>Floppy Drive</title>
+
+<para>Select the drive that contains the disk you wish to format. For those of you not familiar with 
+PC drive labelling conventions, letter <literal remap="tt">A:</literal> corresponds to the <literal remap="tt">fd0</literal> device and
+<literal remap="tt">B:</literal> is 
+the <literal remap="tt">fd1</literal> device. Almost all new computers will only have one 3.5" floppy as their <literal remap="tt">A:</literal>
+(<literal remap="tt">fd0</literal>) drive.</para>
+</sect1>
+
+<sect1 id="density">
+<title>Density</title>
+
+<para>Select the density of the disk you wish to format. Most of the 3.5" and 5.25" disks produced in 
+the last 5 years are high density (HD) disks. Older disks may only support the double density (DD)
+format.  High density disks can be formatted as double density, but you will not be able to use the
+full 1.44 Mbytes or 1.2 Mbytes of space on the disk. The 800k disk format used by Macintosh floppy 
+drives is not currently supported, and cannot be supported at all on PC floppy drives since they are
+not capable of formatting disks in that fashion. </para>
+
+<para>Here is a list of the properties for each disk type and density combination:</para>
+
+<para><itemizedlist>
+<listitem>
+<para>3.5" DD: double-sided, 80 tracks, 9 sectors/track  - 720K </para>
+</listitem>
+<listitem>
+<para>3.5" HD: double-sided, 80 tracks, 18 sectors/track - 1440K </para>
+</listitem>
+<listitem>
+<para>5.25" DD: double-sided, 40 tracks, 9 sectors/track  - 360K      </para>
+</listitem>
+<listitem>
+<para>5.25" HD: double-sided, 80 tracks, 15 sectors/track - 1200K </para>
+</listitem>
+</itemizedlist>
+</para>
+</sect1>
+
+<sect1 id="filesystems">
+<title>File Systems</title>
+
+<para>KFloppy supports two file system types for formatting floppy disks: MS-DOS and ext2, the Linux
+file system. If you want to use the floppy across many different operating systems, the
+MS-DOS file system is a good choice, but if you only need to use the disk on Linux systems, use
+ext2.</para>
+</sect1>
+
+<sect1 id="formattingoptions">
+<title>Formatting Options</title>
+
+<para>There are two different ways that KFloppy can format a disk.</para>
+
+<para><variablelist>
+<varlistentry>
+<term>Quick Erase</term>
+<listitem>
+<para>This simply puts the new file system on the disk. All data on the disk is erased. If the density of
+the disk is different than the selected density for formatting then the tracks and sectors on the
+disk will be reallocated before the file system is made.</para>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term>Full Format</term>
+<listitem>
+<para>A full format reallocates the tracks and sectors, puts the selected file system on the disk, and
+then verifies the format, blocking out any bad sectors it finds.</para>
+</listitem>
+</varlistentry>
+</variablelist>
+</para>
+
+<para>MS-DOS disks can have a volume label, which can be created by checking the <emphasis remap="bf">Create Label</emphasis> box
+and typing in the desired volume label.  Ext2 formatted floppies cannot have labels.</para>
+</sect1>
+</chapter>
+
+<chapter id="copyright">
+<title>Copyright</title>
+
+<para>KFloppy Formatter  </para>
+
+<para>Program copyright 1997 Bernd Johannes Wuebben <ulink url="mailto:wuebben@kde.org">&lt;wuebben@math.cornell.edu&gt;</ulink></para>
+
+<para>Documentation copyright 1999 David Rugge <ulink url="mailto:davidrugge@mindspring.com">&lt;davidrugge@mindspring.com&gt;</ulink></para>
+
+<para>This program is free software; you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation; either version 2 of the License, or
+(at your option) any later version.</para>
+
+<para>This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.</para>
+
+<para>You should have received a copy of the GNU General Public License
+along with this program; if not, write to the Free Software
+Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.</para>
+</chapter>
+</book>
+<!--
+Local Variables:
+mode: sgml
+sgml-omittag: nil
+sgml-shorttag: t
+End:
+-->
