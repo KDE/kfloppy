@@ -87,21 +87,21 @@ FloppyData::FloppyData(QWidget * parent, const char * name)
         QVBoxLayout* v2 = new QVBoxLayout( buttongroup, 10 );
 
 	quick = new QRadioButton( buttongroup, "RadioButton_2" );
-	quick->setText(i18n( "Quick Erase") );
+	quick->setText(i18n( "Q&uick Format") );
         v2->addWidget( quick, AlignLeft );
 
 	fullformat = new QRadioButton( buttongroup, "RadioButton_3" );
-	fullformat->setText(i18n( "Full Format") );
+	fullformat->setText(i18n( "Fu&ll Format") );
 	fullformat->setChecked(TRUE);
         v2->addWidget( fullformat, AlignLeft );
 
 	verifylabel = new QCheckBox( buttongroup, "RadioButton_4" );
-	verifylabel->setText(i18n( "Verify on" ));
+	verifylabel->setText(i18n( "Verify integrity" ));
 	verifylabel->setChecked(TRUE);
 	v2->addWidget( verifylabel, AlignLeft );
 
 	labellabel = new QCheckBox( buttongroup, "RadioButton_4" );
-	labellabel->setText(i18n( "Create Label:") );
+	labellabel->setText(i18n( "Label:") );
 	labellabel->setChecked(TRUE);
         v2->addWidget( labellabel, AlignLeft );
 
@@ -114,7 +114,9 @@ FloppyData::FloppyData(QWidget * parent, const char * name)
         lineedit->setMinimumWidth( lineedit->sizeHint().width() );
         h2->addWidget( lineedit, AlignRight );
 
-        QVBoxLayout* v3 = new QVBoxLayout( h1 );
+	connect(labellabel,SIGNAL(toggled(bool)),lineedit,SLOT(setEnabled(bool)));
+
+	QVBoxLayout* v3 = new QVBoxLayout( h1 );
 
 	formatbutton = new QPushButton( this, "PushButton_3" );
 	formatbutton->setText(i18n( "&Format") );
@@ -146,7 +148,7 @@ FloppyData::FloppyData(QWidget * parent, const char * name)
 	frame->setFrameStyle(QFrame::Panel | QFrame::Sunken);
 	frame->setAlignment(AlignCenter|WordBreak|ExpandTabs);
         ml->addWidget( frame );
-	
+
 	progress = new KProgress( this, "Progress" );
 	progress->setFont(QFont("Helvetica",12,QFont::Normal));
 	progress->setBarColor(QApplication::winStyleHighlightColor());
@@ -166,8 +168,8 @@ FloppyData::FloppyData(QWidget * parent, const char * name)
 	addDevice(FLOPPYA5);
 	addDevice(FLOPPYB3);
 	addDevice(FLOPPYB5);
-	addDensity(i18n("HD"));	
-	addDensity(i18n("DD"));	
+	addDensity(i18n("HD"));
+	addDensity(i18n("DD"));
 	addFileSystem(i18n("Dos"));
 	addFileSystem(i18n("ext2fs"));
 
@@ -176,7 +178,7 @@ FloppyData::FloppyData(QWidget * parent, const char * name)
 
 	findExecutables();
 
-    int maxW = QMAX( deviceComboBox->sizeHint().width(), 
+    int maxW = QMAX( deviceComboBox->sizeHint().width(),
                      densityComboBox->sizeHint().width() );
     maxW = QMAX( maxW, filesystemComboBox->sizeHint().width() );
     deviceComboBox->setMinimumWidth( maxW );
