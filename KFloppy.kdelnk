@@ -3,11 +3,13 @@
 Comment[C]=Floppy Formater
 Comment[fi]=Levykkeiden formatoija
 Comment[pl]=Program formatuj±cy dyskietki
+Comment[fr]=Formateur de disquettes
 BinaryPattern=kfloppy;
 Protocols=
 Name[C]=KFloppy
 Name[fi]=Levykehallinta
 Name[pl]=KFloppy
+Name[fr]=Formatteur
 MimeType=
 DocPath=kfloppy/kfloppy.html
 Comment=
