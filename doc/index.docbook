@@ -9,14 +9,14 @@
 <book lang="en">
 <bookinfo>
 
-<title>The KFloppy Formatter Handbook</title>
+<title>The &kfloppy; Formatter Handbook</title>
 
 <authorgroup>
 <author>
 <firstname>Thad</firstname>
 <surname>McGinnis</surname>
-<affiliation><address><email>jamcgin@racsa.co.cr</email></address></affiliation>
-</author>
+<affiliation><address><email>ctmcginnis@compuserve.com</email>
+</address></affiliation> </author>
 
 <othercredit>
 <firstname>Bernd</firstname>
@@ -34,10 +34,9 @@
 <affiliation><address><email>vampyr@atconnex.net</email></address></affiliation>
 </othercredit>
 
-
 </authorgroup>
-<date>13/06/2000</date>
-<releaseinfo>1.30.00</releaseinfo>
+<date>22/10/2000</date>
+<releaseinfo>1.3.0</releaseinfo>
 
 <copyright>
 <year>2000</year>
@@ -46,10 +45,8 @@
 
 <legalnotice>&FDLNotice;</legalnotice>
 
-
-<abstract>
-<para>This Handbook describes KFloppy Formatter Version 1.3.0</para>
-</abstract>
+<abstract><para>This Handbook describes &kfloppy; Formatter Version
+1.3.0</para></abstract>
 
 <keywordset>
 <keyword>KDE</keyword>
@@ -99,56 +96,57 @@ the top left center of &kfloppy;.</para>
 <title>Floppy Drive</title>
 
 <para>Clicking on the top drop down box, which is labeled <guilabel>Floppy
-Drive</guilabel>, offers the user the following four choices:</para>
+Drive</guilabel>floppy>, offers the user the following four choices:</para>
 
 <variablelist>
 <varlistentry>
-<term>A: 3.5</term>
+<term><guilabel>A: 3.5</guilabel></term>
 <listitem><para>Choosing this item configures &kfloppy; to format a 3.5 inch
-floppy drive.  The '<guilabel>A:</guilabel>' follows the MSDOS/Windows naming
-convention and corresponds to the 'fd0' device in Linux.  The '3.5' indicates
-that the floppy is the 3.5 inch type.</para>
+floppy drive.  The <guilabel>A:</guilabel> follows the MSDOS/Windows naming
+convention and corresponds to the <filename>fd0</filename> device in Linux.  The
+<guilabel>3.5</guilabel> indicates that the floppy is the 3.5 inch type.</para>
 </listitem>
 </varlistentry>
 
 <varlistentry>
-<term>A: 5.25</term>
+<term><guilabel>A: 5.25</guilabel></term>
 <listitem><para>Choosing this item configures &kfloppy; to format a 5.25 inch
-floppy drive.  The '<guilabel>A:</guilabel>' follows the MSDOS/Windows naming
-convention and corresponds to the 'fd0' device in Linux.  The '5.25' indicates
-that the floppy is the 5.25 inch type.  This type is generally out of use and
-normally found only in older computers.</para>
+floppy drive.  The <guilabel>A:</guilabel> follows the MSDOS/Windows naming
+convention and corresponds to the <filename>fd0</filename> device in Linux.  The
+<guilabel>5.25</guilabel> indicates that the floppy is the 5.25 inch type.  This
+type is generally out of use and normally found only in older computers.</para>
 </listitem>
 </varlistentry>
 
 
 <varlistentry>
-<term>B: 3.5</term>
+<term><guilabel>B: 3.5</guilabel></term>
 <listitem><para>Choosing this item configures &kfloppy; to format a 3.5 inch
-floppy drive.  The '<guilabel>B:</guilabel>' follows the MSDOS/Windows naming
-convention and corresponds to the 'fd1' device in Linux.  The '3.5' indicates
-that the floppy is the 3.5 inch type.</para>
+floppy drive.  The <guilabel>B:</guilabel> follows the MSDOS/Windows naming
+convention and corresponds to the <filename>fd1</filename> device in Linux.  The
+<guilabel>3.5</guilabel> indicates that the floppy is the 3.5 inch type.</para>
 </listitem>
 </varlistentry>
 
 <varlistentry>
-<term>B: 5.25</term> 
+<term><guilabel>B: 5.25</guilabel></term> 
 <listitem><para>Choosing this item configures &kfloppy; to
-format a 5.25 inch floppy drive.  The '<guilabel>B:</guilabel>' follows the
-MSDOS/Windows naming convention and corresponds to the 'fd1' device in Linux.
-The '5.25' indicates that the floppy is the 5.25 inch type.  This type is
-generally out of use and normally found only in older computers.</para>
-</listitem>
+format a 5.25 inch floppy drive.  The <guilabel>B:</guilabel> follows the
+MSDOS/Windows naming convention and corresponds to the <filename>fd1</filename>
+device in Linux. The <guilabel>5.25</guilabel> indicates that the floppy is the
+5.25 inch type.  This type is generally out of use and normally found only in
+older computers.</para></listitem>
 </varlistentry>
 
 </variablelist>
 
 </sect2>
+
 <sect2 id="density">
 <title>Density</title>
 
-<para>The drop down box labeled Density offers the choice of two possible
-density settings.  They are:</para>
+<para>The drop down box labeled <guilabel>Density</guilabel> offers the choice
+of two possible density settings.  They are:</para>
 
 <variablelist>
 <varlistentry>
@@ -165,12 +163,12 @@ used today and so will most likely be the one chosen by most users.</para>
 mostly because some old diskettes and floppy disk drives require it.  While the
 user may format a high density diskette in this manner it will reduce the
 storage space by one half.  The following list of properties for each disk type
-and density combination should make that clear:</para>   
+and density combination should make that clear:</para>
 <itemizedlist>
 <listitem>
 <para>3.5" DD: double-sided, 80 tracks, 9 sectors/track  - 720K</para>
-</listitem> 
-<listitem> 
+</listitem>
+<listitem>
 <para>3.5" HD: double-sided, 80 tracks, 18 sectors/track - 1440K</para>
 </listitem>
 <listitem>
@@ -219,7 +217,7 @@ likely want to choose this system if he or she will only be using the
 floppy with Linux.</para>
 </listitem>
 </varlistentry>
-</variablelist> 
+</variablelist>
 
 </sect2>
 </sect1>
@@ -227,11 +225,11 @@ floppy with Linux.</para>
 <sect1 id="formatting-options">
 <title>Formatting Options</title>
 <para>Within the outline of a box in the left center of &kfloppy; the user
-may find a set of four formatting options.  The top two are a pair of radio
+may find a set of five formatting options.  The top two are a pair of radio
 buttons.</para> <note><para>This term (radio buttons) indicates a set of options among
 which only one can be selected - in the same way that only one preset
-channel selection may be set on a car radio.</para></note><para>The bottom two options
-are only available for Dos type disks.  They are all explained
+channel selection may be set on a car radio.</para></note><para>The
+bottom two options are for labeling the diskette.  All are explained
 below:</para>
 
 <sect2>
@@ -261,14 +259,25 @@ sectors it finds.</para>
 </sect2>
 
 <sect2>
+<title>Verify on</title>
+
+<para>The middle feature is the <guilabel>Verify on</guilabel> check
+box.  This tells &kfloppy to check that the formatting was correctly
+written to the floppy.  This allows bad sectors to be identified.
+</para>
+</sect2>
+
+
+
+<sect2>
 <title>Create Label</title>
 
-<para>The bottom two features within the box are only available when the user
-chooses to use the Dos <link linkend="filesystems">file system</link>.  If the
-'<guilabel>Create Label</guilabel>' check box is selected then the user can
-enter a name (label) for the diskette that is to be formatted in the text box
-located immediately below.  When the diskette is subsequently formatted the
-label will be written to the diskette.</para>
+<para>The bottom two features allow the user to add (or change) a
+label to the diskette.  If the <guilabel>Create Label</guilabel>
+check box is selected then the user can enter a name (label) for the
+diskette that is to be formatted in the text box located immediately
+below.  When the diskette is subsequently formatted the label will be
+written to the diskette.</para>
 
 </sect2>
 
@@ -286,8 +295,8 @@ label will be written to the diskette.</para>
 sure that all the settings are correct he or she may begin the process by
 clicking on this button.  Assuming that a diskette is in place and the
 parameters are set correctly, the user will see a few changes take place.  The
-label on the button itself will change from '<guibutton>Format</guibutton>' to
-'<guibutton>Abort</guibutton>' indicating that another click on the button will
+label on the button itself will change from <guibutton>Format</guibutton> to
+<guibutton>Abort</guibutton> indicating that another click on the button will
 stop the formatting.  Furthermore, there will be a change in the two long
 rectangular boxes that span the bottom of &kfloppy;.</para>
 
@@ -297,11 +306,11 @@ details about the type of formatting.  When &kfloppy; enters the
 verification stage of the process this will be displayed.</para>
 
 <para>The lower box is a progress bar.  This displays both graphically and
-numerically the progress of first the formatting and then the verification. 
-Before starting it appears to be empty - showing only the figure '0%' in
-the center.  As each process takes place the progress is tracked
-graphically as the box fills from left to right.  At the same time the
-number in the center will increase reflecting the precise percentage of the
+numerically the progress of first the formatting and then the verification.
+Before starting it appears to be empty - showing only the figure
+<guilabel>0%</guilabel> in the center.  As each process takes place the progress
+is tracked graphically as the box fills from left to right.  At the same time
+the number in the center will increase reflecting the precise percentage of the
 process that has been completed.</para>
 
 <important>
@@ -402,7 +411,7 @@ through <command>kfloppy <option>-V</option></command> </para>
 <email>wuebben@math.cornell.edu</email></para>
 
 <para>Documentation Copyright 2000 by Thad McGinnis
-<email>jamcgin@racsa.co.cr</email>.</para>
+<email>ctmcginnis@compuserve.com</email>.</para>
 
 <para>This version of the &kfloppy; Handbook is based on the original by
 David Rugge <email>davidrugge@mindspring.com</email></para>
