@@ -24,6 +24,7 @@
    Modified for use with kfloppy.
    I fixed some bugs in bad block marking along the way.
    Bernd Wuebben 
+   wuebben@kde.org
 
    Here is the original header copyright notice:
    ----------------------------------------------------------------
@@ -186,10 +187,14 @@ char dummy_boot_code[448] =
   "\xcd\x16"			/* int 16h */
   "\xcd\x19"			/* int 19h */
   "\xeb\xfe"			/* foo: jmp foo */
-				/* message_txt: */
+                                /* message_txt: */
+  "Non-System disk or disk error\r\n"
+  "Replace and press any key when ready\r\n";
 
+/*
   "This is not a bootable disk.  Please insert a bootable floppy and\r\n"
   "press any key to try again ... \r\n";
+  */
 
 #define MESSAGE_OFFSET 29	/* Offset of message in above code */
 
