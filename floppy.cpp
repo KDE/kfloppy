@@ -366,6 +366,10 @@ void FloppyData::format(){
     reset();
     return;
   }
+  if (!formating) {
+        if (KMessageBox::warningContinueCancel(0, "Formatting will erase all data on the disk.\n"
+        "Are you sure you wish to proceed?", "Proceed?" ) == KMessageBox::Continue)
+        {
 
   formatbutton->setText(i18n("A&bort"));
   label1->setEnabled(false);
@@ -382,7 +386,7 @@ void FloppyData::format(){
   lineedit->setEnabled(false);
   helpbutton->setEnabled(false);
   quitbutton->setEnabled(false);
-  
+
 
 
   if(!findDevice()){
@@ -414,10 +418,10 @@ void FloppyData::format(){
 
   connect(proc, SIGNAL(processExited(KProcess *)),this, SLOT(formatdone(KProcess*)));
 
-  connect(proc, SIGNAL(receivedStdout(KProcess *,char*,int)),this, 
+  connect(proc, SIGNAL(receivedStdout(KProcess *,char*,int)),this,
 	  SLOT(readStdout(KProcess*,char*,int)));
 
-  connect(proc, SIGNAL(receivedStderr(KProcess *,char*,int)),this, 
+  connect(proc, SIGNAL(receivedStderr(KProcess *,char*,int)),this,
 	  SLOT(readStderr(KProcess*,char*,int)));
 
   bool result = proc->start(KProcess::NotifyOnExit , KProcess::All);
@@ -427,6 +431,8 @@ void FloppyData::format(){
     KMessageBox::error(this, str);
     reset();
   }
+}
+}
 }
 
 void FloppyData::formatdone(KProcess*){
