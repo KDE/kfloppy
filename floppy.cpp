@@ -378,8 +378,8 @@ void FloppyData::format(){
     return;
   }
   if (!formating) {
-        if (KMessageBox::warningContinueCancel(0, "Formatting will erase all data on the disk.\n"
-        "Are you sure you wish to proceed?", "Proceed?" ) == KMessageBox::Continue)
+        if (KMessageBox::warningContinueCancel(0, i18n("Formatting will erase all data on the disk.\n"
+        "Are you sure you wish to proceed?"), i18n("Proceed?") ) == KMessageBox::Continue)
         {
 
   formatbutton->setText(i18n("A&bort"));
