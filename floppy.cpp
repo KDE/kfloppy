@@ -31,8 +31,6 @@
 #include "format.h"
 #include "zip.h"
 
-#include <iostream.h>
-
 #include <qlayout.h>
 #include <qlabel.h>
 #include <qwidgetstack.h>
