@@ -723,7 +723,7 @@ void FloppyData::createfilesystem()
 
   proc = new KProcess;
 
-  if (filesystemComboBox->currentText() == i18n("Dos")){
+  if (filesystemComboBox->currentItem() == 0){
 
         *proc << mkdosfs;
 	if(labellabel->isChecked())
