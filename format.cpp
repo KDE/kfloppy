@@ -21,13 +21,10 @@
 
     */
 
-#include "debug.h"
 
 #include <unistd.h>
 #include <stdlib.h>
 
-#include <qptrlist.h>
-#include <qfile.h>
 #include <qtimer.h>
 
 #include <klocale.h>

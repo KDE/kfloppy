@@ -25,32 +25,20 @@
 #ifndef FloppyData_included
 #define FloppyData_included
 
-#include <qbuttongroup.h>
-#include <qcombobox.h>
-#include <qframe.h>
-#include <qradiobutton.h>
-#include <qlabel.h>
-#include <qdialog.h>
-#include <qprogressbar.h> 
-#include <qtimer.h>
-#include <qfileinfo.h>
-#include <qcheckbox.h>
-#include <qlineedit.h>
-
-#include <stdlib.h>
-#include <string.h>
-
-#include <kprogress.h>
-#include <kprocess.h>
-#include <klocale.h>
-#include <kconfig.h>
-#include <kapplication.h>
 #include <kdialog.h>
-#include <khelpmenu.h>
-#include <kpopupmenu.h>
-#include <kpushbutton.h>
 
+class QCheckBox;
+class QLineEdit;
+class QLabel;
+class QRadioButton;
+class QComboBox;
+class QButtonGroup;
+class QGroupBox;
 
+class KProgress;
+class KConfig;
+class KPushButton;
+class KHelpMenu;
 class KFAction;
 class KFActionQueue;
 

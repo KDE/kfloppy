@@ -23,15 +23,24 @@
 
     */
 
-#include "debug.h"
 
 #include <qlayout.h>
 
-#include <kapplication.h>
-#include <kstandarddirs.h>
 #include <kmessagebox.h>
 #include <kdebug.h>
-
+#include <qcheckbox.h>
+#include <qlineedit.h>
+#include <qlabel.h>
+#include <qradiobutton.h>
+#include <qbuttongroup.h>
+#include <qcombobox.h>
+#include <khelpmenu.h>
+#include <kpushbutton.h>
+#include <kpopupmenu.h>
+#include <kapplication.h>
+#include <kconfig.h>
+#include <kprogress.h>
+#include <klocale.h>
 #include "floppy.moc"
 #include "format.h"
 
