@@ -234,7 +234,6 @@ bool FloppyData::findDevice() {
 		tracks = 40;
 		}
 
-	else
 	if (deviceComboBox->currentText() == i18n("Secondary")) {
 	 {
 		if (densityComboBox->currentText() == i18n("3.5\" 1.44MB")) {
