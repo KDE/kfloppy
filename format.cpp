@@ -1,9 +1,9 @@
 /*
 
     KFloppy
-    Copyright (C) 2002 Adriaan de Groot
-                       groot@kde.org
-
+    
+    Copyright (C) 2002 Adriaan de Groot <groot@kde.org>
+    Copyright (C) 2004, 2005 Nicolas GOUTTE <goutte@kde.org>
 
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -146,7 +146,7 @@ void KFActionQueue::queue(KFAction *p)
 	}
 	else
 	{
-		DEBUGS("  Running action " << next->name());
+		kdDebug(KFAREA) << "Running action " << next->name() << endl;
 		QObject::connect(next,SIGNAL(done(KFAction *,bool)),
 			this,SLOT(actionDone(KFAction *,bool)));
 		// Propagate signals
@@ -292,7 +292,7 @@ bool FloppyAction::configureDevice(int drive,int density)
 	{
 		if (access(*devices,W_OK)>=0)
 		{
-			DEBUGS(QString("  Found device %1").arg(*devices));
+			kdDebug(KFAREA) << "Found device " << *devices << endl;
 			devicename=*devices;
 			break;
 		}
@@ -300,7 +300,7 @@ bool FloppyAction::configureDevice(int drive,int density)
 
 	if (!devicename)
 	{
-		QString str = i18n(
+		const QString str = i18n(
 			"Cannot access %1\nMake sure that the device exists and that "
 			"you have write permission to it.").arg(deviceinfo->devices[0]);
 		emit status(str,-1);
@@ -339,7 +339,7 @@ void FloppyAction::processStdOut(KProcess *, char *b, int l)
 {
 	Q_UNUSED(b);
 	Q_UNUSED(l);
-	DEBUGS("stdout:" << QString::fromLatin1(b,l));
+	kdDebug(KFAREA) << "stdout:" << QString::fromLatin1(b,l) << endl;
 }
 
 void FloppyAction::processStdErr(KProcess *p, char *b, int l)

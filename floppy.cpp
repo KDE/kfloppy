@@ -1,8 +1,8 @@
 /*
     KFloppy
-    Copyright (C) 1997 Bernd Johannes Wuebben
-                       wuebben@math.cornell.edu
-
+    
+    Copyright (C) 1997 Bernd Johannes Wuebben <wuebben@math.cornell.edu>
+    Copyright (C) 2004 Nicolas GOUTTE <goutte@kde.org>
 
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
