@@ -231,9 +231,9 @@ bool FloppyData::findDevice()
   {
     drive=1;
   }
-  
+
   blocks=-1;
-    
+
     if( densityComboBox->currentText() == i18n("3.5\" 1.44MB")){
       blocks = 1440;
     }
@@ -249,8 +249,8 @@ bool FloppyData::findDevice()
     if( densityComboBox->currentText() == i18n("5.25\" 360KB")){
       blocks = 360;
       }
-  
-  
+
+
   return true;
 }
 
@@ -264,7 +264,7 @@ bool FloppyData::setInitialDevice(const QString& dev)
 
   bool ok = (drive>=0);
   if (ok)
-    deviceComboBox->setCurrentItem(drive);  
+    deviceComboBox->setCurrentItem(drive);
   return ok;
 }
 
@@ -283,10 +283,10 @@ void FloppyData::findExecutables()
 	fruitful = false;
 #endif
 #endif
-	
+
   if (!fruitful) {
     formatbutton->setEnabled(false);
-    KMessageBox::error(this, 
+    KMessageBox::error(this,
     	i18n("KFloppy cannot find the support programs needed "
 		"for sensible operation."));
   }
@@ -328,7 +328,7 @@ void FloppyData::reset()
 
   formating = false;
   quickerase = false;
-  
+
   if (formatActions)
   {
     formatActions->quit();
@@ -354,10 +354,10 @@ void FloppyData::format(){
   }
 
   frame->clear();
-  
-  if (KMessageBox::warningContinueCancel(0, 
+
+  if (KMessageBox::warningContinueCancel(0,
    i18n("Formatting will erase all data on the disk.\n"
-        "Are you sure you wish to proceed?"), i18n("Proceed?") ) != 
+        "Are you sure you wish to proceed?"), i18n("Proceed?") ) !=
 	KMessageBox::Continue)
         {
 	return;
@@ -374,7 +374,7 @@ void FloppyData::format(){
 
 	if (formatActions) delete formatActions;
 	formatActions = new KFActionQueue(this);
-	
+
 	connect(formatActions,SIGNAL(status(const QString &,int)),
 		this,SLOT(formatStatus(const QString &,int)));
 	connect(formatActions,SIGNAL(done(KFAction *,bool)),
@@ -393,7 +393,7 @@ void FloppyData::format(){
 		f->configure(verifylabel->isChecked());
 		formatActions->queue(f);
 	}
-	
+
 	if (filesystemComboBox->currentItem() == 0)
 	{
 		FATFilesystem *f = new FATFilesystem(this);
@@ -421,7 +421,7 @@ void FloppyData::format(){
 		f = new UFSFilesystem(this);
 #endif
 #endif
-		
+
 		if (f)
 		{
 			connect(f,SIGNAL(status(const QString &,int)),
@@ -433,8 +433,8 @@ void FloppyData::format(){
 		}
 	}
 
-	
-		
+
+
 	formatActions->exec();
 }
 
@@ -442,7 +442,7 @@ void FloppyData::formatStatus(const QString &s,int p)
 {
 	if (!s.isEmpty())
 		frame->setText(s);
-	
+
 	if ((0<=p) && (p<=100))
 		progress->setValue(p);
 }
@@ -472,7 +472,7 @@ void FloppyData::readStdout(KProcess *, char *buffer, int buflen)
   if (increment)
   {
     counter ++;
-    progress->setValue(counter);     
+    progress->setValue(counter);
   }
 
   kdDebug(2002) << "STDOUT: " << formatstring << endl;
@@ -507,19 +507,19 @@ void FloppyData::errslot(){
 
   if(errstring.contains("ioctl(FDFMTBEG)")){
 
-    QString str = i18n(
+    QString str = i 18n(
 		"Cannot access floppy or floppy drive.\n"
 		"Please insert a floppy and make sure that you "
 		"have selected a valid floppy drive.");
 
     KMessageBox::error(this, str);
-    
+
     reset();
     return;
 
   }
 
-  QString str = i18n("Cannot format: %1\n%2").arg(drive).arg(errstring);
+  QString str = i 18n("Cannot format: %1\n%2").arg(drive).arg(errstring);
 
   KMessageBox::error(this, str);
 
@@ -541,10 +541,10 @@ void FloppyData::readfsStdout(KProcess *, char *buffer, int buflen){
   fsstring += mybuffer;
   if( fsstring.find('\n') == -1)
     return;
-  
+
   QString string ;
   QString newstring = fsstring;
-  
+
 
   int i;
 
@@ -558,7 +558,7 @@ void FloppyData::readfsStdout(KProcess *, char *buffer, int buflen){
     if(findKeyWord(mystring,"BBF ")){
       int bblock = mystring.left(8).toInt();
       QString mstr;
-      mstr = i18n("Block %1 is bad. Continuing...").arg(bblock);
+      mstr = i 18n("Block %1 is bad. Continuing...").arg(bblock);
       frame->setText(mstr);
     }
 
@@ -580,12 +580,12 @@ void FloppyData::readfsStdout(KProcess *, char *buffer, int buflen){
     if(findKeyWord(fsstring,"EXIT"))
       counter ++;
 
-    
+
   }
 
   fsstring = newstring;
 
-  progress->setValue(counter);     
+  progress->setValue(counter);
 
   kdDebug(2002) << "STDOUT: " << mybuffer << endl;
 }
@@ -636,20 +636,20 @@ void FloppyData::fserrslot(){
 
   if(fserrstring.contains("No such device")){
 
-    QString str = i18n(
+    QString str = i 18n(
 		"Cannot access floppy or floppy drive.\n"
 		"Please insert a floppy and make sure that you "
  		"have selected a valid floppy drive.");
 
     KMessageBox::sorry(this, str);
-    
+
     reset();
     return;
   }
 
   reset();
 
-  QString str = i18n("Cannot create a filesystem on: %1\n%2")
+  QString str = i 18n("Cannot create a filesystem on: %1\n%2")
 	      .arg(drive).arg(fserrstring);
 
   KMessageBox::error(this, str);
@@ -669,14 +669,14 @@ void FloppyData::cf2done(){
   lcquick = quickerase;
 
   mytimer->stop();
-  
+
   reset();
-  
+
   if(abort)
     return;
 
   if(!lcquick){
-    QString str = i18n(
+    QString str = i 18n(
 		"The floppy was successfully formatted.\n"
 		"Blocks marked bad: %1\n"
 		"Raw Capacity: %2\n")
@@ -686,7 +686,7 @@ void FloppyData::cf2done(){
     KMessageBox::information(this, str);
   }
   else{
-    QString str = i18n("All files were successfully erased.");
+    QString str = i 18n("All files were successfully erased.");
 
     KMessageBox::information(this, str);
   }
@@ -700,7 +700,7 @@ int FloppyData::findKeyWord(QString & string,const QString & word){
 
   QString wordstring = word;
   len = wordstring.length();
-    
+
   while( (index = string.find(word)) >= 0)
   {
     count++;
