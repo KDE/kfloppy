@@ -872,7 +872,7 @@ void FloppyData::about(){
 
 
 void FloppyData::help(){
-  kapp->invokeHTMLHelp("kfloppy/kfloppy.html","");
+  kapp->invokeHelp( );
 }
 
 
