@@ -18,8 +18,6 @@ kmkdosfs_SOURCES = kmkdosfs.c
 
 kfdformat_SOURCES = kfdformat.c
 
-SUBDIRS = doc
-
 all-local: kmke2fs
 
 # since the e2fs sources are just bundled, we need some magic to build them
