@@ -93,92 +93,12 @@ at the top left center of &kfloppy;.</para>
 <guilabel>Floppy Drive</guilabel>floppy>, offers the user the following
 four choices:</para>
 
-<variablelist>
-<varlistentry>
-<term><guilabel>A: 3.5</guilabel></term> <listitem><para>Choosing this
-item configures &kfloppy; to format a 3.5 inch floppy drive.  The
-<guilabel>A:</guilabel> follows the MSDOS/&Windows; naming convention
-and corresponds to the <filename class="devicefile">fd0</filename>
-device in &Linux;.  The <guilabel>3.5</guilabel> indicates that the
-floppy is the 3.5 inch type.</para>
-</listitem>
-</varlistentry>
-
-<varlistentry>
-<term><guilabel>A: 5.25</guilabel></term> <listitem><para>Choosing this
-item configures &kfloppy; to format a 5.25 inch floppy drive.  The
-<guilabel>A:</guilabel> follows the MSDOS/&Windows; naming convention
-and corresponds to the <filename class="devicefile">fd0</filename>
-device in &Linux;.  The <guilabel>5.25</guilabel> indicates that the
-floppy is the 5.25 inch type.  This type is generally out of use and
-normally found only in older computers.</para>
-</listitem>
-</varlistentry>
-
-
-<varlistentry>
-<term><guilabel>B: 3.5</guilabel></term> <listitem><para>Choosing this
-item configures &kfloppy; to format a 3.5 inch floppy drive.  The
-<guilabel>B:</guilabel> follows the MSDOS/&Windows; naming convention
-and corresponds to the <filename class="devicefile">fd1</filename>
-device in &Linux;.  The <guilabel>3.5</guilabel> indicates that the
-floppy is the 3.5 inch type.</para>
-</listitem>
-</varlistentry>
-
-<varlistentry>
-<term><guilabel>B: 5.25</guilabel></term> <listitem><para>Choosing this
-item configures &kfloppy; to format a 5.25 inch floppy drive.  The
-<guilabel>B:</guilabel> follows the MSDOS/Windows naming convention and
-corresponds to the <filename class="devicefile">fd1</filename> device in
-&Linux;. The <guilabel>5.25</guilabel> indicates that the floppy is the
-5.25 inch type.  This type is generally out of use and normally found
-only in older computers.</para></listitem>
-</varlistentry>
-
-</variablelist>
-
-</sect2>
-
-<sect2 id="density">
-<title>Density</title>
-
-<para>The drop down box labeled <guilabel>Density</guilabel> offers the
-choice of two possible density settings.  They are:</para>
-
-<variablelist>
-<varlistentry>
-<term><guilabel>HD</guilabel></term>
-<listitem>
-<para><abbrev>HD</abbrev> stands for High Density.  This is the type commonly
-used today and so will most likely be the one chosen by most users.</para>
-</listitem>
-</varlistentry>
-<varlistentry>
-<term><guilabel>DD</guilabel></term>
-<listitem>
-<para><abbrev>DD</abbrev> stands for Double Density.  This format is available
-mostly because some old diskettes and floppy disk drives require it.  While the
-user may format a high density diskette in this manner it will reduce the
-storage space by one half.  The following list of properties for each disk type
-and density combination should make that clear:</para>
 <itemizedlist>
-<listitem>
-<para>3.5" DD: double-sided, 80 tracks, 9 sectors/track  - 720K</para>
-</listitem>
-<listitem>
-<para>3.5" HD: double-sided, 80 tracks, 18 sectors/track - 1440K</para>
-</listitem>
-<listitem>
-<para>5.25" DD: double-sided, 40 tracks, 9 sectors/track  - 360K</para>
-</listitem>
-<listitem>
-<para>5.25" HD: double-sided, 80 tracks, 15 sectors/track - 1200K</para>
-</listitem>
+<listitem><para>3.5" 1.44MB</para></listitem>
+<listitem><para>3.5" 720KB</para></listitem>
+<listitem><para>5.25" 1.2MB</para></listitem>
+<listitem><para>5.25" 360KB</para></listitem>
 </itemizedlist>
-</listitem>
-</varlistentry>
-</variablelist>
 
 <note>
 <para>The 800k disk format used by &Mac; floppy drives cannot be
@@ -188,7 +108,7 @@ disks in that fashion.</para>
 </sect2>
 
 <sect2 id="filesystems">
-<title>File Systems</title>
+<title><guilabel>File Systems</guilabel></title>
 
 <para>The third drop down box, labeled File System, offers the user the
 following two choices:</para>
@@ -207,7 +127,7 @@ operating systems as they do not recognize other system types.</para>
 
 <variablelist>
 <varlistentry> 
-<term>ext2fs</term>
+<term>ext2</term>
 <listitem>
 <para>This selection will have &kfloppy; place the type of file system
 on the diskette which is most commonly used with Linux.  The user will
@@ -236,7 +156,7 @@ below:</para>
 <para>
 <variablelist>
 <varlistentry>
-<term>Quick Erase</term>
+<term>Quick Format</term>
 <listitem>
 <para>This simply puts the new file system on the disk. All data on the
 disk is erased. If the density of the disk is different than the selected
@@ -257,20 +177,19 @@ sectors it finds.</para>
 </sect2>
 
 <sect2>
-<title>Verify on</title>
+<title>Verify Integrity</title>
 
-<para>The middle feature is the <guilabel>Verify on</guilabel> check
-box.  This tells &kfloppy; to check that the formatting was correctly
+<para>This tells &kfloppy; to check that the formatting was correctly
 written to the floppy.  This allows bad sectors to be identified.
 </para>
 </sect2>
 
 <sect2>
-<title>Create Label</title>
+<title>Volume Label</title>
 
 <para>The bottom two features allow the user to add (or change) a
-label to the diskette.  If the <guilabel>Create Label</guilabel>
-check box is selected then the user can enter a name (label) for the
+label to the diskette.  If the <guilabel>Volume Label</guilabel> check
+box is selected then the user can enter a name (label) for the
 diskette that is to be formatted in the text box located immediately
 below.  When the diskette is subsequently formatted the label will be
 written to the diskette.</para>
@@ -281,37 +200,39 @@ written to the diskette.</para>
 
 <sect1 id="buttons">
 <title>The Buttons</title>
-<para>There are four buttons located vertically along the right side of
-&kfloppy;.  Starting at the bottom and going up they are:</para>
+<para>There are three buttons located vertically along the right side of
+&kfloppy;. </para>
 
 <variablelist>
 <varlistentry>
-<term><guibutton>Format</guibutton></term>
-<listitem><para>This button initiates the formatting process.  Once the user is
-sure that all the settings are correct he or she may begin the process by
-clicking on this button.  Assuming that a diskette is in place and the
-parameters are set correctly, the user will see a few changes take place.  The
-label on the button itself will change from <guibutton>Format</guibutton> to
-<guibutton>Abort</guibutton> indicating that another click on the button will
-stop the formatting.  Furthermore, there will be a change in the two long
-rectangular boxes that span the bottom of &kfloppy;.</para>
+<term><guibutton>Format</guibutton></term> <listitem><para>This button
+initiates the formatting process.  Once the user is sure that all the
+settings are correct he or she may begin the process by clicking on
+this button.  Assuming that a diskette is in place and the parameters
+are set correctly, the user will see a few changes take place.  The
+label on the button itself will change from
+<guibutton>Format</guibutton> to <guibutton>Abort</guibutton>
+indicating that another click on the button will stop the formatting.
+Furthermore, there will be a change in the two long rectangular boxes
+that span the bottom of &kfloppy;.</para>
 
 <para> The upper box is a status indicator that gives information about the
 process underway.  As the formatting occurs it will contain specific
 details about the type of formatting.  When &kfloppy; enters the
 verification stage of the process this will be displayed.</para>
 
-<para>The lower box is a progress bar.  This displays both graphically and
-numerically the progress of first the formatting and then the verification.
-Before starting it appears to be empty - showing only the figure
-<guilabel>0%</guilabel> in the center.  As each process takes place the progress
-is tracked graphically as the box fills from left to right.  At the same time
-the number in the center will increase reflecting the precise percentage of the
-process that has been completed.</para>
+<para>The lower box is a progress bar.  This displays both graphically
+and numerically the progress of first the formatting and then the
+verification.  Before starting it appears to be empty - showing only
+the figure <guilabel>0%</guilabel> in the center.  As each process
+takes place the progress is tracked graphically as the box fills from
+left to right.  At the same time the number in the center will
+increase reflecting the precise percentage of the process that has
+been completed.</para>
 
 <important>
-<para>Make sure that your floppy is <emphasis>not</emphasis> mounted.  &kfloppy; cannot 
-format a mounted floppy.</para>
+<para>Make sure that your floppy is <emphasis>not</emphasis> mounted.
+&kfloppy; cannot format a mounted floppy.</para>
 </important>
 
 </listitem>
@@ -326,11 +247,26 @@ format a mounted floppy.</para>
 </varlistentry>
 
 <varlistentry>
-<term><guibutton>About</guibutton></term>
+<term><guibutton>Report Bug</guibutton></term>
+<listitem>
+<para>Report a problem to the &kde; team.</para>
+</listitem> 
+</varlistentry>
+
+<varlistentry>
+<term><guibutton>About KFloppy</guibutton></term>
 <listitem>
 <para>This displays version and author information.</para>
 </listitem> 
 </varlistentry>
+
+<varlistentry>
+<term><guibutton>About KDE</guibutton></term>
+<listitem>
+<para>This displays version and author information.</para>
+</listitem> 
+</varlistentry>
+
 
 <varlistentry>
 <term><guibutton>Quit</guibutton></term>
