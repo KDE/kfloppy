@@ -50,6 +50,9 @@
 #include <linux/ext2_fs.h>
 #ifdef HAVE_LINUX_MAJOR_H
 #include <linux/major.h>
+#ifdef SCSI_DISK0_MAJOR
+#define SCSI_DISK_MAJOR SCSI_DISK0_MAJOR
+#endif
 #endif
 
 #include "et/com_err.h"
