@@ -32,8 +32,7 @@ clean-local:
 	(cd e2fs && $(MAKE) clean)
 	-rm -f kmke2fs
 
-icon_DATA = kfloppy.xpm
-icondir = $(kde_icondir)
+KDE_ICON = kfloppy
 
 pics_DATA = kfloppylogo.xpm
 picsdir = $(kde_datadir)/kfloppy/pics
@@ -45,14 +44,9 @@ install-exec-local: kmke2fs
 	$(mkinstalldirs) $(bindir)
 	$(INSTALL) kmke2fs $(bindir)
 	
-install-data-local: 
-	$(mkinstalldirs) $(kde_minidir)
-	$(INSTALL_DATA) $(srcdir)/mini-kfloppy.xpm $(kde_minidir)/kfloppy.xpm
-
 messages:
 	$(XGETTEXT) -C -ki18n -x $(includedir)/kde.pot $(kfloppy_SOURCES) && mv messages.po ../po/kfloppy.pot
 	
 uninstall-local:
 	rm -f $(BINDIR)/kmke2fs
-	rm -f $(kde_minidir)/kfloppy.xpm
 
