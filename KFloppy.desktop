@@ -1,7 +1,7 @@
 [Desktop Entry]
 Encoding=UTF-8
 GenericName=Floppy Formatter
-GenericName[af]=sagteskyf formateerder
+GenericName[af]=Sagteskyf Formateerder
 GenericName[ar]=تجهيز الأقراص المرنة
 GenericName[az]=Disket Şəkilləndirici
 GenericName[bg]=Програма за форматиране на дискети
@@ -58,7 +58,7 @@ GenericName[zh_TW]=軟碟格式化程式
 GenericName[zu]=Floppy formatha
 BinaryPattern=kfloppy;
 Name=KFloppy
-Name[af]=kfloppie
+Name[af]=Kfloppie
 Name[bg]=КФлопи
 Name[eo]=Disketingo
 Name[lv]=KMīkstnis
