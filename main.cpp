@@ -33,7 +33,6 @@
 #include <qtabdialog.h>
 #include <qdir.h>
 #include <qfileinfo.h>
-#include <qstring.h>
 #include <qfile.h>
 #include <qtextstream.h>
 
