@@ -96,12 +96,22 @@ FloppyData::FloppyData(QWidget * parent, const char * name)
 	filesystemComboBox = new QComboBox( false, this, "ComboBox_2" );
 	g1->addWidget( filesystemComboBox, 2, 1, AlignLeft );
 
-	filesystemComboBox->insertItem(i18n("DOS"));
-#ifdef ANY_LINUX
-	filesystemComboBox->insertItem(i18n("ext2"));
-#endif
-#ifdef ANY_BSD
-	filesystemComboBox->insertItem(i18n("UFS"));
+        uint numFileSystems = 0;
+
+        if (FATFilesystem::runtimeCheck()) {
+            filesystemComboBox->insertItem(i18n("DOS"));
+            ++numFileSystems;
+        }
+#if defined(ANY_LINUX)
+        if (Ext2Filesystem::runtimeCheck()) {
+            filesystemComboBox->insertItem(i18n("ext2"));
+            ++numFileSystems;
+        }
+#elif defined(ANY_BSD)
+        if (UFSFilesystem::runtimeCheck()) {
+            filesystemComboBox->insertItem(i18n("UFS"));
+            ++numFileSystems;
+        }
 #endif
 
         v1->addSpacing( 10 );
@@ -144,7 +154,7 @@ FloppyData::FloppyData(QWidget * parent, const char * name)
 
 	lineedit = new QLineEdit( buttongroup, "Lineedit" );
 	lineedit->setText(i18n( "KDE Floppy") );
-	lineedit->setMaxLength(11);
+	lineedit->setMaxLength(11); // ### TODO: translators need to need this limit!!!
         lineedit->setMinimumWidth( lineedit->sizeHint().width() );
         h2->addWidget( lineedit, AlignRight );
 
@@ -155,6 +165,8 @@ FloppyData::FloppyData(QWidget * parent, const char * name)
 	formatbutton = new KPushButton( this, "PushButton_3" );
 	formatbutton->setText(i18n( "&Format") );
 	formatbutton->setAutoRepeat( false );
+        if (!numFileSystems)
+            formatbutton->setDisabled(false); // We have not any helper program for creating any file system
 	connect(formatbutton,SIGNAL(clicked()),this,SLOT(format()));
         v3->addWidget( formatbutton );
 
@@ -188,7 +200,12 @@ FloppyData::FloppyData(QWidget * parent, const char * name)
 	readSettings();
 	setWidgets();
 
-	findExecutables();
+    if (!numFileSystems) {
+        // ### TODO: better error message
+        KMessageBox::error(this,
+            i18n("KFloppy cannot find the support programs needed "
+                    "for sensible operation."));
+    }
 
     int maxW = QMAX( deviceComboBox->sizeHint().width(),
                      densityComboBox->sizeHint().width() );
@@ -274,29 +291,6 @@ bool FloppyData::setInitialDevice(const QString& dev)
   if (ok)
     deviceComboBox->setCurrentItem(drive);
   return ok;
-}
-
-
-void FloppyData::findExecutables()
-{
-	bool fruitful = true ;
-	fruitful &= FATFilesystem::runtimeCheck();
-#ifdef ANY_BSD
-	fruitful &= UFSFilesystem::runtimeCheck();
-#else
-#ifdef ANY_LINUX
-	fruitful &= Ext2Filesystem::runtimeCheck();
-#else
-	fruitful = false;
-#endif
-#endif
-
-  if (!fruitful) {
-    formatbutton->setEnabled(false);
-    KMessageBox::error(this,
-    	i18n("KFloppy cannot find the support programs needed "
-		"for sensible operation."));
-  }
 }
 
 void FloppyData::quit(){
