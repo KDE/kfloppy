@@ -705,6 +705,7 @@ void Ext2Filesystem::exec()
 	*p << "-q";
 	if (doVerify) *p << "-c" ;
 	if (doLabel) *p << "-L" << label ;
+	*p << deviceName ;
 
 	if (!startProcess())
 	{
