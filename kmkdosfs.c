@@ -57,7 +57,7 @@
 #include <fcntl.h>
 #include <linux/hdreg.h>
 #include <linux/fs.h>
-#include <linux/stat.h>
+//#include <linux/stat.h>
 #include <linux/fd.h>
 #include <mntent.h>
 #include <signal.h>
