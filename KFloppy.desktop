@@ -47,7 +47,6 @@ MimeType=
 DocPath=kfloppy/kfloppy.html
 Exec=kfloppy  -caption "%c" %i %m
 Icon=kfloppy
-MiniIcon=kfloppy
 TerminalOptions=
 Path=
 Type=Application
