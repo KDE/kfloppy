@@ -24,6 +24,7 @@
 
     */
 
+#include <kdeversion.h>
 #include <kapplication.h>
 #include <kcmdlineargs.h>
 #include <kaboutdata.h>
@@ -33,8 +34,6 @@
 
 static const char description[] =
 	I18N_NOOP("KDE Floppy Disk Utility");
-
-static const char version[] = "2.2";
 
 static const KCmdLineOptions options[] =
 {
@@ -46,7 +45,7 @@ int main( int argc, char *argv[] )
 {
   KAboutData aboutData("kfloppy",
 	I18N_NOOP("KFloppy"),
-    version, description, KAboutData::License_GPL,
+    KDE_VERSION_STRING, description, KAboutData::License_GPL,
     "(c) 1997, Bernd Johannes Wuebben\n"
     "(c) 2001, Chris Howells\n"
     "(c) 2002, Adriaan de Groot",
