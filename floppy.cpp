@@ -389,7 +389,7 @@ void FloppyData::reset(){
   }
   proc = 0L;
   progress->setValue(0);
-  frame->setText("");
+  frame->clear();
   formatbutton->setText(i18n("Format"));
 
 }
@@ -811,7 +811,7 @@ void FloppyData::createfilesystem(){
   if(!result){
     QString str = i18n("Cannot start a new program\nfork() failed.");
     KMessageBox::error(this, str);
-    frame->setText("");
+    frame->clear();
     proc = 0L;
     progress->setValue(0);
   }
