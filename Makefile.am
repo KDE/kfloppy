@@ -11,7 +11,6 @@ bin_PROGRAMS  = kfloppy kmkdosfs kfdformat
 noinst_HEADERS = about.h floppy.h
 kfloppy_SOURCES	= main.cpp about.cpp floppy.cpp mount.c
 
-# to put kmke2fs into BUILT_SOURCES is somehow Trick 17B ;)
 METASOURCES = about.moc floppy.moc
 
 kmkdosfs_SOURCES = kmkdosfs.c
