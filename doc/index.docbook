@@ -254,7 +254,7 @@ sectors it finds.</para>
 <title>Verify on</title>
 
 <para>The middle feature is the <guilabel>Verify on</guilabel> check
-box.  This tells &kfloppy to check that the formatting was correctly
+box.  This tells &kfloppy; to check that the formatting was correctly
 written to the floppy.  This allows bad sectors to be identified.
 </para>
 </sect2>
