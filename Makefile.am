@@ -23,8 +23,7 @@ SUBDIRS = doc
 
 # since the e2fs sources are just bundled, we need some magic to build them
 kmke2fs: e2fs/misc/mke2fs.c e2fs/misc/badblocks.c 
-	(cd e2fs && CC=$(CC) ./configure -host=$(host_triplet) && \
-	$(MAKE) &&  cp misc/kmke2fs ../ &&  strip ../kmke2fs)
+	(cd e2fs && $(MAKE) &&  cp misc/kmke2fs ../ &&  strip ../kmke2fs)
 
 distclean-local:
 	(cd e2fs && $(MAKE) distclean)
