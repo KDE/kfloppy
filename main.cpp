@@ -48,15 +48,16 @@ int main( int argc, char *argv[] )
     KDE_VERSION_STRING, description, KAboutData::License_GPL,
     "(c) 1997, Bernd Johannes Wuebben\n"
     "(c) 2001, Chris Howells\n"
-    "(c) 2002, Adriaan de Groot",
-    I18N_NOOP("KFloppy helps you format removeable media (like floppy, Zip,\n"
-	"or LS120 disks) with the filesystem of your choice.")
+    "(c) 2002, Adriaan de Groot\n"
+    "(c) 2004, Nicolas Goutte",
+    I18N_NOOP("KFloppy helps you format floppies with the filesystem of your choice.")
     );
 
-  aboutData.addAuthor("Bernd Johannes Wuebben", I18N_NOOP("Author, Maintainer"), "wuebben@kde.org");
+  aboutData.addAuthor("Bernd Johannes Wuebben", I18N_NOOP("Author and former maintainer"), "wuebben@kde.org");
   aboutData.addCredit("Chris Howells", I18N_NOOP("User interface re-design"), "howells@kde.org");
   aboutData.addCredit("Adriaan de Groot", I18N_NOOP("Add BSD support"), "groot@kde.org");
-
+  aboutData.addCredit("Nicolas Goutte", I18N_NOOP("Make KFloppy work again for KDE 3.4"), "goutte@kde.org");
+  
   KCmdLineArgs::init( argc, argv, &aboutData );
   KCmdLineArgs::addCmdLineOptions( options );
 
