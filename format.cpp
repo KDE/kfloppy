@@ -292,7 +292,7 @@ bool FloppyAction::configureDevice(int drive,int density)
 	{
 		if (access(*devices,W_OK)>=0)
 		{
-			DEBUGS(QString("  Found device %1").arg(*devices).latin1());
+			DEBUGS(QString("  Found device %1").arg(*devices));
 			devicename=*devices;
 			break;
 		}
