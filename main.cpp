@@ -61,8 +61,10 @@ int main( int argc, char *argv[] ){
   mykapp = &a;
 
   FloppyData* floppy  = new FloppyData();
+#if 0  
   a.enableSessionManagement(true);
-  a.setWmCommand(argv[0]);      
+  a.setWmCommand(argv[0]);
+#endif  
   
   a.setTopWidget(floppy);
   floppy->show();
