@@ -168,8 +168,8 @@ const char *fd0H1440[] = { "/dev/fd0h1440", "/dev/fd0H1440", "/dev/fd0u1440", 0L
 const char *fd0D720[]={ "/dev/fd0u720", "/dev/fd0D720", 0L };
 const char *fd0h1200[]={ "/dev/fd0h1200", 0L };
 const char *fd0h360[]={ "/dev/fd0h360", 0L };
-const char *fd1H1440[] = { "/dev/fd1h1440", "/dev/fd1H1440", "/dev/fd0u1440", 0L } ;
-const char *fd1D720[]={ "/dev/fd0u720", "/dev/fd1D720", 0L };
+const char *fd1H1440[] = { "/dev/fd1h1440", "/dev/fd1H1440", "/dev/fdsu1440", 0L } ;
+const char *fd1D720[]={ "/dev/fd1u720", "/dev/fd1D720", 0L };
 const char *fd1h1200[]={ "/dev/fd1h1200", 0L };
 const char *fd1h360[]={ "/dev/fd1h360", 0L };
 #endif
