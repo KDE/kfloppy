@@ -22,22 +22,25 @@
 
 
 #include <qlayout.h>
-
-#include <kmessagebox.h>
-#include <kdebug.h>
 #include <qcheckbox.h>
 #include <qlineedit.h>
 #include <qlabel.h>
+#include <qcursor.h>
 #include <qradiobutton.h>
 #include <qbuttongroup.h>
 #include <qcombobox.h>
+
+#include <kconfig.h>
+
+#include <kmessagebox.h>
+#include <kdebug.h>
 #include <khelpmenu.h>
 #include <kpushbutton.h>
 #include <kpopupmenu.h>
 #include <kapplication.h>
-#include <kconfig.h>
 #include <kprogress.h>
 #include <klocale.h>
+
 #include "floppy.moc"
 #include "format.h"
 
@@ -67,7 +70,7 @@ FloppyData::FloppyData(QWidget * parent, const char * name)
         g1->addWidget( label1, 0, 0, AlignLeft );
 
 
-	deviceComboBox = new QComboBox( FALSE, this, "ComboBox_1" );
+	deviceComboBox = new QComboBox( false, this, "ComboBox_1" );
 	g1->addWidget( deviceComboBox, 0, 1, AlignLeft );
 
 	deviceComboBox->insertItem(i18n("Primary"));
@@ -77,7 +80,7 @@ FloppyData::FloppyData(QWidget * parent, const char * name)
 	label2->setText(i18n("Size:"));
         g1->addWidget( label2, 1, 0, AlignLeft );
 
-	densityComboBox = new QComboBox( FALSE, this, "ComboBox_1" );
+	densityComboBox = new QComboBox( false, this, "ComboBox_1" );
 	g1->addWidget( densityComboBox, 1, 1, AlignLeft );
 
 	densityComboBox->insertItem(i18n("3.5\" 1.44MB"));
@@ -90,7 +93,7 @@ FloppyData::FloppyData(QWidget * parent, const char * name)
 	label3->setText(i18n("File system:"));
         g1->addWidget( label3, 2, 0, AlignLeft );
 
-	filesystemComboBox = new QComboBox( FALSE, this, "ComboBox_2" );
+	filesystemComboBox = new QComboBox( false, this, "ComboBox_2" );
 	g1->addWidget( filesystemComboBox, 2, 1, AlignLeft );
 
 	filesystemComboBox->insertItem(i18n("DOS"));
@@ -115,17 +118,17 @@ FloppyData::FloppyData(QWidget * parent, const char * name)
 
 	fullformat = new QRadioButton( buttongroup, "RadioButton_3" );
 	fullformat->setText(i18n( "Fu&ll format") );
-	fullformat->setChecked(TRUE);
+	fullformat->setChecked(true);
         v2->addWidget( fullformat, AlignLeft );
 
 	verifylabel = new QCheckBox( buttongroup, "RadioButton_4" );
 	verifylabel->setText(i18n( "&Verify integrity" ));
-	verifylabel->setChecked(TRUE);
+	verifylabel->setChecked(true);
 	v2->addWidget( verifylabel, AlignLeft );
 
 	labellabel = new QCheckBox( buttongroup, "RadioButton_4" );
 	labellabel->setText(i18n( "Volume &label:") );
-	labellabel->setChecked(TRUE);
+	labellabel->setChecked(true);
         v2->addWidget( labellabel, AlignLeft );
 
         QHBoxLayout* h2 = new QHBoxLayout( v2 );
@@ -143,7 +146,7 @@ FloppyData::FloppyData(QWidget * parent, const char * name)
 
 	formatbutton = new KPushButton( this, "PushButton_3" );
 	formatbutton->setText(i18n( "&Format") );
-	formatbutton->setAutoRepeat( FALSE );
+	formatbutton->setAutoRepeat( false );
 	connect(formatbutton,SIGNAL(clicked()),this,SLOT(format()));
         v3->addWidget( formatbutton );
 
@@ -153,12 +156,12 @@ FloppyData::FloppyData(QWidget * parent, const char * name)
 	helpMenu = new KHelpMenu(this, KGlobal::instance()->aboutData(), false);
 
 	helpbutton = new KPushButton( KStdGuiItem::help(), this );
-	helpbutton->setAutoRepeat( FALSE );
+	helpbutton->setAutoRepeat( false );
 	helpbutton->setPopup(helpMenu->menu());
 	v3->addWidget( helpbutton );
 
 	quitbutton = new KPushButton( KGuiItem( i18n( "&Quit" ), "exit" ), this );
-	quitbutton->setAutoRepeat( FALSE );
+	quitbutton->setAutoRepeat( false );
 	connect(quitbutton,SIGNAL(clicked()),this,SLOT(quit()));
 	 v3->addWidget( quitbutton );
 
@@ -185,6 +188,8 @@ FloppyData::FloppyData(QWidget * parent, const char * name)
     deviceComboBox->setMinimumWidth( maxW );
     densityComboBox->setMinimumWidth( maxW );
     filesystemComboBox->setMinimumWidth( maxW );
+
+    setMinimumSize(minimumSizeHint());
 }
 
 
@@ -193,13 +198,13 @@ FloppyData::~FloppyData()
   delete formatActions;
 }
 
-void FloppyData::closeEvent(QCloseEvent*){
-
+void FloppyData::closeEvent(QCloseEvent*)
+{
   quit();
-
 }
 
-void FloppyData::keyPressEvent(QKeyEvent *e) {
+void FloppyData::keyPressEvent(QKeyEvent *e)
+{
 	switch(e->key()) {
 	case Qt::Key_F1:
 		kapp->invokeHelp();
@@ -280,7 +285,7 @@ void FloppyData::findExecutables()
 #endif
 	
   if (!fruitful) {
-    formatbutton->setEnabled(FALSE);
+    formatbutton->setEnabled(false);
     KMessageBox::error(this, 
     	i18n("KFloppy cannot find the support programs needed "
 		"for sensible operation."));
@@ -296,6 +301,10 @@ void FloppyData::quit(){
 
 void FloppyData::setEnabled(bool b)
 {
+  if (b)
+	unsetCursor();
+  else
+	setCursor(QCursor(WaitCursor));
   label1->setEnabled(b);
   deviceComboBox->setEnabled(b);
   label2->setEnabled(b);
@@ -310,6 +319,7 @@ void FloppyData::setEnabled(bool b)
   lineedit->setEnabled(b);
   helpbutton->setEnabled(b);
   quitbutton->setEnabled(b);
+  formatbutton->setEnabled(b);
 }
 
 void FloppyData::reset()
@@ -342,6 +352,8 @@ void FloppyData::format(){
     reset();
     return;
   }
+
+  frame->clear();
   
   if (KMessageBox::warningContinueCancel(0, 
    i18n("Formatting will erase all data on the disk.\n"
@@ -351,7 +363,7 @@ void FloppyData::format(){
 	return;
 	}
 
-  formatbutton->setText(i18n("A&bort"));
+  // formatbutton->setText(i18n("A&bort"));
   setEnabled(false);
 
 	if (!findDevice())
@@ -646,7 +658,7 @@ void FloppyData::fserrslot(){
 
 void FloppyData::cfdone(KProcess*){
 
-    mytimer->start(10,TRUE);
+    mytimer->start(10,true);
 
 }
 
