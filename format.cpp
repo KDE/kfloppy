@@ -25,6 +25,7 @@
 #include <stdlib.h>
 
 #include <qtimer.h>
+#include <qregexp.h>
 
 #include <klocale.h>
 #include <kprocess.h>
@@ -201,8 +202,8 @@ fdinfo fdtable[] =
 	{ fd1D720,  1,  720, 80, 0 },
 	{ fd0h1200, 0, 1200, 80, 0 },
 	{ fd1h1200, 1, 1200, 80, 0 },
-	{ fd0h360,  0,  360, 80, 0 },
-	{ fd1h360,  1,  360, 80, 0 },
+	{ fd0h360,  0,  360, 40, 0 },
+	{ fd1h360,  1,  360, 40, 0 },
 #endif
 
 #ifdef ANY_BSD
@@ -229,11 +230,6 @@ FloppyAction::FloppyAction(QObject *p) :
 	theProcess(0L)
 {
 	DEBUGSETUP;
-
-	QObject::connect(this,SIGNAL(status(const QString &,int)),
-		p,SLOT(formatStatus(const QString &,int)));
-	QObject::connect(this,SIGNAL(done(KFAction *,bool)),
-		p,SLOT(reset()));
 }
 
 void FloppyAction::quit()
@@ -352,7 +348,7 @@ bool FloppyAction::startProcess()
 	connect(theProcess,SIGNAL(receivedStderr(KProcess *,char *,int)),
 		this,SLOT(processStdErr(KProcess *,char *,int)));
 
-
+        theProcess->setEnvironment( "LC_ALL", "C" ); // We need the untranslated output of the tool
 	return theProcess->start(KProcess::NotifyOnExit,
 		KProcess::AllOutput);
 }
@@ -400,7 +396,6 @@ bool FDFormat::configure(bool v)
 
 	if (theProcess) delete theProcess;
 	theProcess = new KProcess;
-
 
 	formatTrackCount=0;
 
@@ -471,21 +466,16 @@ void FDFormat::processStdOut(KProcess *, char *b, int l)
 	}
 #elif defined(ANY_LINUX)
 	s = QString::fromLatin1(b,l);
-	int p;
-	if ((p=s.find("track")) != -1)
-	{
-		p+=5;
-		while ((0<=p) && (p<l) && (s[p].isSpace())) p++;
-		if (s[p].isDigit())
-		{
-			p=s.mid(p,8).toInt();
-			if ((p>0) && (p<deviceInfo->tracks))
-			{
-				emit status(QString::null,
-					p * 100 / deviceInfo->tracks);
-			}
-		}
-	}
+        QRegExp regexp( "([0-9]+)" );
+        if ( regexp.search(s) > -1 )
+        {
+            const int p = regexp.cap(1).toInt();
+            if ((p>0) && (p<deviceInfo->tracks))
+            {
+                    emit status(QString::null,
+                            p * 100 / deviceInfo->tracks);
+            }
+        }
 	else if (s.contains("ioctl(FDFMTBEG)"))
 	{
 		goto ioError;
