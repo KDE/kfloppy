@@ -1,14 +1,12 @@
 # $Id$
 
 prefix  = @prefix@
-BINDIR  = $(prefix)/bin
-LIBDIR  = $(prefix)/lib
-DOCSDIR = $(prefix)/share/doc/HTML/en/kfloppy
-APPSDIR = $(prefix)/share/applnk/Utilities/
-PICSDIR = $(prefix)/share/apps/kfloppy/pics/
-ICONSDIR = $(prefix)/share/icons/
-
-
+install_root = @install_root@
+BINDIR  = @kde_bindir@
+DOCSDIR = @kde_htmldir@/en/kfloppy
+APPSDIR = @kde_appsdir@/Utilities/
+PICSDIR = @kde_datadir@/kfloppy/pics/
+ICONSDIR = @kde_icondir@
 
 install = @INSTALL@
 INSTALL = $(install) -m 0755
@@ -89,9 +87,7 @@ install: all
 	$(INSTALL) kmkdosfs $(BINDIR)
 	$(INSTALL) kmke2fs $(BINDIR)
 	$(INSTALL) kfdformat $(BINDIR)
-	$(INSTALL_DIR) $(DOCSDIR)
-	$(INSTALL_DATA) ./doc/k* $(DOCSDIR)	
-	$(INSTALL_DATA) ./doc/*.gif $(DOCSDIR)
+	(cd doc && $(MAKE) install)
 	$(INSTALL_DIR) $(PICSDIR)
 	$(INSTALL_DIR) $(ICONSDIR)
 	$(INSTALL_DATA) kfloppy.xpm  $(ICONSDIR)
@@ -105,7 +101,13 @@ install: all
 
 uninstall:
 	rm -f $(BINDIR)/$(TARGET)
-
+	rm -f $(BINDIR)/kmkdosfs
+	rm -f $(BINDIR)/kmke2fs
+	rm -f $(BINDIR)/kfdformat
+	(cd doc && $(MAKE) uninstall)
+	rm -f $(ICONSDIR)/kfloppy.xpm
+	rm -f $(PICSDIR)/kfloppylogo.xpm
+	rm -f $(APPSDIR)/KFloppy.kdelnk
 
 ####### Explicit dependencies
 
