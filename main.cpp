@@ -61,7 +61,7 @@ static const char *version = "v0.0.1";
 
 int main( int argc, char *argv[] )
 {
-  KAboutData aboutData("kfloppy", I18N_NOOP("LFloppy"),
+  KAboutData aboutData("kfloppy", I18N_NOOP("KFloppy"),
     version, description, KAboutData::License_GPL,
     "(c) 1997, Bernd Johannes Wuebben");
   aboutData.addAuthor("Bernd Johannes Wuebben",0, "wuebben@math.cornell.edu");
