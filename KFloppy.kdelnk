@@ -1,9 +1,11 @@
 # KDE Config File
 [KDE Desktop Entry]
 Comment[C]=Floppy Formater
+Comment[fi]=Levykkeiden formatoija
 BinaryPattern=kfloppy;
 Protocols=
 Name[C]=KFloppy
+Name[fi]=Levykehallinta
 MimeType=
 DocPath=kfloppy/kfloppy.html
 Comment=
