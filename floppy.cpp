@@ -334,7 +334,7 @@ void FloppyData::reset(){
       proc->kill();
   }
   proc = 0L;
-  progress->setProgress(0);
+  progress->setValue(0);
   frame->clear();
   formatbutton->setText(i18n("&Format"));
   label1->setEnabled(true);
@@ -403,8 +403,8 @@ void FloppyData::format(){
   badblocks = 0;
   abort = false;
   formating = true;
-  progress->setTotalSteps(tracks*2);
-  progress->setProgress(0);
+  progress->setRange(0, tracks*2);
+  progress->setValue(0);
   counter = 0;
 
   proc = new KProcess;
@@ -472,7 +472,7 @@ void FloppyData::readStdout(KProcess *, char *buffer, int buflen)
   if (increment)
   {
     counter ++;
-    progress->setProgress(counter);     
+    progress->setValue(counter);     
   }
 #ifdef MY_DEBUG
     printf("STDOUT:%s\n",mybuffer);
@@ -589,7 +589,7 @@ printf("Block Counter: %d\n",counter);
 
   fsstring = newstring;
 
-  progress->setProgress(counter);     
+  progress->setValue(counter);     
 #ifdef MY_DEBUG
   printf("STDOUT:%s\n",mybuffer);
 #endif
@@ -771,7 +771,7 @@ void FloppyData::createfilesystem()
     KMessageBox::error(this, str);
     frame->clear();
     proc = 0L;
-    progress->setProgress(0);
+    progress->setValue(0);
   }
 }
 
