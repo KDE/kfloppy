@@ -1,6 +1,6 @@
 #ifndef _FORMAT_H
 #define _FORMAT_H
-/* $Id: $
+/* $Id$
 **
 ** Copyright (C) 2002 by Adriaan de Groot
 **
@@ -157,7 +157,7 @@ public:
 public slots:
 	// Format is called once to start a format.
 	// Every DiskFormat is responsible for emitting
-	// formatDone(int) when finished. 
+	// formatDone(int) when finished.
 	//
 	// d tells the DiskFormat which of its formats has been
 	// chosen -- it's a member of the  the list
@@ -190,7 +190,7 @@ signals:
 	// will remain disabled.
 	//
 	//
-	void formatDone(int errno);
+	void formatDone(int errorno);
 
 	// Print a message in the status panel. This can indicate the
 	// phase the format is in, for multi-phase formats.
