@@ -40,7 +40,6 @@ Name[sk]=Formátovaè diskiet
 Name[sv]=Diskettformaterare
 MimeType=
 DocPath=kfloppy/kfloppy.html
-Comment=
 Exec=kfloppy  -caption "%c" %i %m
 Icon=kfloppy.xpm
 TerminalOptions=
