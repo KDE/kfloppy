@@ -3,7 +3,7 @@
  */
 
 #include <stdio.h>
-
+#include <string.h>/*BERND*/
 #include "uuidP.h"
 
 int uuid_parse(char *in, uuid_t uu)

@@ -2,6 +2,7 @@
  * Internal routine for unpacking UUID
  */
 
+#include <string.h>/*BERND*/
 #include "uuidP.h"
 
 void uuid_unpack(uuid_t in, struct uuid *uu)

@@ -8,6 +8,7 @@
 #include <stdio.h>
 #include <unistd.h>
 #include <stdlib.h>
+#include <string.h> /*BERND*/
 #include <time.h>
 #ifdef HAVE_ERRNO_H
 #include <errno.h>

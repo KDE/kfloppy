@@ -2,6 +2,7 @@
  * Internal routine for packing UUID's
  */
 
+#include <string.h> /*BERND*/
 #include "uuidP.h"
 
 void uuid_pack(struct uuid *uu, uuid_t ptr)

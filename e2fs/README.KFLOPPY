@@ -1,16 +1,34 @@
 
-This code is all part of e2fsprogs-1.06. However, 
-in order to keep the kfloppy distribution small, I have
-thrown out everything that wasn't needed for kfloppy. 
-However I have throw out only complete subdirectories with the
-expection of the misc subdiretory. 
+Sun Jan 11 12:30:11 EST 1998:
+
+Had to make the following changes for linux-alpha:
+
+added:
+#include <string.h>
+to:
+kfloppy/e2fs/lib/ext2fs/dirblock.c
+kfloppy/e2fs/lib/e2p/uuid.c
+kfloppy/e2fx/lib/uuid/pack.c
+kfloppy/e2fs/lib/uuid/parse.c
+kfloppy/e2fs/lib/uuid/unpack.c
+
+Simply search for the string 'BERND' to find the affected lines.
+================================================================
+
+
+All code in the kfloppy/e2fs subdirectory  is all part 
+of e2fsprogs-1.06. However, in order to keep the 
+kfloppy distribution small, I have thrown out those parts of the
+e2fsprogs package that weren't needed for kfloppy. 
+I have thrown out only complete subdirectories with the
+expection of the misc subdiretory.
 
 I have left all sources and file unmodified with the execption of
 badblock.c and mke2fs.c in the 'misc' directory form which
 I create a new program kmke2fs which in turn is used by kfloppy.
 
 All this means it should be very easy to sync these source with
-newer releases of ext2fsprogs. But it would certainly make no
+newer releases of ext2fsprogs. It would certainly make no
 sense for me to distribute all of e2fsprogs with kfloppy.
 
 Bernd Wuebben

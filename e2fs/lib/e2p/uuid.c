@@ -2,6 +2,7 @@
  * uuid.c -- utility routines for manipulating UUID's.
  */
 
+#include <string.h> /*BERND*/
 #include <stdio.h>
 #include <linux/types.h>
 
