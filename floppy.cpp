@@ -972,7 +972,7 @@ void FloppyData::help(){
 
 void FloppyData::writeSettings(){
 
-        config = mykapp->getConfig();
+        config = mykapp->config();
 	config->setGroup("GeneralData");
 
 	densityconfig = densityComboBox->currentText();
@@ -1006,7 +1006,7 @@ void FloppyData::writeSettings(){
 
 void FloppyData::readSettings(){
 
-        config = mykapp->getConfig();
+        config = mykapp->config();
 	config->setGroup("GeneralData");
 
 	labelconfig = config->readNumEntry("CreateLabel",1);
