@@ -46,7 +46,7 @@
 #include <kprocess.h>
 #include <klocale.h>
 #include <kconfig.h>
-#include <kapp.h>
+#include <kapplication.h>
 #include <kdialog.h>
 #include <khelpmenu.h>
 #include <kpopupmenu.h>
