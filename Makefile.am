@@ -7,9 +7,9 @@ INCLUDES =	$(all_includes)
 bin_PROGRAMS  = kfloppy
 
 noinst_HEADERS = floppy.h
-kfloppy_SOURCES	= main.cpp floppy.cpp format.cpp zip.cpp
+kfloppy_SOURCES	= main.cpp format.cpp floppy.cpp 
 
-METASOURCES = floppy.moc format.moc zip.moc
+METASOURCES = format.moc floppy.moc
 
 KDE_ICON = kfloppy
 

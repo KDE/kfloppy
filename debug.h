@@ -1,8 +1,12 @@
+#ifndef DEBUG_H
+#define DEBUG_H
 
 #ifdef DEBUG
-#define DEBUGSETUP	qDebug(__PRETTY_FUNCTION__)
-#define DEBUGS(a)	qDebug(a)
-#define DEBUGSZ(s)	qDebug(QString("  Size %1x%2.").arg(s.width()).arg(s.height()).latin1());
+#define KFAREA		(2002)
+
+#define DEBUGSETUP	kdDebug(KFAREA) << (__PRETTY_FUNCTION__)
+#define DEBUGS(a)	kdDebug(KFAREA) << "  " << a
+#define DEBUGSZ(s)	kdDebug(KFAREA) << QString("  Size %1x%2.").arg(s.width()).arg(s.height());
 #else
 #define DEBUGSETUP
 #define DEBUGS(a)
@@ -23,4 +27,11 @@
 #endif
 
 
+
+#undef ANY_BSD
+#undef ANY_LINUX
+
+#define ANY_LINUX
+
+#endif
 
