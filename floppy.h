@@ -55,8 +55,6 @@ public:
     bool findDevice();
     // set default device
     bool setInitialDevice(const QString& dev);
-    // Startup check for nescessary executables
-    void findExecutables();
     // Override closeEvent() in order to properly close
     // the entire application.    
     void closeEvent(QCloseEvent*);
@@ -145,6 +143,7 @@ private:
 	
 	KFActionQueue *formatActions;
 
+        bool m_canLowLevel; ///< Low level formatting is possible (i.e. fdformat was found)
 protected:
 	void keyPressEvent(QKeyEvent *e);
 

@@ -33,7 +33,7 @@
 #ifndef DEBUG_H
 #define DEBUG_H
 
-#ifdef DEBUG
+#ifndef NDEBUG
 #define KFAREA		(2002)
 
 #define DEBUGSETUP	kdDebug(KFAREA) << (__PRETTY_FUNCTION__) << endl
