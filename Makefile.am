@@ -1,6 +1,7 @@
 
 
-kfloppy_LDFLAGS	= $(all_libraries) -lkdeui -lkdecore -lqt -lXext -lX11 -lm
+kfloppy_LDFLAGS	= $(all_libraries)  $(KDE_RPATH)
+kfloppy_LDADD = -lkdeui -lkdecore -lqt -lXext -lX11 -lm
 LDFLAGS =        -lm
 INCLUDES =	$(all_includes)
 
