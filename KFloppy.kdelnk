@@ -5,6 +5,7 @@ BinaryPattern=kfloppy;
 Protocols=
 Name[C]=KFloppy
 MimeType=
+DocPath=kfloppy/kfloppy.html
 Comment=
 Exec=kfloppy
 Icon=kfloppy.xpm
