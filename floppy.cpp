@@ -25,6 +25,8 @@
 #include "floppy.h"
 #include "floppy.moc"
 
+#include <kconfig.h>
+
 extern KApplication *mykapp;
 
 extern "C" {
