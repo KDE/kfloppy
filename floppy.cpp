@@ -27,6 +27,12 @@
 #include "floppy.h"
 #include "floppy.moc"
 
+#include <qlayout.h>
+#include <qlabel.h>
+#include <qpushbutton.h>
+#include <qcombo.h>
+
+
 #include <kconfig.h>
 #include <kglobal.h>
 #include <kstddirs.h>
@@ -34,7 +40,7 @@
 
 
 FloppyData::FloppyData(QWidget * parent, const char * name)
- : KMainWindow( parent, name )
+ : KDialog( parent, name )
 {
 
         proc = 0L;
@@ -45,105 +51,121 @@ FloppyData::FloppyData(QWidget * parent, const char * name)
 	tracks = 0;
 	blocks = 0;
 
-        outerframe = new QGroupBox(this,"box");
-	outerframe->setGeometry(5,5,350,360);
-	outerframe->setFrameStyle(QFrame::Box|QFrame::Sunken);
+        QVBoxLayout* ml = new QVBoxLayout( this, 10 );
+
+        QHBoxLayout* h1 = new QHBoxLayout( ml );
+
+        QVBoxLayout* v1 = new QVBoxLayout( h1 );
+        h1->addSpacing( 5 );
+
+        QGridLayout* g1 = new QGridLayout( v1, 3, 2 );
 
         label1 = new QLabel(this);
 	label1->setText(i18n("Floppy Drive:"));
-	label1->setGeometry( 20, 20, 130, 25 );
+	 label1->setFixedSize( label1->sizeHint() );
+        g1->addWidget( label1, 0, 0, AlignLeft );
 
 
 	deviceComboBox = new QComboBox( FALSE, this, "ComboBox_1" );
-	deviceComboBox->setGeometry( 120, 20, 100, 25 );
-	deviceComboBox->setAutoResize( FALSE );
+	deviceComboBox->setFixedSize( deviceComboBox->sizeHint() );
+	g1->addWidget( deviceComboBox, 0, 1, AlignLeft );
 
         label2 = new QLabel(this);
 	label2->setText(i18n("Density:"));
-	label2->setGeometry( 20, 55, 130, 25 );
-
+        label2->setFixedSize( label2->sizeHint() );
+        g1->addWidget( label2, 1, 0, AlignLeft );
 
 	densityComboBox = new QComboBox( FALSE, this, "ComboBox_1" );
-	densityComboBox->setGeometry( 120, 55, 100, 25 );
-	densityComboBox->setAutoResize( FALSE );
+	densityComboBox->setFixedSize( densityComboBox->sizeHint() );
+	g1->addWidget( densityComboBox, 1, 1, AlignLeft );
 
         label3 = new QLabel(this);
 	label3->setText(i18n("File System:"));
-	label3->setGeometry( 20,90, 130, 25 );
+	label3->setFixedSize( label3->sizeHint() );
+        g1->addWidget( label3, 2, 0, AlignLeft );
 
  	filesystemComboBox = new QComboBox( FALSE, this, "ComboBox_2" );
-	filesystemComboBox->setGeometry( 120, 90, 100, 25 );
-	filesystemComboBox->setAutoResize( FALSE );
+	filesystemComboBox->setFixedSize( filesystemComboBox->sizeHint() );
+	g1->addWidget( filesystemComboBox, 2, 1, AlignLeft );
+
+       v1->addSpacing( 10 );
+
+        buttongroup = new QButtonGroup( this, "ButtonGroup_1" );
+	buttongroup->setFrameStyle( 49 );
+	v1->addWidget( buttongroup );
+
+        QVBoxLayout* v2 = new QVBoxLayout( buttongroup, 10 );
+
+	quick = new QRadioButton( buttongroup, "RadioButton_2" );
+	quick->setText(i18n( "Quick Erase") );
+	quick->setAutoResize( TRUE );
+        v2->addWidget( quick, AlignLeft );
+
+	fullformat = new QRadioButton( buttongroup, "RadioButton_3" );
+	fullformat->setText(i18n( "Full Format") );
+	fullformat->setAutoResize( TRUE );
+	fullformat->setChecked(TRUE);
+        v2->addWidget( fullformat, AlignLeft );
+
+	labellabel = new QCheckBox( buttongroup, "RadioButton_4" );
+	labellabel->setText(i18n( "Create Label:") );
+	labellabel->setAutoResize( TRUE );
+	labellabel->setChecked(TRUE);
+        v2->addWidget( labellabel, AlignLeft );
+
+        QHBoxLayout* h2 = new QHBoxLayout( v2 );
+        h2->addSpacing( 20 );
+
+	lineedit = new QLineEdit( buttongroup, "Lineedit" );
+	lineedit->setText(i18n( "KDE Floppy") );
+	lineedit->setMaxLength(11);
+        lineedit->setMinimumWidth( lineedit->sizeHint().width() );
+        h2->addWidget( lineedit, AlignRight );
+
+        QVBoxLayout* v3 = new QVBoxLayout( h1 );
 	
 	quitbutton = new QPushButton( this, "PushButton_1" );
-	quitbutton->setGeometry( 240, 40, 100, 25 );
 	quitbutton->setText(i18n( "Quit") );
 	quitbutton->setAutoRepeat( FALSE );
 	quitbutton->setAutoResize( FALSE );
 	connect(quitbutton,SIGNAL(clicked()),this,SLOT(quit()));
+	 v3->addWidget( quitbutton );
 
 	aboutbutton = new QPushButton( this, "PushButton_2" );
-	aboutbutton->setGeometry( 240, 75, 100, 25 );
 	aboutbutton->setText( i18n("About") );
 	aboutbutton->setAutoRepeat( FALSE );
 	aboutbutton->setAutoResize( FALSE );
 	connect(aboutbutton,SIGNAL(clicked()),this,SLOT(about()));
+        v3->addWidget( aboutbutton );
+        v3->addStretch( 1 );
 
 	helpbutton = new QPushButton( this, "PushButton_1" );
-	helpbutton->setGeometry( 240, 165, 100, 25 );
 	helpbutton->setText(i18n( "Help") );
 	helpbutton->setAutoRepeat( FALSE );
 	helpbutton->setAutoResize( FALSE );
 	connect(helpbutton,SIGNAL(clicked()),this,SLOT(help()));
-
-
+        v3->addWidget( helpbutton );
 
 	formatbutton = new QPushButton( this, "PushButton_3" );
-	formatbutton->setGeometry( 240, 200, 100, 25 );
 	formatbutton->setText(i18n( "Format") );
 	formatbutton->setAutoRepeat( FALSE );
 	formatbutton->setAutoResize( FALSE );
 	connect(formatbutton,SIGNAL(clicked()),this,SLOT(format()));
+        v3->addWidget( formatbutton );
 
-
-	progress = new KProgress( this, "Progress" );
-	progress->setGeometry( 20, 325, 320, 30 );
-	progress->setFont(QFont("Helvetica",12,QFont::Normal));
-	progress->setBarColor(QApplication::winStyleHighlightColor());
+        ml->addSpacing( 10 );
 
 	frame = new QLabel( this, "NewsWindow" );
-	frame->setGeometry( 20, 275, 320, 38 );
+	frame->setMinimumHeight( 30 );
 	frame->setFrameStyle(QFrame::Panel | QFrame::Sunken);
 	frame->setAlignment(AlignCenter|WordBreak|ExpandTabs);
+        ml->addWidget( frame );
 	
-	buttongroup = new QButtonGroup( this, "ButtonGroup_1" );
-	buttongroup->setGeometry( 20, 125, 200, 135 );
-	buttongroup->setFrameStyle( 49 );
-	buttongroup->setAlignment( 1 );
-
-	quick = new QRadioButton( buttongroup, "RadioButton_2" );
-	quick->setGeometry( 15, 10, 170, 30 );
-	quick->setText(i18n( "Quick Erase") );
-	quick->setAutoResize( TRUE );
-
-	fullformat = new QRadioButton( buttongroup, "RadioButton_3" );
-	fullformat->setGeometry( 15, 40, 170, 30 );
-	fullformat->setText(i18n( "Full Format") );
-	fullformat->setAutoResize( TRUE );
-	fullformat->setChecked(TRUE);
-
-	labellabel = new QCheckBox( this, "RadioButton_4" );
-	labellabel->setGeometry( 35, 195, 170, 30 );
-	labellabel->setText(i18n( "Create Label:") );
-	labellabel->setAutoResize( TRUE );
-	labellabel->setChecked(TRUE);
-
-	lineedit = new QLineEdit( this, "Lineedit" );
-	lineedit->setGeometry( 35, 225, 170, 25 );
-	lineedit->setText(i18n( "KDE Floppy") );
-	lineedit->setMaxLength(11);
-
-
+	progress = new KProgress( this, "Progress" );
+	progress->setFont(QFont("Helvetica",12,QFont::Normal));
+	progress->setBarColor(QApplication::winStyleHighlightColor());
+        progress->setMinimumHeight( 30 );
+        ml->addWidget( progress );
 
 	mytimer = new QTimer;
 	connect(mytimer,SIGNAL(timeout()),this,SLOT(cf2done()));
@@ -171,8 +193,7 @@ FloppyData::FloppyData(QWidget * parent, const char * name)
 	if(!findExecutables())
 	  formatbutton->setEnabled(FALSE);
 
-	resize( 360, 370 );
-	setFixedSize(360,370);
+	setFixedSize( minimumSize() );
 }
 
 

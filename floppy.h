@@ -48,7 +48,7 @@
 #include <kconfig.h>
 #include "about.h"
 #include <kapp.h>
-#include <kmainwindow.h>
+#include <kdialog.h>
 
 
 #define FLOPPYA3 "A: 3.5"
@@ -57,7 +57,7 @@
 #define FLOPPYB5 "B: 5.25"
 
 
-class FloppyData : public KMainWindow
+class FloppyData : public KDialog
 {
     Q_OBJECT
 
