@@ -165,8 +165,8 @@ FloppyData::FloppyData
 	addDevice(FLOPPYA5);
 	addDevice(FLOPPYB3);
 	addDevice(FLOPPYB5);
-	addDensity("HD");	
-	addDensity("DD");	
+	addDensity(i18n("HD"));	
+	addDensity(i18n("DD"));	
 	addFileSystem("Dos");
 	addFileSystem("ext2fs");
 
@@ -191,7 +191,7 @@ void FloppyData::closeEvent(QCloseEvent*){
    
 }
 
-void FloppyData::addDevice(char* name){
+void FloppyData::addDevice(const char* name){
 
 
   deviceComboBox->insertItem(name);
@@ -199,7 +199,7 @@ void FloppyData::addDevice(char* name){
 
 
 
-void FloppyData::addDensity(char* name){
+void FloppyData::addDensity(const char* name){
 
 
   densityComboBox->insertItem(name);
@@ -207,7 +207,7 @@ void FloppyData::addDensity(char* name){
 
 
 
-void FloppyData::addFileSystem(char* name){
+void FloppyData::addFileSystem(const char* name){
 
   filesystemComboBox->insertItem(name);
 

@@ -72,9 +72,9 @@ public:
     );
 
     virtual ~FloppyData();
-    void addDevice(char* name);
-    void addFileSystem(char* name);
-    void addDensity(char* name);
+    void addDevice(const char* name);
+    void addFileSystem(const char* name);
+    void addDensity(const char* name);
     bool findDevice();
     bool findExecutables();
     void closeEvent(QCloseEvent*);
