@@ -308,19 +308,19 @@ bool FloppyData::findExecutables(){
   QFileInfo info;
   QString directory;
  
-  directory = mykapp->kdedir();
+  directory = mykapp->kde_bindir();
 
-  info.setFile(directory + "/bin/kfdformat");
+  info.setFile(directory + "/kfdformat");
   if (info.isExecutable()){
     mkformat = true;
   }
 
-  info.setFile(directory + "/bin/kmke2fs");
+  info.setFile(directory + "/kmke2fs");
   if (info.isExecutable()){
     mke2fs = true;
   }
 
-  info.setFile(directory + "/bin/kmkdosfs");
+  info.setFile(directory + "/kmkdosfs");
   if (info.isExecutable()){
     mkdosfs = true;
   }

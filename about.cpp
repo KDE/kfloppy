@@ -39,7 +39,7 @@ MyAbout::MyAbout(QWidget *parent) : QDialog(parent, "About KFloppy Formater", TR
   setFixedSize(size());
   setCaption(i18n("About KDE Floppy Formater"));
 
-  QString pixdir = mykapp->kdedir() + QString("/share/apps/kfloppy/pics/");  
+  QString pixdir = mykapp->kde_datadir() + QString("/kfloppy/pics/");  
   QPixmap pm((pixdir + "kfloppylogo.xpm").data());
   QLabel *logo = new QLabel(this);
   logo->setPixmap(pm);
