@@ -662,7 +662,7 @@ void FloppyData::cf2done(){
 
   if(!lcquick){
     QString str = i18n(
-		"The floppy was sucessfully formatted.\n"
+		"The floppy was successfully formatted.\n"
 		"Blocks marked bad: %1\n"
 		"Raw Capacity: %2\n")
 		.arg(badblocks)
@@ -671,7 +671,7 @@ void FloppyData::cf2done(){
     KMessageBox::information(this, str);
   }
   else{
-    QString str = i18n("All files were sucessfully erased.");
+    QString str = i18n("All files were successfully erased.");
 
     KMessageBox::information(this, str);
   }
