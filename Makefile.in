@@ -1,6 +1,7 @@
 # $Id$
 
 prefix  = @prefix@
+exec_prefix = @exec_prefix@
 install_root = @install_root@
 BINDIR  = @kde_bindir@
 DOCSDIR = @kde_htmldir@/en/kfloppy
