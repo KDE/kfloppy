@@ -36,7 +36,7 @@
 <!-- TRANS:ROLES_OF_TRANSLATORS -->
 </authorgroup>
 
-<date>2000-12-14</date>
+<date>2002-05-03</date>
 <releaseinfo>1.03.00</releaseinfo>
 
 <copyright>
@@ -90,7 +90,7 @@ at the top left center of &kfloppy;.</para>
 <title>Floppy Drive</title>
 
 <para>Clicking on the top drop down box, which is labeled
-<guilabel>Floppy Drive</guilabel>floppy>, offers the user the following
+<guilabel>Floppy drive:</guilabel>floppy>, offers the user the following
 four choices:</para>
 
 <itemizedlist>
@@ -188,7 +188,7 @@ written to the floppy.  This allows bad sectors to be identified.
 <title>Volume Label</title>
 
 <para>The bottom two features allow the user to add (or change) a
-label to the diskette.  If the <guilabel>Volume Label</guilabel> check
+label to the diskette.  If the <guilabel>Volume label:</guilabel> check
 box is selected then the user can enter a name (label) for the
 diskette that is to be formatted in the text box located immediately
 below.  When the diskette is subsequently formatted the label will be
@@ -224,7 +224,7 @@ verification stage of the process this will be displayed.</para>
 <para>The lower box is a progress bar.  This displays both graphically
 and numerically the progress of first the formatting and then the
 verification.  Before starting it appears to be empty - showing only
-the figure <guilabel>0%</guilabel> in the center.  As each process
+the figure 0% in the center.  As each process
 takes place the progress is tracked graphically as the box fills from
 left to right.  At the same time the number in the center will
 increase reflecting the precise percentage of the process that has
