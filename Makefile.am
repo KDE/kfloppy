@@ -27,11 +27,13 @@ all-local: kmke2fs
 kmke2fs: e2fs/misc/mke2fs.c e2fs/misc/badblocks.c 
 	(cd e2fs && $(MAKE) &&  cp misc/kmke2fs ../ &&  strip ../kmke2fs)
 
-distclean-local:
+distclean-local: 
 	(cd e2fs && $(MAKE) distclean)
+	-rm -f kmke2fs
 
 clean-local:
 	(cd e2fs && $(MAKE) clean)
+	-rm -f kmke2fs
 
 icon_DATA = kfloppy.xpm
 icondir = $(kde_icondir)
