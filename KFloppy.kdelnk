@@ -1,6 +1,7 @@
 # KDE Config File
 [KDE Desktop Entry]
 Comment=Floppy Formatter
+Comment[br]=Mentrezher pladennig
 Comment[ca]=Formatador de disquet
 Comment[cs]=Formátovaè disket
 Comment[da]=Formatterer disketter
@@ -9,7 +10,7 @@ Comment[es]=Formateador de Disquetes
 Comment[fi]=Levykkeiden alustusohjelma
 Comment[fr]=Formatteur de disquettes
 Comment[hr]=Formatiranje disketa
-Comment[hu]=Floppy formattals
+Comment[hu]=Floppy formattalás
 Comment[is]=kfloppy:  Tól til að forsníða diskettur
 Comment[no]=Diskettformaterer
 Comment[pl]=Program formatuj±cy dyskietki
@@ -23,6 +24,7 @@ Comment[sv]=Formaterar disketter
 BinaryPattern=kfloppy;
 Protocols=
 Name=KFloppy
+Name[br]=Kpladennig
 Name[ca]=Disquet
 Name[cs]=Formátovaè disket
 Name[de]=Formatierer
@@ -30,7 +32,7 @@ Name[es]=Formateador
 Name[fi]=Levykkeen alustus
 Name[fr]=Formatteur
 Name[hr]=Formatiranje disketa
-Name[hu]=Floppy formazs
+Name[hu]=Floppy formazás
 Name[is]=Diskettutól
 Name[no]=Formaterer
 Name[pt]=Formatador
