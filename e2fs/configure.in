@@ -409,6 +409,7 @@ AC_CHECK_HEADER(linux/fs.h, [linux_headers=yes], [linux_headers=no])
 AC_SUBST(EXTRA_PROGS)
 if test "$linux_headers" = yes; then
   AC_DEFINE(HAVE_LINUX_FS_H)
+  AC_DEFINE(HAVE_LINUX_MAJOR_H)
   # These are some programs that depend on having linux headers around, and
   # won't work otherwise.  So we only compile them if we can.
   EXTRA_PROGS="$EXTRA_PROGS flushb"
