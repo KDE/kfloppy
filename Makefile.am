@@ -50,6 +50,8 @@ install-exec-local: kmke2fs
 install-data-local: 
 	$(mkinstalldirs) $(kde_minidir)
 	$(INSTALL_DATA) $(srcdir)/mini-kfloppy.xpm $(kde_minidir)/kfloppy.xpm
+	$(mkinstalldirs) $(kde_minidir)/../large
+	$(INSTALL_DATA) $(srcdir)/large-kfloppy.xpm $(kde_minidir)/../large/kfloppy.xpm
 
 messages:
 	$(XGETTEXT) -C -ki18n -x $(includedir)/kde.pot $(kfloppy_SOURCES) && mv messages.po ../po/kfloppy.pot
@@ -57,4 +59,5 @@ messages:
 uninstall-local:
 	rm -f $(BINDIR)/kmke2fs
 	rm -f $(kde_minidir)/kfloppy.xpm
+	rm -f $(kde_minidir)/../large/kfloppy.xpm
 
