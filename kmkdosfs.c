@@ -57,7 +57,12 @@
 #include <fcntl.h>
 #include <linux/hdreg.h>
 #include <linux/fs.h>
-//#include <linux/stat.h>
+
+/* this is to get rid of some warnings ... */
+#if  !(__GLIBC__ >= 2)  
+#include <linux/stat.h>
+#endif
+
 #include <linux/fd.h>
 #include <mntent.h>
 #include <signal.h>
