@@ -145,7 +145,7 @@ FloppyData::FloppyData
 
 	lineedit = new QLineEdit( this, "Lineedit" );
 	lineedit->setGeometry( 35, 225, 170, 25 );
-	lineedit->setText(i18n( "KDE FLoppy") );
+	lineedit->setText(i18n( "KDE Floppy") );
 	lineedit->setMaxLength(10);
 
 
@@ -159,7 +159,7 @@ FloppyData::FloppyData
 	errtimer = new QTimer;
 	connect(errtimer,SIGNAL(timeout()),this,SLOT(errslot()));
 
-	setCaption(i18n("KDE Floppy Formater"));
+	setCaption(i18n("KDE Floppy Formatter"));
 
 	addDevice(FLOPPYA3);
 	addDevice(FLOPPYA5);

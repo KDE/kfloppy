@@ -33,11 +33,11 @@
 
 extern KApplication *mykapp;
 
-MyAbout::MyAbout(QWidget *parent) : QDialog(parent, "About KFloppy Formater", TRUE) {
+MyAbout::MyAbout(QWidget *parent) : QDialog(parent, "About KFloppy Formatter", TRUE) {
 
   resize(350, 250);
   setFixedSize(size());
-  setCaption(i18n("About KDE Floppy Formater"));
+  setCaption(i18n("About KDE Floppy Formatter"));
 
   QString pixdir = mykapp->kde_datadir() + QString("/kfloppy/pics/");  
   QPixmap pm((pixdir + "kfloppylogo.xpm").data());
