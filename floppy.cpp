@@ -403,7 +403,7 @@ void FloppyData::format(){
     return;
   }
 
-  frame->setText(i18n("Formatting ..."));
+  frame->setText(i18n("Formatting..."));
   badblocks = 0;
   abort = false;
   formating = true;
@@ -566,7 +566,7 @@ printf("NEWLINE:%s\n",mystring.data());
     if(findKeyWord(mystring,"BBF ")){
       int bblock = mystring.left(8).toInt();
       QString mstr;
-      mstr = i18n("Block %1 is bad. Continuing ...").arg(bblock);
+      mstr = i18n("Block %1 is bad. Continuing...").arg(bblock);
       frame->setText(mstr);
     }
 
@@ -732,7 +732,7 @@ void FloppyData::createfilesystem()
   fsstring = "";
   fserrstring = "";
 
-  frame->setText(i18n("Creating Filesystem ..."));
+  frame->setText(i18n("Creating Filesystem..."));
 
   proc = new KProcess;
 
