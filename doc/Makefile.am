@@ -1,5 +1,5 @@
 
-doc_DATA = kfloppy-1.html kfloppy-2.html kfloppy-3.html kfloppy-4.html \
-	kfloppy-5.html kfloppy.html kfloppy.nif kfloppy.sgml logotp3.gif
+doc_DATA = index.html index-1.html index-2.html index-3.html index-4.html \
+	index.nif index.sgml logotp3.gif
 docdir = $(kde_htmldir)/en/kfloppy
 
