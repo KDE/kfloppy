@@ -18,6 +18,7 @@ Comment[pt_BR]=Formatador de disquetes
 Comment[ro]=Program de formatat dischete
 Comment[ru]=Программа для форматирования дискет
 Comment[sk]=FormАtovaХ diskiet
+Comment[sl]=Formatiranje disket
 Comment[sv]=Formaterar disketter
 BinaryPattern=kfloppy;
 Protocols=
