@@ -621,7 +621,7 @@ void FloppyData::readfsStdout(KProcess *, char *buffer, int buflen){
   
   QString string ;
   QString newstring = fsstring;
-  newstring.detach();
+  
 
   int i;
 

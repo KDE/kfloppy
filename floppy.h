@@ -26,19 +26,19 @@
 #define FloppyData_included
 
 #include <qwidget.h>
-#include <qbttngrp.h>
-#include <qcombo.h>
+#include <qbuttongroup.h>
+#include <qcombobox.h>
 #include <qframe.h>
-#include <qpushbt.h>
-#include <qradiobt.h>
+#include <qpushbutton.h>
+#include <qradiobutton.h>
 #include <qlabel.h>
 #include <qdialog.h>
-#include <qprogbar.h> 
+#include <qprogressbar.h> 
 #include <qtimer.h>
-#include <qfileinf.h>
-#include <qchkbox.h>
-#include <qlined.h>
-#include <qmsgbox.h>
+#include <qfileinfo.h>
+#include <qcheckbox.h>
+#include <qlineedit.h>
+#include <qmessagebox.h>
 
 #include <stdlib.h>
 #include <string.h>

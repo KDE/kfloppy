@@ -25,7 +25,7 @@
 
 #include "about.h"
 #include "version.h"
-#include <qpushbt.h>
+#include <qpushbutton.h>
 #include <qlabel.h>
 #include <qpixmap.h>
 #include <kapp.h>

@@ -28,15 +28,15 @@
 
 #include <qobject.h>
 #include <qstring.h>
-#include <qdstream.h>
-#include <qmsgbox.h>
+#include <qdatastream.h>
+#include <qmessagebox.h>
 #include <qstrlist.h> 
-#include <qtabdlg.h>
+#include <qtabdialog.h>
 #include <qdir.h>
-#include <qfileinf.h>
+#include <qfileinfo.h>
 #include <qstring.h>
 #include <qfile.h>
-#include <qtstream.h>
+#include <qtextstream.h>
 
 
 #include <unistd.h>
