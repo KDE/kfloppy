@@ -160,7 +160,7 @@ below:</para>
 <listitem>
 <para>This simply puts the new file system on the disk. All data on the
 disk is erased. If the density of the disk is different than the selected
-<link linkend="density">density</link>, then the tracks and sectors on the
+density, then the tracks and sectors on the
 disk will be reallocated before the file system is made.</para>
 </listitem>
 </varlistentry>
