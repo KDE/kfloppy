@@ -239,6 +239,7 @@ bool FloppyData::findDevice()
       mdev = "/dev/fd0";
       if( access(device.data(),W_OK) < 0){
 	device = "/dev/fd0u720";
+      }
     }
   }
 
