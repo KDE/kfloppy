@@ -39,7 +39,7 @@ FloppyData::FloppyData
 	const char* name
 )
 	:
-	QWidget( parent, name )
+	KMainWindow( parent, name )
 {
 
         proc = 0L;

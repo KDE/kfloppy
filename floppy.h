@@ -48,18 +48,16 @@
 #include <kconfig.h>
 #include "about.h"
 #include <kapp.h>
+#include <kmainwindow.h>
 
-
-#define EXT2_MF_MOUNTED		1
-#define EXT2_MF_ISROOT		2
-#define EXT2_MF_READONLY	4 
 
 #define FLOPPYA3 "A: 3.5"
 #define FLOPPYA5 "A: 5.25"
 #define FLOPPYB3 "B: 3.5"
 #define FLOPPYB5 "B: 5.25"
 
-class FloppyData : public QWidget
+
+class FloppyData : public KMainWindow
 {
     Q_OBJECT
 
