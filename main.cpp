@@ -26,15 +26,7 @@
     */
 
 
-#include <qobject.h>
-#include <qstring.h>
-#include <qdatastream.h>
 #include <qstrlist.h> 
-#include <qtabdialog.h>
-#include <qdir.h>
-#include <qfileinfo.h>
-#include <qfile.h>
-#include <qtextstream.h>
 
 
 #include <unistd.h>
@@ -44,8 +36,6 @@
 #include <sys/types.h>
 
 
-#include <kapp.h>
-#include <klocale.h>
 #include <kcmdlineargs.h>
 #include <kaboutdata.h>
 

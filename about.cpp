@@ -27,9 +27,6 @@
 #include "version.h"
 #include <qpushbutton.h>
 #include <qlabel.h>
-#include <qpixmap.h>
-#include <kapp.h>
-#include <kglobal.h>
 #include <kiconloader.h>
 #include <klocale.h>
 

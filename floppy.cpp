@@ -29,14 +29,9 @@
 
 #include <iostream.h>
 #include <qlayout.h>
-#include <qlabel.h>
-#include <qpushbutton.h>
-#include <qcombobox.h>
 
 
-#include <kconfig.h>
-#include <kglobal.h>
-#include <kstddirs.h>
+#include <kstandarddirs.h>
 #include <kmessagebox.h>
 
 
