@@ -46,9 +46,10 @@
 #include <kprocess.h>
 #include <klocale.h>
 #include <kconfig.h>
-#include "about.h"
 #include <kapp.h>
 #include <kdialog.h>
+#include <khelpmenu.h>
+#include <kpopupmenu.h>
 
 
 #define FLOPPYA3 "A: 3.5"
@@ -83,8 +84,6 @@ public slots:
       void quit();
       void format();
       void createfilesystem();
-      void about();
-      void help();
       void reset();
 
       void formatdone(KProcess* );
@@ -138,7 +137,6 @@ private:
 	QCheckBox*    labellabel;
 	QLineEdit*    lineedit;
 	QRadioButton* quick;
-	QPushButton* aboutbutton;
 	QPushButton* quitbutton;
 	QPushButton* helpbutton;
 	QRadioButton* fullformat;
@@ -148,6 +146,7 @@ private:
 	QComboBox* filesystemComboBox;
 	QComboBox* densityComboBox;
 	KProgress* progress;
+	KHelpMenu* helpMenu;
 
 protected:
 

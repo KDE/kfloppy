@@ -6,10 +6,10 @@ INCLUDES =	$(all_includes)
 
 bin_PROGRAMS  = kfloppy
 
-noinst_HEADERS = about.h floppy.h
-kfloppy_SOURCES	= main.cpp about.cpp floppy.cpp
+noinst_HEADERS = floppy.h
+kfloppy_SOURCES	= main.cpp floppy.cpp
 
-METASOURCES = about.moc floppy.moc
+METASOURCES = floppy.moc
 
 KDE_ICON = kfloppy
 

@@ -45,14 +45,16 @@
 static const char *description = 
 	I18N_NOOP("KDE Floppy Disk utility");
 
-static const char *version = "v1.3.0";
+static const char *version = "2.0";
 
 int main( int argc, char *argv[] )
 {
   KAboutData aboutData("kfloppy", I18N_NOOP("KFloppy"),
     version, description, KAboutData::License_GPL,
-    "(c) 1997, Bernd Johannes Wuebben");
-  aboutData.addAuthor("Bernd Johannes Wuebben",0, "wuebben@math.cornell.edu");
+    "(c) 1997, Bernd Johannes Wuebben\n"
+    "(c) 2001, Chris Howells");
+  aboutData.addAuthor("Bernd Johannes Wuebben", I18N_NOOP("Author, Maintainer"), "wuebben@kde.org");
+  aboutData.addAuthor("Chris Howells", I18N_NOOP("User interface re-design"), "howells@kde.org");
   KCmdLineArgs::init( argc, argv, &aboutData );
 
   KApplication a;

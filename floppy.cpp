@@ -122,18 +122,21 @@ FloppyData::FloppyData(QWidget * parent, const char * name)
 	connect(quitbutton,SIGNAL(clicked()),this,SLOT(quit()));
 	 v3->addWidget( quitbutton );
 
-	aboutbutton = new QPushButton( this, "PushButton_2" );
-	aboutbutton->setText( i18n("&About...") );
-	aboutbutton->setAutoRepeat( FALSE );
-	connect(aboutbutton,SIGNAL(clicked()),this,SLOT(about()));
-        v3->addWidget( aboutbutton );
+//	aboutbutton = new QPushButton( this, "PushButton_2" );
+//	aboutbutton->setText( i18n("&About...") );
+//	aboutbutton->setAutoRepeat( FALSE );
+//	connect(aboutbutton,SIGNAL(clicked()),this,SLOT(about()));
+//        v3->addWidget( aboutbutton );
         v3->addStretch( 1 );
+
+	//Setup the Help Menu
+	helpMenu = new KHelpMenu(this, KGlobal::instance()->aboutData(), false);
 
 	helpbutton = new QPushButton( this, "PushButton_4" );
 	helpbutton->setText(i18n( "&Help") );
 	helpbutton->setAutoRepeat( FALSE );
-	connect(helpbutton,SIGNAL(clicked()),this,SLOT(help()));
-        v3->addWidget( helpbutton );
+	helpbutton->setPopup(helpMenu->menu());
+	v3->addWidget( helpbutton );
 
 	formatbutton = new QPushButton( this, "PushButton_3" );
 	formatbutton->setText(i18n( "&Format") );
@@ -761,31 +764,6 @@ void FloppyData::createfilesystem()
     progress->setValue(0);
   }
 }
-
-
-
-void FloppyData::about(){
-
-  QDialog *dlg = new MyAbout(0);
-
-  QPoint point = this->mapToGlobal (QPoint (0,0));
-
-  QRect pos = this->geometry();
-  dlg->setGeometry(point.x() + pos.width()/2  - dlg->width()/2,
-		   point.y() + pos.height()/2 - dlg->height()/2, 
-		   dlg->width(),dlg->height());
-
-  dlg->exec();
-  delete dlg;
-
-}
-
-
-
-void FloppyData::help(){
-  kapp->invokeHelp( );
-}
-
 
 void FloppyData::writeSettings(){
 
