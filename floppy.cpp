@@ -175,6 +175,7 @@ FloppyData::FloppyData(QWidget * parent, const char * name)
 
 	progress = new KProgress( this, "Progress" );
         progress->setMinimumHeight( 30 );
+        progress->setDisabled( true );
         ml->addWidget( progress );
 
 	readSettings();
@@ -320,6 +321,7 @@ void FloppyData::setEnabled(bool b)
   helpbutton->setEnabled(b);
   quitbutton->setEnabled(b);
   formatbutton->setEnabled(b);
+  progress->setDisabled( b ); // The other way round!
 }
 
 void FloppyData::reset()
