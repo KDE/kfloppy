@@ -87,8 +87,8 @@ FloppyData::FloppyData(QWidget * parent, const char * name)
 	filesystemComboBox = new QComboBox( FALSE, this, "ComboBox_2" );
 	g1->addWidget( filesystemComboBox, 2, 1, AlignLeft );
 
-	filesystemComboBox->insertItem("DOS");
-	filesystemComboBox->insertItem("ext2");
+	filesystemComboBox->insertItem(i18n("Dos"));
+	filesystemComboBox->insertItem(i18n("ext2"));
 
         v1->addSpacing( 10 );
 
@@ -162,8 +162,6 @@ FloppyData::FloppyData(QWidget * parent, const char * name)
         ml->addWidget( frame );
 
 	progress = new KProgress( this, "Progress" );
-	progress->setFont(QFont("Helvetica",12,QFont::Normal));
-	progress->setBarColor(QApplication::winStyleHighlightColor());
         progress->setMinimumHeight( 30 );
         ml->addWidget( progress );
 
@@ -192,6 +190,9 @@ FloppyData::FloppyData(QWidget * parent, const char * name)
 
 FloppyData::~FloppyData()
 {
+  delete mytimer;
+  delete fserrtimer;
+  delete errtimer;
 }
 
 void FloppyData::closeEvent(QCloseEvent*){
@@ -274,7 +275,7 @@ bool FloppyData::findDevice()
   if( access(QFile::encodeName(device),W_OK) < 0){
 
     QString str = i18n(
-	      "Cannot access %1\nMake sure that the device exists and that\n"
+	      "Cannot access %1\nMake sure that the device exists and that "
 	      "you have write permission to it.").arg(device);
     KMessageBox::error(this, str);
 
@@ -323,6 +324,7 @@ void FloppyData::quit(){
   }
   writeSettings();
   kapp->quit();
+  delete this;
 }
 
 void FloppyData::reset(){
@@ -405,7 +407,7 @@ void FloppyData::format(){
   badblocks = 0;
   abort = false;
   formating = true;
-  progress->setRange(0,tracks*2);
+  progress->setRange(0, tracks*2);
   progress->setValue(0);
   counter = 0;
 
@@ -512,9 +514,9 @@ void FloppyData::errslot(){
   if(errstring.contains("ioctl(FDFMTBEG)")){
 
     QString str = i18n(
-		"Cannot access floppy or floppy drive\n"
-		"Please insert a floppy and make sure that you\n"
-		"have selected a valid floppy drive.\n");
+		"Cannot access floppy or floppy drive.\n"
+		"Please insert a floppy and make sure that you "
+		"have selected a valid floppy drive.");
 
     KMessageBox::error(this, str);
     
@@ -631,8 +633,8 @@ void FloppyData::readfsStderr(KProcess *, char *buffer, int buflen){
       pos++;
     }
 
-  printf("ERR: <%s>\n", mybuffer);
-  printf("pos=%d, len=%d\n", pos, amount);
+  //printf("ERR: <%s>\n", mybuffer);
+  //printf("pos=%d, len=%d\n", pos, amount);
 
   abort = true;
   fserrstring += mybuffer+pos;
@@ -650,9 +652,9 @@ void FloppyData::fserrslot(){
   if(fserrstring.contains("No such device")){
 
     QString str = i18n(
-		"Cannot access floppy or floppy drive\n"\
-		"Please insert a floppy and make sure that you\n"
- 		"have selected a valid floppy drive.\n");
+		"Cannot access floppy or floppy drive.\n"
+		"Please insert a floppy and make sure that you "
+ 		"have selected a valid floppy drive.");
 
     KMessageBox::sorry(this, str);
     
@@ -821,7 +823,7 @@ void FloppyData::readSettings(){
 
 	verifyconfig = config->readNumEntry("Verify", 1);
 	labelconfig = config->readNumEntry("CreateLabel",1);
-	labelnameconfig = config->readEntry("Label","KDE Floppy");
+	labelnameconfig = config->readEntry("Label",i18n("KDE Floppy"));
 	quickformatconfig = config->readNumEntry("QuickFormat",0);
 	driveconfig = config->readEntry("FloppyDrive","A: 3.5");
 	densityconfig = config->readEntry("Density",i18n("HD"));
