@@ -45,7 +45,7 @@
 #include <stdio.h>
 
 #ifdef HAVE_LINUX_FS_H
-#include <linux/fs.h>
+#include <linux/kdev_t.h>
 #endif
 #include <linux/ext2_fs.h>
 #ifdef HAVE_LINUX_MAJOR_H

@@ -9,7 +9,7 @@
 #include <sys/stat.h>
 #include <sys/ioctl.h>
 #include <linux/fd.h>
-#include <linux/fs.h>
+#include <linux/kdev_t.h>
 
 static int ctrl;
 struct floppy_struct param;

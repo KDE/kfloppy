@@ -40,7 +40,7 @@
 
 #if HAVE_LINUX_FS_H
 #include <linux/fd.h>
-#include <linux/fs.h>
+#include <linux/kdev_t.h>
 #endif
 
 #include "et/com_err.h"

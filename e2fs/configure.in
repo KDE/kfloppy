@@ -404,7 +404,7 @@ dnl On systems without linux header files, we add an extra include directory
 dnl that holds enough to fake it (hopefully).  Note that the $(top_srcdir) here
 dnl is quoted so that it gets expanded by make, not by configure.
 dnl
-AC_CHECK_HEADER(linux/fs.h, [linux_headers=yes], [linux_headers=no])
+AC_CHECK_HEADER(linux/kdev_t.h, [linux_headers=yes], [linux_headers=no])
 AC_SUBST(EXTRA_PROGS)
 if test "$linux_headers" = yes; then
   AC_DEFINE(HAVE_LINUX_FS_H)
