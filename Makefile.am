@@ -13,8 +13,7 @@ METASOURCES = format.moc floppy.moc
 
 KDE_ICON = kfloppy
 
-apps_DATA = KFloppy.desktop
-appsdir = $(kde_appsdir)/Utilities
+xdg_apps_DATA = KFloppy.desktop
 
 messages:
 	$(XGETTEXT) $(kfloppy_SOURCES) -o $(podir)/kfloppy.pot
