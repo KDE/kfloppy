@@ -471,7 +471,6 @@ void FDFormat::processStdOut(KProcess *, char *b, int l)
 	}
 #elif defined(ANY_LINUX)
 	s = QString::fromLatin1(b,l);
-#if 1
         QRegExp regexp( "([0-9]+)" );
         if ( regexp.search(s) > -1 )
         {
@@ -482,18 +481,6 @@ void FDFormat::processStdOut(KProcess *, char *b, int l)
                             p * 100 / deviceInfo->tracks);
             }
         }
-#else
-	int p;
-	if ((p=s.find("track")) != -1)
-	{
-		p+=5;
-		while ((0<=p) && (p<l) && (s[p].isSpace())) p++;
-		if (s[p].isDigit())
-		{
-			p=s.mid(p,8).toInt();
-		}
-	}
-#endif
 	else if (s.contains("ioctl(FDFMTBEG)"))
 	{
 		goto ioError;
