@@ -156,7 +156,7 @@ FloppyData::FloppyData(QWidget * parent, const char * name)
         ml->addSpacing( 10 );
 
 	frame = new QLabel( this, "NewsWindow" );
-	frame->setMinimumHeight( 30 );
+	frame->setMinimumHeight( 50 );
 	frame->setFrameStyle(QFrame::Panel | QFrame::Sunken);
 	frame->setAlignment(AlignCenter|WordBreak|ExpandTabs);
         ml->addWidget( frame );
