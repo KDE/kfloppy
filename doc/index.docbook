@@ -1,6 +1,7 @@
 <?xml version="1.0" ?>
 <!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.1-Based Variant V1.0//EN" "dtd/kdex.dtd" [
   <!ENTITY kappname "&kfloppy;">
+  <!ENTITY package "kdeutils">
   <!ENTITY % English "INCLUDE" > <!-- change language only here -->
   <!ENTITY % addindex "IGNORE">
 ]>
@@ -419,9 +420,8 @@ David Rugge <email>davidrugge@mindspring.com</email></para>
 <appendix id="installation">
 <title>Installation</title>
 
-<para>&kfloppy; is packaged as part of the kdeutils package.  For more
-information on installing and compiling KDE please see <ulink
-url="http://www.kde.org">www.kde.org</ulink>.</para>
+&install.intro.documentation;
+&install.compile.documentation;
 
 </appendix>
 </book>
@@ -435,5 +435,5 @@ sgml-indent-step:0
 sgml-indent-data:nil
 End:
 
-// vim:ts=0:sw=2:tw=78:noet
+// vim:ts=2:sw=2:tw=78:noet
 -->
