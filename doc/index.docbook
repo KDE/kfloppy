@@ -36,8 +36,8 @@
 <!-- TRANS:ROLES_OF_TRANSLATORS -->
 </authorgroup>
 
-<date>2002-05-03</date>
-<releaseinfo>1.03.00</releaseinfo>
+<date>2003-09-16</date>
+<releaseinfo>2.1</releaseinfo>
 
 <copyright>
 <year>2000</year>
@@ -111,7 +111,7 @@ disks in that fashion.</para>
 <title><guilabel>File Systems</guilabel></title>
 
 <para>The third drop down box, labeled File System, offers the user the
-following two choices:</para>
+following choices, if they are applicable:</para>
 
 <variablelist>
 <varlistentry>
@@ -123,9 +123,7 @@ choose this system if she or he will be using the diskette with those
 operating systems as they do not recognize other system types.</para>
 </listitem>
 </varlistentry>
-</variablelist>
 
-<variablelist>
 <varlistentry> 
 <term>ext2</term>
 <listitem>
@@ -133,6 +131,16 @@ operating systems as they do not recognize other system types.</para>
 on the diskette which is most commonly used with Linux.  The user will
 likely want to choose this system if he or she will only be using the
 floppy with &Linux;.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term>UFS</term>
+<listitem>
+<para>This selection will have &kfloppy; place the type of file system
+on the diskette which is most commonly used with FreeBSD.  The user will
+likely want to choose this system if he or she will only be using the
+floppy with FreeBSD.</para>
 </listitem>
 </varlistentry>
 </variablelist>
