@@ -482,10 +482,25 @@ void FDFormat::processStdOut(KProcess *, char *b, int l)
 	s = QString::fromLatin1(b,l);
 	DEBUGS(s);
         QRegExp regexp( "([0-9]+)" );
-        if ( regexp.search(s) > -1 )
+        if (s.startsWith("bad data at cyl") || s.startsWith("Problem reading cylinder"))
         {
+            const int track = regexp.cap(1).toInt();
+            if (track>=0)
+            {
+                emit status(i18n("Low-level formatting error at track %1!").arg(track), -1);
+            }
+            else
+            {
+                // This error should not happen
+                emit status(i18n("Low-level formatting error: %1").arg(s), -1);
+            }
+            return;
+        }
+        else if ( regexp.search(s) > -1 )
+        {
+            // Normal track number (formatting or verifying)
             const int p = regexp.cap(1).toInt();
-            if ((p>0) && (p<deviceInfo->tracks))
+            if ((p>=0) && (p<deviceInfo->tracks))
             {
                     emit status(QString::null,
                             p * 100 / deviceInfo->tracks);
