@@ -47,25 +47,25 @@
 
 
 #include <kapp.h>
-
+#include <klocale.h>
+#include <kcmdlineargs.h>
 
 #include "floppy.h"
 
 
-KApplication* mykapp;
+static const char *description = 
+	I18N_NOOP("KDE Floppy Disk utility");
 
-int main( int argc, char *argv[] ){
+static const char *version = "v0.0.1";
 
+int main( int argc, char *argv[] )
+{
+  KCmdLineArgs::init(argc, argv, "kfloppy", description, version);
 
-  KApplication a( argc, argv, "kfloppy" );
-  mykapp = &a;
+  KApplication a;
 
   FloppyData* floppy  = new FloppyData();
-#if 0  
-  a.enableSessionManagement(true);
-  a.setWmCommand(argv[0]);
-#endif  
-  
+
   a.setTopWidget(floppy);
   floppy->show();
   a.exec();

@@ -33,8 +33,6 @@
 #include <kiconloader.h>
 #include <klocale.h>
 
-extern KApplication *mykapp;
-
 MyAbout::MyAbout(QWidget *parent) : QDialog(parent, "About KFloppy Formatter", TRUE) {
 
   resize(350, 250);

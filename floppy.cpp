@@ -30,8 +30,6 @@
 #include <kstddirs.h>
 #include <kmessagebox.h>
 
-extern KApplication *mykapp;
-
 extern "C" {
 int  check_if_mounted(const char *file, int *mount_flags);
 }
@@ -376,10 +374,7 @@ void FloppyData::quit(){
     
   }
   writeSettings();
-  mykapp->quit();
-
-
-
+  kapp->quit();
 }
 
 void FloppyData::reset(){
@@ -877,16 +872,13 @@ void FloppyData::about(){
 
 
 void FloppyData::help(){
-
-  mykapp->invokeHTMLHelp("kfloppy/kfloppy.html","");
-
-
+  kapp->invokeHTMLHelp("kfloppy/kfloppy.html","");
 }
 
 
 void FloppyData::writeSettings(){
 
-        config = mykapp->config();
+        config = kapp->config();
 	config->setGroup("GeneralData");
 
 	densityconfig = densityComboBox->currentText();
@@ -920,7 +912,7 @@ void FloppyData::writeSettings(){
 
 void FloppyData::readSettings(){
 
-        config = mykapp->config();
+        config = kapp->config();
 	config->setGroup("GeneralData");
 
 	labelconfig = config->readNumEntry("CreateLabel",1);
