@@ -160,8 +160,8 @@ FloppyData::FloppyData(QWidget * parent, const char * name)
         h2->addSpacing( 20 );
 
 	lineedit = new QLineEdit( buttongroup, "Lineedit" );
-	lineedit->setText(i18n( "KDE Floppy") );
-	lineedit->setMaxLength(11); // ### TODO: translators need to need this limit!!!
+	lineedit->setText(i18n( "Volume label, maximal 11 characters", "KDE Floppy" ) );
+	lineedit->setMaxLength(11);
         lineedit->setMinimumWidth( lineedit->sizeHint().width() );
         h2->addWidget( lineedit, AlignRight );
 
