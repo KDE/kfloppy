@@ -29,7 +29,6 @@
 #include <qobject.h>
 #include <qstring.h>
 #include <qdatastream.h>
-#include <qmessagebox.h>
 #include <qstrlist.h> 
 #include <qtabdialog.h>
 #include <qdir.h>
