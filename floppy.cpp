@@ -28,7 +28,6 @@
 #include <qcursor.h>
 #include <qradiobutton.h>
 #include <qbuttongroup.h>
-#include <qcombobox.h>
 
 #include <kconfig.h>
 
@@ -40,6 +39,7 @@
 #include <kapplication.h>
 #include <kprogress.h>
 #include <klocale.h>
+#include <kcombobox.h>
 
 #include "floppy.moc"
 #include "format.h"
@@ -70,7 +70,7 @@ FloppyData::FloppyData(QWidget * parent, const char * name)
         g1->addWidget( label1, 0, 0, AlignLeft );
 
 
-	deviceComboBox = new QComboBox( false, this, "ComboBox_1" );
+	deviceComboBox = new KComboBox( false, this, "ComboBox_1" );
 	g1->addWidget( deviceComboBox, 0, 1, AlignLeft );
 
 	deviceComboBox->insertItem(i18n("Primary"));
@@ -80,7 +80,7 @@ FloppyData::FloppyData(QWidget * parent, const char * name)
 	label2->setText(i18n("Size:"));
         g1->addWidget( label2, 1, 0, AlignLeft );
 
-	densityComboBox = new QComboBox( false, this, "ComboBox_1" );
+	densityComboBox = new KComboBox( false, this, "ComboBox_1" );
 	g1->addWidget( densityComboBox, 1, 1, AlignLeft );
 
 	densityComboBox->insertItem(i18n("3.5\" 1.44MB"));
@@ -93,7 +93,7 @@ FloppyData::FloppyData(QWidget * parent, const char * name)
 	label3->setText(i18n("File system:"));
         g1->addWidget( label3, 2, 0, AlignLeft );
 
-	filesystemComboBox = new QComboBox( false, this, "ComboBox_2" );
+	filesystemComboBox = new KComboBox( false, this, "ComboBox_2" );
 	g1->addWidget( filesystemComboBox, 2, 1, AlignLeft );
 
         // If you modify the user visible string, change them also (far) below
