@@ -12,7 +12,7 @@ noinst_HEADERS = about.h floppy.h
 kfloppy_SOURCES	= main.cpp about.cpp floppy.cpp mount.c
 
 # to put kmke2fs into BUILT_SOURCES is somehow Trick 17B ;)
-BUILT_SOURCES = kmke2fs about.moc floppy.moc
+BUILT_SOURCES = about.moc floppy.moc
 DISTCLEANFILES = $(BUILT_SOURCES)
 
 kmkdosfs_SOURCES = kmkdosfs.c
@@ -20,6 +20,8 @@ kmkdosfs_SOURCES = kmkdosfs.c
 kfdformat_SOURCES = kfdformat.c
 
 SUBDIRS = doc
+
+all-local: kmke2fs
 
 # since the e2fs sources are just bundled, we need some magic to build them
 kmke2fs: e2fs/misc/mke2fs.c e2fs/misc/badblocks.c 
