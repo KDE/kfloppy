@@ -38,7 +38,7 @@ static const char version[] = "2.2";
 
 static const KCmdLineOptions options[] =
 {
-	{ "+[device]", I18N_NOOP("Default Device"), 0 },
+	{ "+[device]", I18N_NOOP("Default device"), 0 },
 	KCmdLineLastOption
 };
 
