@@ -45,7 +45,7 @@ static QString extPath = QString::null;
 		path.append("/usr/sbin:/sbin");
 		extPath = path;
 	}
-		
+
 	return KGlobal::dirs()->findExe(e, extPath);
 }
 
@@ -96,7 +96,7 @@ KFActionQueue::~KFActionQueue()
 void KFActionQueue::queue(KFAction *p)
 {
 	DEBUGSETUP;
-	
+
 	d->list.append(p);
 	DEBUGS(p->name());
 }
@@ -104,14 +104,14 @@ void KFActionQueue::queue(KFAction *p)
 /* virtual */ void KFActionQueue::exec()
 {
 	DEBUGSETUP;
-	
+
 	actionDone(0L,true);
 }
 
 /* slot */ void KFActionQueue::actionDone(KFAction *p,bool success)
 {
 	DEBUGSETUP;
-	
+
 	if (p)
 	{
 		if (d->list.first()==p)
@@ -130,14 +130,14 @@ void KFActionQueue::queue(KFAction *p)
 	{
 		DEBUGS("Starting action queue.");
 	}
-	
+
 	if (!success)
 	{
 		DEBUGS("Action failed.");
 		emit done(this,false);
 		return;
 	}
-	
+
 	KFAction *next = d->list.first();
 	if (!next)
 	{
@@ -210,7 +210,7 @@ fdinfo fdtable[] =
 	// Instead of the number of tracks, which is
 	// unneeded, we record the
 	// number of F's printed during an fdformat
-	{ fd0, 0, 1440, 40, 0 },	
+	{ fd0, 0, 1440, 40, 0 },
 	{ fd1, 1, 1440, 40, 0 },
 	{ fd0, 0,  720, 40, 0 },
 	{ fd1, 1,  720, 40, 0 },
@@ -235,11 +235,8 @@ FloppyAction::FloppyAction(QObject *p) :
 void FloppyAction::quit()
 {
 	DEBUGSETUP;
-	if (theProcess)
-	{
-		delete theProcess;
-		theProcess=0L;
-	}
+        delete theProcess;
+        theProcess=0L;
 
 	KFAction::quit();
 }
@@ -248,10 +245,10 @@ bool FloppyAction::configureDevice(int drive,int density)
 {
 	DEBUGSETUP;
 	const char *devicename = 0L;
-	
+
 	deviceInfo=0L;
 	deviceName=0L;
-		
+
 	if ((drive<0) || (drive>1))
 	{
 		emit status(i18n("Unexpected drive number %1.").arg(drive),-1);
@@ -269,14 +266,14 @@ bool FloppyAction::configureDevice(int drive,int density)
 	{
 		if ((deviceinfo->blocks == density) && (deviceinfo->drive == drive)) break;
 	}
-	
+
 	if (!deviceinfo->devices)
 	{
 		emit status(i18n("Cannot find a device for drive %1 and density %2.")
 			.arg(drive).arg(density),-1);
 		return false;
 	}
-	
+
 	for (const char **devices=deviceinfo->devices ;
 		*devices ; devices++)
 	{
@@ -296,23 +293,23 @@ bool FloppyAction::configureDevice(int drive,int density)
 		emit status(str,-1);
 		return false;
 	}
-	
+
 	deviceName = devicename;
 	deviceInfo = deviceinfo;
-	
+
 	return true;
 }
-	
+
 void FloppyAction::processDone(KProcess *p)
 {
 	DEBUGSETUP;
-	
+
 	if (p!=theProcess)
 	{
 		DEBUGS("  Strange process exited.");
 		return;
 	}
-	
+
 	if (p->normalExit())
 	{
 		emit status(QString::null,100);
@@ -345,8 +342,8 @@ bool FloppyAction::startProcess()
 		this,SLOT(processStdOut(KProcess *,char *,int)));
 	connect(theProcess,SIGNAL(receivedStderr(KProcess *,char *,int)),
 		this,SLOT(processStdErr(KProcess *,char *,int)));
-		
-		
+
+
 	return theProcess->start(KProcess::NotifyOnExit,
 		KProcess::AllOutput);
 }
@@ -354,7 +351,7 @@ bool FloppyAction::startProcess()
 
 /* static */ QString FDFormat::fdformatName = QString::null;
 
-FDFormat::FDFormat(QObject *p) : 
+FDFormat::FDFormat(QObject *p) :
 	FloppyAction(p),
 	doVerify(true)
 {
@@ -378,20 +375,20 @@ bool FDFormat::configure(bool v)
 /* virtual */ void FDFormat::exec()
 {
 	DEBUGSETUP;
-	
+
 	if (!deviceInfo || !deviceName)
 	{
 		emit done(this,false);
 		return;
 	}
-	
+
 	if (fdformatName.isEmpty())
 	{
 		emit status(i18n("Cannot find fdformat."),-1);
 		emit done(this,false);
 		return;
 	}
-	
+
 	if (theProcess) delete theProcess;
 	theProcess = new KProcess;
 
@@ -399,13 +396,13 @@ bool FDFormat::configure(bool v)
 	formatTrackCount=0;
 
 	*theProcess << fdformatName ;
-	
+
 	// Common to Linux and BSD, others may differ
 	if (!doVerify)
 	{
 		*theProcess << "-n";
 	}
-	
+
 #ifdef ANY_BSD
 	*theProcess
 		<< "-y"
@@ -425,7 +422,7 @@ bool FDFormat::configure(bool v)
 		emit status(i18n("Could not start fdformat."),-1);
 		emit done(this,false);
 	}
-	
+
 	// Now depend on fdformat running and producing output.
 }
 
@@ -519,7 +516,7 @@ FATFilesystem::FATFilesystem(QObject *parent) :
 /* static */ bool FATFilesystem::runtimeCheck()
 {
 	DEBUGSETUP;
-	
+
 #ifdef ANY_BSD
 	newfs_fat = findExecutable("newfs_msdos");
 #else
@@ -558,7 +555,7 @@ void FATFilesystem::exec()
 		emit done(this,false);
 		return;
 	}
-	
+
 	if (newfs_fat.isEmpty())
 	{
 		emit status(i18n("Cannot find a program to create FAT filesystems."),-1);
@@ -567,8 +564,8 @@ void FATFilesystem::exec()
 	}
 
 	if (theProcess) delete theProcess;
-	KProcess *p = theProcess = new KProcess;	
-	
+	KProcess *p = theProcess = new KProcess;
+
 	*p << newfs_fat;
 #ifdef ANY_BSD
 	*p << "-f" << QString::number(deviceInfo->blocks);
@@ -618,7 +615,7 @@ UFSFilesystem::UFSFilesystem(QObject *parent) :
 /* static */ bool UFSFilesystem::runtimeCheck()
 {
 	DEBUGSETUP;
-	
+
 	newfs = findExecutable("newfs");
 
 	return !newfs.isEmpty();
@@ -633,7 +630,7 @@ void UFSFilesystem::exec()
 		emit done(this,false);
 		return;
 	}
-	
+
 	if (newfs.isEmpty())
 	{
 		emit status(i18n("Cannot find a program to create UFS filesystems."),-1);
@@ -642,8 +639,8 @@ void UFSFilesystem::exec()
 	}
 
 	if (theProcess) delete theProcess;
-	KProcess *p = theProcess = new KProcess;	
-	
+	KProcess *p = theProcess = new KProcess;
+
 	*p << newfs;
 	*p << "-T" << QString("fd%1").arg(deviceInfo->blocks)
 		<< deviceName;
@@ -673,7 +670,7 @@ Ext2Filesystem::Ext2Filesystem(QObject *parent) :
 /* static */ bool Ext2Filesystem::runtimeCheck()
 {
 	DEBUGSETUP;
-	
+
 	newfs = findExecutable("mke2fs");
 
 	return !newfs.isEmpty();
@@ -704,7 +701,7 @@ void Ext2Filesystem::exec()
 		emit done(this,false);
 		return;
 	}
-	
+
 	if (newfs.isEmpty())
 	{
 		emit status(i18n("Cannot find a program to create ext2 filesystems."),-1);
@@ -713,8 +710,8 @@ void Ext2Filesystem::exec()
 	}
 
 	if (theProcess) delete theProcess;
-	KProcess *p = theProcess = new KProcess;	
-	
+	KProcess *p = theProcess = new KProcess;
+
 	*p << newfs;
 	*p << "-q";
 	if (doVerify) *p << "-c" ;
