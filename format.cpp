@@ -230,11 +230,6 @@ FloppyAction::FloppyAction(QObject *p) :
 	theProcess(0L)
 {
 	DEBUGSETUP;
-
-	QObject::connect(this,SIGNAL(status(const QString &,int)),
-		p,SLOT(formatStatus(const QString &,int)));
-	QObject::connect(this,SIGNAL(done(KFAction *,bool)),
-		p,SLOT(reset()));
 }
 
 void FloppyAction::quit()
