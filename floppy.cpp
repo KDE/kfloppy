@@ -22,6 +22,8 @@
     Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
 
     */
+
+
 #include "floppy.h"
 #include "floppy.moc"
 
@@ -309,61 +311,45 @@ bool FloppyData::findDevice()
   return true;
 }
 
-bool FloppyData::findExecutables(){
-
-
-  bool mkformat = false;
-  bool mkdosfs  = false;
-  bool mke2fs   = false;
+bool FloppyData::findExecutables()
+{
   bool ok 	= true;
-  
-  if (KGlobal::dirs()->findExe("kfdformat").length()) {
-    mkformat = true;
-  }
-  if (KGlobal::dirs()->findExe("kmke2fs").length()) {
-    mke2fs = true;
-  }
-  if (KGlobal::dirs()->findExe("kmkdosfs").length()) {
-    mkdosfs = true;
-  }
 
-  if(!mkformat){
+  QString path = getenv("PATH");
+  path.append(":/usr/sbin:/sbin");
+ 
+  fdformat = KGlobal::dirs()->findExe("fdformat", path);
+  mke2fs = KGlobal::dirs()->findExe("mke2fs", path);
+  mkdosfs = KGlobal::dirs()->findExe("mkdosfs", path);
 
-    QString str = i18n(
-       	"Cannot find kfdformat\nkfdformat is part of the KFloppy distribution.\n"
-	"Please install KFloppy properly.");
+  if (fdformat.isEmpty())
+    {
+      QString str = i18n("Cannot find fdformat.");
+      KMessageBox::error(this, str);
+
+      formatbutton->setEnabled(FALSE);
+      ok = false;
+    }
+
+  if (mke2fs.isEmpty())
+    {
+      QString str = i18n("Cannot find mke2fs");
+      KMessageBox::error(this, str);
+
+      formatbutton->setEnabled(FALSE);
+      ok = false;
+    }
+
+  if (mkdosfs.isEmpty())
+    {
+    QString str = i18n("Cannot find mkdosfs");
     KMessageBox::error(this, str);
 
     formatbutton->setEnabled(FALSE);
     ok = false;
-
   }
-
-  if( !mke2fs){
-    QString str = i18n(
-          "Cannot find kmke2fs\nkmke2fs is part of the KFloppy distribution.\n"
-	  "Please install KFloppy properly.");
-    KMessageBox::error(this, str);
-
-    formatbutton->setEnabled(FALSE);
-    ok = false;
-  }
-
-  if( !mkdosfs){
-
-    QString str = i18n(
-		"Cannot find kmkdosfs\nkmkdosfs is part of the KFloppy distribution.\n"
-		"Please install KFloppy properly.");
-    KMessageBox::error(this, str);
-
-    formatbutton->setEnabled(FALSE);
-    ok = false;
-
-  }
-
 
   return ok;
-
 }
 
 void FloppyData::quit(){
@@ -436,7 +422,7 @@ void FloppyData::format(){
 
   proc = new KProcess;
 
-  proc->setExecutable("kfdformat");
+  *proc << fdformat;
   *proc << "-n" << device.data();
 
 
@@ -775,7 +761,7 @@ void FloppyData::createfilesystem(){
 
   if((QString)filesystemComboBox->currentText() == "Dos"){
 
-    proc->setExecutable("kmkdosfs");
+    *proc << mkdosfs;
     if(!quickerase)
       
       *proc << "-c" ;
@@ -787,7 +773,7 @@ void FloppyData::createfilesystem(){
   }
   else{
 
-    proc->setExecutable("kmke2fs");
+    *proc << mke2fs;
 
     if(!quickerase)
       *proc << "-c" ;

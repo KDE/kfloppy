@@ -1,35 +1,15 @@
-
-
 kfloppy_LDFLAGS	= $(all_libraries)  $(KDE_RPATH)
 kfloppy_LDADD =  $(LIB_KDEUI) -lm
 INCLUDES =	$(all_includes)
 
 ####### Files
 
-bin_PROGRAMS  = kfloppy kmkdosfs kfdformat
+bin_PROGRAMS  = kfloppy
 
 noinst_HEADERS = about.h floppy.h
 kfloppy_SOURCES	= main.cpp about.cpp floppy.cpp mount.c
 
 METASOURCES = about.moc floppy.moc
-
-kmkdosfs_SOURCES = kmkdosfs.c
-
-kfdformat_SOURCES = kfdformat.c
-
-all-local: kmke2fs
-
-# since the e2fs sources are just bundled, we need some magic to build them
-kmke2fs: e2fs/misc/mke2fs.c e2fs/misc/badblocks.c 
-	(cd e2fs && $(MAKE) &&  cp misc/kmke2fs ../ &&  strip ../kmke2fs)
-
-distclean-local: 
-	(cd e2fs && $(MAKE) distclean)
-	-rm -f kmke2fs
-
-clean-local:
-	(cd e2fs && $(MAKE) clean)
-	-rm -f kmke2fs
 
 KDE_ICON = kfloppy
 
@@ -39,13 +19,6 @@ picsdir = $(kde_datadir)/kfloppy/pics
 apps_DATA = KFloppy.desktop
 appsdir = $(kde_appsdir)/Utilities
 
-install-exec-local: kmke2fs
-	$(mkinstalldirs) $(bindir)
-	$(INSTALL) kmke2fs $(bindir)
-	
 messages:
 	$(XGETTEXT) $(kfloppy_SOURCES) -o $(podir)/kfloppy.pot
 	
-uninstall-local:
-	rm -f $(BINDIR)/kmke2fs
-

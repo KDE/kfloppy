@@ -109,6 +109,7 @@ protected slots:
 
 private:
 
+ QString fdformat, mke2fs, mkdosfs; 
 
         int labelconfig;
         QString labelnameconfig;
