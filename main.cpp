@@ -1,10 +1,10 @@
     /*
 
     KFloppy
-    Requires the Qt widget libraries, available at no cost at 
+    Requires the Qt widget libraries, available at no cost at
     http://www.troll.no
-       
-    Copyright (C) 1997 Bernd Johannes Wuebben   
+
+    Copyright (C) 1997 Bernd Johannes Wuebben
                        wuebben@math.cornell.edu
 
 
@@ -31,8 +31,8 @@
 #include "floppy.h"
 
 
-static const char description[] = 
-	I18N_NOOP("KDE Floppy Disk utility");
+static const char description[] =
+	I18N_NOOP("KDE Floppy Disk Utility");
 
 static const char version[] = "2.2";
 
@@ -44,7 +44,7 @@ static const KCmdLineOptions options[] =
 
 int main( int argc, char *argv[] )
 {
-  KAboutData aboutData("kfloppy", 
+  KAboutData aboutData("kfloppy",
 	I18N_NOOP("KFloppy"),
     version, description, KAboutData::License_GPL,
     "(c) 1997, Bernd Johannes Wuebben\n"
