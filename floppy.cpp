@@ -823,7 +823,7 @@ void FloppyData::readSettings(){
 
 	verifyconfig = config->readNumEntry("Verify", 1);
 	labelconfig = config->readNumEntry("CreateLabel",1);
-	labelnameconfig = config->readEntry("Label","KDE Floppy");
+	labelnameconfig = config->readEntry("Label",i18n("KDE Floppy"));
 	quickformatconfig = config->readNumEntry("QuickFormat",0);
 	driveconfig = config->readEntry("FloppyDrive","A: 3.5");
 	densityconfig = config->readEntry("Density",i18n("HD"));
