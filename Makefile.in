@@ -20,6 +20,7 @@ INSTALL_DIR = $(install) -d -m 0755
 CXXFLAGS=	@CXXFLAGS@ -DHAVE_CONFIG_H -I.. #-DDEBUG
 CFLAGS=		@CFLAGS@
 LDFLAGS	=	@LDFLAGS@ @all_libraries@ -lkdecore -lkdeui -lqt -lm -lXext -lX11
+CLDFLAGS=        -lm
 INCDIR	=	@all_includes@
 CXX	=	@CXX@
 CC      =       @CC@
@@ -56,10 +57,10 @@ kfloppy: $(SOURCES) $(SRCMETA) $(OBJECTS) $(HEADER)
 	$(CXX) $(OBJECTS) -o kfloppy $(LDFLAGS)
 
 kmkdosfs: kmkdosfs.c kmkdosfs.o
-	$(CC) $(CFLAGS) kmkdosfs.o -o kmkdosfs $(LDFLAGS)
+	$(CC) $(CFLAGS) kmkdosfs.o -o kmkdosfs $(CLDFLAGS)
 
 kfdformat:kfdformat.c kfdformat.o
-	$(CC) $(CFLAGS) kfdformat.o -o kfdformat $(LDFLAGS)
+	$(CC) $(CFLAGS) kfdformat.o -o kfdformat $(CLDFLAGS)
 
 kmke2fs: e2fs/misc/mke2fs.c e2fs/misc/badblocks.c 
 	cd e2fs; ./configure;make; cp misc/kmke2fs ../; strip ../kmke2fs;
