@@ -38,7 +38,7 @@ icondir = $(kde_icondir)
 pics_DATA = kfloppylogo.xpm
 picsdir = $(kde_datadir)/kfloppy/pics
 
-apps_DATA = KFloppy.kdelnk
+apps_DATA = KFloppy.desktop
 appsdir = $(kde_appsdir)/Utilities
 
 install-exec-local: kmke2fs
