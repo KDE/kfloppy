@@ -227,6 +227,9 @@ bool FloppyData::findDevice()
       if( access(device.data(),W_OK) < 0){
 	device = "/dev/fd0H1440";
       }
+      if( access(device.data(),W_OK) < 0){
+	device = "/dev/fd0u1440";
+      }
     }
     else{
       device = "/dev/fd0D720";
@@ -259,6 +262,9 @@ bool FloppyData::findDevice()
       mdev = "/dev/fd1";
       if( access(device.data(),W_OK) < 0){
 	device = "/dev/fd1H1440";
+      }
+      if( access(device.data(),W_OK) < 0){
+	device = "/dev/fd1u1440";
       }
     }
     else{
