@@ -7,7 +7,7 @@ INCLUDES =	$(all_includes)
 bin_PROGRAMS  = kfloppy
 
 noinst_HEADERS = about.h floppy.h
-kfloppy_SOURCES	= main.cpp about.cpp floppy.cpp mount.c
+kfloppy_SOURCES	= main.cpp about.cpp floppy.cpp
 
 METASOURCES = about.moc floppy.moc
 

@@ -32,9 +32,6 @@
 #include <kstddirs.h>
 #include <kmessagebox.h>
 
-extern "C" {
-int  check_if_mounted(const char *file, int *mount_flags);
-}
 
 FloppyData::FloppyData
 (
@@ -397,12 +394,6 @@ void FloppyData::format(){
     return;
   }
 
-  if(!checkmount()){
-    reset();
-    return;
-  }
-
-
   if(quick->isChecked()){
     quickerase = true;
     formating = false;
@@ -624,12 +615,21 @@ void FloppyData::readfsStderr(KProcess *, char *buffer, int buflen){
   memcpy(mybuffer,buffer,amount);
   mybuffer[amount] = '\0';
 
-  // skip version message
-  if (fserrstring.isEmpty() && strncmp(mybuffer, "mke2fs", 6) == 0)
-    return;
+  printf("ERR: <%s>\n", mybuffer);
 
+  // skip version message
+  int pos=0;
+  if (fserrstring.isEmpty() && strncmp(mybuffer, "mke2fs", 6) == 0)
+    {
+      pos = QString(mybuffer).find('\n');
+      printf("pos=%d, len=%d\n", pos, amount);
+      if (pos+1 == amount)
+	return;
+      pos++;
+    }
+  
   abort = true;
-  fserrstring += mybuffer;
+  fserrstring += mybuffer+pos;
 
   // the timers are put in so that I get all of the error message.
   fserrtimer->start(300,true);
@@ -768,37 +768,6 @@ void FloppyData::createfilesystem(){
 }
 
 
-
-bool FloppyData::checkmount(){
-
-  int		retval;
-  int		mount_flags;
-
-
-  retval = check_if_mounted(mdev.data(), &mount_flags);
-  if (retval) {
-    KMessageBox::error(this,
-		      i18n(
-		      "Error while trying to determine whether floppy is mounted\n"
-		      )
-			 );
-    return false;
-  }
-
-
-  if (!(mount_flags & EXT2_MF_MOUNTED)){
-   return true;
-  }
-
-
-
-
-  QString str = i18n("%1 is mounted.\nPlease unmount the floppy first.")
-	        .arg(mdev);
-  KMessageBox::error(this, str);  
-
-  return false;
-}
 
 void FloppyData::about(){
 

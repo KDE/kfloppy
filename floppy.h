@@ -82,7 +82,6 @@ public:
     void readSettings();
     void setWidgets();
     int findKeyWord(QString&,const char*);
-    bool checkmount();
 
     
 public slots:
