@@ -117,7 +117,7 @@ following choices, if they are applicable:</para>
 <varlistentry>
 <term>Dos</term>
 <listitem>
-<para>This selection will have &kfloppy; place the MSDOS/&Windows; type
+<para>This selection will have &kfloppy; place the MS-DOS/&Windows; type
 of file system on the diskette.  The user will most likely want to
 choose this system if she or he will be using the diskette with those
 operating systems as they do not recognize other system types.</para>
