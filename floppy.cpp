@@ -28,6 +28,7 @@
 #include <kconfig.h>
 #include <kglobal.h>
 #include <kstddirs.h>
+#include <kmessagebox.h>
 
 extern KApplication *mykapp;
 
@@ -297,13 +298,10 @@ bool FloppyData::findDevice()
 
   if( access(device.data(),W_OK) < 0){
 
-    QString str;
-    str.sprintf(i18n(
-	      "Cannot access %s\nMake sure that the device exists and that\n"
-	      "you have write permission to it."),device.data());
-    QMessageBox::critical(this,
-		      i18n( "KFloppy"),
-		       str);
+    QString str = i18n(
+	      "Cannot access %1\nMake sure that the device exists and that\n"
+	      "you have write permission to it.").arg(device);
+    KMessageBox::error(this, str);
 
     formatbutton->setEnabled(FALSE);
     return false;
@@ -333,14 +331,10 @@ bool FloppyData::findExecutables(){
 
   if(!mkformat){
 
-    QString str;
-    str.sprintf(
-		i18n(
+    QString str = i18n(
        	"Cannot find kfdformat\nkfdformat is part of the KFloppy distribution.\n"
-	"Please install KFloppy properly."));
-    QMessageBox::critical(this,
-			  i18n("KFloppy"),
-		       str);
+	"Please install KFloppy properly.");
+    KMessageBox::error(this, str);
 
     formatbutton->setEnabled(FALSE);
     ok = false;
@@ -348,15 +342,10 @@ bool FloppyData::findExecutables(){
   }
 
   if( !mke2fs){
-
-    QString str;
-    str.sprintf(
-		i18n(
+    QString str = i18n(
           "Cannot find kmke2fs\nkmke2fs is part of the KFloppy distribution.\n"
-	  "Please install KFloppy properly."));
-    QMessageBox::critical(this,
-		       i18n("KFloppy"),
-		       str);
+	  "Please install KFloppy properly.");
+    KMessageBox::error(this, str);
 
     formatbutton->setEnabled(FALSE);
     ok = false;
@@ -364,15 +353,10 @@ bool FloppyData::findExecutables(){
 
   if( !mkdosfs){
 
-    QString str;
-    str.sprintf(
-		i18n(
+    QString str = i18n(
 		"Cannot find kmkdosfs\nkmkdosfs is part of the KFloppy distribution.\n"
-		"Please install KFloppy properly.")
-		);
-    QMessageBox::critical(this,
-		       i18n("KFloppy"),
-		       str);
+		"Please install KFloppy properly.");
+    KMessageBox::error(this, str);
 
     formatbutton->setEnabled(FALSE);
     ok = false;
@@ -472,20 +456,11 @@ void FloppyData::format(){
   bool result = proc->start(KProcess::NotifyOnExit , KProcess::All);
 
   if(!result){
-    QString str;
-    str.sprintf(
-		i18n(
-		"Cannot start a new program: fork() failed."
-		));
-    QMessageBox::critical(this,
-		       i18n("KFloppy"),
-		       str);
+    QString str = i18n("Cannot start a new program: fork() failed.");
+    KMessageBox::error(this, str);
     reset();
   }
-
-
 }
-
 
 void FloppyData::formatdone(KProcess*){
 
@@ -572,38 +547,26 @@ void FloppyData::errslot(){
 
   if(errstring.contains("ioctl(FDFMTBEG)")){
 
-    QString str;
-    str.sprintf(
-		i18n(
-		"Cannot access floppy or floppy drive\n"\
+    QString str = i18n(
+		"Cannot access floppy or floppy drive\n"
 		"Please insert a floppy and make sure that you\n"
-		"have selected a valid floppy drive.\n")
-		);
+		"have selected a valid floppy drive.\n");
 
-    QMessageBox::warning(this,
-		       i18n("KFloppy"),
-		       str);
+    KMessageBox::error(this, str);
     
     reset();
     return;
 
   }
 
-  QString str;
-  str.sprintf(i18n("Cannot format: "\
-	      "%s\n"\
-	      "%s"),device.data(),errstring.data());
+  QString str = i18n("Cannot format: %1\n%2").arg(device).arg(errstring);
 
-  QMessageBox::warning(this,
-		   i18n(    "KFloppy"),
-		       str);
-
+  KMessageBox::error(this, str);
 
   reset();
-
 }
-void FloppyData::readfsStdout(KProcess *, char *buffer, int buflen){
 
+void FloppyData::readfsStdout(KProcess *, char *buffer, int buflen){
   char mybuffer[1001];
   int amount;
 
@@ -637,7 +600,7 @@ printf("NEWLINE:%s\n",mystring.data());
     if(findKeyWord(mystring,"BBF ")){
       int bblock = atoi(mystring.left(8).data());
       QString mstr;
-      mstr.sprintf(i18n("Block %d is bad. Continuing ..."),bblock);
+      mstr = i18n("Block %1 is bad. Continuing ...").arg(bblock);
       frame->setText(mstr);
     }
 
@@ -700,18 +663,12 @@ void FloppyData::fserrslot(){
 
   if(fserrstring.contains("No such device")){
 
-    QString str;
-    str.sprintf(
-		i18n(
+    QString str = i18n(
 		"Cannot access floppy or floppy drive\n"\
 		"Please insert a floppy and make sure that you\n"
- 		"have selected a valid floppy drive.\n"
-		)
-		);
+ 		"have selected a valid floppy drive.\n");
 
-    QMessageBox::warning(this,
-		       i18n("KFloppy"),
-		       str);
+    KMessageBox::sorry(this, str);
     
     reset();
     return;
@@ -719,14 +676,10 @@ void FloppyData::fserrslot(){
 
   reset();
 
-  QString str;
-  str.sprintf(i18n("Cannot create a filesystem on: %s\n%s")
-	      ,device.data(),fserrstring.data());
+  QString str = i18n("Cannot create a filesystem on: %1\n%2")
+	      .arg(device).arg(fserrstring);
 
-  QMessageBox::warning(this,
-		       i18n("KFloppy"),
-		       str);
-
+  KMessageBox::error(this, str);
 }
 
 
@@ -752,41 +705,21 @@ void FloppyData::cf2done(){
     return;
 
   if(!lcquick){
-    QString str;
+    QString str = i18n(
+		"The floppy was sucessfully formatted.\n"
+		"Blocks marked bad: %1\n"
+		"Raw Capacity: %2\n")
+		.arg(badblocks)
+		.arg((blocks - badblocks)*1024);
 
-    str.sprintf(
-		i18n(
-		"The floppy was sucessfully formatted.\n"\
-		"Blocks marked bad: %d\n"\
-		"Raw Capacity: %d\n"),
-		badblocks,
-		(blocks - badblocks)*1024
-		);
-
-    /*    str.sprintf("The floppy was sucessfully formatted.\n"\
-		"Raw Capacity: %d\n"
-		"Blocks marked bad: %d\n"\
-		"Free Space: %d",blocks*1024,badblocks,
-		(blocks - badblocks) * 1024);
-		*/
-
-    QMessageBox::information(this,
-			     i18n("KFloppy"),
-			     str);
+    KMessageBox::information(this, str);
   }
   else{
+    QString str = i18n("All files were sucessfully erased.");
 
-    QString str;
-    str.sprintf(i18n("All files were sucessfully erased."));
-
-    QMessageBox::information(this,
-			     i18n("KFloppy"),
-			     str);
-
+    KMessageBox::information(this, str);
   }
-
 }
-
 
 int FloppyData::findKeyWord(QString& string,const char* word){
 
@@ -881,14 +814,8 @@ void FloppyData::createfilesystem(){
   bool result = proc->start(KProcess::NotifyOnExit , KProcess::All);
 
   if(!result){
-    QString str;
-    str.sprintf(
-		i18n(
-		"Cannot start a new program\nfork() failed.")
-		);
-    QMessageBox::critical(this,
-		       i18n("KFloppy"),
-		       str);
+    QString str = i18n("Cannot start a new program\nfork() failed.");
+    KMessageBox::error(this, str);
     frame->setText("");
     proc = 0L;
     progress->setValue(0);
@@ -907,8 +834,7 @@ bool FloppyData::checkmount(){
 
   retval = check_if_mounted(mdev.data(), &mount_flags);
   if (retval) {
-    QMessageBox::warning(this,
-		      i18n("KFloppy"),
+    KMessageBox::error(this,
 		      i18n(
 		      "Error while trying to determine whether floppy is mounted\n"
 		      )
@@ -924,24 +850,12 @@ bool FloppyData::checkmount(){
 
 
 
-  QString str;
-  str.sprintf(
-	      i18n(
-	      "%s is mounted.\nPlease unmount the floppy first."
-	      )
-	      ,mdev.data());
+  QString str = i18n("%1 is mounted.\nPlease unmount the floppy first.")
+	        .arg(mdev);
+  KMessageBox::error(this, str);  
 
-  QMessageBox::warning(this,
-		       i18n("KFloppy"),
-		       str);  
-
-
- return false;
-
+  return false;
 }
-
-
-
 
 void FloppyData::about(){
 

@@ -38,7 +38,6 @@
 #include <qfileinfo.h>
 #include <qcheckbox.h>
 #include <qlineedit.h>
-#include <qmessagebox.h>
 
 #include <stdlib.h>
 #include <string.h>
