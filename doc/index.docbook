@@ -1,19 +1,25 @@
 <!DOCTYPE book PUBLIC "-//KDE//DTD DocBook V3.1-Based Variant V1.0//EN" [
  <!ENTITY kfloppy "<application>kfloppy</application>">
 ]>
+
 <book lang="en">
 <bookinfo>
 <title>The KFloppy Formatter Handbook</title>
 <authorgroup>
 <author>
-<surname>David Rugge and Bernd Johannes Wuebben</surname>
+<firstname>David</firstname>
+<surname>Rugge</surname>
+</author>
+<author>
+<firstname>Bernd Johannes</firstname>
+<surname>Wuebben</surname>
 </author>
 </authorgroup>
-<date>Version 1.1.0, January 24, 1999</date>
-<releaseinfo><!-- information about this particular version --></releaseinfo>
+<date>24/01/1999</date>
+<releaseinfo>1.01.00</releaseinfo>
 <abstract>
 <para>This Handbook describes KFloppy Formatter Version 1.1.0</para>
-<para>KFloppy</para><!-- Merge this with the previous paragraph; it comes from <META NAME="description" CONTENT="..."> --></abstract>
+</abstract>
 <keywordset>
 <keyword>KDE</keyword>
 <keyword>kfloppy</keyword>
