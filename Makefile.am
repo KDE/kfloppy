@@ -34,7 +34,7 @@ clean-local:
 
 KDE_ICON = kfloppy
 
-pics_DATA = kfloppylogo.xpm
+pics_DATA = kfloppylogo.png
 picsdir = $(kde_datadir)/kfloppy/pics
 
 apps_DATA = KFloppy.desktop
