@@ -96,6 +96,7 @@ FloppyData::FloppyData(QWidget * parent, const char * name)
 	filesystemComboBox = new QComboBox( false, this, "ComboBox_2" );
 	g1->addWidget( filesystemComboBox, 2, 1, AlignLeft );
 
+        // If you modify the user visible string, change them also (far) below
 	filesystemComboBox->insertItem(i18n("DOS"));
 #ifdef ANY_LINUX
 	filesystemComboBox->insertItem(i18n("ext2"));
@@ -396,7 +397,7 @@ void FloppyData::format(){
 		formatActions->queue(f);
 	}
 
-	if (filesystemComboBox->currentItem() == 0)
+	if ( filesystemComboBox->currentText() == i18n("DOS") )
 	{
 		FATFilesystem *f = new FATFilesystem(this);
 		connect(f,SIGNAL(status(const QString &,int)),
@@ -409,20 +410,29 @@ void FloppyData::format(){
 		f->configureDevice(drive,blocks);
 		formatActions->queue(f);
 	}
-	else if (filesystemComboBox->currentItem() == 1)
-	{
-		FloppyAction *f = 0L;
 #ifdef ANY_LINUX
-		Ext2Filesystem *e2f = new Ext2Filesystem(this);
-		e2f->configure(verifylabel->isChecked(),
+	else if ( filesystemComboBox->currentText() == i18n("ext2") )
+	{
+		Ext2Filesystem *f = new Ext2Filesystem(this);
+		f->configure(verifylabel->isChecked(),
 			labellabel->isChecked(),
 			lineedit->text());
-		f=e2f;
-#else
+		if (f)
+		{
+			connect(f,SIGNAL(status(const QString &,int)),
+				this,SLOT(formatStatus(const QString &,int)));
+			connect(f,SIGNAL(done(KFAction *,bool)),
+				this,SLOT(reset()));
+			f->configureDevice(drive,blocks);
+			formatActions->queue(f);
+		}
+	}
+#endif
+
 #ifdef ANY_BSD
-		f = new UFSFilesystem(this);
-#endif
-#endif
+	else if ( filesystemComboBox->currentText() == i18n("UFS") )
+	{
+		FloppyAction *f = new UFSFilesystem(this);
 
 		if (f)
 		{
@@ -434,7 +444,7 @@ void FloppyData::format(){
 			formatActions->queue(f);
 		}
 	}
-
+#endif
 
 
 	formatActions->exec();
