@@ -41,7 +41,7 @@ MyAbout::MyAbout(QWidget *parent) : QDialog(parent, "About KFloppy Formatter", T
   setFixedSize(size());
   setCaption(i18n("About KDE Floppy Formatter"));
 
-  QPixmap pm( Icon("kfloppylogo.xpm") );
+  QPixmap pm( BarIcon("kfloppylogo") );
   QLabel *logo = new QLabel(this);
   logo->setPixmap(pm);
   logo->setGeometry(20, (height()-pm.height())/2 - 25, pm.width(), pm.height());
