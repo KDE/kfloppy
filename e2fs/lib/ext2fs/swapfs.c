@@ -11,6 +11,7 @@
 #include <time.h>
 
 #include <linux/ext2_fs.h>
+#include <linux/version.h>
 
 #include "ext2fs.h"
 
@@ -91,7 +92,12 @@ void ext2fs_swap_inode(ext2_filsys fs, struct ext2_inode *t,
 		for (i = 0; i < EXT2_N_BLOCKS; i++)
 			t->i_block[i] = f->i_block[i];
 	}
-	t->i_version = ext2fs_swab32(f->i_version);
+/* i_generation was introduced in 2.3.1, 2.2.x still has i_version */
+#if LINUX_VERSION_CODE <= KERNEL_VERSION(2,3,0)
+        t->i_version = ext2fs_swab32(f->i_version);
+#else
+	t->i_generation = ext2fs_swab32(f->i_generation);
+#endif
 	t->i_file_acl = ext2fs_swab32(f->i_file_acl);
 	t->i_dir_acl = ext2fs_swab32(f->i_dir_acl);
 	t->i_faddr = ext2fs_swab32(f->i_faddr);
