@@ -141,6 +141,7 @@ private:
 	KHelpMenu* helpMenu;
 
 protected:
+	void keyPressEvent(QKeyEvent *e);
 
 };
 

@@ -199,6 +199,17 @@ void FloppyData::closeEvent(QCloseEvent*){
 
 }
 
+void FloppyData::keyPressEvent(QKeyEvent *e) {
+	switch(e->key()) {
+	case Key_F1:
+		kapp->invokeHelp();
+		break;
+	default:
+		KDialog::keyPressEvent(e);
+		return;
+	}
+}
+
 void FloppyData::show() {
   setCaption(i18n("KDE Floppy Formatter"));
   KDialog::show();
