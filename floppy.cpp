@@ -30,7 +30,7 @@
 #include <iostream.h>
 #include <qlayout.h>
 
-
+#include <kapplication.h>
 #include <kstandarddirs.h>
 #include <kmessagebox.h>
 

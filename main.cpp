@@ -25,17 +25,7 @@
 
     */
 
-
-#include <qstrlist.h> 
-
-
-#include <unistd.h>
-#include <stdlib.h>
-#include <signal.h>
-#include <fcntl.h>
-#include <sys/types.h>
-
-
+#include <kapplication.h>
 #include <kcmdlineargs.h>
 #include <kaboutdata.h>
 
