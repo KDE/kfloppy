@@ -132,7 +132,7 @@ FloppyData::FloppyData(QWidget * parent, const char * name)
         if (FATFilesystem::runtimeCheck()) {
             filesystemComboBox->insertItem(i18n("DOS"));
             ++numFileSystems;
-            userFeedBack += i18n( "BSD", "Program mewfs_msdos found." );
+            userFeedBack += i18n( "BSD", "Program newfs_msdos found." );
         }
         else {
             userFeedBack += i18n( "BSD", "Program newfs_msdos <b>not found</b>. MSDOS formatting <b>not available</b>." );
@@ -141,7 +141,7 @@ FloppyData::FloppyData(QWidget * parent, const char * name)
         if (UFSFilesystem::runtimeCheck()) {
             filesystemComboBox->insertItem(i18n("UFS"));
             ++numFileSystems;
-            userFeedBack += i18n( "BSD", "Program mewfs found." );
+            userFeedBack += i18n( "BSD", "Program newfs found." );
         }
         else {
             userFeedBack += i18n( "BSD", "Program newfs <b>not found</b>. UFS formatting <b>not available</b>." );
@@ -174,7 +174,7 @@ FloppyData::FloppyData(QWidget * parent, const char * name)
         else {
             fullformat->setDisabled(true);
             quick->setChecked(true);
-            userFeedBack += i18n( "Program fdformat <b>not found</b>! Full formatting <b>disabled</b>!" );
+            userFeedBack += i18n( "Program fdformat <b>not found</b>. Full formatting <b>disabled</b>." );
         }
         
 	verifylabel = new QCheckBox( buttongroup, "RadioButton_4" );
@@ -248,7 +248,7 @@ FloppyData::FloppyData(QWidget * parent, const char * name)
     if (!numFileSystems) {
         QString errorMessage;
         errorMessage += "<qt>";
-        errorMessage += i18n("KFloppy cannot find any of the needed programs for creating file systems! Please check your installation!<br><br>Log:");
+        errorMessage += i18n("KFloppy cannot find any of the needed programs for creating file systems; please check your installation.<br><br>Log:");
         errorMessage += "<br>";
         errorMessage += userFeedBack;
         errorMessage += "</qt>";
