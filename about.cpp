@@ -50,12 +50,13 @@ MyAbout::MyAbout(QWidget *parent) : QDialog(parent, "About KFloppy Formatter", T
   l->setGeometry(145,40,100,30);
 
   QString s;
+  // #### HPB: This should be i18n()ed properly
   s = i18n("Version ");
   s += KFLOPPYVERSION \
   "\n\nCopyright (c) 1997\nBernd Johannes Wuebben\n"\
   "wuebben@kde.org";
 
-  l = new QLabel(s.data(), this);
+  l = new QLabel(s, this);
   l->setGeometry(145, 70, 230, 170);
   l->setAlignment(AlignLeft|WordBreak|ExpandTabs);
 

@@ -33,13 +33,8 @@
 #include <kmessagebox.h>
 
 
-FloppyData::FloppyData
-(
-	QWidget* parent,
-	const char* name
-)
-	:
-	KMainWindow( parent, name )
+FloppyData::FloppyData(QWidget * parent, const char * name)
+ : KMainWindow( parent, name )
 {
 
         proc = 0L;
@@ -191,40 +186,30 @@ void FloppyData::closeEvent(QCloseEvent*){
    
 }
 
-void FloppyData::addDevice(const char* name){
-
-
+void FloppyData::addDevice(const QString & name)
+{
   deviceComboBox->insertItem(name);
 }
 
-
-
-void FloppyData::addDensity(const char* name){
-
-
+void FloppyData::addDensity(const QString & name)
+{
   densityComboBox->insertItem(name);
 }
 
-
-
-void FloppyData::addFileSystem(const char* name){
-
+void FloppyData::addFileSystem(const QString & name)
+{
   filesystemComboBox->insertItem(name);
-
 }
-
 
 bool FloppyData::findDevice()
 {
-
-
   if( deviceComboBox->currentText() == FLOPPYA3 ){
     if( densityComboBox->currentText() == i18n( "HD")){
       device = "/dev/fd0H1440";
       blocks = 1440;
       tracks = 80;
       mdev = "/dev/fd0";
-      if( access(device.data(),W_OK) < 0){
+      if( access(QFile::encodeName(device),W_OK) < 0){
 	device = "/dev/fd0u1440";
       }
     }
@@ -233,7 +218,7 @@ bool FloppyData::findDevice()
       blocks = 720;
       tracks = 80;
       mdev = "/dev/fd0";
-      if( access(device.data(),W_OK) < 0){
+      if( access(QFile::encodeName(device),W_OK) < 0){
 	device = "/dev/fd0u720";
       }
     }
@@ -260,7 +245,7 @@ bool FloppyData::findDevice()
       blocks = 1400;
       tracks = 80;
       mdev = "/dev/fd1";
-      if(access(device.data(),W_OK) < 0){
+      if(access(QFile::encodeName(device),W_OK) < 0){
 	device = "/dev/fd1u1440";
       }
     }
@@ -269,7 +254,7 @@ bool FloppyData::findDevice()
       blocks = 720;
       tracks = 80;
       mdev = "/dev/fd1";
-      if( access(device.data(),W_OK) < 0){
+      if( access(QFile::encodeName(device),W_OK) < 0){
 	device = "/dev/fd1u720";
     }
     }
@@ -291,7 +276,7 @@ bool FloppyData::findDevice()
   }
 
 
-  if( access(device.data(),W_OK) < 0){
+  if( access(QFile::encodeName(device),W_OK) < 0){
 
     QString str = i18n(
 	      "Cannot access %1\nMake sure that the device exists and that\n"
@@ -410,7 +395,7 @@ void FloppyData::format(){
   counter = 0;
 
   proc = new KProcess;
-  *proc << fdformat << device.data();
+  *proc << fdformat << device;
 
   connect(proc, SIGNAL(processExited(KProcess *)),this, SLOT(formatdone(KProcess*)));
 
@@ -444,24 +429,14 @@ void FloppyData::formatdone(KProcess*){
 
 }
 
-void FloppyData::readStdout(KProcess *, char *buffer, int buflen){
+void FloppyData::readStdout(KProcess *, char *buffer, int buflen)
+{
+  bool increment = true;
 
-  char mybuffer[1001];
-  int amount;
-  bool  increment = true;
+  formatstring = QString::fromLocal8Bit(buffer, buflen);
 
-  if(buflen > 1000)
-    amount = 1000;
-  else
-    amount = buflen;
-
-  memcpy(mybuffer,buffer,amount);
-  mybuffer[amount] = '\0';
-
-  formatstring = mybuffer;
-
-
-  if(formatstring.contains("track")){
+  if (formatstring.contains("track"))
+  {
     int pos = formatstring.find('\n');
     QString newstring;
 
@@ -475,7 +450,8 @@ void FloppyData::readStdout(KProcess *, char *buffer, int buflen){
   }
 
 
-  if(increment){
+  if (increment)
+  {
     counter ++;
     progress->setValue(counter);     
   }
@@ -565,14 +541,14 @@ printf("NEWLINE:%s\n",mystring.data());
 #endif
 
     if(findKeyWord(mystring,"BBF ")){
-      int bblock = atoi(mystring.left(8).data());
+      int bblock = mystring.left(8).toInt();
       QString mstr;
       mstr = i18n("Block %1 is bad. Continuing ...").arg(bblock);
       frame->setText(mstr);
     }
 
     if(findKeyWord(mystring,"TNBB ")){
-      badblocks = atoi(mystring.left(8).data());
+      badblocks = mystring.left(8).toInt();
     }
     newstring = newstring.mid(i+1,newstring.length());
   }
@@ -701,7 +677,7 @@ void FloppyData::cf2done(){
   }
 }
 
-int FloppyData::findKeyWord(QString& string,const char* word){
+int FloppyData::findKeyWord(QString & string,const QString & word){
 
   int count = 0;
   int index = 0;
@@ -710,20 +686,17 @@ int FloppyData::findKeyWord(QString& string,const char* word){
   QString wordstring = word;
   len = wordstring.length();
     
-  while( (index = string.find(word)) >= 0){
-
-    count ++;
+  while( (index = string.find(word)) >= 0)
+  {
+    count++;
     string = string.mid(index + len,string.length());
-
   }
 
   return count;
-
 }
 
-
-void FloppyData::createfilesystem(){
-
+void FloppyData::createfilesystem()
+{
   fsstring = "";
   fserrstring = "";
 
@@ -731,19 +704,19 @@ void FloppyData::createfilesystem(){
 
   proc = new KProcess;
 
-  if((QString)filesystemComboBox->currentText() == "Dos"){
+  if (filesystemComboBox->currentText() == "Dos"){
 
     *proc << mkdosfs;
     if(labellabel->isChecked())
       *proc << "-n" <<lineedit->text();
-    *proc << device.data();
+    *proc << device;
   }
   else{
 
     *proc << mke2fs;
     if(labellabel->isChecked())
       *proc << "-L" <<lineedit->text();
-    *proc << device.data();
+    *proc << device;
   }
 
 

@@ -62,25 +62,19 @@ class FloppyData : public KMainWindow
     Q_OBJECT
 
 public:
-
-    FloppyData
-    (
-        QWidget* parent = NULL,
-        const char* name = NULL
-    );
-
+    FloppyData(QWidget* parent = 0, const char * name = 0);
     virtual ~FloppyData();
-    void addDevice(const char* name);
-    void addFileSystem(const char* name);
-    void addDensity(const char* name);
+
+    void addDevice(const QString & name);
+    void addFileSystem(const QString & name);
+    void addDensity(const QString & name);
     bool findDevice();
     bool findExecutables();
     void closeEvent(QCloseEvent*);
     void writeSettings();
     void readSettings();
     void setWidgets();
-    int findKeyWord(QString&,const char*);
-
+    int findKeyWord(QString &, const QString &);
     
 public slots:
       void fserrslot();
