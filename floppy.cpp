@@ -479,6 +479,7 @@ void FloppyData::format(){
 
 void FloppyData::formatStatus(const QString &s,int p)
 {
+    kdDebug(2002) << "FloppyData::formatStatus: " << s << " : "  << p << endl;
 	if (!s.isEmpty())
 		frame->setText(s);
 

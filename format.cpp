@@ -133,6 +133,7 @@ void KFActionQueue::queue(KFAction *p)
 
 	if (!success)
 	{
+            // ### TODO: the user must be told that the action has failed.
 		DEBUGS("Action failed.");
 		emit done(this,false);
 		return;
