@@ -115,18 +115,13 @@ FloppyData::FloppyData(QWidget * parent, const char * name)
         h2->addWidget( lineedit, AlignRight );
 
         QVBoxLayout* v3 = new QVBoxLayout( h1 );
-	
-	quitbutton = new QPushButton( this, "PushButton_1" );
-	quitbutton->setText(i18n( "&Quit") );
-	quitbutton->setAutoRepeat( FALSE );
-	connect(quitbutton,SIGNAL(clicked()),this,SLOT(quit()));
-	 v3->addWidget( quitbutton );
 
-//	aboutbutton = new QPushButton( this, "PushButton_2" );
-//	aboutbutton->setText( i18n("&About...") );
-//	aboutbutton->setAutoRepeat( FALSE );
-//	connect(aboutbutton,SIGNAL(clicked()),this,SLOT(about()));
-//        v3->addWidget( aboutbutton );
+	formatbutton = new QPushButton( this, "PushButton_3" );
+	formatbutton->setText(i18n( "&Format") );
+	formatbutton->setAutoRepeat( FALSE );
+	connect(formatbutton,SIGNAL(clicked()),this,SLOT(format()));
+        v3->addWidget( formatbutton );
+
         v3->addStretch( 1 );
 
 	//Setup the Help Menu
@@ -138,11 +133,11 @@ FloppyData::FloppyData(QWidget * parent, const char * name)
 	helpbutton->setPopup(helpMenu->menu());
 	v3->addWidget( helpbutton );
 
-	formatbutton = new QPushButton( this, "PushButton_3" );
-	formatbutton->setText(i18n( "&Format") );
-	formatbutton->setAutoRepeat( FALSE );
-	connect(formatbutton,SIGNAL(clicked()),this,SLOT(format()));
-        v3->addWidget( formatbutton );
+	quitbutton = new QPushButton( this, "PushButton_1" );
+	quitbutton->setText(i18n( "&Quit") );
+	quitbutton->setAutoRepeat( FALSE );
+	connect(quitbutton,SIGNAL(clicked()),this,SLOT(quit()));
+	 v3->addWidget( quitbutton );
 
         ml->addSpacing( 10 );
 
