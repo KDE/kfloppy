@@ -1,0 +1,75 @@
+
+
+DOCSDIR = @kde_htmldir@/en/kfloppy
+APPSDIR = @
+PICSDIR = @
+ICONSDIR = @kde_icondir@
+
+kfloppy_LDFLAGS	= $(all_libraries) -lkdeui -lkdecore -lqt -lXext -lX11 -lm
+LDFLAGS =        -lm
+INCLUDES =	$(all_includes)
+
+####### Files
+
+bin_PROGRAMS  = kfloppy kmkdosfs kfdformat kmke2fs
+
+noinst_HEADERS = about.h floppy.h
+kfloppy_SOURCES	= main.cpp about.cpp floppy.cpp kmkdosfs.c kfdformat.c mount.c
+
+BUILTSOURCES = about.moc floppy.moc
+DISTCLEANFILES = $(BUILTSOURCES)
+
+kmkdosfs_SOURCES = kmkdosfs.c
+
+kfdformat_SOURCES = kfdformat.c
+
+all: kmke2fs
+
+SUBDIRS = e2fs doc
+
+all: kmke2fs
+
+kmke2fs: e2fs/misc/mke2fs.c e2fs/misc/badblocks.c 
+	cd e2fs; ./configure;make; cp misc/kmke2fs ../; strip ../kmke2fs;
+
+clean:
+	cd e2fs; make clean; 
+
+distclean: clean
+	rm -f Makefile
+	cd e2fs; make distclean
+
+icon_DATA = kfloppy.xpm
+icondir = $(kde_icondir)
+
+pics_DATA = kfloppylogo.xpm
+picsdir = $(kde_datadir)/kfloppy/pics/
+
+apps_DATA = KFloppy.kdelnk
+appsdir = $(kde_appsdir)/Utilities/
+
+install-local-exec: kmke2fs
+	$(mkinstalldirs) $(bindir)
+	$(INSTALL) kmke2fs $(bindir)
+	@echo ""
+	@echo "Bernd Wuebben"
+	@echo "wuebben@kde.org"
+	@echo ""	
+
+uninstall:
+	rm -f $(BINDIR)/kmke2fs
+
+####### Explicit dependencies
+about.cpp: about.moc
+about.moc: about.h
+	$(MOC) about.h -o about.moc
+
+floppy.cpp: floppy.moc
+floppy.moc: floppy.h
+	$(MOC) floppy.h -o floppy.moc
+
+
+
+
+
+
