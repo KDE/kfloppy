@@ -28,10 +28,5 @@
 
 
 
-#undef ANY_BSD
-#undef ANY_LINUX
-
-#define ANY_LINUX
-
 #endif
 
