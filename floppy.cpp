@@ -98,25 +98,53 @@ FloppyData::FloppyData(QWidget * parent, const char * name)
 
         // If you modify the user visible string, change them also (far) below
 
+        QString userFeedBack;
         uint numFileSystems = 0;
 
+#if defined(ANY_LINUX)
         if (FATFilesystem::runtimeCheck()) {
             filesystemComboBox->insertItem(i18n("DOS"));
             ++numFileSystems;
+            userFeedBack += i18n( "Linux", "Program mkdosfs found." );
         }
-#if defined(ANY_LINUX)
+        else {
+            userFeedBack += i18n( "Linux", "Program mkdosfs <b>not found</b>. MSDOS formatting <b>not available</b>." );
+        }
+        userFeedBack += "<br>";
         if (Ext2Filesystem::runtimeCheck()) {
             filesystemComboBox->insertItem(i18n("ext2"));
             ++numFileSystems;
+            userFeedBack += i18n( "Linux", "Program mke2fs found." );
         }
+        else {
+            userFeedBack += i18n( "Linux", "Program mke2fs <b>not found</b>. Ext2 formatting <b>not available</b>" );
+        }
+        userFeedBack += "<br>";
         if (MinixFilesystem::runtimeCheck()) {
             filesystemComboBox->insertItem(i18n("Minix"));
             ++numFileSystems;
+            userFeedBack += i18n( "Linux", "Program mkfs.minix found." );
+        }
+        else {
+            userFeedBack += i18n( "Linux", "Program mkfs.minix <b>not found</b>. Minix formatting <b>not available</b>" );
         }
 #elif defined(ANY_BSD)
+        if (FATFilesystem::runtimeCheck()) {
+            filesystemComboBox->insertItem(i18n("DOS"));
+            ++numFileSystems;
+            userFeedBack += i18n( "BSD", "Program mewfs_msdos found." );
+        }
+        else {
+            userFeedBack += i18n( "BSD", "Program newfs_msdos <b>not found</b>. MSDOS formatting <b>not available</b>." );
+        }
+        userFeedBack += "<br>";
         if (UFSFilesystem::runtimeCheck()) {
             filesystemComboBox->insertItem(i18n("UFS"));
             ++numFileSystems;
+            userFeedBack += i18n( "BSD", "Program mewfs found." );
+        }
+        else {
+            userFeedBack += i18n( "BSD", "Program newfs <b>not found</b>. UFS formatting <b>not available</b>." );
         }
 #endif
 
@@ -137,13 +165,16 @@ FloppyData::FloppyData(QWidget * parent, const char * name)
         v2->addWidget( fullformat, AlignLeft );
 
         // ### TODO: we need some user feedback telling why full formatting is disabled.
+        userFeedBack += "<br>";
         m_canLowLevel = FDFormat::runtimeCheck();
         if (m_canLowLevel){
             fullformat->setChecked(true);
+            userFeedBack += i18n( "Program fdformat found." );
         }
         else {
             fullformat->setDisabled(true);
             quick->setChecked(true);
+            userFeedBack += i18n( "Program fdformat <b>not found</b>! Full formatting <b>disabled</b>!" );
         }
         
 	verifylabel = new QCheckBox( buttongroup, "RadioButton_4" );
@@ -197,7 +228,12 @@ FloppyData::FloppyData(QWidget * parent, const char * name)
 	frame = new QLabel( this, "NewsWindow" );
 	frame->setMinimumHeight( 50 );
 	frame->setFrameStyle(QFrame::Panel | QFrame::Sunken);
-	frame->setAlignment(AlignCenter|WordBreak|ExpandTabs);
+	frame->setAlignment(WordBreak|ExpandTabs);
+
+        userFeedBack.prepend( "<qt>" );
+        userFeedBack.append( "</qt>" );
+        frame->setText( userFeedBack );
+        
         ml->addWidget( frame );
 
 	progress = new KProgress( this, "Progress" );
@@ -209,10 +245,8 @@ FloppyData::FloppyData(QWidget * parent, const char * name)
 	setWidgets();
 
     if (!numFileSystems) {
-        // ### TODO: better error message
         KMessageBox::error(this,
-            i18n("KFloppy cannot find the support programs needed "
-                    "for sensible operation."));
+            i18n("KFloppy cannot find any of the needed programs for creating file systems! Please check your installation!"));
     }
 
     int maxW = QMAX( deviceComboBox->sizeHint().width(),
