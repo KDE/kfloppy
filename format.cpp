@@ -465,17 +465,22 @@ void FDFormat::processStdOut(KProcess *, char *b, int l)
 		s = QString::fromLatin1(b,l);
 		if (s.contains("ioctl(FD_FORM)"))
 		{
-			goto ioError;
+                    emit status (i18n(
+                            "Cannot access floppy or floppy drive.\n"
+                            "Please insert a floppy and make sure that you "
+                            "have selected a valid floppy drive."),-1);
+                    return;
 		}
 		if (s.find("/dev/")>=0)
 		{
 			emit status(s,-1);
 			return;
 		}
-		DEBUGS(s.latin1());
+		DEBUGS(s);
 	}
 #elif defined(ANY_LINUX)
 	s = QString::fromLatin1(b,l);
+	DEBUGS(s);
         QRegExp regexp( "([0-9]+)" );
         if ( regexp.search(s) > -1 )
         {
@@ -486,22 +491,20 @@ void FDFormat::processStdOut(KProcess *, char *b, int l)
                             p * 100 / deviceInfo->tracks);
             }
         }
-	else if (s.contains("ioctl(FDFMTBEG)"))
+	else if (s.find("ioctl(FDFMTBEG)")!=-1)
 	{
-		goto ioError;
+            emit status (i18n(
+                    "Cannot access floppy or floppy drive.\n"
+                    "Please insert a floppy and make sure that you "
+                    "have selected a valid floppy drive."),-1);
+            return;
 	}
-	DEBUGS(s.latin1());
+        else if (s.find("ioctl")!=-1)
+        {
+            emit status(i18n("Low-level format error: %1").arg(s),-1);
+            return;
+        }
 #endif
-	return;
-
-// Now a bunch of (goto) labels for all the possible error messages.
-//
-//
-ioError:
-	emit status (i18n(
-		"Cannot access floppy or floppy drive.\n"
-		"Please insert a floppy and make sure that you "
-		"have selected a valid floppy drive."),-1);
 	return;
 }
 
