@@ -71,7 +71,7 @@ FloppyData::FloppyData(QWidget * parent, const char * name)
 
 
 	deviceComboBox = new KComboBox( false, this, "ComboBox_1" );
-	g1->addWidget( deviceComboBox, 0, 1, AlignLeft );
+	g1->addWidget( deviceComboBox, 0, 1 );
 
 	deviceComboBox->insertItem(i18n("Primary"));
 	deviceComboBox->insertItem(i18n("Secondary"));
@@ -81,7 +81,7 @@ FloppyData::FloppyData(QWidget * parent, const char * name)
         g1->addWidget( label2, 1, 0, AlignLeft );
 
 	densityComboBox = new KComboBox( false, this, "ComboBox_1" );
-	g1->addWidget( densityComboBox, 1, 1, AlignLeft );
+	g1->addWidget( densityComboBox, 1, 1 );
 
 	densityComboBox->insertItem( i18n( "Auto-Detect" ) );
 	densityComboBox->insertItem(i18n("3.5\" 1.44MB"));
@@ -95,7 +95,8 @@ FloppyData::FloppyData(QWidget * parent, const char * name)
         g1->addWidget( label3, 2, 0, AlignLeft );
 
 	filesystemComboBox = new KComboBox( false, this, "ComboBox_2" );
-	g1->addWidget( filesystemComboBox, 2, 1, AlignLeft );
+	g1->addWidget( filesystemComboBox, 2, 1 );
+	g1->setColStretch(1, 1);
 
         // If you modify the user visible string, change them also (far) below
 
@@ -194,7 +195,6 @@ FloppyData::FloppyData(QWidget * parent, const char * name)
 	lineedit = new KLineEdit( buttongroup, "Lineedit" );
 	lineedit->setText(i18n( "Volume label, maximal 11 characters", "KDE Floppy" ) );
 	lineedit->setMaxLength(11);
-        lineedit->setMinimumWidth( lineedit->sizeHint().width() );
         h2->addWidget( lineedit, AlignRight );
 
 	connect(labellabel,SIGNAL(toggled(bool)),lineedit,SLOT(setEnabled(bool)));
@@ -227,7 +227,6 @@ FloppyData::FloppyData(QWidget * parent, const char * name)
         ml->addSpacing( 10 );
 
 	frame = new QLabel( this, "NewsWindow" );
-	frame->setMinimumHeight( 50 );
 	frame->setFrameStyle(QFrame::Panel | QFrame::Sunken);
 	frame->setAlignment(WordBreak|ExpandTabs);
 
@@ -239,7 +238,6 @@ FloppyData::FloppyData(QWidget * parent, const char * name)
         ml->addWidget( frame );
 
 	progress = new KProgress( this, "Progress" );
-        progress->setMinimumHeight( 30 );
         progress->setDisabled( true );
         ml->addWidget( progress );
 
@@ -255,15 +253,6 @@ FloppyData::FloppyData(QWidget * parent, const char * name)
         errorMessage += "</qt>";
         KMessageBox::error( this, errorMessage );
     }
-
-    int maxW = QMAX( deviceComboBox->sizeHint().width(),
-                     densityComboBox->sizeHint().width() );
-    maxW = QMAX( maxW, filesystemComboBox->sizeHint().width() );
-    deviceComboBox->setMinimumWidth( maxW );
-    densityComboBox->setMinimumWidth( maxW );
-    filesystemComboBox->setMinimumWidth( maxW );
-
-    setMinimumSize(minimumSizeHint());
 }
 
 
