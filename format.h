@@ -85,7 +85,7 @@ signals:
 	** done() should always be emitted with this as first
 	** parameter, to avoid sender() magic and the like.
 	** @p success indicates whether the action was
-	** succesful.
+	** successful.
 	*/
 	void done(KFAction *me,bool success);
 	
@@ -120,8 +120,8 @@ public:
 	/*
 	** Add a KFAction to the queue. When exec() is called,
 	** the actions are called one after the other (if each
-	** action is succesful; if any action fails, the whole
-	** queue fails and the unsuccesful action is the last
+	** action is successful; if any action fails, the whole
+	** queue fails and the unsuccessful action is the last
 	** one run.) Actions become the property of the queue
 	** action. Note that queues can be nested.
 	*/
