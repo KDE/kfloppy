@@ -1,7 +1,5 @@
 /*
-
-    $Id$
-
+    KFloppy
     Copyright (C) 1997 Bernd Johannes Wuebben
                        wuebben@math.cornell.edu
 

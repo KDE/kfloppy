@@ -1,7 +1,6 @@
 /*
 
-    $Id$
-
+    KFloppy
     Copyright (C) 2002 Adriaan de Groot
                        groot@kde.org
 

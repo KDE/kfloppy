@@ -1,7 +1,6 @@
     /*
 
-    $Id$
-
+    KFloppy
     Requires the Qt widget libraries, available at no cost at 
     http://www.troll.no
        
