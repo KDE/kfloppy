@@ -230,9 +230,10 @@ FloppyData::FloppyData(QWidget * parent, const char * name)
 	frame->setFrameStyle(QFrame::Panel | QFrame::Sunken);
 	frame->setAlignment(WordBreak|ExpandTabs);
 
-        userFeedBack.prepend( "<qt>" );
-        userFeedBack.append( "</qt>" );
-        frame->setText( userFeedBack );
+        QString frameText( userFeedBack );
+        frameText.prepend( "<qt>" );
+        frameText.append( "</qt>" );
+        frame->setText( frameText );
         
         ml->addWidget( frame );
 
@@ -245,8 +246,13 @@ FloppyData::FloppyData(QWidget * parent, const char * name)
 	setWidgets();
 
     if (!numFileSystems) {
-        KMessageBox::error(this,
-            i18n("KFloppy cannot find any of the needed programs for creating file systems! Please check your installation!"));
+        QString errorMessage;
+        errorMessage += "<qt>";
+        errorMessage += i18n("KFloppy cannot find any of the needed programs for creating file systems! Please check your installation!<br><br>Log:");
+        errorMessage += "<br>";
+        errorMessage += userFeedBack;
+        errorMessage += "</qt>";
+        KMessageBox::error( this, errorMessage );
     }
 
     int maxW = QMAX( deviceComboBox->sizeHint().width(),
