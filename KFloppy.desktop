@@ -54,7 +54,6 @@ Comment[zh_CN]=软盘格式化程序
 Comment[zh_TW]=軟碟格式化程式
 Comment[zu]=Floppy formatha
 BinaryPattern=kfloppy;
-Protocols=
 Name=KFloppy
 Name[fr]=kFloppy
 Name[hu]=KFloppy floppy-formázó
