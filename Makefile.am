@@ -12,8 +12,7 @@ noinst_HEADERS = about.h floppy.h
 kfloppy_SOURCES	= main.cpp about.cpp floppy.cpp mount.c
 
 # to put kmke2fs into BUILT_SOURCES is somehow Trick 17B ;)
-BUILT_SOURCES = about.moc floppy.moc
-DISTCLEANFILES = $(BUILT_SOURCES)
+METASOURCES = about.moc floppy.moc
 
 kmkdosfs_SOURCES = kmkdosfs.c
 
@@ -58,18 +57,4 @@ messages:
 uninstall-local:
 	rm -f $(BINDIR)/kmke2fs
 	rm -f $(kde_minidir)/kfloppy.xpm
-
-####### Explicit dependencies
-about.cpp: about.moc
-about.moc: about.h
-	$(MOC) about.h -o about.moc
-
-floppy.cpp: floppy.moc
-floppy.moc: floppy.h
-	$(MOC) floppy.h -o floppy.moc
-
-
-
-
-
 
