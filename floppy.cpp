@@ -87,8 +87,8 @@ FloppyData::FloppyData(QWidget * parent, const char * name)
 	filesystemComboBox = new QComboBox( FALSE, this, "ComboBox_2" );
 	g1->addWidget( filesystemComboBox, 2, 1, AlignLeft );
 
-	filesystemComboBox->insertItem("DOS");
-	filesystemComboBox->insertItem("ext2");
+	filesystemComboBox->insertItem(i18n("Dos"));
+	filesystemComboBox->insertItem(i18n("ext2"));
 
         v1->addSpacing( 10 );
 
