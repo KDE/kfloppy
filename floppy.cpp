@@ -729,13 +729,20 @@ void FloppyData::createfilesystem()
         *proc << mkdosfs;
 	if(labellabel->isChecked())
 	  *proc << "-n" <<lineedit->text();
+        if (verifylabel->isChecked()) {
+          *proc << "-c";
+        }
 	*proc << device;
   }
   else{
 
     *proc << mke2fs;
+    *proc << "-q";
     if(labellabel->isChecked())
       *proc << "-L" <<lineedit->text();
+    if (verifylabel->isChecked()) {
+      *proc << "-c";
+    }
     *proc << device;
   }
 
