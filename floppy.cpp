@@ -190,6 +190,9 @@ FloppyData::FloppyData(QWidget * parent, const char * name)
 
 FloppyData::~FloppyData()
 {
+  delete mytimer;
+  delete fserrtimer;
+  delete errtimer;
 }
 
 void FloppyData::closeEvent(QCloseEvent*){
@@ -321,6 +324,7 @@ void FloppyData::quit(){
   }
   writeSettings();
   kapp->quit();
+  delete this;
 }
 
 void FloppyData::reset(){
