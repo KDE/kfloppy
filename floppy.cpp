@@ -149,7 +149,7 @@ FloppyData::FloppyData
 	lineedit = new QLineEdit( this, "Lineedit" );
 	lineedit->setGeometry( 35, 225, 170, 25 );
 	lineedit->setText(i18n( "KDE Floppy") );
-	lineedit->setMaxLength(10);
+	lineedit->setMaxLength(11);
 
 
 

@@ -1,1 +1,1 @@
-#define KFLOPPYVERSION "1.2.0"
+#define KFLOPPYVERSION "1.3.0"
