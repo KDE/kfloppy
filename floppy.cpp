@@ -33,7 +33,7 @@
 #include <kapplication.h>
 #include <kstandarddirs.h>
 #include <kmessagebox.h>
-
+#include <kdebug.h>
 
 FloppyData::FloppyData(QWidget * parent, const char * name)
  : KDialog( parent, name )
@@ -57,7 +57,7 @@ FloppyData::FloppyData(QWidget * parent, const char * name)
         QGridLayout* g1 = new QGridLayout( v1, 3, 2 );
 
         label1 = new QLabel(this);
-	label1->setText(i18n("Floppy Drive:"));
+	label1->setText(i18n("Floppy drive:"));
         g1->addWidget( label1, 0, 0, AlignLeft );
 
 
@@ -81,13 +81,13 @@ FloppyData::FloppyData(QWidget * parent, const char * name)
 
 
         label3 = new QLabel(this);
-	label3->setText(i18n("File System:"));
+	label3->setText(i18n("File system:"));
         g1->addWidget( label3, 2, 0, AlignLeft );
 
 	filesystemComboBox = new QComboBox( FALSE, this, "ComboBox_2" );
 	g1->addWidget( filesystemComboBox, 2, 1, AlignLeft );
 
-	filesystemComboBox->insertItem(i18n("Dos"));
+	filesystemComboBox->insertItem(i18n("DOS"));
 	filesystemComboBox->insertItem(i18n("ext2"));
 
         v1->addSpacing( 10 );
@@ -99,21 +99,21 @@ FloppyData::FloppyData(QWidget * parent, const char * name)
         QVBoxLayout* v2 = new QVBoxLayout( buttongroup, 10 );
 
 	quick = new QRadioButton( buttongroup, "RadioButton_2" );
-	quick->setText(i18n( "Q&uick Format") );
+	quick->setText(i18n( "Q&uick format") );
         v2->addWidget( quick, AlignLeft );
 
 	fullformat = new QRadioButton( buttongroup, "RadioButton_3" );
-	fullformat->setText(i18n( "Fu&ll Format") );
+	fullformat->setText(i18n( "Fu&ll format") );
 	fullformat->setChecked(TRUE);
         v2->addWidget( fullformat, AlignLeft );
 
 	verifylabel = new QCheckBox( buttongroup, "RadioButton_4" );
-	verifylabel->setText(i18n( "&Verify Integrity" ));
+	verifylabel->setText(i18n( "&Verify integrity" ));
 	verifylabel->setChecked(TRUE);
 	v2->addWidget( verifylabel, AlignLeft );
 
 	labellabel = new QCheckBox( buttongroup, "RadioButton_4" );
-	labellabel->setText(i18n( "Volume &Label:") );
+	labellabel->setText(i18n( "Volume &label:") );
 	labellabel->setChecked(TRUE);
         v2->addWidget( labellabel, AlignLeft );
 
@@ -478,9 +478,8 @@ void FloppyData::readStdout(KProcess *, char *buffer, int buflen)
     counter ++;
     progress->setValue(counter);     
   }
-#ifdef MY_DEBUG
-    printf("STDOUT:%s\n",mybuffer);
-#endif 
+
+  kdDebug(2002) << "STDOUT: " << formatstring << endl;
 }
 
 void FloppyData::readStderr(KProcess *, char *buffer, int buflen){
@@ -502,9 +501,8 @@ void FloppyData::readStderr(KProcess *, char *buffer, int buflen){
 
 
   errtimer->start(300,true);
-#ifdef MY_DEBUG
-  printf("STDERR:%s\n",mybuffer);
-#endif
+
+  kdDebug(2002) << "STDERR: " << mybuffer << endl;
 }
 
 void FloppyData::errslot(){
@@ -559,9 +557,7 @@ void FloppyData::readfsStdout(KProcess *, char *buffer, int buflen){
     QString mystring;
     mystring = newstring.left(i);
 
-#ifdef MY_DEBUG
-printf("NEWLINE:%s\n",mystring.data());
-#endif
+    kdDebug(2002) << "NEWLINE: " << mystring.data() << endl;
 
     if(findKeyWord(mystring,"BBF ")){
       int bblock = mystring.left(8).toInt();
@@ -577,9 +573,9 @@ printf("NEWLINE:%s\n",mystring.data());
   }
 
   counter += findKeyWord(fsstring,"BLOCK");
-#ifdef MY_DEBUG
-printf("Block Counter: %d\n",counter);  
-#endif
+
+  kdDebug(2002) << "Block Counter: " << counter << endl;
+
   if(quickerase){
 
     if(findKeyWord(fsstring,"START"))
@@ -594,9 +590,8 @@ printf("Block Counter: %d\n",counter);
   fsstring = newstring;
 
   progress->setValue(counter);     
-#ifdef MY_DEBUG
-  printf("STDOUT:%s\n",mybuffer);
-#endif
+
+  kdDebug(2002) << "STDOUT: " << mybuffer << endl;
 }
 
 
@@ -619,7 +614,6 @@ void FloppyData::readfsStderr(KProcess *, char *buffer, int buflen){
   if (fserrstring.isEmpty() && strncmp(mybuffer, "mke2fs", 6) == 0)
     {
       pos = QString(mybuffer).find('\n');
-      //printf("pos=%d, len=%d\n", pos, amount);
       if (pos+1 == amount)
 	return;
       pos++;
@@ -627,23 +621,18 @@ void FloppyData::readfsStderr(KProcess *, char *buffer, int buflen){
   if (fserrstring.isEmpty() && strncmp(mybuffer, "/sbin/mkdosfs", 13) == 0)
     {
       pos = QString(mybuffer).find('\n');
-      //printf("pos=%d, len=%d\n", pos, amount);
       if (pos+1 == amount)
 	return;
       pos++;
     }
-
-  //printf("ERR: <%s>\n", mybuffer);
-  //printf("pos=%d, len=%d\n", pos, amount);
 
   abort = true;
   fserrstring += mybuffer+pos;
 
   // the timers are put in so that I get all of the error message.
   fserrtimer->start(300,true);
-#ifdef MY_DEBUG
-  printf("STDERR:%s\n",mybuffer);
-#endif
+
+  kdDebug(2002) << "STDOUT: " << mybuffer << endl;
 }
 
 void FloppyData::fserrslot(){
