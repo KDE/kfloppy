@@ -1,5 +1,5 @@
 /*
-** $Id: $
+** $Id$
 **
 ** Copyright (C) 2002 by Adriaan de Groot
 */
@@ -48,7 +48,7 @@
 #include <kmessagebox.h>
 #include <kprocess.h>
 #include <kdebug.h>
-#include <kstddirs.h>
+#include <kstandarddirs.h>
 #include <kconfig.h>
 
 #include "debug.h"
@@ -278,7 +278,7 @@ int FloppyFormat::findKeyWord(QString & string,const QString & word){
 
   QString wordstring = word;
   len = wordstring.length();
-    
+
   while( (index = string.find(word)) >= 0)
   {
     count++;
@@ -684,7 +684,7 @@ void DosFloppyFormat::createFSOutput(KProcess *,char *b,int l)
 	fullformat->setEnabled(b);
 	labellabel->setEnabled(b);
 	lineedit->setEnabled(b);
-}	
+}
 
 // Find the necessary executables to be able to do
 // dos, ext2 or ext3 formats. Lots of #ifdefs here for
@@ -847,9 +847,9 @@ void UFSFloppyFormat::createFileSystem(int status)
 		this,SLOT(createFSOutput(KProcess *,char *,int)));
 	connect(p,SIGNAL(receivedStderr(KProcess *,char *,int)),
 		this,SLOT(createFSOutput(KProcess *,char *,int)));
-		
+
 	p->start(KProcess::NotifyOnExit,KProcess::AllOutput);
-	
+
 	emit statusMessage(i18n("Creating filesystem ..."));
 }
 
@@ -883,22 +883,22 @@ void UFSFloppyFormat::createFSOutput(KProcess *,char *b,int l)
 /* virtual slot */ void UFSFloppyFormat::setEnabled(bool b)
 {
 	FloppyFormat::setEnabled(b);
-	
+
 	quick->setEnabled(b);
-}	
+}
 
 bool UFSFloppyFormat::runtimeCheck()
 {
 	DEBUGSETUP;
-  
+
 	createfs = findExecutable("newfs");
 	return !createfs.isEmpty() && FloppyFormat::runtimeCheck();
 }
 
 /* static */ QString UFSFloppyFormat::createfs;
- 
 
-	
+
+
 void UFSFloppyFormat::readSettings(KConfig *c)
 {
 	c->setGroup(ufslabel);
