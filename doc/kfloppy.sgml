@@ -1,6 +1,6 @@
 <!doctype linuxdoc system>
 
-<!-- The KFloppy Formater Handbook.
+<!-- The KFloppy Formatter Handbook.
 
  -->
 
@@ -8,10 +8,10 @@
 
 <!-- Title information -->
 
-<title>The KFloppy Formater Handbook
+<title>The KFloppy Formatter Handbook
 <author>Bernd Johannes Wuebben, <tt/wuebben@kde.org/
 <date>Version 0.2, 12 November 1997
-<abstract>This Handbook describes KFloppy Formater Version 0.2
+<abstract>This Handbook describes KFloppy Formatter Version 0.2
 
 <!-- Table of contents -->
 <toc>
@@ -22,7 +22,7 @@
 <sect>Introduction
 
 <p>
-KFloppy Formater is a program that lets you format floppy disks. 
+KFloppy Formatter is a program that lets you format floppy disks. 
 <p>
 I hope you will enjoy this little tool.
 <p>
@@ -33,16 +33,16 @@ I hope you will enjoy this little tool.
 
 <sect>Installation
 <p>
-<sect1>How to obtain KFloppy Formater
+<sect1>How to obtain KFloppy Formatter
 <p>
-KFloppy Formater is part  of the KDE project <url url="http://www.kde.org">.
-KFloppy Formater can be found on <url url="ftp://ftp.kde.org/pub/kde/">, the main ftp site
+KFloppy Formatter is part of the KDE project <url url="http://www.kde.org">.
+KFloppy Formatter can be found on <url url="ftp://ftp.kde.org/pub/kde/">, the main ftp site
 of the KDE project.
 
 <sect1>Requirements
 <p>
-In order to successfully compile KFloppy Formater, you need the latest versions 
-of the KDE libraries. All required libraries as well as KFloppy Formater itself can be found
+In order to successfully compile KFloppy Formatter, you need the latest versions 
+of the KDE libraries. All required libraries as well as KFloppy Formatter itself can be found
 on <url url="ftp://ftp.kde.org/pub/kde/">. 
 
 
@@ -50,8 +50,8 @@ on <url url="ftp://ftp.kde.org/pub/kde/">.
 <sect1>Compilation and installation
 <p>
 
-In order to compile and install KFloppy Formater on your system, type the following in the base 
-directory of the KEdit distribution:
+In order to compile and install KFloppy Formatter on your system, type the following in the base 
+directory of the KFloppy distribution:
 <tscreen><verb>
 % ./configure
 % make
@@ -59,12 +59,12 @@ directory of the KEdit distribution:
 </verb></tscreen>
 
 
-Since KFloppy Formater uses <tt>autoconf</tt> you should have not trouble compiling it.
+Since KFloppy Formatter uses <tt>autoconf</tt> you should have not trouble compiling it.
 Should you run into problems please report them to the <sf/KDE/ mailing lists.
 
 <sect>Usage<p>
 
-KFloppy Formater is very simply to use. In fact most of its functions should be
+KFloppy Formatter is very simply to use. In fact most of its functions should be
 selfexplanatory. I really have absolutely no time to write a long
 manual at this point. Please contact me if you would like to write it.
 
@@ -81,7 +81,7 @@ manual at this point. Please contact me if you would like to write it.
 <sect>Copyright<p>
 <tscreen><verb>
 
-KFloppy Formater  
+KFloppy Formatter  
 
 Copyright 1997  
 Bernd Johannes Wuebben, <wuebben@math.cornell.edu>
