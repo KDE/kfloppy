@@ -222,14 +222,17 @@ bool FloppyData::findDevice()
 {
 
 
-  if((QString) deviceComboBox->currentText() == (QString) FLOPPYA3){
-    if((QString) densityComboBox->currentText() == (QString)i18n( "HD")){
+  if( deviceComboBox->currentText() == FLOPPYA3 ){
+    if( densityComboBox->currentText() == i18n( "HD")){
       device = "/dev/fd0h1440";
       blocks = 1440;
       tracks = 80;
       mdev = "/dev/fd0";
       if( access(device.data(),W_OK) < 0){
 	device = "/dev/fd0H1440";
+      }
+      if( access(device.data(),W_OK) < 0){
+	device = "/dev/fd0u1440";
       }
     }
     else{
@@ -240,8 +243,8 @@ bool FloppyData::findDevice()
     }
   }
 
-  if((QString) deviceComboBox->currentText() == (QString) FLOPPYA5){
-    if((QString) densityComboBox->currentText() == (QString)i18n( "HD")){
+  if( deviceComboBox->currentText() == FLOPPYA5){
+    if( densityComboBox->currentText() == i18n( "HD")){
       device = "/dev/fd0h1200";
       blocks = 1200;
       tracks = 80;
@@ -255,14 +258,17 @@ bool FloppyData::findDevice()
     }
   }
 
-  if((QString) deviceComboBox->currentText() == (QString) FLOPPYB3){
-    if((QString) densityComboBox->currentText() == (QString)i18n( "HD")){
+  if( deviceComboBox->currentText() == FLOPPYB3){
+    if( densityComboBox->currentText() == i18n( "HD")){
       device = "/dev/fd1h1440";
       blocks = 1400;
       tracks = 80;
       mdev = "/dev/fd1";
       if( access(device.data(),W_OK) < 0){
 	device = "/dev/fd1H1440";
+      }
+      if( access(device.data(),W_OK) < 0){
+	device = "/dev/fd1u1440";
       }
     }
     else{
@@ -273,8 +279,8 @@ bool FloppyData::findDevice()
     }
   }
 
-  if((QString) deviceComboBox->currentText() == (QString) FLOPPYB5){
-    if((QString) densityComboBox->currentText() == (QString)i18n( "HD")){
+  if( deviceComboBox->currentText() == FLOPPYB5){
+    if( densityComboBox->currentText() == i18n( "HD")){
       device = "/dev/fd1h1200";
       blocks = 1200;
       tracks = 80;
@@ -297,7 +303,7 @@ bool FloppyData::findDevice()
 	      "you have write permission to it."),device.data());
     QMessageBox::critical(this,
 		      i18n( "KFloppy"),
-		       str.data());
+		       str);
 
     formatbutton->setEnabled(FALSE);
     return false;
@@ -334,7 +340,7 @@ bool FloppyData::findExecutables(){
 	"Please install KFloppy properly."));
     QMessageBox::critical(this,
 			  i18n("KFloppy"),
-		       str.data());
+		       str);
 
     formatbutton->setEnabled(FALSE);
     ok = false;
@@ -350,7 +356,7 @@ bool FloppyData::findExecutables(){
 	  "Please install KFloppy properly."));
     QMessageBox::critical(this,
 		       i18n("KFloppy"),
-		       str.data());
+		       str);
 
     formatbutton->setEnabled(FALSE);
     ok = false;
@@ -366,7 +372,7 @@ bool FloppyData::findExecutables(){
 		);
     QMessageBox::critical(this,
 		       i18n("KFloppy"),
-		       str.data());
+		       str);
 
     formatbutton->setEnabled(FALSE);
     ok = false;
@@ -473,7 +479,7 @@ void FloppyData::format(){
 		));
     QMessageBox::critical(this,
 		       i18n("KFloppy"),
-		       str.data());
+		       str);
     reset();
   }
 
@@ -522,7 +528,7 @@ void FloppyData::readStdout(KProcess *, char *buffer, int buflen){
     else
       newstring = formatstring;
 
-    frame->setText(newstring.data());
+    frame->setText(newstring);
     increment =false;
   }
 
@@ -576,7 +582,7 @@ void FloppyData::errslot(){
 
     QMessageBox::warning(this,
 		       i18n("KFloppy"),
-		       str.data());
+		       str);
     
     reset();
     return;
@@ -590,7 +596,7 @@ void FloppyData::errslot(){
 
   QMessageBox::warning(this,
 		   i18n(    "KFloppy"),
-		       str.data());
+		       str);
 
 
   reset();
@@ -632,7 +638,7 @@ printf("NEWLINE:%s\n",mystring.data());
       int bblock = atoi(mystring.left(8).data());
       QString mstr;
       mstr.sprintf(i18n("Block %d is bad. Continuing ..."),bblock);
-      frame->setText(mstr.data());
+      frame->setText(mstr);
     }
 
     if(findKeyWord(mystring,"TNBB ")){
@@ -705,7 +711,7 @@ void FloppyData::fserrslot(){
 
     QMessageBox::warning(this,
 		       i18n("KFloppy"),
-		       str.data());
+		       str);
     
     reset();
     return;
@@ -719,7 +725,7 @@ void FloppyData::fserrslot(){
 
   QMessageBox::warning(this,
 		       i18n("KFloppy"),
-		       str.data());
+		       str);
 
 }
 
@@ -766,7 +772,7 @@ void FloppyData::cf2done(){
 
     QMessageBox::information(this,
 			     i18n("KFloppy"),
-			     str.data());
+			     str);
   }
   else{
 
@@ -775,7 +781,7 @@ void FloppyData::cf2done(){
 
     QMessageBox::information(this,
 			     i18n("KFloppy"),
-			     str.data());
+			     str);
 
   }
 
@@ -882,7 +888,7 @@ void FloppyData::createfilesystem(){
 		);
     QMessageBox::critical(this,
 		       i18n("KFloppy"),
-		       str.data());
+		       str);
     frame->setText("");
     proc = 0L;
     progress->setValue(0);
@@ -927,7 +933,7 @@ bool FloppyData::checkmount(){
 
   QMessageBox::warning(this,
 		       i18n("KFloppy"),
-		       str.data());  
+		       str);  
 
 
  return false;
@@ -987,13 +993,13 @@ void FloppyData::writeSettings(){
 	labelconfig = labellabel->isChecked();
 
 	config->writeEntry("CreateLabel",labelconfig);
-	config->writeEntry("Label",labelnameconfig.data());
+	config->writeEntry("Label",labelnameconfig);
 
 
 	config->writeEntry("QuickFormat",quickformatconfig);
-	config->writeEntry("FLoppyDrive",driveconfig.data());
-	config->writeEntry("Density",densityconfig.data());
-	config->writeEntry("Filesystem",filesystemconfig.data());
+	config->writeEntry("FloppyDrive",driveconfig);
+	config->writeEntry("Density",densityconfig);
+	config->writeEntry("Filesystem",filesystemconfig);
 	config->sync();
 
 }
@@ -1006,7 +1012,7 @@ void FloppyData::readSettings(){
 	labelconfig = config->readNumEntry("CreateLabel",1);
 	labelnameconfig = config->readEntry("Label","KDE Floppy");
 	quickformatconfig = config->readNumEntry("QuickFormat",0);
-	driveconfig = config->readEntry("FLoppyDrive","A: 3.5");
+	driveconfig = config->readEntry("FloppyDrive","A: 3.5");
 	densityconfig = config->readEntry("Density","HD");
 	filesystemconfig = config->readEntry("Filesystem","Dos");
 
@@ -1030,7 +1036,7 @@ void FloppyData::setWidgets(){
     quick->setChecked(FALSE);
     fullformat->setChecked(TRUE);
   }
-  lineedit->setText(labelnameconfig.data());
+  lineedit->setText(labelnameconfig);
 
   for(int i = 0 ; i < deviceComboBox->count(); i++){
     if ( (QString) deviceComboBox->text(i) == driveconfig){
