@@ -54,6 +54,8 @@ public:
     void show();
     // Maps combobox selection to drive and density
     bool findDevice();
+    // set default device
+    bool setInitialDevice(const QString& dev);
     // Startup check for nescessary executables
     void findExecutables();
     // Override closeEvent() in order to properly close

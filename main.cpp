@@ -32,10 +32,16 @@
 #include "floppy.h"
 
 
-static const char *description = 
+static const char description[] = 
 	I18N_NOOP("KDE Floppy Disk utility");
 
-static const char *version = "2.1";
+static const char version[] = "2.2";
+
+static const KCmdLineOptions options[] =
+{
+	{ "+[device]", I18N_NOOP("Default Device"), 0 },
+	KCmdLineLastOption
+};
 
 int main( int argc, char *argv[] )
 {
@@ -54,13 +60,23 @@ int main( int argc, char *argv[] )
   aboutData.addCredit("Adriaan de Groot", I18N_NOOP("Add BSD support"), "groot@kde.org");
 
   KCmdLineArgs::init( argc, argv, &aboutData );
-  KApplication::addCmdLineOptions();
+  KCmdLineArgs::addCmdLineOptions( options );
+
+  KCmdLineArgs *args = KCmdLineArgs::parsedArgs();
+  QString device;
+  if (args->count()) {
+	device = args->arg(0);
+  }
+  args->clear();
 
   KApplication a;
 
   FloppyData* floppy  = new FloppyData();
+  a.setMainWidget(floppy);
+  bool autoformat = floppy->setInitialDevice(device);
   floppy->show();
+  if (autoformat)
+	floppy->format();
   return a.exec();
 }
-
 

@@ -1,4 +1,3 @@
-
 /*
 
     $Id$
@@ -252,6 +251,20 @@ bool FloppyData::findDevice()
   return true;
 }
 
+bool FloppyData::setInitialDevice(const QString& dev)
+{
+  int drive = -1;
+  if (dev.startsWith("/dev/fd0"))
+    drive = 0;
+  if (dev.startsWith("/dev/fd1"))
+    drive = 1;
+
+  bool ok = (drive>=0);
+  if (ok)
+    deviceComboBox->setCurrentItem(drive);  
+  return ok;
+}
+
 
 void FloppyData::findExecutables()
 {
@@ -352,6 +365,11 @@ void FloppyData::format(){
 	if (formatActions) delete formatActions;
 	formatActions = new KFActionQueue(this);
 	
+	connect(formatActions,SIGNAL(status(const QString &,int)),
+		this,SLOT(formatStatus(const QString &,int)));
+	connect(formatActions,SIGNAL(done(KFAction *,bool)),
+		this,SLOT(reset()));
+
 	if (quick->isChecked())
 	{
 		quickerase=true;
@@ -369,10 +387,14 @@ void FloppyData::format(){
 	if (filesystemComboBox->currentItem() == 0)
 	{
 		FATFilesystem *f = new FATFilesystem(this);
-		f->configureDevice(drive,blocks);
+		connect(f,SIGNAL(status(const QString &,int)),
+			this,SLOT(formatStatus(const QString &,int)));
+		connect(f,SIGNAL(done(KFAction *,bool)),
+			this,SLOT(reset()));
 		f->configure(verifylabel->isChecked(),
 			labellabel->isChecked(),
 			lineedit->text());
+		f->configureDevice(drive,blocks);
 		formatActions->queue(f);
 	}
 	else if (filesystemComboBox->currentItem() == 1)
@@ -392,16 +414,16 @@ void FloppyData::format(){
 		
 		if (f)
 		{
+			connect(f,SIGNAL(status(const QString &,int)),
+				this,SLOT(formatStatus(const QString &,int)));
+			connect(f,SIGNAL(done(KFAction *,bool)),
+				this,SLOT(reset()));
 			f->configureDevice(drive,blocks);
 			formatActions->queue(f);
 		}
 	}
 
 	
-	QObject::connect(formatActions,SIGNAL(status(const QString &,int)),
-		this,SLOT(formatStatus(const QString &,int)));
-	QObject::connect(formatActions,SIGNAL(done(KFAction *,bool)),
-		this,SLOT(reset()));
 		
 	formatActions->exec();
 }
@@ -409,14 +431,10 @@ void FloppyData::format(){
 void FloppyData::formatStatus(const QString &s,int p)
 {
 	if (!s.isEmpty())
-	{
 		frame->setText(s);
-	}
 	
 	if ((0<=p) && (p<=100))
-	{
 		progress->setValue(p);
-	}
 }
 
 #if 0
@@ -695,10 +713,7 @@ void FloppyData::writeSettings(){
 	driveconfig = deviceComboBox->currentText();
 	driveconfig = driveconfig.stripWhiteSpace();
 
-	if(quick->isChecked())
-	  quickformatconfig  = 1;
-	else
-	  quickformatconfig = 0;
+	quickformatconfig = quick->isChecked();
 
 	labelnameconfig = lineedit->text();
 	labelnameconfig = labelnameconfig.stripWhiteSpace();
@@ -737,29 +752,11 @@ void FloppyData::readSettings(){
 
 void FloppyData::setWidgets(){
 
-  if(labelconfig){
-    labellabel->setChecked(TRUE);
-  }
-  else{
+  labellabel->setChecked(labelconfig);
+  verifylabel->setChecked(verifyconfig);
+  quick->setChecked(quickformatconfig);
 
-    labellabel->setChecked(FALSE);
-  }
-
-  if(verifyconfig) {
-    verifylabel->setChecked(TRUE);
-  }
-  else {
-    verifylabel->setChecked(FALSE);
-  }
-
-  if(quickformatconfig){
-    quick->setChecked(TRUE);
-    fullformat->setChecked(FALSE);
-  }
-  else{
-    quick->setChecked(FALSE);
-    fullformat->setChecked(TRUE);
-  }
+  fullformat->setChecked(!quickformatconfig);
   lineedit->setText(labelnameconfig);
 
   for(int i = 0 ; i < deviceComboBox->count(); i++){

@@ -164,12 +164,12 @@ void KFActionQueue::queue(KFAction *p)
 //
 //
 #ifdef ANY_LINUX
-const char *fd0H1440[] = { "/dev/fd0H1440", "/dev/fd0u1440", 0L } ;
-const char *fd0D720[]={ "/dev/fd0D720", "/dev/fd0u720", 0L };
+const char *fd0H1440[] = { "/dev/fd0h1440", "/dev/fd0H1440", "/dev/fd0u1440", 0L } ;
+const char *fd0D720[]={ "/dev/fd0u720", "/dev/fd0D720", 0L };
 const char *fd0h1200[]={ "/dev/fd0h1200", 0L };
 const char *fd0h360[]={ "/dev/fd0h360", 0L };
-const char *fd1H1440[] = { "/dev/fd1H1440", "/dev/fd0u1440", 0L } ;
-const char *fd1D720[]={ "/dev/fd1D720", "/dev/fd0u720", 0L };
+const char *fd1H1440[] = { "/dev/fd1h1440", "/dev/fd1H1440", "/dev/fd0u1440", 0L } ;
+const char *fd1D720[]={ "/dev/fd0u720", "/dev/fd1D720", 0L };
 const char *fd1h1200[]={ "/dev/fd1h1200", 0L };
 const char *fd1h360[]={ "/dev/fd1h360", 0L };
 #endif
@@ -230,6 +230,11 @@ FloppyAction::FloppyAction(QObject *p) :
 	theProcess(0L)
 {
 	DEBUGSETUP;
+
+	QObject::connect(this,SIGNAL(status(const QString &,int)),
+		p,SLOT(formatStatus(const QString &,int)));
+	QObject::connect(this,SIGNAL(done(KFAction *,bool)),
+		p,SLOT(reset()));
 }
 
 void FloppyAction::quit()
@@ -264,10 +269,13 @@ bool FloppyAction::configureDevice(int drive,int density)
 	fdinfo *deviceinfo = fdtable;
 	for ( ; deviceinfo && (deviceinfo->devices) ; deviceinfo++)
 	{
-		if ((deviceinfo->blocks == density) && (deviceinfo->drive == drive)) break;
+		if (deviceinfo->blocks != density)
+			continue;
+		if (deviceinfo->drive == drive)
+			break;
 	}
 
-	if (!deviceinfo->devices)
+	if (!deviceinfo || !deviceinfo->devices)
 	{
 		emit status(i18n("Cannot find a device for drive %1 and density %2.")
 			.arg(drive).arg(density),-1);
@@ -324,6 +332,8 @@ void FloppyAction::processDone(KProcess *p)
 
 void FloppyAction::processStdOut(KProcess *, char *b, int l)
 {
+	Q_UNUSED(b);
+	Q_UNUSED(l);
 	DEBUGS("stdout:" << QString::fromLatin1(b,l));
 }
 
@@ -408,14 +418,12 @@ bool FDFormat::configure(bool v)
 		<< "-y"
 		<< "-f"
 		<< QString::number(deviceInfo->blocks) ;
-#else
-#ifdef ANY_LINUX
+#elif defined(ANY_LINUX)
 	// No Linux-specific flags
-#endif
 #endif
 
 	// Common to Linux and BSD, others may differ
-	*theProcess << deviceName ;
+	*theProcess << deviceName;
 
 	if (!startProcess())
 	{
@@ -462,8 +470,7 @@ void FDFormat::processStdOut(KProcess *, char *b, int l)
 		}
 		DEBUGS(s.latin1());
 	}
-#else
-#ifdef ANY_LINUX
+#elif defined(ANY_LINUX)
 	s = QString::fromLatin1(b,l);
 	int p;
 	if ((p=s.find("track")) != -1)
@@ -485,7 +492,6 @@ void FDFormat::processStdOut(KProcess *, char *b, int l)
 		goto ioError;
 	}
 	DEBUGS(s.latin1());
-#endif
 #endif
 	return;
 
@@ -519,12 +525,10 @@ FATFilesystem::FATFilesystem(QObject *parent) :
 
 #ifdef ANY_BSD
 	newfs_fat = findExecutable("newfs_msdos");
-#else
-#ifdef ANY_LINUX
+#elif defined(ANY_LINUX)
 	newfs_fat = findExecutable("mkdosfs");
 #else
 	return false;
-#endif
 #endif
 
 	return !newfs_fat.isEmpty();
@@ -535,13 +539,9 @@ bool FATFilesystem::configure(bool v,bool l,const QString &lbl)
 	doVerify=v;
 	doLabel=l;
 	if (l)
-	{
-		label=lbl.stripWhiteSpace();
-	}
+		label=lbl.simplifyWhiteSpace();
 	else
-	{
 		label=QString::null;
-	}
 
 	return true;
 }
