@@ -3,6 +3,7 @@
 Comment=Floppy Formater
 Comment[fi]=Levykkeiden alustusohjelma
 Comment[de]=Disketten-Formatierer
+Comment[no]=Diskettformaterer
 Comment[pl]=Program formatuj±cy dyskietki
 Comment[fr]=Formatteur de disquettes
 Comment[hu]=Floppy formatt\141l\163
@@ -15,6 +16,7 @@ BinaryPattern=kfloppy;
 Protocols=
 Name=KFloppy
 Name[de]=Formatierer
+Name[no]=Formaterer
 Name[fi]=Levykkeen alustus
 Name[pl]=KFloppy
 Name[fr]=Formatteur
