@@ -18,6 +18,7 @@ Comment[ro]=Program de formatat dischete
 BinaryPattern=kfloppy;
 Protocols=
 Name=KFloppy
+Name[is_IS]=Diskettutól
 Name[es]=Formateador
 Name[de]=Formatierer
 Name[no]=Formaterer
