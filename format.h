@@ -40,6 +40,7 @@
 **     FDFormat        Runs fdformat(1) under BSD or Linux
 **     FATFilesystem   Creates an msdos (FAT) filesystem
 **     Ext2Filesystem  Creates ext2 filesystems, under Linux.
+**     MinixFilesystem Creates Minix filesystems, under Linux.
 **     UFSFilesystem   Creates UFS filesystem, under BSD.
 **
 **
@@ -345,3 +346,25 @@ protected:
 QString findExecutable(const QString &);
 
 #endif
+
+#ifdef ANY_LINUX
+class MinixFilesystem : public FloppyAction
+{
+public:
+	MinixFilesystem(QObject *parent = 0L);
+	
+	virtual void exec();
+	
+	static bool runtimeCheck();
+	
+	/* Same args as FATFilesystem. */
+	bool configure(bool verify, bool label, const QString &l);
+	
+protected:
+	static QString newfs;
+	
+	bool doVerify,doLabel;
+	QString label;
+} ;
+#endif
+

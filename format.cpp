@@ -706,6 +706,8 @@ void Ext2Filesystem::exec()
 	if (doVerify) *p << "-c" ;
 	if (doLabel) *p << "-L" << label ;
 
+	*p << deviceName ;
+
 	if (!startProcess())
 	{
 		emit status(i18n("Cannot start ext2 format program."),-1);
@@ -714,5 +716,78 @@ void Ext2Filesystem::exec()
 }
 
 
+
+#endif
+
+#ifdef ANY_LINUX
+/* static */ QString MinixFilesystem::newfs = QString::null ;
+
+MinixFilesystem::MinixFilesystem(QObject *parent) :
+	FloppyAction(parent)
+{
+	DEBUGSETUP;
+	runtimeCheck();
+	theProcessName="mkfs.minix";
+	setName("Minix2Filesystem");
+}
+
+/* static */ bool MinixFilesystem::runtimeCheck()
+{
+	DEBUGSETUP;
+
+	newfs = findExecutable("mkfs.minix");
+
+	return !newfs.isEmpty();
+}
+
+bool MinixFilesystem::configure(bool v,bool l,const QString &lbl)
+{
+	doVerify=v;
+	doLabel=l;
+	if (l)
+	{
+		label=lbl.stripWhiteSpace();
+	}
+	else
+	{
+		label=QString::null;
+	}
+
+	return true;
+}
+
+void MinixFilesystem::exec()
+{
+	DEBUGSETUP;
+
+	if (!deviceInfo || !deviceName)
+	{
+		emit done(this,false);
+		return;
+	}
+
+	if (newfs.isEmpty())
+	{
+		emit status(i18n("Cannot find a program to create Minix filesystems."),-1);
+		emit done(this,false);
+		return;
+	}
+
+	if (theProcess) delete theProcess;
+	KProcess *p = theProcess = new KProcess;
+
+	*p << newfs;
+
+        // Labeling is not possible
+	if (doVerify) *p << "-c" ;
+
+	*p << deviceName ;
+
+	if (!startProcess())
+	{
+		emit status(i18n("Cannot start Minix format program."),-1);
+		emit done(this,false);
+	}
+}
 
 #endif

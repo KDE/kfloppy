@@ -100,6 +100,7 @@ FloppyData::FloppyData(QWidget * parent, const char * name)
 	filesystemComboBox->insertItem(i18n("DOS"));
 #ifdef ANY_LINUX
 	filesystemComboBox->insertItem(i18n("ext2"));
+	filesystemComboBox->insertItem(i18n("Minix"));
 #endif
 #ifdef ANY_BSD
 	filesystemComboBox->insertItem(i18n("UFS"));
@@ -445,6 +446,26 @@ void FloppyData::format(){
 		}
 	}
 #endif
+
+#ifdef ANY_LINUX
+	else if ( filesystemComboBox->currentText() == i18n("Minix") )
+	{
+		MinixFilesystem *f = new MinixFilesystem(this);
+		f->configure(verifylabel->isChecked(),
+			labellabel->isChecked(),
+			lineedit->text());
+		if (f)
+		{
+			connect(f,SIGNAL(status(const QString &,int)),
+				this,SLOT(formatStatus(const QString &,int)));
+			connect(f,SIGNAL(done(KFAction *,bool)),
+				this,SLOT(reset()));
+			f->configureDevice(drive,blocks);
+			formatActions->queue(f);
+		}
+	}
+#endif
+
 
 
 	formatActions->exec();
