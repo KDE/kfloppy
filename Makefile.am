@@ -47,10 +47,15 @@ install-local-exec: kmke2fs
 	@echo ""
 	@echo "Bernd Wuebben"
 	@echo "wuebben@kde.org"
-	@echo ""	
+	@echo ""
+	
+install-data-local: 
+	$(mkinstalldirs) $(kde_minidir)
+	$(INSTALL_DATA) mini-kfloppy.xpm $(kde_minidir)/kfloppy.xpm
 
 uninstall-local:
 	rm -f $(BINDIR)/kmke2fs
+	rm -f $(kde_minidir)/kfloppy.xpm
 
 ####### Explicit dependencies
 about.cpp: about.moc
