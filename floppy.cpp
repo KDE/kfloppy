@@ -629,8 +629,8 @@ void FloppyData::readfsStderr(KProcess *, char *buffer, int buflen){
       pos++;
     }
 
-  printf("ERR: <%s>\n", mybuffer);
-  printf("pos=%d, len=%d\n", pos, amount);
+  //printf("ERR: <%s>\n", mybuffer);
+  //printf("pos=%d, len=%d\n", pos, amount);
 
   abort = true;
   fserrstring += mybuffer+pos;
