@@ -167,6 +167,21 @@ echo "Disabling BSD shared libraries by default"
 )
 AC_SUBST(BSDLIB_CMT)
 AC_SUBST_FILE(MAKEFILE_BSDLIB)
+
+
+dnl Stephan: This checks for autoconf
+missing_dir=`cd $ac_aux_dir && pwd` 
+AC_MSG_CHECKING(for working autoconf)
+if (autoconf --version) < /dev/null > /dev/null 2>&1; then
+  AUTOCONF=autoconf
+  AC_MSG_RESULT(found)
+else
+  AUTOCONF="$missing_dir/missing autoconf"
+  AC_MSG_RESULT(missing)
+fi
+AC_SUBST(AUTOCONF)
+
+
 dnl
 dnl handle --enable-profile
 dnl
