@@ -636,7 +636,7 @@ void UFSFilesystem::exec()
 	
 	if (newfs.isEmpty())
 	{
-		emit status(i18n("Cannot find a program to create a UFS filesystems."),-1);
+		emit status(i18n("Cannot find a program to create UFS filesystems."),-1);
 		emit done(this,false);
 		return;
 	}
@@ -707,7 +707,7 @@ void Ext2Filesystem::exec()
 	
 	if (newfs.isEmpty())
 	{
-		emit status(i18n("Cannot find a program to create an ext2 filesystems."),-1);
+		emit status(i18n("Cannot find a program to create ext2 filesystems."),-1);
 		emit done(this,false);
 		return;
 	}
