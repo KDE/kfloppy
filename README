@@ -1,3 +1,14 @@
+KFloppy 2.1
+===========
+
+KFloppy was "done and feature complete and bug free", for systems
+running Linux. Other KDE platforms had an app that put up a warning
+box and was then totally inert. I've restructured the whole thing,
+cleaned up the code somewhat, and modularized it. 
+
+Currently KFloppy is tested on a FBSD machine with a floppy drive
+and a zip drive. It should still behave on Linux, but I haven't tried.
+
 KFloppy 0.2
 ===========
 

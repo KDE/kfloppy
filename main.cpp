@@ -35,28 +35,32 @@
 static const char *description = 
 	I18N_NOOP("KDE Floppy Disk utility");
 
-static const char *version = "2.0";
+static const char *version = "2.1";
 
 int main( int argc, char *argv[] )
 {
-  KAboutData aboutData("kfloppy", I18N_NOOP("KFloppy"),
+  KAboutData aboutData("kfloppy", 
+	I18N_NOOP("KFloppy"),
     version, description, KAboutData::License_GPL,
     "(c) 1997, Bernd Johannes Wuebben\n"
-    "(c) 2001, Chris Howells");
+    "(c) 2001, Chris Howells\n"
+    "(c) 2002, Adriaan de Groot",
+    I18N_NOOP("KFloppy helps you format removeable media (like floppy, Zip,\n"
+	"or LS120 disks) with the filesystem of your choice.")
+    );
+
   aboutData.addAuthor("Bernd Johannes Wuebben", I18N_NOOP("Author, Maintainer"), "wuebben@kde.org");
-  aboutData.addAuthor("Chris Howells", I18N_NOOP("User interface re-design"), "howells@kde.org");
+  aboutData.addCredit("Chris Howells", I18N_NOOP("User interface re-design"), "howells@kde.org");
+  aboutData.addCredit("Adriaan de Groot", I18N_NOOP("Add BSD support"), "groot@kde.org");
+
   KCmdLineArgs::init( argc, argv, &aboutData );
+  KApplication::addCmdLineOptions();
 
   KApplication a;
 
   FloppyData* floppy  = new FloppyData();
-
-  a.setTopWidget(floppy);
   floppy->show();
-  a.exec();
-
-  return 0;
+  return a.exec();
 }
-
 
 
