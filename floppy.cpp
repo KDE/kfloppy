@@ -25,7 +25,6 @@
 
 #include "debug.h"
 
-#include <iostream.h>
 #include <qlayout.h>
 
 #include <kapplication.h>

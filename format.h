@@ -21,6 +21,9 @@
 
     */
 
+#ifndef FORMAT_H
+#define FORMAT_H
+
 /*
 ** This file defines a hierarchy of classes that
 ** can run a sequence of external programs (like
@@ -342,3 +345,4 @@ protected:
 
 QString findExecutable(const QString &);
 
+#endif
