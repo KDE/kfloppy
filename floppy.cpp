@@ -82,8 +82,6 @@ FloppyData::FloppyData
  	filesystemComboBox = new QComboBox( FALSE, this, "ComboBox_2" );
 	filesystemComboBox->setGeometry( 120, 90, 100, 25 );
 	filesystemComboBox->setAutoResize( FALSE );
-	connect(filesystemComboBox,SIGNAL(activated(int)),
-		this,SLOT(filesystemchanged(int)));
 	
 	quitbutton = new QPushButton( this, "PushButton_1" );
 	quitbutton->setGeometry( 240, 40, 100, 25 );
@@ -416,15 +414,12 @@ void FloppyData::format(){
   badblocks = 0;
   abort = false;
   formating = true;
-  progress->setRange(0,tracks);
+  progress->setRange(0,tracks*2);
   progress->setValue(0);
   counter = 0;
 
   proc = new KProcess;
-
-  *proc << fdformat;
-  *proc << "-n" << device.data();
-
+  *proc << fdformat << device.data();
 
   connect(proc, SIGNAL(processExited(KProcess *)),this, SLOT(formatdone(KProcess*)));
 
@@ -629,6 +624,10 @@ void FloppyData::readfsStderr(KProcess *, char *buffer, int buflen){
   memcpy(mybuffer,buffer,amount);
   mybuffer[amount] = '\0';
 
+  // skip version message
+  if (strncmp(mybuffer, "mke2fs", 6) == 0)
+    return;
+
   abort = true;
   fserrstring += mybuffer;
 
@@ -728,58 +727,23 @@ void FloppyData::createfilesystem(){
   fsstring = "";
   fserrstring = "";
 
-  if(quickerase){
-    if(!findDevice())
-      return;
-    quickerase = true;
-  }
-
-  if(quickerase)
-    progress->setRange(0,3);
-  else
-    progress->setRange(0,blocks/16);
-
-
-  if(quickerase)
-    counter = 1;	
-  else
-    counter = 0;
-
-  progress->setValue(counter);
-
-  if(quickerase){
-
-    frame->setText(i18n("Creating Filesystem ..."));
-  }
-  else{
-
-    frame->setText(i18n("Verifying ..."));
-
-  }
+  frame->setText(i18n("Creating Filesystem ..."));
 
   proc = new KProcess;
 
   if((QString)filesystemComboBox->currentText() == "Dos"){
 
     *proc << mkdosfs;
-    if(!quickerase)
-      
-      *proc << "-c" ;
-
     if(labellabel->isChecked())
       *proc << "-n" <<lineedit->text();
-
     *proc << device.data();
   }
   else{
 
     *proc << mke2fs;
-
-    if(!quickerase)
-      *proc << "-c" ;
-
+    if(labellabel->isChecked())
+      *proc << "-L" <<lineedit->text();
     *proc << device.data();
-
   }
 
 
@@ -801,8 +765,6 @@ void FloppyData::createfilesystem(){
     proc = 0L;
     progress->setValue(0);
   }
-
-
 }
 
 
@@ -947,29 +909,6 @@ void FloppyData::setWidgets(){
       densityComboBox->setCurrentItem(i);
     }
   }
-
-  if((QString) filesystemComboBox->currentText() == (QString) "ext2fs"){
-    labellabel->setEnabled(FALSE);
-    lineedit->setEnabled(FALSE);
-  }
-
 }
 
-void  FloppyData::filesystemchanged(int index){
 
-
-  if ((QString)filesystemComboBox->text(index) == (QString)"ext2fs"){
-
-    labellabel->setEnabled(FALSE);
-    lineedit->setEnabled(FALSE);
-
-  }
-  else{
-
-    labellabel->setEnabled(TRUE);
-    lineedit->setEnabled(TRUE);
-
-  }
-
-
-}

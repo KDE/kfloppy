@@ -88,7 +88,6 @@ public:
 public slots:
       void fserrslot();
       void errslot();
-      void filesystemchanged(int);
       void quit();
       void format();
       void createfilesystem();
