@@ -27,10 +27,11 @@
 #include "floppy.h"
 #include "floppy.moc"
 
+#include <iostream.h>
 #include <qlayout.h>
 #include <qlabel.h>
 #include <qpushbutton.h>
-#include <qcombo.h>
+#include <qcombobox.h>
 
 
 #include <kconfig.h>
@@ -62,33 +63,27 @@ FloppyData::FloppyData(QWidget * parent, const char * name)
 
         label1 = new QLabel(this);
 	label1->setText(i18n("Floppy Drive:"));
-	 label1->setFixedSize( label1->sizeHint() );
         g1->addWidget( label1, 0, 0, AlignLeft );
 
 
 	deviceComboBox = new QComboBox( FALSE, this, "ComboBox_1" );
-	deviceComboBox->setFixedSize( deviceComboBox->sizeHint() );
 	g1->addWidget( deviceComboBox, 0, 1, AlignLeft );
 
         label2 = new QLabel(this);
 	label2->setText(i18n("Density:"));
-        label2->setFixedSize( label2->sizeHint() );
         g1->addWidget( label2, 1, 0, AlignLeft );
 
 	densityComboBox = new QComboBox( FALSE, this, "ComboBox_1" );
-	densityComboBox->setFixedSize( densityComboBox->sizeHint() );
 	g1->addWidget( densityComboBox, 1, 1, AlignLeft );
 
         label3 = new QLabel(this);
 	label3->setText(i18n("File System:"));
-	label3->setFixedSize( label3->sizeHint() );
         g1->addWidget( label3, 2, 0, AlignLeft );
 
  	filesystemComboBox = new QComboBox( FALSE, this, "ComboBox_2" );
-	filesystemComboBox->setFixedSize( filesystemComboBox->sizeHint() );
 	g1->addWidget( filesystemComboBox, 2, 1, AlignLeft );
 
-       v1->addSpacing( 10 );
+        v1->addSpacing( 10 );
 
         buttongroup = new QButtonGroup( this, "ButtonGroup_1" );
 	buttongroup->setFrameStyle( 49 );
@@ -98,18 +93,20 @@ FloppyData::FloppyData(QWidget * parent, const char * name)
 
 	quick = new QRadioButton( buttongroup, "RadioButton_2" );
 	quick->setText(i18n( "Quick Erase") );
-	quick->setAutoResize( TRUE );
         v2->addWidget( quick, AlignLeft );
 
 	fullformat = new QRadioButton( buttongroup, "RadioButton_3" );
 	fullformat->setText(i18n( "Full Format") );
-	fullformat->setAutoResize( TRUE );
 	fullformat->setChecked(TRUE);
         v2->addWidget( fullformat, AlignLeft );
 
+	verifylabel = new QCheckBox( buttongroup, "RadioButton_4" );
+	verifylabel->setText(i18n( "Verify on" ));
+	verifylabel->setChecked(TRUE);
+	v2->addWidget( verifylabel, AlignLeft );
+
 	labellabel = new QCheckBox( buttongroup, "RadioButton_4" );
 	labellabel->setText(i18n( "Create Label:") );
-	labellabel->setAutoResize( TRUE );
 	labellabel->setChecked(TRUE);
         v2->addWidget( labellabel, AlignLeft );
 
@@ -125,31 +122,27 @@ FloppyData::FloppyData(QWidget * parent, const char * name)
         QVBoxLayout* v3 = new QVBoxLayout( h1 );
 	
 	quitbutton = new QPushButton( this, "PushButton_1" );
-	quitbutton->setText(i18n( "Quit") );
+	quitbutton->setText(i18n( "&Quit") );
 	quitbutton->setAutoRepeat( FALSE );
-	quitbutton->setAutoResize( FALSE );
 	connect(quitbutton,SIGNAL(clicked()),this,SLOT(quit()));
 	 v3->addWidget( quitbutton );
 
 	aboutbutton = new QPushButton( this, "PushButton_2" );
-	aboutbutton->setText( i18n("About") );
+	aboutbutton->setText( i18n("&About...") );
 	aboutbutton->setAutoRepeat( FALSE );
-	aboutbutton->setAutoResize( FALSE );
 	connect(aboutbutton,SIGNAL(clicked()),this,SLOT(about()));
         v3->addWidget( aboutbutton );
         v3->addStretch( 1 );
 
-	helpbutton = new QPushButton( this, "PushButton_1" );
-	helpbutton->setText(i18n( "Help") );
+	helpbutton = new QPushButton( this, "PushButton_4" );
+	helpbutton->setText(i18n( "&Help") );
 	helpbutton->setAutoRepeat( FALSE );
-	helpbutton->setAutoResize( FALSE );
 	connect(helpbutton,SIGNAL(clicked()),this,SLOT(help()));
         v3->addWidget( helpbutton );
 
 	formatbutton = new QPushButton( this, "PushButton_3" );
-	formatbutton->setText(i18n( "Format") );
+	formatbutton->setText(i18n( "&Format") );
 	formatbutton->setAutoRepeat( FALSE );
-	formatbutton->setAutoResize( FALSE );
 	connect(formatbutton,SIGNAL(clicked()),this,SLOT(format()));
         v3->addWidget( formatbutton );
 
@@ -176,24 +169,26 @@ FloppyData::FloppyData(QWidget * parent, const char * name)
 	errtimer = new QTimer;
 	connect(errtimer,SIGNAL(timeout()),this,SLOT(errslot()));
 
-	setCaption(i18n("KDE Floppy Formatter"));
-
 	addDevice(FLOPPYA3);
 	addDevice(FLOPPYA5);
 	addDevice(FLOPPYB3);
 	addDevice(FLOPPYB5);
 	addDensity(i18n("HD"));	
 	addDensity(i18n("DD"));	
-	addFileSystem("Dos");
-	addFileSystem("ext2fs");
+	addFileSystem(i18n("Dos"));
+	addFileSystem(i18n("ext2fs"));
 
 	readSettings();
 	setWidgets();
 
-	if(!findExecutables())
-	  formatbutton->setEnabled(FALSE);
+	findExecutables();
 
-	setFixedSize( minimumSize() );
+    int maxW = QMAX( deviceComboBox->sizeHint().width(), 
+                     densityComboBox->sizeHint().width() );
+    maxW = QMAX( maxW, filesystemComboBox->sizeHint().width() );
+    deviceComboBox->setMinimumWidth( maxW );
+    densityComboBox->setMinimumWidth( maxW );
+    filesystemComboBox->setMinimumWidth( maxW );
 }
 
 
@@ -205,6 +200,11 @@ void FloppyData::closeEvent(QCloseEvent*){
 
   quit();
    
+}
+
+void FloppyData::show() {
+  setCaption(i18n("KDE Floppy Formatter"));
+  KDialog::show();
 }
 
 void FloppyData::addDevice(const QString & name)
@@ -229,7 +229,7 @@ bool FloppyData::findDevice()
       device = "/dev/fd0H1440";
       blocks = 1440;
       tracks = 80;
-      mdev = "/dev/fd0";
+      //mdev = "/dev/fd0";
       if( access(QFile::encodeName(device),W_OK) < 0){
 	device = "/dev/fd0u1440";
       }
@@ -238,7 +238,7 @@ bool FloppyData::findDevice()
       device = "/dev/fd0D720";
       blocks = 720;
       tracks = 80;
-      mdev = "/dev/fd0";
+      //mdev = "/dev/fd0";
       if( access(QFile::encodeName(device),W_OK) < 0){
 	device = "/dev/fd0u720";
       }
@@ -250,13 +250,13 @@ bool FloppyData::findDevice()
       device = "/dev/fd0h1200";
       blocks = 1200;
       tracks = 80;
-      mdev = "/dev/fd0";
+      //mdev = "/dev/fd0";
     }
     else{
       device = "/dev/fd0h360";
       blocks = 720;
       tracks = 40;
-      mdev = "/dev/fd0";
+      //mdev = "/dev/fd0";
     }
   }
 
@@ -265,7 +265,7 @@ bool FloppyData::findDevice()
       device = "/dev/fd1H1440";
       blocks = 1400;
       tracks = 80;
-      mdev = "/dev/fd1";
+      //mdev = "/dev/fd1";
       if(access(QFile::encodeName(device),W_OK) < 0){
 	device = "/dev/fd1u1440";
       }
@@ -274,7 +274,7 @@ bool FloppyData::findDevice()
       device = "/dev/fd1D720";
       blocks = 720;
       tracks = 80;
-      mdev = "/dev/fd1";
+      //mdev = "/dev/fd1";
       if( access(QFile::encodeName(device),W_OK) < 0){
 	device = "/dev/fd1u720";
     }
@@ -286,13 +286,13 @@ bool FloppyData::findDevice()
       device = "/dev/fd1h1200";
       blocks = 1200;
       tracks = 80;
-      mdev = "/dev/fd1";
+      //mdev = "/dev/fd1";
     }
     else{
       device = "/dev/fd1h720";
       blocks = 720;
       tracks = 80;
-      mdev = "/dev/fd1";
+      //mdev = "/dev/fd1";
     }
   }
 
@@ -304,7 +304,7 @@ bool FloppyData::findDevice()
 	      "you have write permission to it.").arg(device);
     KMessageBox::error(this, str);
 
-    formatbutton->setEnabled(FALSE);
+    //formatbutton->setEnabled(FALSE);
     return false;
 
   }
@@ -312,45 +312,31 @@ bool FloppyData::findDevice()
   return true;
 }
 
-bool FloppyData::findExecutables()
+void FloppyData::findExecutables()
 {
-  bool ok 	= true;
-
   QString path = getenv("PATH");
   path.append(":/usr/sbin:/sbin");
  
   fdformat = KGlobal::dirs()->findExe("fdformat", path);
   mke2fs = KGlobal::dirs()->findExe("mke2fs", path);
   mkdosfs = KGlobal::dirs()->findExe("mkdosfs", path);
-
-  if (fdformat.isEmpty())
-    {
-      QString str = i18n("Cannot find fdformat.");
-      KMessageBox::error(this, str);
-
-      formatbutton->setEnabled(FALSE);
-      ok = false;
-    }
-
-  if (mke2fs.isEmpty())
-    {
-      QString str = i18n("Cannot find mke2fs");
-      KMessageBox::error(this, str);
-
-      formatbutton->setEnabled(FALSE);
-      ok = false;
-    }
-
-  if (mkdosfs.isEmpty())
-    {
-    QString str = i18n("Cannot find mkdosfs");
-    KMessageBox::error(this, str);
-
-    formatbutton->setEnabled(FALSE);
-    ok = false;
+  QString str = "";
+  if (fdformat.isEmpty()) {
+    str = i18n("Cannot find fdformat.");
   }
 
-  return ok;
+  if (mke2fs.isEmpty()) {
+    str = i18n("Cannot find mke2fs");
+  }
+
+  if (mkdosfs.isEmpty()) {
+    str = i18n("Cannot find mkdosfs");
+  }
+
+  if (str != "") {
+    formatbutton->setEnabled(FALSE);
+    KMessageBox::error(this, str);
+  }
 }
 
 void FloppyData::quit(){
@@ -377,7 +363,7 @@ void FloppyData::reset(){
   proc = 0L;
   progress->setValue(0);
   frame->clear();
-  formatbutton->setText(i18n("Format"));
+  formatbutton->setText(i18n("&Format"));
 
 }
 
@@ -385,7 +371,7 @@ void FloppyData::format(){
 
   errstring = "";
   formatstring ="";
-  mdev = "";
+  //mdev = "";
 
   if(formating){
     abort = true;
@@ -393,7 +379,7 @@ void FloppyData::format(){
     return;
   }
 
-  formatbutton->setText(i18n("Abort"));
+  formatbutton->setText(i18n("A&bort"));
 
   if(!findDevice()){
     reset();
@@ -407,7 +393,7 @@ void FloppyData::format(){
     return;
   }
 
-
+  frame->setText(i18n("Formatting ..."));
   badblocks = 0;
   abort = false;
   formating = true;
@@ -416,7 +402,11 @@ void FloppyData::format(){
   counter = 0;
 
   proc = new KProcess;
-  *proc << fdformat << device;
+  *proc << fdformat;
+  if (!verifylabel->isChecked()) {
+    *proc << "-n";
+  }
+  *proc << device;
 
   connect(proc, SIGNAL(processExited(KProcess *)),this, SLOT(formatdone(KProcess*)));
 
@@ -612,19 +602,28 @@ void FloppyData::readfsStderr(KProcess *, char *buffer, int buflen){
   memcpy(mybuffer,buffer,amount);
   mybuffer[amount] = '\0';
 
-  printf("ERR: <%s>\n", mybuffer);
-
   // skip version message
   int pos=0;
   if (fserrstring.isEmpty() && strncmp(mybuffer, "mke2fs", 6) == 0)
     {
       pos = QString(mybuffer).find('\n');
-      printf("pos=%d, len=%d\n", pos, amount);
+      //printf("pos=%d, len=%d\n", pos, amount);
       if (pos+1 == amount)
 	return;
       pos++;
     }
-  
+  if (fserrstring.isEmpty() && strncmp(mybuffer, "/sbin/mkdosfs", 13) == 0)
+    {
+      pos = QString(mybuffer).find('\n');
+      //printf("pos=%d, len=%d\n", pos, amount);
+      if (pos+1 == amount)
+	return;
+      pos++;
+    }
+
+  printf("ERR: <%s>\n", mybuffer);
+  printf("pos=%d, len=%d\n", pos, amount);
+
   abort = true;
   fserrstring += mybuffer+pos;
 
@@ -725,12 +724,12 @@ void FloppyData::createfilesystem()
 
   proc = new KProcess;
 
-  if (filesystemComboBox->currentText() == "Dos"){
+  if (filesystemComboBox->currentText() == i18n("Dos")){
 
-    *proc << mkdosfs;
-    if(labellabel->isChecked())
-      *proc << "-n" <<lineedit->text();
-    *proc << device;
+        *proc << mkdosfs;
+	if(labellabel->isChecked())
+	  *proc << "-n" <<lineedit->text();
+	*proc << device;
   }
   else{
 
@@ -777,7 +776,6 @@ void FloppyData::about(){
   dlg->exec();
   delete dlg;
 
-
 }
 
 
@@ -809,6 +807,8 @@ void FloppyData::writeSettings(){
 
 	labelconfig = labellabel->isChecked();
 
+	verifyconfig = verifylabel->isChecked();
+
 	config->writeEntry("CreateLabel",labelconfig);
 	config->writeEntry("Label",labelnameconfig);
 
@@ -817,6 +817,7 @@ void FloppyData::writeSettings(){
 	config->writeEntry("FloppyDrive",driveconfig);
 	config->writeEntry("Density",densityconfig);
 	config->writeEntry("Filesystem",filesystemconfig);
+	config->writeEntry("Verify",verifyconfig);
 	config->sync();
 
 }
@@ -826,12 +827,13 @@ void FloppyData::readSettings(){
         config = kapp->config();
 	config->setGroup("GeneralData");
 
+	verifyconfig = config->readNumEntry("Verify", 1);
 	labelconfig = config->readNumEntry("CreateLabel",1);
 	labelnameconfig = config->readEntry("Label","KDE Floppy");
 	quickformatconfig = config->readNumEntry("QuickFormat",0);
 	driveconfig = config->readEntry("FloppyDrive","A: 3.5");
-	densityconfig = config->readEntry("Density","HD");
-	filesystemconfig = config->readEntry("Filesystem","Dos");
+	densityconfig = config->readEntry("Density",i18n("HD"));
+	filesystemconfig = config->readEntry("Filesystem",i18n("Dos"));
 
 }
 
@@ -843,6 +845,13 @@ void FloppyData::setWidgets(){
   else{
 
     labellabel->setChecked(FALSE);
+  }
+
+  if(verifyconfig) {
+    verifylabel->setChecked(TRUE);
+  }
+  else {
+    verifylabel->setChecked(FALSE);
   }
 
   if(quickformatconfig){

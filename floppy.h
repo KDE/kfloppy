@@ -66,10 +66,11 @@ public:
     virtual ~FloppyData();
 
     void addDevice(const QString & name);
+    void show();
     void addFileSystem(const QString & name);
     void addDensity(const QString & name);
     bool findDevice();
-    bool findExecutables();
+    void findExecutables();
     void closeEvent(QCloseEvent*);
     void writeSettings();
     void readSettings();
@@ -99,15 +100,16 @@ protected slots:
 
 private:
 
- QString fdformat, mke2fs, mkdosfs; 
+        QString fdformat, mke2fs, mkdosfs; 
 
+        int verifyconfig;
         int labelconfig;
         QString labelnameconfig;
 	int quickformatconfig;
 	QString driveconfig;
 	QString densityconfig;
 	QString filesystemconfig;
-	QString mdev;
+	//QString mdev;
 	KConfig *config;
 
 	QString formatstring;
@@ -132,6 +134,7 @@ private:
         QLabel*       label2;        
 	QLabel*       label3;
 	QButtonGroup* buttongroup;
+	QCheckBox*    verifylabel;
 	QCheckBox*    labellabel;
 	QLineEdit*    lineedit;
 	QRadioButton* quick;
