@@ -1,14 +1,14 @@
 #ifndef _ZIP_FORMAT_H
 #define _ZIP_FORMAT_H
-/*
-** zip.h
-**
-** Copyright (C) 2002 by Adriaan de Groot
-**
-** This file defines the ZipFormat class, a DiskFormat
-** for KFloppy that deals with Zip disks and UFS under
-** FreeBSD (and probably other BSD's, as well).
-*/
+/**
+ * \file zip.h
+ *
+ * Copyright (C) 2002 by Adriaan de Groot
+ *
+ * This file defines the ZipFormat class, a DiskFormat
+ * for KFloppy that deals with Zip disks and UFS under
+ * FreeBSD (and probably other BSD's, as well).
+ */
 
 /*
 **
@@ -53,9 +53,9 @@ public:
 	virtual void readSettings(KConfig *);
 	virtual void writeSettings(KConfig *);
 
-	// Check for dd and newfs, which we
-	// need to do the formatting.
-	//
+	/** Check for dd and newfs, which we
+	 * need to do the formatting.
+	 */
 	static bool runtimeCheck();
 
 protected:
@@ -64,8 +64,8 @@ protected:
 
 	static QString newfs,dd;
 
-	KProcess *p;	// dd or newfs, doing the real work
-	int formatStep;	// keeps track of what phase we are in
+	KProcess *p;	///< dd or newfs, doing the real work
+	int formatStep;	///< keeps track of what phase we are in
 
 	// Variables for the zeroing phase
 	int totalBlocks;

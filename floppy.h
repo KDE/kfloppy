@@ -49,23 +49,24 @@ public:
     FloppyData(QWidget* parent = 0, const char * name = 0);
     virtual ~FloppyData();
 
-    // Need to overload normal show() in order to mangle caption
+    /// Need to overload normal show() in order to mangle caption
     void show();
-    // Maps combobox selection to drive and density
+    /// Maps combobox selection to drive and density
     bool findDevice();
-    // set default device
+    /// set default device
     bool setInitialDevice(const QString& dev);
-    // Override closeEvent() in order to properly close
-    // the entire application.    
+    /** Override closeEvent() in order to properly close
+      the entire application.*/
     void closeEvent(QCloseEvent*);
-    // Reading and writing the user-visible settings.
+    /// Writing the user-visible settings.
     void writeSettings();
+    /// Reading the user-visible settings.
     void readSettings();
-    // Map stored settings to widget status
+    /// Map stored settings to widget status
     void setWidgets();
-    // A kind of QString::find()
+    /// A kind of QString::find()
     int findKeyWord(QString &, const QString &);
-    // Enable/disable all UI elements
+    /// Enable/disable all UI elements
     void setEnabled(bool);
     
 public slots:

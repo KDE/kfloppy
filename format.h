@@ -23,42 +23,44 @@
 #ifndef FORMAT_H
 #define FORMAT_H
 
-/*
-** This file defines a hierarchy of classes that
-** can run a sequence of external programs (like
-** fdformat, mkisofs, etc.) in sequence. Stdout
-** and stderr of those programs can be captured
-** and analyzed in order to provide feedback to
-** the user.
-**
-** KFAction            Base class, just for performing some action.
-**   KFActionQueue     Provides sequencing of KFActions
-**   FloppyAction      Weird name; handles running a program,
-**                     understands FD device names. This can be
-**                     considered the "useful" base class of
-**                     programming actions.
-**     FDFormat        Runs fdformat(1) under BSD or Linux
-**     FATFilesystem   Creates an msdos (FAT) filesystem
-**     Ext2Filesystem  Creates ext2 filesystems, under Linux.
-**     MinixFilesystem Creates Minix filesystems, under Linux.
-**     UFSFilesystem   Creates UFS filesystem, under BSD.
-**
-**
-** Maybe this is overkill, since for floppies all you need is 
-** fdformat(1) and some create-filesystem program like newfs(1)
-** or mke2fs(1). However, for Zip disks, should they ever be supported,
-** this is quite useful since you need to dd, fdisk, disklabel, and
-** newfs them.
+/** \file format.h
+ * This file defines a hierarchy of classes that
+ * can run a sequence of external programs (like
+ * fdformat, mkisofs, etc.) in sequence. Stdout
+ * and stderr of those programs can be captured
+ * and analyzed in order to provide feedback to
+ * the user.
+ *
+ * <ul>
+ * <li>KFAction:           Base class, just for performing some action.
+ * <li>KFActionQueue:     Provides sequencing of KFActions
+ * <li>FloppyAction:      Weird name; handles running a program,
+ *                     understands FD device names. This can be
+ *                     considered the "useful" base class of
+ *                     programming actions.
+ * <li>FDFormat:        Runs fdformat(1) under BSD or Linux
+ * <li>FATFilesystem:   Creates an msdos (FAT) filesystem
+ * <li>Ext2Filesystem:  Creates ext2 filesystems, under Linux.
+ * <li>MinixFilesystem: Creates Minix filesystems, under Linux.
+ * <li>UFSFilesystem:   Creates UFS filesystem, under BSD.
+ * </ul>
+ *
+ * Maybe this is overkill, since for floppies all you need is
+ * fdformat(1) and some create-filesystem program like newfs(1)
+ * or mke2fs(1). However, for Zip disks, should they ever be supported,
+ * this is quite useful since you need to dd, fdisk, disklabel, and
+ * newfs them.
 */
 
 #include "debug.h"
 #include <qobject.h>
 
-/*
-** Abstract base class of actions to be undertaken.
-** Basically you can create a KFActionStack (See below)
-** and push a bunch of actions on it, then run exec()
-** on the stack and wait for the done() signal.
+/**
+ * \brief Abstract base class of actions to be undertaken.
+ *
+ * Basically you can create a KFActionStack (See below)
+ * and push a bunch of actions on it, then run exec()
+ * on the stack and wait for the done() signal.
 */
 class KFAction : public QObject
 {
@@ -69,46 +71,46 @@ public:
 	virtual ~KFAction();
 	
 public slots:
-	/*
-	** Exec() should return quickly to ensire that the GUI
-	** thread stays alive. quit() should abort the action.
-	*/
+	/**
+	 * Exec() should return quickly to ensire that the GUI
+	 * thread stays alive. quit() should abort the action.
+	 */
 	virtual void exec();
-	/*
-	** Quit aborts the action. No done() signal should
-	** be emitted.
-	*/
+	/**
+	 * Quit aborts the action. No done() signal should
+	 * be emitted.
+	 */
 	virtual void quit();
 	
 signals:
-	/*
-	** done() should always be emitted with this as first
-	** parameter, to avoid sender() magic and the like.
-	** @p success indicates whether the action was
-	** successful.
-	*/
+	/**
+	 * done() should always be emitted with this as first
+	 * parameter, to avoid sender() magic and the like.
+	 * @p success indicates whether the action was
+	 * successful.
+	 */
 	void done(KFAction *me,bool success);
-	
-	/*
-	** Emit this signal to inform the user of interesting
-	** changes; setting msg to an empty string doesn't
-	** change any visible user message. @p progress
-	** indicates the action's progress (if that can be determined)
-	** and sending -1 leaves the visible indicator unchanged.
-	**
-	** error(), on the other hand, displays a box. It interrupts
-	** the user's work and should be used with care.
-	*/
+
+	/**
+	 * Emit this signal to inform the user of interesting
+	 * changes; setting msg to an empty string doesn't
+	 * change any visible user message. @p progress
+	 * indicates the action's progress (if that can be determined)
+	 * and sending -1 leaves the visible indicator unchanged.
+	 */
 	void status(const QString &msg, int progress);
+
+        /** error() displays a box. It interrupts
+	 * the user's work and should be used with care.
+	 */
 	void error(const QString &msg, const QString &details);
 } ;
 
 
-/*
-** Acts as a queue and executes the actions in the
-** queue in FIFO order.
-*/
-
+/**
+ * Acts as a queue and executes the actions in the
+ * queue in FIFO order.
+ */
 class KFActionQueue : public KFAction
 {
 Q_OBJECT
@@ -117,14 +119,14 @@ public:
 	KFActionQueue(QObject *parent = 0L);
 	virtual ~KFActionQueue();
 	
-	/*
-	** Add a KFAction to the queue. When exec() is called,
-	** the actions are called one after the other (if each
-	** action is successful; if any action fails, the whole
-	** queue fails and the unsuccessful action is the last
-	** one run.) Actions become the property of the queue
-	** action. Note that queues can be nested.
-	*/
+	/**
+	 * Add a KFAction to the queue. When exec() is called,
+	 * the actions are called one after the other (if each
+	 * action is successful; if any action fails, the whole
+	 * queue fails and the unsuccessful action is the last
+	 * one run.) Actions become the property of the queue
+	 * action. Note that queues can be nested.
+	 */
 	void queue(KFAction *);
 	
 	virtual void exec();
@@ -144,17 +146,17 @@ private:
 ** formats grows enormously.
 */
 
-/*
-** Description structure for floppy devices.
-** devices is a list of possible device names (yay
-** /dev/ consistency) while drive,blocks denotes
-** fd0 or fd1, and the size of the disk (ought to
-** be 1440, 1200, 720 or 260. I've never seen a 2880
-** floppy drive).
-**
-** Tracks is pretty bogus; see the internal code for its use.
-** Similarly, flags are internal too.
-*/
+/**
+ * Description structure for floppy devices.
+ * devices is a list of possible device names (yay
+ * /dev/ consistency) while drive,blocks denotes
+ * fd0 or fd1, and the size of the disk (ought to
+ * be 1440, 1200, 720 or 260. I've never seen a 2880
+ * floppy drive).
+ *
+ * Tracks is pretty bogus; see the internal code for its use.
+ * Similarly, flags are internal too.
+ */
 
 typedef struct { const char **devices;
 	int drive;
@@ -162,15 +164,15 @@ typedef struct { const char **devices;
 	int tracks;
 	int flags; } fdinfo;
 
-/*
-** Concrete action for running a single external program.
-**
-** Not a Q_OBJECT because everything slotlike is
-** overridden through virtual slots instead of
-** through Qt mechanisms.
-*/
-
 class KProcess;
+
+/**
+ * Concrete action for running a single external program.
+ *
+ * \note Not a Q_OBJECT because everything slot-like is
+ * overridden through virtual slots instead of
+ * through Qt mechanisms.
+ */
 
 class FloppyAction : public KFAction
 {
@@ -179,51 +181,53 @@ Q_OBJECT
 public:
 	FloppyAction(QObject *parent = 0L);
 	
-	/*
-	** Kills the running process, if one exists.
-	*/
+	/**
+	 * Kills the running process, if one exists.
+	 */
 	virtual void quit();
 	
-	/*
-	** ConfigureDevice() needs to be called prior to exec()
-	** or exec() will fail; this indicates which drive and
-	** density to use. This same function needs to be
-	** called on all subclasses in order to configure them
-	** for which drive to use, _along_ with their local
-	** configuration functions.
-	*/
+	/**
+	 * ConfigureDevice() needs to be called prior to exec()
+	 * or exec() will fail; this indicates which drive and
+	 * density to use. This same function needs to be
+	 * called on all subclasses in order to configure them
+	 * for which drive to use, _along_ with their local
+	 * configuration functions.
+	 */
 	
 	bool configureDevice(int driveno /* 0 or 1 */, int density /* in kb */ );
 
 protected:
-	fdinfo *deviceInfo;      // Configuration info
-	const char *deviceName;  // Ptr. into list of "/dev/..." entries
+	fdinfo *deviceInfo;      ///< Configuration info
+	const char *deviceName;  ///< Pointer into list of "/dev/..." entries
 
 protected slots:
 	virtual void processDone(KProcess *);
-	/* Provide separate handling of stdout and stderr.
-	** The default implementation just sends stderr on
-	** to processStdOut(), so you need reimplement only
-	** one if you choose.
-	*/
+	/// Provide handling of stdout
 	virtual void processStdOut(KProcess *, char *, int);
+	/** \brief Provide separate handling of stdout and stderr.
+         *
+	 * The default implementation just sends stderr on
+	 * to processStdOut(), so you need reimplement only
+	 * one if you choose.
+	 */
 	virtual void processStdErr(KProcess *, char *, int);
 	
 protected:
 	KProcess *theProcess;
-	QString theProcessName;  // human-readable
+	QString theProcessName;  ///< human-readable
 
-	/*
-	** Sets up connections, calls KProcess::run(). 
-	** You need to *theProcess << program << args ; first.
-	*/
+	/**
+	 * Sets up connections, calls KProcess::run().
+	 * You need to *theProcess << program << args ; first.
+	 */
 		
 	bool startProcess();
 } ;
 
-/*
-** Concrete class that runs fdformat(1)
-*/
+/**
+ * Concrete class that runs fdformat(1)
+ */
 
 class FDFormat : public FloppyAction
 {
@@ -233,35 +237,35 @@ public:
 	virtual void exec();
 
 	
-	/*
-	** Concrete classes can provide a runtimeCheck
-	** function (heck, this is static, so the name
-	** is up to you) that checks if the required 
-	** applications are available. This way, the
-	** calling application can decide not to use
-	** actions whose prerequisites are absent anyway.
-	*/
+	/**
+	 * Concrete classes can provide a runtimeCheck
+	 * function (heck, this is static, so the name
+	 * is up to you) that checks if the required
+	 * applications are available. This way, the
+	 * calling application can decide not to use
+	 * actions whose prerequisites are absent anyway.
+	 */
 	static bool runtimeCheck();
 		
-	/* @p verify instructs fdformat(1) to verify the
-	** medium as well.
-	*/
+	/** @p verify instructs fdformat(1) to verify the
+	 * medium as well.
+	 */
 	
 	bool configure(bool verify);
 	
 	virtual void processStdOut(KProcess *, char *,int);
 
 protected:
-	static QString fdformatName;    // path to executable.
-	int formatTrackCount;    // How many tracks formatted.
+	static QString fdformatName;    ///< path to executable.
+	int formatTrackCount;    ///< How many tracks formatted.
 	bool doVerify;
 } ;
 
 
 
-/*
-** Create an msdos (FAT) filesystem on the floppy.
-*/
+/**
+ * Create an msdos (FAT) filesystem on the floppy.
+ */
 class FATFilesystem : public FloppyAction
 {
 public:
@@ -271,12 +275,12 @@ public:
 	
 	static bool runtimeCheck();
 
-	/*
-	** newfs_msdos(1) doesn't support an additional verify,
-	** but Linux mkdosfs(1) does. Enable additional medium
-	** verify with @p verify. Disks can be labeled with the
-	** remaining parameters.
-	*/	
+	/**
+	 * newfs_msdos(1) doesn't support an additional verify,
+	 * but Linux mkdosfs(1) does. Enable additional medium
+	 * verify with @p verify. Disks can be labeled (@p label) with the
+	 * remaining parameters (@p l).
+	 */	
 	bool configure(bool verify, bool label, const QString &l);
 	
 protected:
@@ -287,18 +291,17 @@ protected:
 	
 } ;
 
-/*
-** The remaining "native" filesystems only get
-** compiled on systems where they seem reasonable.
-** In particular, Linux gets ext2 and BSD UFS.
-**
-** There is no real reason to forbid ext2 on BSD,
-** the code is the same and only one additional
-** #ifdef is needed in the code to look for newfs_ext2(1)
-** instead of mke2fs(1).
-*/
-
 #ifdef ANY_LINUX
+/**
+ * The remaining "native" filesystems only get
+ * compiled on systems where they seem reasonable.
+ * In particular, Linux gets ext2 and BSD UFS.
+ *
+ * \note There is no real reason to forbid ext2 on BSD,
+ * the code is the same and only one additional
+ * #ifdef is needed in the code to look for newfs_ext2(1)
+ * instead of mke2fs(1).
+ */
 class Ext2Filesystem : public FloppyAction
 {
 public:
@@ -308,7 +311,7 @@ public:
 	
 	static bool runtimeCheck();
 	
-	/* Same args as FATFilesystem. */
+	/// Same args as FATFilesystem::configure
 	bool configure(bool verify, bool label, const QString &l);
 	
 protected:
@@ -320,6 +323,12 @@ protected:
 #endif
 
 #ifdef ANY_BSD
+/**
+ * The remaining "native" filesystems only get
+ * compiled on systems where they seem reasonable.
+ * In particular, Linux gets ext2 and BSD UFS.
+ */
+
 class UFSFilesystem : public FloppyAction
 {
 public:
@@ -337,16 +346,6 @@ protected:
 } ;
 #endif
 
-
-/*
-** Utility function that looks for executables in $PATH
-** and in /sbin and /usr/sbin.
-*/
-
-QString findExecutable(const QString &);
-
-#endif
-
 #ifdef ANY_LINUX
 class MinixFilesystem : public FloppyAction
 {
@@ -357,7 +356,7 @@ public:
 	
 	static bool runtimeCheck();
 	
-	/* Same args as FATFilesystem. */
+	/// Same args as FATFilesystem::configure
 	bool configure(bool verify, bool label, const QString &l);
 	
 protected:
@@ -366,5 +365,14 @@ protected:
 	bool doVerify,doLabel;
 	QString label;
 } ;
+#endif
+
+/**
+ * Utility function that looks for executables in $PATH
+ * and in /sbin and /usr/sbin.
+ */
+
+QString findExecutable(const QString &);
+
 #endif
 
