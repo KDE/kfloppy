@@ -49,7 +49,7 @@ install-exec-local: kmke2fs
 	
 install-data-local: 
 	$(mkinstalldirs) $(kde_minidir)
-	$(INSTALL_DATA) $(srcdir)/mini-kfloppy.xpm $(kde_icondir)loppy.xpm
+	$(INSTALL_DATA) $(srcdir)/mini-kfloppy.xpm $(kde_minidir)/kfloppy.xpm
 	$(mkinstalldirs) $(kde_icondir)/large
 	$(INSTALL_DATA) $(srcdir)/large-kfloppy.xpm $(kde_icondir)/large/kfloppy.xpm
 
@@ -58,6 +58,6 @@ messages:
 	
 uninstall-local:
 	rm -f $(BINDIR)/kmke2fs
-	rm -f $(kde_icondir)loppy.xpm
+	rm -f $(kde_minidir)/kfloppy.xpm
 	rm -f $(kde_icondir)/large/kfloppy.xpm
 
