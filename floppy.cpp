@@ -201,7 +201,7 @@ void FloppyData::closeEvent(QCloseEvent*){
 
 void FloppyData::keyPressEvent(QKeyEvent *e) {
 	switch(e->key()) {
-	case Key_F1:
+	case Qt::Key_F1:
 		kapp->invokeHelp();
 		break;
 	default:
