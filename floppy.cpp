@@ -26,6 +26,8 @@
 #include "floppy.moc"
 
 #include <kconfig.h>
+#include <kglobal.h>
+#include <kstddirs.h>
 
 extern KApplication *mykapp;
 
@@ -313,23 +315,13 @@ bool FloppyData::findExecutables(){
   bool mke2fs   = false;
   bool ok 	= true;
   
-  QFileInfo info;
-  QString directory;
- 
-  directory = mykapp->kde_bindir();
-
-  info.setFile(directory + "/kfdformat");
-  if (info.isExecutable()){
+  if (KGlobal::dirs()->findExe("kfdformat").length()) {
     mkformat = true;
   }
-
-  info.setFile(directory + "/kmke2fs");
-  if (info.isExecutable()){
+  if (KGlobal::dirs()->findExe("kmke2fs").length()) {
     mke2fs = true;
   }
-
-  info.setFile(directory + "/kmkdosfs");
-  if (info.isExecutable()){
+  if (KGlobal::dirs()->findExe("kmkdosfs").length()) {
     mkdosfs = true;
   }
 

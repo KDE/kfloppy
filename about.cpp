@@ -29,6 +29,8 @@
 #include <qlabel.h>
 #include <qpixmap.h>
 #include <kapp.h>
+#include <kglobal.h>
+#include <kiconloader.h>
 #include <klocale.h>
 
 extern KApplication *mykapp;
@@ -39,8 +41,7 @@ MyAbout::MyAbout(QWidget *parent) : QDialog(parent, "About KFloppy Formatter", T
   setFixedSize(size());
   setCaption(i18n("About KDE Floppy Formatter"));
 
-  QString pixdir = mykapp->kde_datadir() + QString("/kfloppy/pics/");  
-  QPixmap pm((pixdir + "kfloppylogo.xpm").data());
+  QPixmap pm( Icon("kfloppylogo.xpm") );
   QLabel *logo = new QLabel(this);
   logo->setPixmap(pm);
   logo->setGeometry(20, (height()-pm.height())/2 - 25, pm.width(), pm.height());
