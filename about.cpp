@@ -37,7 +37,7 @@ MyAbout::MyAbout(QWidget *parent) : QDialog(parent, "About KFloppy Formater", TR
 
   resize(350, 250);
   setFixedSize(size());
-  setCaption(klocale->translate("About KDE Floppy Formater"));
+  setCaption(i18n("About KDE Floppy Formater"));
 
   QString pixdir = mykapp->kdedir() + QString("/share/apps/kfloppy/pics/");  
   QPixmap pm((pixdir + "kfloppylogo.xpm").data());
@@ -46,12 +46,12 @@ MyAbout::MyAbout(QWidget *parent) : QDialog(parent, "About KFloppy Formater", TR
   logo->setGeometry(20, (height()-pm.height())/2 - 25, pm.width(), pm.height());
 
   QLabel *l;
-  l = new QLabel(klocale->translate("KFloppy"), this);
+  l = new QLabel(i18n("KFloppy"), this);
   l->setFont(QFont("Helvetica", 19, QFont::Bold));
   l->setGeometry(145,40,100,30);
 
   QString s;
-  s = klocale->translate("Version ");
+  s = i18n("Version ");
   s += KFLOPPYVERSION \
   "\n\nCopyright (c) 1997\nBernd Johannes Wuebben\n"\
   "wuebben@kde.org";

@@ -53,7 +53,7 @@ FloppyData::FloppyData
 	outerframe->setFrameStyle(QFrame::Box|QFrame::Sunken);
 
         label1 = new QLabel(this);
-	label1->setText(klocale->translate("Floppy Drive:"));
+	label1->setText(i18n("Floppy Drive:"));
 	label1->setGeometry( 20, 20, 130, 25 );
 
 
@@ -62,7 +62,7 @@ FloppyData::FloppyData
 	deviceComboBox->setAutoResize( FALSE );
 
         label2 = new QLabel(this);
-	label2->setText(klocale->translate("Density:"));
+	label2->setText(i18n("Density:"));
 	label2->setGeometry( 20, 55, 130, 25 );
 
 
@@ -71,7 +71,7 @@ FloppyData::FloppyData
 	densityComboBox->setAutoResize( FALSE );
 
         label3 = new QLabel(this);
-	label3->setText(klocale->translate("File System:"));
+	label3->setText(i18n("File System:"));
 	label3->setGeometry( 20,90, 130, 25 );
 
  	filesystemComboBox = new QComboBox( FALSE, this, "ComboBox_2" );
@@ -82,21 +82,21 @@ FloppyData::FloppyData
 	
 	quitbutton = new QPushButton( this, "PushButton_1" );
 	quitbutton->setGeometry( 240, 40, 100, 25 );
-	quitbutton->setText(klocale->translate( "Quit") );
+	quitbutton->setText(i18n( "Quit") );
 	quitbutton->setAutoRepeat( FALSE );
 	quitbutton->setAutoResize( FALSE );
 	connect(quitbutton,SIGNAL(clicked()),this,SLOT(quit()));
 
 	aboutbutton = new QPushButton( this, "PushButton_2" );
 	aboutbutton->setGeometry( 240, 75, 100, 25 );
-	aboutbutton->setText( klocale->translate("About") );
+	aboutbutton->setText( i18n("About") );
 	aboutbutton->setAutoRepeat( FALSE );
 	aboutbutton->setAutoResize( FALSE );
 	connect(aboutbutton,SIGNAL(clicked()),this,SLOT(about()));
 
 	helpbutton = new QPushButton( this, "PushButton_1" );
 	helpbutton->setGeometry( 240, 165, 100, 25 );
-	helpbutton->setText(klocale->translate( "Help") );
+	helpbutton->setText(i18n( "Help") );
 	helpbutton->setAutoRepeat( FALSE );
 	helpbutton->setAutoResize( FALSE );
 	connect(helpbutton,SIGNAL(clicked()),this,SLOT(help()));
@@ -105,7 +105,7 @@ FloppyData::FloppyData
 
 	formatbutton = new QPushButton( this, "PushButton_3" );
 	formatbutton->setGeometry( 240, 200, 100, 25 );
-	formatbutton->setText(klocale->translate( "Format") );
+	formatbutton->setText(i18n( "Format") );
 	formatbutton->setAutoRepeat( FALSE );
 	formatbutton->setAutoResize( FALSE );
 	connect(formatbutton,SIGNAL(clicked()),this,SLOT(format()));
@@ -128,24 +128,24 @@ FloppyData::FloppyData
 
 	quick = new QRadioButton( buttongroup, "RadioButton_2" );
 	quick->setGeometry( 15, 10, 170, 30 );
-	quick->setText(klocale->translate( "Quick Erase") );
+	quick->setText(i18n( "Quick Erase") );
 	quick->setAutoResize( TRUE );
 
 	fullformat = new QRadioButton( buttongroup, "RadioButton_3" );
 	fullformat->setGeometry( 15, 40, 170, 30 );
-	fullformat->setText(klocale->translate( "Full Format") );
+	fullformat->setText(i18n( "Full Format") );
 	fullformat->setAutoResize( TRUE );
 	fullformat->setChecked(TRUE);
 
 	labellabel = new QCheckBox( this, "RadioButton_4" );
 	labellabel->setGeometry( 35, 195, 170, 30 );
-	labellabel->setText(klocale->translate( "Create Label:") );
+	labellabel->setText(i18n( "Create Label:") );
 	labellabel->setAutoResize( TRUE );
 	labellabel->setChecked(TRUE);
 
 	lineedit = new QLineEdit( this, "Lineedit" );
 	lineedit->setGeometry( 35, 225, 170, 25 );
-	lineedit->setText(klocale->translate( "KDE FLoppy") );
+	lineedit->setText(i18n( "KDE FLoppy") );
 	lineedit->setMaxLength(10);
 
 
@@ -159,7 +159,7 @@ FloppyData::FloppyData
 	errtimer = new QTimer;
 	connect(errtimer,SIGNAL(timeout()),this,SLOT(errslot()));
 
-	setCaption(klocale->translate("KDE Floppy Formater"));
+	setCaption(i18n("KDE Floppy Formater"));
 
 	addDevice(FLOPPYA3);
 	addDevice(FLOPPYA5);
@@ -219,7 +219,7 @@ bool FloppyData::findDevice()
 
 
   if((QString) deviceComboBox->currentText() == (QString) FLOPPYA3){
-    if((QString) densityComboBox->currentText() == (QString)klocale->translate( "HD")){
+    if((QString) densityComboBox->currentText() == (QString)i18n( "HD")){
       device = "/dev/fd0H1440";
       blocks = 1440;
       tracks = 80;
@@ -234,7 +234,7 @@ bool FloppyData::findDevice()
   }
 
   if((QString) deviceComboBox->currentText() == (QString) FLOPPYA5){
-    if((QString) densityComboBox->currentText() == (QString)klocale->translate( "HD")){
+    if((QString) densityComboBox->currentText() == (QString)i18n( "HD")){
       device = "/dev/fd0h1200";
       blocks = 1200;
       tracks = 80;
@@ -249,7 +249,7 @@ bool FloppyData::findDevice()
   }
 
   if((QString) deviceComboBox->currentText() == (QString) FLOPPYB3){
-    if((QString) densityComboBox->currentText() == (QString)klocale->translate( "HD")){
+    if((QString) densityComboBox->currentText() == (QString)i18n( "HD")){
       device = "/dev/fd1H1440";
       blocks = 1400;
       tracks = 80;
@@ -264,7 +264,7 @@ bool FloppyData::findDevice()
   }
 
   if((QString) deviceComboBox->currentText() == (QString) FLOPPYB5){
-    if((QString) densityComboBox->currentText() == (QString)klocale->translate( "HD")){
+    if((QString) densityComboBox->currentText() == (QString)i18n( "HD")){
       device = "/dev/fd1h1200";
       blocks = 1200;
       tracks = 80;
@@ -282,11 +282,11 @@ bool FloppyData::findDevice()
   if( access(device.data(),W_OK) < 0){
 
     QString str;
-    str.sprintf(klocale->translate(
+    str.sprintf(i18n(
 	      "Cannot access %s\nMake sure that the device exists and that\n"
 	      "you have write permission to it."),device.data());
     QMessageBox::critical(this,
-		      klocale->translate( "KFloppy"),
+		      i18n( "KFloppy"),
 		       str.data());
 
     formatbutton->setEnabled(FALSE);
@@ -329,11 +329,11 @@ bool FloppyData::findExecutables(){
 
     QString str;
     str.sprintf(
-		klocale->translate(
+		i18n(
        	"Cannot find kfdformat\nkfdformat is part of the KFloppy distribution.\n"
 	"Please install KFloppy properly."));
     QMessageBox::critical(this,
-			  klocale->translate("KFloppy"),
+			  i18n("KFloppy"),
 		       str.data());
 
     formatbutton->setEnabled(FALSE);
@@ -345,11 +345,11 @@ bool FloppyData::findExecutables(){
 
     QString str;
     str.sprintf(
-		klocale->translate(
+		i18n(
           "Cannot find kmke2fs\nkmke2fs is part of the KFloppy distribution.\n"
 	  "Please install KFloppy properly."));
     QMessageBox::critical(this,
-		       klocale->translate("KFloppy"),
+		       i18n("KFloppy"),
 		       str.data());
 
     formatbutton->setEnabled(FALSE);
@@ -360,12 +360,12 @@ bool FloppyData::findExecutables(){
 
     QString str;
     str.sprintf(
-		klocale->translate(
+		i18n(
 		"Cannot find kmkdosfs\nkmkdosfs is part of the KFloppy distribution.\n"
 		"Please install KFloppy properly.")
 		);
     QMessageBox::critical(this,
-		       klocale->translate("KFloppy"),
+		       i18n("KFloppy"),
 		       str.data());
 
     formatbutton->setEnabled(FALSE);
@@ -405,7 +405,7 @@ void FloppyData::reset(){
   proc = 0L;
   progress->setValue(0);
   frame->setText("");
-  formatbutton->setText(klocale->translate("Format"));
+  formatbutton->setText(i18n("Format"));
 
 }
 
@@ -421,7 +421,7 @@ void FloppyData::format(){
     return;
   }
 
-  formatbutton->setText(klocale->translate("Abort"));
+  formatbutton->setText(i18n("Abort"));
 
   if(!findDevice()){
     reset();
@@ -468,11 +468,11 @@ void FloppyData::format(){
   if(!result){
     QString str;
     str.sprintf(
-		klocale->translate(
+		i18n(
 		"Cannot start a new program: fork() failed."
 		));
     QMessageBox::critical(this,
-		       klocale->translate("KFloppy"),
+		       i18n("KFloppy"),
 		       str.data());
     reset();
   }
@@ -568,14 +568,14 @@ void FloppyData::errslot(){
 
     QString str;
     str.sprintf(
-		klocale->translate(
+		i18n(
 		"Cannot access floppy or floppy drive\n"\
 		"Please insert a floppy and make sure that you\n"
 		"have selected a valid floppy drive.\n")
 		);
 
     QMessageBox::warning(this,
-		       klocale->translate("KFloppy"),
+		       i18n("KFloppy"),
 		       str.data());
     
     reset();
@@ -584,12 +584,12 @@ void FloppyData::errslot(){
   }
 
   QString str;
-  str.sprintf(klocale->translate("Cannot format: "\
+  str.sprintf(i18n("Cannot format: "\
 	      "%s\n"\
 	      "%s"),device.data(),errstring.data());
 
   QMessageBox::warning(this,
-		   klocale->translate(    "KFloppy"),
+		   i18n(    "KFloppy"),
 		       str.data());
 
 
@@ -631,7 +631,7 @@ printf("NEWLINE:%s\n",mystring.data());
     if(findKeyWord(mystring,"BBF ")){
       int bblock = atoi(mystring.left(8).data());
       QString mstr;
-      mstr.sprintf(klocale->translate("Block %d is bad. Continuing ..."),bblock);
+      mstr.sprintf(i18n("Block %d is bad. Continuing ..."),bblock);
       frame->setText(mstr.data());
     }
 
@@ -696,7 +696,7 @@ void FloppyData::fserrslot(){
 
     QString str;
     str.sprintf(
-		klocale->translate(
+		i18n(
 		"Cannot access floppy or floppy drive\n"\
 		"Please insert a floppy and make sure that you\n"
  		"have selected a valid floppy drive.\n"
@@ -704,7 +704,7 @@ void FloppyData::fserrslot(){
 		);
 
     QMessageBox::warning(this,
-		       klocale->translate("KFloppy"),
+		       i18n("KFloppy"),
 		       str.data());
     
     reset();
@@ -714,11 +714,11 @@ void FloppyData::fserrslot(){
   reset();
 
   QString str;
-  str.sprintf(klocale->translate("Cannot create a filesystem on: %s\n%s")
+  str.sprintf(i18n("Cannot create a filesystem on: %s\n%s")
 	      ,device.data(),fserrstring.data());
 
   QMessageBox::warning(this,
-		       klocale->translate("KFloppy"),
+		       i18n("KFloppy"),
 		       str.data());
 
 }
@@ -749,7 +749,7 @@ void FloppyData::cf2done(){
     QString str;
 
     str.sprintf(
-		klocale->translate(
+		i18n(
 		"The floppy was sucessfully formatted.\n"\
 		"Blocks marked bad: %d\n"\
 		"Raw Capacity: %d\n"),
@@ -765,16 +765,16 @@ void FloppyData::cf2done(){
 		*/
 
     QMessageBox::information(this,
-			     klocale->translate("KFloppy"),
+			     i18n("KFloppy"),
 			     str.data());
   }
   else{
 
     QString str;
-    str.sprintf(klocale->translate("All files were sucessfully erased."));
+    str.sprintf(i18n("All files were sucessfully erased."));
 
     QMessageBox::information(this,
-			     klocale->translate("KFloppy"),
+			     i18n("KFloppy"),
 			     str.data());
 
   }
@@ -829,11 +829,11 @@ void FloppyData::createfilesystem(){
 
   if(quickerase){
 
-    frame->setText(klocale->translate("Creating Filesystem ..."));
+    frame->setText(i18n("Creating Filesystem ..."));
   }
   else{
 
-    frame->setText(klocale->translate("Verifying ..."));
+    frame->setText(i18n("Verifying ..."));
 
   }
 
@@ -877,11 +877,11 @@ void FloppyData::createfilesystem(){
   if(!result){
     QString str;
     str.sprintf(
-		klocale->translate(
+		i18n(
 		"Cannot start a new program\nfork() failed.")
 		);
     QMessageBox::critical(this,
-		       klocale->translate("KFloppy"),
+		       i18n("KFloppy"),
 		       str.data());
     frame->setText("");
     proc = 0L;
@@ -902,8 +902,8 @@ bool FloppyData::checkmount(){
   retval = check_if_mounted(mdev.data(), &mount_flags);
   if (retval) {
     QMessageBox::warning(this,
-		      klocale->translate("KFloppy"),
-		      klocale->translate(
+		      i18n("KFloppy"),
+		      i18n(
 		      "Error while trying to determine whether floppy is mounted\n"
 		      )
 			 );
@@ -920,13 +920,13 @@ bool FloppyData::checkmount(){
 
   QString str;
   str.sprintf(
-	      klocale->translate(
+	      i18n(
 	      "%s is mounted.\nPlease unmount the floppy first."
 	      )
 	      ,mdev.data());
 
   QMessageBox::warning(this,
-		       klocale->translate("KFloppy"),
+		       i18n("KFloppy"),
 		       str.data());  
 
 

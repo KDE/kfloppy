@@ -52,6 +52,9 @@ install-data-local:
 	$(mkinstalldirs) $(kde_minidir)
 	$(INSTALL_DATA) mini-kfloppy.xpm $(kde_minidir)/kfloppy.xpm
 
+messages:
+	@XGETTEXT@ -C -ki18n *.cpp -x../../kdelibs/po/kde.pot && mv messages.po ../po/kfloppy.pot
+	
 uninstall-local:
 	rm -f $(BINDIR)/kmke2fs
 	rm -f $(kde_minidir)/kfloppy.xpm
