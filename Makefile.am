@@ -44,13 +44,9 @@ picsdir = $(kde_datadir)/kfloppy/pics
 apps_DATA = KFloppy.kdelnk
 appsdir = $(kde_appsdir)/Utilities
 
-install-local-exec: kmke2fs
+install-exec-local: kmke2fs
 	$(mkinstalldirs) $(bindir)
 	$(INSTALL) kmke2fs $(bindir)
-	@echo ""
-	@echo "Bernd Wuebben"
-	@echo "wuebben@kde.org"
-	@echo ""
 	
 install-data-local: 
 	$(mkinstalldirs) $(kde_minidir)
