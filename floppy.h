@@ -82,7 +82,7 @@ public:
     void writeSettings();
     void readSettings();
     void setWidgets();
-    int findKeyWord(QString&,char*);
+    int findKeyWord(QString&,const char*);
     bool checkmount();
 
     

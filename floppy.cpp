@@ -788,7 +788,7 @@ void FloppyData::cf2done(){
 }
 
 
-int FloppyData::findKeyWord(QString& string,char* word){
+int FloppyData::findKeyWord(QString& string,const char* word){
 
   int count = 0;
   int index = 0;
