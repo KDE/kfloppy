@@ -41,7 +41,7 @@
 #include <kcombobox.h>
 #include <klineedit.h>
 
-#include "floppy.moc"
+#include "floppy.h"
 #include "format.h"
 
 FloppyData::FloppyData(QWidget * parent, const char * name)
@@ -828,4 +828,4 @@ void FloppyData::setWidgets(){
   }
 }
 
-
+#include "floppy.moc"

@@ -32,7 +32,7 @@
 #include <kdebug.h>
 #include <kstandarddirs.h>
 
-#include "format.moc"
+#include "format.h"
 
 static QString extPath = QString::null;
 
@@ -792,3 +792,5 @@ void MinixFilesystem::exec()
 }
 
 #endif
+
+#include "format.moc"
