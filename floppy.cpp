@@ -162,8 +162,6 @@ FloppyData::FloppyData(QWidget * parent, const char * name)
         ml->addWidget( frame );
 
 	progress = new KProgress( this, "Progress" );
-	progress->setFont(QFont("Helvetica",12,QFont::Normal));
-	progress->setBarColor(QApplication::winStyleHighlightColor());
         progress->setMinimumHeight( 30 );
         ml->addWidget( progress );
 
@@ -336,7 +334,7 @@ void FloppyData::reset(){
       proc->kill();
   }
   proc = 0L;
-  progress->setValue(0);
+  progress->setProgress(0);
   frame->clear();
   formatbutton->setText(i18n("&Format"));
   label1->setEnabled(true);
@@ -405,8 +403,8 @@ void FloppyData::format(){
   badblocks = 0;
   abort = false;
   formating = true;
-  progress->setRange(0,tracks*2);
-  progress->setValue(0);
+  progress->setTotalSteps(tracks*2);
+  progress->setProgress(0);
   counter = 0;
 
   proc = new KProcess;
@@ -474,7 +472,7 @@ void FloppyData::readStdout(KProcess *, char *buffer, int buflen)
   if (increment)
   {
     counter ++;
-    progress->setValue(counter);     
+    progress->setProgress(counter);     
   }
 #ifdef MY_DEBUG
     printf("STDOUT:%s\n",mybuffer);
@@ -591,7 +589,7 @@ printf("Block Counter: %d\n",counter);
 
   fsstring = newstring;
 
-  progress->setValue(counter);     
+  progress->setProgress(counter);     
 #ifdef MY_DEBUG
   printf("STDOUT:%s\n",mybuffer);
 #endif
@@ -773,7 +771,7 @@ void FloppyData::createfilesystem()
     KMessageBox::error(this, str);
     frame->clear();
     proc = 0L;
-    progress->setValue(0);
+    progress->setProgress(0);
   }
 }
 
