@@ -625,7 +625,7 @@ void FloppyData::readfsStderr(KProcess *, char *buffer, int buflen){
   mybuffer[amount] = '\0';
 
   // skip version message
-  if (strncmp(mybuffer, "mke2fs", 6) == 0)
+  if (fserrstring.isEmpty() && strncmp(mybuffer, "mke2fs", 6) == 0)
     return;
 
   abort = true;
