@@ -237,6 +237,8 @@ bool FloppyData::findDevice()
       blocks = 720;
       tracks = 80;
       mdev = "/dev/fd0";
+      if( access(device.data(),W_OK) < 0){
+	device = "/dev/fd0u720";
     }
   }
 
@@ -270,6 +272,9 @@ bool FloppyData::findDevice()
       blocks = 720;
       tracks = 80;
       mdev = "/dev/fd1";
+      if( access(device.data(),W_OK) < 0){
+	device = "/dev/fd1u720";
+    }
     }
   }
 
