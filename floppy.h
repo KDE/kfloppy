@@ -51,13 +51,6 @@
 #include <khelpmenu.h>
 #include <kpopupmenu.h>
 
-
-#define FLOPPYA3 "A: 3.5"
-#define FLOPPYA5 "A: 5.25"
-#define FLOPPYB3 "B: 3.5"
-#define FLOPPYB5 "B: 5.25"
-
-
 class FloppyData : public KDialog
 {
     Q_OBJECT

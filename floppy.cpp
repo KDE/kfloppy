@@ -3,7 +3,7 @@
 
     $Id$
 
-    Copyright (C) 1997 Bernd Johannes Wuebben   
+    Copyright (C) 1997 Bernd Johannes Wuebben
                        wuebben@math.cornell.edu
 
 
@@ -65,7 +65,7 @@ FloppyData::FloppyData(QWidget * parent, const char * name)
 	g1->addWidget( deviceComboBox, 0, 1, AlignLeft );
 
 	deviceComboBox->insertItem(i18n("Primary"));
-	deviceComboBox->insertItem(i18n("Seconday"));
+	deviceComboBox->insertItem(i18n("Secondary"));
 
         label2 = new QLabel(this);
 	label2->setText(i18n("Size:"));
@@ -205,66 +205,71 @@ void FloppyData::show() {
   KDialog::show();
 }
 
-bool FloppyData::findDevice() {
-	if (deviceComboBox->currentText() == i18n("Primary")) {
-		if (densityComboBox->currentText() == i18n("3.5\" 1.44MB")) {
-		device = "/dev/fd0H1440";
-		blocks = 1440;
-		tracks = 80;
-			if (access(QFile::encodeName(device),W_OK) < 0) {
-			device = "/dev/fd0u1440";
-			}
-		}
-		if (densityComboBox->currentText() ==  i18n("3.5\" 720KB")) {
-		device = "/dev/fd0D720";
-		blocks = 720;
-		tracks = 80;
-			if (access(QFile::encodeName(device),W_OK) < 0) {
-			device = "/dev/fd0u720";
-			}
-		}
-		if (densityComboBox->currentText() == i18n("5.25\" 1.2MB")) {
-		device = "/dev/fd0h1200";
-		blocks = 1200;
-		tracks = 80;
-		}
-		if (densityComboBox->currentText() == i18n("5.25\" 360KB")) {
-		device = "/dev/fd0h360";
-		blocks = 720;
-		tracks = 40;
-		}
 
-	if (deviceComboBox->currentText() == i18n("Secondary")) {
-	 {
-		if (densityComboBox->currentText() == i18n("3.5\" 1.44MB")) {
-		device = "/dev/fd1H1440";
-		blocks = 1440;
-		tracks = 80;
-			if (access(QFile::encodeName(device),W_OK) < 0) {
-			device = "/dev/fd1u1440";
-			}
-		}
-		if (densityComboBox->currentText() ==  i18n("3.5\" 720KB")) {
-		device = "/dev/fd1D720";
-		blocks = 720;
-		tracks = 80;
-			if (access(QFile::encodeName(device),W_OK) < 0) {
-				device = "/dev/fd1u720";
-			}
-		}
-		if (densityComboBox->currentText() == i18n("5.25\" 1.2MB")) {
-		device = "/dev/fd1h1200";
-		blocks = 1200;
-		tracks = 80;
-		}
-		if (densityComboBox->currentText() == i18n("5.25\" 360KB")) {
-		device = "/dev/fd1h360";
-		blocks = 720;
-		tracks = 40;
-		}
-	}}
-}
-
+bool FloppyData::findDevice()
+{
+  if( deviceComboBox->currentText() == i18n("Primary") ){
+    if( densityComboBox->currentText() == i18n("3.5\" 1.44MB")){
+      device = "/dev/fd0H1440";
+      blocks = 1440;
+      tracks = 80;
+      if( access(QFile::encodeName(device),W_OK) < 0){
+	device = "/dev/fd0u1440";
+      }
+    }
+    else
+    if( densityComboBox->currentText() == i18n("3.5\" 720KB")){
+      device = "/dev/fd0D720";
+      blocks = 720;
+      tracks = 80;
+      if( access(QFile::encodeName(device),W_OK) < 0){
+	device = "/dev/fd0u720";
+      }
+    }
+    else
+    if( densityComboBox->currentText() == i18n("5.25\" 1.2MB")){
+      device = "/dev/fd0h1200";
+      blocks = 720;
+      tracks = 80;
+      }
+    else
+    if( densityComboBox->currentText() == i18n("5.25\" 360KB")){
+      device = "/dev/fd0h360";
+      blocks = 720;
+      tracks = 80;
+      }
+    }
+  if( deviceComboBox->currentText() == i18n("Secondary") ){
+    if( densityComboBox->currentText() == i18n("3.5\" 1.44MB")){
+      device = "/dev/fd1H1440";
+      blocks = 1440;
+      tracks = 80;
+      if( access(QFile::encodeName(device),W_OK) < 0){
+	device = "/dev/fd1u1440";
+      }
+    }
+    else
+    if( densityComboBox->currentText() == i18n("3.5\" 720KB")){
+      device = "/dev/fd1D720";
+      blocks = 720;
+      tracks = 80;
+      if( access(QFile::encodeName(device),W_OK) < 0){
+	device = "/dev/fd1u720";
+      }
+    }
+    else
+    if( densityComboBox->currentText() == i18n("5.25\" 1.2MB")){
+      device = "/dev/fd1h1200";
+      blocks = 720;
+      tracks = 80;
+      }
+    else
+    if( densityComboBox->currentText() == i18n("5.25\" 360KB")){
+      device = "/dev/fd1h360";
+      blocks = 720;
+      tracks = 80;
+      }
+    }
 
   if( access(QFile::encodeName(device),W_OK) < 0){
 
@@ -281,11 +286,12 @@ bool FloppyData::findDevice() {
   return true;
 }
 
+
 void FloppyData::findExecutables()
 {
   QString path = getenv("PATH");
   path.append(":/usr/sbin:/sbin");
- 
+
   fdformat = KGlobal::dirs()->findExe("fdformat", path);
   mke2fs = KGlobal::dirs()->findExe("mke2fs", path);
   mkdosfs = KGlobal::dirs()->findExe("mkdosfs", path);
@@ -376,6 +382,8 @@ void FloppyData::format(){
   lineedit->setEnabled(false);
   helpbutton->setEnabled(false);
   quitbutton->setEnabled(false);
+  
+
 
   if(!findDevice()){
     reset();
