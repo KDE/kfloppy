@@ -165,17 +165,25 @@ void KFActionQueue::queue(KFAction *p)
 //
 //
 #ifdef ANY_LINUX
-const char *fd0H1440[] = { "/dev/fd0h1440", "/dev/fd0H1440", "/dev/fd0u1440", 0L } ;
-const char *fd0D720[] = { "/dev/fd0u720", "/dev/fd0D720", "/dev/fd0h720", 0L };
+
+// ### TODO: verify that all /dev/floppy really exist in devfs
+// ### TODO: verify 1200 format (does /dev/fd?u1200 exist, devfs name?)
+
+const char *fd0H1440[] = { "/dev/fd0u1440", "/dev/floppy/0u1440", "/dev/fd0h1440", "/dev/fd0H1440", 0L } ;
+const char *fd0D720[] = { "/dev/fd0u720", "/dev/floppy/0u720", "/dev/fd0D720", "/dev/fd0h720", 0L };
 const char *fd0h1200[]={ "/dev/fd0h1200", 0L };
-const char *fd0h360[] = { "/dev/fd0h360", "/dev/fd0h360", "/dev/fd0d360", 0L };
-const char *fd1H1440[] = { "/dev/fd1h1440", "/dev/fd1H1440", "/dev/fd1u1440", 0L } ;
-const char *fd1D720[] = { "/dev/fd1u720", "/dev/fd1D720", "/dev/fd1h720", 0L };
+const char *fd0h360[] = { "/dev/fd0u360", "/dev/floppy/0u360", "/dev/fd0h360", "/dev/fd0d360", 0L };
+
+const char *fd1H1440[] = { "/dev/fd1u1440", "/dev/floppy/1u1440","/dev/fd1h1440", "/dev/fd1H1440", 0L } ;
+const char *fd1D720[] = { "/dev/fd1u720", "/dev/floppy/1u720", "/dev/fd1D720", "/dev/fd1h720", 0L };
 const char *fd1h1200[]={ "/dev/fd1h1200", 0L };
-const char *fd1h360[] = { "/dev/fd1u360", "/dev/fd1h360", "/dev/fd1d360", 0L };
+const char *fd1h360[] = { "/dev/fd1u360", "/dev/floppy/1u360","/dev/fd1h360", "/dev/fd1d360", 0L };
+
 const char *fd0auto[] = { "/dev/fd0", 0L };
 const char *fd1auto[] = { "/dev/fd1", 0L };
+
 #endif
+
 
 #ifdef ANY_BSD
 const char *fd0[] = { "/dev/fd0", 0L } ;
