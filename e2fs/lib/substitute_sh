@@ -4,8 +4,8 @@
 
 AWK=/usr/bin/awk
 SED=/usr/bin/sed
-ET_DIR=/usr/local/src/kde/cvs/kdeutils/kfloppy/e2fs/lib/et
-SS_DIR=/usr/local/src/kde/cvs/kdeutils/kfloppy/e2fs/lib/ss
+ET_DIR=/var/home/coolo/prod/kdeutils/kfloppy/e2fs/lib/et
+SS_DIR=/var/home/coolo/prod/kdeutils/kfloppy/e2fs/lib/ss
 E2FSPROGS_MONTH=October
 E2FSPROGS_YEAR=1996
 E2FSPROGS_VERSION=1.06
