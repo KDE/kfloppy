@@ -15,6 +15,12 @@ INSTALL = $(install) -m 0755
 INSTALL_DATA = $(install) -m 0644
 INSTALL_DIR = $(install) -d -m 0755   
 
+kde_libraries = @kde_libraries@
+qt_libraries = @qt_libraries@
+top_builddir = ..
+LIBTOOL = @LIBTOOL@
+KDE_RPATH = @KDE_RPATH@
+
 ###################################################################
 
 CXXFLAGS=	@CXXFLAGS@ -DHAVE_CONFIG_H -I.. #-DDEBUG
@@ -54,7 +60,7 @@ Makefile: Makefile.in
 	cd .. && CONFIG_FILES=kfloppy/$@ CONFIG_HEADERS= $(SHELL) ./config.status
 
 kfloppy: $(SOURCES) $(SRCMETA) $(OBJECTS) $(HEADER)
-	$(CXX) $(OBJECTS) -o kfloppy $(LDFLAGS)
+	$(LIBTOOL) --mode=link $(CXX) $(OBJECTS) -o kfloppy $(LDFLAGS) $(KDE_RPATH)
 
 kmkdosfs: kmkdosfs.c kmkdosfs.o
 	$(CC) $(CFLAGS) kmkdosfs.o -o kmkdosfs $(CLDFLAGS)
