@@ -325,8 +325,16 @@ void FloppyAction::processDone(KProcess *p)
 
 	if (p->normalExit())
 	{
-		emit status(QString::null,100);
-		emit done(this,!p->exitStatus());
+	        if (p->exitStatus() == 0)
+	        {
+			emit status(QString::null,100);
+			emit done(this,true);
+		}
+		else
+		{
+			emit status(i18n("%1 terminated with an error.").arg(theProcessName),100);
+			emit done(this,false);
+		}
 	}
 	else
 	{
