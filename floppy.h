@@ -25,11 +25,9 @@
 #ifndef FloppyData_included
 #define FloppyData_included
 
-#include <qwidget.h>
 #include <qbuttongroup.h>
 #include <qcombobox.h>
 #include <qframe.h>
-#include <qpushbutton.h>
 #include <qradiobutton.h>
 #include <qlabel.h>
 #include <qdialog.h>
@@ -50,6 +48,7 @@
 #include <kdialog.h>
 #include <khelpmenu.h>
 #include <kpopupmenu.h>
+#include <kpushbutton.h>
 
 class FloppyData : public KDialog
 {
@@ -130,10 +129,10 @@ private:
 	QCheckBox*    labellabel;
 	QLineEdit*    lineedit;
 	QRadioButton* quick;
-	QPushButton* quitbutton;
-	QPushButton* helpbutton;
+	KPushButton* quitbutton;
+	KPushButton* helpbutton;
 	QRadioButton* fullformat;
-	QPushButton*  formatbutton;
+	KPushButton*  formatbutton;
 	QLabel* frame;
 	QComboBox* deviceComboBox;
 	QComboBox* filesystemComboBox;

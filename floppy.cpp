@@ -130,7 +130,7 @@ FloppyData::FloppyData(QWidget * parent, const char * name)
 
 	QVBoxLayout* v3 = new QVBoxLayout( h1 );
 
-	formatbutton = new QPushButton( this, "PushButton_3" );
+	formatbutton = new KPushButton( this, "PushButton_3" );
 	formatbutton->setText(i18n( "&Format") );
 	formatbutton->setAutoRepeat( FALSE );
 	connect(formatbutton,SIGNAL(clicked()),this,SLOT(format()));
@@ -141,14 +141,12 @@ FloppyData::FloppyData(QWidget * parent, const char * name)
 	//Setup the Help Menu
 	helpMenu = new KHelpMenu(this, KGlobal::instance()->aboutData(), false);
 
-	helpbutton = new QPushButton( this, "PushButton_4" );
-	helpbutton->setText(i18n( "&Help") );
+	helpbutton = new KPushButton( KStdGuiItem::help(), this );
 	helpbutton->setAutoRepeat( FALSE );
 	helpbutton->setPopup(helpMenu->menu());
 	v3->addWidget( helpbutton );
 
-	quitbutton = new QPushButton( this, "PushButton_1" );
-	quitbutton->setText(i18n( "&Quit") );
+	quitbutton = new KPushButton( KGuiItem( i18n( "&Quit" ), "exit" ), this );
 	quitbutton->setAutoRepeat( FALSE );
 	connect(quitbutton,SIGNAL(clicked()),this,SLOT(quit()));
 	 v3->addWidget( quitbutton );
