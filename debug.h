@@ -39,11 +39,9 @@
 #ifndef NDEBUG
 #define DEBUGSETUP	kdDebug(KFAREA) << (__PRETTY_FUNCTION__) << endl
 #define DEBUGS(a)	kdDebug(KFAREA) << "  " << a << endl
-#define DEBUGSZ(s)	kdDebug(KFAREA) << QString("  Size %1x%2.\n").arg(s.width()).arg(s.height());
 #else
 #define DEBUGSETUP
 #define DEBUGS(a)
-#define DEBUGSZ(s)
 #endif
 
 
