@@ -10,6 +10,6 @@ Primary-site:  ftp://fiwi02.wiwi.uni-tuebingen.de/pub/kde/stable/utils/
 Home-Page:     http://math.cornell.edu/~wuebben/kfloppy/kfloppy.html
 Alternate-site:ftp://math.cornell.edu/pub/wuebben/kfloppy/
 Original-site: ftp://fiwi02.wiwi.uni-tuebingen.de/pub/kde/
-Platform:      Linux, Qt 1.31 or higher (http://www.troll.no)
+Platform:      Linux, Qt
 Copying-policy: GPL 
 End
