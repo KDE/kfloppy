@@ -3,7 +3,7 @@
 prefix  = @prefix@
 BINDIR  = $(prefix)/bin
 LIBDIR  = $(prefix)/lib
-DOCSDIR = $(prefix)/share/doc/HTML/default/kfloppy
+DOCSDIR = $(prefix)/share/doc/HTML/en/kfloppy
 APPSDIR = $(prefix)/share/applnk/Utilities/
 PICSDIR = $(prefix)/share/apps/kfloppy/pics/
 ICONSDIR = $(prefix)/share/icons/
