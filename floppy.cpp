@@ -274,7 +274,7 @@ bool FloppyData::findDevice()
   if( access(QFile::encodeName(device),W_OK) < 0){
 
     QString str = i18n(
-	      "Cannot access %1\nMake sure that the device exists and that\n"
+	      "Cannot access %1\nMake sure that the device exists and that "
 	      "you have write permission to it.").arg(device);
     KMessageBox::error(this, str);
 
@@ -512,9 +512,9 @@ void FloppyData::errslot(){
   if(errstring.contains("ioctl(FDFMTBEG)")){
 
     QString str = i18n(
-		"Cannot access floppy or floppy drive\n"
-		"Please insert a floppy and make sure that you\n"
-		"have selected a valid floppy drive.\n");
+		"Cannot access floppy or floppy drive.\n"
+		"Please insert a floppy and make sure that you "
+		"have selected a valid floppy drive.");
 
     KMessageBox::error(this, str);
     
@@ -650,9 +650,9 @@ void FloppyData::fserrslot(){
   if(fserrstring.contains("No such device")){
 
     QString str = i18n(
-		"Cannot access floppy or floppy drive\n"\
-		"Please insert a floppy and make sure that you\n"
- 		"have selected a valid floppy drive.\n");
+		"Cannot access floppy or floppy drive.\n"
+		"Please insert a floppy and make sure that you "
+ 		"have selected a valid floppy drive.");
 
     KMessageBox::sorry(this, str);
     
