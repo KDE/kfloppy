@@ -224,13 +224,10 @@ bool FloppyData::findDevice()
 
   if( deviceComboBox->currentText() == FLOPPYA3 ){
     if( densityComboBox->currentText() == i18n( "HD")){
-      device = "/dev/fd0h1440";
+      device = "/dev/fd0H1440";
       blocks = 1440;
       tracks = 80;
       mdev = "/dev/fd0";
-      if( access(device.data(),W_OK) < 0){
-	device = "/dev/fd0H1440";
-      }
       if( access(device.data(),W_OK) < 0){
 	device = "/dev/fd0u1440";
       }
@@ -260,14 +257,11 @@ bool FloppyData::findDevice()
 
   if( deviceComboBox->currentText() == FLOPPYB3){
     if( densityComboBox->currentText() == i18n( "HD")){
-      device = "/dev/fd1h1440";
+      device = "/dev/fd1H1440";
       blocks = 1400;
       tracks = 80;
       mdev = "/dev/fd1";
-      if( access(device.data(),W_OK) < 0){
-	device = "/dev/fd1H1440";
-      }
-      if( access(device.data(),W_OK) < 0){
+      if(access(device.data(),W_OK) < 0){
 	device = "/dev/fd1u1440";
       }
     }
