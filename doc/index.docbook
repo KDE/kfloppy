@@ -1,12 +1,12 @@
 <!DOCTYPE book PUBLIC "-//KDE//DTD DocBook V3.1-Based Variant V1.0//EN" [
- <!ENTITY kfloppy "<application>KFloppy</application>">
  <!ENTITY kappname "&kfloppy;" -- this only *seems* redundant -->
+ <!ENTITY English "INCLUDE">
   <!ENTITY % addindex "IGNORE">
-  <!ENTITY % ents PUBLIC "-//KDE//ENTITIES Application-Variable Entities V1.0//EN">
+  <!ENTITY % ents PUBLIC "-//KDE//ENTITIES Documentation V1.0//EN">
   %ents;
 ]>
 
-<book lang="en">
+<book lang="&language;">
 <bookinfo>
 
 <title>The &kfloppy; Formatter Handbook</title>
@@ -18,7 +18,7 @@
 <affiliation><address><email>ctmcginnis@compuserve.com</email>
 </address></affiliation> </author>
 
-<othercredit>
+<othercredit role="developer">
 <firstname>Bernd</firstname>
 <othername>Johannes</othername>
 <surname>Wuebben</surname>
@@ -27,7 +27,7 @@
 
 </othercredit>
 
-<othercredit>
+<othercredit role="reviewer">
 <firstname>Lauri</firstname>
 <surname>Watts</surname>
 <contrib>Reviewer</contrib>
@@ -35,7 +35,7 @@
 </othercredit>
 
 </authorgroup>
-<date>22/10/2000</date>
+<date>14/12/2000</date>
 <releaseinfo>1.3.0</releaseinfo>
 
 <copyright>
@@ -66,14 +66,6 @@ graphical means to format 3.5" and 5.25" floppy disks. </para>
 <important><para>Make sure that your floppy is <emphasis>not</emphasis> mounted.
 &kfloppy; cannot format a mounted floppy.</para></important>
 
-<sect1 id="installation">
-<title>Installation</title>
-
-<para>&kfloppy; is packaged as part of the kdeutils package.  For more
-information on installing and compiling KDE please see <ulink
-url="http://www.kde.org">www.kde.org</ulink>.</para>
-
-</sect1>
 </chapter>
 
 <chapter id="usingkfloppy">
@@ -416,14 +408,23 @@ through <command>kfloppy <option>-V</option></command> </para>
 <para>This version of the &kfloppy; Handbook is based on the original by
 David Rugge <email>davidrugge@mindspring.com</email></para>
 
-&license-links;
+&underFDL;
+&underGPL;
 
 </chapter>
+
+<appendix id="installation">
+<title>Installation</title>
+
+<para>&kfloppy; is packaged as part of the kdeutils package.  For more
+information on installing and compiling KDE please see <ulink
+url="http://www.kde.org">www.kde.org</ulink>.</para>
+
+</appendix>
 </book>
 
 <!--
 Local Variables:
-
 mode: sgml
 sgml-minimize-attributes: nil
 sgml-general-insert-case: lower
