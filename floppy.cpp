@@ -6,7 +6,7 @@
     Copyright (C) 1997 Bernd Johannes Wuebben   
                        wuebben@math.cornell.edu
 
-    
+
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
     the Free Software Foundation; either version 2 of the License, or
@@ -64,19 +64,31 @@ FloppyData::FloppyData(QWidget * parent, const char * name)
 	deviceComboBox = new QComboBox( FALSE, this, "ComboBox_1" );
 	g1->addWidget( deviceComboBox, 0, 1, AlignLeft );
 
+	deviceComboBox->insertItem(i18n("Primary"));
+	deviceComboBox->insertItem(i18n("Seconday"));
+
         label2 = new QLabel(this);
-	label2->setText(i18n("Density:"));
+	label2->setText(i18n("Size:"));
         g1->addWidget( label2, 1, 0, AlignLeft );
 
 	densityComboBox = new QComboBox( FALSE, this, "ComboBox_1" );
 	g1->addWidget( densityComboBox, 1, 1, AlignLeft );
 
+	densityComboBox->insertItem(i18n("3.5\" 1.44MB"));
+	densityComboBox->insertItem(i18n("3.5\" 720KB"));
+	densityComboBox->insertItem(i18n("5.25\" 1.2MB"));
+	densityComboBox->insertItem(i18n("5.25\" 360KB"));
+
+
         label3 = new QLabel(this);
 	label3->setText(i18n("File System:"));
         g1->addWidget( label3, 2, 0, AlignLeft );
 
- 	filesystemComboBox = new QComboBox( FALSE, this, "ComboBox_2" );
+	filesystemComboBox = new QComboBox( FALSE, this, "ComboBox_2" );
 	g1->addWidget( filesystemComboBox, 2, 1, AlignLeft );
+
+	filesystemComboBox->insertItem("DOS");
+	filesystemComboBox->insertItem("ext2");
 
         v1->addSpacing( 10 );
 
@@ -96,12 +108,12 @@ FloppyData::FloppyData(QWidget * parent, const char * name)
         v2->addWidget( fullformat, AlignLeft );
 
 	verifylabel = new QCheckBox( buttongroup, "RadioButton_4" );
-	verifylabel->setText(i18n( "Verify integrity" ));
+	verifylabel->setText(i18n( "&Verify Integrity" ));
 	verifylabel->setChecked(TRUE);
 	v2->addWidget( verifylabel, AlignLeft );
 
 	labellabel = new QCheckBox( buttongroup, "RadioButton_4" );
-	labellabel->setText(i18n( "Label:") );
+	labellabel->setText(i18n( "Volume &Label:") );
 	labellabel->setChecked(TRUE);
         v2->addWidget( labellabel, AlignLeft );
 
@@ -164,15 +176,6 @@ FloppyData::FloppyData(QWidget * parent, const char * name)
 	errtimer = new QTimer;
 	connect(errtimer,SIGNAL(timeout()),this,SLOT(errslot()));
 
-	addDevice(FLOPPYA3);
-	addDevice(FLOPPYA5);
-	addDevice(FLOPPYB3);
-	addDevice(FLOPPYB5);
-	addDensity(i18n("HD"));
-	addDensity(i18n("DD"));
-	addFileSystem(i18n("Dos"));
-	addFileSystem(i18n("ext2fs"));
-
 	readSettings();
 	setWidgets();
 
@@ -194,7 +197,7 @@ FloppyData::~FloppyData()
 void FloppyData::closeEvent(QCloseEvent*){
 
   quit();
-   
+
 }
 
 void FloppyData::show() {
@@ -202,94 +205,66 @@ void FloppyData::show() {
   KDialog::show();
 }
 
-void FloppyData::addDevice(const QString & name)
-{
-  deviceComboBox->insertItem(name);
+bool FloppyData::findDevice() {
+	if (deviceComboBox->currentText() == i18n("Primary")) {
+		if (densityComboBox->currentText() == i18n("3.5\" 1.44MB")) {
+		device = "/dev/fd0H1440";
+		blocks = 1440;
+		tracks = 80;
+			if (access(QFile::encodeName(device),W_OK) < 0) {
+			device = "/dev/fd0u1440";
+			}
+		}
+		if (densityComboBox->currentText() ==  i18n("3.5\" 720KB")) {
+		device = "/dev/fd0D720";
+		blocks = 720;
+		tracks = 80;
+			if (access(QFile::encodeName(device),W_OK) < 0) {
+			device = "/dev/fd0u720";
+			}
+		}
+		if (densityComboBox->currentText() == i18n("5.25\" 1.2MB")) {
+		device = "/dev/fd0h1200";
+		blocks = 1200;
+		tracks = 80;
+		}
+		if (densityComboBox->currentText() == i18n("5.25\" 360KB")) {
+		device = "/dev/fd0h360";
+		blocks = 720;
+		tracks = 40;
+		}
+
+	else
+	if (deviceComboBox->currentText() == i18n("Secondary")) {
+	 {
+		if (densityComboBox->currentText() == i18n("3.5\" 1.44MB")) {
+		device = "/dev/fd1H1440";
+		blocks = 1440;
+		tracks = 80;
+			if (access(QFile::encodeName(device),W_OK) < 0) {
+			device = "/dev/fd1u1440";
+			}
+		}
+		if (densityComboBox->currentText() ==  i18n("3.5\" 720KB")) {
+		device = "/dev/fd1D720";
+		blocks = 720;
+		tracks = 80;
+			if (access(QFile::encodeName(device),W_OK) < 0) {
+				device = "/dev/fd1u720";
+			}
+		}
+		if (densityComboBox->currentText() == i18n("5.25\" 1.2MB")) {
+		device = "/dev/fd1h1200";
+		blocks = 1200;
+		tracks = 80;
+		}
+		if (densityComboBox->currentText() == i18n("5.25\" 360KB")) {
+		device = "/dev/fd1h360";
+		blocks = 720;
+		tracks = 40;
+		}
+	}}
 }
-
-void FloppyData::addDensity(const QString & name)
-{
-  densityComboBox->insertItem(name);
-}
-
-void FloppyData::addFileSystem(const QString & name)
-{
-  filesystemComboBox->insertItem(name);
-}
-
-bool FloppyData::findDevice()
-{
-  if( deviceComboBox->currentText() == FLOPPYA3 ){
-    if( densityComboBox->currentText() == i18n( "HD")){
-      device = "/dev/fd0H1440";
-      blocks = 1440;
-      tracks = 80;
-      //mdev = "/dev/fd0";
-      if( access(QFile::encodeName(device),W_OK) < 0){
-	device = "/dev/fd0u1440";
-      }
-    }
-    else{
-      device = "/dev/fd0D720";
-      blocks = 720;
-      tracks = 80;
-      //mdev = "/dev/fd0";
-      if( access(QFile::encodeName(device),W_OK) < 0){
-	device = "/dev/fd0u720";
-      }
-    }
-  }
-
-  if( deviceComboBox->currentText() == FLOPPYA5){
-    if( densityComboBox->currentText() == i18n( "HD")){
-      device = "/dev/fd0h1200";
-      blocks = 1200;
-      tracks = 80;
-      //mdev = "/dev/fd0";
-    }
-    else{
-      device = "/dev/fd0h360";
-      blocks = 720;
-      tracks = 40;
-      //mdev = "/dev/fd0";
-    }
-  }
-
-  if( deviceComboBox->currentText() == FLOPPYB3){
-    if( densityComboBox->currentText() == i18n( "HD")){
-      device = "/dev/fd1H1440";
-      blocks = 1400;
-      tracks = 80;
-      //mdev = "/dev/fd1";
-      if(access(QFile::encodeName(device),W_OK) < 0){
-	device = "/dev/fd1u1440";
-      }
-    }
-    else{
-      device = "/dev/fd1D720";
-      blocks = 720;
-      tracks = 80;
-      //mdev = "/dev/fd1";
-      if( access(QFile::encodeName(device),W_OK) < 0){
-	device = "/dev/fd1u720";
-    }
-    }
-  }
-
-  if( deviceComboBox->currentText() == FLOPPYB5){
-    if( densityComboBox->currentText() == i18n( "HD")){
-      device = "/dev/fd1h1200";
-      blocks = 1200;
-      tracks = 80;
-      //mdev = "/dev/fd1";
-    }
-    else{
-      device = "/dev/fd1h720";
-      blocks = 720;
-      tracks = 80;
-      //mdev = "/dev/fd1";
-    }
-  }
 
 
   if( access(QFile::encodeName(device),W_OK) < 0){
@@ -303,7 +278,7 @@ bool FloppyData::findDevice()
     return false;
 
   }
-  
+
   return true;
 }
 
