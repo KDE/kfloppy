@@ -49,6 +49,7 @@
 #include <kapp.h>
 #include <klocale.h>
 #include <kcmdlineargs.h>
+#include <kaboutdata.h>
 
 #include "floppy.h"
 
@@ -60,7 +61,11 @@ static const char *version = "v0.0.1";
 
 int main( int argc, char *argv[] )
 {
-  KCmdLineArgs::init(argc, argv, "kfloppy", description, version);
+  KAboutData aboutData("kfloppy", I18N_NOOP("LFloppy"),
+    version, description, KAboutData::License_GPL,
+    "(c) 1997, Bernd Johannes Wuebben");
+  aboutData.addAuthor("Bernd Johannes Wuebben",0, "wuebben@math.cornell.edu");
+  KCmdLineArgs::init( argc, argv, &aboutData );
 
   KApplication a;
 

@@ -44,7 +44,7 @@ install-exec-local: kmke2fs
 	$(INSTALL) kmke2fs $(bindir)
 	
 messages:
-	$(XGETTEXT) -C -ki18n -x $(includedir)/kde.pot $(kfloppy_SOURCES) && mv messages.po $(podir)/kfloppy.pot
+	$(XGETTEXT) -C -kI18N_NOOP -ki18n -x $(includedir)/kde.pot $(kfloppy_SOURCES) && mv messages.po $(podir)/kfloppy.pot
 	
 uninstall-local:
 	rm -f $(BINDIR)/kmke2fs
