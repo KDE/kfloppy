@@ -1,188 +1,423 @@
 <!DOCTYPE book PUBLIC "-//KDE//DTD DocBook V3.1-Based Variant V1.0//EN" [
- <!ENTITY kfloppy "<application>kfloppy</application>">
+ <!ENTITY kfloppy "<application>KFloppy</application>">
+ <!ENTITY kappname "&kfloppy;" -- this only *seems* redundant -->
+  <!ENTITY % addindex "IGNORE">
+  <!ENTITY % ents PUBLIC "-//KDE//ENTITIES Application-Variable Entities V1.0//EN">
+  %ents;
 ]>
 
 <book lang="en">
 <bookinfo>
+
 <title>The KFloppy Formatter Handbook</title>
+
 <authorgroup>
 <author>
-<firstname>David</firstname>
-<surname>Rugge</surname>
+<firstname>Thad</firstname>
+<surname>McGinnis</surname>
+<affiliation><address><email>jamcgin@racsa.co.cr</email></address></affiliation>
 </author>
-<author>
-<firstname>Bernd Johannes</firstname>
+
+<othercredit>
+<firstname>Bernd</firstname>
+<othername>Johannes</othername>
 <surname>Wuebben</surname>
-</author>
+<affiliation><address><email>wuebben@math.cornell.edu</email></address></affiliation>
+<contrib>Developer</contrib>
+
+</othercredit>
+
+<othercredit>
+<firstname>Lauri</firstname>
+<surname>Watts</surname>
+<contrib>Reviewer</contrib>
+<affiliation><address><email>vampyr@atconnex.net</email></address></affiliation>
+</othercredit>
+
+
 </authorgroup>
-<date>24/01/1999</date>
-<releaseinfo>1.01.00</releaseinfo>
+<date>13/06/2000</date>
+<releaseinfo>1.30.00</releaseinfo>
+
+<copyright>
+<year>2000</year>
+<holder>Thad McGinnis</holder>
+</copyright>
+
+<legalnotice>&FDLNotice;</legalnotice>
+
+
 <abstract>
-<para>This Handbook describes KFloppy Formatter Version 1.1.0</para>
+<para>This Handbook describes KFloppy Formatter Version 1.3.0</para>
 </abstract>
+
 <keywordset>
 <keyword>KDE</keyword>
 <keyword>kfloppy</keyword>
+<keyword>floppy</keyword>
+<keyword>format</keyword>
 </keywordset>
+
 </bookinfo>
 
 <chapter id="introduction">
 <title>Introduction</title>
 
-<para>KFloppy Formatter is a program that lets you format 3.5" and 5.25" floppy disks. </para>
+<para>&kfloppy; Formatter is a utility that provides a straightforward
+graphical means to format 3.5" and 5.25" floppy disks. </para>
 
-<para>I hope you will enjoy this little tool. Please report any problems or feature requests to the KDE
-mailing lists.</para>
+<important><para>Make sure that your floppy is <emphasis>not</emphasis> mounted.
+&kfloppy; cannot format a mounted floppy.</para></important>
 
-<para>Bernd Johannes Wuebben <ulink url="mailto:wuebben@kde.org">&lt;wuebben@math.cornell.edu&gt;</ulink></para>
-</chapter>
-
-<chapter id="installation">
+<sect1 id="installation">
 <title>Installation</title>
 
-<sect1 id="howtoobtainkfloppyformatter">
-<title>How to obtain KFloppy Formatter</title>
+<para>&kfloppy; is packaged as part of the kdeutils package.  For more
+information on installing and compiling KDE please see <ulink
+url="http://www.kde.org">www.kde.org</ulink>.</para>
 
-<para>KFloppy Formatter is part of the KDE project <ulink url="http://www.kde.org">http://www.kde.org</ulink>.
-KFloppy Formatter can be found in the kdeutils package on <ulink url="ftp://ftp.kde.org/pub/kde/">ftp://ftp.kde.org/pub/kde/</ulink>, 
-the main ftp site of the KDE project.</para>
-</sect1>
-
-<sect1 id="requirements">
-<title>Requirements</title>
-
-<para>In order to successfully compile KFloppy Formatter, you need the latest versions 
-of the KDE libraries. All required libraries as well as KFloppy Formatter itself can be found
-on <ulink url="ftp://ftp.kde.org/pub/kde/">ftp://ftp.kde.org/pub/kde/</ulink>. </para>
-</sect1>
-
-<sect1 id="compilationandinstallation">
-<title>Compilation and installation</title>
-
-<para>In order to compile and install KFloppy Formatter on your system, type the following in the base 
-directory of the KFloppy distribution:
-<screen>% ./configure
-% make
-% make install
-</screen>
-</para>
-
-<para>Since KFloppy Formatter uses <literal remap="tt">autoconf</literal> you should have not trouble compiling it.
-Should you run into problems please report them to the KDE mailing lists.</para>
 </sect1>
 </chapter>
 
-<chapter id="formattingdiskswithkfloppy">
-<title>Formatting Disks with KFloppy</title>
+<chapter id="usingkfloppy">
+<title>Using KFloppy</title>
 
-<para>To use KFloppy you must have either a 5.25" or 3.5" disk drive connected to your
-system.  Insert the disk you want to format. <emphasis remap="bf">Do not mount it</emphasis>. Then, select the appropriate
-options as described below.</para>
+<para>Starting &kfloppy; opens a single window by which the user may choose
+appropriate settings and control the formatting process.  These options and
+controls are detailed below.</para>
 
-<sect1 id="floppydrive">
+<important><para>Make sure that your floppy is <emphasis>not</emphasis> mounted.
+&kfloppy; cannot format a mounted floppy.</para></important>
+
+<sect1 id="controlsettings">
+<title>Control Settings</title>
+
+<para>The settings are chosen by means of three drop down boxes located at
+the top left center of &kfloppy;.</para>
+
+<sect2 id="selectdrive">
 <title>Floppy Drive</title>
 
-<para>Select the drive that contains the disk you wish to format. For those of you not familiar with 
-PC drive labelling conventions, letter <literal remap="tt">A:</literal> corresponds to the <literal remap="tt">fd0</literal> device and
-<literal remap="tt">B:</literal> is 
-the <literal remap="tt">fd1</literal> device. Almost all new computers will only have one 3.5" floppy as their <literal remap="tt">A:</literal>
-(<literal remap="tt">fd0</literal>) drive.</para>
-</sect1>
+<para>Clicking on the top drop down box, which is labeled <guilabel>Floppy
+Drive</guilabel>, offers the user the following four choices:</para>
 
-<sect1 id="density">
+<variablelist>
+<varlistentry>
+<term>A: 3.5</term>
+<listitem><para>Choosing this item configures &kfloppy; to format a 3.5 inch
+floppy drive.  The '<guilabel>A:</guilabel>' follows the MSDOS/Windows naming
+convention and corresponds to the 'fd0' device in Linux.  The '3.5' indicates
+that the floppy is the 3.5 inch type.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term>A: 5.25</term>
+<listitem><para>Choosing this item configures &kfloppy; to format a 5.25 inch
+floppy drive.  The '<guilabel>A:</guilabel>' follows the MSDOS/Windows naming
+convention and corresponds to the 'fd0' device in Linux.  The '5.25' indicates
+that the floppy is the 5.25 inch type.  This type is generally out of use and
+normally found only in older computers.</para>
+</listitem>
+</varlistentry>
+
+
+<varlistentry>
+<term>B: 3.5</term>
+<listitem><para>Choosing this item configures &kfloppy; to format a 3.5 inch
+floppy drive.  The '<guilabel>B:</guilabel>' follows the MSDOS/Windows naming
+convention and corresponds to the 'fd1' device in Linux.  The '3.5' indicates
+that the floppy is the 3.5 inch type.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term>B: 5.25</term> 
+<listitem><para>Choosing this item configures &kfloppy; to
+format a 5.25 inch floppy drive.  The '<guilabel>B:</guilabel>' follows the
+MSDOS/Windows naming convention and corresponds to the 'fd1' device in Linux.
+The '5.25' indicates that the floppy is the 5.25 inch type.  This type is
+generally out of use and normally found only in older computers.</para>
+</listitem>
+</varlistentry>
+
+</variablelist>
+
+</sect2>
+<sect2 id="density">
 <title>Density</title>
 
-<para>Select the density of the disk you wish to format. Most of the 3.5" and 5.25" disks produced in 
-the last 5 years are high density (HD) disks. Older disks may only support the double density (DD)
-format.  High density disks can be formatted as double density, but you will not be able to use the
-full 1.44 Mbytes or 1.2 Mbytes of space on the disk. The 800k disk format used by Macintosh floppy 
-drives is not currently supported, and cannot be supported at all on PC floppy drives since they are
-not capable of formatting disks in that fashion. </para>
+<para>The drop down box labeled Density offers the choice of two possible
+density settings.  They are:</para>
 
-<para>Here is a list of the properties for each disk type and density combination:</para>
-
-<para><itemizedlist>
+<variablelist>
+<varlistentry>
+<term><guilabel>HD</guilabel></term>
 <listitem>
-<para>3.5" DD: double-sided, 80 tracks, 9 sectors/track  - 720K </para>
+<para><abbrev>HD</abbrev> stands for High Density.  This is the type commonly
+used today and so will most likely be the one chosen by most users.</para>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term><guilabel>DD</guilabel></term>
+<listitem>
+<para><abbrev>DD</abbrev> stands for Double Density.  This format is available
+mostly because some old diskettes and floppy disk drives require it.  While the
+user may format a high density diskette in this manner it will reduce the
+storage space by one half.  The following list of properties for each disk type
+and density combination should make that clear:</para>   
+<itemizedlist>
+<listitem>
+<para>3.5" DD: double-sided, 80 tracks, 9 sectors/track  - 720K</para>
+</listitem> 
+<listitem> 
+<para>3.5" HD: double-sided, 80 tracks, 18 sectors/track - 1440K</para>
 </listitem>
 <listitem>
-<para>3.5" HD: double-sided, 80 tracks, 18 sectors/track - 1440K </para>
+<para>5.25" DD: double-sided, 40 tracks, 9 sectors/track  - 360K</para>
 </listitem>
 <listitem>
-<para>5.25" DD: double-sided, 40 tracks, 9 sectors/track  - 360K      </para>
-</listitem>
-<listitem>
-<para>5.25" HD: double-sided, 80 tracks, 15 sectors/track - 1200K </para>
+<para>5.25" HD: double-sided, 80 tracks, 15 sectors/track - 1200K</para>
 </listitem>
 </itemizedlist>
-</para>
-</sect1>
+</listitem>
+</varlistentry>
+</variablelist>
 
-<sect1 id="filesystems">
+<note>
+<para>The 800k disk format used by Macintosh floppy drives cannot be
+supported on PC floppy drives since they are not capable of formatting
+disks in that fashion.</para>
+</note>
+</sect2>
+
+<sect2 id="filesystems">
 <title>File Systems</title>
 
-<para>KFloppy supports two file system types for formatting floppy disks: MS-DOS and ext2, the Linux
-file system. If you want to use the floppy across many different operating systems, the
-MS-DOS file system is a good choice, but if you only need to use the disk on Linux systems, use
-ext2.</para>
+<para>The third drop down box, labeled File System, offers the user the
+following two choices:</para>
+
+<variablelist>
+<varlistentry>
+<term>Dos</term>
+<listitem>
+<para>This selection will have &kfloppy; place the MSDOS/Windows type of
+file system on the diskette.  The user will most likely want to choose this
+system if she or he will be using the diskette with those operating systems
+as they do not recognize other system types.</para>
+</listitem>
+</varlistentry>
+</variablelist>
+
+<variablelist>
+<varlistentry> 
+<term>ext2fs</term>
+<listitem>
+<para>This selection will have &kfloppy; place the type of file system on
+the diskette which is most commonly used with Linux.  The user will 
+likely want to choose this system if he or she will only be using the
+floppy with Linux.</para>
+</listitem>
+</varlistentry>
+</variablelist> 
+
+</sect2>
 </sect1>
 
-<sect1 id="formattingoptions">
+<sect1 id="formatting-options">
 <title>Formatting Options</title>
+<para>Within the outline of a box in the left center of &kfloppy; the user
+may find a set of four formatting options.  The top two are a pair of radio
+buttons.</para> <note><para>This term (radio buttons) indicates a set of options among
+which only one can be selected - in the same way that only one preset
+channel selection may be set on a car radio.</para></note><para>The bottom two options
+are only available for Dos type disks.  They are all explained
+below:</para>
 
-<para>There are two different ways that KFloppy can format a disk.</para>
-
-<para><variablelist>
+<sect2>
+<title>Formatting Method</title>
+<para>&kfloppy; can format a disk in the following two ways:</para>
+<para>
+<variablelist>
 <varlistentry>
 <term>Quick Erase</term>
 <listitem>
-<para>This simply puts the new file system on the disk. All data on the disk is erased. If the density of
-the disk is different than the selected density for formatting then the tracks and sectors on the
+<para>This simply puts the new file system on the disk. All data on the
+disk is erased. If the density of the disk is different than the selected
+<link linkend="density">density</link>, then the tracks and sectors on the
 disk will be reallocated before the file system is made.</para>
 </listitem>
 </varlistentry>
 <varlistentry>
 <term>Full Format</term>
 <listitem>
-<para>A full format reallocates the tracks and sectors, puts the selected file system on the disk, and
-then verifies the format, blocking out any bad sectors it finds.</para>
+<para>A full format reallocates the tracks and sectors, puts the selected
+file system on the disk, and then verifies the format, blocking out any bad
+sectors it finds.</para>
 </listitem>
 </varlistentry>
 </variablelist>
 </para>
+</sect2>
 
-<para>MS-DOS disks can have a volume label, which can be created by checking the <emphasis remap="bf">Create Label</emphasis> box
-and typing in the desired volume label.  Ext2 formatted floppies cannot have labels.</para>
+<sect2>
+<title>Create Label</title>
+
+<para>The bottom two features within the box are only available when the user
+chooses to use the Dos <link linkend="filesystems">file system</link>.  If the
+'<guilabel>Create Label</guilabel>' check box is selected then the user can
+enter a name (label) for the diskette that is to be formatted in the text box
+located immediately below.  When the diskette is subsequently formatted the
+label will be written to the diskette.</para>
+
+</sect2>
+
+</sect1>
+
+<sect1 id="buttons">
+<title>The Buttons</title>
+<para>There are four buttons located vertically along the right side of
+&kfloppy;.  Starting at the bottom and going up they are:</para>
+
+<variablelist>
+<varlistentry>
+<term><guibutton>Format</guibutton></term>
+<listitem><para>This button initiates the formatting process.  Once the user is
+sure that all the settings are correct he or she may begin the process by
+clicking on this button.  Assuming that a diskette is in place and the
+parameters are set correctly, the user will see a few changes take place.  The
+label on the button itself will change from '<guibutton>Format</guibutton>' to
+'<guibutton>Abort</guibutton>' indicating that another click on the button will
+stop the formatting.  Furthermore, there will be a change in the two long
+rectangular boxes that span the bottom of &kfloppy;.</para>
+
+<para> The upper box is a status indicator that gives information about the
+process underway.  As the formatting occurs it will contain specific
+details about the type of formatting.  When &kfloppy; enters the
+verification stage of the process this will be displayed.</para>
+
+<para>The lower box is a progress bar.  This displays both graphically and
+numerically the progress of first the formatting and then the verification. 
+Before starting it appears to be empty - showing only the figure '0%' in
+the center.  As each process takes place the progress is tracked
+graphically as the box fills from left to right.  At the same time the
+number in the center will increase reflecting the precise percentage of the
+process that has been completed.</para>
+
+<important>
+<para>Make sure that your floppy is <emphasis>not</emphasis> mounted.  &kfloppy; cannot 
+format a mounted floppy.</para>
+</important>
+
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term><guibutton>Help</guibutton></term>
+<listitem>
+<para>This invokes the KDE help system starting at the &kfloppy; help pages
+(this document).</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term><guibutton>About</guibutton></term>
+<listitem>
+<para>This displays version and author information.</para>
+</listitem> 
+</varlistentry>
+
+<varlistentry>
+<term><guibutton>Quit</guibutton></term>
+<listitem>
+<para>Clicking on this button will close &kfloppy;.</para>
+</listitem>
+</varlistentry>
+
+</variablelist>
+
 </sect1>
 </chapter>
 
-<chapter id="copyright">
-<title>Copyright</title>
+<chapter id="command-line">
+<title>Command line options</title>
 
-<para>KFloppy Formatter  </para>
+<para>Though &kfloppy; may most often be started from the KDE program menu,
+or a desktop icon, it can also be opened at the command line prompt of a
+terminal window.  There are a few options that are available when doing
+this.  They are:</para> 
 
-<para>Program copyright 1997 Bernd Johannes Wuebben <ulink url="mailto:wuebben@kde.org">&lt;wuebben@math.cornell.edu&gt;</ulink></para>
+<variablelist>
+<varlistentry>
+<term><command>kfloppy <option>--help</option></command></term>
+<listitem><para>This lists the most basic options available at the command
+line.</para>
+</listitem>
+</varlistentry>
 
-<para>Documentation copyright 1999 David Rugge <ulink url="mailto:davidrugge@mindspring.com">&lt;davidrugge@mindspring.com&gt;</ulink></para>
+<varlistentry>
+<term><command>kfloppy <option>--help-qt</option></command></term>
+<listitem><para>This lists the options available for changing the way
+&kfloppy; interacts with Qt.</para>
+</listitem>
+</varlistentry>
 
-<para>This program is free software; you can redistribute it and/or modify
-it under the terms of the GNU General Public License as published by
-the Free Software Foundation; either version 2 of the License, or
-(at your option) any later version.</para>
+<varlistentry> 
+<term><command>kfloppy <option>--help-kde</option></command></term>
+<listitem>
+<para>This lists the options available for changing the way &kfloppy;
+interacts with KDE.</para>
+</listitem>
+</varlistentry>
 
-<para>This program is distributed in the hope that it will be useful,
-but WITHOUT ANY WARRANTY; without even the implied warranty of
-MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-GNU General Public License for more details.</para>
+<varlistentry>
+<term><command>kfloppy <option>--help-all</option></command></term>
+<listitem>
+<para>This lists all of the command line options.</para>
+</listitem>
+</varlistentry>
 
-<para>You should have received a copy of the GNU General Public License
-along with this program; if not, write to the Free Software
-Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.</para>
+<varlistentry>
+<term><command>kfloppy <option>--author</option></command></term>
+<listitem>
+<para>Lists &kfloppy;'s author in the terminal window</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term><command>kfloppy <option>--version</option></command></term>
+<listitem>
+<para>Lists version information for Qt, KDE, and &kfloppy;. Also available
+through <command>kfloppy <option>-V</option></command> </para>
+</listitem>
+</varlistentry>
+</variablelist> 
+
+</chapter> 
+
+<chapter id="credits">
+<title>Credits and Licenses</title>
+
+<para>&kfloppy; Formatter Program Copyright 2000 Bernd Johannes Wuebben
+<email>wuebben@math.cornell.edu</email></para>
+
+<para>Documentation Copyright 2000 by Thad McGinnis
+<email>jamcgin@racsa.co.cr</email>.</para>
+
+<para>This version of the &kfloppy; Handbook is based on the original by
+David Rugge <email>davidrugge@mindspring.com</email></para>
+
+&license-links;
+
 </chapter>
 </book>
+
 <!--
 Local Variables:
+
 mode: sgml
+sgml-minimize-attributes: nil
+sgml-general-insert-case: lower
 sgml-omittag: nil
 sgml-shorttag: t
 End:
