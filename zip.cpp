@@ -77,7 +77,7 @@ ZipFormat::ZipFormat(QWidget *w,const char *n) :
 	endInit();
 }
 
-const char *fslabel = I18N_NOOP("UFS Zip100");
+const char fslabel[] = I18N_NOOP("UFS Zip100");
 
 FilesystemList ZipFormat::FSLabels() const
 {
