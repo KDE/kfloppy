@@ -333,7 +333,20 @@ void FloppyData::reset(){
   progress->setValue(0);
   frame->clear();
   formatbutton->setText(i18n("&Format"));
-
+  label1->setEnabled(true);
+  deviceComboBox->setEnabled(true);
+  label2->setEnabled(true);
+  densityComboBox->setEnabled(true);
+  label3->setEnabled(true);
+  filesystemComboBox->setEnabled(true);
+  buttongroup->setEnabled(true);
+  quick->setEnabled(true);
+  fullformat->setEnabled(true);
+  verifylabel->setEnabled(true);
+  labellabel->setEnabled(true);
+  lineedit->setEnabled(true);
+  helpbutton->setEnabled(true);
+  quitbutton->setEnabled(true);
 }
 
 void FloppyData::format(){
@@ -349,6 +362,20 @@ void FloppyData::format(){
   }
 
   formatbutton->setText(i18n("A&bort"));
+  label1->setEnabled(false);
+  deviceComboBox->setEnabled(false);
+  label2->setEnabled(false);
+  densityComboBox->setEnabled(false);
+  label3->setEnabled(false);
+  filesystemComboBox->setEnabled(false);
+  buttongroup->setEnabled(false);
+  quick->setEnabled(false);
+  fullformat->setEnabled(false);
+  verifylabel->setEnabled(false);
+  labellabel->setEnabled(false);
+  lineedit->setEnabled(false);
+  helpbutton->setEnabled(false);
+  quitbutton->setEnabled(false);
 
   if(!findDevice()){
     reset();
