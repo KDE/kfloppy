@@ -32,6 +32,7 @@
 
 #include <klocale.h>
 #include <kprocess.h>
+#include <kdebug.h>
 #include <kstandarddirs.h>
 
 #include "format.moc"
@@ -147,7 +148,7 @@ void KFActionQueue::queue(KFAction *p)
 	}
 	else
 	{
-		DEBUGS("  Running action " << d->name());
+		DEBUGS("  Running action " << next->name());
 		QObject::connect(next,SIGNAL(done(KFAction *,bool)),
 			this,SLOT(actionDone(KFAction *,bool)));
 		// Propagate signals
