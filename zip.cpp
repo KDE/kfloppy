@@ -66,7 +66,7 @@ ZipFormat::ZipFormat(QWidget *w,const char *n) :
 	grid->addWidget(zeroWholeDisk,0,0);
 	enableSoftUpdates = new QCheckBox(i18n("Enable softupdates"),this);
 	grid->addWidget(enableSoftUpdates,1,0);
-	
+
 	// Remember the stretch at the bottom to clear
 	// up layour problems when this widget is smaller
 	// than others in the stack.
@@ -196,7 +196,7 @@ void ZipFormat::transition()
 		*p << QString("count=%1").arg(totalBlocks);
 		if (!p->start(KProcess::NotifyOnExit,KProcess::AllOutput))
 		{
-			emit statusMessage(i18n("Can't start dd to zero disk."));
+			emit statusMessage(i18n("Cannot start dd to zero disk."));
 			emit formatDone(-1);
 			delete statusTimer;
 			delete p;
@@ -229,7 +229,7 @@ void ZipFormat::transition()
 		*p << "/dev/afd0c" ;
 		if (!p->start(KProcess::NotifyOnExit,KProcess::AllOutput))
 		{
-			emit statusMessage(i18n("Can't start newfs."));
+			emit statusMessage(i18n("Cannot start newfs."));
 			emit formatDone(-1);
 		};
 		formatStep=2;
