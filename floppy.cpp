@@ -160,7 +160,7 @@ FloppyData::FloppyData(QWidget * parent, const char * name)
 	helpbutton->setPopup(helpMenu->menu());
 	v3->addWidget( helpbutton );
 
-	quitbutton = new KPushButton( KGuiItem( i18n( "&Quit" ), "exit" ), this );
+	quitbutton = new KPushButton( KStdGuiItem::quit(), this );
 	quitbutton->setAutoRepeat( false );
 	connect(quitbutton,SIGNAL(clicked()),this,SLOT(quit()));
 	 v3->addWidget( quitbutton );
