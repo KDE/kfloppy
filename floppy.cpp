@@ -46,7 +46,7 @@
 
 FloppyData::FloppyData(QWidget * parent, const char * name)
  : KDialog( parent, name ),
-	formatActions(0L)
+	formatActions(0L), m_canLowLevel(false)
 {
 
 	formating = false;
@@ -120,9 +120,18 @@ FloppyData::FloppyData(QWidget * parent, const char * name)
 
 	fullformat = new QRadioButton( buttongroup, "RadioButton_3" );
 	fullformat->setText(i18n( "Fu&ll format") );
-	fullformat->setChecked(true);
         v2->addWidget( fullformat, AlignLeft );
 
+        // ### TODO: we need some user feedback telling why full formatting is disabled.
+        m_canLowLevel = FDFormat::runtimeCheck();
+        if (m_canLowLevel){
+            fullformat->setChecked(true);
+        }
+        else {
+            fullformat->setDisabled(true);
+            quick->setChecked(true);
+        }
+        
 	verifylabel = new QCheckBox( buttongroup, "RadioButton_4" );
 	verifylabel->setText(i18n( "&Verify integrity" ));
 	verifylabel->setChecked(true);
@@ -275,7 +284,6 @@ bool FloppyData::setInitialDevice(const QString& dev)
 void FloppyData::findExecutables()
 {
 	bool fruitful = true ;
-	fruitful &= FDFormat::runtimeCheck();
 	fruitful &= FATFilesystem::runtimeCheck();
 #ifdef ANY_BSD
 	fruitful &= UFSFilesystem::runtimeCheck();
@@ -316,7 +324,7 @@ void FloppyData::setEnabled(bool b)
   filesystemComboBox->setEnabled(b);
   buttongroup->setEnabled(b);
   quick->setEnabled(b);
-  fullformat->setEnabled(b);
+  fullformat->setEnabled(b && m_canLowLevel);
   verifylabel->setEnabled(b);
   labellabel->setEnabled(b);
   lineedit->setEnabled(b);
@@ -797,9 +805,9 @@ void FloppyData::setWidgets(){
 
   labellabel->setChecked(labelconfig);
   verifylabel->setChecked(verifyconfig);
-  quick->setChecked(quickformatconfig);
+  quick->setChecked(quickformatconfig || !m_canLowLevel);
 
-  fullformat->setChecked(!quickformatconfig);
+  fullformat->setChecked(!quickformatconfig && m_canLowLevel);
   lineedit->setText(labelnameconfig);
 
   for(int i = 0 ; i < deviceComboBox->count(); i++){

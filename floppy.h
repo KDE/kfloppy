@@ -145,6 +145,7 @@ private:
 	
 	KFActionQueue *formatActions;
 
+        bool m_canLowLevel; ///< Low level formatting is possible (i.e. fdformat was found)
 protected:
 	void keyPressEvent(QKeyEvent *e);
 
