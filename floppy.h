@@ -45,6 +45,7 @@
 
 #include <kprogress.h>
 #include <kprocess.h>
+#include <klocale.h>
 #include "about.h"
 #include <kapp.h>
 

@@ -29,13 +29,15 @@
 #include <qlabel.h>
 #include <qpixmap.h>
 #include <kapp.h>
+#include <klocale.h>
 
 extern KApplication *mykapp;
 
 MyAbout::MyAbout(QWidget *parent) : QDialog(parent, "About KFloppy Formater", TRUE) {
+
   resize(350, 250);
   setFixedSize(size());
-  setCaption("About KDE Floppy Formater");
+  setCaption(klocale->translate("About KDE Floppy Formater"));
 
   QString pixdir = mykapp->kdedir() + QString("/share/apps/kfloppy/pics/");  
   QPixmap pm((pixdir + "kfloppylogo.xpm").data());
@@ -44,12 +46,13 @@ MyAbout::MyAbout(QWidget *parent) : QDialog(parent, "About KFloppy Formater", TR
   logo->setGeometry(20, (height()-pm.height())/2 - 25, pm.width(), pm.height());
 
   QLabel *l;
-  l = new QLabel("KFloppy", this);
+  l = new QLabel(klocale->translate("KFloppy"), this);
   l->setFont(QFont("Helvetica", 19, QFont::Bold));
   l->setGeometry(145,40,100,30);
 
   QString s;
-  s = "Version " KFLOPPYVERSION \
+  s = klocale->translate("Version ");
+  s += KFLOPPYVERSION \
   "\n\nCopyright (c) 1997\nBernd Johannes Wuebben\n"\
   "wuebben@kde.org";
 
