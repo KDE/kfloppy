@@ -23,7 +23,6 @@
 
 #include <qlayout.h>
 #include <qcheckbox.h>
-#include <qlineedit.h>
 #include <qlabel.h>
 #include <qcursor.h>
 #include <qradiobutton.h>
@@ -40,6 +39,7 @@
 #include <kprogress.h>
 #include <klocale.h>
 #include <kcombobox.h>
+#include <klineedit.h>
 
 #include "floppy.moc"
 #include "format.h"
@@ -159,7 +159,7 @@ FloppyData::FloppyData(QWidget * parent, const char * name)
         QHBoxLayout* h2 = new QHBoxLayout( v2 );
         h2->addSpacing( 20 );
 
-	lineedit = new QLineEdit( buttongroup, "Lineedit" );
+	lineedit = new KLineEdit( buttongroup, "Lineedit" );
 	lineedit->setText(i18n( "Volume label, maximal 11 characters", "KDE Floppy" ) );
 	lineedit->setMaxLength(11);
         lineedit->setMinimumWidth( lineedit->sizeHint().width() );
