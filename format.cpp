@@ -173,6 +173,8 @@ const char *fd1H1440[] = { "/dev/fd1h1440", "/dev/fd1H1440", "/dev/fd0u1440", 0L
 const char *fd1D720[]={ "/dev/fd0u720", "/dev/fd1D720", 0L };
 const char *fd1h1200[]={ "/dev/fd1h1200", 0L };
 const char *fd1h360[]={ "/dev/fd1h360", 0L };
+const char *fd0auto[] = { "/dev/fd0", 0L };
+const char *fd1auto[] = { "/dev/fd1", 0L };
 #endif
 
 #ifdef ANY_BSD
@@ -205,6 +207,8 @@ fdinfo fdtable[] =
 	{ fd1h1200, 1, 1200, 80, 0 },
 	{ fd0h360,  0,  360, 40, 0 },
 	{ fd1h360,  1,  360, 40, 0 },
+	{ fd0auto,  0,    0, 80, 0 },
+	{ fd1auto,  1,    0, 80, 0 },
 #endif
 
 #ifdef ANY_BSD

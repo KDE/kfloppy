@@ -83,6 +83,7 @@ FloppyData::FloppyData(QWidget * parent, const char * name)
 	densityComboBox = new KComboBox( false, this, "ComboBox_1" );
 	g1->addWidget( densityComboBox, 1, 1, AlignLeft );
 
+	densityComboBox->insertItem( i18n( "Auto-Detect" ) );
 	densityComboBox->insertItem(i18n("3.5\" 1.44MB"));
 	densityComboBox->insertItem(i18n("3.5\" 720KB"));
 	densityComboBox->insertItem(i18n("5.25\" 1.2MB"));
@@ -322,7 +323,11 @@ bool FloppyData::findDevice()
     if( densityComboBox->currentText() == i18n("5.25\" 360KB")){
       blocks = 360;
       }
-
+#if defined(ANY_LINUX)
+    else { // For Linux, anything else is Auto
+        blocks = 0;
+    }
+#endif
 
   return true;
 }
