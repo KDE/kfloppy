@@ -300,7 +300,9 @@ void ZipFormat::statusRequest()
 	if (!p) // How can that happen?
 		return;
 
+#ifdef ANY_BSD
 	p->kill(SIGINFO);
+#endif
 }
 
 
