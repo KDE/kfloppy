@@ -1,0 +1,121 @@
+.\" -*- nroff -*-
+.TH MKDOSFS 8 "5 May 1995" "Version 0.3b (Yggdrasil)"
+.SH NAME
+.B mkdosfs
+\- create an MS-DOS file system under Linux
+.SH SYNOPSIS
+.B mkdosfs
+[
+.B \-c
+| 
+.B \-l
+.I filename
+]
+[
+.B \-f
+.I number-of-FATs
+]
+[
+.B \-F
+.I FAT-size
+]
+[
+.B \-i
+.I volume-id
+]
+[
+.B \-m
+.I message-file
+]
+[
+.B \-n
+.I volume-name
+]
+[
+.B \-r
+.I root-dir-entries
+]
+[
+.B \-s
+.I sectors-per-cluster
+]
+[
+.B \-v
+]
+.I device
+[
+.I block-count
+]
+.SH DESCRIPTION
+.B mkdosfs
+is used to create an MS-DOS file system under Linux on a device (usually
+a disk partition).
+.I device
+is the special file corresponding to the device (e.g /dev/hdXX).
+.I block-count
+is the number of blocks on the device.  If omitted,
+.B mkdosfs
+automatically determiness the file system size.
+.SH OPTIONS
+.TP
+.I \-c
+Check the device for bad blocks before creating the file system.
+.TP
+.I \-f number-of-FATs
+Specify the number of file allocation tables in the file system.  The
+default is 2.  Currently the Linux MS-DOS file system does not support
+more than 2 FATs.
+.TP
+.I \-F FAT-size
+Specifies the type of file allocation tables used (12 or 16 bit).
+This option is normally not useful, as
+.B mkdosfs
+automatically selects the preferred FAT size for your filesystem.
+.TP
+.I \-i volume-id
+Sets the volume ID of the newly created filesystem;
+.I volume-id
+is a 32-bit hexadecimal number (for example, 2e24ec82).  The default
+is a number which depends on the filesystem creation time.
+.TP
+.I \-l filename
+Read the bad blocks list from
+.IR filename .
+.TP
+.I \-m message-file
+Sets the message the user receives on attempts to boot this filesystem
+without having properly installed an operating system.  The message
+file must not exceed 418 bytes once line feeds have been converted to
+carriage return-line feed combinations, and tabs have been expanded.
+If the filename is a hyphen (-), the text is taken from standard input. 
+.TP
+.I \-n volume-name
+Sets the volume name (label) of the filesystem.  The volume name can
+be up to 11 characters long.  The default is no label.
+.TP
+.I \-r root-dir-entries
+Select the number of entries available in the root directory.  The
+default is 112 or 224 for floppies and 512 for hard disks.
+.TP
+.I \-s sectors-per-cluster
+Specify the number of disk sectors per cluster.  Must be a power of 2,
+i.e. 1, 2, 4, 8, ... 128.
+.TP
+.I \-v
+Verbose execution.
+.SH BUGS
+None are know at the moment.  If you find any, please report it them
+to <hpa@yggdrasil.com>.  Please include the version number (Yggdrasil 0.3a).
+.SH AUTHOR
+Dave Hudson - <dave@humbug.demon.co.uk>; modified by Peter Anvin
+<hpa@yggdrasil.com>.
+.SH ACKNOWLEDGEMENTS
+.B mkdosfs
+is based on code from
+.BR mke2fs
+(written by Remy Card - <card@masi.ibp.fr>) which is itself based on
+.BR mkfs 
+(written by Linus Torvalds - <torvalds@cs.helsinki.fi>).
+.SH SEE ALSO
+.BR dosfsck (8),
+.BR mkfs (8)

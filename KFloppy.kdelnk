@@ -1,0 +1,14 @@
+# KDE Config File
+[KDE Desktop Entry]
+Comment[C]=Floppy Formater
+BinaryPattern=kfloppy;
+Protocols=
+Name[C]=KFloppy
+MimeType=
+Comment=
+Exec=kfloppy
+Icon=kfloppy.xpm
+TerminalOptions=
+Path=
+Type=Application
+Terminal=0

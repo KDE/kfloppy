@@ -1,0 +1,19 @@
+
+This code is all part of e2fsprogs-1.06. However, 
+in order to keep the kfloppy distribution small, I have
+thrown out everything that wasn't needed for kfloppy. 
+However I have throw out only complete subdirectories with the
+expection of the misc subdiretory. 
+
+I have left all sources and file unmodified with the execption of
+badblock.c and mke2fs.c in the 'misc' directory form which
+I create a new program kmke2fs which in turn is used by kfloppy.
+
+All this means it should be very easy to sync these source with
+newer releases of ext2fsprogs. But it would certainly make no
+sense for me to distribute all of e2fsprogs with kfloppy.
+
+Bernd Wuebben
+wuebben@kde.org
+wuebben@math.cornell.edu
+

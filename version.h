@@ -1,0 +1,1 @@
+#define KFLOPPYVERSION "0.2"

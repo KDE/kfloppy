@@ -1,0 +1,106 @@
+<!doctype linuxdoc system>
+
+<!-- The KFloppy Formater Handbook.
+
+ -->
+
+<article>
+
+<!-- Title information -->
+
+<title>The KFloppy Formater Handbook
+<author>Bernd Johannes Wuebben, <tt/wuebben@kde.org/
+<date>Version 0.2, 12 November 1997
+<abstract>This Handbook describes KFloppy Formater Version 0.2
+
+<!-- Table of contents -->
+<toc>
+
+<!-- Begin the document -->
+
+
+<sect>Introduction
+
+<p>
+KFloppy Formater is a program that lets you format floppy disks. 
+<p>
+I hope you will enjoy this little tool.
+<p>
+<tt>Bernd Johannes Wuebben</tt>
+<p>
+<htmlurl url="mailto:wuebben@kde.org" name="wuebben@kde.org">
+<p>
+
+<sect>Installation
+<p>
+<sect1>How to obtain KFloppy Formater
+<p>
+KFloppy Formater is part  of the KDE project <url url="http://www.kde.org">.
+KFloppy Formater can be found on <url url="ftp://ftp.kde.org/pub/kde/">, the main ftp site
+of the KDE project.
+
+<sect1>Requirements
+<p>
+In order to successfully compile KFloppy Formater, you need the latest versions 
+of the KDE libraries. All required libraries as well as KFloppy Formater itself can be found
+on <url url="ftp://ftp.kde.org/pub/kde/">. 
+
+
+
+<sect1>Compilation and installation
+<p>
+
+In order to compile and install KFloppy Formater on your system, type the following in the base 
+directory of the KEdit distribution:
+<tscreen><verb>
+% ./configure
+% make
+% make install
+</verb></tscreen>
+
+
+Since KFloppy Formater uses <tt>autoconf</tt> you should have not trouble compiling it.
+Should you run into problems please report them to the <sf/KDE/ mailing lists.
+
+<sect>Usage<p>
+
+KFloppy Formater is very simply to use. In fact most of its functions should be
+selfexplanatory. I really have absolutely no time to write a long
+manual at this point. Please contact me if you would like to write it.
+
+<tscreen><verb>
+
+3.5" DD: 2, 9, 80  - 720K 
+3.5" HD: 2, 18, 80 - 1440K 
+5.25"DD: 2, 9, 40  - 360K      
+5.25"HD: 2, 15, 80 - 1200K 
+
+
+</verb></tscreen>
+
+<sect>Copyright<p>
+<tscreen><verb>
+
+KFloppy Formater  
+
+Copyright 1997  
+Bernd Johannes Wuebben, <wuebben@math.cornell.edu>
+
+
+This program is free software; you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation; either version 2 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program; if not, write to the Free Software
+Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+
+</verb></tscreen>
+</article>
+

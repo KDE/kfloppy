@@ -1,0 +1,120 @@
+# $Id$
+
+prefix  = @prefix@
+BINDIR  = $(prefix)/bin
+LIBDIR  = $(prefix)/lib
+DOCSDIR = $(prefix)/share/doc/HTML/default/kfloppy
+APPSDIR = $(prefix)/share/applnk/Utilities/
+PICSDIR = $(prefix)/share/apps/kfloppy/pics/
+ICONSDIR = $(prefix)/share/icons/
+
+
+
+install = @INSTALL@
+INSTALL = $(install) -m 0755
+INSTALL_DATA = $(install) -m 0644
+INSTALL_DIR = $(install) -d -m 0755   
+
+###################################################################
+
+CXXFLAGS=	@CXXFLAGS@ -DHAVE_CONFIG_H -I.. #-DDEBUG
+CFLAGS=		@CFLAGS@
+LDFLAGS	=	@LDFLAGS@ @all_libraries@ -lkdecore -lkdeui -lqt -lm -lXext -lX11
+INCDIR	=	@all_includes@
+CXX	=	@CXX@
+CC      =       @CC@
+MOC	=	@MOC@
+
+
+####### Files
+HEADERS = 	about.h floppy.h
+SOURCES	=	main.cpp about.cpp floppy.cpp kmkdosfs.c kfdformat.c mount.c
+
+OBJECTS	=	main.o  about.o  floppy.o mount.o
+SRCMETA	=	about.moc floppy.moc
+
+TARGET	=	kfloppy 
+
+####### Implicit rules
+
+.SUFFIXES: .cpp
+
+.cpp.o:
+	$(CXX)  -c $(CXXFLAGS) $(DEFS) $(INCDIR) $<
+
+.c.o:
+	$(CC)  -c $(CFLAGS) $<
+
+####### Build rules
+
+all: $(TARGET) kmkdosfs kfdformat kmke2fs
+
+Makefile: Makefile.in
+	cd .. && CONFIG_FILES=kfloppy/$@ CONFIG_HEADERS= $(SHELL) ./config.status
+
+kfloppy: $(SOURCES) $(SRCMETA) $(OBJECTS) $(HEADER)
+	$(CXX) $(OBJECTS) -o kfloppy $(LDFLAGS)
+
+kmkdosfs: kmkdosfs.c kmkdosfs.o
+	$(CC) $(CFLAGS) kmkdosfs.o -o kmkdosfs $(LDFLAGS)
+
+kfdformat:kfdformat.c kfdformat.o
+	$(CC) $(CFLAGS) kfdformat.o -o kfdformat $(LDFLAGS)
+
+kmke2fs: e2fs/misc/mke2fs.c e2fs/misc/badblocks.c 
+	cd e2fs; ./configure;make; cp misc/kmke2fs ../; strip ../kmke2fs;
+
+depend:
+	@makedepend -I$(INCDIR) $(SOURCES) 2> /dev/null
+clean:
+	-rm -f *.o *.bak *~ *% #* *.moc 
+	-rm -f $(SRCMETA) $(TARGET)
+	-rm -f kfdformat kmkdosfs kmke2fs
+	cd e2fs; make clean; 
+
+distclean: clean
+	rm -f Makefile
+	cd e2fs; make distclean
+
+install: all
+	$(INSTALL_DIR) $(BINDIR)
+	$(INSTALL) $(TARGET) $(BINDIR)
+	$(INSTALL) kmkdosfs $(BINDIR)
+	$(INSTALL) kmke2fs $(BINDIR)
+	$(INSTALL) kfdformat $(BINDIR)
+	$(INSTALL_DIR) $(DOCSDIR)
+	$(INSTALL_DATA) ./doc/k* $(DOCSDIR)
+	$(INSTALL_DIR) $(PICSDIR)
+	$(INSTALL_DIR) $(ICONSDIR)
+	$(INSTALL_DATA) kfloppy.xpm  $(ICONSDIR)
+	$(INSTALL_DATA) kfloppylogo.xpm  $(PICSDIR)
+	$(INSTALL_DIR) $(APPSDIR)
+	$(INSTALL_DATA) KFloppy.kdelnk $(APPSDIR)
+	@echo ""
+	@echo "Bernd Wuebben"
+	@echo "wuebben@kde.org"
+	@echo ""	
+
+uninstall:
+	rm -f $(BINDIR)/$(TARGET)
+
+
+####### Explicit dependencies
+
+
+####### Meta objects
+
+Data.moc: Data.h
+	$(MOC) Data.h -o Data.moc
+
+about.moc: about.h
+	$(MOC) about.h -o about.moc
+
+floppy.moc: floppy.h
+	$(MOC) floppy.h -o floppy.moc
+
+
+
+
+
+

@@ -1,0 +1,15 @@
+Begin3
+Title:         kfloppy
+Version:       0.2
+Entered-date:  Nov 12 1997
+Description:   A DOS ext2fs Floppy formater
+Keywords:      KDE, Qt, gui, X11, DOS, ext2fs, formating, floppy
+Author:        <wuebben@math.cornell.edu> Bernd Johannes Wuebben
+Maintained-by: <wuebben@math.cornell.edu> Bernd Johannes Wuebben
+Primary-site:  ftp://fiwi02.wiwi.uni-tuebingen.de/pub/kde/stable/utils/
+Home-Page:     http://math.cornell.edu/~wuebben/kfloppy/kfloppy.html
+Alternate-site:ftp://math.cornell.edu/pub/wuebben/kfloppy/
+Original-site: ftp://fiwi02.wiwi.uni-tuebingen.de/pub/kde/
+Platform:      Linux, Qt 1.31 or higher (http://www.troll.no)
+Copying-policy: GPL 
+End
