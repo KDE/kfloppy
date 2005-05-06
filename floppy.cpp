@@ -540,17 +540,13 @@ void FloppyData::writeSettings(){
         config = kapp->config();
 	config->setGroup("GeneralData");
 
-	densityconfig = densityComboBox->currentText();
-	densityconfig = densityconfig.stripWhiteSpace();
-	filesystemconfig = filesystemComboBox->currentText();
-	filesystemconfig = filesystemconfig.stripWhiteSpace();
-	driveconfig = deviceComboBox->currentText();
-	driveconfig = driveconfig.stripWhiteSpace();
+	densityconfig = densityComboBox->currentText().stripWhiteSpace();
+	filesystemconfig = filesystemComboBox->currentText().stripWhiteSpace();
+	driveconfig = deviceComboBox->currentText().stripWhiteSpace();
 
 	quickformatconfig = quick->isChecked();
 
-	labelnameconfig = lineedit->text();
-	labelnameconfig = labelnameconfig.stripWhiteSpace();
+	labelnameconfig = lineedit->text().stripWhiteSpace();
 
 	labelconfig = labellabel->isChecked();
 
@@ -576,11 +572,11 @@ void FloppyData::readSettings(){
 
 	verifyconfig = config->readNumEntry("Verify", 1);
 	labelconfig = config->readNumEntry("CreateLabel",1);
-	labelnameconfig = config->readEntry("Label",i18n("KDE Floppy"));
+	labelnameconfig = config->readEntry( "Label", i18n("Volume label, maximal 11 characters", "KDE Floppy") );
 	quickformatconfig = config->readNumEntry("QuickFormat",0);
-	driveconfig = config->readEntry("FloppyDrive","A: 3.5");
-	densityconfig = config->readEntry("Density",i18n("HD"));
-	filesystemconfig = config->readEntry("Filesystem",i18n("Dos"));
+	driveconfig = config->readEntry( "FloppyDrive", i18n("Primary") );
+	densityconfig = config->readEntry( "Density", i18n("3.5\" 1.44MB") );
+	filesystemconfig = config->readEntry( "Filesystem", i18n("DOS") );
 
 }
 

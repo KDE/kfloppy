@@ -489,7 +489,7 @@ void FDFormat::processStdOut(KProcess *, char *b, int l)
 	s = QString::fromLatin1(b,l);
 	DEBUGS(s);
         QRegExp regexp( "([0-9]+)" );
-        if (s.startsWith("bad data at cyl") || s.startsWith("Problem reading cylinder"))
+        if ( s.startsWith( "bad data at cyl" ) || ( s.find( "Problem reading cylinder" ) != -1 ) )
         {
             if ( regexp.search( s ) > -1 )
             {
@@ -642,6 +642,13 @@ void FATFilesystem::processStdOut(KProcess *, char *b, int l)
         emit status(i18n("Device busy!\nPerhaps you need to unmount the floppy first!"),-1);
         return;
     }
+# if 0
+    else if ( s.find( "mkdosfs" ) != -1 ) // DEBUG: get the program header and show it!
+    {
+        emit status( s, -1 );
+        return;
+    }
+# endif
 #endif
 }
 
