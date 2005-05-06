@@ -133,7 +133,6 @@ void KFActionQueue::queue(KFAction *p)
 
 	if (!success)
 	{
-            // ### TODO: the user must be told that the action has failed.
 		DEBUGS("Action failed.");
 		emit done(this,false);
 		return;
@@ -492,9 +491,9 @@ void FDFormat::processStdOut(KProcess *, char *b, int l)
         QRegExp regexp( "([0-9]+)" );
         if (s.startsWith("bad data at cyl") || s.startsWith("Problem reading cylinder"))
         {
-            const int track = regexp.cap(1).toInt();
-            if (track>=0)
+            if ( regexp.search( s ) > -1 )
             {
+                const int track = regexp.cap(1).toInt();
                 emit status(i18n("Low-level formatting error at track %1!").arg(track), -1);
             }
             else

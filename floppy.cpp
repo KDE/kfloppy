@@ -444,10 +444,6 @@ void FloppyData::format(){
 	if ( filesystemComboBox->currentText() == i18n("DOS") )
 	{
 		FATFilesystem *f = new FATFilesystem(this);
-		connect(f,SIGNAL(status(const QString &,int)),
-			this,SLOT(formatStatus(const QString &,int)));
-		connect(f,SIGNAL(done(KFAction *,bool)),
-			this,SLOT(reset()));
 		f->configure(verifylabel->isChecked(),
 			labellabel->isChecked(),
 			lineedit->text());
@@ -463,10 +459,6 @@ void FloppyData::format(){
 			lineedit->text());
 		if (f)
 		{
-			connect(f,SIGNAL(status(const QString &,int)),
-				this,SLOT(formatStatus(const QString &,int)));
-			connect(f,SIGNAL(done(KFAction *,bool)),
-				this,SLOT(reset()));
 			f->configureDevice(drive,blocks);
 			formatActions->queue(f);
 		}
@@ -480,10 +472,6 @@ void FloppyData::format(){
 
 		if (f)
 		{
-			connect(f,SIGNAL(status(const QString &,int)),
-				this,SLOT(formatStatus(const QString &,int)));
-			connect(f,SIGNAL(done(KFAction *,bool)),
-				this,SLOT(reset()));
 			f->configureDevice(drive,blocks);
 			formatActions->queue(f);
 		}
@@ -499,10 +487,6 @@ void FloppyData::format(){
 			lineedit->text());
 		if (f)
 		{
-			connect(f,SIGNAL(status(const QString &,int)),
-				this,SLOT(formatStatus(const QString &,int)));
-			connect(f,SIGNAL(done(KFAction *,bool)),
-				this,SLOT(reset()));
 			f->configureDevice(drive,blocks);
 			formatActions->queue(f);
 		}
