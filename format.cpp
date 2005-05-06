@@ -332,13 +332,13 @@ void FloppyAction::processDone(KProcess *p)
 		}
 		else
 		{
-			emit status(i18n("%1 terminated with an error.").arg(theProcessName),100);
+			emit status(i18n("The program %1 terminated with an error.").arg(theProcessName),100);
 			emit done(this,false);
 		}
 	}
 	else
 	{
-		emit status(i18n("%1 terminated abnormally.").arg(theProcessName),100);
+		emit status(i18n("The program %1 terminated abnormally.").arg(theProcessName),100);
 		emit done(this,false);
 	}
 }
@@ -504,6 +504,26 @@ void FDFormat::processStdOut(KProcess *, char *b, int l)
             }
             return;
         }
+	else if (s.find("ioctl(FDFMTBEG)")!=-1)
+	{
+            emit status (i18n(
+                    "Cannot access floppy or floppy drive.\n"
+                    "Please insert a floppy and make sure that you "
+                    "have selected a valid floppy drive."),-1);
+            return;
+	}
+        else if (s.find("busy")!=-1) // "Device or resource busy"
+        {
+            emit status(i18n("Device busy!\nPerhaps you need to unmount the floppy first!"),-1);
+            return;
+        }
+        // Be careful to leave "iotcl" as last before checking numbers
+        else if (s.find("ioctl")!=-1)
+        {
+            emit status(i18n("Low-level format error: %1").arg(s),-1);
+            return;
+        }
+        // Check for numbers at last (as /dev/fd0u1440 has numbers too)
         else if ( regexp.search(s) > -1 )
         {
             // Normal track number (formatting or verifying)
@@ -513,19 +533,6 @@ void FDFormat::processStdOut(KProcess *, char *b, int l)
                     emit status(QString::null,
                             p * 100 / deviceInfo->tracks);
             }
-        }
-	else if (s.find("ioctl(FDFMTBEG)")!=-1)
-	{
-            emit status (i18n(
-                    "Cannot access floppy or floppy drive.\n"
-                    "Please insert a floppy and make sure that you "
-                    "have selected a valid floppy drive."),-1);
-            return;
-	}
-        else if (s.find("ioctl")!=-1)
-        {
-            emit status(i18n("Low-level format error: %1").arg(s),-1);
-            return;
         }
 #endif
 	return;

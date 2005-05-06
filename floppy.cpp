@@ -410,6 +410,9 @@ void FloppyData::format(){
   // formatbutton->setText(i18n("A&bort"));
   setEnabled(false);
 
+        // Erase text box
+        frame->setText( QString::null );
+
 	if (!findDevice())
 	{
 		reset();
@@ -515,7 +518,17 @@ void FloppyData::formatStatus(const QString &s,int p)
 {
     kdDebug(2002) << "FloppyData::formatStatus: " << s << " : "  << p << endl;
 	if (!s.isEmpty())
-		frame->setText(s);
+        {
+            const QString oldText ( frame->text() );
+            if ( oldText.isEmpty() )
+            {
+                frame->setText( s );
+            }
+            else
+            {
+                frame->setText( oldText + '\n' + s );
+            }
+        }
 
 	if ((0<=p) && (p<=100))
 		progress->setValue(p);
