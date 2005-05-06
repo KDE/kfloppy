@@ -283,6 +283,9 @@ public:
 	 */	
 	bool configure(bool verify, bool label, const QString &l);
 	
+        /// Parse output
+        virtual void processStdOut(KProcess*, char* b, int l);
+        
 protected:
 	static QString newfs_fat;
 	
@@ -313,6 +316,9 @@ public:
 	
 	/// Same args as FATFilesystem::configure
 	bool configure(bool verify, bool label, const QString &l);
+
+        /// Parse output
+        virtual void processStdOut(KProcess*, char* b, int l);
 	
 protected:
 	static QString newfs;
@@ -358,7 +364,9 @@ public:
 	
 	/// Same args as FATFilesystem::configure
 	bool configure(bool verify, bool label, const QString &l);
-	
+        
+        /// Parse output
+        virtual void processStdOut(KProcess*, char* b, int l);
 protected:
 	static QString newfs;
 	

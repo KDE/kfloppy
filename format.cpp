@@ -626,7 +626,25 @@ void FATFilesystem::exec()
 	}
 }
 
-
+void FATFilesystem::processStdOut(KProcess *, char *b, int l)
+{
+#ifdef ANY_BSD
+    // ### TODO: do some checks
+#elif defined(ANY_LINUX)
+    QString s ( QString::fromLatin1( b, l ) );
+    kdDebug(KFAREA) << s << endl;
+    if (s.find("mounted file system")!=-1) // "/dev/fd0 contains a mounted file system
+    {
+        emit status(i18n("Floppy is mounted!\nYou need to unmount the floppy first!"),-1);
+        return;
+    }
+    else if (s.find("busy")!=-1) // "Device or resource busy"
+    {
+        emit status(i18n("Device busy!\nPerhaps you need to unmount the floppy first!"),-1);
+        return;
+    }
+#endif
+}
 
 
 
@@ -758,6 +776,26 @@ void Ext2Filesystem::exec()
 	}
 }
 
+void Ext2Filesystem::processStdOut(KProcess *, char *b, int l)
+{
+#ifdef ANY_BSD
+    // ### TODO: do some checks
+#elif defined(ANY_LINUX)
+    QString s ( QString::fromLatin1( b, l ) );
+    kdDebug(KFAREA) << s << endl;
+    if (s.find("mounted")!=-1) // "/dev/fd0 is mounted; will not make a filesystem here!"
+    {
+        emit status(i18n("Floppy is mounted!\nYou need to unmount the floppy first!"),-1);
+        return;
+    }
+    else if (s.find("busy")!=-1) // "Device or resource busy"
+    {
+        emit status(i18n("Device busy!\nPerhaps you need to unmount the floppy first!"),-1);
+        return;
+    }
+#endif
+}
+
 
 
 #endif
@@ -831,6 +869,22 @@ void MinixFilesystem::exec()
 		emit status(i18n("Cannot start Minix format program."),-1);
 		emit done(this,false);
 	}
+}
+
+void MinixFilesystem::processStdOut(KProcess *, char *b, int l)
+{
+    QString s ( QString::fromLatin1( b, l ) );
+    kdDebug(KFAREA) << s << endl;
+    if (s.find("mounted")!=-1) // "mkfs.minix: /dev/fd0 is mounted; will not make a filesystem here!"
+    {
+        emit status(i18n("Floppy is mounted!\nYou need to unmount the floppy first!"),-1);
+        return;
+    }
+    else if (s.find("busy")!=-1) // "Device or resource busy"
+    {
+        emit status(i18n("Device busy!\nPerhaps you need to unmount the floppy first!"),-1);
+        return;
+    }
 }
 
 #endif
