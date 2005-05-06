@@ -51,10 +51,7 @@ FloppyData::FloppyData(QWidget * parent, const char * name)
 {
 
 	formating = false;
-	quickerase = false;
-	abort = false;
-	counter = 0;
-	tracks = 0;
+	//abort = false;
 	blocks = 0;
 
         QVBoxLayout* ml = new QVBoxLayout( this, 10 );
@@ -397,7 +394,6 @@ void FloppyData::reset()
   DEBUGSETUP;
 
   formating = false;
-  quickerase = false;
 
   if (formatActions)
   {
@@ -413,12 +409,8 @@ void FloppyData::reset()
 
 void FloppyData::format(){
 
-  errstring = "";
-  formatstring ="";
-  //mdev = "";
-
   if(formating){
-    abort = true;
+    //abort = true;
     reset();
     return;
   }
@@ -455,7 +447,6 @@ void FloppyData::format(){
 
 	if (quick->isChecked())
 	{
-		quickerase=true;
 		formating=false;
 		// No fdformat to push
 	}
@@ -603,19 +594,19 @@ void FloppyData::setWidgets(){
   lineedit->setText(labelnameconfig);
 
   for(int i = 0 ; i < deviceComboBox->count(); i++){
-    if ( (QString) deviceComboBox->text(i) == driveconfig){
+    if ( deviceComboBox->text(i) == driveconfig){
       deviceComboBox->setCurrentItem(i);
     }
   }
 
   for(int i = 0 ; i < filesystemComboBox->count(); i++){
-    if ( (QString) filesystemComboBox->text(i) == filesystemconfig){
+    if ( filesystemComboBox->text(i) == filesystemconfig){
       filesystemComboBox->setCurrentItem(i);
     }
   }
 
   for(int i = 0 ; i < densityComboBox->count(); i++){
-    if ( (QString) densityComboBox->text(i) == densityconfig){
+    if ( densityComboBox->text(i) == densityconfig){
       densityComboBox->setCurrentItem(i);
     }
   }
