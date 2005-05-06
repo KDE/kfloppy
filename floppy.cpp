@@ -105,7 +105,7 @@ FloppyData::FloppyData(QWidget * parent, const char * name)
 
 #if defined(ANY_LINUX)
         QWhatsThis::add( filesystemComboBox,
-            i18n( "Linux", "KFloppy support three file formats under Linux: MS-DOS, Ext2 and Minix" ) );
+            i18n( "Linux", "KFloppy supports three file formats under Linux: MS-DOS, Ext2 and Minix" ) );
         if (FATFilesystem::runtimeCheck()) {
             filesystemComboBox->insertItem(i18n("DOS"));
             ++numFileSystems;
@@ -134,7 +134,7 @@ FloppyData::FloppyData(QWidget * parent, const char * name)
         }
 #elif defined(ANY_BSD)
         QWhatsThis::add( filesystemComboBox,
-            i18n( "BSD", "KFloppy support three file formats under Linux: MS-DOS and UFS" ) );
+            i18n( "BSD", "KFloppy supports two file formats under BSD: MS-DOS and UFS" ) );
         if (FATFilesystem::runtimeCheck()) {
             filesystemComboBox->insertItem(i18n("DOS"));
             ++numFileSystems;
