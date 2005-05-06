@@ -27,6 +27,7 @@
 #include <qcursor.h>
 #include <qradiobutton.h>
 #include <qbuttongroup.h>
+#include <qwhatsthis.h>
 
 #include <kconfig.h>
 
@@ -83,7 +84,9 @@ FloppyData::FloppyData(QWidget * parent, const char * name)
 	densityComboBox = new KComboBox( false, this, "ComboBox_1" );
 	g1->addWidget( densityComboBox, 1, 1 );
 
+#if defined(ANY_LINUX)
 	densityComboBox->insertItem( i18n( "Auto-Detect" ) );
+#endif
 	densityComboBox->insertItem(i18n("3.5\" 1.44MB"));
 	densityComboBox->insertItem(i18n("3.5\" 720KB"));
 	densityComboBox->insertItem(i18n("5.25\" 1.2MB"));
@@ -104,6 +107,8 @@ FloppyData::FloppyData(QWidget * parent, const char * name)
         uint numFileSystems = 0;
 
 #if defined(ANY_LINUX)
+        QWhatsThis::add( filesystemComboBox,
+            i18n( "Linux", "KFloppy support three file formats under Linux: MS-DOS, Ext2 and Minix" ) );
         if (FATFilesystem::runtimeCheck()) {
             filesystemComboBox->insertItem(i18n("DOS"));
             ++numFileSystems;
@@ -131,6 +136,8 @@ FloppyData::FloppyData(QWidget * parent, const char * name)
             userFeedBack += i18n( "Linux", "Program mkfs.minix <b>not found</b>. Minix formatting <b>not available</b>" );
         }
 #elif defined(ANY_BSD)
+        QWhatsThis::add( filesystemComboBox,
+            i18n( "BSD", "KFloppy support three file formats under Linux: MS-DOS and UFS" ) );
         if (FATFilesystem::runtimeCheck()) {
             filesystemComboBox->insertItem(i18n("DOS"));
             ++numFileSystems;
@@ -161,10 +168,15 @@ FloppyData::FloppyData(QWidget * parent, const char * name)
 	quick = new QRadioButton( buttongroup, "RadioButton_2" );
 	quick->setText(i18n( "Q&uick format") );
         v2->addWidget( quick, AlignLeft );
+        QWhatsThis::add( quick,
+            i18n("<qt>Quick format is only a high-level format:"
+                " it creates only a file system.</qt>") );
 
 	fullformat = new QRadioButton( buttongroup, "RadioButton_3" );
 	fullformat->setText(i18n( "Fu&ll format") );
         v2->addWidget( fullformat, AlignLeft );
+        QWhatsThis::add( fullformat,
+            i18n("Full format is a low-level and high-level format. It erase everything on the floppy.") );
 
         // ### TODO: we need some user feedback telling why full formatting is disabled.
         userFeedBack += "<br>";
@@ -183,11 +195,17 @@ FloppyData::FloppyData(QWidget * parent, const char * name)
 	verifylabel->setText(i18n( "&Verify integrity" ));
 	verifylabel->setChecked(true);
 	v2->addWidget( verifylabel, AlignLeft );
+        QWhatsThis::add( verifylabel,
+            i18n("<qt>Check this if you want that your floppy is checked after formatting."
+            " Please note that the floppy will be checked twice if you have selected the full formatting.</qt>") );
 
 	labellabel = new QCheckBox( buttongroup, "RadioButton_4" );
 	labellabel->setText(i18n( "Volume &label:") );
 	labellabel->setChecked(true);
         v2->addWidget( labellabel, AlignLeft );
+        QWhatsThis::add( labellabel,
+            i18n("<qt>Check this if you want a volume label for your floppy."
+            " Please note that Minix does not support labels at all.</qt>") );
 
         QHBoxLayout* h2 = new QHBoxLayout( v2 );
         h2->addSpacing( 20 );
@@ -196,6 +214,10 @@ FloppyData::FloppyData(QWidget * parent, const char * name)
 	lineedit->setText(i18n( "Volume label, maximal 11 characters", "KDE Floppy" ) );
 	lineedit->setMaxLength(11);
         h2->addWidget( lineedit, AlignRight );
+        QWhatsThis::add( lineedit,
+            i18n("<qt>This is for the volume label."
+            " Due to a limitation of MS-DOS the label can only be 11 characters long."
+            " Please note that Minix does not support labels, whatever you enter here.</qt>") );
 
 	connect(labellabel,SIGNAL(toggled(bool)),lineedit,SLOT(setEnabled(bool)));
 
@@ -208,6 +230,8 @@ FloppyData::FloppyData(QWidget * parent, const char * name)
             formatbutton->setDisabled(false); // We have not any helper program for creating any file system
 	connect(formatbutton,SIGNAL(clicked()),this,SLOT(format()));
         v3->addWidget( formatbutton );
+        QWhatsThis::add( formatbutton,
+            i18n("<qt>Click here to start formatting!</qt>") );
 
         v3->addStretch( 1 );
 
@@ -229,6 +253,8 @@ FloppyData::FloppyData(QWidget * parent, const char * name)
 	frame = new QLabel( this, "NewsWindow" );
 	frame->setFrameStyle(QFrame::Panel | QFrame::Sunken);
 	frame->setAlignment(WordBreak|ExpandTabs);
+        QWhatsThis::add( frame,
+            i18n("<qt>This is the status window, where error messages are displayed.</qt>") );
 
         QString frameText( userFeedBack );
         frameText.prepend( "<qt>" );
