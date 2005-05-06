@@ -385,7 +385,7 @@ void FloppyData::setEnabled(bool b)
   fullformat->setEnabled(b && m_canLowLevel);
   verifylabel->setEnabled(b);
   labellabel->setEnabled(b);
-  lineedit->setEnabled(b);
+  lineedit->setEnabled(b && labellabel->isChecked() );
   helpbutton->setEnabled(b);
   quitbutton->setEnabled(b);
   formatbutton->setEnabled(b);
