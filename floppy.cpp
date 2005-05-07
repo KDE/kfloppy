@@ -358,7 +358,7 @@ void FloppyData::setEnabled(bool b)
   fullformat->setEnabled(b && m_canLowLevel);
   verifylabel->setEnabled(b);
   labellabel->setEnabled(b);
-  lineedit->setEnabled(b);
+  lineedit->setEnabled(b && labellabel->isChecked() );
   helpbutton->setEnabled(b);
   quitbutton->setEnabled(b);
   formatbutton->setEnabled(b);
@@ -555,12 +555,11 @@ void FloppyData::readSettings(){
 
 	verifyconfig = config->readNumEntry("Verify", 1);
 	labelconfig = config->readNumEntry("CreateLabel",1);
-	labelnameconfig = config->readEntry("Label",i18n("KDE Floppy"));
+	labelnameconfig = config->readEntry( "Label", i18n("Volume label, maximal 11 characters", "KDE Floppy") );
 	quickformatconfig = config->readNumEntry("QuickFormat",0);
-	driveconfig = config->readEntry("FloppyDrive","A: 3.5");
-	densityconfig = config->readEntry("Density",i18n("HD"));
-	filesystemconfig = config->readEntry("Filesystem",i18n("Dos"));
-
+	driveconfig = config->readEntry( "FloppyDrive", i18n("Primary") );
+	densityconfig = config->readEntry( "Density", i18n("3.5\" 1.44MB") );
+	filesystemconfig = config->readEntry( "Filesystem", i18n("DOS") );
 }
 
 void FloppyData::setWidgets(){
