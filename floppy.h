@@ -92,8 +92,6 @@ protected slots:
 
 private:
 
-        // QString fdformat, mke2fs, mkdosfs; 
-
         int verifyconfig;
         int labelconfig;
         QString labelnameconfig;
@@ -101,22 +99,13 @@ private:
 	QString driveconfig;
 	QString densityconfig;
 	QString filesystemconfig;
-	//QString mdev;
 	KConfig *config;
 
 	int drive;
 	int blocks;
 	
-	QString formatstring;
-	QString fsstring;
-	QString fserrstring;
-	QString errstring;
-	int badblocks;
-	int tracks;
-	bool quickerase;
 	bool formating;
-	bool abort;
-        int counter;
+	//bool abort;
         
 	// QTimer*	      mytimer;
 	// QTimer*	      fserrtimer;

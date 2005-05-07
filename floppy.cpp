@@ -50,10 +50,7 @@ FloppyData::FloppyData(QWidget * parent, const char * name)
 {
 
 	formating = false;
-	quickerase = false;
-	abort = false;
-	counter = 0;
-	tracks = 0;
+	//abort = false;
 	blocks = 0;
 
         QVBoxLayout* ml = new QVBoxLayout( this, 10 );
@@ -371,7 +368,6 @@ void FloppyData::reset()
   DEBUGSETUP;
 
   formating = false;
-  quickerase = false;
 
   if (formatActions)
   {
@@ -387,12 +383,8 @@ void FloppyData::reset()
 
 void FloppyData::format(){
 
-  errstring = "";
-  formatstring ="";
-  //mdev = "";
-
   if(formating){
-    abort = true;
+    //abort = true;
     reset();
     return;
   }
@@ -426,7 +418,6 @@ void FloppyData::format(){
 
 	if (quick->isChecked())
 	{
-		quickerase=true;
 		formating=false;
 		// No fdformat to push
 	}
@@ -521,270 +512,6 @@ void FloppyData::formatStatus(const QString &s,int p)
 		progress->setValue(p);
 }
 
-#if 0
-void FloppyData::readStdout(KProcess *, char *buffer, int buflen)
-{
-  bool increment = true;
-
-  formatstring = QString::fromLocal8Bit(buffer, buflen);
-
-  if (formatstring.contains("track"))
-  {
-    int pos = formatstring.find('\n');
-    QString newstring;
-
-    if(pos != -1)
-      newstring = formatstring.left(pos);
-    else
-      newstring = formatstring;
-
-    frame->setText(newstring);
-    increment =false;
-  }
-
-
-  if (increment)
-  {
-    counter ++;
-    progress->setValue(counter);
-  }
-
-  kdDebug(2002) << "STDOUT: " << formatstring << endl;
-}
-
-void FloppyData::readStderr(KProcess *, char *buffer, int buflen){
-
-  char mybuffer[1001];
-  int amount;
-
-
-  if(buflen > 1000)
-    amount = 1000;
-  else
-    amount = buflen;
-
-  memcpy(mybuffer,buffer,amount);
-  mybuffer[amount] = '\0';
-
-  abort = true;
-  errstring  +=mybuffer;
-
-
-  errtimer->start(300,true);
-
-  kdDebug(2002) << "STDERR: " << mybuffer << endl;
-}
-
-void FloppyData::errslot(){
-
-  abort = true;
-
-  if(errstring.contains("ioctl(FDFMTBEG)")){
-
-    QString str = i 18n(
-		"Cannot access floppy or floppy drive.\n"
-		"Please insert a floppy and make sure that you "
-		"have selected a valid floppy drive.");
-
-    KMessageBox::error(this, str);
-
-    reset();
-    return;
-
-  }
-
-  QString str = i 18n("Cannot format: %1\n%2").arg(drive).arg(errstring);
-
-  KMessageBox::error(this, str);
-
-  reset();
-}
-
-void FloppyData::readfsStdout(KProcess *, char *buffer, int buflen){
-  char mybuffer[1001];
-  int amount;
-
-  if(buflen > 1000)
-    amount = 1000;
-  else
-    amount = buflen;
-
-  memcpy(mybuffer,buffer,amount);
-  mybuffer[amount] = '\0';
-
-  fsstring += mybuffer;
-  if( fsstring.find('\n') == -1)
-    return;
-
-  QString string ;
-  QString newstring = fsstring;
-
-
-  int i;
-
-  while( (i =newstring.find('\n')) != -1){
-
-    QString mystring;
-    mystring = newstring.left(i);
-
-    kdDebug(2002) << "NEWLINE: " << mystring.data() << endl;
-
-    if(findKeyWord(mystring,"BBF ")){
-      int bblock = mystring.left(8).toInt();
-      QString mstr;
-      mstr = i 18n("Block %1 is bad. Continuing...").arg(bblock);
-      frame->setText(mstr);
-    }
-
-    if(findKeyWord(mystring,"TNBB ")){
-      badblocks = mystring.left(8).toInt();
-    }
-    newstring = newstring.mid(i+1,newstring.length());
-  }
-
-  counter += findKeyWord(fsstring,"BLOCK");
-
-  kdDebug(2002) << "Block Counter: " << counter << endl;
-
-  if(quickerase){
-
-    if(findKeyWord(fsstring,"START"))
-      counter ++;
-
-    if(findKeyWord(fsstring,"EXIT"))
-      counter ++;
-
-
-  }
-
-  fsstring = newstring;
-
-  progress->setValue(counter);
-
-  kdDebug(2002) << "STDOUT: " << mybuffer << endl;
-}
-
-
-void FloppyData::readfsStderr(KProcess *, char *buffer, int buflen){
-
-  char mybuffer[1001];
-  int amount;
-
-
-  if(buflen > 1000)
-    amount = 1000;
-  else
-    amount = buflen;
-
-  memcpy(mybuffer,buffer,amount);
-  mybuffer[amount] = '\0';
-
-  // skip version message
-  int pos=0;
-  if (fserrstring.isEmpty() && strncmp(mybuffer, "mke2fs", 6) == 0)
-    {
-      pos = QString(mybuffer).find('\n');
-      if (pos+1 == amount)
-	return;
-      pos++;
-    }
-  if (fserrstring.isEmpty() && strncmp(mybuffer, "/sbin/mkdosfs", 13) == 0)
-    {
-      pos = QString(mybuffer).find('\n');
-      if (pos+1 == amount)
-	return;
-      pos++;
-    }
-
-  abort = true;
-  fserrstring += mybuffer+pos;
-
-  // the timers are put in so that I get all of the error message.
-  fserrtimer->start(300,true);
-
-  kdDebug(2002) << "STDOUT: " << mybuffer << endl;
-}
-
-void FloppyData::fserrslot(){
-
-
-  if(fserrstring.contains("No such device")){
-
-    QString str = i 18n(
-		"Cannot access floppy or floppy drive.\n"
-		"Please insert a floppy and make sure that you "
- 		"have selected a valid floppy drive.");
-
-    KMessageBox::sorry(this, str);
-
-    reset();
-    return;
-  }
-
-  reset();
-
-  QString str = i 18n("Cannot create a filesystem on: %1\n%2")
-	      .arg(drive).arg(fserrstring);
-
-  KMessageBox::error(this, str);
-}
-
-
-void FloppyData::cfdone(KProcess*){
-
-    mytimer->start(10,true);
-
-}
-
-void FloppyData::cf2done(){
-
-
-  bool lcquick;
-  lcquick = quickerase;
-
-  mytimer->stop();
-
-  reset();
-
-  if(abort)
-    return;
-
-  if(!lcquick){
-    QString str = i 18n(
-		"The floppy was successfully formatted.\n"
-		"Blocks marked bad: %1\n"
-		"Raw Capacity: %2\n")
-		.arg(badblocks)
-		.arg((blocks - badblocks)*1024);
-
-    KMessageBox::information(this, str);
-  }
-  else{
-    QString str = i 18n("All files were successfully erased.");
-
-    KMessageBox::information(this, str);
-  }
-}
-
-int FloppyData::findKeyWord(QString & string,const QString & word){
-
-  int count = 0;
-  int index = 0;
-  int len = 0;
-
-  QString wordstring = word;
-  len = wordstring.length();
-
-  while( (index = string.find(word)) >= 0)
-  {
-    count++;
-    string = string.mid(index + len,string.length());
-  }
-
-  return count;
-}
-#endif
-
 void FloppyData::writeSettings(){
 
         config = kapp->config();
@@ -844,19 +571,19 @@ void FloppyData::setWidgets(){
   lineedit->setText(labelnameconfig);
 
   for(int i = 0 ; i < deviceComboBox->count(); i++){
-    if ( (QString) deviceComboBox->text(i) == driveconfig){
+    if ( deviceComboBox->text(i) == driveconfig){
       deviceComboBox->setCurrentItem(i);
     }
   }
 
   for(int i = 0 ; i < filesystemComboBox->count(); i++){
-    if ( (QString) filesystemComboBox->text(i) == filesystemconfig){
+    if ( filesystemComboBox->text(i) == filesystemconfig){
       filesystemComboBox->setCurrentItem(i);
     }
   }
 
   for(int i = 0 ; i < densityComboBox->count(); i++){
-    if ( (QString) densityComboBox->text(i) == densityconfig){
+    if ( densityComboBox->text(i) == densityconfig){
       densityComboBox->setCurrentItem(i);
     }
   }
