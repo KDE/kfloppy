@@ -80,7 +80,9 @@ FloppyData::FloppyData(QWidget * parent, const char * name)
 	densityComboBox = new KComboBox( false, this, "ComboBox_1" );
 	g1->addWidget( densityComboBox, 1, 1 );
 
+#if defined(ANY_LINUX)
 	densityComboBox->insertItem( i18n( "Auto-Detect" ) );
+#endif
 	densityComboBox->insertItem(i18n("3.5\" 1.44MB"));
 	densityComboBox->insertItem(i18n("3.5\" 720KB"));
 	densityComboBox->insertItem(i18n("5.25\" 1.2MB"));
