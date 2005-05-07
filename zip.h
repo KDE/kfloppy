@@ -8,6 +8,8 @@
  * This file defines the ZipFormat class, a DiskFormat
  * for KFloppy that deals with Zip disks and UFS under
  * FreeBSD (and probably other BSD's, as well).
+ *
+ * \todo Add device selector to zip class
  */
 
 /*
