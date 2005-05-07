@@ -482,11 +482,11 @@ void FDFormat::processStdOut(KProcess *, char *b, int l)
 	s = QString::fromLatin1(b,l);
 	DEBUGS(s);
         QRegExp regexp( "([0-9]+)" );
-        if (s.startsWith("bad data at cyl") || s.startsWith("Problem reading cylinder"))
+        if ( s.startsWith( "bad data at cyl" ) || ( s.find( "Problem reading cylinder" ) != -1 ) )
         {
-            const int track = regexp.cap(1).toInt();
-            if (track>=0)
+            if ( regexp.search( s ) > -1 )
             {
+                const int track = regexp.cap(1).toInt();
                 emit status(i18n("Low-level formatting error at track %1!").arg(track), -1);
             }
             else
@@ -494,6 +494,20 @@ void FDFormat::processStdOut(KProcess *, char *b, int l)
                 // This error should not happen
                 emit status(i18n("Low-level formatting error: %1").arg(s), -1);
             }
+            return;
+        }
+	else if (s.find("ioctl(FDFMTBEG)")!=-1)
+	{
+            emit status (i18n(
+                    "Cannot access floppy or floppy drive.\n"
+                    "Please insert a floppy and make sure that you "
+                    "have selected a valid floppy drive."),-1);
+            return;
+	}
+        else if ( ( s.find( "ioctl" ) != -1 )
+            || ( s.find( "busy" ) != -1 ) ) // "Device or resource busy"
+        {
+            emit status(i18n("Low-level format error: %1").arg(s),-1);
             return;
         }
         else if ( regexp.search(s) > -1 )
@@ -505,19 +519,6 @@ void FDFormat::processStdOut(KProcess *, char *b, int l)
                     emit status(QString::null,
                             p * 100 / deviceInfo->tracks);
             }
-        }
-	else if (s.find("ioctl(FDFMTBEG)")!=-1)
-	{
-            emit status (i18n(
-                    "Cannot access floppy or floppy drive.\n"
-                    "Please insert a floppy and make sure that you "
-                    "have selected a valid floppy drive."),-1);
-            return;
-	}
-        else if (s.find("ioctl")!=-1)
-        {
-            emit status(i18n("Low-level format error: %1").arg(s),-1);
-            return;
         }
 #endif
 	return;
