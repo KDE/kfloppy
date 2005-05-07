@@ -1,8 +1,9 @@
 /*
 
     KFloppy
-    Copyright (C) 2002 Adriaan de Groot
-                       groot@kde.org
+    
+    Copyright (C) 2002 Adriaan de Groot <groot@kde.org>
+    Copyright (C) 2004, 2005 Nicolas GOUTTE <goutte@kde.org>
 
 
     This program is free software; you can redistribute it and/or modify
@@ -197,9 +198,14 @@ public:
 	
 	bool configureDevice(int driveno /* 0 or 1 */, int density /* in kb */ );
 
+        /**
+         * Configure the device with a device name
+         */
+        bool configureDevice( const QString& newDeviceName );
+        
 protected:
-	fdinfo *deviceInfo;      ///< Configuration info
-	const char *deviceName;  ///< Pointer into list of "/dev/..." entries
+	fdinfo *deviceInfo;      ///< Configuration info (Pointer into list of "/dev/..." entries)
+	QString deviceName;  ///< Name of the device
 
 protected slots:
 	virtual void processDone(KProcess *);

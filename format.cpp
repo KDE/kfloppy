@@ -235,7 +235,6 @@ fdinfo fdtable[] =
 FloppyAction::FloppyAction(QObject *p) :
 	KFAction(p),
 	deviceInfo(0L),
-	deviceName(0L),
 	theProcess(0L)
 {
 	DEBUGSETUP;
@@ -250,13 +249,20 @@ void FloppyAction::quit()
 	KFAction::quit();
 }
 
+bool FloppyAction::configureDevice( const QString& newDeviceName )
+{
+    deviceInfo = 0; // We have not any idea what the device is
+    deviceName = newDeviceName;
+    return true; // No problem!
+}
+
 bool FloppyAction::configureDevice(int drive,int density)
 {
 	DEBUGSETUP;
 	const char *devicename = 0L;
 
 	deviceInfo=0L;
-	deviceName=0L;
+	deviceName = QString::null;
 
 	if ((drive<0) || (drive>1))
 	{
@@ -398,8 +404,9 @@ bool FDFormat::configure(bool v)
 {
 	DEBUGSETUP;
 
-	if (!deviceInfo || !deviceName)
+	if ( !deviceInfo || deviceName.isEmpty() )
 	{
+                emit status( i18n("Internal error: device not correctly defined!"), -1 );
 		emit done(this,false);
 		return;
 	}
@@ -581,8 +588,14 @@ void FATFilesystem::exec()
 {
 	DEBUGSETUP;
 
-	if (!deviceInfo || !deviceName)
+        
+	if (
+#ifdef ANY_BSD // BSD needs the deviceInfo for the block count
+            !deviceInfo ||
+#endif
+            deviceName.isEmpty())
 	{
+                emit status( i18n("Internal error: device not correctly defined!"), -1 );
 		emit done(this,false);
 		return;
 	}
@@ -681,8 +694,9 @@ void UFSFilesystem::exec()
 {
 	DEBUGSETUP;
 
-	if (!deviceInfo || !deviceName)
+	if ( !deviceInfo || deviceName.isEmpty() )
 	{
+                emit status( i18n("Internal error: device not correctly defined!"), -1 );
 		emit done(this,false);
 		return;
 	}
@@ -752,8 +766,13 @@ void Ext2Filesystem::exec()
 {
 	DEBUGSETUP;
 
-	if (!deviceInfo || !deviceName)
+	if (
+#ifdef ANY_BSD // BSD needs the deviceInfo for the block count
+            !deviceInfo ||
+#endif
+            deviceName.isEmpty() )
 	{
+                emit status( i18n("Internal error: device not correctly defined!"), -1 );
 		emit done(this,false);
 		return;
 	}
@@ -847,8 +866,9 @@ void MinixFilesystem::exec()
 {
 	DEBUGSETUP;
 
-	if (!deviceInfo || !deviceName)
+	if ( deviceName.isEmpty() )
 	{
+                emit status( i18n("Internal error: device not correctly defined!"), -1 );
 		emit done(this,false);
 		return;
 	}

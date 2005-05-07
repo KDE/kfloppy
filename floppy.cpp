@@ -2,7 +2,7 @@
     KFloppy
     
     Copyright (C) 1997 Bernd Johannes Wuebben <wuebben@math.cornell.edu>
-    Copyright (C) 2004 Nicolas GOUTTE <goutte@kde.org>
+    Copyright (C) 2004, 2005 Nicolas GOUTTE <goutte@kde.org>
 
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -71,7 +71,13 @@ FloppyData::FloppyData(QWidget * parent, const char * name)
 	deviceComboBox = new KComboBox( false, this, "ComboBox_1" );
 	g1->addWidget( deviceComboBox, 0, 1 );
 
-	deviceComboBox->insertItem(i18n("Primary"));
+#if defined(ANY_LINUX)
+        // Make the combo box editable, so that the user can enter a device name
+        // This cannot be done on BSD, as the formatting programs need the block count
+        deviceComboBox->setEditable( true );
+#endif
+	
+        deviceComboBox->insertItem(i18n("Primary"));
 	deviceComboBox->insertItem(i18n("Secondary"));
 
         label2 = new QLabel(this);
@@ -308,12 +314,14 @@ void FloppyData::show() {
 
 bool FloppyData::findDevice()
 {
+    // Note: this function does not handle user-given devices
+
   drive=-1;
   if( deviceComboBox->currentText() == i18n("Primary") )
   {
     drive=0;
   }
-  if( deviceComboBox->currentText() == i18n("Secondary") )
+  else if( deviceComboBox->currentText() == i18n("Secondary") )
   {
     drive=1;
   }
@@ -417,13 +425,45 @@ void FloppyData::format(){
 
   frame->clear();
 
-  if (KMessageBox::warningContinueCancel(0,
-   i18n("Formatting will erase all data on the disk.\n"
-        "Are you sure you wish to proceed?"), i18n("Proceed?") ) !=
-	KMessageBox::Continue)
+    const QString currentComboBoxDevice (  deviceComboBox->currentText() );
+    const bool userDevice = ( currentComboBoxDevice.startsWith ("/dev/") );
+
+#ifdef ANY_BSD
+    if ( userDevice )
+    {
+        // BSD cannot format on a user-given device, as it needs the block count.
+        KMessageBox::error( i18n("BSD", "Formatting with BSD on a user-given device is not possible!") );
+        return;
+    }
+    else
+#endif    
+    if ( userDevice && quick->isChecked())
+    {
+        if (KMessageBox::warningContinueCancel( this,
+            i18n("<qt>Formatting will erase all data on the device:<br/><b>%1</b><br/>"
+                "(Please check the correctness of the device name!)<br/>"
+                "Are you sure you wish to proceed?</qt>").arg( currentComboBoxDevice )
+                , i18n("Proceed?") ) != KMessageBox::Continue)
+            {
+                return;
+            }
+    }
+    else if ( userDevice )
+    {
+        // The user has selected full formatting on a user-given device. That is not supported yet!
+        KMessageBox::error( this, "Full formatting of a user-given device is not possible!" );
+        return;
+    }
+    else
+    {
+        if (KMessageBox::warningContinueCancel( this,
+            i18n("Formatting will erase all data on the disk.\n"
+            "Are you sure you wish to proceed?"), i18n("Proceed?") ) !=
+            KMessageBox::Continue)
         {
-	return;
-	}
+            return;
+        }
+    }
 
   // formatbutton->setText(i18n("A&bort"));
   setEnabled(false);
@@ -431,11 +471,14 @@ void FloppyData::format(){
         // Erase text box
         frame->setText( QString::null );
 
-	if (!findDevice())
+    if ( !userDevice )
+    {
+        if ( !findDevice() )
 	{
 		reset();
 		return;
 	}
+    }
 
 	if (formatActions) delete formatActions;
 	formatActions = new KFActionQueue(this);
@@ -445,7 +488,7 @@ void FloppyData::format(){
 	connect(formatActions,SIGNAL(done(KFAction *,bool)),
 		this,SLOT(reset()));
 
-	if (quick->isChecked())
+	if ( userDevice || quick->isChecked())
 	{
 		formating=false;
 		// No fdformat to push
@@ -464,7 +507,14 @@ void FloppyData::format(){
 		f->configure(verifylabel->isChecked(),
 			labellabel->isChecked(),
 			lineedit->text());
-		f->configureDevice(drive,blocks);
+                if ( userDevice )
+                {
+                    f->configureDevice( currentComboBoxDevice );
+                }
+                else
+                {
+                    f->configureDevice(drive,blocks);
+                }
 		formatActions->queue(f);
 	}
 #ifdef ANY_LINUX
@@ -474,11 +524,15 @@ void FloppyData::format(){
 		f->configure(verifylabel->isChecked(),
 			labellabel->isChecked(),
 			lineedit->text());
-		if (f)
-		{
-			f->configureDevice(drive,blocks);
-			formatActions->queue(f);
-		}
+                if ( userDevice )
+                {
+                    f->configureDevice( currentComboBoxDevice );
+                }
+                else
+                {
+                    f->configureDevice(drive,blocks);
+                }
+                formatActions->queue(f);
 	}
 #endif
 
@@ -486,12 +540,8 @@ void FloppyData::format(){
 	else if ( filesystemComboBox->currentText() == i18n("UFS") )
 	{
 		FloppyAction *f = new UFSFilesystem(this);
-
-		if (f)
-		{
-			f->configureDevice(drive,blocks);
-			formatActions->queue(f);
-		}
+                f->configureDevice(drive,blocks);
+                formatActions->queue(f);
 	}
 #endif
 
@@ -502,11 +552,15 @@ void FloppyData::format(){
 		f->configure(verifylabel->isChecked(),
 			labellabel->isChecked(),
 			lineedit->text());
-		if (f)
-		{
-			f->configureDevice(drive,blocks);
-			formatActions->queue(f);
-		}
+                if ( userDevice )
+                {
+                    f->configureDevice( currentComboBoxDevice );
+                }
+                else
+                {
+                    f->configureDevice(drive,blocks);
+                }
+		formatActions->queue(f);
 	}
 #endif
 
