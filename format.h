@@ -39,14 +39,14 @@
  *                     understands FD device names. This can be
  *                     considered the "useful" base class of
  *                     programming actions.
- * <li>FDFormat:        Runs fdformat(1) under BSD or Linux
- * <li>FATFilesystem:   Creates an msdos (FAT) filesystem
- * <li>Ext2Filesystem:  Creates ext2 filesystems, under Linux.
+ * <li>FDFormat:        Runs fdformat(1) under BSD or Linux.
+ * <li>FATFilesystem:   Creates an msdos (FAT) filesystem.
+ * <li>Ext2Filesystem:  Creates ext2 filesystems.
  * <li>MinixFilesystem: Creates Minix filesystems, under Linux.
  * <li>UFSFilesystem:   Creates UFS filesystem, under BSD.
  * </ul>
  *
- * Maybe this is overkill, since for floppies all you need is
+ * \note Maybe this is overkill, since for floppies all you need is
  * fdformat(1) and some create-filesystem program like newfs(1)
  * or mke2fs(1). However, for Zip disks, should they ever be supported,
  * this is quite useful since you need to dd, fdisk, disklabel, and
@@ -152,7 +152,7 @@ private:
  * devices is a list of possible device names (yay
  * /dev/ consistency) while drive,blocks denotes
  * fd0 or fd1, and the size of the disk (ought to
- * be 1440, 1200, 720 or 260. I've never seen a 2880
+ * be 1440, 1200, 720 or 360. I've never seen a 2880
  * floppy drive).
  *
  * Tracks is pretty bogus; see the internal code for its use.
@@ -169,10 +169,6 @@ class KProcess;
 
 /**
  * Concrete action for running a single external program.
- *
- * \note Not a Q_OBJECT because everything slot-like is
- * overridden through virtual slots instead of
- * through Qt mechanisms.
  */
 
 class FloppyAction : public KFAction
@@ -190,16 +186,25 @@ public:
 	/**
 	 * ConfigureDevice() needs to be called prior to exec()
 	 * or exec() will fail; this indicates which drive and
-	 * density to use. This same function needs to be
+	 * density to use.
+         *
+         * \param driveno Number of drive (0 or 1)
+         * \param density Floppy density (in Kilobytes)
+         * \note This same function needs to be
 	 * called on all subclasses in order to configure them
 	 * for which drive to use, _along_ with their local
 	 * configuration functions.
 	 */
 	
-	bool configureDevice(int driveno /* 0 or 1 */, int density /* in kb */ );
+	bool configureDevice(int driveno, int density );
 
         /**
-         * Configure the device with a device name
+         * \brief Configure the device with a device name
+         *
+         * This is an alternate to FloppyAction::configureDevice
+         * for user-given devices.
+         *
+         * \note It does not work for each type of FloppyAction yet
          */
         bool configureDevice( const QString& newDeviceName );
         
@@ -209,13 +214,16 @@ protected:
 
 protected slots:
 	virtual void processDone(KProcess *);
-	/// Provide handling of stdout
+	/**
+         * \brief Provide handling of stdout
+         */
 	virtual void processStdOut(KProcess *, char *, int);
-	/** \brief Provide separate handling of stdout and stderr.
+	/**
+         * \brief Provide handling stderr.
          *
 	 * The default implementation just sends stderr on
 	 * to processStdOut(), so you need reimplement only
-	 * one if you choose.
+	 * FloppyAction::processStdOut if you choose.
 	 */
 	virtual void processStdErr(KProcess *, char *, int);
 	
@@ -302,14 +310,7 @@ protected:
 
 #ifdef ANY_LINUX
 /**
- * The remaining "native" filesystems only get
- * compiled on systems where they seem reasonable.
- * In particular, Linux gets ext2 and BSD UFS.
- *
- * \note There is no real reason to forbid ext2 on BSD,
- * the code is the same and only one additional
- * #ifdef is needed in the code to look for newfs_ext2(1)
- * instead of mke2fs(1).
+ * Format with Ext2
  */
 class Ext2Filesystem : public FloppyAction
 {
@@ -335,12 +336,10 @@ protected:
 #endif
 
 #ifdef ANY_BSD
-/**
- * The remaining "native" filesystems only get
- * compiled on systems where they seem reasonable.
- * In particular, Linux gets ext2 and BSD UFS.
- */
 
+/**
+ * Format with UFS
+ */
 class UFSFilesystem : public FloppyAction
 {
 public:
@@ -359,6 +358,9 @@ protected:
 #endif
 
 #ifdef ANY_LINUX
+/**
+ * Format with Minix
+ */
 class MinixFilesystem : public FloppyAction
 {
 public:

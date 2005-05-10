@@ -70,21 +70,9 @@ public:
     void setEnabled(bool);
     
 public slots:
-      // void fserrslot();
-      // void errslot();
-
       void quit();
       void format();
       void reset();
-
-      // void formatdone(KProcess* );
-      // void readStdout(KProcess *proc, char *buffer, int buflen);
-      // void readStderr(KProcess *proc, char *buffer, int buflen);
-
-      // void cfdone(KProcess* );
-      // void cf2done();
-      // void readfsStdout(KProcess *proc, char *buffer, int buflen);
-      // void readfsStderr(KProcess *proc, char *buffer, int buflen);
 
       void formatStatus(const QString &,int);
       
@@ -106,10 +94,6 @@ private:
 	
 	bool formating;
 	//bool abort;
-        
-	// QTimer*	      mytimer;
-	// QTimer*	      fserrtimer;
-	// QTimer*	      errtimer;
         
 	QGroupBox*       outerframe;
         QLabel*       label1;

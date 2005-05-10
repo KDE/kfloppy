@@ -29,10 +29,10 @@
  *
  * \brief Debugging definitions for KFloppy.
  *
- * It also tries to map
- * OSsen into families, so you can use ANY_LINUX or ANY_BSD
- * in the code to differentiate those families. What happens
- * on other systems is anyone's guess.*
+ * It also tries to map operating systems
+ * into families, so you can use ANY_LINUX or ANY_BSD
+ * in the code to differentiate those families.
+ * What happens on other systems is anyone's guess.
  */
 
 

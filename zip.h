@@ -33,6 +33,7 @@
  * FreeBSD (and probably other BSD's, as well).
  *
  * \todo Add device selector to zip class
+ * \note This class is not used by KFloppy
  */
 
 #include "format.h"
@@ -79,18 +80,26 @@ protected:
 	QTimer *statusTimer;
 
 protected slots:
-	// transition() realises the state machine we use
-	// to handle the different phases of the format:
-	// startup, dd and newfs. processResult() reads output
-	// from either dd or newfs and interprets it. statusRequest()
-	// sends dd a SIGINFO to get it to print out block counts,
-	// which then triggers processResult() so that we can keep
-	// the progress bar moving.
-	//
-	//
+	/**
+         * transition() realises the state machine we use
+	 * to handle the different phases of the format:
+	 * startup, dd and newfs.
+         */
 	void transition();
+
+        /**
+         * processResult() reads output
+	 * from either dd or newfs and interprets it.
+         */
 	void processResult(KProcess *,char *,int);
+         
+        /**
+         *statusRequest()
+	 * sends dd a SIGINFO to get it to print out block counts,
+	 * which then triggers processResult() so that we can keep
+	 * the progress bar moving.
+	 */
 	void statusRequest();
-} ;
+};
 
 #endif
