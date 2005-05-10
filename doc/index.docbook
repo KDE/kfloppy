@@ -18,13 +18,32 @@
 <affiliation><address><email>ctmcginnis@compuserve.com</email>
 </address></affiliation> </author>
 
+<author>
+<firstname>Nicolas</firstname>
+<surname>Goutte</surname>
+<affiliation><address><email>goutte@kde.org</email>
+</address></affiliation> </author>
+
 <othercredit role="developer">
 <firstname>Bernd</firstname>
 <othername>Johannes</othername>
 <surname>Wuebben</surname>
 <affiliation><address><email>wuebben@math.cornell.edu</email></address></affiliation>
 <contrib>Developer</contrib>
+</othercredit>
 
+<othercredit role="developer">
+<firstname>Chris</firstname>
+<surname>Howells</surname>
+<affiliation><address><email>howells@kde.org</email></address></affiliation>
+<contrib>Developer (User Interface re-design)</contrib>
+</othercredit>
+
+<othercredit role="developer">
+<firstname>Adriaan</firstname>
+<surname>de Groot</surname>
+<affiliation><address><email>groot@kde.org</email></address></affiliation>
+<contrib>Developer (Add BSD support)</contrib>
 </othercredit>
 
 <othercredit role="reviewer">
@@ -33,15 +52,21 @@
 <contrib>Reviewer</contrib>
 <affiliation><address><email>lauri@kde.org</email></address></affiliation>
 </othercredit>
+
 <!-- TRANS:ROLES_OF_TRANSLATORS -->
 </authorgroup>
 
-<date>2003-09-16</date>
-<releaseinfo>2.1</releaseinfo>
+<date>2005-05-10</date>
+<releaseinfo>3.4.1</releaseinfo>
 
 <copyright>
 <year>2000</year>
 <holder>Thad McGinnis</holder>
+</copyright>
+
+<copyright>
+<year>2005</year>
+<holder>Nicolas Goutte</holder>
 </copyright>
 
 <legalnotice>&FDLNotice;</legalnotice>
@@ -64,6 +89,11 @@ disks.</para></abstract>
 
 <para>&kfloppy; Formatter is a utility that provides a straightforward
 graphical means to format 3.5" and 5.25" floppy disks. </para>
+
+<note><para>&kfloppy; depends on external programs and therefore
+currently works <emphasis>only</emphasis> with Linux and BSD. Depending if you are
+using &kfloppy; on Linux or on BSD, &kfloppy; has slightly different
+features.</para></note>
 
 <important><para>Make sure that your floppy is <emphasis>not</emphasis>
 mounted.  &kfloppy; cannot format a mounted floppy.</para></important>
@@ -90,7 +120,16 @@ at the top left center of &kfloppy;.</para>
 <title>Floppy Drive</title>
 
 <para>Clicking on the top drop down box, which is labeled
-<guilabel>Floppy drive:</guilabel>floppy>, offers the user the following
+<guilabel>Floppy drive:</guilabel>, offers the user the following
+two choices:</para>
+
+<itemizedlist>
+<listitem><para>Primary</para></listitem>
+<listitem><para>Secondary</para></listitem>
+</itemizedlist>
+
+<para>Clicking on the second drop down boxfrom the top, which is labeled
+<guilabel>Size:</guilabel>, offers the user the following
 four choices:</para>
 
 <itemizedlist>
@@ -100,8 +139,16 @@ four choices:</para>
 <listitem><para>5.25" 360KB</para></listitem>
 </itemizedlist>
 
+<para>The Linux version of &kfloppy; has also a choice of size named:</para>
+
+<itemizedlist>
+<listitem><para>Auto-Detect</para></listitem>
+</itemizedlist>
+
+<!-- ### TODO: typical floppy disk of a PC has not the hardware to support
+Mac 800KB floppies at all, not only formatting. -->
 <note>
-<para>The 800k disk format used by &Mac; floppy drives cannot be
+<para>The 800KB disk format used by &Mac; floppy drives cannot be
 supported on PC floppy drives since they are not capable of formatting
 disks in that fashion.</para>
 </note>
@@ -120,7 +167,8 @@ following choices, if they are applicable:</para>
 <para>This selection will have &kfloppy; place the MS-DOS/&Windows; type
 of file system on the diskette.  The user will most likely want to
 choose this system if she or he will be using the diskette with those
-operating systems as they do not recognize other system types.</para>
+operating systems as they do not recognize other system types.
+(This is supported for Linux and BSD.)</para>
 </listitem>
 </varlistentry>
 
@@ -128,9 +176,9 @@ operating systems as they do not recognize other system types.</para>
 <term>ext2</term>
 <listitem>
 <para>This selection will have &kfloppy; place the type of file system
-on the diskette which is most commonly used with Linux.  The user will
-likely want to choose this system if he or she will only be using the
-floppy with &Linux;.</para>
+on the diskette which is most commonly used with Linux, however
+seldomly on floppy disks.
+(This is supported for Linux and BSD.)</para>
 </listitem>
 </varlistentry>
 
@@ -140,7 +188,17 @@ floppy with &Linux;.</para>
 <para>This selection will have &kfloppy; place the type of file system
 on the diskette which is most commonly used with FreeBSD.  The user will
 likely want to choose this system if he or she will only be using the
-floppy with FreeBSD.</para>
+floppy with FreeBSD.
+(This is supported for BSD only.)</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term>Minix</term>
+<listitem>
+<para>This selection will have &kfloppy; place the type of file system
+on the diskette which often used on floppy disk used with Linux,
+(This is supported for Linux only.)</para>
 </listitem>
 </varlistentry>
 </variablelist>
@@ -167,9 +225,7 @@ below:</para>
 <term>Quick Format</term>
 <listitem>
 <para>This simply puts the new file system on the disk. All data on the
-disk is erased. If the density of the disk is different than the selected
-density, then the tracks and sectors on the
-disk will be reallocated before the file system is made.</para>
+disk will be lost, even if the data is not erased.</para>
 </listitem>
 </varlistentry>
 <varlistentry>
@@ -177,7 +233,7 @@ disk will be reallocated before the file system is made.</para>
 <listitem>
 <para>A full format reallocates the tracks and sectors, puts the selected
 file system on the disk, and then verifies the format, blocking out any bad
-sectors it finds.</para>
+sectors it finds. All data on the disk is erased. </para>
 </listitem>
 </varlistentry>
 </variablelist>
@@ -190,6 +246,11 @@ sectors it finds.</para>
 <para>This tells &kfloppy; to check that the formatting was correctly
 written to the floppy.  This allows bad sectors to be identified.
 </para>
+
+<note><para>If bad sectors a found during the verify phase of a Full Format,
+the formatting is aborted and the file system is not written!
+</para></note>
+
 </sect2>
 
 <sect2>
@@ -202,6 +263,13 @@ diskette that is to be formatted in the text box located immediately
 below.  When the diskette is subsequently formatted the label will be
 written to the diskette.</para>
 
+<note><para>Due to a limitation of the DOS file system, a label can only be
+at most 11 characters long. For simplification, &kfloppy; assumes that
+this limit is true for all file systems.</para></note>
+
+<note><para>The file system Minix cannot have any volume label. In this
+case, &kfloppy; will ignore the volume label.</para></note>
+
 </sect2>
 
 </sect1>
@@ -213,21 +281,17 @@ written to the diskette.</para>
 
 <variablelist>
 <varlistentry>
-<term><guibutton>Format</guibutton></term> <listitem><para>This button
+<term><guibutton>Format</guibutton></term>
+<listitem>
+<para>This button
 initiates the formatting process.  Once the user is sure that all the
 settings are correct he or she may begin the process by clicking on
-this button.  Assuming that a diskette is in place and the parameters
-are set correctly, the user will see a few changes take place.  The
-label on the button itself will change from
-<guibutton>Format</guibutton> to <guibutton>Abort</guibutton>
-indicating that another click on the button will stop the formatting.
-Furthermore, there will be a change in the two long rectangular boxes
+this button.
+There will be a change in the two long rectangular boxes
 that span the bottom of &kfloppy;.</para>
 
-<para> The upper box is a status indicator that gives information about the
-process underway.  As the formatting occurs it will contain specific
-details about the type of formatting.  When &kfloppy; enters the
-verification stage of the process this will be displayed.</para>
+<para>The upper box is a status indicator that gives information about the
+process underway, especially the error encountered during the processing.</para>
 
 <para>The lower box is a progress bar.  This displays both graphically
 and numerically the progress of first the formatting and then the
@@ -238,11 +302,20 @@ left to right.  At the same time the number in the center will
 increase reflecting the precise percentage of the process that has
 been completed.</para>
 
+<note><para>As &kfloppy; uses external programs to format the floppy disk,
+it has to rely on these programs to give the right information for
+being able to display the progress bar. Unfortunately, this is not the
+case. Especially, the programs writing the file systems do not return
+enough data, so that the progress bar will remain at 0%.</para></note> 
+
 <important>
 <para>Make sure that your floppy is <emphasis>not</emphasis> mounted.
 &kfloppy; cannot format a mounted floppy.</para>
 </important>
 
+<note><para>&kfloppy; does <emphasis>not</emphasis> unmount the
+floppy by itself, as this could mean that the user overwrite a floppy
+disk with important data on it.</para></note>
 </listitem>
 </varlistentry>
 
@@ -264,14 +337,14 @@ been completed.</para>
 <varlistentry>
 <term><guibutton>About KFloppy</guibutton></term>
 <listitem>
-<para>This displays version and author information.</para>
+<para>This displays version and author information of &kfloppy;.</para>
 </listitem> 
 </varlistentry>
 
 <varlistentry>
 <term><guibutton>About KDE</guibutton></term>
 <listitem>
-<para>This displays version and author information.</para>
+<para>This displays version and author information of KDE.</para>
 </listitem> 
 </varlistentry>
 
@@ -347,11 +420,22 @@ through <command>kfloppy <option>-V</option></command> </para>
 <chapter id="credits">
 <title>Credits and Licenses</title>
 
-<para>&kfloppy; Formatter Program Copyright 2000 Bernd Johannes Wuebben
+<!-- ### TODO: verify the copyright dates -->
+<!-- ### TODO: make the copyright list prettier -->
+<para>&kfloppy; Formatter Program Copyright 1997 - 2000 Bernd Johannes Wuebben
 <email>wuebben@math.cornell.edu</email></para>
+
+<para>&kfloppy; Formatter Program Copyright 2002 Adriaan de Groot
+<email>groot@kde.org</email></para>
+
+<para>&kfloppy; Formatter Program Copyright 2004, 2005 Nicolas Goutte
+<email>goutte@kde.org</email></para>
 
 <para>Documentation Copyright 2000 by Thad McGinnis
 <email>ctmcginnis@compuserve.com</email>.</para>
+
+<para>Documentation Copyright 2005 by Nicolas Goutte
+<email>goutte@kde.org</email>.</para>
 
 <para>This version of the &kfloppy; Handbook is based on the original by
 David Rugge <email>davidrugge@mindspring.com</email></para>
