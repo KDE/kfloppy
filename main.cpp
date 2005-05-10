@@ -1,11 +1,9 @@
-    /*
+/*
 
-    KFloppy
-    Requires the Qt widget libraries, available at no cost at
-    http://www.troll.no
-
-    Copyright (C) 1997 Bernd Johannes Wuebben
-                       wuebben@math.cornell.edu
+    This file is part of the KFloppy program, part of the KDE project
+    
+    Copyright (C) 1997 Bernd Johannes Wuebben <wuebben@math.cornell.edu>
+    Copyright (C) 2004, 2005 Nicolas GOUTTE <goutte@kde.org>
 
 
     This program is free software; you can redistribute it and/or modify
@@ -22,7 +20,7 @@
     along with this program; if not, write to the Free Software
     Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 
-    */
+*/
 
 #include <kdeversion.h>
 #include <kapplication.h>
@@ -49,7 +47,7 @@ int main( int argc, char *argv[] )
     "(c) 1997, Bernd Johannes Wuebben\n"
     "(c) 2001, Chris Howells\n"
     "(c) 2002, Adriaan de Groot\n"
-    "(c) 2004, Nicolas Goutte",
+    "(c) 2004, 2005, Nicolas Goutte",
     I18N_NOOP("KFloppy helps you format floppies with the filesystem of your choice.")
     );
 

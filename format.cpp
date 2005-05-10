@@ -1,6 +1,6 @@
 /*
 
-    KFloppy
+    This file is part of the KFloppy program, part of the KDE project
     
     Copyright (C) 2002 Adriaan de Groot <groot@kde.org>
     Copyright (C) 2004, 2005 Nicolas GOUTTE <goutte@kde.org>
@@ -18,7 +18,7 @@
     along with this program; if not, write to the Free Software
     Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 
-    */
+*/
 
 
 #include <unistd.h>
