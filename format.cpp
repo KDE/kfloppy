@@ -406,7 +406,7 @@ bool FDFormat::configure(bool v)
 
 	if ( !deviceInfo || deviceName.isEmpty() )
 	{
-                emit status( i18n("Internal error: device not correctly defined!"), -1 );
+                emit status( i18n("Internal error: device not correctly defined."), -1 );
 		emit done(this,false);
 		return;
 	}
@@ -501,7 +501,7 @@ void FDFormat::processStdOut(KProcess *, char *b, int l)
             if ( regexp.search( s ) > -1 )
             {
                 const int track = regexp.cap(1).toInt();
-                emit status(i18n("Low-level formatting error at track %1!").arg(track), -1);
+                emit status(i18n("Low-level formatting error at track %1.").arg(track), -1);
             }
             else
             {
@@ -520,7 +520,7 @@ void FDFormat::processStdOut(KProcess *, char *b, int l)
 	}
         else if (s.find("busy")!=-1) // "Device or resource busy"
         {
-            emit status(i18n("Device busy!\nPerhaps you need to unmount the floppy first!"),-1);
+            emit status(i18n("Device busy.\nPerhaps you need to unmount the floppy first."),-1);
             return;
         }
         // Be careful to leave "iotcl" as last before checking numbers
@@ -595,7 +595,7 @@ void FATFilesystem::exec()
 #endif
             deviceName.isEmpty())
 	{
-                emit status( i18n("Internal error: device not correctly defined!"), -1 );
+                emit status( i18n("Internal error: device not correctly defined."), -1 );
 		emit done(this,false);
 		return;
 	}
@@ -647,12 +647,12 @@ void FATFilesystem::processStdOut(KProcess *, char *b, int l)
     kdDebug(KFAREA) << s << endl;
     if (s.find("mounted file system")!=-1) // "/dev/fd0 contains a mounted file system
     {
-        emit status(i18n("Floppy is mounted!\nYou need to unmount the floppy first!"),-1);
+        emit status(i18n("Floppy is mounted.\nYou need to unmount the floppy first."),-1);
         return;
     }
     else if (s.find("busy")!=-1) // "Device or resource busy"
     {
-        emit status(i18n("Device busy!\nPerhaps you need to unmount the floppy first!"),-1);
+        emit status(i18n("Device busy.\nPerhaps you need to unmount the floppy first."),-1);
         return;
     }
 # if 0
@@ -696,7 +696,7 @@ void UFSFilesystem::exec()
 
 	if ( !deviceInfo || deviceName.isEmpty() )
 	{
-                emit status( i18n("Internal error: device not correctly defined!"), -1 );
+                emit status( i18n("Internal error: device not correctly defined."), -1 );
 		emit done(this,false);
 		return;
 	}
@@ -772,7 +772,7 @@ void Ext2Filesystem::exec()
 #endif
             deviceName.isEmpty() )
 	{
-                emit status( i18n("Internal error: device not correctly defined!"), -1 );
+                emit status( i18n("Internal error: device not correctly defined."), -1 );
 		emit done(this,false);
 		return;
 	}
@@ -810,12 +810,12 @@ void Ext2Filesystem::processStdOut(KProcess *, char *b, int l)
     kdDebug(KFAREA) << s << endl;
     if (s.find("mounted")!=-1) // "/dev/fd0 is mounted; will not make a filesystem here!"
     {
-        emit status(i18n("Floppy is mounted!\nYou need to unmount the floppy first!"),-1);
+        emit status(i18n("Floppy is mounted.\nYou need to unmount the floppy first."),-1);
         return;
     }
     else if (s.find("busy")!=-1) // "Device or resource busy"
     {
-        emit status(i18n("Device busy!\nPerhaps you need to unmount the floppy first!"),-1);
+        emit status(i18n("Device busy.\nPerhaps you need to unmount the floppy first."),-1);
         return;
     }
 #endif
@@ -868,7 +868,7 @@ void MinixFilesystem::exec()
 
 	if ( deviceName.isEmpty() )
 	{
-                emit status( i18n("Internal error: device not correctly defined!"), -1 );
+                emit status( i18n("Internal error: device not correctly defined."), -1 );
 		emit done(this,false);
 		return;
 	}
@@ -903,12 +903,12 @@ void MinixFilesystem::processStdOut(KProcess *, char *b, int l)
     kdDebug(KFAREA) << s << endl;
     if (s.find("mounted")!=-1) // "mkfs.minix: /dev/fd0 is mounted; will not make a filesystem here!"
     {
-        emit status(i18n("Floppy is mounted!\nYou need to unmount the floppy first!"),-1);
+        emit status(i18n("Floppy is mounted.\nYou need to unmount the floppy first."),-1);
         return;
     }
     else if (s.find("busy")!=-1) // "Device or resource busy"
     {
-        emit status(i18n("Device busy!\nPerhaps you need to unmount the floppy first!"),-1);
+        emit status(i18n("Device busy.\nPerhaps you need to unmount the floppy first."),-1);
         return;
     }
 }

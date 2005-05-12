@@ -112,7 +112,7 @@ FloppyData::FloppyData(QWidget * parent, const char * name)
 
 #if defined(ANY_LINUX)
         QWhatsThis::add( filesystemComboBox,
-            i18n( "Linux", "KFloppy supports three file formats under Linux: MS-DOS, Ext2 and Minix" ) );
+            i18n( "Linux", "KFloppy supports three file formats under Linux: MS-DOS, Ext2, and Minix" ) );
         if (FATFilesystem::runtimeCheck()) {
             filesystemComboBox->insertItem(i18n("DOS"));
             ++numFileSystems;
@@ -180,7 +180,7 @@ FloppyData::FloppyData(QWidget * parent, const char * name)
 	fullformat->setText(i18n( "Fu&ll format") );
         v2->addWidget( fullformat, AlignLeft );
         QWhatsThis::add( fullformat,
-            i18n("Full format is a low-level and high-level format. It erase everything on the floppy.") );
+            i18n("Full format is a low-level and high-level format. It erases everything on the disk.") );
 
         // ### TODO: we need some user feedback telling why full formatting is disabled.
         userFeedBack += "<br>";
@@ -200,8 +200,8 @@ FloppyData::FloppyData(QWidget * parent, const char * name)
 	verifylabel->setChecked(true);
 	v2->addWidget( verifylabel, AlignLeft );
         QWhatsThis::add( verifylabel,
-            i18n("<qt>Check this if you want that your floppy is checked after formatting."
-            " Please note that the floppy will be checked twice if you have selected the full formatting.</qt>") );
+            i18n("<qt>Check this if you want the floppy disk to be checked after formatting."
+            " Please note that the floppy will be checked twice if you have selected full formatting.</qt>") );
 
 	labellabel = new QCheckBox( buttongroup, "RadioButton_4" );
 	labellabel->setText(i18n( "Volume &label:") );
@@ -235,7 +235,7 @@ FloppyData::FloppyData(QWidget * parent, const char * name)
 	connect(formatbutton,SIGNAL(clicked()),this,SLOT(format()));
         v3->addWidget( formatbutton );
         QWhatsThis::add( formatbutton,
-            i18n("<qt>Click here to start formatting!</qt>") );
+            i18n("<qt>Click here to start formatting.</qt>") );
 
         v3->addStretch( 1 );
 
@@ -433,7 +433,7 @@ void FloppyData::format(){
     if ( userDevice )
     {
         // BSD cannot format on a user-given device, as it needs the block count.
-        KMessageBox::error( i18n("BSD", "Formatting with BSD on a user-given device is not possible!") );
+        KMessageBox::error( i18n("BSD", "Formatting with BSD on a user-given device is not possible.") );
         return;
     }
     else
@@ -442,7 +442,7 @@ void FloppyData::format(){
     {
         if (KMessageBox::warningContinueCancel( this,
             i18n("<qt>Formatting will erase all data on the device:<br/><b>%1</b><br/>"
-                "(Please check the correctness of the device name!)<br/>"
+                "(Please check the correctness of the device name.)<br/>"
                 "Are you sure you wish to proceed?</qt>").arg( currentComboBoxDevice )
                 , i18n("Proceed?") ) != KMessageBox::Continue)
             {
