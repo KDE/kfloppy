@@ -6,6 +6,10 @@
   <!ENTITY % addindex "IGNORE">
 ]>
 
+<!-- ### TODO Is BSD a tradmark or a registrated trademark ? -->
+<!-- ### TODO Is Minix a tradmark or a registrated trademark ? -->
+<!-- ### TODO Unify use of "disk", "floppy", "diskette", "floppy disk" (and "floppy drive") -->
+
 <book lang="&language;">
 <bookinfo>
 
@@ -91,8 +95,8 @@ disks.</para></abstract>
 graphical means to format 3.5" and 5.25" floppy disks. </para>
 
 <note><para>&kfloppy; depends on external programs and therefore
-currently works <emphasis>only</emphasis> with Linux and BSD. Depending if you are
-using &kfloppy; on Linux or on BSD, &kfloppy; has slightly different
+currently works <emphasis>only</emphasis> with &Linux; and <trademark>BSD</trademark>. Depending if you are
+using &kfloppy; on &Linux; or on <trademark>BSD</trademark>, &kfloppy; has slightly different
 features.</para></note>
 
 <important><para>Make sure that your floppy is <emphasis>not</emphasis>
@@ -139,7 +143,7 @@ four choices:</para>
 <listitem><para>5.25" 360KB</para></listitem>
 </itemizedlist>
 
-<para>The Linux version of &kfloppy; has also a choice of size named:</para>
+<para>The &Linux; version of &kfloppy; has also a choice of size named:</para>
 
 <itemizedlist>
 <listitem><para>Auto-Detect</para></listitem>
@@ -148,8 +152,8 @@ four choices:</para>
 <!-- ### TODO: typical floppy disk of a PC has not the hardware to support
 Mac 800KB floppies at all, not only formatting. -->
 <note>
-<para>The 800KB disk format used by &Mac; floppy drives cannot be
-supported on PC floppy drives since they are not capable of formatting
+<para>The 800KB disk format used by <hardware>&Mac; floppy drives</hardware> cannot be
+supported on <hardware>PC floppy drives</hardware> since they are not capable of formatting
 disks in that fashion.</para>
 </note>
 </sect2>
@@ -168,7 +172,7 @@ following choices, if they are applicable:</para>
 of file system on the diskette.  The user will most likely want to
 choose this system if she or he will be using the diskette with those
 operating systems as they do not recognize other system types.
-(This is supported for Linux and BSD.)</para>
+(This is supported for &Linux; and <trademark>BSD</trademark>.)</para>
 </listitem>
 </varlistentry>
 
@@ -176,9 +180,9 @@ operating systems as they do not recognize other system types.
 <term>ext2</term>
 <listitem>
 <para>This selection will have &kfloppy; place the type of file system
-on the diskette which is most commonly used with Linux, however
+on the diskette which is most commonly used with &Linux;, however
 seldomly on floppy disks.
-(This is supported for Linux and BSD.)</para>
+(This is supported for &Linux; and <trademark>BSD</trademark>.)</para>
 </listitem>
 </varlistentry>
 
@@ -186,10 +190,10 @@ seldomly on floppy disks.
 <term>UFS</term>
 <listitem>
 <para>This selection will have &kfloppy; place the type of file system
-on the diskette which is most commonly used with FreeBSD.  The user will
+on the diskette which is most commonly used with <trademark>FreeBSD</trademark>.  The user will
 likely want to choose this system if he or she will only be using the
-floppy with FreeBSD.
-(This is supported for BSD only.)</para>
+floppy with <trademark>FreeBSD</trademark>.
+(This is supported for <trademark>BSD</trademark> only.)</para>
 </listitem>
 </varlistentry>
 
@@ -197,8 +201,8 @@ floppy with FreeBSD.
 <term>Minix</term>
 <listitem>
 <para>This selection will have &kfloppy; place the type of file system
-on the diskette which often used on floppy disk used with Linux,
-(This is supported for Linux only.)</para>
+on the diskette which often used on floppy disk used with &Linux;,
+(This is supported for &Linux; only.)</para>
 </listitem>
 </varlistentry>
 </variablelist>
@@ -216,6 +220,7 @@ channel selection may be set on a car radio.</para></note><para>The
 bottom two options are for labeling the diskette.  All are explained
 below:</para>
 
+<!-- ### TODO KFloppy trunk has now "Zeroing out and quickformat" -->
 <sect2>
 <title>Formatting Method</title>
 <para>&kfloppy; can format a disk in the following two ways:</para>
@@ -224,8 +229,8 @@ below:</para>
 <varlistentry>
 <term>Quick Format</term>
 <listitem>
-<para>This simply puts the new file system on the disk. All data on the
-disk will be lost, even if the data is not erased.</para>
+<para>This simply puts the new file system on the disk.</para>
+<warning><para>All data on the disk will be lost, even if the data itself will not erased.</para></warning>
 </listitem>
 </varlistentry>
 <varlistentry>
@@ -233,7 +238,8 @@ disk will be lost, even if the data is not erased.</para>
 <listitem>
 <para>A full format reallocates the tracks and sectors, puts the selected
 file system on the disk, and then verifies the format, blocking out any bad
-sectors it finds. All data on the disk is erased. </para>
+sectors it finds.</para>
+<warning><para>All data on the disk will be erased.</para></warning>
 </listitem>
 </varlistentry>
 </variablelist>
@@ -306,7 +312,7 @@ been completed.</para>
 it has to rely on these programs to give the right information for
 being able to display the progress bar. Unfortunately, this is not the
 case. Especially, the programs writing the file systems do not return
-enough data, so that the progress bar will remain at 0%.</para></note> 
+enough data, so that the progress bar will remain at 0%.</para></note>
 
 <important>
 <para>Make sure that your floppy is <emphasis>not</emphasis> mounted.
@@ -445,13 +451,57 @@ David Rugge <email>davidrugge@mindspring.com</email></para>
 
 </chapter>
 
-<appendix id="installation">
-<title>Installation</title>
+<appendix id="neededprogs">
+<title>Needed External Programs</title>
 
-&install.intro.documentation;
-&install.compile.documentation;
+<para>As already written earlier in this handbook, &kfloppy; works
+with the help of external programs to do the different formatting tasks.</para>
+
+<note><para>If one of the programs is missing, &kfloppy; tries to work nevertheless.
+However the corrsponding option will not be available.</para></note>
+
+<!-- ### TODO: dd(1) for "zero out" -->
+<variablelist>
+<varlistentry>
+<term><command>fdformat</command></term>
+<listitem><para>This program is needed for low-level formatting,
+on &Linux; and on <trademark>BSD</trademark>.
+</para></listitem>
+</varlistentry>
+<varlistentry>
+<term><command>mkdosfs</command></term>
+<listitem><para>This program is needed for DOS formatting,
+on &Linux;.
+</para></listitem>
+</varlistentry>
+<varlistentry>
+<term><command>newfs_msdos</command></term>
+<listitem><para>This program is needed for DOS formatting,
+on <trademark>BSD</trademark>.
+</para></listitem>
+</varlistentry>
+<varlistentry>
+<term><command>newfs</command></term>
+<listitem><para>This program is needed for UFS formatting,
+on <trademark>BSD</trademark>.
+</para></listitem>
+</varlistentry>
+<varlistentry>
+<term><command>mke2fs</command></term>
+<listitem><para>This program is needed for ext2 formatting,
+on &Linux;.
+</para></listitem>
+</varlistentry>
+<varlistentry>
+<term><command>mkfs.minix</command></term>
+<listitem><para>This program is needed for MInix formatting,
+on &Linux;.
+</para></listitem>
+</varlistentry>
+</variablelist>
 
 </appendix>
+
 </book>
 
 <!--
