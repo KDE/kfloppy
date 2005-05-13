@@ -694,7 +694,7 @@ void UFSFilesystem::exec()
 {
 	DEBUGSETUP;
 
-	if ( !deviceInfo || deviceName.isEmpty() )
+	if ( deviceName.isEmpty() )
 	{
                 emit status( i18n("Internal error: device not correctly defined."), -1 );
 		emit done(this,false);
@@ -703,7 +703,7 @@ void UFSFilesystem::exec()
 
 	if (newfs.isEmpty())
 	{
-		emit status(i18n("Cannot find a program to create UFS filesystems."),-1);
+		emit status(i18n("BSD", "Cannot find a program to create UFS filesystems."),-1);
 		emit done(this,false);
 		return;
 	}
@@ -712,12 +712,16 @@ void UFSFilesystem::exec()
 	KProcess *p = theProcess = new KProcess;
 
 	*p << newfs;
-	*p << "-T" << QString("fd%1").arg(deviceInfo->blocks)
-		<< deviceName;
+        
+        // ### TODO: is it still needed? (FreeBSD 5.3's man page says: "For backward compatibility.")
+        if ( deviceInfo )
+           *p << "-T" << QString("fd%1").arg(deviceInfo->blocks);
+
+        *p << deviceName;
 
 	if (!startProcess())
 	{
-		emit status(i18n("Cannot start UFS format program."),-1);
+		emit status(i18n("BSD", "Cannot start UFS format program."),-1);
 		emit done(this,false);
 	}
 }

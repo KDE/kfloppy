@@ -72,11 +72,8 @@ FloppyData::FloppyData(QWidget * parent, const char * name)
 	deviceComboBox = new KComboBox( false, this, "ComboBox_1" );
 	g1->addWidget( deviceComboBox, 0, 1 );
 
-#if defined(ANY_LINUX)
         // Make the combo box editable, so that the user can enter a device name
-        // This cannot be done on BSD, as the formatting programs need the block count
         deviceComboBox->setEditable( true );
-#endif
 	
         deviceComboBox->insertItem(i18n("Primary"));
 	deviceComboBox->insertItem(i18n("Secondary"));
@@ -215,6 +212,7 @@ FloppyData::FloppyData(QWidget * parent, const char * name)
         h2->addSpacing( 20 );
 
 	lineedit = new KLineEdit( buttongroup, "Lineedit" );
+        // ### TODO ext2 supports 16 characters. Minix has not any label. UFS?
 	lineedit->setText(i18n( "Volume label, maximal 11 characters", "KDE Floppy" ) );
 	lineedit->setMaxLength(11);
         h2->addWidget( lineedit, AlignRight );
@@ -361,6 +359,8 @@ bool FloppyData::setInitialDevice(const QString& dev)
   if (dev.startsWith("/dev/fd1"))
     drive = 1;
 
+  // ### TODO user given devices
+    
   bool ok = (drive>=0);
   if (ok)
     deviceComboBox->setCurrentItem(drive);
@@ -430,13 +430,12 @@ void FloppyData::format(){
     const bool userDevice = ( currentComboBoxDevice.startsWith ("/dev/") );
 
 #ifdef ANY_BSD
-    if ( userDevice )
+    if ( userDevice && filesystemComboBox->currentText() != i18n("UFS"))
     {
-        // BSD cannot format on a user-given device, as it needs the block count.
-        KMessageBox::error( i18n("BSD", "Formatting with BSD on a user-given device is not possible.") );
+        KMessageBox::error( i18n("BSD", "Formatting with BSD on a user-given device is only possible with UFS") );
         return;
     }
-    else
+    // no "else" !
 #endif    
     if ( userDevice && quick->isChecked())
     {
