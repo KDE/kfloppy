@@ -275,6 +275,29 @@ protected:
 	bool doVerify;
 } ;
 
+/**
+ * Zero out disk by runnind dd(1)
+ */
+class DDZeroOut : public FloppyAction
+{
+public:
+    DDZeroOut(QObject *parent = 0L);
+
+    virtual void exec();
+
+    /**
+     * Concrete classes can provide a runtimeCheck
+     * function (heck, this is static, so the name
+     * is up to you) that checks if the required
+     * applications are available. This way, the
+     * calling application can decide not to use
+     * actions whose prerequisites are absent anyway.
+     */
+    static bool runtimeCheck();           
+
+protected:
+    static QString m_ddName;    ///< path to executable.
+} ;
 
 
 /**

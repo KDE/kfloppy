@@ -545,6 +545,58 @@ void FDFormat::processStdOut(KProcess *, char *b, int l)
 }
 
 
+/* static */ QString DDZeroOut::m_ddName = QString::null;
+
+DDZeroOut::DDZeroOut(QObject *p) :
+    FloppyAction(p)
+{
+    kdDebug(KFAREA) << (__PRETTY_FUNCTION__) << endl;
+    theProcessName = QString::fromLatin1("dd");
+    setName("DD");
+}
+
+/* static */ bool DDZeroOut::runtimeCheck()
+{
+    m_ddName = findExecutable("dd");
+    return (!m_ddName.isEmpty());
+}
+
+/* virtual */ void DDZeroOut::exec()
+{
+    kdDebug(KFAREA) << (__PRETTY_FUNCTION__) << endl;
+
+    if ( deviceName.isEmpty() )
+    {
+        emit status( i18n("Internal error: device not correctly defined."), -1 );
+        emit done( this, false );
+        return;
+    }
+
+    if ( m_ddName.isEmpty() )
+    {
+        emit status( i18n("Cannot find dd."), -1 );
+        emit done( this, false );
+        return;
+    }
+
+    delete theProcess;
+    theProcess = new KProcess;
+
+    *theProcess << m_ddName ;
+
+    *theProcess << "if=/dev/zero" ;
+    *theProcess << "of="+deviceName;
+
+    if ( !startProcess() )
+    {
+            emit status( i18n("Could not start dd."), -1 );
+            emit done( this, false );
+    }
+
+}
+
+
+
 
 /* static */ QString FATFilesystem::newfs_fat = QString::null ;
 

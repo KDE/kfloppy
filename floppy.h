@@ -104,6 +104,7 @@ private:
 	QCheckBox*    labellabel;
 	QLineEdit*    lineedit;
 	QRadioButton* quick;
+        QRadioButton* zerooutformat;
 	KPushButton* quitbutton;
 	KPushButton* helpbutton;
 	QRadioButton* fullformat;
@@ -117,7 +118,8 @@ private:
 	
 	KFActionQueue *formatActions;
 
-        bool m_canLowLevel; ///< Low level formatting is possible (i.e. fdformat was found)
+        bool m_canLowLevel; ///< Low level formatting is possible (i.e. was fdformat found?)
+        bool m_canZeroOut; ///< Is zero-out possible (i.e. was dd found?)
 protected:
 	void keyPressEvent(QKeyEvent *e);
 

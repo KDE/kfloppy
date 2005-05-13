@@ -48,7 +48,7 @@
 
 FloppyData::FloppyData(QWidget * parent, const char * name)
  : KDialog( parent, name ),
-	formatActions(0L), m_canLowLevel(false)
+	formatActions(0L), m_canLowLevel(false), m_canZeroOut( false )
 {
 
 	formating = false;
@@ -173,7 +173,13 @@ FloppyData::FloppyData(QWidget * parent, const char * name)
             i18n("<qt>Quick format is only a high-level format:"
                 " it creates only a file system.</qt>") );
 
-	fullformat = new QRadioButton( buttongroup, "RadioButton_3" );
+	zerooutformat = new QRadioButton( buttongroup, "RadioButton_ZeroOutFormat" );
+	zerooutformat->setText( i18n( "&Zero out and quick format") );
+        v2->addWidget( zerooutformat, AlignLeft );
+        QWhatsThis::add( zerooutformat,
+            i18n("<qt>This first erases the floppy by writing zeros and then it creates the file system.</qt>") );
+	
+        fullformat = new QRadioButton( buttongroup, "RadioButton_3" );
 	fullformat->setText(i18n( "Fu&ll format") );
         v2->addWidget( fullformat, AlignLeft );
         QWhatsThis::add( fullformat,
@@ -190,6 +196,17 @@ FloppyData::FloppyData(QWidget * parent, const char * name)
             fullformat->setDisabled(true);
             quick->setChecked(true);
             userFeedBack += i18n( "Program fdformat <b>not found</b>. Full formatting <b>disabled</b>." );
+        }
+        userFeedBack += "<br>";
+        m_canZeroOut = DDZeroOut::runtimeCheck();
+        if ( m_canZeroOut )
+        {
+            zerooutformat->setChecked( true );
+            userFeedBack += i18n( "Program dd found." );
+        }
+        else {
+            zerooutformat->setDisabled(true);
+            userFeedBack += i18n( "Program dd <b>not found</b>. Zeroing-out <b>disabled</b>." );
         }
         
 	verifylabel = new QCheckBox( buttongroup, "RadioButton_4" );
@@ -389,6 +406,7 @@ void FloppyData::setEnabled(bool b)
   buttongroup->setEnabled(b);
   quick->setEnabled(b);
   fullformat->setEnabled(b && m_canLowLevel);
+  zerooutformat->setEnabled(b && m_canZeroOut);
   verifylabel->setEnabled(b);
   labellabel->setEnabled(b);
   lineedit->setEnabled(b && labellabel->isChecked() );
@@ -437,7 +455,7 @@ void FloppyData::format(){
     }
     // no "else" !
 #endif    
-    if ( userDevice && quick->isChecked())
+    if ( userDevice && ( quick->isChecked() || zerooutformat->isChecked() ) ) 
     {
         if (KMessageBox::warningContinueCancel( this,
             i18n("<qt>Formatting will erase all data on the device:<br/><b>%1</b><br/>"
@@ -488,12 +506,31 @@ void FloppyData::format(){
 	connect(formatActions,SIGNAL(done(KFAction *,bool)),
 		this,SLOT(reset()));
 
-	if ( userDevice || quick->isChecked())
+	if ( quick->isChecked())
 	{
 		formating=false;
 		// No fdformat to push
 	}
-	else
+        else if ( zerooutformat->isChecked() )
+        {
+            DDZeroOut* f = new DDZeroOut( this );
+            if ( userDevice )
+            {
+                f->configureDevice( currentComboBoxDevice );
+            }
+            else
+            {
+                f->configureDevice( drive, blocks );
+            }
+            formatActions->queue(f);
+        }
+	else if ( userDevice )
+        {
+            // We should not have got here, assume quick format
+            formating=false;
+            // No fdformat to push
+        }
+        else
 	{
 		FDFormat *f = new FDFormat(this);
 		f->configureDevice(drive,blocks);
@@ -639,7 +676,6 @@ void FloppyData::setWidgets(){
   labellabel->setChecked(labelconfig);
   verifylabel->setChecked(verifyconfig);
   quick->setChecked(quickformatconfig || !m_canLowLevel);
-
   fullformat->setChecked(!quickformatconfig && m_canLowLevel);
   lineedit->setText(labelnameconfig);
 
