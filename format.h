@@ -277,6 +277,7 @@ protected:
 
 /**
  * Zero out disk by runnind dd(1)
+ * \bug As dd terminates with the error "No space left on device", KFloppy aborts
  */
 class DDZeroOut : public FloppyAction
 {

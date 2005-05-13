@@ -64,13 +64,10 @@ FloppyData::FloppyData(QWidget * parent, const char * name)
 
         QGridLayout* g1 = new QGridLayout( v1, 3, 2 );
 
-        label1 = new QLabel(this);
-	label1->setText(i18n("Floppy drive:"));
+        deviceComboBox = new KComboBox( false, this, "ComboBox_1" );
+        label1 = new QLabel( deviceComboBox, i18n("Floppy &drive:"), this );
         g1->addWidget( label1, 0, 0, AlignLeft );
-
-
-	deviceComboBox = new KComboBox( false, this, "ComboBox_1" );
-	g1->addWidget( deviceComboBox, 0, 1 );
+        g1->addWidget( deviceComboBox, 0, 1 );
 
         // Make the combo box editable, so that the user can enter a device name
         deviceComboBox->setEditable( true );
@@ -78,12 +75,11 @@ FloppyData::FloppyData(QWidget * parent, const char * name)
         deviceComboBox->insertItem(i18n("Primary"));
 	deviceComboBox->insertItem(i18n("Secondary"));
 
-        label2 = new QLabel(this);
-	label2->setText(i18n("Size:"));
+        
+        densityComboBox = new KComboBox( false, this, "ComboBox_1" );
+        label2 = new QLabel( densityComboBox, i18n("&Size:"), this);
         g1->addWidget( label2, 1, 0, AlignLeft );
-
-	densityComboBox = new KComboBox( false, this, "ComboBox_1" );
-	g1->addWidget( densityComboBox, 1, 1 );
+        g1->addWidget( densityComboBox, 1, 1 );
 
 #if defined(ANY_LINUX)
 	densityComboBox->insertItem( i18n( "Auto-Detect" ) );
@@ -94,12 +90,10 @@ FloppyData::FloppyData(QWidget * parent, const char * name)
 	densityComboBox->insertItem(i18n("5.25\" 360KB"));
 
 
-        label3 = new QLabel(this);
-	label3->setText(i18n("File system:"));
+        filesystemComboBox = new KComboBox( false, this, "ComboBox_2" );
+        label3 = new QLabel( filesystemComboBox, i18n("F&ile system:"), this);
         g1->addWidget( label3, 2, 0, AlignLeft );
-
-	filesystemComboBox = new KComboBox( false, this, "ComboBox_2" );
-	g1->addWidget( filesystemComboBox, 2, 1 );
+        g1->addWidget( filesystemComboBox, 2, 1 );
 	g1->setColStretch(1, 1);
 
         // If you modify the user visible string, change them also (far) below
@@ -160,30 +154,23 @@ FloppyData::FloppyData(QWidget * parent, const char * name)
 
         v1->addSpacing( 10 );
 
-        buttongroup = new QButtonGroup( this, "ButtonGroup_1" );
-	buttongroup->setFrameStyle( 49 );
-	v1->addWidget( buttongroup );
+        buttongroup = new QButtonGroup( 3, Qt::Vertical, i18n("&Formatting"), this, "ButtonGroup_1" );
 
-        QVBoxLayout* v2 = new QVBoxLayout( buttongroup, 10 );
 
-	quick = new QRadioButton( buttongroup, "RadioButton_2" );
-	quick->setText(i18n( "Q&uick format") );
-        v2->addWidget( quick, AlignLeft );
+        quick = new QRadioButton( i18n( "Q&uick format" ), buttongroup, "RadioButton_2" );
         QWhatsThis::add( quick,
             i18n("<qt>Quick format is only a high-level format:"
                 " it creates only a file system.</qt>") );
 
-	zerooutformat = new QRadioButton( buttongroup, "RadioButton_ZeroOutFormat" );
-	zerooutformat->setText( i18n( "&Zero out and quick format") );
-        v2->addWidget( zerooutformat, AlignLeft );
+	zerooutformat = new QRadioButton( i18n( "&Zero out and quick format"), buttongroup, "RadioButton_ZeroOutFormat" );
         QWhatsThis::add( zerooutformat,
             i18n("<qt>This first erases the floppy by writing zeros and then it creates the file system.</qt>") );
 	
-        fullformat = new QRadioButton( buttongroup, "RadioButton_3" );
-	fullformat->setText(i18n( "Fu&ll format") );
-        v2->addWidget( fullformat, AlignLeft );
+        fullformat = new QRadioButton( i18n( "Fu&ll format"), buttongroup, "RadioButton_3" );
         QWhatsThis::add( fullformat,
             i18n("Full format is a low-level and high-level format. It erases everything on the disk.") );
+
+        v1->addWidget( buttongroup );
 
         // ### TODO: we need some user feedback telling why full formatting is disabled.
         userFeedBack += "<br>";
@@ -209,26 +196,26 @@ FloppyData::FloppyData(QWidget * parent, const char * name)
             userFeedBack += i18n( "Program dd <b>not found</b>. Zeroing-out <b>disabled</b>." );
         }
         
-	verifylabel = new QCheckBox( buttongroup, "RadioButton_4" );
+	verifylabel = new QCheckBox( this, "CheckBox_Integrity" );
 	verifylabel->setText(i18n( "&Verify integrity" ));
 	verifylabel->setChecked(true);
-	v2->addWidget( verifylabel, AlignLeft );
+	v1->addWidget( verifylabel, AlignLeft );
         QWhatsThis::add( verifylabel,
             i18n("<qt>Check this if you want the floppy disk to be checked after formatting."
             " Please note that the floppy will be checked twice if you have selected full formatting.</qt>") );
 
-	labellabel = new QCheckBox( buttongroup, "RadioButton_4" );
-	labellabel->setText(i18n( "Volume &label:") );
+	labellabel = new QCheckBox( this, "Checkbox_Label" );
+	labellabel->setText(i18n( "Volume la&bel:") );
 	labellabel->setChecked(true);
-        v2->addWidget( labellabel, AlignLeft );
+        v1->addWidget( labellabel, AlignLeft );
         QWhatsThis::add( labellabel,
             i18n("<qt>Check this if you want a volume label for your floppy."
             " Please note that Minix does not support labels at all.</qt>") );
 
-        QHBoxLayout* h2 = new QHBoxLayout( v2 );
+        QHBoxLayout* h2 = new QHBoxLayout( v1 );
         h2->addSpacing( 20 );
 
-	lineedit = new KLineEdit( buttongroup, "Lineedit" );
+	lineedit = new KLineEdit( this, "Lineedit" );
         // ### TODO ext2 supports 16 characters. Minix has not any label. UFS?
 	lineedit->setText(i18n( "Volume label, maximal 11 characters", "KDE Floppy" ) );
 	lineedit->setMaxLength(11);
