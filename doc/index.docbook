@@ -190,9 +190,9 @@ seldomly on floppy disks.
 <term>UFS</term>
 <listitem>
 <para>This selection will have &kfloppy; place the type of file system
-on the diskette which is most commonly used with <trademark>FreeBSD</trademark>.  The user will
+on the diskette which is most commonly used with <trademark class="registered">FreeBSD</trademark>.  The user will
 likely want to choose this system if he or she will only be using the
-floppy with <trademark>FreeBSD</trademark>.
+floppy with <trademark class="registered">FreeBSD</trademark>.
 (This is supported for <trademark>BSD</trademark> only.)</para>
 </listitem>
 </varlistentry>
