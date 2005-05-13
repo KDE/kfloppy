@@ -34,6 +34,7 @@
  *
  * \todo Add device selector to zip class
  * \note This class is not used by KFloppy
+ * \bug This class assumes thatthe Zip disk has 100MB. It does not support 250MB and 750MB
  */
 
 #include "format.h"
