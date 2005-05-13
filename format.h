@@ -213,6 +213,9 @@ protected:
 	QString deviceName;  ///< Name of the device
 
 protected slots:
+        /**
+         * \brief Provide handling of the exit of the external program
+         */
 	virtual void processDone(KProcess *);
 	/**
          * \brief Provide handling of stdout
@@ -296,6 +299,11 @@ public:
      */
     static bool runtimeCheck();           
 
+protected:
+    /**
+     * \brief Provide handling of the exit of the external program
+     */
+    virtual void processDone(KProcess *);
 protected:
     static QString m_ddName;    ///< path to executable.
 } ;

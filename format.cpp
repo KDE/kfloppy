@@ -595,6 +595,25 @@ DDZeroOut::DDZeroOut(QObject *p) :
 
 }
 
+void DDZeroOut::processDone(KProcess *p)
+{
+    kdDebug(KFAREA) << (__PRETTY_FUNCTION__) << endl;
+
+    if (p!=theProcess)
+    {
+            kdDebug(KFAREA) << "Strange process exited." << endl;
+            return;
+    }
+
+    /**
+     * As we do not give a number of blocks to dd(1), it will stop
+     * with the error "No space left on device"
+     *
+     * ### TODO: really check if the exit is not on an other error and then abort the formatting
+     */
+    emit status(QString::null,100);
+    emit done(this,true);
+}
 
 
 
