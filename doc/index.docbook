@@ -7,7 +7,7 @@
 ]>
 
 <!-- ### TODO Is BSD a tradmark or a registrated trademark ? -->
-<!-- ### TODO Is Minix a tradmark or a registrated trademark ? -->
+<!-- ### TODO Is Minix a trademark or a registrated trademark ? -->
 <!-- ### TODO Unify use of "disk", "floppy", "diskette", "floppy disk" (and "floppy drive") -->
 
 <book lang="&language;">
@@ -220,21 +220,27 @@ channel selection may be set on a car radio.</para></note><para>The
 bottom two options are for labeling the diskette.  All are explained
 below:</para>
 
-<!-- ### TODO KFloppy trunk has now "Zeroing out and quickformat" -->
 <sect2>
 <title>Formatting Method</title>
 <para>&kfloppy; can format a disk in the following two ways:</para>
 <para>
 <variablelist>
 <varlistentry>
-<term>Quick Format</term>
+<term><guilabel>Quick Format</guilabel></term>
 <listitem>
 <para>This simply puts the new file system on the disk.</para>
 <warning><para>All data on the disk will be lost, even if the data itself will not erased.</para></warning>
 </listitem>
 </varlistentry>
 <varlistentry>
-<term>Full Format</term>
+<term><guilabel>Zero out and quick format</guilabel></term>
+<listitem>
+<para>This format first puts zeros on the disk and then creates the new file system.</para>
+<warning><para>All data on the disk will be erased.</para></warning>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term><guilabel>Full Format</guilabel></term>
 <listitem>
 <para>A full format reallocates the tracks and sectors, puts the selected
 file system on the disk, and then verifies the format, blocking out any bad
