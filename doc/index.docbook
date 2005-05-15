@@ -466,12 +466,19 @@ with the help of external programs to do the different formatting tasks.</para>
 <note><para>If one of the programs is missing, &kfloppy; tries to work nevertheless.
 However the corrsponding option will not be available.</para></note>
 
-<!-- ### TODO: dd(1) for "zero out" -->
 <variablelist>
 <varlistentry>
 <term><command>fdformat</command></term>
 <listitem><para>This program is needed for low-level formatting,
-on &Linux; and on <trademark>BSD</trademark>.
+on &Linux; and on <trademark>BSD</trademark>. If it is missing,
+<guilabel>Full format</guilabel> will be disabled.
+</para></listitem>
+</varlistentry>
+<varlistentry>
+<term><command>dd</command></term>
+<listitem><para>This program is needed for zeroing-out,
+on &Linux; and on <trademark>BSD</trademark>. If it is missing,
+<guilabel>Zero out and quick format</guilabel> will be disabled.
 </para></listitem>
 </varlistentry>
 <varlistentry>
@@ -500,7 +507,7 @@ on &Linux;.
 </varlistentry>
 <varlistentry>
 <term><command>mkfs.minix</command></term>
-<listitem><para>This program is needed for MInix formatting,
+<listitem><para>This program is needed for Minix formatting,
 on &Linux;.
 </para></listitem>
 </varlistentry>
