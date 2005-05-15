@@ -60,8 +60,8 @@
 <!-- TRANS:ROLES_OF_TRANSLATORS -->
 </authorgroup>
 
-<date>2005-05-10</date>
-<releaseinfo>3.4.1</releaseinfo>
+<date>2005-05-15</date>
+<releaseinfo>3.5</releaseinfo>
 
 <copyright>
 <year>2000</year>
@@ -99,8 +99,8 @@ currently works <emphasis>only</emphasis> with &Linux; and <trademark>BSD</trade
 using &kfloppy; on &Linux; or on <trademark>BSD</trademark>, &kfloppy; has slightly different
 features.</para></note>
 
-<important><para>Make sure that your floppy is <emphasis>not</emphasis>
-mounted.  &kfloppy; cannot format a mounted floppy.</para></important>
+<important><para>Make sure that your floppy disk is <emphasis>not</emphasis>
+mounted.  &kfloppy; cannot format a mounted floppy disk.</para></important>
 
 </chapter>
 
@@ -111,8 +111,8 @@ mounted.  &kfloppy; cannot format a mounted floppy.</para></important>
 choose appropriate settings and control the formatting process.  These
 options and controls are detailed below.</para>
 
-<important><para>Make sure that your floppy is <emphasis>not</emphasis>
-mounted.  &kfloppy; cannot format a mounted floppy.</para></important>
+<important><para>Make sure that your floppy disk is <emphasis>not</emphasis>
+mounted.  &kfloppy; cannot format a mounted floppy disk.</para></important>
 
 <sect1 id="controlsettings">
 <title>Control Settings</title>
@@ -192,7 +192,7 @@ seldomly on floppy disks.
 <para>This selection will have &kfloppy; place the type of file system
 on the diskette which is most commonly used with <trademark class="registered">FreeBSD</trademark>.  The user will
 likely want to choose this system if he or she will only be using the
-floppy with <trademark class="registered">FreeBSD</trademark>.
+floppy disk with <trademark class="registered">FreeBSD</trademark>.
 (This is supported for <trademark>BSD</trademark> only.)</para>
 </listitem>
 </varlistentry>
@@ -201,7 +201,7 @@ floppy with <trademark class="registered">FreeBSD</trademark>.
 <term>Minix</term>
 <listitem>
 <para>This selection will have &kfloppy; place the type of file system
-on the diskette which often used on floppy disk used with &Linux;,
+on the diskette which often used on floppy disks used with &Linux;,
 (This is supported for &Linux; only.)</para>
 </listitem>
 </varlistentry>
@@ -321,8 +321,8 @@ case. Especially, the programs writing the file systems do not return
 enough data, so that the progress bar will remain at 0%.</para></note>
 
 <important>
-<para>Make sure that your floppy is <emphasis>not</emphasis> mounted.
-&kfloppy; cannot format a mounted floppy.</para>
+<para>Make sure that your floppy disk is <emphasis>not</emphasis> mounted.
+&kfloppy; cannot format a mounted floppy disk.</para>
 </important>
 
 <note><para>&kfloppy; does <emphasis>not</emphasis> unmount the
