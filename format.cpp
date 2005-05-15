@@ -800,7 +800,6 @@ void UFSFilesystem::exec()
 
 
 
-#ifdef ANY_LINUX
 /* static */ QString Ext2Filesystem::newfs = QString::null ;
 
 Ext2Filesystem::Ext2Filesystem(QObject *parent) :
@@ -897,8 +896,6 @@ void Ext2Filesystem::processStdOut(KProcess *, char *b, int l)
 }
 
 
-
-#endif
 
 #ifdef ANY_LINUX
 /* static */ QString MinixFilesystem::newfs = QString::null ;

@@ -502,7 +502,7 @@ on <trademark>BSD</trademark>.
 <varlistentry>
 <term><command>mke2fs</command></term>
 <listitem><para>This program is needed for ext2 formatting,
-on &Linux;.
+on &Linux; and on <trademark>BSD</trademark>.
 </para></listitem>
 </varlistentry>
 <varlistentry>

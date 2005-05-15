@@ -116,10 +116,10 @@ FloppyData::FloppyData(QWidget * parent, const char * name)
         if (Ext2Filesystem::runtimeCheck()) {
             filesystemComboBox->insertItem(i18n("ext2"));
             ++numFileSystems;
-            userFeedBack += i18n( "Linux", "Program mke2fs found." );
+            userFeedBack += i18n( "Program mke2fs found." );
         }
         else {
-            userFeedBack += i18n( "Linux", "Program mke2fs <b>not found</b>. Ext2 formatting <b>not available</b>" );
+            userFeedBack += i18n( "Program mke2fs <b>not found</b>. Ext2 formatting <b>not available</b>" );
         }
         userFeedBack += "<br>";
         if (MinixFilesystem::runtimeCheck()) {
@@ -149,6 +149,15 @@ FloppyData::FloppyData(QWidget * parent, const char * name)
         }
         else {
             userFeedBack += i18n( "BSD", "Program newfs <b>not found</b>. UFS formatting <b>not available</b>." );
+        }
+        userFeedBack += "<br>";
+        if (Ext2Filesystem::runtimeCheck()) {
+            filesystemComboBox->insertItem(i18n("ext2"));
+            ++numFileSystems;
+            userFeedBack += i18n( "Program mke2fs found." );
+        }
+        else {
+            userFeedBack += i18n( "Program mke2fs <b>not found</b>. Ext2 formatting <b>not available</b>" );
         }
 #endif
 
@@ -541,7 +550,7 @@ void FloppyData::format(){
                 }
 		formatActions->queue(f);
 	}
-#ifdef ANY_LINUX
+
 	else if ( filesystemComboBox->currentText() == i18n("ext2") )
 	{
 		Ext2Filesystem *f = new Ext2Filesystem(this);
@@ -558,7 +567,6 @@ void FloppyData::format(){
                 }
                 formatActions->queue(f);
 	}
-#endif
 
 #ifdef ANY_BSD
 	else if ( filesystemComboBox->currentText() == i18n("UFS") )

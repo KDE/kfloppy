@@ -340,7 +340,6 @@ protected:
 	
 } ;
 
-#ifdef ANY_LINUX
 /**
  * Format with Ext2
  */
@@ -365,12 +364,12 @@ protected:
 	bool doVerify,doLabel;
 	QString label;
 } ;
-#endif
 
 #ifdef ANY_BSD
 
 /**
- * Format with UFS
+ * \brief Format with UFS
+ * \note BSD only
  */
 class UFSFilesystem : public FloppyAction
 {
@@ -391,7 +390,8 @@ protected:
 
 #ifdef ANY_LINUX
 /**
- * Format with Minix
+ * \brief Format with Minix
+ * \note Linux only
  */
 class MinixFilesystem : public FloppyAction
 {
