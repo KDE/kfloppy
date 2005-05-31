@@ -446,7 +446,7 @@ void FloppyData::format(){
 #ifdef ANY_BSD
     if ( userDevice && filesystemComboBox->currentText() != i18n("UFS"))
     {
-        KMessageBox::error( i18n("BSD", "Formatting with BSD on a user-given device is only possible with UFS") );
+        KMessageBox::error( this, i18n("BSD", "Formatting with BSD on a user-given device is only possible with UFS") );
         return;
     }
     // no "else" !
