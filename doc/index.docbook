@@ -4,10 +4,12 @@
   <!ENTITY package "kdeutils">
   <!ENTITY % English "INCLUDE" > <!-- change language only here -->
   <!ENTITY % addindex "IGNORE">
+  <!ENTITY BSD "<trademark>BSD</trademark>">
+  <!ENTITY Minix "<trademark>Minix</trademark>">
 ]>
-
-<!-- ### TODO Is BSD a tradmark or a registrated trademark ? -->
+<!-- ### TODO Is BSD a trademark or a registrated trademark ? -->
 <!-- ### TODO Is Minix a trademark or a registrated trademark ? -->
+
 <!-- ### TODO Unify use of "disk", "floppy", "diskette", "floppy disk" (and "floppy drive") -->
 
 <book lang="&language;">
@@ -60,7 +62,7 @@
 <!-- TRANS:ROLES_OF_TRANSLATORS -->
 </authorgroup>
 
-<date>2005-05-15</date>
+<date>2005-06-01</date>
 <releaseinfo>3.5</releaseinfo>
 
 <copyright>
@@ -95,12 +97,12 @@ disks.</para></abstract>
 graphical means to format 3.5" and 5.25" floppy disks. </para>
 
 <note><para>&kfloppy; depends on external programs and therefore
-currently works <emphasis>only</emphasis> with &Linux; and <trademark>BSD</trademark>. Depending if you are
-using &kfloppy; on &Linux; or on <trademark>BSD</trademark>, &kfloppy; has slightly different
+currently works <emphasis>only</emphasis> with &Linux; and &BSD;. Depending if you are
+using &kfloppy; on &Linux; or on &BSD;, &kfloppy; has slightly different
 features.</para></note>
 
-<important><para>Make sure that your floppy disk is <emphasis>not</emphasis>
-mounted.  &kfloppy; cannot format a mounted floppy disk.</para></important>
+<caution><para>Make sure that your floppy disk is <emphasis>not</emphasis>
+mounted.  &kfloppy; cannot format a mounted floppy disk.</para></caution>
 
 </chapter>
 
@@ -111,8 +113,8 @@ mounted.  &kfloppy; cannot format a mounted floppy disk.</para></important>
 choose appropriate settings and control the formatting process.  These
 options and controls are detailed below.</para>
 
-<important><para>Make sure that your floppy disk is <emphasis>not</emphasis>
-mounted.  &kfloppy; cannot format a mounted floppy disk.</para></important>
+<caution><para>Make sure that your floppy disk is <emphasis>not</emphasis>
+mounted.  &kfloppy; cannot format a mounted floppy disk.</para></caution>
 
 <sect1 id="controlsettings">
 <title>Control Settings</title>
@@ -172,7 +174,7 @@ following choices, if they are applicable:</para>
 of file system on the diskette.  The user will most likely want to
 choose this system if she or he will be using the diskette with those
 operating systems as they do not recognize other system types.
-(This is supported for &Linux; and <trademark>BSD</trademark>.)</para>
+(This is supported for &Linux; and &BSD;.)</para>
 </listitem>
 </varlistentry>
 
@@ -182,7 +184,7 @@ operating systems as they do not recognize other system types.
 <para>This selection will have &kfloppy; place the type of file system
 on the diskette which is most commonly used with &Linux;, however
 seldomly on floppy disks.
-(This is supported for &Linux; and <trademark>BSD</trademark>.)</para>
+(This is supported for &Linux; and &BSD;.)</para>
 </listitem>
 </varlistentry>
 
@@ -193,7 +195,7 @@ seldomly on floppy disks.
 on the diskette which is most commonly used with <trademark class="registered">FreeBSD</trademark>.  The user will
 likely want to choose this system if he or she will only be using the
 floppy disk with <trademark class="registered">FreeBSD</trademark>.
-(This is supported for <trademark>BSD</trademark> only.)</para>
+(This is supported for &BSD; only.)</para>
 </listitem>
 </varlistentry>
 
@@ -279,7 +281,7 @@ written to the diskette.</para>
 at most 11 characters long. For simplification, &kfloppy; assumes that
 this limit is true for all file systems.</para></note>
 
-<note><para>The file system Minix cannot have any volume label. In this
+<note><para>The file system &Minix; cannot have any volume label. In this
 case, &kfloppy; will ignore the volume label.</para></note>
 
 </sect2>
@@ -326,7 +328,7 @@ enough data, so that the progress bar will remain at 0%.</para></note>
 </important>
 
 <note><para>&kfloppy; does <emphasis>not</emphasis> unmount the
-floppy by itself, as this could mean that the user overwrite a floppy
+floppy by itself, as this could mean that the user may overwrite a floppy
 disk with important data on it.</para></note>
 </listitem>
 </varlistentry>
@@ -464,20 +466,20 @@ David Rugge <email>davidrugge@mindspring.com</email></para>
 with the help of external programs to do the different formatting tasks.</para>
 
 <note><para>If one of the programs is missing, &kfloppy; tries to work nevertheless.
-However the corrsponding option will not be available.</para></note>
+However the corresponding option will not be available.</para></note>
 
 <variablelist>
 <varlistentry>
 <term><command>fdformat</command></term>
 <listitem><para>This program is needed for low-level formatting,
-on &Linux; and on <trademark>BSD</trademark>. If it is missing,
+on &Linux; and on &BSD;. If it is missing,
 <guilabel>Full format</guilabel> will be disabled.
 </para></listitem>
 </varlistentry>
 <varlistentry>
 <term><command>dd</command></term>
 <listitem><para>This program is needed for zeroing-out,
-on &Linux; and on <trademark>BSD</trademark>. If it is missing,
+on &Linux; and on &BSD;. If it is missing,
 <guilabel>Zero out and quick format</guilabel> will be disabled.
 </para></listitem>
 </varlistentry>
@@ -490,28 +492,110 @@ on &Linux;.
 <varlistentry>
 <term><command>newfs_msdos</command></term>
 <listitem><para>This program is needed for DOS formatting,
-on <trademark>BSD</trademark>.
+on &BSD;.
 </para></listitem>
 </varlistentry>
 <varlistentry>
 <term><command>newfs</command></term>
 <listitem><para>This program is needed for UFS formatting,
-on <trademark>BSD</trademark>.
+on &BSD;.
 </para></listitem>
 </varlistentry>
 <varlistentry>
 <term><command>mke2fs</command></term>
 <listitem><para>This program is needed for ext2 formatting,
-on &Linux; and on <trademark>BSD</trademark>.
+on &Linux; and on &BSD;.
 </para></listitem>
 </varlistentry>
 <varlistentry>
 <term><command>mkfs.minix</command></term>
-<listitem><para>This program is needed for Minix formatting,
+<listitem><para>This program is needed for &Minix; formatting,
 on &Linux;.
 </para></listitem>
 </varlistentry>
 </variablelist>
+
+</appendix>
+<appendix id="usergivendevices">
+<title>User-Given Devices</title>
+
+<sect1 id="ugdintro">
+<title>Introduction</title>
+
+<para>"User Given Devices" is the work title of a still experimental feature of
+&kfloppy;. It allows the user to give a device name and to use it nearly
+as if it was a <hardware>floppy drive</hardware>.</para>
+
+<para>This feature is mainly intended as a work-around for users having
+<hardware>USB floppy drives</hardware> of any kind
+(including <trademark>ZIP</trademark> disk drives) or any other non-legacy
+<hardware>floppy drives</hardware>.</para>
+
+<note><para>Unfortunately at the time of writing this documentation, the feature
+is not very user friendly, as it does not offer any help to the user on how
+a device is called and &kfloppy; does not even remember the device name from
+call to call. (This is partially a security, as the device of the
+<hardware>floppy drive</hardware> might change between reboots.)</para></note>
+
+<note><para>As this feature was developed under &Linux;, the &BSD; version
+of &kfloppy; offers less choices than &kfloppy; under &Linux;.</para></note>
+
+</sect1>
+
+<sect1 id="ugdmain">
+<title>Using It</title>
+
+<!-- Note to reviewers: "PRimary" and "Secondary" are the default items in the combobox -->
+<para>Using "User Given Devices" is quite simple, you just need to enter
+a device name, for example <replaceable>/dev/sdz4</replaceable>
+in the <guilabel>Floppy drive:</guilabel> combobox instead of
+selecting Primary or Secondary.</para>
+
+<note>
+<para>You need to enter the <filename class="directory">/dev/</filename>
+part of the device for two reasons:</para>
+<itemizedlist>
+<listitem>
+<para>It is how &kfloppy; recognizes the "User Given Devices" mode.</para>
+</listitem>
+<listitem>
+<para>It is a security, to avoid that the user writes anything in the combobox
+that is by change a device name.</para>
+</listitem>
+</itemizedlist>
+</note>
+
+<para>Unfortunately, using any device instead of a floppy device has a few
+consquences. The major one is that <guilabel>Full Format</guilabel> cannot be
+selected anymore. Doing so will result in a error message box when trying to
+start the format. However you can use <guilabel>Zero out and quick format</guilabel>
+instead. It will not format the device, just zeroing it out, but in practice it is
+nearly the same; especially all data on the device will be erased.</para>
+
+<warning><para>Be careful when entering the device name. &kfloppy; will pass
+the device name as is to the external programs. Especially it does not check
+(and the external programs do not check either) if the device is a
+<hardware>floppy drive</hardware> device. If you give your any of your main
+disk partitions as device, it will be accepted. (If the partition is mounted
+or if you cannot write on this device, you
+will probably get an error message nevertheless, avoiding the worst.)</para></warning>
+
+<note><para>Even if you can specify a floppy device like
+<filename>/dev/fd0u2880</filename>, &kfloppy; will refuse to make a 
+<guilabel>Full Format</guilabel> on it.</para></note>
+
+<para>On &Linux;, you can select any file system that you want. On &BSD;,
+only UFS is currently supported (and not tested at time of writing this
+documentation).</para>
+
+<para>When you are ready to format, click on the <guibutton>Format</guibutton>
+button as usual. You will get a message box asking you to verify the device name.
+</para>
+
+<warning><para>This is the last chance to check the device name before formating.
+After it, it is too late.</para></warning>
+
+</sect1>
 
 </appendix>
 
