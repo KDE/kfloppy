@@ -75,6 +75,11 @@ FloppyData::FloppyData(QWidget * parent, const char * name)
         deviceComboBox->insertItem(i18n("Primary"));
 	deviceComboBox->insertItem(i18n("Secondary"));
 
+	QString deviceWhatsThis = i18n("<qt>Select the floppy drive.</qt>");
+	
+	QWhatsThis::add(label1, deviceWhatsThis);
+	QWhatsThis::add(deviceComboBox, deviceWhatsThis);
+
         
         densityComboBox = new KComboBox( false, this, "ComboBox_1" );
         label2 = new QLabel( densityComboBox, i18n("&Size:"), this);
@@ -89,12 +94,21 @@ FloppyData::FloppyData(QWidget * parent, const char * name)
 	densityComboBox->insertItem(i18n("5.25\" 1.2MB"));
 	densityComboBox->insertItem(i18n("5.25\" 360KB"));
 
+	QString densityWhatsThis = i18n("<qt>This allows you to select the "
+					"floppy disks size and density.</qt>");
+	
+	QWhatsThis::add(label2, densityWhatsThis);
+	QWhatsThis::add(densityComboBox, densityWhatsThis);
+
 
         filesystemComboBox = new KComboBox( false, this, "ComboBox_2" );
         label3 = new QLabel( filesystemComboBox, i18n("F&ile system:"), this);
         g1->addWidget( label3, 2, 0, AlignLeft );
         g1->addWidget( filesystemComboBox, 2, 1 );
 	g1->setColStretch(1, 1);
+
+        QWhatsThis::add( label3,
+            i18n( "Linux", "KFloppy supports three file formats under Linux: MS-DOS, Ext2, and Minix" ) );
 
         // If you modify the user visible string, change them also (far) below
 
@@ -281,6 +295,9 @@ FloppyData::FloppyData(QWidget * parent, const char * name)
 	progress = new KProgress( this, "Progress" );
         progress->setDisabled( true );
         ml->addWidget( progress );
+
+	QWhatsThis::add(progress,
+			i18n("<qt>Shows progress of the format.</qt>"));
 
 	readSettings();
 	setWidgets();
