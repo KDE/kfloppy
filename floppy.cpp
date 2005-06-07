@@ -75,7 +75,7 @@ FloppyData::FloppyData(QWidget * parent, const char * name)
         deviceComboBox->insertItem(i18n("Primary"));
 	deviceComboBox->insertItem(i18n("Secondary"));
 
-	QString deviceWhatsThis = i18n("<qt>Select the floppy drive.</qt>");
+	const QString deviceWhatsThis = i18n("<qt>Select the floppy drive.</qt>");
 	
 	QWhatsThis::add(label1, deviceWhatsThis);
 	QWhatsThis::add(deviceComboBox, deviceWhatsThis);
@@ -94,8 +94,9 @@ FloppyData::FloppyData(QWidget * parent, const char * name)
 	densityComboBox->insertItem(i18n("5.25\" 1.2MB"));
 	densityComboBox->insertItem(i18n("5.25\" 360KB"));
 
-	QString densityWhatsThis = i18n("<qt>This allows you to select the "
-					"floppy disks size and density.</qt>");
+	const QString densityWhatsThis = 
+	    i18n("<qt>This allows you to select the "
+	         "floppy disk's size and density.</qt>");
 	
 	QWhatsThis::add(label2, densityWhatsThis);
 	QWhatsThis::add(densityComboBox, densityWhatsThis);
@@ -107,9 +108,13 @@ FloppyData::FloppyData(QWidget * parent, const char * name)
         g1->addWidget( filesystemComboBox, 2, 1 );
 	g1->setColStretch(1, 1);
 
+#if defined(ANY_LINUX)
         QWhatsThis::add( label3,
             i18n( "Linux", "KFloppy supports three file formats under Linux: MS-DOS, Ext2, and Minix" ) );
-
+#elif defined(ANY_BSD)
+        QWhatsThis::add( label3,
+            i18n( "BSD", "KFloppy supports three file formats under BSD: MS-DOS, UFS, and Ext2" ) );
+#endif
         // If you modify the user visible string, change them also (far) below
 
         QString userFeedBack;
