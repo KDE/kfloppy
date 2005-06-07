@@ -1,0 +1,47 @@
+2005-06-07
+
+As I am wirting an answer to an email about the to-do in KFloppy, 
+better have it in the source too.
+
+
+
+The biggest challenge was to support non-legacy (USB, IDE...) floppy drives.
+I have opened a way to it with what has the working title "user-given devices".
+(A better title for the feature would be a good thing too.
+It just mean that instead of selecting "Primary" or "Secondary" as floppy drive,
+you can give a device, like /dev/sda4 )
+
+The "user-given device" is pretty raw currently, allowing nearly no comfort for
+the user. So if you have an external drive (may a ZIP drive), you could try to
+make this mode better.
+
+A little variant would be to support the device like /dev/fd0u2880 for
+formatting. Currently it does not work with Full Format,
+as a "user-given device" is supposed not to be low-level formatable.
+(I do not know any Linux or BSD tool that can low-level format 
+non-legacy drives.)
+
+Another thing that I have very recently discovered is that 
+extended floppy drives will not work in "superfloppy" format 
+(disks without partition table), as neither mkdosfs nor BSD's newfs allow this
+without a special parameter. (I have not checked the other tools used.)
+
+Before I forget it: in the "user-given device" mode, it would be nice if there
+was support from KDE (for example devices:/ ) to know what devices are really
+flopy drives (not that a user roasts an umounted partition of his harddisk.
+
+A much easier task would be perhaps to catch more errors from 
+the external programs so that it is displayed to the user.
+(Also to catch anything error message having the string "error" in it,
+which is currently not done.)
+
+That is I think the list of what users could benefit.
+
+Internally, when the Qt4 switch is done, it would need a review to see how 
+to improve the way how the classes calling the external applications are
+handled.
+
+Of course, when modifying, care must taken not to break the BSD part of the
+code. (Perhaps we need a way on Linux to be able to compile the BSD part,
+as there is nothing BSD specific in the code, only the external BSD programs 
+are specific.)
