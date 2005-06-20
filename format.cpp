@@ -26,6 +26,8 @@
 
 #include <qtimer.h>
 #include <qregexp.h>
+//Added by qt3to4:
+#include <Q3PtrList>
 
 #include <klocale.h>
 #include <kprocess.h>
@@ -76,7 +78,7 @@ KFAction::~KFAction()
 class KFActionQueue_p
 {
 public:
-	QPtrList<KFAction> list;
+	Q3PtrList<KFAction> list;
 } ;
 
 KFActionQueue::KFActionQueue(QObject *parent) :
