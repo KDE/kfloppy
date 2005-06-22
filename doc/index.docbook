@@ -566,7 +566,7 @@ that is by change a device name.</para>
 </note>
 
 <para>Unfortunately, using any device instead of a floppy device has a few
-consquences. The major one is that <guilabel>Full Format</guilabel> cannot be
+consequences. The major one is that <guilabel>Full Format</guilabel> cannot be
 selected anymore. Doing so will result in a error message box when trying to
 start the format. However you can use <guilabel>Zero out and quick format</guilabel>
 instead. It will not format the device, just zeroing it out, but in practice it is
