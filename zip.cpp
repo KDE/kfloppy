@@ -36,7 +36,9 @@
 #include <qcheckbox.h>
 #include <qlayout.h>
 #include <qtimer.h>
-#include <qwhatsthis.h>
+
+//Added by qt3to4:
+#include <QGridLayout>
 
 #include <klocale.h>
 #include <kprocess.h>
@@ -54,7 +56,7 @@ ZipFormat::ZipFormat(QWidget *w,const char *n) :
 	QGridLayout *grid = new QGridLayout(this,1,1,10);
 
 	zeroWholeDisk = new QCheckBox(i18n("Zero entire disk"),this);
-	QWhatsThis::add(zeroWholeDisk,
+	zeroWholeDisk->setWhatsThis(
 		i18n("Try to write zeroes to the entire disk "
 			"before adding a filesystem, in order "
 			"to check the disk's integrity."));

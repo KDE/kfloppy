@@ -25,14 +25,18 @@
 #define FloppyData_included
 
 #include <kdialog.h>
+//Added by qt3to4:
+#include <QLabel>
+#include <QKeyEvent>
+#include <QCloseEvent>
 
 class QCheckBox;
 class QLineEdit;
 class QLabel;
 class QRadioButton;
 class QComboBox;
-class QButtonGroup;
-class QGroupBox;
+class Q3ButtonGroup;
+class Q3GroupBox;
 
 class KProgress;
 class KConfig;
@@ -95,11 +99,11 @@ private:
 	bool formating;
 	//bool abort;
         
-	QGroupBox*       outerframe;
+	Q3GroupBox*       outerframe;
         QLabel*       label1;
         QLabel*       label2;        
 	QLabel*       label3;
-	QButtonGroup* buttongroup;
+	Q3ButtonGroup* buttongroup;
 	QCheckBox*    verifylabel;
 	QCheckBox*    labellabel;
 	QLineEdit*    lineedit;
