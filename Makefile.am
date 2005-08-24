@@ -15,6 +15,9 @@ KDE_ICON = kfloppy
 
 xdg_apps_DATA = KFloppy.desktop
 
+servicedata_DATA = floppy_format.desktop
+servicedatadir = $(kde_datadir)/konqueror/servicemenus
+
 messages:
 	$(XGETTEXT) $(kfloppy_SOURCES) -o $(podir)/kfloppy.pot
 	
