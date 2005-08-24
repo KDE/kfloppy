@@ -49,6 +49,8 @@
 #include <klocale.h>
 #include <kcombobox.h>
 #include <klineedit.h>
+#include <dcopref.h>
+#include <kurl.h>
 
 #include "floppy.h"
 #include "format.h"
@@ -395,10 +397,27 @@ bool FloppyData::findDevice()
 
 bool FloppyData::setInitialDevice(const QString& dev)
 {
+
+  QString newDevice = dev;
+
+  KURL url( newDevice );
+  if( url.isValid() && ( url.protocol() == "media" || url.protocol() == "system" ) ) {
+    QString name = url.fileName();
+
+    DCOPRef mediamanager( "kded", "mediamanager" );
+    DCOPReply reply = mediamanager.call("properties(QString)", name);
+    if (!reply.isValid()) {
+      kdError() << "Invalid reply from mediamanager" << endl;
+    } else {
+      QStringList properties = reply;
+      newDevice = properties[5];
+    }
+  }
+
   int drive = -1;
-  if (dev.startsWith("/dev/fd0"))
+  if ( newDevice.startsWith("/dev/fd0") )
     drive = 0;
-  if (dev.startsWith("/dev/fd1"))
+  if ( newDevice.startsWith("/dev/fd1"))
     drive = 1;
 
   // ### TODO user given devices

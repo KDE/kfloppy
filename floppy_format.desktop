@@ -1,0 +1,10 @@
+[Desktop Action Format]
+Exec=kfloppy %u
+Icon=kfloppy
+Name=Format
+
+[Desktop Entry]
+Actions=Format;
+ServiceTypes=media/floppy_unmounted,media/floppy5_unmounted
+X-KDE-Priority=TopLevel
+X-KDE-MediaNotifierHide=true
