@@ -3,9 +3,11 @@ Exec=kfloppy %u
 Icon=kfloppy
 Name=Format
 Name[br]=Furmadiñ
+Name[cy]=Fformat
 Name[eo]=Formato
 Name[es]=Formatear
 Name[ga]=Formáid
+Name[it]=Formatta
 
 [Desktop Entry]
 Actions=Format;
