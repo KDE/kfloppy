@@ -43,7 +43,7 @@
 #include <kdebug.h>
 #include <khelpmenu.h>
 #include <kpushbutton.h>
-#include <kpopupmenu.h>
+#include <kmenu.h>
 #include <kapplication.h>
 #include <kprogress.h>
 #include <klocale.h>
@@ -51,6 +51,7 @@
 #include <klineedit.h>
 #include <dcopref.h>
 #include <kurl.h>
+#include <ktoolinvocation.h>
 
 #include "floppy.h"
 #include "format.h"
@@ -73,7 +74,7 @@ FloppyData::FloppyData(QWidget * parent, const char * name)
 
         QGridLayout* g1 = new QGridLayout( v1, 3, 2 );
 
-        deviceComboBox = new KComboBox( false, this, "ComboBox_1" );
+        deviceComboBox = new KComboBox( false, this );
         label1 = new QLabel( deviceComboBox, i18n("Floppy &drive:"), this );
         g1->addWidget( label1, 0, 0, Qt::AlignLeft );
         g1->addWidget( deviceComboBox, 0, 1 );
@@ -90,7 +91,7 @@ FloppyData::FloppyData(QWidget * parent, const char * name)
 	deviceComboBox->setWhatsThis( deviceWhatsThis);
 
         
-        densityComboBox = new KComboBox( false, this, "ComboBox_1" );
+        densityComboBox = new KComboBox( false, this );
         label2 = new QLabel( densityComboBox, i18n("&Size:"), this);
         g1->addWidget( label2, 1, 0, Qt::AlignLeft );
         g1->addWidget( densityComboBox, 1, 1 );
@@ -111,7 +112,7 @@ FloppyData::FloppyData(QWidget * parent, const char * name)
 	densityComboBox->setWhatsThis( densityWhatsThis);
 
 
-        filesystemComboBox = new KComboBox( false, this, "ComboBox_2" );
+        filesystemComboBox = new KComboBox( false, this );
         label3 = new QLabel( filesystemComboBox, i18n("F&ile system:"), this);
         g1->addWidget( label3, 2, 0, Qt::AlignLeft );
         g1->addWidget( filesystemComboBox, 2, 1 );
@@ -252,7 +253,7 @@ FloppyData::FloppyData(QWidget * parent, const char * name)
         QHBoxLayout* h2 = new QHBoxLayout( v1 );
         h2->addSpacing( 20 );
 
-	lineedit = new KLineEdit( this, "Lineedit" );
+	lineedit = new KLineEdit( this );
         // ### TODO ext2 supports 16 characters. Minix has not any label. UFS?
 	lineedit->setText(i18n( "Volume label, maximal 11 characters", "KDE Floppy" ) );
 	lineedit->setMaxLength(11);
@@ -342,7 +343,7 @@ void FloppyData::keyPressEvent(QKeyEvent *e)
 {
 	switch(e->key()) {
 	case Qt::Key_F1:
-		kapp->invokeHelp();
+		KToolInvocation::invokeHelp();
 		break;
 	default:
 		KDialog::keyPressEvent(e);
