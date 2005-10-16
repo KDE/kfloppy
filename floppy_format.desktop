@@ -2,6 +2,7 @@
 Exec=kfloppy %u
 Icon=kfloppy
 Name=Format
+Name[bg]=Форматиране
 Name[br]=Furmadiñ
 Name[cs]=Formátovat
 Name[cy]=Fformat
