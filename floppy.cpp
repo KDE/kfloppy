@@ -267,7 +267,7 @@ FloppyData::FloppyData(QWidget * parent, const char * name)
 
 	QVBoxLayout* v3 = new QVBoxLayout( h1 );
 
-	formatbutton = new KPushButton( this, "PushButton_3" );
+	formatbutton = new KPushButton( this );
 	formatbutton->setText(i18n( "&Format") );
 	formatbutton->setAutoRepeat( false );
         if (!numFileSystems)
