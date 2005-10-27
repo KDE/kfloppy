@@ -296,7 +296,7 @@ FloppyData::FloppyData(QWidget * parent, const char * name)
 
 	frame = new QLabel( this, "NewsWindow" );
 	frame->setFrameStyle(Q3Frame::Panel | Q3Frame::Sunken);
-	frame->setAlignment(Qt::WordBreak|Qt::ExpandTabs);
+	frame->setAlignment(Qt::TextWordWrap|Qt::ExpandTabs);
         frame->setWhatsThis(
             i18n("<qt>This is the status window, where error messages are displayed.</qt>") );
 
