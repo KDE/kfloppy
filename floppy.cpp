@@ -52,6 +52,7 @@
 #include <dcopref.h>
 #include <kurl.h>
 #include <ktoolinvocation.h>
+#include <kglobal.h>
 
 #include "floppy.h"
 #include "format.h"
@@ -296,7 +297,7 @@ FloppyData::FloppyData(QWidget * parent, const char * name)
 
 	frame = new QLabel( this, "NewsWindow" );
 	frame->setFrameStyle(Q3Frame::Panel | Q3Frame::Sunken);
-	frame->setAlignment(Qt::TextWordWrap|Qt::ExpandTabs);
+	frame->setAlignment(Qt::TextWordWrap|Qt::TextExpandTabs);
         frame->setWhatsThis(
             i18n("<qt>This is the status window, where error messages are displayed.</qt>") );
 
@@ -672,16 +673,16 @@ void FloppyData::formatStatus(const QString &s,int p)
 
 void FloppyData::writeSettings(){
 
-        config = kapp->config();
+        config = KGlobal::config();
 	config->setGroup("GeneralData");
 
-	densityconfig = densityComboBox->currentText().stripWhiteSpace();
-	filesystemconfig = filesystemComboBox->currentText().stripWhiteSpace();
-	driveconfig = deviceComboBox->currentText().stripWhiteSpace();
+	densityconfig = densityComboBox->currentText().trimmed();
+	filesystemconfig = filesystemComboBox->currentText().trimmed();
+	driveconfig = deviceComboBox->currentText().trimmed();
 
 	quickformatconfig = quick->isChecked();
 
-	labelnameconfig = lineedit->text().stripWhiteSpace();
+	labelnameconfig = lineedit->text().trimmed();
 
 	labelconfig = labellabel->isChecked();
 
@@ -702,7 +703,7 @@ void FloppyData::writeSettings(){
 
 void FloppyData::readSettings(){
 
-        config = kapp->config();
+        config = KGlobal::config();
 	config->setGroup("GeneralData");
 
 	verifyconfig = config->readNumEntry("Verify", 1);

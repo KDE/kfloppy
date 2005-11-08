@@ -650,7 +650,7 @@ bool FATFilesystem::configure(bool v,bool l,const QString &lbl)
 	doVerify=v;
 	doLabel=l;
 	if (l)
-		label=lbl.simplifyWhiteSpace();
+		label=lbl.simplified();
 	else
 		label=QString::null;
 
@@ -828,7 +828,7 @@ bool Ext2Filesystem::configure(bool v,bool l,const QString &lbl)
 	doLabel=l;
 	if (l)
 	{
-		label=lbl.stripWhiteSpace();
+		label=lbl.trimmed();
 	}
 	else
 	{
@@ -926,7 +926,7 @@ bool MinixFilesystem::configure(bool v,bool l,const QString &lbl)
 	doLabel=l;
 	if (l)
 	{
-		label=lbl.stripWhiteSpace();
+		label=lbl.trimmed();
 	}
 	else
 	{
