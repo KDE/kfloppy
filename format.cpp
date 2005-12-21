@@ -26,8 +26,6 @@
 
 #include <qtimer.h>
 #include <qregexp.h>
-//Added by qt3to4:
-#include <Q3PtrList>
 
 #include <klocale.h>
 #include <kprocess.h>
@@ -78,7 +76,7 @@ KFAction::~KFAction()
 class KFActionQueue_p
 {
 public:
-	Q3PtrList<KFAction> list;
+	QList<KFAction*> list;
 } ;
 
 KFActionQueue::KFActionQueue(QObject *parent) :
@@ -86,12 +84,13 @@ KFActionQueue::KFActionQueue(QObject *parent) :
 	d(new KFActionQueue_p)
 {
 	DEBUGSETUP;
-	d->list.setAutoDelete(true);
 }
 
 KFActionQueue::~KFActionQueue()
 {
 	DEBUGSETUP;
+	qDeleteAll(d->list);
+	d->list.clear();
 	delete d;
 }
 
