@@ -31,7 +31,7 @@
 
 //Added by qt3to4:
 #include <QVBoxLayout>
-#include <Q3Frame>
+#include <QFrame>
 #include <QHBoxLayout>
 #include <QGridLayout>
 #include <QKeyEvent>
@@ -296,7 +296,7 @@ FloppyData::FloppyData(QWidget * parent, const char * name)
         ml->addSpacing( 10 );
 
 	frame = new QLabel( this, "NewsWindow" );
-	frame->setFrameStyle(Q3Frame::Panel | Q3Frame::Sunken);
+	frame->setFrameStyle(QFrame::Panel | QFrame::Sunken);
 	frame->setAlignment(Qt::TextWordWrap|Qt::TextExpandTabs);
         frame->setWhatsThis(
             i18n("<qt>This is the status window, where error messages are displayed.</qt>") );
