@@ -38,7 +38,7 @@ class QComboBox;
 class Q3ButtonGroup;
 class Q3GroupBox;
 
-class KProgress;
+class KProgressBar;
 class KConfig;
 class KPushButton;
 class KHelpMenu;
@@ -117,7 +117,7 @@ private:
 	QComboBox* deviceComboBox;
 	QComboBox* filesystemComboBox;
 	QComboBox* densityComboBox;
-	KProgress* progress;
+	KProgressBar* progress;
 	KHelpMenu* helpMenu;
 	
 	KFActionQueue *formatActions;
