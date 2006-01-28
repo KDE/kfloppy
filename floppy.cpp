@@ -402,7 +402,7 @@ bool FloppyData::setInitialDevice(const QString& dev)
 
   QString newDevice = dev;
 
-  KURL url( newDevice );
+  KUrl url( newDevice );
   if( url.isValid() && ( url.protocol() == "media" || url.protocol() == "system" ) ) {
     QString name = url.fileName();
 
