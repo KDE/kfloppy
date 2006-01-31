@@ -706,10 +706,10 @@ void FloppyData::readSettings(){
         config = KGlobal::config();
 	config->setGroup("GeneralData");
 
-	verifyconfig = config->readNumEntry("Verify", 1);
-	labelconfig = config->readNumEntry("CreateLabel",1);
+	verifyconfig = config->readEntry("Verify", 1);
+	labelconfig = config->readEntry("CreateLabel",1);
 	labelnameconfig = config->readEntry( "Label", i18n("Volume label, maximal 11 characters", "KDE Floppy") );
-	quickformatconfig = config->readNumEntry("QuickFormat",0);
+	quickformatconfig = config->readEntry("QuickFormat",0);
 	driveconfig = config->readEntry( "FloppyDrive", i18n("Primary") );
 	densityconfig = config->readEntry( "Density", i18n("3.5\" 1.44MB") );
 	filesystemconfig = config->readEntry( "Filesystem", i18n("DOS") );
