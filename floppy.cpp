@@ -409,7 +409,7 @@ bool FloppyData::setInitialDevice(const QString& dev)
     DCOPRef mediamanager( "kded", "mediamanager" );
     DCOPReply reply = mediamanager.call("properties(QString)", name);
     if (!reply.isValid()) {
-      kdError() << "Invalid reply from mediamanager" << endl;
+      kError() << "Invalid reply from mediamanager" << endl;
     } else {
       QStringList properties = reply;
       newDevice = properties[5];
@@ -653,7 +653,7 @@ void FloppyData::format(){
 
 void FloppyData::formatStatus(const QString &s,int p)
 {
-    kdDebug(2002) << "FloppyData::formatStatus: " << s << " : "  << p << endl;
+    kDebug(2002) << "FloppyData::formatStatus: " << s << " : "  << p << endl;
 	if (!s.isEmpty())
         {
             const QString oldText ( frame->text() );
