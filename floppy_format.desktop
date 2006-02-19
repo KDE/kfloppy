@@ -2,6 +2,7 @@
 Exec=kfloppy %u
 Icon=kfloppy
 Name=Format
+Name[fr]=Formater
 Name[x-test]=xxFormatxx
 
 [Desktop Entry]

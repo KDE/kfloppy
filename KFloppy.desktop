@@ -1,6 +1,7 @@
 [Desktop Entry]
 Encoding=UTF-8
 GenericName=Floppy Formatter
+GenericName[fr]=Outil de formatage de disquette
 GenericName[x-test]=xxFloppy Formatterxx
 Name=KFloppy
 Name[x-test]=xxKFloppyxx
