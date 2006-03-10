@@ -11,7 +11,7 @@ kde4_automoc(${kfloppy_SRCS})
 
 kde4_add_executable(kfloppy ${kfloppy_SRCS})
 
-target_link_libraries(kfloppy  ${QT_AND_KDECORE_LIBS} )
+target_link_libraries(kfloppy  ${LIB_KIO} )
 
 install_targets(/bin kfloppy )
 
