@@ -121,10 +121,10 @@ FloppyData::FloppyData(QWidget * parent, const char * name)
 
 #if defined(ANY_LINUX)
         label3->setWhatsThis(
-            i18n( "Linux", "KFloppy supports three file formats under Linux: MS-DOS, Ext2, and Minix" ) );
+            i18nc( "Linux", "KFloppy supports three file formats under Linux: MS-DOS, Ext2, and Minix" ) );
 #elif defined(ANY_BSD)
         label3->setWhatsThis(
-            i18n( "BSD", "KFloppy supports three file formats under BSD: MS-DOS, UFS, and Ext2" ) );
+            i18nc( "BSD", "KFloppy supports three file formats under BSD: MS-DOS, UFS, and Ext2" ) );
 #endif
         // If you modify the user visible string, change them also (far) below
 
@@ -133,14 +133,14 @@ FloppyData::FloppyData(QWidget * parent, const char * name)
 
 #if defined(ANY_LINUX)
         filesystemComboBox->setWhatsThis(
-            i18n( "Linux", "KFloppy supports three file formats under Linux: MS-DOS, Ext2, and Minix" ) );
+            i18nc( "Linux", "KFloppy supports three file formats under Linux: MS-DOS, Ext2, and Minix" ) );
         if (FATFilesystem::runtimeCheck()) {
             filesystemComboBox->insertItem(i18n("DOS"));
             ++numFileSystems;
-            userFeedBack += i18n( "Linux", "Program mkdosfs found." );
+            userFeedBack += i18nc( "Linux", "Program mkdosfs found." );
         }
         else {
-            userFeedBack += i18n( "Linux", "Program mkdosfs <b>not found</b>. MSDOS formatting <b>not available</b>." );
+            userFeedBack += i18nc( "Linux", "Program mkdosfs <b>not found</b>. MSDOS formatting <b>not available</b>." );
         }
         userFeedBack += "<br>";
         if (Ext2Filesystem::runtimeCheck()) {
@@ -155,30 +155,30 @@ FloppyData::FloppyData(QWidget * parent, const char * name)
         if (MinixFilesystem::runtimeCheck()) {
             filesystemComboBox->insertItem(i18n("Minix"));
             ++numFileSystems;
-            userFeedBack += i18n( "Linux", "Program mkfs.minix found." );
+            userFeedBack += i18nc( "Linux", "Program mkfs.minix found." );
         }
         else {
-            userFeedBack += i18n( "Linux", "Program mkfs.minix <b>not found</b>. Minix formatting <b>not available</b>" );
+            userFeedBack += i18nc( "Linux", "Program mkfs.minix <b>not found</b>. Minix formatting <b>not available</b>" );
         }
 #elif defined(ANY_BSD)
         filesystemComboBox->setWhatsThis(
-            i18n( "BSD", "KFloppy supports two file formats under BSD: MS-DOS and UFS" ) );
+            i18nc( "BSD", "KFloppy supports two file formats under BSD: MS-DOS and UFS" ) );
         if (FATFilesystem::runtimeCheck()) {
             filesystemComboBox->insertItem(i18n("DOS"));
             ++numFileSystems;
-            userFeedBack += i18n( "BSD", "Program newfs_msdos found." );
+            userFeedBack += i18nc( "BSD", "Program newfs_msdos found." );
         }
         else {
-            userFeedBack += i18n( "BSD", "Program newfs_msdos <b>not found</b>. MSDOS formatting <b>not available</b>." );
+            userFeedBack += i18nc( "BSD", "Program newfs_msdos <b>not found</b>. MSDOS formatting <b>not available</b>." );
         }
         userFeedBack += "<br>";
         if (UFSFilesystem::runtimeCheck()) {
             filesystemComboBox->insertItem(i18n("UFS"));
             ++numFileSystems;
-            userFeedBack += i18n( "BSD", "Program newfs found." );
+            userFeedBack += i18nc( "BSD", "Program newfs found." );
         }
         else {
-            userFeedBack += i18n( "BSD", "Program newfs <b>not found</b>. UFS formatting <b>not available</b>." );
+            userFeedBack += i18nc( "BSD", "Program newfs <b>not found</b>. UFS formatting <b>not available</b>." );
         }
         userFeedBack += "<br>";
         if (Ext2Filesystem::runtimeCheck()) {
@@ -256,7 +256,7 @@ FloppyData::FloppyData(QWidget * parent, const char * name)
 
 	lineedit = new KLineEdit( this );
         // ### TODO ext2 supports 16 characters. Minix has not any label. UFS?
-	lineedit->setText(i18n( "Volume label, maximal 11 characters", "KDE Floppy" ) );
+	lineedit->setText(i18nc( "Volume label, maximal 11 characters", "KDE Floppy" ) );
 	lineedit->setMaxLength(11);
         h2->addWidget( lineedit, Qt::AlignRight );
         lineedit->setWhatsThis(
@@ -496,7 +496,7 @@ void FloppyData::format(){
 #ifdef ANY_BSD
     if ( userDevice && filesystemComboBox->currentText() != i18n("UFS"))
     {
-        KMessageBox::error( this, i18n("BSD", "Formatting with BSD on a user-given device is only possible with UFS") );
+        KMessageBox::error( this, i18nc("BSD", "Formatting with BSD on a user-given device is only possible with UFS") );
         return;
     }
     // no "else" !
@@ -506,7 +506,7 @@ void FloppyData::format(){
         if (KMessageBox::warningContinueCancel( this,
             i18n("<qt>Formatting will erase all data on the device:<br/><b>%1</b><br/>"
                 "(Please check the correctness of the device name.)<br/>"
-                "Are you sure you wish to proceed?</qt>").arg( currentComboBoxDevice )
+                "Are you sure you wish to proceed?</qt>", currentComboBoxDevice )
                 , i18n("Proceed?") ) != KMessageBox::Continue)
             {
                 return;
@@ -708,7 +708,7 @@ void FloppyData::readSettings(){
 
 	verifyconfig = config->readEntry("Verify", 1);
 	labelconfig = config->readEntry("CreateLabel",1);
-	labelnameconfig = config->readEntry( "Label", i18n("Volume label, maximal 11 characters", "KDE Floppy") );
+	labelnameconfig = config->readEntry( "Label", i18nc("Volume label, maximal 11 characters", "KDE Floppy") );
 	quickformatconfig = config->readEntry("QuickFormat",0);
 	driveconfig = config->readEntry( "FloppyDrive", i18n("Primary") );
 	densityconfig = config->readEntry( "Density", i18n("3.5\" 1.44MB") );

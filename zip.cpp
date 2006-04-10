@@ -265,9 +265,9 @@ void ZipFormat::processResult(KProcess *, char *b, int l)
 			emit setProgress(currentblock*100/totalBlocks);
 			if (totalBlocks>10000)
 			{
-				emit statusMessage(i18n("Zeroing block %1 of %2...")
-					.arg(currentblock)
-					.arg(totalBlocks));
+				emit statusMessage(i18n("Zeroing block %1 of %2...",
+					 currentblock,
+					 totalBlocks));
 			}
 		}
 		break;

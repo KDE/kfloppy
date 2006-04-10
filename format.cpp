@@ -267,13 +267,13 @@ bool FloppyAction::configureDevice(int drive,int density)
 
 	if ((drive<0) || (drive>1))
 	{
-		emit status(i18n("Unexpected drive number %1.").arg(drive),-1);
+		emit status(i18n("Unexpected drive number %1.", drive),-1);
 		return false;
 	}
 	if (!( /* (2880==de)  || */ (1440==density) || (720==density) ||
 		(1200==density) || (360==density)))
 	{
-		emit status(i18n("Unexpected density number %1.").arg(density),-1);
+		emit status(i18n("Unexpected density number %1.", density),-1);
 		return false;
 	}
 
@@ -288,8 +288,8 @@ bool FloppyAction::configureDevice(int drive,int density)
 
 	if (!deviceinfo || !deviceinfo->devices)
 	{
-		emit status(i18n("Cannot find a device for drive %1 and density %2.")
-			.arg(drive).arg(density),-1);
+		emit status(i18n("Cannot find a device for drive %1 and density %2.",
+			 drive, density),-1);
 		return false;
 	}
 
@@ -308,7 +308,7 @@ bool FloppyAction::configureDevice(int drive,int density)
 	{
 		const QString str = i18n(
 			"Cannot access %1\nMake sure that the device exists and that "
-			"you have write permission to it.").arg(deviceinfo->devices[0]);
+			"you have write permission to it.", deviceinfo->devices[0]);
 		emit status(str,-1);
 		return false;
 	}
@@ -338,13 +338,13 @@ void FloppyAction::processDone(KProcess *p)
 		}
 		else
 		{
-			emit status(i18n("The program %1 terminated with an error.").arg(theProcessName),100);
+			emit status(i18n("The program %1 terminated with an error.", theProcessName),100);
 			emit done(this,false);
 		}
 	}
 	else
 	{
-		emit status(i18n("The program %1 terminated abnormally.").arg(theProcessName),100);
+		emit status(i18n("The program %1 terminated abnormally.", theProcessName),100);
 		emit done(this,false);
 	}
 }
@@ -473,7 +473,7 @@ void FDFormat::processStdOut(KProcess *, char *b, int l)
 	}
 	else if (b[0]=='E')
 	{
-		emit status(i18n("Error formatting track %1.").arg(formatTrackCount),-1);
+		emit status(i18n("Error formatting track %1.", formatTrackCount),-1);
 	}
 	else
 	{
@@ -502,12 +502,12 @@ void FDFormat::processStdOut(KProcess *, char *b, int l)
             if ( regexp.search( s ) > -1 )
             {
                 const int track = regexp.cap(1).toInt();
-                emit status(i18n("Low-level formatting error at track %1.").arg(track), -1);
+                emit status(i18n("Low-level formatting error at track %1.", track), -1);
             }
             else
             {
                 // This error should not happen
-                emit status(i18n("Low-level formatting error: %1").arg(s), -1);
+                emit status(i18n("Low-level formatting error: %1", s), -1);
             }
             return;
         }
@@ -527,7 +527,7 @@ void FDFormat::processStdOut(KProcess *, char *b, int l)
         // Be careful to leave "iotcl" as last before checking numbers
         else if (s.find("ioctl")!=-1)
         {
-            emit status(i18n("Low-level format error: %1").arg(s),-1);
+            emit status(i18n("Low-level format error: %1", s),-1);
             return;
         }
         // Check for numbers at last (as /dev/fd0u1440 has numbers too)
@@ -775,7 +775,7 @@ void UFSFilesystem::exec()
 
 	if (newfs.isEmpty())
 	{
-		emit status(i18n("BSD", "Cannot find a program to create UFS filesystems."),-1);
+		emit status(i18nc("BSD", "Cannot find a program to create UFS filesystems."),-1);
 		emit done(this,false);
 		return;
 	}
@@ -793,7 +793,7 @@ void UFSFilesystem::exec()
 
 	if (!startProcess())
 	{
-		emit status(i18n("BSD", "Cannot start UFS format program."),-1);
+		emit status(i18nc("BSD", "Cannot start UFS format program."),-1);
 		emit done(this,false);
 	}
 }
