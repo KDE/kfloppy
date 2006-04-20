@@ -68,7 +68,7 @@ ZipFormat::ZipFormat(QWidget *w,const char *n) :
 	// up layour problems when this widget is smaller
 	// than others in the stack.
 	//
-	grid->addRowSpacing(2,10);
+	grid->addItem( new QSpacerItem( 0,10), 2, 0 );
 	grid->setRowStretch(2,100);
 
 	endInit();
