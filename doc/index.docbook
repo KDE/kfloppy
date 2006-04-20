@@ -21,13 +21,13 @@
 <author>
 <firstname>Thad</firstname>
 <surname>McGinnis</surname>
-<affiliation><address><email>ctmcginnis@compuserve.com</email>
+<affiliation><address>&Thad.McGinnis.mail;
 </address></affiliation> </author>
 
 <author>
 <firstname>Nicolas</firstname>
 <surname>Goutte</surname>
-<affiliation><address><email>goutte@kde.org</email>
+<affiliation><address>&Nicolas.Goutte.mail;
 </address></affiliation> </author>
 
 <othercredit role="developer">
@@ -41,7 +41,7 @@
 <othercredit role="developer">
 <firstname>Chris</firstname>
 <surname>Howells</surname>
-<affiliation><address><email>howells@kde.org</email></address></affiliation>
+<affiliation><address>&Chris.Howells.mail;</address></affiliation>
 <contrib>Developer (User Interface re-design)</contrib>
 </othercredit>
 
@@ -49,14 +49,14 @@
 <firstname>Adriaan</firstname>
 <surname>de Groot</surname>
 <affiliation><address><email>groot@kde.org</email></address></affiliation>
-<contrib>Developer (Add BSD support)</contrib>
+<contrib>Developer (Add &BSD; support)</contrib>
 </othercredit>
 
 <othercredit role="reviewer">
 <firstname>Lauri</firstname>
 <surname>Watts</surname>
 <contrib>Reviewer</contrib>
-<affiliation><address><email>lauri@kde.org</email></address></affiliation>
+<affiliation><address>&Lauri.Watts.mail;</address></affiliation>
 </othercredit>
 
 <!-- TRANS:ROLES_OF_TRANSLATORS -->
@@ -67,12 +67,12 @@
 
 <copyright>
 <year>2000</year>
-<holder>Thad McGinnis</holder>
+<holder>&Thad.McGinnis;</holder>
 </copyright>
 
 <copyright>
 <year>2005</year>
-<holder>Nicolas Goutte</holder>
+<holder>&Nicolas.Goutte;</holder>
 </copyright>
 
 <legalnotice>&FDLNotice;</legalnotice>
@@ -200,7 +200,7 @@ floppy disk with <trademark class="registered">FreeBSD</trademark>.
 </varlistentry>
 
 <varlistentry>
-<term>Minix</term>
+<term>&Minix;</term>
 <listitem>
 <para>This selection will have &kfloppy; place the type of file system
 on the diskette which often used on floppy disks used with &Linux;,
@@ -358,7 +358,7 @@ disk with important data on it.</para></note>
 <varlistentry>
 <term><guibutton>About KDE</guibutton></term>
 <listitem>
-<para>This displays version and author information of KDE.</para>
+<para>This displays version and author information of &kde;.</para>
 </listitem> 
 </varlistentry>
 
@@ -402,7 +402,7 @@ line.</para>
 <term><command>kfloppy <option>--help-kde</option></command></term>
 <listitem>
 <para>This lists the options available for changing the way &kfloppy;
-interacts with KDE.</para>
+interacts with &kde;.</para>
 </listitem>
 </varlistentry>
 
@@ -436,24 +436,25 @@ through <command>kfloppy <option>-V</option></command> </para>
 
 <!-- ### TODO: verify the copyright dates -->
 <!-- ### TODO: make the copyright list prettier -->
-<para>&kfloppy; Formatter Program Copyright 1997 - 2000 Bernd Johannes Wuebben
+<para>&kfloppy; Formatter Program Copyright 1997 - 2000 &Bernd.Johannes.Wuebben;
 <email>wuebben@math.cornell.edu</email></para>
 
 <para>&kfloppy; Formatter Program Copyright 2002 Adriaan de Groot
 <email>groot@kde.org</email></para>
 
-<para>&kfloppy; Formatter Program Copyright 2004, 2005 Nicolas Goutte
-<email>goutte@kde.org</email></para>
+<para>&kfloppy; Formatter Program Copyright 2004, 2005 &Nicolas.Goutte;
+&Nicolas.Goutte.mail;</para>
 
-<para>Documentation Copyright 2000 by Thad McGinnis
-<email>ctmcginnis@compuserve.com</email>.</para>
+<para>Documentation Copyright 2000 by &Thad.McGinnis;
+&Thad.McGinnis.mail;.</para>
 
-<para>Documentation Copyright 2005 by Nicolas Goutte
-<email>goutte@kde.org</email>.</para>
+<para>Documentation Copyright 2005 by &Nicolas.Goutte;
+&Nicolas.Goutte.mail;.</para>
 
 <para>This version of the &kfloppy; Handbook is based on the original by
-David Rugge <email>davidrugge@mindspring.com</email></para>
+&David.Rugge; <email>davidrugge@mindspring.com</email></para>
 
+<!-- TRANS:CREDIT_FOR_TRANSLATORS -->
 &underFDL;
 &underGPL;
 
