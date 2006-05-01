@@ -1,7 +1,7 @@
 /*
 
     This file is part of the KFloppy program, part of the KDE project
-    
+
     Copyright (C) 2002 Adriaan de Groot <groot@kde.org>
     Copyright (C) 2004, 2005 Nicolas GOUTTE <goutte@kde.org>
 
@@ -497,7 +497,7 @@ void FDFormat::processStdOut(KProcess *, char *b, int l)
 	s = QString::fromLatin1(b,l);
 	DEBUGS(s);
         QRegExp regexp( "([0-9]+)" );
-        if ( s.startsWith( "bad data at cyl" ) || ( s.find( "Problem reading cylinder" ) != -1 ) )
+        if ( s.startsWith( "bad data at cyl" ) || s.contains( "Problem reading cylinder" ) )
         {
             if ( regexp.search( s ) > -1 )
             {
@@ -511,7 +511,7 @@ void FDFormat::processStdOut(KProcess *, char *b, int l)
             }
             return;
         }
-	else if (s.find("ioctl(FDFMTBEG)")!=-1)
+	else if (s.contains("ioctl(FDFMTBEG)"))
 	{
             emit status (i18n(
                     "Cannot access floppy or floppy drive.\n"
@@ -519,13 +519,13 @@ void FDFormat::processStdOut(KProcess *, char *b, int l)
                     "have selected a valid floppy drive."),-1);
             return;
 	}
-        else if (s.find("busy")!=-1) // "Device or resource busy"
+        else if (s.contains("busy")) // "Device or resource busy"
         {
             emit status(i18n("Device busy.\nPerhaps you need to unmount the floppy first."),-1);
             return;
         }
         // Be careful to leave "iotcl" as last before checking numbers
-        else if (s.find("ioctl")!=-1)
+        else if (s.contains("ioctl"))
         {
             emit status(i18n("Low-level format error: %1", s),-1);
             return;
@@ -660,7 +660,7 @@ void FATFilesystem::exec()
 {
 	DEBUGSETUP;
 
-        
+
 	if (
 #ifdef ANY_BSD // BSD needs the deviceInfo for the block count
             !deviceInfo ||
@@ -717,12 +717,12 @@ void FATFilesystem::processStdOut(KProcess *, char *b, int l)
 #elif defined(ANY_LINUX)
     QString s ( QString::fromLatin1( b, l ) );
     kDebug(KFAREA) << s << endl;
-    if (s.find("mounted file system")!=-1) // "/dev/fd0 contains a mounted file system
+    if (s.contains("mounted file system")) // "/dev/fd0 contains a mounted file system
     {
         emit status(i18n("Floppy is mounted.\nYou need to unmount the floppy first."),-1);
         return;
     }
-    else if (s.find("busy")!=-1) // "Device or resource busy"
+    else if (s.contains("busy")) // "Device or resource busy"
     {
         emit status(i18n("Device busy.\nPerhaps you need to unmount the floppy first."),-1);
         return;
@@ -784,7 +784,7 @@ void UFSFilesystem::exec()
 	KProcess *p = theProcess = new KProcess;
 
 	*p << newfs;
-        
+
         // ### TODO: is it still needed? (FreeBSD 5.3's man page says: "For backward compatibility.")
         if ( deviceInfo )
            *p << "-T" << QString("fd%1").arg(deviceInfo->blocks);
@@ -883,12 +883,12 @@ void Ext2Filesystem::processStdOut(KProcess *, char *b, int l)
 #elif defined(ANY_LINUX)
     QString s ( QString::fromLatin1( b, l ) );
     kDebug(KFAREA) << s << endl;
-    if (s.find("mounted")!=-1) // "/dev/fd0 is mounted; will not make a filesystem here!"
+    if (s.contains("mounted")) // "/dev/fd0 is mounted; will not make a filesystem here!"
     {
         emit status(i18n("Floppy is mounted.\nYou need to unmount the floppy first."),-1);
         return;
     }
-    else if (s.find("busy")!=-1) // "Device or resource busy"
+    else if (s.contains("busy")) // "Device or resource busy"
     {
         emit status(i18n("Device busy.\nPerhaps you need to unmount the floppy first."),-1);
         return;
@@ -974,12 +974,12 @@ void MinixFilesystem::processStdOut(KProcess *, char *b, int l)
 {
     QString s ( QString::fromLatin1( b, l ) );
     kDebug(KFAREA) << s << endl;
-    if (s.find("mounted")!=-1) // "mkfs.minix: /dev/fd0 is mounted; will not make a filesystem here!"
+    if (s.contains("mounted")) // "mkfs.minix: /dev/fd0 is mounted; will not make a filesystem here!"
     {
         emit status(i18n("Floppy is mounted.\nYou need to unmount the floppy first."),-1);
         return;
     }
-    else if (s.find("busy")!=-1) // "Device or resource busy"
+    else if (s.contains("busy")) // "Device or resource busy"
     {
         emit status(i18n("Device busy.\nPerhaps you need to unmount the floppy first."),-1);
         return;
