@@ -1,7 +1,7 @@
 /*
-    
+
     This file is part of the KFloppy program, part of the KDE project
-    
+
     Copyright (C) 1997 Bernd Johannes Wuebben <wuebben@math.cornell.edu>
     Copyright (C) 2004, 2005 Nicolas GOUTTE <goutte@kde.org>
 
@@ -73,27 +73,30 @@ FloppyData::FloppyData(QWidget * parent, const char * name)
         QVBoxLayout* v1 = new QVBoxLayout( h1 );
         h1->addSpacing( 5 );
 
-        QGridLayout* g1 = new QGridLayout( v1, 3, 2 );
+        QGridLayout* g1 = new QGridLayout();
+        v1->addItem( g1 );
 
         deviceComboBox = new KComboBox( false, this );
-        label1 = new QLabel( deviceComboBox, i18n("Floppy &drive:"), this );
+        label1 = new QLabel( i18n("Floppy &drive:"), this );
+        label1->setBuddy( deviceComboBox );
         g1->addWidget( label1, 0, 0, Qt::AlignLeft );
         g1->addWidget( deviceComboBox, 0, 1 );
 
         // Make the combo box editable, so that the user can enter a device name
         deviceComboBox->setEditable( true );
-	
+
         deviceComboBox->insertItem(i18n("Primary"));
 	deviceComboBox->insertItem(i18n("Secondary"));
 
 	const QString deviceWhatsThis = i18n("<qt>Select the floppy drive.</qt>");
-	
+
 	label1->setWhatsThis( deviceWhatsThis);
 	deviceComboBox->setWhatsThis( deviceWhatsThis);
 
-        
+
         densityComboBox = new KComboBox( false, this );
-        label2 = new QLabel( densityComboBox, i18n("&Size:"), this);
+        label2 = new QLabel( i18n("&Size:"), this);
+        label2->setBuddy( densityComboBox );
         g1->addWidget( label2, 1, 0, Qt::AlignLeft );
         g1->addWidget( densityComboBox, 1, 1 );
 
@@ -105,16 +108,17 @@ FloppyData::FloppyData(QWidget * parent, const char * name)
 	densityComboBox->insertItem(i18n("5.25\" 1.2MB"));
 	densityComboBox->insertItem(i18n("5.25\" 360KB"));
 
-	const QString densityWhatsThis = 
+	const QString densityWhatsThis =
 	    i18n("<qt>This allows you to select the "
 	         "floppy disk's size and density.</qt>");
-	
+
 	label2->setWhatsThis( densityWhatsThis);
 	densityComboBox->setWhatsThis( densityWhatsThis);
 
 
         filesystemComboBox = new KComboBox( false, this );
-        label3 = new QLabel( filesystemComboBox, i18n("F&ile system:"), this);
+        label3 = new QLabel( i18n("F&ile system:"), this);
+        label3->setBuddy( filesystemComboBox );
         g1->addWidget( label3, 2, 0, Qt::AlignLeft );
         g1->addWidget( filesystemComboBox, 2, 1 );
 	g1->setColStretch(1, 1);
@@ -204,7 +208,7 @@ FloppyData::FloppyData(QWidget * parent, const char * name)
 	zerooutformat = new QRadioButton( i18n( "&Zero out and quick format"), buttongroup, "RadioButton_ZeroOutFormat" );
         zerooutformat->setWhatsThis(
             i18n("<qt>This first erases the floppy by writing zeros and then it creates the file system.</qt>") );
-	
+
         fullformat = new QRadioButton( i18n( "Fu&ll format"), buttongroup, "RadioButton_3" );
         fullformat->setWhatsThis(
             i18n("Full format is a low-level and high-level format. It erases everything on the disk.") );
@@ -234,7 +238,7 @@ FloppyData::FloppyData(QWidget * parent, const char * name)
             zerooutformat->setDisabled(true);
             userFeedBack += i18n( "Program dd <b>not found</b>. Zeroing-out <b>disabled</b>." );
         }
-        
+
 	verifylabel = new QCheckBox( this, "CheckBox_Integrity" );
 	verifylabel->setText(i18n( "&Verify integrity" ));
 	verifylabel->setChecked(true);
@@ -295,9 +299,10 @@ FloppyData::FloppyData(QWidget * parent, const char * name)
 
         ml->addSpacing( 10 );
 
-	frame = new QLabel( this, "NewsWindow" );
+	frame = new QLabel( this );
+        frame->setObjectName( "NewsWindow" );
 	frame->setFrameStyle(QFrame::Panel | QFrame::Sunken);
-	frame->setAlignment(Qt::TextWordWrap|Qt::TextExpandTabs);
+        frame->setWordWrap( true );
         frame->setWhatsThis(
             i18n("<qt>This is the status window, where error messages are displayed.</qt>") );
 
@@ -305,7 +310,7 @@ FloppyData::FloppyData(QWidget * parent, const char * name)
         frameText.prepend( "<qt>" );
         frameText.append( "</qt>" );
         frame->setText( frameText );
-        
+
         ml->addWidget( frame );
 
 	progress = new KProgressBar( this);
@@ -423,7 +428,7 @@ bool FloppyData::setInitialDevice(const QString& dev)
     drive = 1;
 
   // ### TODO user given devices
-    
+
   bool ok = (drive>=0);
   if (ok)
     deviceComboBox->setCurrentItem(drive);
@@ -500,8 +505,8 @@ void FloppyData::format(){
         return;
     }
     // no "else" !
-#endif    
-    if ( userDevice && ( quick->isChecked() || zerooutformat->isChecked() ) ) 
+#endif
+    if ( userDevice && ( quick->isChecked() || zerooutformat->isChecked() ) )
     {
         if (KMessageBox::warningContinueCancel( this,
             i18n("<qt>Formatting will erase all data on the device:<br/><b>%1</b><br/>"
