@@ -66,11 +66,14 @@ FloppyData::FloppyData(QWidget * parent, const char * name)
 	//abort = false;
 	blocks = 0;
 
-        QVBoxLayout* ml = new QVBoxLayout( this, 10 );
+        QVBoxLayout* ml = new QVBoxLayout( this );
+        ml->setSpacing( 10 );
 
-        QHBoxLayout* h1 = new QHBoxLayout( ml );
+        QHBoxLayout* h1 = new QHBoxLayout();
+        ml->addItem( h1 );
 
-        QVBoxLayout* v1 = new QVBoxLayout( h1 );
+        QVBoxLayout* v1 = new QVBoxLayout( );
+        h1->addItem( v1 );
         h1->addSpacing( 5 );
 
         QGridLayout* g1 = new QGridLayout();
@@ -270,7 +273,8 @@ FloppyData::FloppyData(QWidget * parent, const char * name)
 
 	connect(labellabel,SIGNAL(toggled(bool)),lineedit,SLOT(setEnabled(bool)));
 
-	QVBoxLayout* v3 = new QVBoxLayout( h1 );
+	QVBoxLayout* v3 = new QVBoxLayout();
+        h1->addItem( v3 );
 
 	formatbutton = new KPushButton( this );
 	formatbutton->setText(i18n( "&Format") );

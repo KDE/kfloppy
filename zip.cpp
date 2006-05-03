@@ -53,7 +53,8 @@ ZipFormat::ZipFormat(QWidget *w,const char *n) :
 {
 	DEBUGSETUP;
 
-	QGridLayout *grid = new QGridLayout(this,1,1,10);
+	QGridLayout *grid = new QGridLayout(this);
+	grid->setSpacing(10);
 
 	zeroWholeDisk = new QCheckBox(i18n("Zero entire disk"),this);
 	zeroWholeDisk->setWhatsThis(
