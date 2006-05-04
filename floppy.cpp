@@ -258,7 +258,8 @@ FloppyData::FloppyData(QWidget * parent, const char * name)
             i18n("<qt>Check this if you want a volume label for your floppy."
             " Please note that Minix does not support labels at all.</qt>") );
 
-        QHBoxLayout* h2 = new QHBoxLayout( v1 );
+        QHBoxLayout* h2 = new QHBoxLayout();
+        v1->addItem( h2 );
         h2->addSpacing( 20 );
 
 	lineedit = new KLineEdit( this );
