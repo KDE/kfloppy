@@ -22,9 +22,9 @@
 */
 
 
-#include <qlayout.h>
-#include <qcheckbox.h>
-#include <qlabel.h>
+#include <QLayout>
+#include <QCheckBox>
+#include <QLabel>
 #include <qcursor.h>
 #include <qradiobutton.h>
 #include <q3buttongroup.h>

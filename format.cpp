@@ -24,8 +24,8 @@
 #include <unistd.h>
 #include <stdlib.h>
 
-#include <qtimer.h>
-#include <qregexp.h>
+#include <QTimer>
+#include <QRegExp>
 
 #include <klocale.h>
 #include <kprocess.h>

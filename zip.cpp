@@ -33,9 +33,9 @@
 #include "debug.h"
 #include "zip.moc"
 
-#include <qcheckbox.h>
-#include <qlayout.h>
-#include <qtimer.h>
+#include <QCheckBox>
+#include <QLayout>
+#include <QTimer>
 
 //Added by qt3to4:
 #include <QGridLayout>

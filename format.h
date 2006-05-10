@@ -54,7 +54,7 @@
 */
 
 #include "debug.h"
-#include <qobject.h>
+#include <QObject>
 
 /**
  * \brief Abstract base class of actions to be undertaken.
