@@ -1,4 +1,3 @@
-kde4_header()
 project(kfloppy)
 
 
@@ -24,7 +23,6 @@ install_files( ${DATA_INSTALL_DIR}/konqueror/servicemenus FILES floppy_format.de
 
 kde4_install_icons( ${ICON_INSTALL_DIR}  hicolor )
 
-kde4_footer()
 
 
 
