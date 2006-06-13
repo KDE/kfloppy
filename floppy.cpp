@@ -28,7 +28,7 @@
 #include <qcursor.h>
 #include <qradiobutton.h>
 #include <q3buttongroup.h>
-
+#include <dbus/qdbus.h>
 //Added by qt3to4:
 #include <QVBoxLayout>
 #include <QFrame>
@@ -49,7 +49,6 @@
 #include <klocale.h>
 #include <kcombobox.h>
 #include <klineedit.h>
-#include <dcopref.h>
 #include <kurl.h>
 #include <ktoolinvocation.h>
 #include <kglobal.h>
@@ -58,7 +57,7 @@
 #include "format.h"
 
 FloppyData::FloppyData(QWidget * parent, const char * name)
- : KDialog( parent, name ),
+ : KDialog( parent ),
 	formatActions(0L), m_canLowLevel(false), m_canZeroOut( false )
 {
 
@@ -416,9 +415,9 @@ bool FloppyData::setInitialDevice(const QString& dev)
   if( url.isValid() && ( url.protocol() == "media" || url.protocol() == "system" ) ) {
     QString name = url.fileName();
 
-    DCOPRef mediamanager( "kded", "mediamanager" );
-    DCOPReply reply = mediamanager.call("properties(QString)", name);
-    if (!reply.isValid()) {
+    QDBusInterfacePtr mediamanager( "org.kde.kded", "/modules/mediamanager", "org.kde.MediaManager" );
+    QDBusReply<QStringList> reply = mediamanager->call( "properties", name );
+    if (!reply.isSuccess()) {
       kError() << "Invalid reply from mediamanager" << endl;
     } else {
       QStringList properties = reply;
