@@ -194,7 +194,7 @@ const char *fd1[] = { "/dev/fd1", 0L } ;
 //
 //
 // Note that the data originally contained in KFloppy was
-// patently false, so most of this is fake. I guess noone ever
+// patently false, so most of this is fake. I guess no one ever
 // formatted a 5.25" floppy.
 //
 // The flags field is unused in this implementation.
