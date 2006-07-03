@@ -28,7 +28,7 @@
 #include <qcursor.h>
 #include <qradiobutton.h>
 #include <q3buttongroup.h>
-#include <dbus/qdbus.h>
+#include <QtDBus>
 //Added by qt3to4:
 #include <QVBoxLayout>
 #include <QFrame>
