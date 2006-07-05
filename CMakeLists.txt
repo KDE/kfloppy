@@ -13,13 +13,13 @@ kde4_add_executable(kfloppy ${kfloppy_SRCS})
 
 target_link_libraries(kfloppy  ${KDE4_KIO_LIBS} )
 
-install_targets(/bin kfloppy )
+install(TARGETS kfloppy  DESTINATION ${BIN_INSTALL_DIR} )
 
 
 ########### install files ###############
 
-install_files( ${XDG_APPS_DIR} FILES KFloppy.desktop )
-install_files( ${DATA_INSTALL_DIR}/konqueror/servicemenus FILES floppy_format.desktop )
+install( FILES KFloppy.desktop  DESTINATION ${XDG_APPS_DIR})
+install( FILES floppy_format.desktop  DESTINATION ${DATA_INSTALL_DIR}/konqueror/servicemenus)
 
 kde4_install_icons( ${ICON_INSTALL_DIR}  hicolor )
 
