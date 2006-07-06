@@ -415,9 +415,9 @@ bool FloppyData::setInitialDevice(const QString& dev)
   if( url.isValid() && ( url.protocol() == "media" || url.protocol() == "system" ) ) {
     QString name = url.fileName();
 
-    QDBusInterfacePtr mediamanager( "org.kde.kded", "/modules/mediamanager", "org.kde.MediaManager" );
-    QDBusReply<QStringList> reply = mediamanager->call( "properties", name );
-    if (!reply.isSuccess()) {
+    QDBusInterface mediamanager( "org.kde.kded", "/modules/mediamanager", "org.kde.MediaManager" );
+    QDBusReply<QStringList> reply = mediamanager.call( "properties", name );
+    if (!reply.isValid()) {
       kError() << "Invalid reply from mediamanager" << endl;
     } else {
       QStringList properties = reply;
