@@ -60,12 +60,14 @@ FloppyData::FloppyData(QWidget * parent, const char * name)
  : KDialog( parent ),
 	formatActions(0L), m_canLowLevel(false), m_canZeroOut( false )
 {
-
+	QWidget *widget = new QWidget(this);
+	setMainWidget(widget);
+	setButtons(None);
 	formating = false;
 	//abort = false;
 	blocks = 0;
 
-        QVBoxLayout* ml = new QVBoxLayout( this );
+        QVBoxLayout* ml = new QVBoxLayout( widget );
         ml->setSpacing( 10 );
 
         QHBoxLayout* h1 = new QHBoxLayout();
@@ -78,8 +80,8 @@ FloppyData::FloppyData(QWidget * parent, const char * name)
         QGridLayout* g1 = new QGridLayout();
         v1->addItem( g1 );
 
-        deviceComboBox = new KComboBox( false, this );
-        label1 = new QLabel( i18n("Floppy &drive:"), this );
+        deviceComboBox = new KComboBox( false, widget );
+        label1 = new QLabel( i18n("Floppy &drive:"), widget );
         label1->setBuddy( deviceComboBox );
         g1->addWidget( label1, 0, 0, Qt::AlignLeft );
         g1->addWidget( deviceComboBox, 0, 1 );
@@ -96,8 +98,8 @@ FloppyData::FloppyData(QWidget * parent, const char * name)
 	deviceComboBox->setWhatsThis( deviceWhatsThis);
 
 
-        densityComboBox = new KComboBox( false, this );
-        label2 = new QLabel( i18n("&Size:"), this);
+        densityComboBox = new KComboBox( false, widget );
+        label2 = new QLabel( i18n("&Size:"), widget);
         label2->setBuddy( densityComboBox );
         g1->addWidget( label2, 1, 0, Qt::AlignLeft );
         g1->addWidget( densityComboBox, 1, 1 );
@@ -118,8 +120,8 @@ FloppyData::FloppyData(QWidget * parent, const char * name)
 	densityComboBox->setWhatsThis( densityWhatsThis);
 
 
-        filesystemComboBox = new KComboBox( false, this );
-        label3 = new QLabel( i18n("F&ile system:"), this);
+        filesystemComboBox = new KComboBox( false, widget );
+        label3 = new QLabel( i18n("F&ile system:"), widget);
         label3->setBuddy( filesystemComboBox );
         g1->addWidget( label3, 2, 0, Qt::AlignLeft );
         g1->addWidget( filesystemComboBox, 2, 1 );
@@ -261,7 +263,7 @@ FloppyData::FloppyData(QWidget * parent, const char * name)
         v1->addItem( h2 );
         h2->addSpacing( 20 );
 
-	lineedit = new KLineEdit( this );
+	lineedit = new KLineEdit( widget );
         // ### TODO ext2 supports 16 characters. Minix has not any label. UFS?
 	lineedit->setText(i18nc( "Volume label, maximal 11 characters", "KDE Floppy" ) );
 	lineedit->setMaxLength(11);
@@ -276,7 +278,7 @@ FloppyData::FloppyData(QWidget * parent, const char * name)
 	QVBoxLayout* v3 = new QVBoxLayout();
         h1->addItem( v3 );
 
-	formatbutton = new KPushButton( this );
+	formatbutton = new KPushButton( widget );
 	formatbutton->setText(i18n( "&Format") );
 	formatbutton->setAutoRepeat( false );
         if (!numFileSystems)
@@ -291,19 +293,19 @@ FloppyData::FloppyData(QWidget * parent, const char * name)
 	//Setup the Help Menu
 	helpMenu = new KHelpMenu(this, KGlobal::instance()->aboutData(), false);
 
-	helpbutton = new KPushButton( KStdGuiItem::help(), this );
+	helpbutton = new KPushButton( KStdGuiItem::help(), widget );
 	helpbutton->setAutoRepeat( false );
 	helpbutton->setPopup(helpMenu->menu());
 	v3->addWidget( helpbutton );
 
-	quitbutton = new KPushButton( KStdGuiItem::quit(), this );
+	quitbutton = new KPushButton( KStdGuiItem::quit(), widget );
 	quitbutton->setAutoRepeat( false );
 	connect(quitbutton,SIGNAL(clicked()),this,SLOT(quit()));
 	 v3->addWidget( quitbutton );
 
         ml->addSpacing( 10 );
 
-	frame = new QLabel( this );
+	frame = new QLabel( widget );
         frame->setObjectName( "NewsWindow" );
 	frame->setFrameStyle(QFrame::Panel | QFrame::Sunken);
         frame->setWordWrap( true );
@@ -317,7 +319,7 @@ FloppyData::FloppyData(QWidget * parent, const char * name)
 
         ml->addWidget( frame );
 
-	progress = new KProgressBar( this);
+	progress = new KProgressBar( widget );
         progress->setDisabled( true );
         ml->addWidget( progress );
 
