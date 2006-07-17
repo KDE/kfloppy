@@ -89,8 +89,8 @@ FloppyData::FloppyData(QWidget * parent, const char * name)
         // Make the combo box editable, so that the user can enter a device name
         deviceComboBox->setEditable( true );
 
-        deviceComboBox->insertItem(i18n("Primary"));
-	deviceComboBox->insertItem(i18n("Secondary"));
+        deviceComboBox->addItem(i18n("Primary"));
+	deviceComboBox->addItem(i18n("Secondary"));
 
 	const QString deviceWhatsThis = i18n("<qt>Select the floppy drive.</qt>");
 
@@ -105,12 +105,12 @@ FloppyData::FloppyData(QWidget * parent, const char * name)
         g1->addWidget( densityComboBox, 1, 1 );
 
 #if defined(ANY_LINUX)
-	densityComboBox->insertItem( i18n( "Auto-Detect" ) );
+	densityComboBox->addItem( i18n( "Auto-Detect" ) );
 #endif
-	densityComboBox->insertItem(i18n("3.5\" 1.44MB"));
-	densityComboBox->insertItem(i18n("3.5\" 720KB"));
-	densityComboBox->insertItem(i18n("5.25\" 1.2MB"));
-	densityComboBox->insertItem(i18n("5.25\" 360KB"));
+	densityComboBox->addItem(i18n("3.5\" 1.44MB"));
+	densityComboBox->addItem(i18n("3.5\" 720KB"));
+	densityComboBox->addItem(i18n("5.25\" 1.2MB"));
+	densityComboBox->addItem(i18n("5.25\" 360KB"));
 
 	const QString densityWhatsThis =
 	    i18n("<qt>This allows you to select the "
@@ -143,7 +143,7 @@ FloppyData::FloppyData(QWidget * parent, const char * name)
         filesystemComboBox->setWhatsThis(
             i18nc( "Linux", "KFloppy supports three file formats under Linux: MS-DOS, Ext2, and Minix" ) );
         if (FATFilesystem::runtimeCheck()) {
-            filesystemComboBox->insertItem(i18n("DOS"));
+            filesystemComboBox->addItem(i18n("DOS"));
             ++numFileSystems;
             userFeedBack += i18nc( "Linux", "Program mkdosfs found." );
         }
@@ -152,7 +152,7 @@ FloppyData::FloppyData(QWidget * parent, const char * name)
         }
         userFeedBack += "<br>";
         if (Ext2Filesystem::runtimeCheck()) {
-            filesystemComboBox->insertItem(i18n("ext2"));
+            filesystemComboBox->addItem(i18n("ext2"));
             ++numFileSystems;
             userFeedBack += i18n( "Program mke2fs found." );
         }
@@ -161,7 +161,7 @@ FloppyData::FloppyData(QWidget * parent, const char * name)
         }
         userFeedBack += "<br>";
         if (MinixFilesystem::runtimeCheck()) {
-            filesystemComboBox->insertItem(i18n("Minix"));
+            filesystemComboBox->addItem(i18n("Minix"));
             ++numFileSystems;
             userFeedBack += i18nc( "Linux", "Program mkfs.minix found." );
         }
@@ -172,7 +172,7 @@ FloppyData::FloppyData(QWidget * parent, const char * name)
         filesystemComboBox->setWhatsThis(
             i18nc( "BSD", "KFloppy supports two file formats under BSD: MS-DOS and UFS" ) );
         if (FATFilesystem::runtimeCheck()) {
-            filesystemComboBox->insertItem(i18n("DOS"));
+            filesystemComboBox->addItem(i18n("DOS"));
             ++numFileSystems;
             userFeedBack += i18nc( "BSD", "Program newfs_msdos found." );
         }
@@ -181,7 +181,7 @@ FloppyData::FloppyData(QWidget * parent, const char * name)
         }
         userFeedBack += "<br>";
         if (UFSFilesystem::runtimeCheck()) {
-            filesystemComboBox->insertItem(i18n("UFS"));
+            filesystemComboBox->addItem(i18n("UFS"));
             ++numFileSystems;
             userFeedBack += i18nc( "BSD", "Program newfs found." );
         }
@@ -190,7 +190,7 @@ FloppyData::FloppyData(QWidget * parent, const char * name)
         }
         userFeedBack += "<br>";
         if (Ext2Filesystem::runtimeCheck()) {
-            filesystemComboBox->insertItem(i18n("ext2"));
+            filesystemComboBox->addItem(i18n("ext2"));
             ++numFileSystems;
             userFeedBack += i18n( "Program mke2fs found." );
         }
