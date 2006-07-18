@@ -437,7 +437,7 @@ bool FloppyData::setInitialDevice(const QString& dev)
 
   bool ok = (drive>=0);
   if (ok)
-    deviceComboBox->setCurrentItem(drive);
+    deviceComboBox->setCurrentIndex(drive);
   return ok;
 }
 
@@ -737,19 +737,19 @@ void FloppyData::setWidgets(){
 
   for(int i = 0 ; i < deviceComboBox->count(); i++){
     if ( deviceComboBox->text(i) == driveconfig){
-      deviceComboBox->setCurrentItem(i);
+      deviceComboBox->setCurrentIndex(i);
     }
   }
 
   for(int i = 0 ; i < filesystemComboBox->count(); i++){
     if ( filesystemComboBox->text(i) == filesystemconfig){
-      filesystemComboBox->setCurrentItem(i);
+      filesystemComboBox->setCurrentIndex(i);
     }
   }
 
   for(int i = 0 ; i < densityComboBox->count(); i++){
     if ( densityComboBox->text(i) == densityconfig){
-      densityComboBox->setCurrentItem(i);
+      densityComboBox->setCurrentIndex(i);
     }
   }
 }
