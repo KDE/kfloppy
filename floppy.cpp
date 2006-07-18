@@ -243,7 +243,8 @@ FloppyData::FloppyData(QWidget * parent, const char * name)
             userFeedBack += i18n( "Program dd <b>not found</b>. Zeroing-out <b>disabled</b>." );
         }
 
-	verifylabel = new QCheckBox( this, "CheckBox_Integrity" );
+	verifylabel = new QCheckBox( this );
+	verifylabel->setObjectName( "CheckBox_Integrity" );
 	verifylabel->setText(i18n( "&Verify integrity" ));
 	verifylabel->setChecked(true);
 	v1->addWidget( verifylabel, Qt::AlignLeft );
@@ -251,7 +252,8 @@ FloppyData::FloppyData(QWidget * parent, const char * name)
             i18n("<qt>Check this if you want the floppy disk to be checked after formatting."
             " Please note that the floppy will be checked twice if you have selected full formatting.</qt>") );
 
-	labellabel = new QCheckBox( this, "Checkbox_Label" );
+	labellabel = new QCheckBox( this );
+	labellabel->setObjectName( "Checkbox_Label" );
 	labellabel->setText(i18n( "Volume la&bel:") );
 	labellabel->setChecked(true);
         v1->addWidget( labellabel, Qt::AlignLeft );
