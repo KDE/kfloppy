@@ -204,16 +204,19 @@ FloppyData::FloppyData(QWidget * parent, const char * name)
         buttongroup = new Q3ButtonGroup( 3, Qt::Vertical, i18n("&Formatting"), this, "ButtonGroup_1" );
 
 
-        quick = new QRadioButton( i18n( "Q&uick format" ), buttongroup, "RadioButton_2" );
+        quick = new QRadioButton( i18n( "Q&uick format" ), buttongroup );
+        quick->setObjectName( "RadioButton_2" );
         quick->setWhatsThis(
             i18n("<qt>Quick format is only a high-level format:"
                 " it creates only a file system.</qt>") );
 
-	zerooutformat = new QRadioButton( i18n( "&Zero out and quick format"), buttongroup, "RadioButton_ZeroOutFormat" );
+	zerooutformat = new QRadioButton( i18n( "&Zero out and quick format"), buttongroup );
+	zerooutformat->setObjectName( "RadioButton_ZeroOutFormat" );
         zerooutformat->setWhatsThis(
             i18n("<qt>This first erases the floppy by writing zeros and then it creates the file system.</qt>") );
 
-        fullformat = new QRadioButton( i18n( "Fu&ll format"), buttongroup, "RadioButton_3" );
+        fullformat = new QRadioButton( i18n( "Fu&ll format"), buttongroup );
+        fullformat->setObjectName( "RadioButton_3" );
         fullformat->setWhatsThis(
             i18n("Full format is a low-level and high-level format. It erases everything on the disk.") );
 
