@@ -69,7 +69,6 @@ int main( int argc, char *argv[] )
   KApplication a;
 
   FloppyData* floppy  = new FloppyData();
-  a.setMainWidget(floppy);
   bool autoformat = floppy->setInitialDevice(device);
   floppy->show();
   if (autoformat)

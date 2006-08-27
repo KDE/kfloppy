@@ -45,7 +45,7 @@
 #include <kpushbutton.h>
 #include <kmenu.h>
 #include <kapplication.h>
-#include <kprogressbar.h>
+#include <qprogressbar.h>
 #include <klocale.h>
 #include <kcombobox.h>
 #include <klineedit.h>
@@ -56,7 +56,7 @@
 #include "floppy.h"
 #include "format.h"
 
-FloppyData::FloppyData(QWidget * parent, const char * name)
+FloppyData::FloppyData(QWidget * parent)
  : KDialog( parent ),
 	formatActions(0L), m_canLowLevel(false), m_canZeroOut( false )
 {
@@ -324,7 +324,7 @@ FloppyData::FloppyData(QWidget * parent, const char * name)
 
         ml->addWidget( frame );
 
-	progress = new KProgressBar( widget );
+	progress = new QProgressBar( widget );
         progress->setDisabled( true );
         ml->addWidget( progress );
 

@@ -38,7 +38,7 @@ class QComboBox;
 class Q3ButtonGroup;
 class Q3GroupBox;
 
-class KProgressBar;
+class QProgressBar;
 class KConfig;
 class KPushButton;
 class KHelpMenu;
@@ -50,7 +50,7 @@ class FloppyData : public KDialog
     Q_OBJECT
 
 public:
-    FloppyData(QWidget* parent = 0, const char * name = 0);
+    FloppyData(QWidget* parent = 0);
     virtual ~FloppyData();
 
     /// Need to overload normal show() in order to mangle caption
@@ -95,13 +95,13 @@ private:
 	int drive;
         /// Number of blocks of the floppy (typically 1440)
 	int blocks;
-	
+
 	bool formating;
 	//bool abort;
-        
+
 	Q3GroupBox*       outerframe;
         QLabel*       label1;
-        QLabel*       label2;        
+        QLabel*       label2;
 	QLabel*       label3;
 	Q3ButtonGroup* buttongroup;
 	QCheckBox*    verifylabel;
@@ -117,9 +117,9 @@ private:
 	QComboBox* deviceComboBox;
 	QComboBox* filesystemComboBox;
 	QComboBox* densityComboBox;
-	KProgressBar* progress;
+	QProgressBar* progress;
 	KHelpMenu* helpMenu;
-	
+
 	KFActionQueue *formatActions;
 
         bool m_canLowLevel; ///< Low level formatting is possible (i.e. was fdformat found?)
