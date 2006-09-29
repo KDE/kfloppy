@@ -34,7 +34,7 @@
 
 #include "format.h"
 
-static QString extPath = QString::null;
+static QString extPath = QString();
 
 /* static */ QString findExecutable(const QString &e)
 {
@@ -378,7 +378,7 @@ bool FloppyAction::startProcess()
 }
 
 
-/* static */ QString FDFormat::fdformatName = QString::null;
+/* static */ QString FDFormat::fdformatName = QString();
 
 FDFormat::FDFormat(QObject *p) :
 	FloppyAction(p),
@@ -546,7 +546,7 @@ void FDFormat::processStdOut(KProcess *, char *b, int l)
 }
 
 
-/* static */ QString DDZeroOut::m_ddName = QString::null;
+/* static */ QString DDZeroOut::m_ddName = QString();
 
 DDZeroOut::DDZeroOut(QObject *p) :
     FloppyAction(p)
@@ -618,7 +618,7 @@ void DDZeroOut::processDone(KProcess *p)
 
 
 
-/* static */ QString FATFilesystem::newfs_fat = QString::null ;
+/* static */ QString FATFilesystem::newfs_fat = QString();
 
 FATFilesystem::FATFilesystem(QObject *parent) :
 	FloppyAction(parent)
@@ -651,7 +651,7 @@ bool FATFilesystem::configure(bool v,bool l,const QString &lbl)
 	if (l)
 		label=lbl.simplified();
 	else
-		label=QString::null;
+		label.clear();
 
 	return true;
 }
@@ -742,7 +742,7 @@ void FATFilesystem::processStdOut(KProcess *, char *b, int l)
 
 #ifdef ANY_BSD
 
-/* static */ QString UFSFilesystem::newfs = QString::null ;
+/* static */ QString UFSFilesystem::newfs = QString();
 
 UFSFilesystem::UFSFilesystem(QObject *parent) :
 	FloppyAction(parent)
@@ -801,7 +801,7 @@ void UFSFilesystem::exec()
 
 
 
-/* static */ QString Ext2Filesystem::newfs = QString::null ;
+/* static */ QString Ext2Filesystem::newfs = QString();
 
 Ext2Filesystem::Ext2Filesystem(QObject *parent) :
 	FloppyAction(parent)
@@ -831,7 +831,7 @@ bool Ext2Filesystem::configure(bool v,bool l,const QString &lbl)
 	}
 	else
 	{
-		label=QString::null;
+		label.clear();
 	}
 
 	return true;
@@ -899,7 +899,7 @@ void Ext2Filesystem::processStdOut(KProcess *, char *b, int l)
 
 
 #ifdef ANY_LINUX
-/* static */ QString MinixFilesystem::newfs = QString::null ;
+/* static */ QString MinixFilesystem::newfs = QString();
 
 MinixFilesystem::MinixFilesystem(QObject *parent) :
 	FloppyAction(parent)
@@ -929,7 +929,7 @@ bool MinixFilesystem::configure(bool v,bool l,const QString &lbl)
 	}
 	else
 	{
-		label=QString::null;
+		label.clear();
 	}
 
 	return true;
