@@ -13,5 +13,5 @@ Path=
 Type=Application
 Terminal=false
 X-KDE-StartupNotify=true
-X-DCOP-ServiceType=Multi
+X-DBUS-StartupType=Multi
 Categories=Qt;KDE;Utility;X-KDE-Utilities-Peripherals;
