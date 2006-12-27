@@ -298,12 +298,12 @@ FloppyData::FloppyData(QWidget * parent)
 	//Setup the Help Menu
 	helpMenu = new KHelpMenu(this, KGlobal::instance()->aboutData(), false);
 
-	helpbutton = new KPushButton( KStdGuiItem::help(), widget );
+	helpbutton = new KPushButton( KStandardGuiItem::help(), widget );
 	helpbutton->setAutoRepeat( false );
 	helpbutton->setPopup(helpMenu->menu());
 	v3->addWidget( helpbutton );
 
-	quitbutton = new KPushButton( KStdGuiItem::quit(), widget );
+	quitbutton = new KPushButton( KStandardGuiItem::quit(), widget );
 	quitbutton->setAutoRepeat( false );
 	connect(quitbutton,SIGNAL(clicked()),this,SLOT(quit()));
 	 v3->addWidget( quitbutton );
