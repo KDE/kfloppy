@@ -2,6 +2,7 @@
 Exec=kfloppy %u
 Icon=kfloppy
 Name=Format
+Name[el]=Διαμόρφωση
 Name[fr]=Formater
 Name[x-test]=xxFormatxx
 
