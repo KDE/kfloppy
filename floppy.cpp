@@ -296,7 +296,7 @@ FloppyData::FloppyData(QWidget * parent)
         v3->addStretch( 1 );
 
 	//Setup the Help Menu
-	helpMenu = new KHelpMenu(this, KGlobal::instance()->aboutData(), false);
+	helpMenu = new KHelpMenu(this, KGlobal::mainComponent().aboutData(), false);
 
 	helpbutton = new KPushButton( KStandardGuiItem::help(), widget );
 	helpbutton->setAutoRepeat( false );
