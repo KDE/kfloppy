@@ -29,6 +29,7 @@
 #include <QLabel>
 #include <QKeyEvent>
 #include <QCloseEvent>
+#include <kconfig.h>
 
 class QCheckBox;
 class QLineEdit;
@@ -39,7 +40,6 @@ class Q3ButtonGroup;
 class Q3GroupBox;
 
 class QProgressBar;
-class KConfig;
 class KPushButton;
 class KHelpMenu;
 class KFAction;
@@ -90,7 +90,7 @@ private:
 	QString driveconfig;
 	QString densityconfig;
 	QString filesystemconfig;
-	KConfig *config;
+        KSharedConfigPtr config;
 
 	int drive;
         /// Number of blocks of the floppy (typically 1440)
