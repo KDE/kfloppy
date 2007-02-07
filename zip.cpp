@@ -21,9 +21,6 @@
   
 */
 
-#ifdef HAVE_CONFIG_H
-#include <config.h>
-#endif
 #include <sys/types.h>
 #include <signal.h>
 
@@ -36,8 +33,6 @@
 #include <QCheckBox>
 #include <QLayout>
 #include <QTimer>
-
-//Added by qt3to4:
 #include <QGridLayout>
 
 #include <klocale.h>
