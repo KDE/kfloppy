@@ -689,8 +689,7 @@ void FloppyData::formatStatus(const QString &s,int p)
 
 void FloppyData::writeSettings(){
 
-        config = KGlobal::config();
-	config->setGroup("GeneralData");
+        KConfigGroup config = KGlobal::config()->group("GeneralData");
 
 	densityconfig = densityComboBox->currentText().trimmed();
 	filesystemconfig = filesystemComboBox->currentText().trimmed();
@@ -704,31 +703,30 @@ void FloppyData::writeSettings(){
 
 	verifyconfig = verifylabel->isChecked();
 
-	config->writeEntry("CreateLabel",labelconfig);
-	config->writeEntry("Label",labelnameconfig);
+	config.writeEntry("CreateLabel",labelconfig);
+	config.writeEntry("Label",labelnameconfig);
 
 
-	config->writeEntry("QuickFormat",quickformatconfig);
-	config->writeEntry("FloppyDrive",driveconfig);
-	config->writeEntry("Density",densityconfig);
-	config->writeEntry("Filesystem",filesystemconfig);
-	config->writeEntry("Verify",verifyconfig);
-	config->sync();
+	config.writeEntry("QuickFormat",quickformatconfig);
+	config.writeEntry("FloppyDrive",driveconfig);
+	config.writeEntry("Density",densityconfig);
+	config.writeEntry("Filesystem",filesystemconfig);
+	config.writeEntry("Verify",verifyconfig);
+	config.sync();
 
 }
 
 void FloppyData::readSettings(){
 
-        config = KGlobal::config();
-	config->setGroup("GeneralData");
+        KConfigGroup config = KGlobal::config()->group("GeneralData");
 
-	verifyconfig = config->readEntry("Verify", 1);
-	labelconfig = config->readEntry("CreateLabel",1);
-	labelnameconfig = config->readEntry( "Label", i18nc("Volume label, maximal 11 characters", "KDE Floppy") );
-	quickformatconfig = config->readEntry("QuickFormat",0);
-	driveconfig = config->readEntry( "FloppyDrive", i18n("Primary") );
-	densityconfig = config->readEntry( "Density", i18n("3.5\" 1.44MB") );
-	filesystemconfig = config->readEntry( "Filesystem", i18n("DOS") );
+	verifyconfig = config.readEntry("Verify", 1);
+	labelconfig = config.readEntry("CreateLabel",1);
+	labelnameconfig = config.readEntry( "Label", i18nc("Volume label, maximal 11 characters", "KDE Floppy") );
+	quickformatconfig = config.readEntry("QuickFormat",0);
+	driveconfig = config.readEntry( "FloppyDrive", i18n("Primary") );
+	densityconfig = config.readEntry( "Density", i18n("3.5\" 1.44MB") );
+	filesystemconfig = config.readEntry( "Filesystem", i18n("DOS") );
 
 }
 

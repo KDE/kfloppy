@@ -90,7 +90,6 @@ private:
 	QString driveconfig;
 	QString densityconfig;
 	QString filesystemconfig;
-        KSharedConfigPtr config;
 
 	int drive;
         /// Number of blocks of the floppy (typically 1440)

@@ -116,8 +116,8 @@ FilesystemList ZipFormat::FSLabels() const
 void ZipFormat::quit()
 {
 	DEBUGSETUP;
-	if (p) delete p;
-	if (statusTimer) delete statusTimer;
+	delete p;
+	delete statusTimer;
 
 	p=0L;
 	statusTimer=0L;
