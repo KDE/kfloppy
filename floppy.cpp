@@ -739,19 +739,19 @@ void FloppyData::setWidgets(){
   lineedit->setText(labelnameconfig);
 
   for(int i = 0 ; i < deviceComboBox->count(); i++){
-    if ( deviceComboBox->text(i) == driveconfig){
+    if ( deviceComboBox->itemText(i) == driveconfig){
       deviceComboBox->setCurrentIndex(i);
     }
   }
 
   for(int i = 0 ; i < filesystemComboBox->count(); i++){
-    if ( filesystemComboBox->text(i) == filesystemconfig){
+    if ( filesystemComboBox->itemText(i) == filesystemconfig){
       filesystemComboBox->setCurrentIndex(i);
     }
   }
 
   for(int i = 0 ; i < densityComboBox->count(); i++){
-    if ( densityComboBox->text(i) == densityconfig){
+    if ( densityComboBox->itemText(i) == densityconfig){
       densityComboBox->setCurrentIndex(i);
     }
   }
