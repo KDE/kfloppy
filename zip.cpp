@@ -36,7 +36,7 @@
 #include <QGridLayout>
 
 #include <klocale.h>
-#include <kprocess.h>
+#include <k3process.h>
 #include <kconfig.h>
 
 ZipFormat::ZipFormat(QWidget *w,const char *n) :
@@ -136,17 +136,17 @@ void ZipFormat::quit()
 	formatStep=0;
 
 	if (p) delete p;
-	p = new KProcess();
+	p = new K3Process();
 
 	if (statusTimer) delete statusTimer;
 	statusTimer = new QTimer(this);
 
-	connect(p,SIGNAL(processExited(KProcess *)),
+	connect(p,SIGNAL(processExited(K3Process *)),
 		this,SLOT(transition()));
-	connect(p,SIGNAL(receivedStdout(KProcess *,char *,int)),
-		this,SLOT(processResult(KProcess *,char *,int)));
-	connect(p,SIGNAL(receivedStderr(KProcess *,char *,int)),
-		this,SLOT(processResult(KProcess *,char *,int)));
+	connect(p,SIGNAL(receivedStdout(K3Process *,char *,int)),
+		this,SLOT(processResult(K3Process *,char *,int)));
+	connect(p,SIGNAL(receivedStderr(K3Process *,char *,int)),
+		this,SLOT(processResult(K3Process *,char *,int)));
 	connect(statusTimer,SIGNAL(timeout()),
 		this,SLOT(statusRequest()));
 
@@ -187,7 +187,7 @@ void ZipFormat::transition()
 			<< "of=/dev/afd0c"
 			<< "bs=8192" ;
 		*p << QString("count=%1").arg(totalBlocks);
-		if (!p->start(KProcess::NotifyOnExit,KProcess::AllOutput))
+		if (!p->start(K3Process::NotifyOnExit,K3Process::AllOutput))
 		{
 			emit statusMessage(i18n("Cannot start dd to zero disk."));
 			emit formatDone(-1);
@@ -220,7 +220,7 @@ void ZipFormat::transition()
 			*p << "-U" ;
 		}
 		*p << "/dev/afd0c" ;
-		if (!p->start(KProcess::NotifyOnExit,KProcess::AllOutput))
+		if (!p->start(K3Process::NotifyOnExit,K3Process::AllOutput))
 		{
 			emit statusMessage(i18n("Cannot start newfs."));
 			emit formatDone(-1);
@@ -243,7 +243,7 @@ void ZipFormat::transition()
 	}
 }
 
-void ZipFormat::processResult(KProcess *, char *b, int l)
+void ZipFormat::processResult(K3Process *, char *b, int l)
 {
 	DEBUGSETUP;
 

@@ -28,7 +28,7 @@
 #include <QRegExp>
 
 #include <klocale.h>
-#include <kprocess.h>
+#include <k3process.h>
 #include <kdebug.h>
 #include <kstandarddirs.h>
 
@@ -319,7 +319,7 @@ bool FloppyAction::configureDevice(int drive,int density)
 	return true;
 }
 
-void FloppyAction::processDone(KProcess *p)
+void FloppyAction::processDone(K3Process *p)
 {
 	DEBUGSETUP;
 
@@ -349,14 +349,14 @@ void FloppyAction::processDone(KProcess *p)
 	}
 }
 
-void FloppyAction::processStdOut(KProcess *, char *b, int l)
+void FloppyAction::processStdOut(K3Process *, char *b, int l)
 {
 	Q_UNUSED(b);
 	Q_UNUSED(l);
 	kDebug(KFAREA) << "stdout:" << QString::fromLatin1(b,l) << endl;
 }
 
-void FloppyAction::processStdErr(KProcess *p, char *b, int l)
+void FloppyAction::processStdErr(K3Process *p, char *b, int l)
 {
 	processStdOut(p,b,l);
 }
@@ -365,16 +365,16 @@ bool FloppyAction::startProcess()
 {
 	DEBUGSETUP;
 
-	connect(theProcess,SIGNAL(processExited(KProcess *)),
-		this,SLOT(processDone(KProcess *)));
-	connect(theProcess,SIGNAL(receivedStdout(KProcess *,char *,int)),
-		this,SLOT(processStdOut(KProcess *,char *,int)));
-	connect(theProcess,SIGNAL(receivedStderr(KProcess *,char *,int)),
-		this,SLOT(processStdErr(KProcess *,char *,int)));
+	connect(theProcess,SIGNAL(processExited(K3Process *)),
+		this,SLOT(processDone(K3Process *)));
+	connect(theProcess,SIGNAL(receivedStdout(K3Process *,char *,int)),
+		this,SLOT(processStdOut(K3Process *,char *,int)));
+	connect(theProcess,SIGNAL(receivedStderr(K3Process *,char *,int)),
+		this,SLOT(processStdErr(K3Process *,char *,int)));
 
         theProcess->setEnvironment( "LC_ALL", "C" ); // We need the untranslated output of the tool
-	return theProcess->start(KProcess::NotifyOnExit,
-		KProcess::AllOutput);
+	return theProcess->start(K3Process::NotifyOnExit,
+		K3Process::AllOutput);
 }
 
 
@@ -420,7 +420,7 @@ bool FDFormat::configure(bool v)
 	}
 
 	if (theProcess) delete theProcess;
-	theProcess = new KProcess;
+	theProcess = new K3Process;
 
 	formatTrackCount=0;
 
@@ -459,7 +459,7 @@ bool FDFormat::configure(bool v)
 // need, since the messages can be standardized across OSsen.
 //
 //
-void FDFormat::processStdOut(KProcess *, char *b, int l)
+void FDFormat::processStdOut(K3Process *, char *b, int l)
 {
 	DEBUGSETUP;
 	QString s;
@@ -581,7 +581,7 @@ DDZeroOut::DDZeroOut(QObject *p) :
     }
 
     delete theProcess;
-    theProcess = new KProcess;
+    theProcess = new K3Process;
 
     *theProcess << m_ddName ;
 
@@ -596,7 +596,7 @@ DDZeroOut::DDZeroOut(QObject *p) :
 
 }
 
-void DDZeroOut::processDone(KProcess *p)
+void DDZeroOut::processDone(K3Process *p)
 {
     kDebug(KFAREA) << (__PRETTY_FUNCTION__) << endl;
 
@@ -680,7 +680,7 @@ void FATFilesystem::exec()
 	}
 
 	if (theProcess) delete theProcess;
-	KProcess *p = theProcess = new KProcess;
+	K3Process *p = theProcess = new K3Process;
 
 	*p << newfs_fat;
 #ifdef ANY_BSD
@@ -710,7 +710,7 @@ void FATFilesystem::exec()
 	}
 }
 
-void FATFilesystem::processStdOut(KProcess *, char *b, int l)
+void FATFilesystem::processStdOut(K3Process *, char *b, int l)
 {
 #ifdef ANY_BSD
     // ### TODO: do some checks
@@ -781,7 +781,7 @@ void UFSFilesystem::exec()
 	}
 
 	if (theProcess) delete theProcess;
-	KProcess *p = theProcess = new KProcess;
+	K3Process *p = theProcess = new K3Process;
 
 	*p << newfs;
 
@@ -860,7 +860,7 @@ void Ext2Filesystem::exec()
 	}
 
 	if (theProcess) delete theProcess;
-	KProcess *p = theProcess = new KProcess;
+	K3Process *p = theProcess = new K3Process;
 
 	*p << newfs;
 	*p << "-q";
@@ -876,7 +876,7 @@ void Ext2Filesystem::exec()
 	}
 }
 
-void Ext2Filesystem::processStdOut(KProcess *, char *b, int l)
+void Ext2Filesystem::processStdOut(K3Process *, char *b, int l)
 {
 #ifdef ANY_BSD
     // ### TODO: do some checks
@@ -954,7 +954,7 @@ void MinixFilesystem::exec()
 	}
 
 	if (theProcess) delete theProcess;
-	KProcess *p = theProcess = new KProcess;
+	K3Process *p = theProcess = new K3Process;
 
 	*p << newfs;
 
@@ -970,7 +970,7 @@ void MinixFilesystem::exec()
 	}
 }
 
-void MinixFilesystem::processStdOut(KProcess *, char *b, int l)
+void MinixFilesystem::processStdOut(K3Process *, char *b, int l)
 {
     QString s ( QString::fromLatin1( b, l ) );
     kDebug(KFAREA) << s << endl;
