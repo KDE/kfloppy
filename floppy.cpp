@@ -125,7 +125,7 @@ FloppyData::FloppyData(QWidget * parent)
         label3->setBuddy( filesystemComboBox );
         g1->addWidget( label3, 2, 0, Qt::AlignLeft );
         g1->addWidget( filesystemComboBox, 2, 1 );
-	g1->setColStretch(1, 1);
+	g1->setColumnStretch(1, 1);
 
 #if defined(ANY_LINUX)
         label3->setWhatsThis(
@@ -300,7 +300,7 @@ FloppyData::FloppyData(QWidget * parent)
 
 	helpbutton = new KPushButton( KStandardGuiItem::help(), widget );
 	helpbutton->setAutoRepeat( false );
-	helpbutton->setPopup(helpMenu->menu());
+	helpbutton->setMenu(helpMenu->menu());
 	v3->addWidget( helpbutton );
 
 	quitbutton = new KPushButton( KStandardGuiItem::quit(), widget );

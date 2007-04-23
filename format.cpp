@@ -99,7 +99,7 @@ void KFActionQueue::queue(KFAction *p)
 	DEBUGSETUP;
 
 	d->list.append(p);
-	DEBUGS(p->name());
+	DEBUGS(p->objectName());
 }
 
 /* virtual */ void KFActionQueue::exec()
@@ -146,7 +146,7 @@ void KFActionQueue::queue(KFAction *p)
 	}
 	else
 	{
-		kDebug(KFAREA) << "Running action " << next->name() << endl;
+		kDebug(KFAREA) << "Running action " << next->objectName() << endl;
 		QObject::connect(next,SIGNAL(done(KFAction *,bool)),
 			this,SLOT(actionDone(KFAction *,bool)));
 		// Propagate signals
@@ -386,7 +386,7 @@ FDFormat::FDFormat(QObject *p) :
 {
 	DEBUGSETUP;
 	theProcessName = QString::fromLatin1("fdformat");
-	setName("FDFormat");
+	setObjectName("FDFormat");
 }
 
 /* static */ bool FDFormat::runtimeCheck()
@@ -499,7 +499,7 @@ void FDFormat::processStdOut(K3Process *, char *b, int l)
         QRegExp regexp( "([0-9]+)" );
         if ( s.startsWith( "bad data at cyl" ) || s.contains( "Problem reading cylinder" ) )
         {
-            if ( regexp.search( s ) > -1 )
+            if ( regexp.indexIn( s ) > -1 )
             {
                 const int track = regexp.cap(1).toInt();
                 emit status(i18n("Low-level formatting error at track %1.", track), -1);
@@ -531,7 +531,7 @@ void FDFormat::processStdOut(K3Process *, char *b, int l)
             return;
         }
         // Check for numbers at last (as /dev/fd0u1440 has numbers too)
-        else if ( regexp.search(s) > -1 )
+        else if ( regexp.indexIn(s) > -1 )
         {
             // Normal track number (formatting or verifying)
             const int p = regexp.cap(1).toInt();
@@ -553,7 +553,7 @@ DDZeroOut::DDZeroOut(QObject *p) :
 {
     kDebug(KFAREA) << (__PRETTY_FUNCTION__) << endl;
     theProcessName = QString::fromLatin1("dd");
-    setName("DD");
+    setObjectName("DD");
 }
 
 /* static */ bool DDZeroOut::runtimeCheck()
@@ -626,7 +626,7 @@ FATFilesystem::FATFilesystem(QObject *parent) :
 	DEBUGSETUP;
 	runtimeCheck();
 	theProcessName=newfs_fat;
-	setName("FATFilesystem");
+	setObjectName("FATFilesystem");
 }
 
 /* static */ bool FATFilesystem::runtimeCheck()
@@ -809,7 +809,7 @@ Ext2Filesystem::Ext2Filesystem(QObject *parent) :
 	DEBUGSETUP;
 	runtimeCheck();
 	theProcessName="mke2fs";
-	setName("Ext2Filesystem");
+	setObjectName("Ext2Filesystem");
 }
 
 /* static */ bool Ext2Filesystem::runtimeCheck()
@@ -907,7 +907,7 @@ MinixFilesystem::MinixFilesystem(QObject *parent) :
 	DEBUGSETUP;
 	runtimeCheck();
 	theProcessName="mkfs.minix";
-	setName("Minix2Filesystem");
+	setObjectName("Minix2Filesystem");
 }
 
 /* static */ bool MinixFilesystem::runtimeCheck()
