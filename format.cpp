@@ -270,14 +270,20 @@ bool FloppyAction::configureDevice(int drive,int density)
 		emit status(i18n("Unexpected drive number %1.", drive),-1);
 		return false;
 	}
-	if (!( /* (2880==de)  || */ (1440==density) || (720==density) ||
-		(1200==density) || (360==density)))
+
+	fdinfo *deviceinfo = fdtable;
+	for ( ; deviceinfo && (deviceinfo->devices) ; deviceinfo++)
+	{
+		if (deviceinfo->blocks != density)
+			continue;
+        }
+	if (!deviceinfo)
 	{
 		emit status(i18n("Unexpected density number %1.", density),-1);
 		return false;
 	}
 
-	fdinfo *deviceinfo = fdtable;
+	deviceinfo = fdtable;
 	for ( ; deviceinfo && (deviceinfo->devices) ; deviceinfo++)
 	{
 		if (deviceinfo->blocks != density)
