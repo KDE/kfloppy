@@ -702,7 +702,11 @@ void FloppyData::readSettings(){
 	labelnameconfig = config->readEntry( "Label", i18n("Volume label, maximal 11 characters", "KDE Floppy") );
 	quickformatconfig = config->readNumEntry("QuickFormat",0);
 	driveconfig = config->readEntry( "FloppyDrive", i18n("Primary") );
+#if defined(ANY_LINUX)
+	densityconfig = config->readEntry( "Density", i18n( "Auto-Detect" ) );
+#else
 	densityconfig = config->readEntry( "Density", i18n("3.5\" 1.44MB") );
+#endif
 	filesystemconfig = config->readEntry( "Filesystem", i18n("DOS") );
 
 }
