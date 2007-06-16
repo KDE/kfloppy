@@ -40,6 +40,7 @@ Name[x-test]=xxFormatxx
 Name[zh_TW]=格式化
 
 [Desktop Entry]
+Encoding=UTF-8
 Actions=Format;
 ServiceTypes=media/floppy_unmounted,media/floppy5_unmounted
 X-KDE-Priority=TopLevel
