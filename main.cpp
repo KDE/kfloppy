@@ -33,30 +33,27 @@
 static const char description[] =
 	I18N_NOOP("KDE Floppy Disk Utility");
 
-static const KCmdLineOptions options[] =
-{
-	{ "+[device]", I18N_NOOP("Default device"), 0 },
-	KCmdLineLastOption
-};
-
 int main( int argc, char *argv[] )
 {
-  KAboutData aboutData("kfloppy",
-	I18N_NOOP("KFloppy"),
-    KDE_VERSION_STRING, description, KAboutData::License_GPL,
-    "(c) 1997, Bernd Johannes Wuebben\n"
+  KAboutData aboutData("kfloppy", 0,
+	ki18n("KFloppy"),
+    KDE_VERSION_STRING, ki18n(description), KAboutData::License_GPL,
+    ki18n("(c) 1997, Bernd Johannes Wuebben\n"
     "(c) 2001, Chris Howells\n"
     "(c) 2002, Adriaan de Groot\n"
-    "(c) 2004, 2005, Nicolas Goutte",
-    I18N_NOOP("KFloppy helps you format floppies with the filesystem of your choice.")
+    "(c) 2004, 2005, Nicolas Goutte"),
+    ki18n("KFloppy helps you format floppies with the filesystem of your choice.")
     );
 
-  aboutData.addAuthor("Bernd Johannes Wuebben", I18N_NOOP("Author and former maintainer"), "wuebben@kde.org");
-  aboutData.addCredit("Chris Howells", I18N_NOOP("User interface re-design"), "howells@kde.org");
-  aboutData.addCredit("Adriaan de Groot", I18N_NOOP("Add BSD support"), "groot@kde.org");
-  aboutData.addCredit("Nicolas Goutte", I18N_NOOP("Make KFloppy work again for KDE 3.4"), "goutte@kde.org");
+  aboutData.addAuthor(ki18n("Bernd Johannes Wuebben"), ki18n("Author and former maintainer"), "wuebben@kde.org");
+  aboutData.addCredit(ki18n("Chris Howells"), ki18n("User interface re-design"), "howells@kde.org");
+  aboutData.addCredit(ki18n("Adriaan de Groot"), ki18n("Add BSD support"), "groot@kde.org");
+  aboutData.addCredit(ki18n("Nicolas Goutte"), ki18n("Make KFloppy work again for KDE 3.4"), "goutte@kde.org");
   
   KCmdLineArgs::init( argc, argv, &aboutData );
+
+  KCmdLineOptions options;
+  options.add("+[device]", ki18n("Default device"));
   KCmdLineArgs::addCmdLineOptions( options );
 
   KCmdLineArgs *args = KCmdLineArgs::parsedArgs();
