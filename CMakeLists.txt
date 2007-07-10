@@ -7,7 +7,6 @@ project(kfloppy)
 
 set(kfloppy_SRCS main.cpp format.cpp floppy.cpp )
 
-kde4_automoc(${kfloppy_SRCS})
 
 kde4_add_executable(kfloppy ${kfloppy_SRCS})
 
