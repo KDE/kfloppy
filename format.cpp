@@ -146,7 +146,7 @@ void KFActionQueue::queue(KFAction *p)
 	}
 	else
 	{
-		kDebug(KFAREA) << "Running action " << next->objectName() << endl;
+		kDebug(KFAREA) << "Running action " << next->objectName() ;
 		QObject::connect(next,SIGNAL(done(KFAction *,bool)),
 			this,SLOT(actionDone(KFAction *,bool)));
 		// Propagate signals
@@ -304,7 +304,7 @@ bool FloppyAction::configureDevice(int drive,int density)
 	{
 		if (access(*devices,W_OK)>=0)
 		{
-			kDebug(KFAREA) << "Found device " << *devices << endl;
+			kDebug(KFAREA) << "Found device " << *devices ;
 			devicename=*devices;
 			break;
 		}
@@ -359,7 +359,7 @@ void FloppyAction::processStdOut(K3Process *, char *b, int l)
 {
 	Q_UNUSED(b);
 	Q_UNUSED(l);
-	kDebug(KFAREA) << "stdout:" << QString::fromLatin1(b,l) << endl;
+	kDebug(KFAREA) << "stdout:" << QString::fromLatin1(b,l) ;
 }
 
 void FloppyAction::processStdErr(K3Process *p, char *b, int l)
@@ -557,7 +557,7 @@ void FDFormat::processStdOut(K3Process *, char *b, int l)
 DDZeroOut::DDZeroOut(QObject *p) :
     FloppyAction(p)
 {
-    kDebug(KFAREA) << (__PRETTY_FUNCTION__) << endl;
+    kDebug(KFAREA) << (__PRETTY_FUNCTION__) ;
     theProcessName = QString::fromLatin1("dd");
     setObjectName("DD");
 }
@@ -570,7 +570,7 @@ DDZeroOut::DDZeroOut(QObject *p) :
 
 /* virtual */ void DDZeroOut::exec()
 {
-    kDebug(KFAREA) << (__PRETTY_FUNCTION__) << endl;
+    kDebug(KFAREA) << (__PRETTY_FUNCTION__) ;
 
     if ( deviceName.isEmpty() )
     {
@@ -604,11 +604,11 @@ DDZeroOut::DDZeroOut(QObject *p) :
 
 void DDZeroOut::processDone(K3Process *p)
 {
-    kDebug(KFAREA) << (__PRETTY_FUNCTION__) << endl;
+    kDebug(KFAREA) << (__PRETTY_FUNCTION__) ;
 
     if (p!=theProcess)
     {
-            kDebug(KFAREA) << "Strange process exited." << endl;
+            kDebug(KFAREA) << "Strange process exited." ;
             return;
     }
 
@@ -722,7 +722,7 @@ void FATFilesystem::processStdOut(K3Process *, char *b, int l)
     // ### TODO: do some checks
 #elif defined(ANY_LINUX)
     QString s ( QString::fromLatin1( b, l ) );
-    kDebug(KFAREA) << s << endl;
+    kDebug(KFAREA) << s ;
     if (s.contains("mounted file system")) // "/dev/fd0 contains a mounted file system
     {
         emit status(i18n("Floppy is mounted.\nYou need to unmount the floppy first."),-1);
@@ -888,7 +888,7 @@ void Ext2Filesystem::processStdOut(K3Process *, char *b, int l)
     // ### TODO: do some checks
 #elif defined(ANY_LINUX)
     QString s ( QString::fromLatin1( b, l ) );
-    kDebug(KFAREA) << s << endl;
+    kDebug(KFAREA) << s ;
     if (s.contains("mounted")) // "/dev/fd0 is mounted; will not make a filesystem here!"
     {
         emit status(i18n("Floppy is mounted.\nYou need to unmount the floppy first."),-1);
@@ -979,7 +979,7 @@ void MinixFilesystem::exec()
 void MinixFilesystem::processStdOut(K3Process *, char *b, int l)
 {
     QString s ( QString::fromLatin1( b, l ) );
-    kDebug(KFAREA) << s << endl;
+    kDebug(KFAREA) << s ;
     if (s.contains("mounted")) // "mkfs.minix: /dev/fd0 is mounted; will not make a filesystem here!"
     {
         emit status(i18n("Floppy is mounted.\nYou need to unmount the floppy first."),-1);

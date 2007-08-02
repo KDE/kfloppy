@@ -672,7 +672,7 @@ void FloppyData::format(){
 
 void FloppyData::formatStatus(const QString &s,int p)
 {
-    kDebug(2002) << "FloppyData::formatStatus: " << s << " : "  << p << endl;
+    kDebug(2002) << "FloppyData::formatStatus: " << s << " : "  << p ;
 	if (!s.isEmpty())
         {
             const QString oldText ( frame->text() );

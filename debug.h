@@ -39,8 +39,8 @@
 #define KFAREA		(2002)
 
 #ifndef NDEBUG
-#define DEBUGSETUP	kDebug(KFAREA) << (__PRETTY_FUNCTION__) << endl
-#define DEBUGS(a)	kDebug(KFAREA) << "  " << a << endl
+#define DEBUGSETUP	kDebug(KFAREA) << (__PRETTY_FUNCTION__) 
+#define DEBUGS(a)	kDebug(KFAREA) << "  " << a 
 #else
 #define DEBUGSETUP
 #define DEBUGS(a)
