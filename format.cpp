@@ -492,7 +492,7 @@ void FDFormat::processStdOut(K3Process *, char *b, int l)
                             "have selected a valid floppy drive."),-1);
                     return;
 		}
-		if (s.find("/dev/")>=0)
+		if (s.indexOf("/dev/")>=0)
 		{
 			emit status(s,-1);
 			return;
@@ -756,7 +756,7 @@ UFSFilesystem::UFSFilesystem(QObject *parent) :
 	DEBUGSETUP;
 	runtimeCheck();
 	theProcessName=newfs;
-	setName("UFSFilesystem");
+	setObjectName("UFSFilesystem");
 }
 
 /* static */ bool UFSFilesystem::runtimeCheck()
