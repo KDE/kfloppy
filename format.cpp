@@ -263,7 +263,7 @@ bool FloppyAction::configureDevice(int drive,int density)
 	const char *devicename = 0L;
 
 	deviceInfo=0L;
-	deviceName = QString::null;
+	deviceName = QString();
 
 	if ((drive<0) || (drive>1))
 	{
@@ -339,7 +339,7 @@ void FloppyAction::processDone(K3Process *p)
 	{
 	        if (p->exitStatus() == 0)
 	        {
-			emit status(QString::null,100);
+			emit status(QString::null,100);	//krazy:exclude=nullstrassign for old broken gcc
 			emit done(this,true);
 		}
 		else
@@ -474,7 +474,7 @@ void FDFormat::processStdOut(K3Process *, char *b, int l)
 	if (b[0]=='F')
 	{
 		formatTrackCount++;
-		emit status(QString::null,
+		emit status(QString::null,	//krazy:exclude=nullstrassign for old broken gcc
 			formatTrackCount * 100 / deviceInfo->tracks);
 	}
 	else if (b[0]=='E')
@@ -543,7 +543,7 @@ void FDFormat::processStdOut(K3Process *, char *b, int l)
             const int p = regexp.cap(1).toInt();
             if ((p>=0) && (p<deviceInfo->tracks))
             {
-                    emit status(QString::null,
+                    emit status(QString::null,	//krazy:exclude=nullstrassign for old broken gcc
                             p * 100 / deviceInfo->tracks);
             }
         }
@@ -618,7 +618,7 @@ void DDZeroOut::processDone(K3Process *p)
      *
      * ### TODO: really check if the exit is not on an other error and then abort the formatting
      */
-    emit status(QString::null,100);
+    emit status(QString::null,100);	//krazy:exclude=nullstrassign for old broken gcc
     emit done(this,true);
 }
 

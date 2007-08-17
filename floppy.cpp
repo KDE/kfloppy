@@ -552,7 +552,7 @@ void FloppyData::format(){
   setEnabled(false);
 
         // Erase text box
-        frame->setText( QString::null );
+        frame->setText( QString::null );	//krazy:exclude=nullstrassign for old broken gcc
 
     if ( !userDevice )
     {
