@@ -21,6 +21,8 @@
 
 */
 
+#include "floppy.h"
+#include "format.h"
 
 #include <QLayout>
 #include <QCheckBox>
@@ -52,9 +54,6 @@
 #include <kurl.h>
 #include <ktoolinvocation.h>
 #include <kglobal.h>
-
-#include "floppy.h"
-#include "format.h"
 
 FloppyData::FloppyData(QWidget * parent)
  : KDialog( parent ),
@@ -89,8 +88,8 @@ FloppyData::FloppyData(QWidget * parent)
         // Make the combo box editable, so that the user can enter a device name
         deviceComboBox->setEditable( true );
 
-        deviceComboBox->addItem(i18n("Primary"));
-	deviceComboBox->addItem(i18n("Secondary"));
+        deviceComboBox->addItem(i18nc("Primary floppy drive", "Primary"));
+	deviceComboBox->addItem(i18nc("Secondary floppy drive", "Secondary"));
 
 	const QString deviceWhatsThis = i18n("<qt>Select the floppy drive.</qt>");
 
@@ -340,7 +339,7 @@ FloppyData::FloppyData(QWidget * parent)
     if (!numFileSystems) {
         QString errorMessage;
         errorMessage += "<qt>";
-        errorMessage += i18n("KFloppy cannot find any of the needed programs for creating file systems; please check your installation.<br><br>Log:");
+        errorMessage += i18n("KFloppy cannot find any of the needed programs for creating file systems; please check your installation.<br /><br />Log:");
         errorMessage += "<br>";
         errorMessage += userFeedBack;
         errorMessage += "</qt>";
@@ -381,11 +380,11 @@ bool FloppyData::findDevice()
     // Note: this function does not handle user-given devices
 
   drive=-1;
-  if( deviceComboBox->currentText() == i18n("Primary") )
+  if( deviceComboBox->currentText() == i18nc("Primary floppy drive", "Primary") )
   {
     drive=0;
   }
-  else if( deviceComboBox->currentText() == i18n("Secondary") )
+  else if( deviceComboBox->currentText() == i18nc("Secondary floppy drive", "Secondary") )
   {
     drive=1;
   }
@@ -665,8 +664,6 @@ void FloppyData::format(){
 	}
 #endif
 
-
-
 	formatActions->exec();
 }
 
@@ -716,7 +713,6 @@ void FloppyData::writeSettings(){
 	config.writeEntry("Filesystem",filesystemconfig);
 	config.writeEntry("Verify",verifyconfig);
 	config.sync();
-
 }
 
 void FloppyData::readSettings(){
@@ -727,14 +723,13 @@ void FloppyData::readSettings(){
 	labelconfig = config.readEntry("CreateLabel",1);
 	labelnameconfig = config.readEntry( "Label", i18nc("Volume label, maximal 11 characters", "KDE Floppy") );
 	quickformatconfig = config.readEntry("QuickFormat",0);
-	driveconfig = config.readEntry( "FloppyDrive", i18n("Primary") );
+	driveconfig = config.readEntry( "FloppyDrive", i18nc("Primary floppy drive", "Primary") );
 #if defined(ANY_LINUX)
 	densityconfig = config.readEntry( "Density", i18n( "Auto-Detect" ) );
 #else
 	densityconfig = config.readEntry( "Density", i18n("3.5\" 1.44MB") );
 #endif
 	filesystemconfig = config.readEntry( "Filesystem", i18n("DOS") );
-
 }
 
 void FloppyData::setWidgets(){

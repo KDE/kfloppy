@@ -20,6 +20,7 @@
 
 */
 
+#include "format.h"
 
 #include <unistd.h>
 #include <stdlib.h>
@@ -31,8 +32,6 @@
 #include <k3process.h>
 #include <kdebug.h>
 #include <kstandarddirs.h>
-
-#include "format.h"
 
 static QString extPath = QString();
 
@@ -48,7 +47,6 @@ static QString extPath = QString();
 
 	return KGlobal::dirs()->findExe(e, extPath);
 }
-
 
 
 KFAction::KFAction(QObject *parent) :
@@ -155,8 +153,6 @@ void KFActionQueue::queue(KFAction *p)
 		QTimer::singleShot(0,next,SLOT(exec()));
 	}
 }
-
-
 
 
 // Here we have names of devices. The variable
@@ -623,7 +619,6 @@ void DDZeroOut::processDone(K3Process *p)
 }
 
 
-
 /* static */ QString FATFilesystem::newfs_fat = QString();
 
 FATFilesystem::FATFilesystem(QObject *parent) :
@@ -665,7 +660,6 @@ bool FATFilesystem::configure(bool v,bool l,const QString &lbl)
 void FATFilesystem::exec()
 {
 	DEBUGSETUP;
-
 
 	if (
 #ifdef ANY_BSD // BSD needs the deviceInfo for the block count
@@ -744,8 +738,6 @@ void FATFilesystem::processStdOut(K3Process *, char *b, int l)
 }
 
 
-
-
 #ifdef ANY_BSD
 
 /* static */ QString UFSFilesystem::newfs = QString();
@@ -804,7 +796,6 @@ void UFSFilesystem::exec()
 	}
 }
 #endif
-
 
 
 /* static */ QString Ext2Filesystem::newfs = QString();
