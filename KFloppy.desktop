@@ -2,6 +2,7 @@
 Encoding=UTF-8
 GenericName=Floppy Formatter
 GenericName[af]=Sagteskyf Formateerder
+GenericName[ar]=مهئ الأقراص المرنة
 GenericName[br]=Furmader pladennig
 GenericName[ca]=Formatador de disquet
 GenericName[cs]=Formátovač disket
@@ -59,6 +60,7 @@ GenericName[zh_CN]=软盘格式化程序
 GenericName[zh_TW]=軟碟格式化程式
 Name=KFloppy
 Name[af]=Kfloppie
+Name[ar]=كفلوبي
 Name[eo]=Disketingo
 Name[lv]=KMīkstnis
 Name[ne]=केडीई फ्लपी
