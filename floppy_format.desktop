@@ -48,5 +48,6 @@ Name[zh_TW]=格式化
 Encoding=UTF-8
 Actions=Format;
 ServiceTypes=media/floppy_unmounted,media/floppy5_unmounted
+Type=Service
 X-KDE-Priority=TopLevel
 X-KDE-MediaNotifierHide=true
