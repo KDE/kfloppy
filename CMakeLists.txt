@@ -18,7 +18,7 @@ install(TARGETS kfloppy  DESTINATION ${BIN_INSTALL_DIR} )
 ########### install files ###############
 
 install( FILES KFloppy.desktop  DESTINATION ${XDG_APPS_INSTALL_DIR})
-install( FILES floppy_format.desktop  DESTINATION ${DATA_INSTALL_DIR}/konqueror/servicemenus)
+install( FILES floppy_format.desktop  DESTINATION ${SERVICES_INSTALL_DIR}/KonqPopupMenu)
 
 kde4_install_icons( ${ICON_INSTALL_DIR}   )
 
