@@ -1,5 +1,4 @@
 [Desktop Entry]
-Encoding=UTF-8
 GenericName=Floppy Formatter
 GenericName[af]=Sagteskyf Formateerder
 GenericName[ar]=مهئ الأقراص المرنة
@@ -75,10 +74,9 @@ Name[wa]=KPlakete
 Name[x-test]=xxKFloppyxx
 Name[zh_TW]=KDE 軟碟
 MimeType=
-DocPath=kfloppy/index.html
+X-DocPath=kfloppy/index.html
 Exec=kfloppy -caption "%c"
 Icon=kfloppy
-Path=
 Type=Application
 Terminal=false
 X-KDE-StartupNotify=true
