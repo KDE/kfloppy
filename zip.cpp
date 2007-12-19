@@ -31,7 +31,6 @@
 #include "zip.moc"
 
 #include <QCheckBox>
-#include <QLayout>
 #include <QTimer>
 #include <QGridLayout>
 

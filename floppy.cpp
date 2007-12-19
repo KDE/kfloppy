@@ -24,13 +24,11 @@
 #include "floppy.h"
 #include "format.h"
 
-#include <QLayout>
 #include <QCheckBox>
 #include <QLabel>
 #include <qcursor.h>
 #include <qradiobutton.h>
 #include <q3buttongroup.h>
-#include <QtDBus>
 //Added by qt3to4:
 #include <QVBoxLayout>
 #include <QFrame>
@@ -38,7 +36,7 @@
 #include <QGridLayout>
 #include <QKeyEvent>
 #include <QCloseEvent>
-
+#include <QtDBus>
 #include <kconfig.h>
 
 #include <kmessagebox.h>
