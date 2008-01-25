@@ -36,7 +36,7 @@
 #include <QGridLayout>
 #include <QKeyEvent>
 #include <QCloseEvent>
-#include <QtDBus>
+#include <QtDBus/QtDBus>
 #include <kconfig.h>
 
 #include <kmessagebox.h>

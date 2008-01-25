@@ -553,7 +553,7 @@ void FDFormat::processStdOut(K3Process *, char *b, int l)
 DDZeroOut::DDZeroOut(QObject *p) :
     FloppyAction(p)
 {
-    kDebug(KFAREA) << (__PRETTY_FUNCTION__) ;
+    kDebug(KFAREA) << k_funcinfo ;
     theProcessName = QString::fromLatin1("dd");
     setObjectName("DD");
 }
@@ -566,7 +566,7 @@ DDZeroOut::DDZeroOut(QObject *p) :
 
 /* virtual */ void DDZeroOut::exec()
 {
-    kDebug(KFAREA) << (__PRETTY_FUNCTION__) ;
+    kDebug(KFAREA) << k_funcinfo ;
 
     if ( deviceName.isEmpty() )
     {
@@ -600,7 +600,7 @@ DDZeroOut::DDZeroOut(QObject *p) :
 
 void DDZeroOut::processDone(K3Process *p)
 {
-    kDebug(KFAREA) << (__PRETTY_FUNCTION__) ;
+    kDebug(KFAREA) << k_funcinfo ;
 
     if (p!=theProcess)
     {
