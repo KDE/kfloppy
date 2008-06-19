@@ -531,7 +531,7 @@ void FloppyData::format(){
     else if ( userDevice )
     {
         // The user has selected full formatting on a user-given device. That is not supported yet!
-        KMessageBox::error( this, "Full formatting of a user-given device is not possible!" );
+        KMessageBox::error( this, i18n("Full formatting of a user-given device is not possible!") );
         return;
     }
     else
