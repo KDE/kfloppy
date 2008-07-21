@@ -42,7 +42,8 @@ int main( int argc, char *argv[] )
     "(c) 2001, Chris Howells\n"
     "(c) 2002, Adriaan de Groot\n"
     "(c) 2004, 2005, Nicolas Goutte"),
-    ki18n("KFloppy helps you format floppies with the filesystem of your choice.")
+    ki18n("KFloppy helps you format floppies with the filesystem of your choice."),
+    "http://utils.kde.org/projects/kfloppy"
     );
 
   aboutData.addAuthor(ki18n("Bernd Johannes Wuebben"), ki18n("Author and former maintainer"), "wuebben@kde.org");
