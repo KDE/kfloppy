@@ -159,7 +159,7 @@ private:
  * Similarly, flags are internal too.
  */
 
-typedef struct { const char **devices;
+typedef struct { const char * const * devices;
 	int drive;
 	int blocks;
 	int tracks;
@@ -209,7 +209,7 @@ public:
         bool configureDevice( const QString& newDeviceName );
         
 protected:
-	fdinfo *deviceInfo;      ///< Configuration info (Pointer into list of "/dev/..." entries)
+	const fdinfo *deviceInfo;      ///< Configuration info (Pointer into list of "/dev/..." entries)
 	QString deviceName;  ///< Name of the device
 
 protected slots:
