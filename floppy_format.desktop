@@ -3,6 +3,7 @@ Exec=kfloppy %u
 Icon=kfloppy
 Name=Format
 Name[ar]=تهيئة
+Name[bg]=Форматиране
 Name[br]=Furmadiñ
 Name[ca]=Dona format
 Name[cs]=Formátovat
