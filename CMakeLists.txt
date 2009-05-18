@@ -1,10 +1,6 @@
 project(kfloppy)
 
 
-
-
-########### next target ###############
-
 set(kfloppy_SRCS main.cpp format.cpp floppy.cpp )
 
 
