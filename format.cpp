@@ -421,7 +421,7 @@ bool FDFormat::configure(bool v)
 		return;
 	}
 
-	if (theProcess) delete theProcess;
+	delete theProcess;
 	theProcess = new K3Process;
 
 	formatTrackCount=0;
@@ -679,7 +679,7 @@ void FATFilesystem::exec()
 		return;
 	}
 
-	if (theProcess) delete theProcess;
+	delete theProcess;
 	K3Process *p = theProcess = new K3Process;
 
 	*p << newfs_fat;
@@ -778,7 +778,7 @@ void UFSFilesystem::exec()
 		return;
 	}
 
-	if (theProcess) delete theProcess;
+	delete theProcess;
 	K3Process *p = theProcess = new K3Process;
 
 	*p << newfs;
@@ -856,7 +856,7 @@ void Ext2Filesystem::exec()
 		return;
 	}
 
-	if (theProcess) delete theProcess;
+	delete theProcess;
 	K3Process *p = theProcess = new K3Process;
 
 	*p << newfs;
@@ -950,7 +950,7 @@ void MinixFilesystem::exec()
 		return;
 	}
 
-	if (theProcess) delete theProcess;
+	delete theProcess;
 	K3Process *p = theProcess = new K3Process;
 
 	*p << newfs;
