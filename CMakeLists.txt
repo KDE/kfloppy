@@ -14,7 +14,10 @@ install(TARGETS kfloppy  ${INSTALL_TARGETS_DEFAULT_ARGS} )
 ########### install files ###############
 
 install( FILES KFloppy.desktop  DESTINATION ${XDG_APPS_INSTALL_DIR})
-install( FILES floppy_format.desktop  DESTINATION ${SERVICES_INSTALL_DIR}/ServiceMenus)
+
+# The mimetypes used in this servicemenu (e.g. floppy_unmounted) don't exist anymore.
+# This needs to be done differently.
+#install( FILES floppy_format.desktop  DESTINATION ${SERVICES_INSTALL_DIR}/ServiceMenus)
 
 kde4_install_icons( ${ICON_INSTALL_DIR}   )
 
