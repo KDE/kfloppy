@@ -27,8 +27,8 @@
 #include <QCheckBox>
 #include <QLabel>
 #include <qcursor.h>
+#include <qgroupbox.h>
 #include <qradiobutton.h>
-#include <q3buttongroup.h>
 //Added by qt3to4:
 #include <QVBoxLayout>
 #include <QFrame>
