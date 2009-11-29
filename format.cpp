@@ -259,7 +259,7 @@ bool FloppyAction::configureDevice(int drive,int density)
 	const char *devicename = 0L;
 
 	deviceInfo=0L;
-	deviceName = QString();
+	deviceName.clear();
 
 	if ((drive<0) || (drive>1))
 	{
