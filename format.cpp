@@ -39,7 +39,7 @@ static QString extPath = QString();
 {
 	if (extPath.isEmpty())
 	{
-		QString path = getenv("PATH");
+		QString path = qgetenv("PATH");
 		if (!path.isEmpty()) path.append(":");
 		path.append("/usr/sbin:/sbin");
 		extPath = path;
