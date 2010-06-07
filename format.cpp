@@ -113,10 +113,10 @@ void KFActionQueue::queue(KFAction *p)
 
 	if (p)
 	{
-		if (d->list.first()==p)
+		if (!d->list.isEmpty() && d->list.first()==p)
 		{
 			d->list.removeFirst();
-			// delete p;           /* auto-delete */
+			delete p;
 		}
 		else
 		{
@@ -137,7 +137,7 @@ void KFActionQueue::queue(KFAction *p)
 		return;
 	}
 
-	KFAction *next = d->list.first();
+	KFAction *next = d->list.isEmpty() ? 0 : d->list.first();
 	if (!next)
 	{
 		emit done(this,true);
