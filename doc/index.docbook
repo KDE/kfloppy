@@ -62,8 +62,8 @@
 <!-- TRANS:ROLES_OF_TRANSLATORS -->
 </authorgroup>
 
-<date>2005-06-01</date>
-<releaseinfo>3.5</releaseinfo>
+<date>2010-07-29</date>
+<releaseinfo>4.5</releaseinfo>
 
 <copyright>
 <year>2000</year>
@@ -336,32 +336,11 @@ disk with important data on it.</para></note>
 <varlistentry>
 <term><guibutton>Help</guibutton></term>
 <listitem>
-<para>This invokes the &kde; help system starting at the &kfloppy; help pages
-(this document).</para>
+<para>This invokes a popup menu with actions to open this handbook,
+report a bug, switch the application language and display author and version of
+&kfloppy; and &kde;.</para>
 </listitem>
 </varlistentry>
-
-<varlistentry>
-<term><guibutton>Report Bug</guibutton></term>
-<listitem>
-<para>Report a problem to the &kde; team.</para>
-</listitem> 
-</varlistentry>
-
-<varlistentry>
-<term><guibutton>About KFloppy</guibutton></term>
-<listitem>
-<para>This displays version and author information of &kfloppy;.</para>
-</listitem> 
-</varlistentry>
-
-<varlistentry>
-<term><guibutton>About KDE</guibutton></term>
-<listitem>
-<para>This displays version and author information of &kde;.</para>
-</listitem> 
-</varlistentry>
-
 
 <varlistentry>
 <term><guibutton>Quit</guibutton></term>
