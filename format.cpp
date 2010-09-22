@@ -388,7 +388,7 @@ FDFormat::FDFormat(QObject *p) :
 {
 	DEBUGSETUP;
 	theProcessName = QString::fromLatin1("fdformat");
-	setObjectName("FDFormat");
+	setObjectName( QLatin1String("FDFormat" ));
 }
 
 /* static */ bool FDFormat::runtimeCheck()
@@ -555,7 +555,7 @@ DDZeroOut::DDZeroOut(QObject *p) :
 {
     kDebug(KFAREA) << k_funcinfo ;
     theProcessName = QString::fromLatin1("dd");
-    setObjectName("DD");
+    setObjectName( QLatin1String("DD" ));
 }
 
 /* static */ bool DDZeroOut::runtimeCheck()
@@ -627,7 +627,7 @@ FATFilesystem::FATFilesystem(QObject *parent) :
 	DEBUGSETUP;
 	runtimeCheck();
 	theProcessName=newfs_fat;
-	setObjectName("FATFilesystem");
+	setObjectName( QLatin1String("FATFilesystem" ));
 }
 
 /* static */ bool FATFilesystem::runtimeCheck()
@@ -748,7 +748,7 @@ UFSFilesystem::UFSFilesystem(QObject *parent) :
 	DEBUGSETUP;
 	runtimeCheck();
 	theProcessName=newfs;
-	setObjectName("UFSFilesystem");
+	setObjectName( QLatin1String("UFSFilesystem" ));
 }
 
 /* static */ bool UFSFilesystem::runtimeCheck()
@@ -806,7 +806,7 @@ Ext2Filesystem::Ext2Filesystem(QObject *parent) :
 	DEBUGSETUP;
 	runtimeCheck();
 	theProcessName="mke2fs";
-	setObjectName("Ext2Filesystem");
+	setObjectName( QLatin1String("Ext2Filesystem" ));
 }
 
 /* static */ bool Ext2Filesystem::runtimeCheck()
@@ -904,7 +904,7 @@ MinixFilesystem::MinixFilesystem(QObject *parent) :
 	DEBUGSETUP;
 	runtimeCheck();
 	theProcessName="mkfs.minix";
-	setObjectName("Minix2Filesystem");
+	setObjectName( QLatin1String("Minix2Filesystem" ));
 }
 
 /* static */ bool MinixFilesystem::runtimeCheck()

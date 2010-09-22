@@ -203,20 +203,20 @@ FloppyData::FloppyData(QWidget * parent)
 
         quick = new QRadioButton( i18n( "Q&uick format" ), buttongroup );
         buttonGroupLayout->addWidget(quick);
-        quick->setObjectName( "RadioButton_2" );
+        quick->setObjectName( QLatin1String( "RadioButton_2" ) );
         quick->setWhatsThis(
             i18n("<qt>Quick format is only a high-level format:"
                 " it creates only a file system.</qt>") );
 
         zerooutformat = new QRadioButton( i18n( "&Zero out and quick format"), buttongroup );
         buttonGroupLayout->addWidget(zerooutformat);
-        zerooutformat->setObjectName( "RadioButton_ZeroOutFormat" );
+        zerooutformat->setObjectName( QLatin1String( "RadioButton_ZeroOutFormat" ) );
         zerooutformat->setWhatsThis(
             i18n("<qt>This first erases the floppy by writing zeros and then it creates the file system.</qt>") );
 
         fullformat = new QRadioButton( i18n( "Fu&ll format"), buttongroup );
         buttonGroupLayout->addWidget(fullformat);
-        fullformat->setObjectName( "RadioButton_3" );
+        fullformat->setObjectName( QLatin1String( "RadioButton_3" ) );
         fullformat->setWhatsThis(
             i18n("Full format is a low-level and high-level format. It erases everything on the disk.") );
 
@@ -247,7 +247,7 @@ FloppyData::FloppyData(QWidget * parent)
         }
 
 	verifylabel = new QCheckBox( this );
-	verifylabel->setObjectName( "CheckBox_Integrity" );
+	verifylabel->setObjectName( QLatin1String( "CheckBox_Integrity" ) );
 	verifylabel->setText(i18n( "&Verify integrity" ));
 	verifylabel->setChecked(true);
 	v1->addWidget( verifylabel, Qt::AlignLeft );
@@ -256,7 +256,7 @@ FloppyData::FloppyData(QWidget * parent)
             " Please note that the floppy will be checked twice if you have selected full formatting.</qt>") );
 
 	labellabel = new QCheckBox( this );
-	labellabel->setObjectName( "Checkbox_Label" );
+	labellabel->setObjectName( QLatin1String( "Checkbox_Label" ) );
 	labellabel->setText(i18n( "Volume la&bel:") );
 	labellabel->setChecked(true);
         v1->addWidget( labellabel, Qt::AlignLeft );
@@ -311,7 +311,7 @@ FloppyData::FloppyData(QWidget * parent)
         ml->addSpacing( 10 );
 
 	frame = new QLabel( widget );
-        frame->setObjectName( "NewsWindow" );
+        frame->setObjectName( QLatin1String( "NewsWindow" ) );
 	frame->setFrameStyle(QFrame::Panel | QFrame::Sunken);
         frame->setWordWrap( true );
         frame->setWhatsThis(
