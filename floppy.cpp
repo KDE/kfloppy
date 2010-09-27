@@ -147,7 +147,7 @@ FloppyData::FloppyData(QWidget * parent)
         else {
             userFeedBack += i18nc( "Linux", "Program mkdosfs <b>not found</b>. MSDOS formatting <b>not available</b>." );
         }
-        userFeedBack += "<br>";
+        userFeedBack += QLatin1String( "<br>" );
         if (Ext2Filesystem::runtimeCheck()) {
             filesystemComboBox->addItem(i18n("ext2"));
             ++numFileSystems;
@@ -156,7 +156,7 @@ FloppyData::FloppyData(QWidget * parent)
         else {
             userFeedBack += i18n( "Program mke2fs <b>not found</b>. Ext2 formatting <b>not available</b>" );
         }
-        userFeedBack += "<br>";
+        userFeedBack += QLatin1String( "<br>" );
         if (MinixFilesystem::runtimeCheck()) {
             filesystemComboBox->addItem(i18n("Minix"));
             ++numFileSystems;
@@ -176,7 +176,7 @@ FloppyData::FloppyData(QWidget * parent)
         else {
             userFeedBack += i18nc( "BSD", "Program newfs_msdos <b>not found</b>. MSDOS formatting <b>not available</b>." );
         }
-        userFeedBack += "<br>";
+        userFeedBack += QLatin1String( "<br>" );
         if (UFSFilesystem::runtimeCheck()) {
             filesystemComboBox->addItem(i18n("UFS"));
             ++numFileSystems;
@@ -185,7 +185,7 @@ FloppyData::FloppyData(QWidget * parent)
         else {
             userFeedBack += i18nc( "BSD", "Program newfs <b>not found</b>. UFS formatting <b>not available</b>." );
         }
-        userFeedBack += "<br>";
+        userFeedBack += QLatin1String( "<br>" );
         if (Ext2Filesystem::runtimeCheck()) {
             filesystemComboBox->addItem(i18n("ext2"));
             ++numFileSystems;
@@ -223,7 +223,7 @@ FloppyData::FloppyData(QWidget * parent)
         v1->addWidget( buttongroup );
 
         // ### TODO: we need some user feedback telling why full formatting is disabled.
-        userFeedBack += "<br>";
+        userFeedBack += QLatin1String( "<br>" );
         m_canLowLevel = FDFormat::runtimeCheck();
         if (m_canLowLevel){
             fullformat->setChecked(true);
@@ -234,7 +234,7 @@ FloppyData::FloppyData(QWidget * parent)
             quick->setChecked(true);
             userFeedBack += i18n( "Program fdformat <b>not found</b>. Full formatting <b>disabled</b>." );
         }
-        userFeedBack += "<br>";
+        userFeedBack += QLatin1String( "<br>" );
         m_canZeroOut = DDZeroOut::runtimeCheck();
         if ( m_canZeroOut )
         {
@@ -318,8 +318,8 @@ FloppyData::FloppyData(QWidget * parent)
             i18n("<qt>This is the status window, where error messages are displayed.</qt>") );
 
         QString frameText( userFeedBack );
-        frameText.prepend( "<qt>" );
-        frameText.append( "</qt>" );
+        frameText.prepend( QLatin1String( "<qt>" ) );
+        frameText.append( QLatin1String( "</qt>" ) );
         frame->setText( frameText );
 
         ml->addWidget( frame );
@@ -336,11 +336,11 @@ FloppyData::FloppyData(QWidget * parent)
 
     if (!numFileSystems) {
         QString errorMessage;
-        errorMessage += "<qt>";
+        errorMessage += QLatin1String( "<qt>" );
         errorMessage += i18n("KFloppy cannot find any of the needed programs for creating file systems; please check your installation.<br /><br />Log:");
-        errorMessage += "<br>";
+        errorMessage += QLatin1String( "<br>" );
         errorMessage += userFeedBack;
-        errorMessage += "</qt>";
+        errorMessage += QLatin1String( "</qt>" );
         KMessageBox::error( this, errorMessage );
     }
 }
@@ -419,11 +419,11 @@ bool FloppyData::setInitialDevice(const QString& dev)
   QString newDevice = dev;
 
   KUrl url( newDevice );
-  if( url.isValid() && ( url.protocol() == "media" || url.protocol() == "system" ) ) {
+  if( url.isValid() && ( url.protocol() == QLatin1String( "media" ) || url.protocol() == QLatin1String( "system" ) ) ) {
     QString name = url.fileName();
 
-    QDBusInterface mediamanager( "org.kde.kded", "/modules/mediamanager", "org.kde.MediaManager" );
-    QDBusReply<QStringList> reply = mediamanager.call( "properties", name );
+    QDBusInterface mediamanager( QLatin1String( "org.kde.kded" ), QLatin1String( "/modules/mediamanager" ), QLatin1String( "org.kde.MediaManager" ) );
+    QDBusReply<QStringList> reply = mediamanager.call( QLatin1String( "properties" ), name );
     if (!reply.isValid()) {
       kError() << "Invalid reply from mediamanager" << endl;
     } else {
@@ -433,9 +433,9 @@ bool FloppyData::setInitialDevice(const QString& dev)
   }
 
   int drive = -1;
-  if ( newDevice.startsWith("/dev/fd0") )
+  if ( newDevice.startsWith(QLatin1String( "/dev/fd0" )) )
     drive = 0;
-  if ( newDevice.startsWith("/dev/fd1"))
+  if ( newDevice.startsWith(QLatin1String( "/dev/fd1" )))
     drive = 1;
 
   // ### TODO user given devices
@@ -507,7 +507,7 @@ void FloppyData::format(){
   frame->clear();
 
     const QString currentComboBoxDevice (  deviceComboBox->currentText() );
-    const bool userDevice = ( currentComboBoxDevice.startsWith ("/dev/") );
+    const bool userDevice = ( currentComboBoxDevice.startsWith (QLatin1String( "/dev/" )) );
 
 #ifdef ANY_BSD
     if ( userDevice && filesystemComboBox->currentText() != i18n("UFS"))
@@ -677,7 +677,7 @@ void FloppyData::formatStatus(const QString &s,int p)
             }
             else
             {
-                frame->setText( oldText + '\n' + s );
+                frame->setText( oldText + QLatin1Char( '\n' ) + s );
             }
         }
 

@@ -39,9 +39,9 @@ static QString extPath = QString();
 {
 	if (extPath.isEmpty())
 	{
-		QString path = qgetenv("PATH");
-		if (!path.isEmpty()) path.append(":");
-		path.append("/usr/sbin:/sbin");
+            QString path = QLatin1String( qgetenv("PATH") );
+		if (!path.isEmpty()) path.append(QLatin1String( ":" ));
+		path.append(QLatin1String( "/usr/sbin:/sbin" ));
 		extPath = path;
 	}
 
@@ -310,12 +310,12 @@ bool FloppyAction::configureDevice(int drive,int density)
 	{
 		const QString str = i18n(
 			"Cannot access %1\nMake sure that the device exists and that "
-			"you have write permission to it.", deviceinfo->devices[0]);
+			"you have write permission to it.",QLatin1String( deviceinfo->devices[0] ));
 		emit status(str,-1);
 		return false;
 	}
 
-	deviceName = devicename;
+	deviceName = QLatin1String( devicename );
 	deviceInfo = deviceinfo;
 
 	return true;
@@ -374,7 +374,7 @@ bool FloppyAction::startProcess()
 	connect(theProcess,SIGNAL(receivedStderr(K3Process *,char *,int)),
 		this,SLOT(processStdErr(K3Process *,char *,int)));
 
-        theProcess->setEnvironment( "LC_ALL", "C" ); // We need the untranslated output of the tool
+        theProcess->setEnvironment( QLatin1String( "LC_ALL" ), QLatin1String( "C" ) ); // We need the untranslated output of the tool
 	return theProcess->start(K3Process::NotifyOnExit,
 		K3Process::AllOutput);
 }
@@ -393,7 +393,7 @@ FDFormat::FDFormat(QObject *p) :
 
 /* static */ bool FDFormat::runtimeCheck()
 {
-	fdformatName = findExecutable("fdformat");
+	fdformatName = findExecutable(QLatin1String( "fdformat" ));
 	return (!fdformatName.isEmpty());
 }
 
@@ -431,13 +431,13 @@ bool FDFormat::configure(bool v)
 	// Common to Linux and BSD, others may differ
 	if (!doVerify)
 	{
-		*theProcess << "-n";
+		*theProcess << QLatin1String( "-n" );
 	}
 
 #ifdef ANY_BSD
 	*theProcess
-		<< "-y"
-		<< "-f"
+		<< QLatin1String( "-y" )
+		<< QLatin1String( "-f" )
 		<< QString::number(deviceInfo->blocks) ;
 #elif defined(ANY_LINUX)
 	// No Linux-specific flags
@@ -480,7 +480,7 @@ void FDFormat::processStdOut(K3Process *, char *b, int l)
 	else
 	{
 		s = QString::fromLatin1(b,l);
-		if (s.contains("ioctl(FD_FORM)"))
+		if (s.contains(QLatin1String( "ioctl(FD_FORM)" )))
 		{
                     emit status (i18n(
                             "Cannot access floppy or floppy drive.\n"
@@ -488,7 +488,7 @@ void FDFormat::processStdOut(K3Process *, char *b, int l)
                             "have selected a valid floppy drive."),-1);
                     return;
 		}
-		if (s.indexOf("/dev/")>=0)
+		if (s.indexOf(QLatin1String( "/dev/" ))>=0)
 		{
 			emit status(s,-1);
 			return;
@@ -498,8 +498,8 @@ void FDFormat::processStdOut(K3Process *, char *b, int l)
 #elif defined(ANY_LINUX)
 	s = QString::fromLatin1(b,l);
 	DEBUGS(s);
-        QRegExp regexp( "([0-9]+)" );
-        if ( s.startsWith( "bad data at cyl" ) || s.contains( "Problem reading cylinder" ) )
+        QRegExp regexp( QLatin1String( "([0-9]+)" ) );
+        if ( s.startsWith( QLatin1String( "bad data at cyl" ) ) || s.contains( QLatin1String( "Problem reading cylinder" ) ) )
         {
             if ( regexp.indexIn( s ) > -1 )
             {
@@ -513,7 +513,7 @@ void FDFormat::processStdOut(K3Process *, char *b, int l)
             }
             return;
         }
-	else if (s.contains("ioctl(FDFMTBEG)"))
+	else if (s.contains(QLatin1String( "ioctl(FDFMTBEG)" )))
 	{
             emit status (i18n(
                     "Cannot access floppy or floppy drive.\n"
@@ -521,13 +521,13 @@ void FDFormat::processStdOut(K3Process *, char *b, int l)
                     "have selected a valid floppy drive."),-1);
             return;
 	}
-        else if (s.contains("busy")) // "Device or resource busy"
+        else if (s.contains(QLatin1String( "busy" ))) // "Device or resource busy"
         {
             emit status(i18n("Device busy.\nPerhaps you need to unmount the floppy first."),-1);
             return;
         }
         // Be careful to leave "iotcl" as last before checking numbers
-        else if (s.contains("ioctl"))
+        else if (s.contains(QLatin1String( "ioctl" )))
         {
             emit status(i18n("Low-level format error: %1", s),-1);
             return;
@@ -560,7 +560,7 @@ DDZeroOut::DDZeroOut(QObject *p) :
 
 /* static */ bool DDZeroOut::runtimeCheck()
 {
-    m_ddName = findExecutable("dd");
+    m_ddName = findExecutable(QLatin1String( "dd" ));
     return (!m_ddName.isEmpty());
 }
 
@@ -587,8 +587,8 @@ DDZeroOut::DDZeroOut(QObject *p) :
 
     *theProcess << m_ddName ;
 
-    *theProcess << "if=/dev/zero" ;
-    *theProcess << "of="+deviceName;
+    *theProcess << QLatin1String( "if=/dev/zero" ) ;
+    *theProcess << QLatin1String( "of=" )+deviceName;
 
     if ( !startProcess() )
     {
@@ -635,9 +635,9 @@ FATFilesystem::FATFilesystem(QObject *parent) :
 	DEBUGSETUP;
 
 #ifdef ANY_BSD
-	newfs_fat = findExecutable("newfs_msdos");
+	newfs_fat = findExecutable(QLatin1String( "newfs_msdos" ));
 #elif defined(ANY_LINUX)
-	newfs_fat = findExecutable("mkdosfs");
+	newfs_fat = findExecutable(QLatin1String( "mkdosfs" ));
 #else
 	return false;
 #endif
@@ -684,20 +684,20 @@ void FATFilesystem::exec()
 
 	*p << newfs_fat;
 #ifdef ANY_BSD
-	*p << "-f" << QString::number(deviceInfo->blocks);
+	*p << QLatin1String( "-f" ) << QString::number(deviceInfo->blocks);
 	if (doLabel)
 	{
-		*p << "-L" << label ;
+		*p << QLatin1String( "-L" ) << label ;
 	}
 #else
 #ifdef ANY_LINUX
 	if (doLabel)
 	{
-		*p << "-n" << label ;
+		*p << QLatin1String( "-n" ) << label ;
 	}
 	if (doVerify)
 	{
-		*p << "-c";
+		*p << QLatin1String( "-c" );
 	}
 #endif
 #endif
@@ -717,12 +717,12 @@ void FATFilesystem::processStdOut(K3Process *, char *b, int l)
 #elif defined(ANY_LINUX)
     QString s ( QString::fromLatin1( b, l ) );
     kDebug(KFAREA) << s ;
-    if (s.contains("mounted file system")) // "/dev/fd0 contains a mounted file system
+    if (s.contains(QLatin1String( "mounted file system" ))) // "/dev/fd0 contains a mounted file system
     {
         emit status(i18n("Floppy is mounted.\nYou need to unmount the floppy first."),-1);
         return;
     }
-    else if (s.contains("busy")) // "Device or resource busy"
+    else if (s.contains(QLatin1String( "busy" ))) // "Device or resource busy"
     {
         emit status(i18n("Device busy.\nPerhaps you need to unmount the floppy first."),-1);
         return;
@@ -755,7 +755,7 @@ UFSFilesystem::UFSFilesystem(QObject *parent) :
 {
 	DEBUGSETUP;
 
-	newfs = findExecutable("newfs");
+	newfs = findExecutable(QLatin1String( "newfs" ));
 
 	return !newfs.isEmpty();
 }
@@ -805,7 +805,7 @@ Ext2Filesystem::Ext2Filesystem(QObject *parent) :
 {
 	DEBUGSETUP;
 	runtimeCheck();
-	theProcessName="mke2fs";
+	theProcessName=QLatin1String( "mke2fs" );
 	setObjectName( QLatin1String("Ext2Filesystem" ));
 }
 
@@ -813,7 +813,7 @@ Ext2Filesystem::Ext2Filesystem(QObject *parent) :
 {
 	DEBUGSETUP;
 
-	newfs = findExecutable("mke2fs");
+	newfs = findExecutable(QLatin1String( "mke2fs" ));
 
 	return !newfs.isEmpty();
 }
@@ -861,8 +861,8 @@ void Ext2Filesystem::exec()
 
 	*p << newfs;
 	*p << "-q";
-	if (doVerify) *p << "-c" ;
-	if (doLabel) *p << "-L" << label ;
+	if (doVerify) *p << QLatin1String( "-c" ) ;
+	if (doLabel) *p << QLatin1String( "-L" ) << label ;
 
 	*p << deviceName ;
 
@@ -880,12 +880,12 @@ void Ext2Filesystem::processStdOut(K3Process *, char *b, int l)
 #elif defined(ANY_LINUX)
     QString s ( QString::fromLatin1( b, l ) );
     kDebug(KFAREA) << s ;
-    if (s.contains("mounted")) // "/dev/fd0 is mounted; will not make a filesystem here!"
+    if (s.contains(QLatin1String( "mounted" ))) // "/dev/fd0 is mounted; will not make a filesystem here!"
     {
         emit status(i18n("Floppy is mounted.\nYou need to unmount the floppy first."),-1);
         return;
     }
-    else if (s.contains("busy")) // "Device or resource busy"
+    else if (s.contains(QLatin1String( "busy" ))) // "Device or resource busy"
     {
         emit status(i18n("Device busy.\nPerhaps you need to unmount the floppy first."),-1);
         return;
@@ -903,7 +903,7 @@ MinixFilesystem::MinixFilesystem(QObject *parent) :
 {
 	DEBUGSETUP;
 	runtimeCheck();
-	theProcessName="mkfs.minix";
+	theProcessName=QLatin1String( "mkfs.minix" );
 	setObjectName( QLatin1String("Minix2Filesystem" ));
 }
 
@@ -911,7 +911,7 @@ MinixFilesystem::MinixFilesystem(QObject *parent) :
 {
 	DEBUGSETUP;
 
-	newfs = findExecutable("mkfs.minix");
+	newfs = findExecutable(QLatin1String( "mkfs.minix" ));
 
 	return !newfs.isEmpty();
 }
@@ -956,7 +956,7 @@ void MinixFilesystem::exec()
 	*p << newfs;
 
         // Labeling is not possible
-	if (doVerify) *p << "-c" ;
+	if (doVerify) *p << QLatin1String( "-c" ) ;
 
 	*p << deviceName ;
 
@@ -971,12 +971,12 @@ void MinixFilesystem::processStdOut(K3Process *, char *b, int l)
 {
     QString s ( QString::fromLatin1( b, l ) );
     kDebug(KFAREA) << s ;
-    if (s.contains("mounted")) // "mkfs.minix: /dev/fd0 is mounted; will not make a filesystem here!"
+    if (s.contains(QLatin1String( "mounted" ))) // "mkfs.minix: /dev/fd0 is mounted; will not make a filesystem here!"
     {
         emit status(i18n("Floppy is mounted.\nYou need to unmount the floppy first."),-1);
         return;
     }
-    else if (s.contains("busy")) // "Device or resource busy"
+    else if (s.contains(QLatin1String( "busy" ))) // "Device or resource busy"
     {
         emit status(i18n("Device busy.\nPerhaps you need to unmount the floppy first."),-1);
         return;
