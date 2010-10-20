@@ -13,7 +13,7 @@ install(TARGETS kfloppy  ${INSTALL_TARGETS_DEFAULT_ARGS} )
 
 ########### install files ###############
 
-install( FILES KFloppy.desktop  DESTINATION ${XDG_APPS_INSTALL_DIR})
+install( PROGRAMS KFloppy.desktop  DESTINATION ${XDG_APPS_INSTALL_DIR})
 
 # The mimetypes used in this servicemenu (e.g. floppy_unmounted) don't exist anymore.
 # This needs to be done differently.
