@@ -560,7 +560,7 @@ void FloppyData::format(){
 	}
     }
 
-	if (formatActions) delete formatActions;
+	delete formatActions;
 	formatActions = new KFActionQueue(this);
 
 	connect(formatActions,SIGNAL(status(const QString &,int)),
