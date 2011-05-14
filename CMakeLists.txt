@@ -1,8 +1,13 @@
 project(kfloppy)
 
+if(${CMAKE_SOURCE_DIR} STREQUAL ${CMAKE_CURRENT_SOURCE_DIR})
+    find_package(KDE4)
+    include(KDE4Defaults)
+endif()
+
+include_directories(${KDE4_INCLUDES})
 
 set(kfloppy_SRCS main.cpp format.cpp floppy.cpp )
-
 
 kde4_add_executable(kfloppy ${kfloppy_SRCS})
 
