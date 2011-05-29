@@ -1,5 +1,9 @@
 project(kfloppy)
 
+if(NOT UNIX)
+  message(FATAL_ERROR "KFloppy is only supposed to be built on Unix platforms.")
+endif(NOT UNIX)
+
 if(${CMAKE_SOURCE_DIR} STREQUAL ${CMAKE_CURRENT_SOURCE_DIR})
     find_package(KDE4)
     include(KDE4Defaults)
