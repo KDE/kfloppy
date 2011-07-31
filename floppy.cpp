@@ -563,9 +563,9 @@ void FloppyData::format(){
 	delete formatActions;
 	formatActions = new KFActionQueue(this);
 
-	connect(formatActions,SIGNAL(status(const QString &,int)),
-		this,SLOT(formatStatus(const QString &,int)));
-	connect(formatActions,SIGNAL(done(KFAction *,bool)),
+	connect(formatActions,SIGNAL(status(QString,int)),
+		this,SLOT(formatStatus(QString,int)));
+	connect(formatActions,SIGNAL(done(KFAction*,bool)),
 		this,SLOT(reset()));
 
 	if ( quick->isChecked())

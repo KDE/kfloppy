@@ -145,11 +145,11 @@ void KFActionQueue::queue(KFAction *p)
 	else
 	{
 		kDebug(KFAREA) << "Running action " << next->objectName() ;
-		QObject::connect(next,SIGNAL(done(KFAction *,bool)),
-			this,SLOT(actionDone(KFAction *,bool)));
+		QObject::connect(next,SIGNAL(done(KFAction*,bool)),
+			this,SLOT(actionDone(KFAction*,bool)));
 		// Propagate signals
-		QObject::connect(next,SIGNAL(status(const QString &,int)),
-			this,SIGNAL(status(const QString &,int)));
+		QObject::connect(next,SIGNAL(status(QString,int)),
+			this,SIGNAL(status(QString,int)));
 		QTimer::singleShot(0,next,SLOT(exec()));
 	}
 }
@@ -367,12 +367,12 @@ bool FloppyAction::startProcess()
 {
 	DEBUGSETUP;
 
-	connect(theProcess,SIGNAL(processExited(K3Process *)),
-		this,SLOT(processDone(K3Process *)));
-	connect(theProcess,SIGNAL(receivedStdout(K3Process *,char *,int)),
-		this,SLOT(processStdOut(K3Process *,char *,int)));
-	connect(theProcess,SIGNAL(receivedStderr(K3Process *,char *,int)),
-		this,SLOT(processStdErr(K3Process *,char *,int)));
+	connect(theProcess,SIGNAL(processExited(K3Process*)),
+		this,SLOT(processDone(K3Process*)));
+	connect(theProcess,SIGNAL(receivedStdout(K3Process*,char*,int)),
+		this,SLOT(processStdOut(K3Process*,char*,int)));
+	connect(theProcess,SIGNAL(receivedStderr(K3Process*,char*,int)),
+		this,SLOT(processStdErr(K3Process*,char*,int)));
 
         theProcess->setEnvironment( QLatin1String( "LC_ALL" ), QLatin1String( "C" ) ); // We need the untranslated output of the tool
 	return theProcess->start(K3Process::NotifyOnExit,
