@@ -12,8 +12,8 @@
 
 <!-- ### TODO Unify use of "disk", "floppy", "diskette", "floppy disk" (and "floppy drive") -->
 
-<book lang="&language;">
-<bookinfo>
+<book id="kfloppy" lang="&language;">
+<book id="kfloppy"info>
 
 <title>The &kfloppy; Formatter Handbook</title>
 
