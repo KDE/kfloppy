@@ -62,8 +62,8 @@
 <!-- TRANS:ROLES_OF_TRANSLATORS -->
 </authorgroup>
 
-<date>2010-07-29</date>
-<releaseinfo>4.5</releaseinfo>
+<date>2013-05-25</date>
+<releaseinfo>4.9 (&kde; 4.11)</releaseinfo>
 
 <copyright>
 <year>2000</year>
@@ -161,7 +161,7 @@ disks in that fashion.</para>
 </sect2>
 
 <sect2 id="filesystems">
-<title><guilabel>File Systems</guilabel></title>
+<title>File Systems</title>
 
 <para>The third drop down box, labeled File System, offers the user the
 following choices, if they are applicable:</para>
@@ -426,9 +426,6 @@ through <command>kfloppy <option>-V</option></command> </para>
 
 <para>Documentation Copyright 2000 by &Thad.McGinnis;
 &Thad.McGinnis.mail;.</para>
-
-<para>Documentation Copyright 2005 by &Nicolas.Goutte;
-&Nicolas.Goutte.mail;.</para>
 
 <para>This version of the &kfloppy; Handbook is based on the original by
 &David.Rugge; <email>davidrugge@mindspring.com</email></para>
