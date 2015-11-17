@@ -55,6 +55,7 @@
 
 #include "debug.h"
 #include <QObject>
+#include <QProcess>
 
 /**
  * \brief Abstract base class of actions to be undertaken.
@@ -165,7 +166,7 @@ typedef struct { const char * const * devices;
 	int tracks;
 	int flags; } fdinfo;
 
-class K3Process;
+class KProcess;
 
 /**
  * Concrete action for running a single external program.
@@ -216,11 +217,11 @@ protected slots:
         /**
          * \brief Provide handling of the exit of the external program
          */
-	virtual void processDone(K3Process *);
+	virtual void processDone(int, QProcess::ExitStatus);
 	/**
          * \brief Provide handling of stdout
          */
-	virtual void processStdOut(K3Process *, char *, int);
+	virtual void processStdOut();
 	/**
          * \brief Provide handling stderr.
          *
@@ -228,14 +229,14 @@ protected slots:
 	 * to processStdOut(), so you need reimplement only
 	 * FloppyAction::processStdOut if you choose.
 	 */
-	virtual void processStdErr(K3Process *, char *, int);
+	virtual void processStdErr();
 	
 protected:
-	K3Process *theProcess;
+	KProcess *theProcess;
 	QString theProcessName;  ///< human-readable
 
 	/**
-	 * Sets up connections, calls K3Process::run().
+	 * Sets up connections, calls KProcess::start().
 	 * You need to *theProcess << program << args ; first.
 	 */
 		
@@ -270,7 +271,7 @@ public:
 	
 	bool configure(bool verify);
 	
-	virtual void processStdOut(K3Process *, char *,int);
+	virtual void processStdOut();
 
 protected:
 	static QString fdformatName;    ///< path to executable.
@@ -303,7 +304,7 @@ protected:
     /**
      * \brief Provide handling of the exit of the external program
      */
-    virtual void processDone(K3Process *);
+    virtual void processDone(int exitCode, QProcess::ExitStatus exitStatus);
 protected:
     static QString m_ddName;    ///< path to executable.
 } ;
@@ -330,7 +331,7 @@ public:
 	bool configure(bool verify, bool label, const QString &l);
 	
         /// Parse output
-        virtual void processStdOut(K3Process*, char* b, int l);
+        virtual void processStdOut();
         
 protected:
 	static QString newfs_fat;
@@ -356,7 +357,7 @@ public:
 	bool configure(bool verify, bool label, const QString &l);
 
         /// Parse output
-        virtual void processStdOut(K3Process*, char* b, int l);
+        virtual void processStdOut();
 	
 protected:
 	static QString newfs;
@@ -406,7 +407,7 @@ public:
 	bool configure(bool verify, bool label, const QString &l);
         
         /// Parse output
-        virtual void processStdOut(K3Process*, char* b, int l);
+        virtual void processStdOut();
 protected:
 	static QString newfs;
 	

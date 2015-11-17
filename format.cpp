@@ -29,7 +29,7 @@
 #include <QRegExp>
 
 #include <klocale.h>
-#include <k3process.h>
+#include <KProcess>
 #include <kdebug.h>
 #include <kstandarddirs.h>
 
@@ -321,19 +321,13 @@ bool FloppyAction::configureDevice(int drive,int density)
 	return true;
 }
 
-void FloppyAction::processDone(K3Process *p)
+void FloppyAction::processDone(int exitCode, QProcess::ExitStatus exitStatus)
 {
 	DEBUGSETUP;
 
-	if (p!=theProcess)
+	if (exitStatus == QProcess::NormalExit)
 	{
-		DEBUGS("  Strange process exited.");
-		return;
-	}
-
-	if (p->normalExit())
-	{
-	        if (p->exitStatus() == 0)
+	        if (exitCode == 0)
 	        {
 			emit status(QString::null,100);	//krazy:exclude=nullstrassign for old broken gcc
 			emit done(this,true);
@@ -351,32 +345,31 @@ void FloppyAction::processDone(K3Process *p)
 	}
 }
 
-void FloppyAction::processStdOut(K3Process *, char *b, int l)
+void FloppyAction::processStdOut()
 {
-	Q_UNUSED(b);
-	Q_UNUSED(l);
-	kDebug(KFAREA) << "stdout:" << QString::fromLatin1(b,l) ;
+	kDebug(KFAREA) << "stdout:" << theProcess->readAllStandardOutput() ;
 }
 
-void FloppyAction::processStdErr(K3Process *p, char *b, int l)
+void FloppyAction::processStdErr()
 {
-	processStdOut(p,b,l);
+	kDebug(KFAREA) << "stderr:" << theProcess->readAllStandardError() ;
 }
 
 bool FloppyAction::startProcess()
 {
 	DEBUGSETUP;
 
-	connect(theProcess,SIGNAL(processExited(K3Process*)),
-		this,SLOT(processDone(K3Process*)));
-	connect(theProcess,SIGNAL(receivedStdout(K3Process*,char*,int)),
-		this,SLOT(processStdOut(K3Process*,char*,int)));
-	connect(theProcess,SIGNAL(receivedStderr(K3Process*,char*,int)),
-		this,SLOT(processStdErr(K3Process*,char*,int)));
+	connect(theProcess, SIGNAL(finished(int, QProcess::ExitStatus)),
+		this, SLOT(processDone(int, QProcess::ExitStatus)));
+	connect(theProcess, SIGNAL(readyReadStandardOutput()),
+		this, SLOT(processStdOut()));
+	connect(theProcess, SIGNAL(readyReadStandardError()),
+		this, SLOT(processStdErr()));
 
-        theProcess->setEnvironment( QLatin1String( "LC_ALL" ), QLatin1String( "C" ) ); // We need the untranslated output of the tool
-	return theProcess->start(K3Process::NotifyOnExit,
-		K3Process::AllOutput);
+	theProcess->setEnv( QLatin1String( "LC_ALL" ), QLatin1String( "C" ) ); // We need the untranslated output of the tool
+	theProcess->setOutputChannelMode(KProcess::SeparateChannels);
+	theProcess->start();
+	return (theProcess->exitStatus() == QProcess::NormalExit);
 }
 
 
@@ -422,7 +415,7 @@ bool FDFormat::configure(bool v)
 	}
 
 	delete theProcess;
-	theProcess = new K3Process;
+	theProcess = new KProcess;
 
 	formatTrackCount=0;
 
@@ -461,10 +454,10 @@ bool FDFormat::configure(bool v)
 // need, since the messages can be standardized across OSsen.
 //
 //
-void FDFormat::processStdOut(K3Process *, char *b, int l)
+void FDFormat::processStdOut()
 {
 	DEBUGSETUP;
-	QString s;
+	QString s = theProcess->readAllStandardOutput();
 
 #ifdef ANY_BSD
 	if (b[0]=='F')
@@ -479,7 +472,6 @@ void FDFormat::processStdOut(K3Process *, char *b, int l)
 	}
 	else
 	{
-		s = QString::fromLatin1(b,l);
 		if (s.contains(QLatin1String( "ioctl(FD_FORM)" )))
 		{
                     emit status (i18n(
@@ -496,7 +488,6 @@ void FDFormat::processStdOut(K3Process *, char *b, int l)
 		DEBUGS(s);
 	}
 #elif defined(ANY_LINUX)
-	s = QString::fromLatin1(b,l);
 	DEBUGS(s);
         QRegExp regexp( QLatin1String( "([0-9]+)" ) );
         if ( s.startsWith( QLatin1String( "bad data at cyl" ) ) || s.contains( QLatin1String( "Problem reading cylinder" ) ) )
@@ -583,7 +574,7 @@ DDZeroOut::DDZeroOut(QObject *p) :
     }
 
     delete theProcess;
-    theProcess = new K3Process;
+    theProcess = new KProcess;
 
     *theProcess << m_ddName ;
 
@@ -598,15 +589,12 @@ DDZeroOut::DDZeroOut(QObject *p) :
 
 }
 
-void DDZeroOut::processDone(K3Process *p)
+void DDZeroOut::processDone(int exitCode, QProcess::ExitStatus exitStatus)
 {
-    kDebug(KFAREA) << k_funcinfo ;
+    Q_UNUSED(exitCode);
+    Q_UNUSED(exitStatus);
 
-    if (p!=theProcess)
-    {
-            kDebug(KFAREA) << "Strange process exited." ;
-            return;
-    }
+    kDebug(KFAREA) << k_funcinfo ;
 
     /**
      * As we do not give a number of blocks to dd(1), it will stop
@@ -680,7 +668,7 @@ void FATFilesystem::exec()
 	}
 
 	delete theProcess;
-	K3Process *p = theProcess = new K3Process;
+	KProcess *p = theProcess = new KProcess;
 
 	*p << newfs_fat;
 #ifdef ANY_BSD
@@ -710,12 +698,12 @@ void FATFilesystem::exec()
 	}
 }
 
-void FATFilesystem::processStdOut(K3Process *, char *b, int l)
+void FATFilesystem::processStdOut()
 {
 #ifdef ANY_BSD
     // ### TODO: do some checks
 #elif defined(ANY_LINUX)
-    QString s ( QString::fromLatin1( b, l ) );
+    QString s ( theProcess->readAllStandardOutput() );
     kDebug(KFAREA) << s ;
     if (s.contains(QLatin1String( "mounted file system" ))) // "/dev/fd0 contains a mounted file system
     {
@@ -779,7 +767,7 @@ void UFSFilesystem::exec()
 	}
 
 	delete theProcess;
-	K3Process *p = theProcess = new K3Process;
+	KProcess *p = theProcess = new KProcess;
 
 	*p << newfs;
 
@@ -857,7 +845,7 @@ void Ext2Filesystem::exec()
 	}
 
 	delete theProcess;
-	K3Process *p = theProcess = new K3Process;
+	KProcess *p = theProcess = new KProcess;
 
 	*p << newfs;
 	*p << "-q";
@@ -873,12 +861,12 @@ void Ext2Filesystem::exec()
 	}
 }
 
-void Ext2Filesystem::processStdOut(K3Process *, char *b, int l)
+void Ext2Filesystem::processStdOut()
 {
 #ifdef ANY_BSD
     // ### TODO: do some checks
 #elif defined(ANY_LINUX)
-    QString s ( QString::fromLatin1( b, l ) );
+    QString s ( theProcess->readAllStandardOutput() );
     kDebug(KFAREA) << s ;
     if (s.contains(QLatin1String( "mounted" ))) // "/dev/fd0 is mounted; will not make a filesystem here!"
     {
@@ -951,7 +939,7 @@ void MinixFilesystem::exec()
 	}
 
 	delete theProcess;
-	K3Process *p = theProcess = new K3Process;
+	KProcess *p = theProcess = new KProcess;
 
 	*p << newfs;
 
@@ -967,9 +955,9 @@ void MinixFilesystem::exec()
 	}
 }
 
-void MinixFilesystem::processStdOut(K3Process *, char *b, int l)
+void MinixFilesystem::processStdOut()
 {
-    QString s ( QString::fromLatin1( b, l ) );
+    QString s ( theProcess->readAllStandardOutput() );
     kDebug(KFAREA) << s ;
     if (s.contains(QLatin1String( "mounted" ))) // "mkfs.minix: /dev/fd0 is mounted; will not make a filesystem here!"
     {
