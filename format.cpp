@@ -321,6 +321,16 @@ bool FloppyAction::configureDevice(int drive,int density)
 	return true;
 }
 
+void FloppyAction::readStdOut()
+{
+	processStdOut( theProcess->readAllStandardOutput() );
+}
+
+void FloppyAction::readStdErr()
+{
+	processStdOut( theProcess->readAllStandardError() );
+}
+
 void FloppyAction::processDone(int exitCode, QProcess::ExitStatus exitStatus)
 {
 	DEBUGSETUP;
@@ -345,14 +355,14 @@ void FloppyAction::processDone(int exitCode, QProcess::ExitStatus exitStatus)
 	}
 }
 
-void FloppyAction::processStdOut()
+void FloppyAction::processStdOut(const QString &s)
 {
-	kDebug(KFAREA) << "stdout:" << theProcess->readAllStandardOutput() ;
+	kDebug(KFAREA) << "stdout:" << s;
 }
 
-void FloppyAction::processStdErr()
+void FloppyAction::processStdErr(const QString &s)
 {
-	kDebug(KFAREA) << "stderr:" << theProcess->readAllStandardError() ;
+	processStdOut(s);
 }
 
 bool FloppyAction::startProcess()
@@ -362,9 +372,9 @@ bool FloppyAction::startProcess()
 	connect(theProcess, SIGNAL(finished(int, QProcess::ExitStatus)),
 		this, SLOT(processDone(int, QProcess::ExitStatus)));
 	connect(theProcess, SIGNAL(readyReadStandardOutput()),
-		this, SLOT(processStdOut()));
+		this, SLOT(readStdOut()));
 	connect(theProcess, SIGNAL(readyReadStandardError()),
-		this, SLOT(processStdErr()));
+		this, SLOT(readStdErr()));
 
 	theProcess->setEnv( QLatin1String( "LC_ALL" ), QLatin1String( "C" ) ); // We need the untranslated output of the tool
 	theProcess->setOutputChannelMode(KProcess::SeparateChannels);
@@ -454,10 +464,9 @@ bool FDFormat::configure(bool v)
 // need, since the messages can be standardized across OSsen.
 //
 //
-void FDFormat::processStdOut()
+void FDFormat::processStdOut(const QString &s)
 {
 	DEBUGSETUP;
-	QString s = theProcess->readAllStandardOutput();
 
 #ifdef ANY_BSD
 	if (b[0]=='F')
@@ -698,12 +707,11 @@ void FATFilesystem::exec()
 	}
 }
 
-void FATFilesystem::processStdOut()
+void FATFilesystem::processStdOut(const QString &s)
 {
 #ifdef ANY_BSD
     // ### TODO: do some checks
 #elif defined(ANY_LINUX)
-    QString s ( theProcess->readAllStandardOutput() );
     kDebug(KFAREA) << s ;
     if (s.contains(QLatin1String( "mounted file system" ))) // "/dev/fd0 contains a mounted file system
     {
@@ -861,12 +869,11 @@ void Ext2Filesystem::exec()
 	}
 }
 
-void Ext2Filesystem::processStdOut()
+void Ext2Filesystem::processStdOut(const QString &s)
 {
 #ifdef ANY_BSD
     // ### TODO: do some checks
 #elif defined(ANY_LINUX)
-    QString s ( theProcess->readAllStandardOutput() );
     kDebug(KFAREA) << s ;
     if (s.contains(QLatin1String( "mounted" ))) // "/dev/fd0 is mounted; will not make a filesystem here!"
     {
@@ -955,9 +962,8 @@ void MinixFilesystem::exec()
 	}
 }
 
-void MinixFilesystem::processStdOut()
+void MinixFilesystem::processStdOut(const QString &s)
 {
-    QString s ( theProcess->readAllStandardOutput() );
     kDebug(KFAREA) << s ;
     if (s.contains(QLatin1String( "mounted" ))) // "mkfs.minix: /dev/fd0 is mounted; will not make a filesystem here!"
     {

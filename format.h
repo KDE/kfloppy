@@ -221,7 +221,7 @@ protected slots:
 	/**
          * \brief Provide handling of stdout
          */
-	virtual void processStdOut();
+	virtual void processStdOut(const QString &s);
 	/**
          * \brief Provide handling stderr.
          *
@@ -229,7 +229,7 @@ protected slots:
 	 * to processStdOut(), so you need reimplement only
 	 * FloppyAction::processStdOut if you choose.
 	 */
-	virtual void processStdErr();
+	virtual void processStdErr(const QString &s);
 	
 protected:
 	KProcess *theProcess;
@@ -241,6 +241,13 @@ protected:
 	 */
 		
 	bool startProcess();
+private slots:
+	/**
+	 * These functions read stdout/stderr and call
+	 * processStdOut()/processStdErr() accordingly
+	 */
+	void readStdOut();
+	void readStdErr();
 } ;
 
 /**
@@ -271,7 +278,7 @@ public:
 	
 	bool configure(bool verify);
 	
-	virtual void processStdOut();
+	virtual void processStdOut(const QString &s);
 
 protected:
 	static QString fdformatName;    ///< path to executable.
@@ -331,7 +338,7 @@ public:
 	bool configure(bool verify, bool label, const QString &l);
 	
         /// Parse output
-        virtual void processStdOut();
+        virtual void processStdOut(const QString &s);
         
 protected:
 	static QString newfs_fat;
@@ -357,7 +364,7 @@ public:
 	bool configure(bool verify, bool label, const QString &l);
 
         /// Parse output
-        virtual void processStdOut();
+        virtual void processStdOut(const QString &s);
 	
 protected:
 	static QString newfs;
@@ -407,7 +414,7 @@ public:
 	bool configure(bool verify, bool label, const QString &l);
         
         /// Parse output
-        virtual void processStdOut();
+        virtual void processStdOut(const QString &s);
 protected:
 	static QString newfs;
 	
