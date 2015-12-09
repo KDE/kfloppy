@@ -713,7 +713,7 @@ void FATFilesystem::processStdOut(const QString &s)
     // ### TODO: do some checks
 #elif defined(ANY_LINUX)
     kDebug(KFAREA) << s ;
-    if (s.contains(QLatin1String( "mounted file system" ))) // "/dev/fd0 contains a mounted file system
+    if (s.contains(QLatin1String( "mounted" ))) // "/dev/fd0 contains a mounted filesystem"
     {
         emit status(i18n("Floppy is mounted.\nYou need to unmount the floppy first."),-1);
         return;
