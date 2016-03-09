@@ -23,10 +23,14 @@
 */
 
 #include <kdeversion.h>
-#include <kapplication.h>
-#include <kcmdlineargs.h>
-#include <K4AboutData>
+
+
+#include <KAboutData>
 #include <klocale.h>
+#include <QApplication>
+#include <KLocalizedString>
+#include <QCommandLineParser>
+#include <QCommandLineOption>
 #include "floppy.h"
 
 
@@ -35,43 +39,48 @@ static const char description[] =
 
 int main( int argc, char *argv[] )
 {
+  QApplication app(argc, argv);
+
   KLocalizedString::setApplicationDomain("kfloppy");
 
-  K4AboutData aboutData("kfloppy", 0,
-	ki18n("KFloppy"),
-    "5.0", ki18n(description), K4AboutData::License_GPL,
-    ki18n("(c) 1997, Bernd Johannes Wuebben\n"
+  KAboutData aboutData(QStringLiteral("kfloppy"),
+    i18n("KFloppy"),
+    QStringLiteral("5.0"), i18n(description), KAboutLicense::GPL,
+    i18n("(c) 1997, Bernd Johannes Wuebben\n"
     "(c) 2001, Chris Howells\n"
     "(c) 2002, Adriaan de Groot\n"
     "(c) 2004, 2005, Nicolas Goutte"),
-    ki18n("KFloppy helps you format floppies with the filesystem of your choice."),
-    "http://utils.kde.org/projects/kfloppy"
+    i18n("KFloppy helps you format floppies with the filesystem of your choice."),
+    QStringLiteral("http://utils.kde.org/projects/kfloppy")
     );
 
-  aboutData.addAuthor(ki18n("Bernd Johannes Wuebben"), ki18n("Author and former maintainer"), "wuebben@kde.org");
-  aboutData.addCredit(ki18n("Chris Howells"), ki18n("User interface re-design"), "howells@kde.org");
-  aboutData.addCredit(ki18n("Adriaan de Groot"), ki18n("Add BSD support"), "groot@kde.org");
-  aboutData.addCredit(ki18n("Nicolas Goutte"), ki18n("Make KFloppy work again for KDE 3.4"), "goutte@kde.org");
+  aboutData.addAuthor(i18n("Bernd Johannes Wuebben"), i18n("Author and former maintainer"), QStringLiteral("wuebben@kde.org"));
+  aboutData.addCredit(i18n("Chris Howells"), i18n("User interface re-design"), QStringLiteral("howells@kde.org"));
+  aboutData.addCredit(i18n("Adriaan de Groot"), i18n("Add BSD support"), QStringLiteral("groot@kde.org"));
+  aboutData.addCredit(i18n("Nicolas Goutte"), i18n("Make KFloppy work again for KDE 3.4"), QStringLiteral("goutte@kde.org"));
+  // necessary to make the "Translators" tab appear in the About dialog
+  aboutData.setTranslator( i18nc( "NAME OF TRANSLATORS", "Your names" ), i18nc( "EMAIL OF TRANSLATORS", "Your emails" ) );
+  KAboutData::setApplicationData(aboutData);
   
-  KCmdLineArgs::init( argc, argv, &aboutData );
+  QCommandLineParser parser;
+  parser.addVersionOption();
+  parser.addHelpOption();
+  aboutData.setupCommandLine(&parser);
 
-  KCmdLineOptions options;
-  options.add("+[device]", ki18n("Default device"));
-  KCmdLineArgs::addCmdLineOptions( options );
+  parser.addPositionalArgument(QStringLiteral("[device]"), i18n("Default device"));
+  parser.process(app);
+  aboutData.processCommandLine(&parser);
 
-  KCmdLineArgs *args = KCmdLineArgs::parsedArgs();
+  const QStringList args = parser.positionalArguments();
   QString device;
-  if (args->count()) {
-	device = args->arg(0);
+  if (args.count()) {
+    device = args.at(0);
   }
-  args->clear();
-
-  KApplication a;
 
   FloppyData* floppy  = new FloppyData();
   bool autoformat = floppy->setInitialDevice(device);
   floppy->show();
   if (autoformat)
-	floppy->format();
-  return a.exec();
+    floppy->format();
+  return app.exec();
 }
