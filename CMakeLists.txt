@@ -39,12 +39,12 @@ install( PROGRAMS KFloppy.desktop  DESTINATION ${XDG_APPS_INSTALL_DIR})
 #install( FILES floppy_format.desktop  DESTINATION ${SERVICES_INSTALL_DIR}/ServiceMenus)
 
 ecm_install_icons(ICONS
-    hi128-app-kfloppy.png
-    hi16-app-kfloppy.png
-    hi22-app-kfloppy.png
-    hi32-app-kfloppy.png
-    hi48-app-kfloppy.png
-    hi64-app-kfloppy.png
+    128-apps-kfloppy.png
+    16-apps-kfloppy.png
+    22-apps-kfloppy.png
+    32-apps-kfloppy.png
+    48-apps-kfloppy.png
+    64-apps-kfloppy.png
     DESTINATION ${ICON_INSTALL_DIR}
     THEME hicolor
 )
