@@ -35,6 +35,8 @@ static const char description[] =
 
 int main( int argc, char *argv[] )
 {
+  KLocalizedString::setApplicationDomain("kfloppy");
+
   K4AboutData aboutData("kfloppy", 0,
 	ki18n("KFloppy"),
     "5.0", ki18n(description), K4AboutData::License_GPL,
