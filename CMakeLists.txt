@@ -1,30 +1,31 @@
 project(kfloppy)
+cmake_minimum_required(VERSION 2.8.12)
 
 if(NOT UNIX)
   message(FATAL_ERROR "KFloppy is only supposed to be built on Unix platforms.")
 endif(NOT UNIX)
 
+find_package(ECM REQUIRED NO_MODULE)
+set(CMAKE_MODULE_PATH ${ECM_MODULE_PATH})
+
 if(${CMAKE_SOURCE_DIR} STREQUAL ${CMAKE_CURRENT_SOURCE_DIR})
-    find_package(KDE4)
-    include(KDE4Defaults)
-    include_directories(${KDE4_INCLUDES})
+    include(KDEInstallDirs)
+    include(KDECompilerSettings)
+    include(KDECMakeSettings)
+    include(FeatureSummary)
+    include(ECMInstallIcons)
 
-    add_definitions(${QT_DEFINITIONS} ${KDE4_DEFINITIONS})
+    find_package(Qt5 5.2.0 CONFIG REQUIRED Core DBus Widgets)
+    find_package(KF5 REQUIRED COMPONENTS I18n KIO DocTools KDELibs4Support XmlGui)
+
     add_definitions(-DQT_USE_FAST_CONCATENATION -DQT_USE_FAST_OPERATOR_PLUS)
-
-    # If definitions like -D_GNU_SOURCE are needed for these checks they
-    # should be added to _KDE4_PLATFORM_DEFINITIONS when it is originally
-    # defined outside this file.  Here we include these definitions in
-    # CMAKE_REQUIRED_DEFINITIONS so they will be included in the build of
-    # checks below.
-    set( CMAKE_REQUIRED_DEFINITIONS ${_KDE4_PLATFORM_DEFINITIONS} )
 endif()
 
 set(kfloppy_SRCS main.cpp format.cpp floppy.cpp )
 
-kde4_add_executable(kfloppy ${kfloppy_SRCS})
+add_executable(kfloppy ${kfloppy_SRCS})
 
-target_link_libraries(kfloppy ${KDE4_KIO_LIBS} )
+target_link_libraries(kfloppy KF5::KIOWidgets KF5::I18n KF5::KDELibs4Support Qt5::DBus)
 
 install(TARGETS kfloppy  ${INSTALL_TARGETS_DEFAULT_ARGS} )
 
@@ -37,6 +38,18 @@ install( PROGRAMS KFloppy.desktop  DESTINATION ${XDG_APPS_INSTALL_DIR})
 # This needs to be done differently.
 #install( FILES floppy_format.desktop  DESTINATION ${SERVICES_INSTALL_DIR}/ServiceMenus)
 
-kde4_install_icons( ${ICON_INSTALL_DIR}   )
+ecm_install_icons(ICONS
+    hi128-app-kfloppy.png
+    hi16-app-kfloppy.png
+    hi22-app-kfloppy.png
+    hi32-app-kfloppy.png
+    hi48-app-kfloppy.png
+    hi64-app-kfloppy.png
+    DESTINATION ${ICON_INSTALL_DIR}
+    THEME hicolor
+)
 
 add_subdirectory(doc)
+
+feature_summary(WHAT ALL FATAL_ON_MISSING_REQUIRED_PACKAGES)
+

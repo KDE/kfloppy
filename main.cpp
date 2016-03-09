@@ -25,7 +25,7 @@
 #include <kdeversion.h>
 #include <kapplication.h>
 #include <kcmdlineargs.h>
-#include <kaboutdata.h>
+#include <K4AboutData>
 #include <klocale.h>
 #include "floppy.h"
 
@@ -35,9 +35,9 @@ static const char description[] =
 
 int main( int argc, char *argv[] )
 {
-  KAboutData aboutData("kfloppy", 0,
+  K4AboutData aboutData("kfloppy", 0,
 	ki18n("KFloppy"),
-    "4.9", ki18n(description), KAboutData::License_GPL,
+    "5.0", ki18n(description), K4AboutData::License_GPL,
     ki18n("(c) 1997, Bernd Johannes Wuebben\n"
     "(c) 2001, Chris Howells\n"
     "(c) 2002, Adriaan de Groot\n"

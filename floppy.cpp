@@ -50,7 +50,7 @@
 #include <kcombobox.h>
 #include <klineedit.h>
 #include <kurl.h>
-#include <ktoolinvocation.h>
+#include <khelpclient.h>
 #include <kglobal.h>
 
 FloppyData::FloppyData(QWidget * parent)
@@ -296,7 +296,7 @@ FloppyData::FloppyData(QWidget * parent)
         v3->addStretch( 1 );
 
 	//Setup the Help Menu
-	helpMenu = new KHelpMenu(this, KGlobal::mainComponent().aboutData(), false);
+	helpMenu = new KHelpMenu(this, KAboutData::applicationData(), false);
 
 	helpbutton = new KPushButton( KStandardGuiItem::help(), widget );
 	helpbutton->setAutoRepeat( false );
@@ -360,7 +360,7 @@ void FloppyData::keyPressEvent(QKeyEvent *e)
 {
 	switch(e->key()) {
 	case Qt::Key_F1:
-		KToolInvocation::invokeHelp();
+		KHelpClient::invokeHelp();
 		break;
 	default:
 		KDialog::keyPressEvent(e);

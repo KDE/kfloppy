@@ -45,7 +45,7 @@ static QString extPath = QString();
 		extPath = path;
 	}
 
-	return KGlobal::dirs()->findExe(e, extPath);
+	return KStandardDirs::findExe(e, extPath);
 }
 
 
