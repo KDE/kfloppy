@@ -24,7 +24,7 @@
 
 #include <kdeversion.h>
 
-
+#include <Kdelibs4ConfigMigrator>
 #include <KAboutData>
 #include <klocale.h>
 #include <QApplication>
@@ -40,6 +40,10 @@ static const char description[] =
 int main( int argc, char *argv[] )
 {
   QApplication app(argc, argv);
+
+  Kdelibs4ConfigMigrator migrator(QStringLiteral("kfloppy"));
+  migrator.setConfigFiles(QStringList() << QStringLiteral("kfloppyrc"));
+  migrator.migrate();
 
   KLocalizedString::setApplicationDomain("kfloppy");
 
