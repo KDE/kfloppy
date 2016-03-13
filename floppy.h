@@ -37,7 +37,7 @@ class QComboBox;
 class QGroupBox;
 
 class QProgressBar;
-class KPushButton;
+class QPushButton;
 class KHelpMenu;
 class KFAction;
 class KFActionQueue;
@@ -104,10 +104,10 @@ private:
 	QLineEdit*    lineedit;
 	QRadioButton* quick;
         QRadioButton* zerooutformat;
-	KPushButton* quitbutton;
-	KPushButton* helpbutton;
+	QPushButton* quitbutton;
+	QPushButton* helpbutton;
 	QRadioButton* fullformat;
-	KPushButton*  formatbutton;
+	QPushButton*  formatbutton;
 	QLabel* frame;
 	QComboBox* deviceComboBox;
 	QComboBox* filesystemComboBox;

@@ -42,7 +42,7 @@
 #include <kmessagebox.h>
 #include <kdebug.h>
 #include <khelpmenu.h>
-#include <kpushbutton.h>
+#include <QPushButton>
 #include <kmenu.h>
 #include <kapplication.h>
 #include <qprogressbar.h>
@@ -52,6 +52,8 @@
 #include <kurl.h>
 #include <khelpclient.h>
 #include <kglobal.h>
+#include <KGuiItem>
+#include <KStandardGuiItem>
 
 FloppyData::FloppyData(QWidget * parent)
  : KDialog( parent ),
@@ -283,7 +285,7 @@ FloppyData::FloppyData(QWidget * parent)
 	QVBoxLayout* v3 = new QVBoxLayout();
         h1->addItem( v3 );
 
-	formatbutton = new KPushButton( widget );
+	formatbutton = new QPushButton( widget );
 	formatbutton->setText(i18n( "&Format") );
 	formatbutton->setAutoRepeat( false );
         if (!numFileSystems)
@@ -298,12 +300,14 @@ FloppyData::FloppyData(QWidget * parent)
 	//Setup the Help Menu
 	helpMenu = new KHelpMenu(this, KAboutData::applicationData(), false);
 
-	helpbutton = new KPushButton( KStandardGuiItem::help(), widget );
+	helpbutton = new QPushButton(widget );
+	KGuiItem::assign(helpbutton, KStandardGuiItem::help());
 	helpbutton->setAutoRepeat( false );
 	helpbutton->setMenu(helpMenu->menu());
 	v3->addWidget( helpbutton );
 
-	quitbutton = new KPushButton( KStandardGuiItem::quit(), widget );
+	quitbutton = new QPushButton(widget );
+	KGuiItem::assign(quitbutton, KStandardGuiItem::quit());
 	quitbutton->setAutoRepeat( false );
 	connect(quitbutton,SIGNAL(clicked()),this,SLOT(quit()));
 	 v3->addWidget( quitbutton );
