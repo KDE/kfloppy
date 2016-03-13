@@ -300,14 +300,14 @@ FloppyData::FloppyData(QWidget * parent)
 	//Setup the Help Menu
 	helpMenu = new KHelpMenu(this, KAboutData::applicationData(), false);
 
-	helpbutton = new QPushButton(widget );
-	KGuiItem::assign(helpbutton, KStandardGuiItem::help());
+	helpbutton = new QPushButton( widget );
+	KGuiItem::assign( helpbutton, KStandardGuiItem::help() );
 	helpbutton->setAutoRepeat( false );
 	helpbutton->setMenu(helpMenu->menu());
 	v3->addWidget( helpbutton );
 
-	quitbutton = new QPushButton(widget );
-	KGuiItem::assign(quitbutton, KStandardGuiItem::quit());
+	quitbutton = new QPushButton( widget );
+	KGuiItem::assign( quitbutton, KStandardGuiItem::quit() );
 	quitbutton->setAutoRepeat( false );
 	connect(quitbutton,SIGNAL(clicked()),this,SLOT(quit()));
 	 v3->addWidget( quitbutton );
