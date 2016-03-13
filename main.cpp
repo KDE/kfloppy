@@ -22,11 +22,8 @@
 
 */
 
-#include <kdeversion.h>
-
 #include <Kdelibs4ConfigMigrator>
 #include <KAboutData>
-#include <klocale.h>
 #include <QApplication>
 #include <KLocalizedString>
 #include <QCommandLineParser>
