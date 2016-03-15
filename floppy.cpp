@@ -49,7 +49,7 @@
 #include <klocale.h>
 #include <kcombobox.h>
 #include <klineedit.h>
-#include <kurl.h>
+#include <QUrl>
 #include <khelpclient.h>
 #include <KGuiItem>
 #include <KStandardGuiItem>
@@ -421,8 +421,8 @@ bool FloppyData::setInitialDevice(const QString& dev)
 
   QString newDevice = dev;
 
-  KUrl url( newDevice );
-  if( url.isValid() && ( url.protocol() == QLatin1String( "media" ) || url.protocol() == QLatin1String( "system" ) ) ) {
+  QUrl url( newDevice );
+  if( url.isValid() && ( url.scheme() == QLatin1String( "media" ) || url.scheme() == QLatin1String( "system" ) ) ) {
     QString name = url.fileName();
 
     QDBusInterface mediamanager( QLatin1String( "org.kde.kded" ), QLatin1String( "/modules/mediamanager" ), QLatin1String( "org.kde.MediaManager" ) );
