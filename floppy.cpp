@@ -37,7 +37,7 @@
 #include <QKeyEvent>
 #include <QCloseEvent>
 #include <QtDBus/QtDBus>
-#include <kconfig.h>
+#include <KConfig>
 
 #include <kmessagebox.h>
 #include <kdebug.h>
@@ -51,7 +51,6 @@
 #include <klineedit.h>
 #include <kurl.h>
 #include <khelpclient.h>
-#include <kglobal.h>
 #include <KGuiItem>
 #include <KStandardGuiItem>
 
@@ -691,7 +690,7 @@ void FloppyData::formatStatus(const QString &s,int p)
 
 void FloppyData::writeSettings(){
 
-        KConfigGroup config = KGlobal::config()->group("GeneralData");
+        KConfigGroup config = KSharedConfig::openConfig()->group("GeneralData");
 
 	densityconfig = densityComboBox->currentText().trimmed();
 	filesystemconfig = filesystemComboBox->currentText().trimmed();
@@ -719,7 +718,7 @@ void FloppyData::writeSettings(){
 
 void FloppyData::readSettings(){
 
-        KConfigGroup config = KGlobal::config()->group("GeneralData");
+        KConfigGroup config = KSharedConfig::openConfig()->group("GeneralData");
 
 	verifyconfig = config.readEntry("Verify", 1);
 	labelconfig = config.readEntry("CreateLabel",1);
