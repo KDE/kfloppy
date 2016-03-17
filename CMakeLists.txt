@@ -10,7 +10,7 @@ set(CMAKE_MODULE_PATH ${ECM_MODULE_PATH})
 
 if(${CMAKE_SOURCE_DIR} STREQUAL ${CMAKE_CURRENT_SOURCE_DIR})
     include(KDEInstallDirs)
-    include(KDECompilerSettings)
+    include(KDECompilerSettings NO_POLICY_SCOPE)
     include(KDECMakeSettings)
     include(FeatureSummary)
     include(ECMInstallIcons)
