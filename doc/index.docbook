@@ -52,6 +52,13 @@
 <contrib>Developer (Add &BSD; support)</contrib>
 </othercredit>
 
+<othercredit role="developer">
+<firstname>Wolfgang</firstname>
+<surname>Bauer</surname>
+<affiliation><address><email>wbauer@tmo.at</email></address></affiliation>
+<contrib>Developer (Port to KF5)</contrib>
+</othercredit>
+
 <othercredit role="reviewer">
 <firstname>Lauri</firstname>
 <surname>Watts</surname>
@@ -62,8 +69,8 @@
 <!-- TRANS:ROLES_OF_TRANSLATORS -->
 </authorgroup>
 
-<date>2013-05-25</date>
-<releaseinfo>4.9 (&kde; 4.11)</releaseinfo>
+<date>2016-03-23</date>
+<releaseinfo>5.0 (Applications 16.04)</releaseinfo>
 
 <copyright>
 <year>2000</year>
@@ -365,30 +372,8 @@ this.  They are:</para>
 <variablelist>
 <varlistentry>
 <term><command>kfloppy <option>--help</option></command></term>
-<listitem><para>This lists the most basic options available at the command
+<listitem><para>This lists the options available at the command
 line.</para>
-</listitem>
-</varlistentry>
-
-<varlistentry>
-<term><command>kfloppy <option>--help-qt</option></command></term>
-<listitem><para>This lists the options available for changing the way
-&kfloppy; interacts with &Qt;.</para>
-</listitem>
-</varlistentry>
-
-<varlistentry> 
-<term><command>kfloppy <option>--help-kde</option></command></term>
-<listitem>
-<para>This lists the options available for changing the way &kfloppy;
-interacts with &kde;.</para>
-</listitem>
-</varlistentry>
-
-<varlistentry>
-<term><command>kfloppy <option>--help-all</option></command></term>
-<listitem>
-<para>This lists all of the command line options.</para>
 </listitem>
 </varlistentry>
 
@@ -400,11 +385,25 @@ interacts with &kde;.</para>
 </varlistentry>
 
 <varlistentry>
+<term><command>kfloppy <option>--license</option></command></term>
+<listitem>
+<para>Shows license information for &kfloppy; in the terminal window</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
 <term><command>kfloppy <option>--version</option></command></term>
 <listitem>
-<para>Lists version information for &Qt;, &kde;, and &kfloppy;. Also available
-through <command>kfloppy <option>-V</option></command> </para>
+<para>Lists version information for &kfloppy;. Also available
+through <command>kfloppy <option>-v</option></command> </para>
 </listitem>
+</varlistentry>
+
+<varlistentry>
+<term><command>kfloppy <option><replaceable>device</replaceable></option></command></term>
+<listitem><para>Device to format.</para>
+<para>This will directly format the given device using the saved settings.
+Only supported at the moment are /dev/fd0 and /dev/fd1.</para></listitem>
 </varlistentry>
 </variablelist> 
 
@@ -423,6 +422,9 @@ through <command>kfloppy <option>-V</option></command> </para>
 
 <para>&kfloppy; Formatter Program Copyright 2004, 2005 &Nicolas.Goutte;
 &Nicolas.Goutte.mail;</para>
+
+<para>&kfloppy; Formatter Program Copyright 2015, 2016 Wolfgang Bauer
+<email>wbauer@tmo.at</email></para>
 
 <para>Documentation Copyright 2000 by &Thad.McGinnis;
 &Thad.McGinnis.mail;.</para>
