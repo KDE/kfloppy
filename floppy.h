@@ -4,6 +4,7 @@
     
     Copyright (C) 1997 Bernd Johannes Wuebben <wuebben@math.cornell.edu>
     Copyright (C) 2004, 2005 Nicolas GOUTTE <goutte@kde.org>
+    Copyright (C) 2015, 2016 Wolfgang Bauer <wbauer@tmo.at>
     
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by

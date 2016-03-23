@@ -4,6 +4,7 @@
     
     Copyright (C) 1997 Bernd Johannes Wuebben <wuebben@math.cornell.edu>
     Copyright (C) 2004, 2005 Nicolas GOUTTE <goutte@kde.org>
+    Copyright (C) 2015, 2016 Wolfgang Bauer <wbauer@tmo.at>
 
 
     This program is free software; you can redistribute it and/or modify
@@ -53,7 +54,8 @@ int main( int argc, char *argv[] )
     i18n("(c) 1997, Bernd Johannes Wuebben\n"
     "(c) 2001, Chris Howells\n"
     "(c) 2002, Adriaan de Groot\n"
-    "(c) 2004, 2005, Nicolas Goutte"),
+    "(c) 2004, 2005, Nicolas Goutte\n"
+    "(c) 2015, 2016, Wolfgang Bauer"),
     i18n("KFloppy helps you format floppies with the filesystem of your choice."),
     QStringLiteral("http://utils.kde.org/projects/kfloppy")
     );
@@ -62,6 +64,7 @@ int main( int argc, char *argv[] )
   aboutData.addCredit(i18n("Chris Howells"), i18n("User interface re-design"), QStringLiteral("howells@kde.org"));
   aboutData.addCredit(i18n("Adriaan de Groot"), i18n("Add BSD support"), QStringLiteral("groot@kde.org"));
   aboutData.addCredit(i18n("Nicolas Goutte"), i18n("Make KFloppy work again for KDE 3.4"), QStringLiteral("goutte@kde.org"));
+  aboutData.addCredit(i18n("Wolfgang Bauer"), i18n("Port KFloppy to KF5"), QStringLiteral("wbauer@tmo.at"));
   // necessary to make the "Translators" tab appear in the About dialog
   aboutData.setTranslator( i18nc( "NAME OF TRANSLATORS", "Your names" ), i18nc( "EMAIL OF TRANSLATORS", "Your emails" ) );
   KAboutData::setApplicationData(aboutData);

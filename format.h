@@ -4,6 +4,7 @@
     
     Copyright (C) 2002 Adriaan de Groot <groot@kde.org>
     Copyright (C) 2004, 2005 Nicolas GOUTTE <goutte@kde.org>
+    Copyright (C) 2015, 2016 Wolfgang Bauer <wbauer@tmo.at>
 
 
     This program is free software; you can redistribute it and/or modify
