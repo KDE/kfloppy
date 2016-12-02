@@ -147,7 +147,7 @@ FloppyData::FloppyData(QWidget * parent)
         else {
             userFeedBack += i18nc( "Linux", "Program mkdosfs <b>not found</b>. MSDOS formatting <b>not available</b>." );
         }
-        userFeedBack += QLatin1String( "<br>" );
+        userFeedBack += QStringLiteral( "<br>" );
         if (Ext2Filesystem::runtimeCheck()) {
             filesystemComboBox->addItem(i18n("ext2"));
             ++numFileSystems;
@@ -156,7 +156,7 @@ FloppyData::FloppyData(QWidget * parent)
         else {
             userFeedBack += i18n( "Program mke2fs <b>not found</b>. Ext2 formatting <b>not available</b>" );
         }
-        userFeedBack += QLatin1String( "<br>" );
+        userFeedBack += QStringLiteral( "<br>" );
         if (MinixFilesystem::runtimeCheck()) {
             filesystemComboBox->addItem(i18n("Minix"));
             ++numFileSystems;
@@ -176,7 +176,7 @@ FloppyData::FloppyData(QWidget * parent)
         else {
             userFeedBack += i18nc( "BSD", "Program newfs_msdos <b>not found</b>. MSDOS formatting <b>not available</b>." );
         }
-        userFeedBack += QLatin1String( "<br>" );
+        userFeedBack += QStringLiteral( "<br>" );
         if (UFSFilesystem::runtimeCheck()) {
             filesystemComboBox->addItem(i18n("UFS"));
             ++numFileSystems;
@@ -185,7 +185,7 @@ FloppyData::FloppyData(QWidget * parent)
         else {
             userFeedBack += i18nc( "BSD", "Program newfs <b>not found</b>. UFS formatting <b>not available</b>." );
         }
-        userFeedBack += QLatin1String( "<br>" );
+        userFeedBack += QStringLiteral( "<br>" );
         if (Ext2Filesystem::runtimeCheck()) {
             filesystemComboBox->addItem(i18n("ext2"));
             ++numFileSystems;
@@ -203,27 +203,27 @@ FloppyData::FloppyData(QWidget * parent)
 
         quick = new QRadioButton( i18n( "Q&uick format" ), buttongroup );
         buttonGroupLayout->addWidget(quick);
-        quick->setObjectName( QLatin1String( "RadioButton_2" ) );
+        quick->setObjectName( QStringLiteral( "RadioButton_2" ) );
         quick->setWhatsThis(
             i18n("<qt>Quick format is only a high-level format:"
                 " it creates only a file system.</qt>") );
 
         zerooutformat = new QRadioButton( i18n( "&Zero out and quick format"), buttongroup );
         buttonGroupLayout->addWidget(zerooutformat);
-        zerooutformat->setObjectName( QLatin1String( "RadioButton_ZeroOutFormat" ) );
+        zerooutformat->setObjectName( QStringLiteral( "RadioButton_ZeroOutFormat" ) );
         zerooutformat->setWhatsThis(
             i18n("<qt>This first erases the floppy by writing zeros and then it creates the file system.</qt>") );
 
         fullformat = new QRadioButton( i18n( "Fu&ll format"), buttongroup );
         buttonGroupLayout->addWidget(fullformat);
-        fullformat->setObjectName( QLatin1String( "RadioButton_3" ) );
+        fullformat->setObjectName( QStringLiteral( "RadioButton_3" ) );
         fullformat->setWhatsThis(
             i18n("Full format is a low-level and high-level format. It erases everything on the disk.") );
 
         v1->addWidget( buttongroup );
 
         // ### TODO: we need some user feedback telling why full formatting is disabled.
-        userFeedBack += QLatin1String( "<br>" );
+        userFeedBack += QStringLiteral( "<br>" );
         m_canLowLevel = FDFormat::runtimeCheck();
         if (m_canLowLevel){
             fullformat->setChecked(true);
@@ -234,7 +234,7 @@ FloppyData::FloppyData(QWidget * parent)
             quick->setChecked(true);
             userFeedBack += i18n( "Program fdformat <b>not found</b>. Full formatting <b>disabled</b>." );
         }
-        userFeedBack += QLatin1String( "<br>" );
+        userFeedBack += QStringLiteral( "<br>" );
         m_canZeroOut = DDZeroOut::runtimeCheck();
         if ( m_canZeroOut )
         {
@@ -247,7 +247,7 @@ FloppyData::FloppyData(QWidget * parent)
         }
 
 	verifylabel = new QCheckBox( this );
-	verifylabel->setObjectName( QLatin1String( "CheckBox_Integrity" ) );
+	verifylabel->setObjectName( QStringLiteral( "CheckBox_Integrity" ) );
 	verifylabel->setText(i18n( "&Verify integrity" ));
 	verifylabel->setChecked(true);
 	v1->addWidget( verifylabel, Qt::AlignLeft );
@@ -256,7 +256,7 @@ FloppyData::FloppyData(QWidget * parent)
             " Please note that the floppy will be checked twice if you have selected full formatting.</qt>") );
 
 	labellabel = new QCheckBox( this );
-	labellabel->setObjectName( QLatin1String( "Checkbox_Label" ) );
+	labellabel->setObjectName( QStringLiteral( "Checkbox_Label" ) );
 	labellabel->setText(i18n( "Volume la&bel:") );
 	labellabel->setChecked(true);
         v1->addWidget( labellabel, Qt::AlignLeft );
@@ -313,15 +313,15 @@ FloppyData::FloppyData(QWidget * parent)
         ml->addSpacing( 10 );
 
 	frame = new QLabel( widget );
-        frame->setObjectName( QLatin1String( "NewsWindow" ) );
+        frame->setObjectName( QStringLiteral( "NewsWindow" ) );
 	frame->setFrameStyle(QFrame::Panel | QFrame::Sunken);
         frame->setWordWrap( true );
         frame->setWhatsThis(
             i18n("<qt>This is the status window, where error messages are displayed.</qt>") );
 
         QString frameText( userFeedBack );
-        frameText.prepend( QLatin1String( "<qt>" ) );
-        frameText.append( QLatin1String( "</qt>" ) );
+        frameText.prepend( QStringLiteral( "<qt>" ) );
+        frameText.append( QStringLiteral( "</qt>" ) );
         frame->setText( frameText );
 
         ml->addWidget( frame );
@@ -339,11 +339,11 @@ FloppyData::FloppyData(QWidget * parent)
 	setWidgets();
     if (!numFileSystems) {
         QString errorMessage;
-        errorMessage += QLatin1String( "<qt>" );
+        errorMessage += QStringLiteral( "<qt>" );
         errorMessage += i18n("KFloppy cannot find any of the needed programs for creating file systems; please check your installation.<br /><br />Log:");
-        errorMessage += QLatin1String( "<br>" );
+        errorMessage += QStringLiteral( "<br>" );
         errorMessage += userFeedBack;
-        errorMessage += QLatin1String( "</qt>" );
+        errorMessage += QStringLiteral( "</qt>" );
         KMessageBox::error( this, errorMessage );
     }
 }
@@ -422,11 +422,11 @@ bool FloppyData::setInitialDevice(const QString& dev)
   QString newDevice = dev;
 
   QUrl url( newDevice );
-  if( url.isValid() && ( url.scheme() == QLatin1String( "media" ) || url.scheme() == QLatin1String( "system" ) ) ) {
+  if( url.isValid() && ( url.scheme() == QStringLiteral( "media" ) || url.scheme() == QStringLiteral( "system" ) ) ) {
     QString name = url.fileName();
 
-    QDBusInterface mediamanager( QLatin1String( "org.kde.kded" ), QLatin1String( "/modules/mediamanager" ), QLatin1String( "org.kde.MediaManager" ) );
-    QDBusReply<QStringList> reply = mediamanager.call( QLatin1String( "properties" ), name );
+    QDBusInterface mediamanager( QStringLiteral( "org.kde.kded" ), QStringLiteral( "/modules/mediamanager" ), QStringLiteral( "org.kde.MediaManager" ) );
+    QDBusReply<QStringList> reply = mediamanager.call( QStringLiteral( "properties" ), name );
     if (!reply.isValid()) {
       kError() << "Invalid reply from mediamanager" << endl;
     } else {
@@ -436,9 +436,9 @@ bool FloppyData::setInitialDevice(const QString& dev)
   }
 
   int drive = -1;
-  if ( newDevice.startsWith(QLatin1String( "/dev/fd0" )) )
+  if ( newDevice.startsWith(QStringLiteral( "/dev/fd0" )) )
     drive = 0;
-  if ( newDevice.startsWith(QLatin1String( "/dev/fd1" )))
+  if ( newDevice.startsWith(QStringLiteral( "/dev/fd1" )))
     drive = 1;
 
   // ### TODO user given devices
@@ -510,7 +510,7 @@ void FloppyData::format(){
   frame->clear();
 
     const QString currentComboBoxDevice (  deviceComboBox->currentText() );
-    const bool userDevice = ( currentComboBoxDevice.startsWith (QLatin1String( "/dev/" )) );
+    const bool userDevice = ( currentComboBoxDevice.startsWith (QStringLiteral( "/dev/" )) );
 
 #ifdef ANY_BSD
     if ( userDevice && filesystemComboBox->currentText() != i18n("UFS"))
