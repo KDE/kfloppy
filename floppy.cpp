@@ -38,7 +38,7 @@
 #include <QKeyEvent>
 #include <QCloseEvent>
 #include <QtDBus/QtDBus>
-#include <KConfig>
+#include <KConfigGroup>
 
 #include <kmessagebox.h>
 #include <kdebug.h>
