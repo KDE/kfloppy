@@ -28,25 +28,25 @@
 
 #include <QTimer>
 #include <QRegExp>
+#include <QStandardPaths>
 
 #include <klocale.h>
 #include <KProcess>
 #include <kdebug.h>
-#include <kstandarddirs.h>
 
-static QString extPath = QString();
+static QStringList extPath = QStringList();
 
 /* static */ QString findExecutable(const QString &e)
 {
 	if (extPath.isEmpty())
 	{
-            QString path = QLatin1String( qgetenv("PATH") );
-		if (!path.isEmpty()) path.append(QLatin1String( ":" ));
-		path.append(QLatin1String( "/usr/sbin:/sbin" ));
+            QStringList path = QString( qgetenv("PATH") ).split(QStringLiteral( ":" ));
+            path.append(QStringLiteral( "/usr/sbin" ));
+            path.append(QStringLiteral( "/sbin" ));
 		extPath = path;
 	}
 
-	return KStandardDirs::findExe(e, extPath);
+	return QStandardPaths::findExecutable(e, extPath);
 }
 
 
