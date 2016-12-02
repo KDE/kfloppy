@@ -453,7 +453,7 @@ bool FloppyData::setInitialDevice(const QString& dev)
 void FloppyData::quit(){
   if (formatActions) formatActions->quit();
   writeSettings();
-  kapp->quit();
+  qApp->quit();
   delete this;
 }
 
