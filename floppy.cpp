@@ -56,12 +56,10 @@
 #include <KStandardGuiItem>
 
 FloppyData::FloppyData(QWidget * parent)
- : KDialog( parent ),
+ : QDialog( parent ),
 	formatActions(0L), m_canLowLevel(false), m_canZeroOut( false )
 {
 	QWidget *widget = new QWidget(this);
-	setMainWidget(widget);
-	setButtons(None);
 	formating = false;
 	//abort = false;
 	blocks = 0;
@@ -335,9 +333,10 @@ FloppyData::FloppyData(QWidget * parent)
 	progress->setWhatsThis(
 			i18n("<qt>Shows progress of the format.</qt>"));
 
+	setLayout(ml);
+
 	readSettings();
 	setWidgets();
-
     if (!numFileSystems) {
         QString errorMessage;
         errorMessage += QLatin1String( "<qt>" );
@@ -367,14 +366,14 @@ void FloppyData::keyPressEvent(QKeyEvent *e)
 		KHelpClient::invokeHelp();
 		break;
 	default:
-		KDialog::keyPressEvent(e);
+		QDialog::keyPressEvent(e);
 		return;
 	}
 }
 
 void FloppyData::show() {
-  setCaption(i18n("KDE Floppy Formatter"));
-  KDialog::show();
+  setWindowTitle(i18n("KDE Floppy Formatter"));
+  QDialog::show();
 }
 
 bool FloppyData::findDevice()

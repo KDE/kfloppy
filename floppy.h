@@ -25,7 +25,7 @@
 #ifndef FloppyData_included
 #define FloppyData_included
 
-#include <kdialog.h>
+#include <QDialog>
 #include <QKeyEvent>
 #include <QCloseEvent>
 #include <kconfig.h>
@@ -43,7 +43,7 @@ class KHelpMenu;
 class KFAction;
 class KFActionQueue;
 
-class FloppyData : public KDialog
+class FloppyData : public QDialog
 {
     Q_OBJECT
 
