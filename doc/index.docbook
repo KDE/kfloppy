@@ -268,7 +268,7 @@ sectors it finds.</para>
 written to the floppy.  This allows bad sectors to be identified.
 </para>
 
-<note><para>If bad sectors a found during the verify phase of a Full Format,
+<note><para>If bad sectors are found during the verify phase of a Full Format,
 the formatting is aborted and the file system is not written!
 </para></note>
 
