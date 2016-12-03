@@ -30,7 +30,6 @@
 #include <qcursor.h>
 #include <qgroupbox.h>
 #include <qradiobutton.h>
-//Added by qt3to4:
 #include <QVBoxLayout>
 #include <QFrame>
 #include <QHBoxLayout>
