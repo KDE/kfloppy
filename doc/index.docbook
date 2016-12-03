@@ -238,7 +238,7 @@ below:</para>
 <term><guilabel>Quick Format</guilabel></term>
 <listitem>
 <para>This simply puts the new file system on the disk.</para>
-<warning><para>All data on the disk will be lost, even if the data itself will not erased.</para></warning>
+<warning><para>All data on the disk will be lost, even if the data itself will not be erased.</para></warning>
 </listitem>
 </varlistentry>
 <varlistentry>
