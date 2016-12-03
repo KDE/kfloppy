@@ -38,22 +38,21 @@
 #include <QKeyEvent>
 #include <QCloseEvent>
 #include <QtDBus/QtDBus>
-#include <KConfigGroup>
+#include <QPushButton>
+#include <qprogressbar.h>
+#include <QUrl>
 
 #include <kmessagebox.h>
 #include <kdebug.h>
 #include <khelpmenu.h>
-#include <QPushButton>
-#include <kmenu.h>
-#include <kapplication.h>
-#include <qprogressbar.h>
+#include <kaboutdata.h>
 #include <klocale.h>
 #include <kcombobox.h>
 #include <klineedit.h>
-#include <QUrl>
 #include <khelpclient.h>
 #include <KGuiItem>
 #include <KStandardGuiItem>
+#include <KConfigGroup>
 
 FloppyData::FloppyData(QWidget * parent)
  : QDialog( parent ),
