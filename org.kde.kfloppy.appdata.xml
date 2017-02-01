@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component type="desktop">
+  <id>org.kde.kfloppy.desktop</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>GPL-2+</project_license>
+  <name>KFloppy</name>
+  <summary>Floppy disk formatter</summary>
+  <description>
+    <p>KFloppy is a utility that provides a straightforward graphical means to format 3.5" and 5.25" floppy disks.</p>
+  </description>
+  <url type="homepage">https://www.kde.org</url>
+  <url type="bugtracker">https://bugs.kde.org</url>
+  <url type="donation">https://www.kde.org/community/donations</url>
+  <screenshots>
+    <screenshot type="default">
+      <image>
+        https://cdn.kde.org/screenshots/kfloppy/kfloppy.png
+      </image>
+    </screenshot>
+  </screenshots>
+  <provides>
+    <binary>kfloppy</binary>
+  </provides>
+  <project_group>KDE</project_group>
+</component>
