@@ -147,6 +147,7 @@ Name[xh]=KFloppy
 Name[x-test]=xxKFloppyxx
 Name[zh_CN]=KFloppy
 Name[zh_TW]=KDE 軟碟
+Comment=Floppy Formatter
 X-DocPath=kfloppy/index.html
 Exec=kfloppy -qwindowtitle %c
 Icon=kfloppy
