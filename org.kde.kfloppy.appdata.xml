@@ -4,19 +4,24 @@
   <metadata_license>CC0-1.0</metadata_license>
   <project_license>GPL-2+</project_license>
   <name>KFloppy</name>
+  <name xml:lang="ca">KFloppy</name>
   <name xml:lang="nl">KFloppy</name>
   <name xml:lang="pt">KFloppy</name>
+  <name xml:lang="sk">KFloppy</name>
   <name xml:lang="sv">Kfloppy</name>
   <name xml:lang="uk">KFloppy</name>
   <name xml:lang="x-test">xxKFloppyxx</name>
   <summary>Floppy disk formatter</summary>
+  <summary xml:lang="ca">Formatador de disquets</summary>
   <summary xml:lang="nl">Diskettes formatteerder</summary>
   <summary xml:lang="pt">Formatação de disquetes</summary>
+  <summary xml:lang="sk">Formátovač diskiet</summary>
   <summary xml:lang="sv">Formatera disketter</summary>
   <summary xml:lang="uk">Програма для форматування дискет</summary>
   <summary xml:lang="x-test">xxFloppy disk formatterxx</summary>
   <description>
     <p>KFloppy is a utility that provides a straightforward graphical means to format 3.5" and 5.25" floppy disks.</p>
+    <p xml:lang="ca">El KFloppy és una utilitat que proporciona un mètode gràfic senzill per formatar disquets de 3,5" i 5,25".</p>
     <p xml:lang="nl">KFloppy is een grafisch programma dat recht door zee 3,5" en 5,25" diskettes formatteert.</p>
     <p xml:lang="pt">O KFloppy é um utilitário que oferece um método gráfico relativamente simples de formatar as disquetes de 3,5" e 5,25".</p>
     <p xml:lang="sv">Kfloppy är ett verktyg som tillhandahåller ett rättframt sätt att grafiskt formatera 3.5" och 5.25" disketter.</p>
