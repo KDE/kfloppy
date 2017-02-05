@@ -5,25 +5,31 @@
   <project_license>GPL-2+</project_license>
   <name>KFloppy</name>
   <name xml:lang="ca">KFloppy</name>
+  <name xml:lang="en-GB">KFloppy</name>
   <name xml:lang="nl">KFloppy</name>
   <name xml:lang="pt">KFloppy</name>
   <name xml:lang="sk">KFloppy</name>
   <name xml:lang="sv">Kfloppy</name>
   <name xml:lang="uk">KFloppy</name>
   <name xml:lang="x-test">xxKFloppyxx</name>
+  <name xml:lang="zh-CN">KFloppy</name>
   <summary>Floppy disk formatter</summary>
   <summary xml:lang="ca">Formatador de disquets</summary>
+  <summary xml:lang="en-GB">Floppy disk formatter</summary>
   <summary xml:lang="nl">Diskettes formatteerder</summary>
   <summary xml:lang="pt">Formatação de disquetes</summary>
   <summary xml:lang="sk">Formátovač diskiet</summary>
   <summary xml:lang="sv">Formatera disketter</summary>
   <summary xml:lang="uk">Програма для форматування дискет</summary>
   <summary xml:lang="x-test">xxFloppy disk formatterxx</summary>
+  <summary xml:lang="zh-CN">软盘格式化程序</summary>
   <description>
     <p>KFloppy is a utility that provides a straightforward graphical means to format 3.5" and 5.25" floppy disks.</p>
     <p xml:lang="ca">El KFloppy és una utilitat que proporciona un mètode gràfic senzill per formatar disquets de 3,5" i 5,25".</p>
+    <p xml:lang="en-GB">KFloppy is a utility that provides a straightforward graphical means to format 3.5" and 5.25" floppy disks.</p>
     <p xml:lang="nl">KFloppy is een grafisch programma dat recht door zee 3,5" en 5,25" diskettes formatteert.</p>
     <p xml:lang="pt">O KFloppy é um utilitário que oferece um método gráfico relativamente simples de formatar as disquetes de 3,5" e 5,25".</p>
+    <p xml:lang="sk">KFloppy je nástroj, ktorý poskytuje priame grafické rozhranie na formátovanie 3,5" a 5,25" diskiet.</p>
     <p xml:lang="sv">Kfloppy är ett verktyg som tillhandahåller ett rättframt sätt att grafiskt formatera 3.5" och 5.25" disketter.</p>
     <p xml:lang="uk">KFloppy — це програма зі зрозумілим графічним інтерфейсом для форматування 3,5-дюймових та 5,25-дюймових гнучких дисків.</p>
     <p xml:lang="x-test">xxKFloppy is a utility that provides a straightforward graphical means to format 3.5" and 5.25" floppy disks.xx</p>
