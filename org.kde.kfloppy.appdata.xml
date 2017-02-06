@@ -6,6 +6,8 @@
   <name>KFloppy</name>
   <name xml:lang="ca">KFloppy</name>
   <name xml:lang="en-GB">KFloppy</name>
+  <name xml:lang="es">KFloppy</name>
+  <name xml:lang="ia">KFloppy</name>
   <name xml:lang="nl">KFloppy</name>
   <name xml:lang="pt">KFloppy</name>
   <name xml:lang="sk">KFloppy</name>
@@ -16,6 +18,8 @@
   <summary>Floppy disk formatter</summary>
   <summary xml:lang="ca">Formatador de disquets</summary>
   <summary xml:lang="en-GB">Floppy disk formatter</summary>
+  <summary xml:lang="es">Formateador de disquetes</summary>
+  <summary xml:lang="ia">Formattator de disco floppy</summary>
   <summary xml:lang="nl">Diskettes formatteerder</summary>
   <summary xml:lang="pt">Formatação de disquetes</summary>
   <summary xml:lang="sk">Formátovač diskiet</summary>
@@ -27,6 +31,7 @@
     <p>KFloppy is a utility that provides a straightforward graphical means to format 3.5" and 5.25" floppy disks.</p>
     <p xml:lang="ca">El KFloppy és una utilitat que proporciona un mètode gràfic senzill per formatar disquets de 3,5" i 5,25".</p>
     <p xml:lang="en-GB">KFloppy is a utility that provides a straightforward graphical means to format 3.5" and 5.25" floppy disks.</p>
+    <p xml:lang="es">KFloppy es una utilidad que proporciona un modo gráfico directo para formatear disquetes de 3.5" y 5.25".</p>
     <p xml:lang="nl">KFloppy is een grafisch programma dat recht door zee 3,5" en 5,25" diskettes formatteert.</p>
     <p xml:lang="pt">O KFloppy é um utilitário que oferece um método gráfico relativamente simples de formatar as disquetes de 3,5" e 5,25".</p>
     <p xml:lang="sk">KFloppy je nástroj, ktorý poskytuje priame grafické rozhranie na formátovanie 3,5" a 5,25" diskiet.</p>
