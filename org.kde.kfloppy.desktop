@@ -168,6 +168,7 @@ Comment[sr@latin]=Formatiranje disketa
 Comment[sv]=Formatera disketter
 Comment[uk]=Засіб форматування дискет
 Comment[x-test]=xxFloppy Formatterxx
+Comment[zh_TW]=軟碟格式化程式
 X-DocPath=kfloppy/index.html
 Exec=kfloppy -qwindowtitle %c
 Icon=kfloppy
