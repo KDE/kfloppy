@@ -49,6 +49,7 @@ install(TARGETS kfloppy  ${INSTALL_TARGETS_DEFAULT_ARGS} )
 
 install(PROGRAMS org.kde.kfloppy.desktop  DESTINATION ${XDG_APPS_INSTALL_DIR})
 install(FILES org.kde.kfloppy.appdata.xml DESTINATION ${KDE_INSTALL_METAINFODIR})
+install(FILES kfloppy.categories DESTINATION ${KDE_INSTALL_CONFDIR})
 
 # The mimetypes used in this servicemenu (e.g. floppy_unmounted) don't exist anymore.
 # This needs to be done differently.
