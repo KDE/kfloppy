@@ -32,7 +32,6 @@
 
 #include <KLocalizedString>
 #include <KProcess>
-#include <kdebug.h>
 
 static QStringList extPath = QStringList();
 
@@ -145,7 +144,7 @@ void KFActionQueue::queue(KFAction *p)
 	}
 	else
 	{
-		kDebug(KFAREA) << "Running action " << next->objectName() ;
+		qCDebug(KFLOPPY_LOG) << "Running action " << next->objectName() ;
 		QObject::connect(next,SIGNAL(done(KFAction*,bool)),
 			this,SLOT(actionDone(KFAction*,bool)));
 		// Propagate signals
@@ -301,7 +300,7 @@ bool FloppyAction::configureDevice(int drive,int density)
 	{
 		if (access(*devices,W_OK)>=0)
 		{
-			kDebug(KFAREA) << "Found device " << *devices ;
+			qCDebug(KFLOPPY_LOG) << "Found device " << *devices ;
 			devicename=*devices;
 			break;
 		}
@@ -358,7 +357,7 @@ void FloppyAction::processDone(int exitCode, QProcess::ExitStatus exitStatus)
 
 void FloppyAction::processStdOut(const QString &s)
 {
-	kDebug(KFAREA) << "stdout:" << s;
+	qCDebug(KFLOPPY_LOG) << "stdout:" << s;
 }
 
 void FloppyAction::processStdErr(const QString &s)
@@ -554,7 +553,7 @@ void FDFormat::processStdOut(const QString &s)
 DDZeroOut::DDZeroOut(QObject *p) :
     FloppyAction(p)
 {
-    kDebug(KFAREA) << k_funcinfo ;
+    qCDebug(KFLOPPY_LOG) << k_funcinfo ;
     theProcessName = QString::fromLatin1("dd");
     setObjectName( QStringLiteral("DD" ));
 }
@@ -567,7 +566,7 @@ DDZeroOut::DDZeroOut(QObject *p) :
 
 /* virtual */ void DDZeroOut::exec()
 {
-    kDebug(KFAREA) << k_funcinfo ;
+    qCDebug(KFLOPPY_LOG) << k_funcinfo ;
 
     if ( deviceName.isEmpty() )
     {
@@ -604,7 +603,7 @@ void DDZeroOut::processDone(int exitCode, QProcess::ExitStatus exitStatus)
     Q_UNUSED(exitCode);
     Q_UNUSED(exitStatus);
 
-    kDebug(KFAREA) << k_funcinfo ;
+    qCDebug(KFLOPPY_LOG) << k_funcinfo ;
 
     /**
      * As we do not give a number of blocks to dd(1), it will stop
@@ -713,7 +712,7 @@ void FATFilesystem::processStdOut(const QString &s)
 #ifdef ANY_BSD
     // ### TODO: do some checks
 #elif defined(ANY_LINUX)
-    kDebug(KFAREA) << s ;
+    qCDebug(KFLOPPY_LOG) << s ;
     if (s.contains(QStringLiteral( "mounted" ))) // "/dev/fd0 contains a mounted filesystem"
     {
         emit status(i18n("Floppy is mounted.\nYou need to unmount the floppy first."),-1);
@@ -875,7 +874,7 @@ void Ext2Filesystem::processStdOut(const QString &s)
 #ifdef ANY_BSD
     // ### TODO: do some checks
 #elif defined(ANY_LINUX)
-    kDebug(KFAREA) << s ;
+    qCDebug(KFLOPPY_LOG) << s ;
     if (s.contains(QStringLiteral( "mounted" ))) // "/dev/fd0 is mounted; will not make a filesystem here!"
     {
         emit status(i18n("Floppy is mounted.\nYou need to unmount the floppy first."),-1);
@@ -965,7 +964,7 @@ void MinixFilesystem::exec()
 
 void MinixFilesystem::processStdOut(const QString &s)
 {
-    kDebug(KFAREA) << s ;
+    qCDebug(KFLOPPY_LOG) << s ;
     if (s.contains(QStringLiteral( "mounted" ))) // "mkfs.minix: /dev/fd0 is mounted; will not make a filesystem here!"
     {
         emit status(i18n("Floppy is mounted.\nYou need to unmount the floppy first."),-1);

@@ -35,17 +35,18 @@
  * What happens on other systems is anyone's guess.
  */
 
+#include <QLoggingCategory>
 
-#define KFAREA		(2002)
+Q_DECLARE_LOGGING_CATEGORY(KFLOPPY_LOG)
 
 #ifndef NDEBUG
-#define DEBUGSETUP	kDebug(KFAREA) << (__PRETTY_FUNCTION__) 
-#define DEBUGS(a)	kDebug(KFAREA) << "  " << a 
+#define DEBUGSETUP	qCDebug(KFLOPPY_LOG) << (__PRETTY_FUNCTION__) 
+#define DEBUGS(a)	qCDebug(KFLOPPY_LOG) << "  " << a 
 #else
 #define DEBUGSETUP
 #define DEBUGS(a)
 #endif
-
+#define k_funcinfo ""
 
 // Detect vaguely what OS we're working with. Map variants
 // to one known kind.

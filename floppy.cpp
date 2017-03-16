@@ -42,7 +42,6 @@
 #include <QUrl>
 
 #include <kmessagebox.h>
-#include <kdebug.h>
 #include <khelpmenu.h>
 #include <kaboutdata.h>
 #include <KLocalizedString>
@@ -53,6 +52,8 @@
 #include <KStandardGuiItem>
 #include <KConfigGroup>
 #include <KSharedConfig>
+
+Q_LOGGING_CATEGORY(KFLOPPY_LOG, "org.kde.kfloppy")
 
 FloppyData::FloppyData(QWidget * parent)
  : QDialog( parent ),
@@ -427,7 +428,7 @@ bool FloppyData::setInitialDevice(const QString& dev)
     QDBusInterface mediamanager( QStringLiteral( "org.kde.kded" ), QStringLiteral( "/modules/mediamanager" ), QStringLiteral( "org.kde.MediaManager" ) );
     QDBusReply<QStringList> reply = mediamanager.call( QStringLiteral( "properties" ), name );
     if (!reply.isValid()) {
-      kError() << "Invalid reply from mediamanager" << endl;
+      qCritical() << "Invalid reply from mediamanager" << endl;
     } else {
       QStringList properties = reply;
       newDevice = properties[5];
@@ -669,7 +670,7 @@ void FloppyData::format(){
 
 void FloppyData::formatStatus(const QString &s,int p)
 {
-    kDebug(2002) << "FloppyData::formatStatus: " << s << " : "  << p ;
+    qCDebug(KFLOPPY_LOG) << "FloppyData::formatStatus: " << s << " : "  << p ;
 	if (!s.isEmpty())
         {
             const QString oldText ( frame->text() );
