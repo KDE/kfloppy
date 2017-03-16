@@ -18,6 +18,18 @@ if(${CMAKE_SOURCE_DIR} STREQUAL ${CMAKE_CURRENT_SOURCE_DIR})
     find_package(Qt5 5.2.0 CONFIG REQUIRED Core DBus Widgets)
     find_package(KF5 5.2.0 REQUIRED COMPONENTS I18n CoreAddons KIO DocTools XmlGui)
 
+    find_package(KF5Crash 5.15.0) 
+    if(KF5Crash_FOUND)
+       set(HAVE_KCRASH 1)
+    else(KF5Crash_FOUND)
+       set(HAVE_KCRASH 0)
+    endif(KF5Crash_FOUND)
+    set_package_properties(KF5Crash PROPERTIES
+        DESCRIPTION "KDE's Crash Handler"
+        URL "http://api.kde.org/frameworks-api/frameworks5-apidocs/kcrash/html/index.html"
+        TYPE OPTIONAL
+        PURPOSE "Optionally used to provide crash reporting")
+
     add_definitions(-DQT_USE_FAST_CONCATENATION -DQT_USE_FAST_OPERATOR_PLUS)
 endif()
 
@@ -26,6 +38,9 @@ set(kfloppy_SRCS main.cpp format.cpp floppy.cpp )
 add_executable(kfloppy ${kfloppy_SRCS})
 
 target_link_libraries(kfloppy KF5::CoreAddons KF5::KIOWidgets KF5::I18n KF5::XmlGui Qt5::DBus)
+if(HAVE_KCRASH)
+    target_link_libraries(kfloppy KF5::Crash)
+endif()
 
 install(TARGETS kfloppy  ${INSTALL_TARGETS_DEFAULT_ARGS} )
 

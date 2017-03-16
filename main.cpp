@@ -30,6 +30,9 @@
 #include <Kdelibs4ConfigMigrator>
 #include <KAboutData>
 #include <KLocalizedString>
+#if defined HAVE_KCRASH
+#include <KCrash>
+#endif
 
 #include "floppy.h"
 
@@ -68,6 +71,10 @@ int main( int argc, char *argv[] )
     // necessary to make the "Translators" tab appear in the About dialog
     aboutData.setTranslator( i18nc( "NAME OF TRANSLATORS", "Your names" ), i18nc( "EMAIL OF TRANSLATORS", "Your emails" ) );
     KAboutData::setApplicationData(aboutData);
+
+#if defined HAVE_KCRASH
+    KCrash::initialize();
+#endif
 
     QCommandLineParser parser;
     parser.addVersionOption();
