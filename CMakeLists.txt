@@ -25,7 +25,7 @@ set(kfloppy_SRCS main.cpp format.cpp floppy.cpp )
 
 add_executable(kfloppy ${kfloppy_SRCS})
 
-target_link_libraries(kfloppy KF5::CoreAddons KF5::KIOWidgets KF5::I18n KF5::KDELibs4Support Qt5::DBus)
+target_link_libraries(kfloppy KF5::CoreAddons KF5::KIOWidgets KF5::I18n KF5::KDELibs4Support KF5::XmlGui Qt5::DBus)
 
 install(TARGETS kfloppy  ${INSTALL_TARGETS_DEFAULT_ARGS} )
 
