@@ -30,7 +30,7 @@
 #include <QRegExp>
 #include <QStandardPaths>
 
-#include <klocale.h>
+#include <KLocalizedString>
 #include <KProcess>
 #include <kdebug.h>
 

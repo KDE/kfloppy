@@ -45,13 +45,14 @@
 #include <kdebug.h>
 #include <khelpmenu.h>
 #include <kaboutdata.h>
-#include <klocale.h>
+#include <KLocalizedString>
 #include <kcombobox.h>
 #include <klineedit.h>
 #include <khelpclient.h>
 #include <KGuiItem>
 #include <KStandardGuiItem>
 #include <KConfigGroup>
+#include <KSharedConfig>
 
 FloppyData::FloppyData(QWidget * parent)
  : QDialog( parent ),
