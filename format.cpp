@@ -162,15 +162,15 @@ void KFActionQueue::queue(KFAction *p)
 //
 #ifdef ANY_LINUX
 
-const char * const fd0H1440[] = { "/dev/fd0u1440", "/dev/floppy/0u1440", "/dev/fd0h1440", "/dev/fd0H1440", 0L } ;
-const char * const fd0D720[] = { "/dev/fd0u720", "/dev/floppy/0u720", "/dev/fd0D720", "/dev/fd0h720", 0L };
-const char * const fd0h1200[] = { "/dev/fd0h1200", "/dev/floppy/0h1200", 0L };
-const char * const fd0h360[] = { "/dev/fd0u360", "/dev/floppy/0u360", "/dev/fd0h360", "/dev/fd0d360", 0L };
+const char * const fd0H1440[] = { "/dev/fd0u1440", "/dev/floppy/0u1440", "/dev/fd0h1440", "/dev/fd0H1440", "/dev/fd0", 0L } ;
+const char * const fd0D720[] = { "/dev/fd0u720", "/dev/floppy/0u720", "/dev/fd0D720", "/dev/fd0h720", "/dev/fd0", 0L };
+const char * const fd0h1200[] = { "/dev/fd0h1200", "/dev/floppy/0h1200", "/dev/fd0", 0L };
+const char * const fd0h360[] = { "/dev/fd0u360", "/dev/floppy/0u360", "/dev/fd0h360", "/dev/fd0d360", "/dev/fd0", 0L };
 
-const char * const fd1H1440[] = { "/dev/fd1u1440", "/dev/floppy/1u1440","/dev/fd1h1440", "/dev/fd1H1440", 0L } ;
-const char * const fd1D720[] = { "/dev/fd1u720", "/dev/floppy/1u720", "/dev/fd1D720", "/dev/fd1h720", 0L };
-const char * const fd1h1200[] = { "/dev/fd1h1200", "/dev/floppy/1h1200", 0L };
-const char * const fd1h360[] = { "/dev/fd1u360", "/dev/floppy/1u360","/dev/fd1h360", "/dev/fd1d360", 0L };
+const char * const fd1H1440[] = { "/dev/fd1u1440", "/dev/floppy/1u1440","/dev/fd1h1440", "/dev/fd1H1440", "/dev/fd1", 0L } ;
+const char * const fd1D720[] = { "/dev/fd1u720", "/dev/floppy/1u720", "/dev/fd1D720", "/dev/fd1h720", "/dev/fd1", 0L };
+const char * const fd1h1200[] = { "/dev/fd1h1200", "/dev/floppy/1h1200", "/dev/fd1", 0L };
+const char * const fd1h360[] = { "/dev/fd1u360", "/dev/floppy/1u360","/dev/fd1h360", "/dev/fd1d360", "/dev/fd1", 0L };
 
 const char * const fd0auto[] = { "/dev/fd0", 0L };
 const char * const fd1auto[] = { "/dev/fd1", 0L };
@@ -481,7 +481,7 @@ void FDFormat::processStdOut(const QString &s)
 	}
 	else
 	{
-		if (s.contains(QStringLiteral( "ioctl(FD_FORM)" )))
+		if (s.contains(QLatin1String( "ioctl(FD_FORM)" )))
 		{
                     emit status (i18n(
                             "Cannot access floppy or floppy drive.\n"
@@ -489,7 +489,7 @@ void FDFormat::processStdOut(const QString &s)
                             "have selected a valid floppy drive."),-1);
                     return;
 		}
-		if (s.indexOf(QStringLiteral( "/dev/" ))>=0)
+		if (s.indexOf(QLatin1String( "/dev/" ))>=0)
 		{
 			emit status(s,-1);
 			return;
@@ -499,7 +499,7 @@ void FDFormat::processStdOut(const QString &s)
 #elif defined(ANY_LINUX)
 	DEBUGS(s);
         QRegExp regexp( QStringLiteral( "([0-9]+)" ) );
-        if ( s.startsWith( QStringLiteral( "bad data at cyl" ) ) || s.contains( QStringLiteral( "Problem reading cylinder" ) ) )
+        if ( s.startsWith( QLatin1String( "bad data at cyl" ) ) || s.contains( QLatin1String( "Problem reading cylinder" ) ) )
         {
             if ( regexp.indexIn( s ) > -1 )
             {
@@ -513,7 +513,7 @@ void FDFormat::processStdOut(const QString &s)
             }
             return;
         }
-	else if (s.contains(QStringLiteral( "ioctl(FDFMTBEG)" )))
+	else if (s.contains(QLatin1String( "ioctl(FDFMTBEG)" )))
 	{
             emit status (i18n(
                     "Cannot access floppy or floppy drive.\n"
@@ -521,13 +521,13 @@ void FDFormat::processStdOut(const QString &s)
                     "have selected a valid floppy drive."),-1);
             return;
 	}
-        else if (s.contains(QStringLiteral( "busy" ))) // "Device or resource busy"
+        else if (s.contains(QLatin1String( "busy" ))) // "Device or resource busy"
         {
             emit status(i18n("Device busy.\nPerhaps you need to unmount the floppy first."),-1);
             return;
         }
         // Be careful to leave "iotcl" as last before checking numbers
-        else if (s.contains(QStringLiteral( "ioctl" )))
+        else if (s.contains(QLatin1String( "ioctl" )))
         {
             emit status(i18n("Low-level format error: %1", s),-1);
             return;
@@ -713,14 +713,19 @@ void FATFilesystem::processStdOut(const QString &s)
     // ### TODO: do some checks
 #elif defined(ANY_LINUX)
     qCDebug(KFLOPPY_LOG) << s ;
-    if (s.contains(QStringLiteral( "mounted" ))) // "/dev/fd0 contains a mounted filesystem"
+    if (s.contains(QLatin1String( "mounted" ))) // "/dev/fd0 contains a mounted filesystem"
     {
         emit status(i18n("Floppy is mounted.\nYou need to unmount the floppy first."),-1);
         return;
     }
-    else if (s.contains(QStringLiteral( "busy" ))) // "Device or resource busy"
+    else if (s.contains(QLatin1String( "busy" ))) // "Device or resource busy"
     {
         emit status(i18n("Device busy.\nPerhaps you need to unmount the floppy first."),-1);
+        return;
+    }
+    else if (s.contains( QLatin1String( "denied" ))) // "Permission denied"
+    {
+        emit status( s, -1 );
         return;
     }
 # if 0
@@ -875,14 +880,19 @@ void Ext2Filesystem::processStdOut(const QString &s)
     // ### TODO: do some checks
 #elif defined(ANY_LINUX)
     qCDebug(KFLOPPY_LOG) << s ;
-    if (s.contains(QStringLiteral( "mounted" ))) // "/dev/fd0 is mounted; will not make a filesystem here!"
+    if (s.contains(QLatin1String( "mounted" ))) // "/dev/fd0 is mounted; will not make a filesystem here!"
     {
         emit status(i18n("Floppy is mounted.\nYou need to unmount the floppy first."),-1);
         return;
     }
-    else if (s.contains(QStringLiteral( "busy" ))) // "Device or resource busy"
+    else if (s.contains(QLatin1String( "busy" ))) // "Device or resource busy"
     {
         emit status(i18n("Device busy.\nPerhaps you need to unmount the floppy first."),-1);
+        return;
+    }
+    else if (s.contains( QLatin1String( "denied" ))) // "Permission denied"
+    {
+        emit status( s, -1 );
         return;
     }
 #endif
@@ -965,14 +975,19 @@ void MinixFilesystem::exec()
 void MinixFilesystem::processStdOut(const QString &s)
 {
     qCDebug(KFLOPPY_LOG) << s ;
-    if (s.contains(QStringLiteral( "mounted" ))) // "mkfs.minix: /dev/fd0 is mounted; will not make a filesystem here!"
+    if (s.contains(QLatin1String( "mounted" ))) // "mkfs.minix: /dev/fd0 is mounted; will not make a filesystem here!"
     {
         emit status(i18n("Floppy is mounted.\nYou need to unmount the floppy first."),-1);
         return;
     }
-    else if (s.contains(QStringLiteral( "busy" ))) // "Device or resource busy"
+    else if (s.contains(QLatin1String( "busy" ))) // "Device or resource busy"
     {
         emit status(i18n("Device busy.\nPerhaps you need to unmount the floppy first."),-1);
+        return;
+    }
+    else if (s.contains( QLatin1String( "denied" ))) // "Permission denied"
+    {
+        emit status( s, -1 );
         return;
     }
 }
