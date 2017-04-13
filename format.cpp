@@ -723,6 +723,11 @@ void FATFilesystem::processStdOut(const QString &s)
         emit status(i18n("Device busy.\nPerhaps you need to unmount the floppy first."),-1);
         return;
     }
+    else if (s.contains( QLatin1String( "denied" ))) // "Permission denied"
+    {
+        emit status( s, -1 );
+        return;
+    }
 # if 0
     else if ( s.find( "mkdosfs" ) != -1 ) // DEBUG: get the program header and show it!
     {
@@ -885,6 +890,11 @@ void Ext2Filesystem::processStdOut(const QString &s)
         emit status(i18n("Device busy.\nPerhaps you need to unmount the floppy first."),-1);
         return;
     }
+    else if (s.contains( QLatin1String( "denied" ))) // "Permission denied"
+    {
+        emit status( s, -1 );
+        return;
+    }
 #endif
 }
 
@@ -973,6 +983,11 @@ void MinixFilesystem::processStdOut(const QString &s)
     else if (s.contains(QLatin1String( "busy" ))) // "Device or resource busy"
     {
         emit status(i18n("Device busy.\nPerhaps you need to unmount the floppy first."),-1);
+        return;
+    }
+    else if (s.contains( QLatin1String( "denied" ))) // "Permission denied"
+    {
+        emit status( s, -1 );
         return;
     }
 }
