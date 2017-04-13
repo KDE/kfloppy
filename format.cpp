@@ -162,15 +162,15 @@ void KFActionQueue::queue(KFAction *p)
 //
 #ifdef ANY_LINUX
 
-const char * const fd0H1440[] = { "/dev/fd0u1440", "/dev/floppy/0u1440", "/dev/fd0h1440", "/dev/fd0H1440", 0L } ;
-const char * const fd0D720[] = { "/dev/fd0u720", "/dev/floppy/0u720", "/dev/fd0D720", "/dev/fd0h720", 0L };
-const char * const fd0h1200[] = { "/dev/fd0h1200", "/dev/floppy/0h1200", 0L };
-const char * const fd0h360[] = { "/dev/fd0u360", "/dev/floppy/0u360", "/dev/fd0h360", "/dev/fd0d360", 0L };
+const char * const fd0H1440[] = { "/dev/fd0u1440", "/dev/floppy/0u1440", "/dev/fd0h1440", "/dev/fd0H1440", "/dev/fd0", 0L } ;
+const char * const fd0D720[] = { "/dev/fd0u720", "/dev/floppy/0u720", "/dev/fd0D720", "/dev/fd0h720", "/dev/fd0", 0L };
+const char * const fd0h1200[] = { "/dev/fd0h1200", "/dev/floppy/0h1200", "/dev/fd0", 0L };
+const char * const fd0h360[] = { "/dev/fd0u360", "/dev/floppy/0u360", "/dev/fd0h360", "/dev/fd0d360", "/dev/fd0", 0L };
 
-const char * const fd1H1440[] = { "/dev/fd1u1440", "/dev/floppy/1u1440","/dev/fd1h1440", "/dev/fd1H1440", 0L } ;
-const char * const fd1D720[] = { "/dev/fd1u720", "/dev/floppy/1u720", "/dev/fd1D720", "/dev/fd1h720", 0L };
-const char * const fd1h1200[] = { "/dev/fd1h1200", "/dev/floppy/1h1200", 0L };
-const char * const fd1h360[] = { "/dev/fd1u360", "/dev/floppy/1u360","/dev/fd1h360", "/dev/fd1d360", 0L };
+const char * const fd1H1440[] = { "/dev/fd1u1440", "/dev/floppy/1u1440","/dev/fd1h1440", "/dev/fd1H1440", "/dev/fd1", 0L } ;
+const char * const fd1D720[] = { "/dev/fd1u720", "/dev/floppy/1u720", "/dev/fd1D720", "/dev/fd1h720", "/dev/fd1", 0L };
+const char * const fd1h1200[] = { "/dev/fd1h1200", "/dev/floppy/1h1200", "/dev/fd1", 0L };
+const char * const fd1h360[] = { "/dev/fd1u360", "/dev/floppy/1u360","/dev/fd1h360", "/dev/fd1d360", "/dev/fd1", 0L };
 
 const char * const fd0auto[] = { "/dev/fd0", 0L };
 const char * const fd1auto[] = { "/dev/fd1", 0L };
