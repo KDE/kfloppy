@@ -16,7 +16,7 @@ if(${CMAKE_SOURCE_DIR} STREQUAL ${CMAKE_CURRENT_SOURCE_DIR})
     include(ECMInstallIcons)
 
     find_package(Qt5 5.2.0 CONFIG REQUIRED Core DBus Widgets)
-    find_package(KF5 5.2.0 REQUIRED COMPONENTS I18n CoreAddons KIO DocTools XmlGui)
+    find_package(KF5 5.2.0 REQUIRED COMPONENTS I18n CoreAddons Completion DocTools XmlGui)
 
     find_package(KF5Crash 5.15.0) 
     if(KF5Crash_FOUND)
@@ -37,7 +37,7 @@ set(kfloppy_SRCS main.cpp format.cpp floppy.cpp )
 
 add_executable(kfloppy ${kfloppy_SRCS})
 
-target_link_libraries(kfloppy KF5::CoreAddons KF5::KIOWidgets KF5::I18n KF5::XmlGui Qt5::DBus)
+target_link_libraries(kfloppy KF5::CoreAddons KF5::I18n KF5::Completion KF5::XmlGui Qt5::DBus)
 if(HAVE_KCRASH)
     target_link_libraries(kfloppy KF5::Crash)
 endif()
