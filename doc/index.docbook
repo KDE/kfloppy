@@ -539,7 +539,7 @@ part of the device for two reasons:</para>
 </listitem>
 <listitem>
 <para>It is a security, to avoid that the user writes anything in the combobox
-that is by change a device name.</para>
+that is by chance a device name.</para>
 </listitem>
 </itemizedlist>
 </note>
