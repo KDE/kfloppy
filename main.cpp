@@ -77,8 +77,6 @@ int main( int argc, char *argv[] )
 #endif
 
     QCommandLineParser parser;
-    parser.addVersionOption();
-    parser.addHelpOption();
     aboutData.setupCommandLine(&parser);
 
     parser.addPositionalArgument(QStringLiteral("[device]"), i18n("Default device"));
