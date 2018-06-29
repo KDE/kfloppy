@@ -993,5 +993,3 @@ void MinixFilesystem::processStdOut(const QString &s)
 }
 
 #endif
-
-#include "format.moc"
