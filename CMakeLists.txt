@@ -30,7 +30,7 @@ if(${CMAKE_SOURCE_DIR} STREQUAL ${CMAKE_CURRENT_SOURCE_DIR})
         TYPE OPTIONAL
         PURPOSE "Optionally used to provide crash reporting")
 
-    add_definitions(-DQT_USE_FAST_CONCATENATION -DQT_USE_FAST_OPERATOR_PLUS)
+    add_definitions(-DQT_USE_FAST_OPERATOR_PLUS)
 endif()
 
 set(kfloppy_SRCS main.cpp format.cpp floppy.cpp )
