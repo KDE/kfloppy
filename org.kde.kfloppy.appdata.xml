@@ -24,6 +24,7 @@
   <name xml:lang="nn">KFloppy</name>
   <name xml:lang="pl">KDyskietka</name>
   <name xml:lang="pt">KFloppy</name>
+  <name xml:lang="pt-BR">KFloppy</name>
   <name xml:lang="ru">KFloppy</name>
   <name xml:lang="sk">KFloppy</name>
   <name xml:lang="sl">KFloppy</name>
@@ -57,6 +58,7 @@
   <summary xml:lang="nn">Diskettformatering</summary>
   <summary xml:lang="pl">Formatowanie dyskietek</summary>
   <summary xml:lang="pt">Formatação de disquetes</summary>
+  <summary xml:lang="pt-BR">Formatador de disquetes</summary>
   <summary xml:lang="ru">Форматирование дискет</summary>
   <summary xml:lang="sk">Formátovač diskiet</summary>
   <summary xml:lang="sl">Program za formatiranje disket</summary>
