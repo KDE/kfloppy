@@ -29,6 +29,7 @@
 #include <QTimer>
 #include <QRegExp>
 #include <QStandardPaths>
+#include "qplatformdefs.h"
 
 #include <KLocalizedString>
 #include <KProcess>
@@ -298,7 +299,7 @@ bool FloppyAction::configureDevice(int drive,int density)
 	for (const char* const* devices=deviceinfo->devices ;
 		*devices ; devices++)
 	{
-		if (access(*devices,W_OK)>=0)
+		if (QT_ACCESS(*devices,W_OK)>=0)
 		{
 			qCDebug(KFLOPPY_LOG) << "Found device " << *devices ;
 			devicename=*devices;
@@ -369,8 +370,8 @@ bool FloppyAction::startProcess()
 {
 	DEBUGSETUP;
 
-	connect(theProcess, SIGNAL(finished(int, QProcess::ExitStatus)),
-		this, SLOT(processDone(int, QProcess::ExitStatus)));
+	connect(theProcess, SIGNAL(finished(int,QProcess::ExitStatus)),
+		this, SLOT(processDone(int,QProcess::ExitStatus)));
 	connect(theProcess, SIGNAL(readyReadStandardOutput()),
 		this, SLOT(readStdOut()));
 	connect(theProcess, SIGNAL(readyReadStandardError()),

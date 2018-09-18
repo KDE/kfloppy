@@ -70,7 +70,7 @@ class KFAction : public QObject
 Q_OBJECT
 
 public:
-	KFAction(QObject *parent = 0L);
+	explicit KFAction(QObject *parent = 0L);
 	virtual ~KFAction();
 	
 public slots:
@@ -119,7 +119,7 @@ class KFActionQueue : public KFAction
 Q_OBJECT
 
 public:
-	KFActionQueue(QObject *parent = 0L);
+	explicit KFActionQueue(QObject *parent = 0L);
 	virtual ~KFActionQueue();
 	
 	/**
@@ -178,7 +178,7 @@ class FloppyAction : public KFAction
 Q_OBJECT
 
 public:
-	FloppyAction(QObject *parent = 0L);
+	explicit FloppyAction(QObject *parent = 0L);
 	
 	/**
 	 * Kills the running process, if one exists.
@@ -258,7 +258,7 @@ private slots:
 class FDFormat : public FloppyAction
 {
 public:
-	FDFormat(QObject *parent = 0L);
+	explicit FDFormat(QObject *parent = 0L);
 	
 	virtual void exec();
 
@@ -288,13 +288,13 @@ protected:
 } ;
 
 /**
- * Zero out disk by runnind dd(1)
+ * Zero out disk by running dd(1)
  * \bug As dd terminates with the error "No space left on device", KFloppy aborts
  */
 class DDZeroOut : public FloppyAction
 {
 public:
-    DDZeroOut(QObject *parent = 0L);
+    explicit DDZeroOut(QObject *parent = 0L);
 
     virtual void exec();
 
@@ -324,7 +324,7 @@ protected:
 class FATFilesystem : public FloppyAction
 {
 public:
-	FATFilesystem(QObject *parent = 0L);
+	explicit FATFilesystem(QObject *parent = 0L);
 	
 	virtual void exec();
 	
@@ -355,7 +355,7 @@ protected:
 class Ext2Filesystem : public FloppyAction
 {
 public:
-	Ext2Filesystem(QObject *parent = 0L);
+	explicit Ext2Filesystem(QObject *parent = 0L);
 	
 	virtual void exec();
 	
@@ -383,7 +383,7 @@ protected:
 class UFSFilesystem : public FloppyAction
 {
 public:
-	UFSFilesystem(QObject *parent = 0L);
+	explicit UFSFilesystem(QObject *parent = 0L);
 	
 	virtual void exec();
 	
@@ -405,7 +405,7 @@ protected:
 class MinixFilesystem : public FloppyAction
 {
 public:
-	MinixFilesystem(QObject *parent = 0L);
+	explicit MinixFilesystem(QObject *parent = 0L);
 	
 	virtual void exec();
 	

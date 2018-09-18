@@ -25,20 +25,22 @@
 #include "floppy.h"
 #include "format.h"
 
+#include <QApplication>
 #include <QCheckBox>
 #include <QLabel>
-#include <qcursor.h>
-#include <qgroupbox.h>
-#include <qradiobutton.h>
+#include <QCursor>
+#include <QGroupBox>
+#include <QRadioButton>
 #include <QVBoxLayout>
 #include <QFrame>
 #include <QHBoxLayout>
 #include <QGridLayout>
 #include <QKeyEvent>
 #include <QCloseEvent>
-#include <QtDBus/QtDBus>
+#include <QDBusInterface>
+#include <QDBusReply>
 #include <QPushButton>
-#include <qprogressbar.h>
+#include <QProgressBar>
 #include <QUrl>
 
 #include <kmessagebox.h>

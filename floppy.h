@@ -48,7 +48,7 @@ class FloppyData : public QDialog
     Q_OBJECT
 
 public:
-    FloppyData(QWidget* parent = 0);
+    explicit FloppyData(QWidget* parent = 0);
     virtual ~FloppyData();
 
     /// Need to overload normal show() in order to mangle caption
