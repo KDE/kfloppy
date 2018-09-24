@@ -132,7 +132,7 @@ public:
 	 */
 	void queue(KFAction *);
 	
-    void exec() override;
+	void exec() override;
 
 protected Q_SLOTS:
 	void actionDone(KFAction *,bool);
@@ -260,7 +260,7 @@ class FDFormat : public FloppyAction
 public:
 	explicit FDFormat(QObject *parent = nullptr);
 	
-    void exec() override;
+	void exec() override;
 
 	
 	/**
@@ -326,7 +326,7 @@ class FATFilesystem : public FloppyAction
 public:
 	explicit FATFilesystem(QObject *parent = nullptr);
 	
-    void exec() override;
+	void exec() override;
 	
 	static bool runtimeCheck();
 
@@ -357,7 +357,7 @@ class Ext2Filesystem : public FloppyAction
 public:
 	explicit Ext2Filesystem(QObject *parent = nullptr);
 	
-    void exec() override;
+	void exec() override;
 	
 	static bool runtimeCheck();
 	
@@ -385,7 +385,7 @@ class UFSFilesystem : public FloppyAction
 public:
 	explicit UFSFilesystem(QObject *parent = nullptr);
 	
-    void exec() override;
+	void exec() override;
 	
 	static bool runtimeCheck();
 	
@@ -407,8 +407,8 @@ class MinixFilesystem : public FloppyAction
 public:
 	explicit MinixFilesystem(QObject *parent = nullptr);
 	
-    void exec() override;
-	
+   	void exec() override;
+
 	static bool runtimeCheck();
 	
 	/// Same args as FATFilesystem::configure
