@@ -470,13 +470,13 @@ void FDFormat::processStdOut(const QString &s)
 	DEBUGSETUP;
 
 #ifdef ANY_BSD
-	if (s[0]=='F')
+    	if (s[0]==QLatin1Char('F'))
 	{
 		formatTrackCount++;
 		emit status(QString::null,	//krazy:exclude=nullstrassign for old broken gcc
 			formatTrackCount * 100 / deviceInfo->tracks);
 	}
-	else if (s[0]=='E')
+	else if (s[0]==QLatin1Char('E'))
 	{
 		emit status(i18n("Error formatting track %1.", formatTrackCount),-1);
 	}
@@ -787,7 +787,7 @@ void UFSFilesystem::exec()
 
         // ### TODO: is it still needed? (FreeBSD 5.3's man page says: "For backward compatibility.")
         if ( deviceInfo )
-           *p << "-T" << QString("fd%1").arg(deviceInfo->blocks);
+           *p << QStringLiteral("-T") << QStringLiteral("fd%1").arg(deviceInfo->blocks);
 
         *p << deviceName;
 
