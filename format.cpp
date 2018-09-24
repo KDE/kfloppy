@@ -138,7 +138,7 @@ void KFActionQueue::queue(KFAction *p)
 		return;
 	}
 
-	KFAction *next = d->list.isEmpty() ? 0 : d->list.first();
+	KFAction *next = d->list.isEmpty() ? nullptr : d->list.first();
 	if (!next)
 	{
 		emit done(this,true);
@@ -249,7 +249,7 @@ void FloppyAction::quit()
 
 bool FloppyAction::configureDevice( const QString& newDeviceName )
 {
-    deviceInfo = 0; // We have not any idea what the device is
+    deviceInfo = nullptr; // We have not any idea what the device is
     deviceName = newDeviceName;
     return true; // No problem!
 }
