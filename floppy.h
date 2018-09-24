@@ -48,7 +48,7 @@ class FloppyData : public QDialog
     Q_OBJECT
 
 public:
-    explicit FloppyData(QWidget* parent = 0);
+    explicit FloppyData(QWidget* parent = nullptr);
     virtual ~FloppyData();
 
     /// Need to overload normal show() in order to mangle caption
@@ -59,7 +59,7 @@ public:
     bool setInitialDevice(const QString& dev);
     /** Override closeEvent() in order to properly close
       the entire application.*/
-    void closeEvent(QCloseEvent*);
+    void closeEvent(QCloseEvent*) override;
     /// Writing the user-visible settings.
     void writeSettings();
     /// Reading the user-visible settings.
@@ -71,14 +71,14 @@ public:
     /// Enable/disable all UI elements
     void setEnabled(bool);
     
-public slots:
+public Q_SLOTS:
       void quit();
       void format();
       void reset();
 
       void formatStatus(const QString &,int);
       
-protected slots:
+protected Q_SLOTS:
 
 private:
         int verifyconfig;
@@ -121,7 +121,7 @@ private:
         bool m_canLowLevel; ///< Low level formatting is possible (i.e. was fdformat found?)
         bool m_canZeroOut; ///< Is zero-out possible (i.e. was dd found?)
 protected:
-	void keyPressEvent(QKeyEvent *e);
+    void keyPressEvent(QKeyEvent *e) override;
 
 };
 

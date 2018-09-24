@@ -70,10 +70,10 @@ class KFAction : public QObject
 Q_OBJECT
 
 public:
-	explicit KFAction(QObject *parent = 0L);
+	explicit KFAction(QObject *parent = nullptr);
 	virtual ~KFAction();
 	
-public slots:
+public Q_SLOTS:
 	/**
 	 * Exec() should return quickly to ensire that the GUI
 	 * thread stays alive. quit() should abort the action.
@@ -85,7 +85,7 @@ public slots:
 	 */
 	virtual void quit();
 	
-signals:
+Q_SIGNALS:
 	/**
 	 * done() should always be emitted with this as first
 	 * parameter, to avoid sender() magic and the like.
@@ -119,7 +119,7 @@ class KFActionQueue : public KFAction
 Q_OBJECT
 
 public:
-	explicit KFActionQueue(QObject *parent = 0L);
+	explicit KFActionQueue(QObject *parent = nullptr);
 	virtual ~KFActionQueue();
 	
 	/**
@@ -132,9 +132,9 @@ public:
 	 */
 	void queue(KFAction *);
 	
-	virtual void exec();
+    void exec() override;
 
-protected slots:
+protected Q_SLOTS:
 	void actionDone(KFAction *,bool);
 	
 private:
@@ -178,12 +178,12 @@ class FloppyAction : public KFAction
 Q_OBJECT
 
 public:
-	explicit FloppyAction(QObject *parent = 0L);
+	explicit FloppyAction(QObject *parent = nullptr);
 	
 	/**
 	 * Kills the running process, if one exists.
 	 */
-	virtual void quit();
+    void quit() override;
 	
 	/**
 	 * ConfigureDevice() needs to be called prior to exec()
@@ -214,7 +214,7 @@ protected:
 	const fdinfo *deviceInfo;      ///< Configuration info (Pointer into list of "/dev/..." entries)
 	QString deviceName;  ///< Name of the device
 
-protected slots:
+protected Q_SLOTS:
         /**
          * \brief Provide handling of the exit of the external program
          */
@@ -242,7 +242,7 @@ protected:
 	 */
 		
 	bool startProcess();
-private slots:
+private Q_SLOTS:
 	/**
 	 * These functions read stdout/stderr and call
 	 * processStdOut()/processStdErr() accordingly
@@ -258,9 +258,9 @@ private slots:
 class FDFormat : public FloppyAction
 {
 public:
-	explicit FDFormat(QObject *parent = 0L);
+	explicit FDFormat(QObject *parent = nullptr);
 	
-	virtual void exec();
+    void exec() override;
 
 	
 	/**
@@ -279,7 +279,7 @@ public:
 	
 	bool configure(bool verify);
 	
-	virtual void processStdOut(const QString &s);
+    void processStdOut(const QString &s) override;
 
 protected:
 	static QString fdformatName;    ///< path to executable.
@@ -294,9 +294,9 @@ protected:
 class DDZeroOut : public FloppyAction
 {
 public:
-    explicit DDZeroOut(QObject *parent = 0L);
+    explicit DDZeroOut(QObject *parent = nullptr);
 
-    virtual void exec();
+    void exec() override;
 
     /**
      * Concrete classes can provide a runtimeCheck
@@ -312,7 +312,7 @@ protected:
     /**
      * \brief Provide handling of the exit of the external program
      */
-    virtual void processDone(int exitCode, QProcess::ExitStatus exitStatus);
+    void processDone(int exitCode, QProcess::ExitStatus exitStatus) override;
 protected:
     static QString m_ddName;    ///< path to executable.
 } ;
@@ -324,9 +324,9 @@ protected:
 class FATFilesystem : public FloppyAction
 {
 public:
-	explicit FATFilesystem(QObject *parent = 0L);
+	explicit FATFilesystem(QObject *parent = nullptr);
 	
-	virtual void exec();
+    void exec() override;
 	
 	static bool runtimeCheck();
 
@@ -339,7 +339,7 @@ public:
 	bool configure(bool verify, bool label, const QString &l);
 	
         /// Parse output
-        virtual void processStdOut(const QString &s);
+        void processStdOut(const QString &s) override;
         
 protected:
 	static QString newfs_fat;
@@ -355,9 +355,9 @@ protected:
 class Ext2Filesystem : public FloppyAction
 {
 public:
-	explicit Ext2Filesystem(QObject *parent = 0L);
+	explicit Ext2Filesystem(QObject *parent = nullptr);
 	
-	virtual void exec();
+    void exec() override;
 	
 	static bool runtimeCheck();
 	
@@ -365,7 +365,7 @@ public:
 	bool configure(bool verify, bool label, const QString &l);
 
         /// Parse output
-        virtual void processStdOut(const QString &s);
+        void processStdOut(const QString &s) override;
 	
 protected:
 	static QString newfs;
@@ -383,9 +383,9 @@ protected:
 class UFSFilesystem : public FloppyAction
 {
 public:
-	explicit UFSFilesystem(QObject *parent = 0L);
+	explicit UFSFilesystem(QObject *parent = nullptr);
 	
-	virtual void exec();
+    void exec() override;
 	
 	static bool runtimeCheck();
 	
@@ -405,9 +405,9 @@ protected:
 class MinixFilesystem : public FloppyAction
 {
 public:
-	explicit MinixFilesystem(QObject *parent = 0L);
+	explicit MinixFilesystem(QObject *parent = nullptr);
 	
-	virtual void exec();
+    void exec() override;
 	
 	static bool runtimeCheck();
 	
@@ -415,7 +415,7 @@ public:
 	bool configure(bool verify, bool label, const QString &l);
         
         /// Parse output
-        virtual void processStdOut(const QString &s);
+        void processStdOut(const QString &s) override;
 protected:
 	static QString newfs;
 	

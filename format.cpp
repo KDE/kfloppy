@@ -40,7 +40,7 @@ static QStringList extPath = QStringList();
 {
 	if (extPath.isEmpty())
 	{
-            QStringList path = QString( qgetenv("PATH") ).split(QStringLiteral( ":" ));
+            QStringList path = QString::fromLocal8Bit(qgetenv("PATH")).split(QStringLiteral( ":" ));
             path.append(QStringLiteral( "/usr/sbin" ));
             path.append(QStringLiteral( "/sbin" ));
 		extPath = path;
@@ -105,7 +105,7 @@ void KFActionQueue::queue(KFAction *p)
 {
 	DEBUGSETUP;
 
-	actionDone(0L,true);
+    actionDone(nullptr,true);
 }
 
 /* slot */ void KFActionQueue::actionDone(KFAction *p,bool success)
@@ -163,25 +163,25 @@ void KFActionQueue::queue(KFAction *p)
 //
 #ifdef ANY_LINUX
 
-const char * const fd0H1440[] = { "/dev/fd0u1440", "/dev/floppy/0u1440", "/dev/fd0h1440", "/dev/fd0H1440", "/dev/fd0", 0L } ;
-const char * const fd0D720[] = { "/dev/fd0u720", "/dev/floppy/0u720", "/dev/fd0D720", "/dev/fd0h720", "/dev/fd0", 0L };
-const char * const fd0h1200[] = { "/dev/fd0h1200", "/dev/floppy/0h1200", "/dev/fd0", 0L };
-const char * const fd0h360[] = { "/dev/fd0u360", "/dev/floppy/0u360", "/dev/fd0h360", "/dev/fd0d360", "/dev/fd0", 0L };
+const char * const fd0H1440[] = { "/dev/fd0u1440", "/dev/floppy/0u1440", "/dev/fd0h1440", "/dev/fd0H1440", "/dev/fd0", nullptr } ;
+const char * const fd0D720[] = { "/dev/fd0u720", "/dev/floppy/0u720", "/dev/fd0D720", "/dev/fd0h720", "/dev/fd0", nullptr };
+const char * const fd0h1200[] = { "/dev/fd0h1200", "/dev/floppy/0h1200", "/dev/fd0", nullptr };
+const char * const fd0h360[] = { "/dev/fd0u360", "/dev/floppy/0u360", "/dev/fd0h360", "/dev/fd0d360", "/dev/fd0", nullptr };
 
-const char * const fd1H1440[] = { "/dev/fd1u1440", "/dev/floppy/1u1440","/dev/fd1h1440", "/dev/fd1H1440", "/dev/fd1", 0L } ;
-const char * const fd1D720[] = { "/dev/fd1u720", "/dev/floppy/1u720", "/dev/fd1D720", "/dev/fd1h720", "/dev/fd1", 0L };
-const char * const fd1h1200[] = { "/dev/fd1h1200", "/dev/floppy/1h1200", "/dev/fd1", 0L };
-const char * const fd1h360[] = { "/dev/fd1u360", "/dev/floppy/1u360","/dev/fd1h360", "/dev/fd1d360", "/dev/fd1", 0L };
+const char * const fd1H1440[] = { "/dev/fd1u1440", "/dev/floppy/1u1440","/dev/fd1h1440", "/dev/fd1H1440", "/dev/fd1", nullptr } ;
+const char * const fd1D720[] = { "/dev/fd1u720", "/dev/floppy/1u720", "/dev/fd1D720", "/dev/fd1h720", "/dev/fd1", nullptr };
+const char * const fd1h1200[] = { "/dev/fd1h1200", "/dev/floppy/1h1200", "/dev/fd1", nullptr };
+const char * const fd1h360[] = { "/dev/fd1u360", "/dev/floppy/1u360","/dev/fd1h360", "/dev/fd1d360", "/dev/fd1", nullptr };
 
-const char * const fd0auto[] = { "/dev/fd0", 0L };
-const char * const fd1auto[] = { "/dev/fd1", 0L };
+const char * const fd0auto[] = { "/dev/fd0", nullptr };
+const char * const fd1auto[] = { "/dev/fd1", nullptr };
 
 #endif
 
 
 #ifdef ANY_BSD
-const char * const fd0[] = { "/dev/fd0", 0L } ;
-const char * const fd1[] = { "/dev/fd1", 0L } ;
+const char * const fd0[] = { "/dev/fd0", nullptr } ;
+const char * const fd1[] = { "/dev/fd1", nullptr } ;
 #endif
 
 // Next we have a table of device names and characteristics.
@@ -226,14 +226,14 @@ const fdinfo fdtable[] =
 	{ fd0, 0,  360, 40, 0},
 	{ fd1, 1,  360, 40, 0},
 #endif
-	{ 0L, 0, 0, 0, 0 }
+    { nullptr, 0, 0, 0, 0 }
 } ;
 
 
 FloppyAction::FloppyAction(QObject *p) :
 	KFAction(p),
-	deviceInfo(0L),
-	theProcess(0L)
+    deviceInfo(nullptr),
+    theProcess(nullptr)
 {
 	DEBUGSETUP;
 }
@@ -242,7 +242,7 @@ void FloppyAction::quit()
 {
 	DEBUGSETUP;
         delete theProcess;
-        theProcess=0L;
+        theProcess=nullptr;
 
 	KFAction::quit();
 }
@@ -257,9 +257,9 @@ bool FloppyAction::configureDevice( const QString& newDeviceName )
 bool FloppyAction::configureDevice(int drive,int density)
 {
 	DEBUGSETUP;
-	const char *devicename = 0L;
+    const char *devicename = nullptr;
 
-	deviceInfo=0L;
+    deviceInfo=nullptr;
 	deviceName.clear();
 
 	if ((drive<0) || (drive>1))
@@ -324,12 +324,12 @@ bool FloppyAction::configureDevice(int drive,int density)
 
 void FloppyAction::readStdOut()
 {
-	processStdOut( theProcess->readAllStandardOutput() );
+    processStdOut( QString::fromUtf8(theProcess->readAllStandardOutput()) );
 }
 
 void FloppyAction::readStdErr()
 {
-	processStdOut( theProcess->readAllStandardError() );
+    processStdOut( QString::fromUtf8(theProcess->readAllStandardError()) );
 }
 
 void FloppyAction::processDone(int exitCode, QProcess::ExitStatus exitStatus)
@@ -862,7 +862,7 @@ void Ext2Filesystem::exec()
 	KProcess *p = theProcess = new KProcess;
 
 	*p << newfs;
-	*p << "-q";
+    *p << QStringLiteral("-q");
 	if (doVerify) *p << QStringLiteral( "-c" ) ;
 	if (doLabel) *p << QStringLiteral( "-L" ) << label ;
 

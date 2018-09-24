@@ -5,42 +5,30 @@ if(NOT UNIX)
   message(FATAL_ERROR "KFloppy is only supposed to be built on Unix platforms.")
 endif(NOT UNIX)
 
-find_package(ECM REQUIRED NO_MODULE)
+set(KF5_VERSION "5.44.0")
+set(REQUIRED_QT_VERSION "5.9.0")
+
+find_package(ECM ${KF5_VERSION} REQUIRED NO_MODULE)
 set(CMAKE_MODULE_PATH ${ECM_MODULE_PATH})
 
-if(${CMAKE_SOURCE_DIR} STREQUAL ${CMAKE_CURRENT_SOURCE_DIR})
-    include(KDEInstallDirs)
-    include(KDECompilerSettings NO_POLICY_SCOPE)
-    include(KDECMakeSettings)
-    include(FeatureSummary)
-    include(ECMInstallIcons)
+include(KDEInstallDirs)
+include(KDEFrameworkCompilerSettings NO_POLICY_SCOPE)
+include(KDECMakeSettings)
+include(FeatureSummary)
+include(ECMInstallIcons)
 
-    find_package(Qt5 5.2.0 CONFIG REQUIRED Core DBus Widgets)
-    find_package(KF5 5.2.0 REQUIRED COMPONENTS I18n CoreAddons Completion DocTools XmlGui)
 
-    find_package(KF5Crash 5.15.0) 
-    if(KF5Crash_FOUND)
-       set(HAVE_KCRASH 1)
-    else(KF5Crash_FOUND)
-       set(HAVE_KCRASH 0)
-    endif(KF5Crash_FOUND)
-    set_package_properties(KF5Crash PROPERTIES
-        DESCRIPTION "KDE's Crash Handler"
-        URL "http://api.kde.org/frameworks-api/frameworks5-apidocs/kcrash/html/index.html"
-        TYPE OPTIONAL
-        PURPOSE "Optionally used to provide crash reporting")
+find_package(Qt5 ${REQUIRED_QT_VERSION} CONFIG REQUIRED Core DBus Widgets)
+find_package(KF5 ${KF5_VERSION} REQUIRED COMPONENTS I18n CoreAddons Completion DocTools XmlGui)
+find_package(KF5Crash ${KF5_VERSION} CONFIG REQUIRED)
 
-    add_definitions(-DQT_USE_FAST_OPERATOR_PLUS)
-endif()
+add_definitions(-DQT_USE_FAST_OPERATOR_PLUS)
 
 set(kfloppy_SRCS main.cpp format.cpp floppy.cpp )
 
 add_executable(kfloppy ${kfloppy_SRCS})
 
-target_link_libraries(kfloppy KF5::CoreAddons KF5::I18n KF5::Completion KF5::XmlGui Qt5::DBus)
-if(HAVE_KCRASH)
-    target_link_libraries(kfloppy KF5::Crash)
-endif()
+target_link_libraries(kfloppy KF5::CoreAddons KF5::I18n KF5::Completion KF5::XmlGui Qt5::DBus KF5::Crash)
 
 install(TARGETS kfloppy  ${INSTALL_TARGETS_DEFAULT_ARGS} )
 

@@ -59,7 +59,7 @@ Q_LOGGING_CATEGORY(KFLOPPY_LOG, "org.kde.kfloppy")
 
 FloppyData::FloppyData(QWidget * parent)
  : QDialog( parent ),
-	formatActions(0L), m_canLowLevel(false), m_canZeroOut( false )
+	formatActions(nullptr), m_canLowLevel(false), m_canZeroOut( false )
 {
 	QWidget *widget = new QWidget(this);
 	formating = false;
@@ -493,7 +493,7 @@ void FloppyData::reset()
   {
     formatActions->quit();
     delete formatActions;
-    formatActions = 0L;
+    formatActions = nullptr;
   }
 
   progress->setValue(0);
