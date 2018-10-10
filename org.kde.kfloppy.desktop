@@ -2,7 +2,6 @@
 GenericName=Floppy Formatter
 GenericName[af]=Sagteskyf Formateerder
 GenericName[ar]=مهئ الأقراص المرنة
-GenericName[ast]=Formatiador de disquetes
 GenericName[bg]=Форматиране на дискети
 GenericName[br]=Furmader pladennig
 GenericName[bs]=Formatiranje disketa
@@ -77,7 +76,6 @@ GenericName[zh_TW]=軟碟格式化程式
 Name=KFloppy
 Name[af]=Kfloppie
 Name[ar]=كفلوبي
-Name[ast]=KFloppy
 Name[bg]=KFloppy
 Name[br]=KFloppy
 Name[bs]=KFloppy
