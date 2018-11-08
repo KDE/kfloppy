@@ -104,7 +104,7 @@
   </description>
   <url type="homepage">https://www.kde.org</url>
   <url type="bugtracker">https://bugs.kde.org</url>
-  <url type="donation">https://www.kde.org/community/donations</url>
+  <url type="donation">https://www.kde.org/community/donations/?app=kfloppy&amp;source=appdata</url>
   <screenshots>
     <screenshot type="default">
       <image>
