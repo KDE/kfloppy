@@ -34,10 +34,7 @@
  * in the code to differentiate those families.
  * What happens on other systems is anyone's guess.
  */
-
-#include <QLoggingCategory>
-
-Q_DECLARE_LOGGING_CATEGORY(KFLOPPY_LOG)
+#include "kfloppy_debug.h"
 
 #ifndef NDEBUG
 #define DEBUGSETUP	qCDebug(KFLOPPY_LOG) << (__PRETTY_FUNCTION__) 

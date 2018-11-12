@@ -16,6 +16,7 @@ include(KDEFrameworkCompilerSettings NO_POLICY_SCOPE)
 include(KDECMakeSettings)
 include(FeatureSummary)
 include(ECMInstallIcons)
+include(ECMQtDeclareLoggingCategory)
 
 
 find_package(Qt5 ${REQUIRED_QT_VERSION} CONFIG REQUIRED Core DBus Widgets)
@@ -25,6 +26,9 @@ find_package(KF5Crash ${KF5_VERSION} CONFIG REQUIRED)
 add_definitions(-DQT_USE_FAST_OPERATOR_PLUS)
 
 set(kfloppy_SRCS main.cpp format.cpp floppy.cpp )
+
+ecm_qt_declare_logging_category(kfloppy_SRCS HEADER kfloppy_debug.h IDENTIFIER KFLOPPY_LOG CATEGORY_NAME org.kde.kfloppy)
+
 
 add_executable(kfloppy ${kfloppy_SRCS})
 

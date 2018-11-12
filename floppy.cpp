@@ -55,7 +55,6 @@
 #include <KConfigGroup>
 #include <KSharedConfig>
 
-Q_LOGGING_CATEGORY(KFLOPPY_LOG, "org.kde.kfloppy")
 
 FloppyData::FloppyData(QWidget * parent)
  : QDialog( parent ),
