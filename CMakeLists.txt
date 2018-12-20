@@ -5,10 +5,10 @@ if(NOT UNIX)
   message(FATAL_ERROR "KFloppy is only supposed to be built on Unix platforms.")
 endif(NOT UNIX)
 
-set(KF5_VERSION "5.44.0")
+set(KF5_MIN_VERSION "5.44.0")
 set(REQUIRED_QT_VERSION "5.9.0")
 
-find_package(ECM ${KF5_VERSION} REQUIRED NO_MODULE)
+find_package(ECM ${KF5_MIN_VERSION} REQUIRED NO_MODULE)
 set(CMAKE_MODULE_PATH ${ECM_MODULE_PATH})
 
 include(KDEInstallDirs)
@@ -20,8 +20,8 @@ include(ECMQtDeclareLoggingCategory)
 
 
 find_package(Qt5 ${REQUIRED_QT_VERSION} CONFIG REQUIRED Core DBus Widgets)
-find_package(KF5 ${KF5_VERSION} REQUIRED COMPONENTS I18n CoreAddons Completion DocTools XmlGui)
-find_package(KF5Crash ${KF5_VERSION} CONFIG REQUIRED)
+find_package(KF5 ${KF5_MIN_VERSION} REQUIRED COMPONENTS I18n CoreAddons Completion DocTools XmlGui)
+find_package(KF5Crash ${KF5_MIN_VERSION} CONFIG REQUIRED)
 
 add_definitions(-DQT_USE_FAST_OPERATOR_PLUS)
 
