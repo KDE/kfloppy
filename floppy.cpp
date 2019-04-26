@@ -279,7 +279,7 @@ FloppyData::FloppyData(QWidget * parent)
             " Due to a limitation of MS-DOS the label can only be 11 characters long."
             " Please note that Minix does not support labels, whatever you enter here.</qt>") );
 
-	connect(labellabel,SIGNAL(toggled(bool)),lineedit,SLOT(setEnabled(bool)));
+	connect(labellabel,&QAbstractButton::toggled,lineedit,&QWidget::setEnabled);
 
 	QVBoxLayout* v3 = new QVBoxLayout();
         h1->addItem( v3 );
@@ -289,7 +289,7 @@ FloppyData::FloppyData(QWidget * parent)
 	formatbutton->setAutoRepeat( false );
         if (!numFileSystems)
             formatbutton->setDisabled(false); // We have not any helper program for creating any file system
-	connect(formatbutton,SIGNAL(clicked()),this,SLOT(format()));
+	connect(formatbutton,&QAbstractButton::clicked,this,&FloppyData::format);
         v3->addWidget( formatbutton );
         formatbutton->setWhatsThis(
             i18n("<qt>Click here to start formatting.</qt>") );
@@ -308,7 +308,7 @@ FloppyData::FloppyData(QWidget * parent)
 	quitbutton = new QPushButton( widget );
 	KGuiItem::assign( quitbutton, KStandardGuiItem::quit() );
 	quitbutton->setAutoRepeat( false );
-	connect(quitbutton,SIGNAL(clicked()),this,SLOT(quit()));
+	connect(quitbutton,&QAbstractButton::clicked,this,&FloppyData::quit);
 	 v3->addWidget( quitbutton );
 
         ml->addSpacing( 10 );
@@ -567,10 +567,10 @@ void FloppyData::format(){
 	delete formatActions;
 	formatActions = new KFActionQueue(this);
 
-	connect(formatActions,SIGNAL(status(QString,int)),
-		this,SLOT(formatStatus(QString,int)));
-	connect(formatActions,SIGNAL(done(KFAction*,bool)),
-		this,SLOT(reset()));
+	connect(formatActions,&KFAction::status,
+		this,&FloppyData::formatStatus);
+	connect(formatActions,&KFAction::done,
+		this,&FloppyData::reset);
 
 	if ( quick->isChecked())
 	{

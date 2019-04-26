@@ -146,12 +146,12 @@ void KFActionQueue::queue(KFAction *p)
 	else
 	{
 		qCDebug(KFLOPPY_LOG) << "Running action " << next->objectName() ;
-		QObject::connect(next,SIGNAL(done(KFAction*,bool)),
-			this,SLOT(actionDone(KFAction*,bool)));
+		QObject::connect(next,&KFAction::done,
+			this,&KFActionQueue::actionDone);
 		// Propagate signals
-		QObject::connect(next,SIGNAL(status(QString,int)),
-			this,SIGNAL(status(QString,int)));
-		QTimer::singleShot(0,next,SLOT(exec()));
+		QObject::connect(next,&KFAction::status,
+			this,&KFAction::status);
+		QTimer::singleShot(0,next,&KFAction::exec);
 	}
 }
 
@@ -372,10 +372,10 @@ bool FloppyAction::startProcess()
 
 	connect(theProcess, SIGNAL(finished(int,QProcess::ExitStatus)),
 		this, SLOT(processDone(int,QProcess::ExitStatus)));
-	connect(theProcess, SIGNAL(readyReadStandardOutput()),
-		this, SLOT(readStdOut()));
-	connect(theProcess, SIGNAL(readyReadStandardError()),
-		this, SLOT(readStdErr()));
+	connect(theProcess, &QProcess::readyReadStandardOutput,
+		this, &FloppyAction::readStdOut);
+	connect(theProcess, &QProcess::readyReadStandardError,
+		this, &FloppyAction::readStdErr);
 
 	theProcess->setEnv( QStringLiteral( "LC_ALL" ), QStringLiteral( "C" ) ); // We need the untranslated output of the tool
 	theProcess->setOutputChannelMode(KProcess::SeparateChannels);
@@ -555,7 +555,7 @@ DDZeroOut::DDZeroOut(QObject *p) :
     FloppyAction(p)
 {
     qCDebug(KFLOPPY_LOG) << k_funcinfo ;
-    theProcessName = QString::fromLatin1("dd");
+    theProcessName = QStringLiteral("dd");
     setObjectName( QStringLiteral("DD" ));
 }
 
