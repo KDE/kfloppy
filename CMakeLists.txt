@@ -27,7 +27,7 @@ if (${KF5Config_VERSION} STRGREATER "5.56.0")
         add_definitions(-DQT_NO_FOREACH)
         MESSAGE(STATUS "compile without foreach")
 endif()
-
+add_definitions(-DQT_DISABLE_DEPRECATED_BEFORE=0x060000)
 set(kfloppy_SRCS main.cpp format.cpp floppy.cpp )
 
 ecm_qt_declare_logging_category(kfloppy_SRCS HEADER kfloppy_debug.h IDENTIFIER KFLOPPY_LOG CATEGORY_NAME org.kde.kfloppy)

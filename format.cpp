@@ -340,7 +340,7 @@ void FloppyAction::processDone(int exitCode, QProcess::ExitStatus exitStatus)
 	{
 	        if (exitCode == 0)
 	        {
-			emit status(QString::null,100);	//krazy:exclude=nullstrassign for old broken gcc
+			emit status(QString(),100);
 			emit done(this,true);
 		}
 		else
@@ -540,7 +540,7 @@ void FDFormat::processStdOut(const QString &s)
             const int p = regexp.cap(1).toInt();
             if ((p>=0) && (p<deviceInfo->tracks))
             {
-                    emit status(QString::null,	//krazy:exclude=nullstrassign for old broken gcc
+                    emit status(QString(),
                             p * 100 / deviceInfo->tracks);
             }
         }
@@ -612,7 +612,7 @@ void DDZeroOut::processDone(int exitCode, QProcess::ExitStatus exitStatus)
      *
      * ### TODO: really check if the exit is not on an other error and then abort the formatting
      */
-    emit status(QString::null,100);	//krazy:exclude=nullstrassign for old broken gcc
+    emit status(QString(),100);	
     emit done(this,true);
 }
 
