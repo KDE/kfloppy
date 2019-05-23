@@ -51,7 +51,7 @@ int main( int argc, char *argv[] )
     KLocalizedString::setApplicationDomain("kfloppy");
     KAboutData aboutData(QStringLiteral("kfloppy"),
         i18n("KFloppy"),
-        QStringLiteral("5.0"), i18n(description), KAboutLicense::GPL,
+        QStringLiteral(KFLOPPY_VERSION), i18n(description), KAboutLicense::GPL,
         i18n("(c) 1997, Bernd Johannes Wuebben\n"
         "(c) 2001, Chris Howells\n"
         "(c) 2002, Adriaan de Groot\n"

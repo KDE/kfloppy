@@ -1,5 +1,6 @@
-project(kfloppy)
 cmake_minimum_required(VERSION 3.5)
+
+project(kfloppy VERSION 5.0)
 
 if(NOT UNIX)
   message(FATAL_ERROR "KFloppy is only supposed to be built on Unix platforms.")
@@ -29,6 +30,8 @@ if (${KF5Config_VERSION} STRGREATER "5.56.0")
 endif()
 add_definitions(-DQT_DISABLE_DEPRECATED_BEFORE=0x060000)
 set(kfloppy_SRCS main.cpp format.cpp floppy.cpp )
+
+set_property(SOURCE main.cpp APPEND PROPERTY COMPILE_DEFINITIONS "KFLOPPY_VERSION=\"${kfloppy_VERSION}\"")
 
 ecm_qt_declare_logging_category(kfloppy_SRCS HEADER kfloppy_debug.h IDENTIFIER KFLOPPY_LOG CATEGORY_NAME org.kde.kfloppy)
 
