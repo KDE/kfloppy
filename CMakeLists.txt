@@ -24,7 +24,7 @@ find_package(Qt5 ${REQUIRED_QT_VERSION} CONFIG REQUIRED Core DBus Widgets)
 find_package(KF5 ${KF5_MIN_VERSION} REQUIRED COMPONENTS I18n CoreAddons Completion DocTools XmlGui)
 find_package(KF5Crash ${KF5_MIN_VERSION} CONFIG REQUIRED)
 
-if (${KF5Config_VERSION} STRGREATER "5.56.0")
+if (KF5Config_VERSION VERSION_GREATER "5.56.0")
         add_definitions(-DQT_NO_FOREACH)
         MESSAGE(STATUS "compile without foreach")
 endif()
@@ -67,4 +67,3 @@ ecm_install_icons(ICONS
 add_subdirectory(doc)
 
 feature_summary(WHAT ALL FATAL_ON_MISSING_REQUIRED_PACKAGES)
-
