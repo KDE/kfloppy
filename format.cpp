@@ -473,7 +473,7 @@ void FDFormat::processStdOut(const QString &s)
     	if (s[0]==QLatin1Char('F'))
 	{
 		formatTrackCount++;
-		emit status(QString::null,	//krazy:exclude=nullstrassign for old broken gcc
+		emit status(QString(),
 			formatTrackCount * 100 / deviceInfo->tracks);
 	}
 	else if (s[0]==QLatin1Char('E'))
@@ -612,7 +612,7 @@ void DDZeroOut::processDone(int exitCode, QProcess::ExitStatus exitStatus)
      *
      * ### TODO: really check if the exit is not on an other error and then abort the formatting
      */
-    emit status(QString(),100);	
+    emit status(QString(),100);
     emit done(this,true);
 }
 
