@@ -25,7 +25,6 @@
 
 #include <QApplication>
 #include <QCommandLineParser>
-#include <QCommandLineOption>
 
 #include <Kdelibs4ConfigMigrator>
 #include <KAboutData>
