@@ -1,6 +1,12 @@
 cmake_minimum_required(VERSION 3.5)
 
-project(kfloppy VERSION 5.0)
+# KDE Application Version, managed by release script
+set (KDE_APPLICATIONS_VERSION_MAJOR "19")
+set (KDE_APPLICATIONS_VERSION_MINOR "07")
+set (KDE_APPLICATIONS_VERSION_MICRO "70")
+set (KDE_APPLICATIONS_VERSION "${KDE_APPLICATIONS_VERSION_MAJOR}.${KDE_APPLICATIONS_VERSION_MINOR}.${KDE_APPLICATIONS_VERSION_MICRO}")
+
+project(kfloppy VERSION ${KDE_APPLICATIONS_VERSION})
 
 if(NOT UNIX)
   message(FATAL_ERROR "KFloppy is only supposed to be built on Unix platforms.")
@@ -31,7 +37,7 @@ endif()
 add_definitions(-DQT_DISABLE_DEPRECATED_BEFORE=0x060000)
 set(kfloppy_SRCS main.cpp format.cpp floppy.cpp )
 
-set_property(SOURCE main.cpp APPEND PROPERTY COMPILE_DEFINITIONS "KFLOPPY_VERSION=\"${kfloppy_VERSION}\"")
+set_property(SOURCE main.cpp APPEND PROPERTY COMPILE_DEFINITIONS "KFLOPPY_VERSION=\"${KDE_APPLICATIONS_VERSION}\"")
 
 ecm_qt_declare_logging_category(kfloppy_SRCS HEADER kfloppy_debug.h IDENTIFIER KFLOPPY_LOG CATEGORY_NAME org.kde.kfloppy)
 
