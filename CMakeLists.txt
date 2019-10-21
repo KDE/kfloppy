@@ -35,6 +35,7 @@ if (KF5Config_VERSION VERSION_GREATER "5.56.0")
         MESSAGE(STATUS "compile without foreach")
 endif()
 add_definitions(-DQT_DISABLE_DEPRECATED_BEFORE=0x060000)
+add_definitions(-DKF_DISABLE_DEPRECATED_BEFORE_AND_AT=0x060000)
 set(kfloppy_SRCS main.cpp format.cpp floppy.cpp )
 
 set_property(SOURCE main.cpp APPEND PROPERTY COMPILE_DEFINITIONS "KFLOPPY_VERSION=\"${KDE_APPLICATIONS_VERSION}\"")
