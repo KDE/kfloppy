@@ -57,7 +57,7 @@ int main( int argc, char *argv[] )
         "(c) 2004, 2005, Nicolas Goutte\n"
         "(c) 2015, 2016, Wolfgang Bauer"),
         i18n("KFloppy helps you format floppies with the filesystem of your choice."),
-        QStringLiteral("http://utils.kde.org/projects/kfloppy")
+        QStringLiteral("https://utils.kde.org/projects/kfloppy")
     );
 
     aboutData.addAuthor(i18n("Bernd Johannes Wuebben"), i18n("Author and former maintainer"), QStringLiteral("wuebben@kde.org"));

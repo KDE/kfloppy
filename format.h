@@ -75,7 +75,7 @@ public:
 	
 public Q_SLOTS:
 	/**
-	 * Exec() should return quickly to ensire that the GUI
+	 * Exec() should return quickly to ensure that the GUI
 	 * thread stays alive. quit() should abort the action.
 	 */
 	virtual void exec();
