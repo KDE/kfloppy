@@ -429,7 +429,13 @@ bool FloppyData::setInitialDevice(const QString& dev)
     QDBusInterface mediamanager( QStringLiteral( "org.kde.kded" ), QStringLiteral( "/modules/mediamanager" ), QStringLiteral( "org.kde.MediaManager" ) );
     QDBusReply<QStringList> reply = mediamanager.call( QStringLiteral( "properties" ), name );
     if (!reply.isValid()) {
-      qCritical() << "Invalid reply from mediamanager" << endl;
+        qCritical() << "Invalid reply from mediamanager"
+               #if (QT_VERSION < QT_VERSION_CHECK(5, 15, 0))
+                    << endl
+               #else
+                    << Qt::endl
+               #endif
+                       ;
     } else {
       QStringList properties = reply;
       newDevice = properties[5];
