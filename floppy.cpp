@@ -431,8 +431,8 @@ bool FloppyData::setInitialDevice(const QString& dev)
     if (!reply.isValid()) {
         qCritical() << "Invalid reply from mediamanager";
     } else {
-      QStringList properties = reply;
-      newDevice = properties[5];
+      const QStringList properties = reply;
+      newDevice = properties.at(5);
     }
   }
 
