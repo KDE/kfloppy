@@ -439,7 +439,7 @@ bool FloppyData::setInitialDevice(const QString& dev)
   int drive = -1;
   if ( newDevice.startsWith(QLatin1String( "/dev/fd0" )) )
     drive = 0;
-  if ( newDevice.startsWith(QLatin1String( "/dev/fd1" )))
+  else if ( newDevice.startsWith(QLatin1String( "/dev/fd1" )))
     drive = 1;
 
   // ### TODO user given devices
