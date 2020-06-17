@@ -36,7 +36,6 @@
   <name xml:lang="sv">Kfloppy</name>
   <name xml:lang="tr">KFloppy</name>
   <name xml:lang="uk">KFloppy</name>
-  <name xml:lang="x-test">xxKFloppyxx</name>
   <name xml:lang="zh-CN">KFloppy</name>
   <name xml:lang="zh-TW">KFloppy</name>
   <summary>Floppy disk formatter</summary>
@@ -72,7 +71,6 @@
   <summary xml:lang="sv">Formatera disketter</summary>
   <summary xml:lang="tr">Disket biçimlendirici</summary>
   <summary xml:lang="uk">Програма для форматування дискет</summary>
-  <summary xml:lang="x-test">xxFloppy disk formatterxx</summary>
   <summary xml:lang="zh-CN">软盘格式化程序</summary>
   <summary xml:lang="zh-TW">軟碟格式化工具</summary>
   <description>
@@ -108,7 +106,6 @@
     <p xml:lang="sv">Kfloppy är ett verktyg som tillhandahåller ett rättframt sätt att grafiskt formatera 3.5" och 5.25" disketter.</p>
     <p xml:lang="tr">KFloppy, 3.5" ve 5.25" disketleri biçimlendirmek için basit bir grafiksel araç sağlayan bir yardımcı programdır.</p>
     <p xml:lang="uk">KFloppy — це програма зі зрозумілим графічним інтерфейсом для форматування 3,5-дюймових та 5,25-дюймових гнучких дисків.</p>
-    <p xml:lang="x-test">xxKFloppy is a utility that provides a straightforward graphical means to format 3.5" and 5.25" floppy disks.xx</p>
     <p xml:lang="zh-CN">KFloppy 是一个有直观界面的用于格式化 3.5 寸和 5.25 寸软盘的工具。</p>
   </description>
   <url type="homepage">https://www.kde.org</url>
