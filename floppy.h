@@ -28,7 +28,7 @@
 #include <QDialog>
 #include <QKeyEvent>
 #include <QCloseEvent>
-#include <kconfig.h>
+#include <KConfig>
 
 class QCheckBox;
 class QLineEdit;

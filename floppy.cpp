@@ -44,12 +44,12 @@
 #include <QUrl>
 
 #include <kmessagebox.h>
-#include <khelpmenu.h>
-#include <kaboutdata.h>
+#include <KHelpMenu>
+#include <KAboutData>
 #include <KLocalizedString>
-#include <kcombobox.h>
-#include <klineedit.h>
-#include <khelpclient.h>
+#include <KComboBox>
+#include <KLineEdit>
+#include <KHelpClient>
 #include <KGuiItem>
 #include <KStandardGuiItem>
 #include <KConfigGroup>
