@@ -12,8 +12,8 @@ if(NOT UNIX)
   message(FATAL_ERROR "KFloppy is only supposed to be built on Unix platforms.")
 endif(NOT UNIX)
 
-set(KF5_MIN_VERSION "5.44.0")
-set(REQUIRED_QT_VERSION "5.9.0")
+set(KF5_MIN_VERSION "5.58.0")
+set(REQUIRED_QT_VERSION "5.12.0")
 
 find_package(ECM ${KF5_MIN_VERSION} REQUIRED NO_MODULE)
 set(CMAKE_MODULE_PATH ${ECM_MODULE_PATH})
@@ -30,10 +30,7 @@ find_package(Qt5 ${REQUIRED_QT_VERSION} CONFIG REQUIRED Core DBus Widgets)
 find_package(KF5 ${KF5_MIN_VERSION} REQUIRED COMPONENTS I18n CoreAddons Completion DocTools XmlGui)
 find_package(KF5Crash ${KF5_MIN_VERSION} CONFIG REQUIRED)
 
-if (KF5Config_VERSION VERSION_GREATER "5.56.0")
-        add_definitions(-DQT_NO_FOREACH)
-        MESSAGE(STATUS "compile without foreach")
-endif()
+add_definitions(-DQT_NO_FOREACH)
 
 set(kfloppy_SRCS main.cpp format.cpp floppy.cpp )
 
@@ -53,11 +50,7 @@ install(TARGETS kfloppy  ${INSTALL_TARGETS_DEFAULT_ARGS} )
 
 install(PROGRAMS org.kde.kfloppy.desktop  DESTINATION ${XDG_APPS_INSTALL_DIR})
 install(FILES org.kde.kfloppy.appdata.xml DESTINATION ${KDE_INSTALL_METAINFODIR})
-if (ECM_VERSION VERSION_GREATER "5.58.0")
-    install(FILES kfloppy.categories DESTINATION ${KDE_INSTALL_LOGGINGCATEGORIESDIR})
-else()
-    install(FILES kfloppy.categories DESTINATION ${KDE_INSTALL_CONFDIR})
-endif()
+install(FILES kfloppy.categories DESTINATION ${KDE_INSTALL_LOGGINGCATEGORIESDIR})
 
 # The mimetypes used in this servicemenu (e.g. floppy_unmounted) don't exist anymore.
 # This needs to be done differently.
