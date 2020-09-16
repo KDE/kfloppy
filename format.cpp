@@ -122,7 +122,7 @@ void KFActionQueue::queue(KFAction *p)
 		else
 		{
 			DEBUGS(  "Strange pointer received.");
-			emit done(this,false);
+			Q_EMIT done(this,false);
 			return;
 		}
 	}
@@ -134,14 +134,14 @@ void KFActionQueue::queue(KFAction *p)
 	if (!success)
 	{
 		DEBUGS("Action failed.");
-		emit done(this,false);
+		Q_EMIT done(this,false);
 		return;
 	}
 
 	KFAction *next = d->list.isEmpty() ? nullptr : d->list.first();
 	if (!next)
 	{
-		emit done(this,true);
+		Q_EMIT done(this,true);
 	}
 	else
 	{
@@ -264,7 +264,7 @@ bool FloppyAction::configureDevice(int drive,int density)
 
 	if ((drive<0) || (drive>1))
 	{
-		emit status(i18n("Unexpected drive number %1.", drive),-1);
+		Q_EMIT status(i18n("Unexpected drive number %1.", drive),-1);
 		return false;
 	}
 
@@ -276,7 +276,7 @@ bool FloppyAction::configureDevice(int drive,int density)
         }
 	if (!deviceinfo)
 	{
-		emit status(i18n("Unexpected density number %1.", density),-1);
+		Q_EMIT status(i18n("Unexpected density number %1.", density),-1);
 		return false;
 	}
 
@@ -291,7 +291,7 @@ bool FloppyAction::configureDevice(int drive,int density)
 
 	if (!deviceinfo || !deviceinfo->devices)
 	{
-		emit status(i18n("Cannot find a device for drive %1 and density %2.",
+		Q_EMIT status(i18n("Cannot find a device for drive %1 and density %2.",
 			 drive, density),-1);
 		return false;
 	}
@@ -312,7 +312,7 @@ bool FloppyAction::configureDevice(int drive,int density)
 		const QString str = i18n(
 			"Cannot access %1\nMake sure that the device exists and that "
 			"you have write permission to it.",QLatin1String( deviceinfo->devices[0] ));
-		emit status(str,-1);
+		Q_EMIT status(str,-1);
 		return false;
 	}
 
@@ -340,19 +340,19 @@ void FloppyAction::processDone(int exitCode, QProcess::ExitStatus exitStatus)
 	{
 	        if (exitCode == 0)
 	        {
-			emit status(QString(),100);
-			emit done(this,true);
+			Q_EMIT status(QString(),100);
+			Q_EMIT done(this,true);
 		}
 		else
 		{
-			emit status(i18n("The program %1 terminated with an error.", theProcessName),100);
-			emit done(this,false);
+			Q_EMIT status(i18n("The program %1 terminated with an error.", theProcessName),100);
+			Q_EMIT done(this,false);
 		}
 	}
 	else
 	{
-		emit status(i18n("The program %1 terminated abnormally.", theProcessName),100);
-		emit done(this,false);
+		Q_EMIT status(i18n("The program %1 terminated abnormally.", theProcessName),100);
+		Q_EMIT done(this,false);
 	}
 }
 
@@ -413,15 +413,15 @@ bool FDFormat::configure(bool v)
 
 	if ( !deviceInfo || deviceName.isEmpty() )
 	{
-                emit status( i18n("Internal error: device not correctly defined."), -1 );
-		emit done(this,false);
+                Q_EMIT status( i18n("Internal error: device not correctly defined."), -1 );
+		Q_EMIT done(this,false);
 		return;
 	}
 
 	if (fdformatName.isEmpty())
 	{
-		emit status(i18n("Cannot find fdformat."),-1);
-		emit done(this,false);
+		Q_EMIT status(i18n("Cannot find fdformat."),-1);
+		Q_EMIT done(this,false);
 		return;
 	}
 
@@ -452,8 +452,8 @@ bool FDFormat::configure(bool v)
 
 	if (!startProcess())
 	{
-		emit status(i18n("Could not start fdformat."),-1);
-		emit done(this,false);
+		Q_EMIT status(i18n("Could not start fdformat."),-1);
+		Q_EMIT done(this,false);
 	}
 
 	// Now depend on fdformat running and producing output.
@@ -473,18 +473,18 @@ void FDFormat::processStdOut(const QString &s)
     	if (s[0]==QLatin1Char('F'))
 	{
 		formatTrackCount++;
-		emit status(QString(),
+		Q_EMIT status(QString(),
 			formatTrackCount * 100 / deviceInfo->tracks);
 	}
 	else if (s[0]==QLatin1Char('E'))
 	{
-		emit status(i18n("Error formatting track %1.", formatTrackCount),-1);
+		Q_EMIT status(i18n("Error formatting track %1.", formatTrackCount),-1);
 	}
 	else
 	{
 		if (s.contains(QLatin1String( "ioctl(FD_FORM)" )))
 		{
-                    emit status (i18n(
+                    Q_EMIT status (i18n(
                             "Cannot access floppy or floppy drive.\n"
                             "Please insert a floppy and make sure that you "
                             "have selected a valid floppy drive."),-1);
@@ -492,7 +492,7 @@ void FDFormat::processStdOut(const QString &s)
 		}
 		if (s.indexOf(QLatin1String( "/dev/" ))>=0)
 		{
-			emit status(s,-1);
+			Q_EMIT status(s,-1);
 			return;
 		}
 		DEBUGS(s);
@@ -505,18 +505,18 @@ void FDFormat::processStdOut(const QString &s)
             if ( regexp.indexIn( s ) > -1 )
             {
                 const int track = regexp.cap(1).toInt();
-                emit status(i18n("Low-level formatting error at track %1.", track), -1);
+                Q_EMIT status(i18n("Low-level formatting error at track %1.", track), -1);
             }
             else
             {
                 // This error should not happen
-                emit status(i18n("Low-level formatting error: %1", s), -1);
+                Q_EMIT status(i18n("Low-level formatting error: %1", s), -1);
             }
             return;
         }
 	else if (s.contains(QLatin1String( "ioctl(FDFMTBEG)" )))
 	{
-            emit status (i18n(
+            Q_EMIT status (i18n(
                     "Cannot access floppy or floppy drive.\n"
                     "Please insert a floppy and make sure that you "
                     "have selected a valid floppy drive."),-1);
@@ -524,13 +524,13 @@ void FDFormat::processStdOut(const QString &s)
 	}
         else if (s.contains(QLatin1String( "busy" ))) // "Device or resource busy"
         {
-            emit status(i18n("Device busy.\nPerhaps you need to unmount the floppy first."),-1);
+            Q_EMIT status(i18n("Device busy.\nPerhaps you need to unmount the floppy first."),-1);
             return;
         }
         // Be careful to leave "iotcl" as last before checking numbers
         else if (s.contains(QLatin1String( "ioctl" )))
         {
-            emit status(i18n("Low-level format error: %1", s),-1);
+            Q_EMIT status(i18n("Low-level format error: %1", s),-1);
             return;
         }
         // Check for numbers at last (as /dev/fd0u1440 has numbers too)
@@ -540,7 +540,7 @@ void FDFormat::processStdOut(const QString &s)
             const int p = regexp.cap(1).toInt();
             if ((p>=0) && (p<deviceInfo->tracks))
             {
-                    emit status(QString(),
+                    Q_EMIT status(QString(),
                             p * 100 / deviceInfo->tracks);
             }
         }
@@ -571,15 +571,15 @@ DDZeroOut::DDZeroOut(QObject *p) :
 
     if ( deviceName.isEmpty() )
     {
-        emit status( i18n("Internal error: device not correctly defined."), -1 );
-        emit done( this, false );
+        Q_EMIT status( i18n("Internal error: device not correctly defined."), -1 );
+        Q_EMIT done( this, false );
         return;
     }
 
     if ( m_ddName.isEmpty() )
     {
-        emit status( i18n("Cannot find dd."), -1 );
-        emit done( this, false );
+        Q_EMIT status( i18n("Cannot find dd."), -1 );
+        Q_EMIT done( this, false );
         return;
     }
 
@@ -593,8 +593,8 @@ DDZeroOut::DDZeroOut(QObject *p) :
 
     if ( !startProcess() )
     {
-            emit status( i18n("Could not start dd."), -1 );
-            emit done( this, false );
+            Q_EMIT status( i18n("Could not start dd."), -1 );
+            Q_EMIT done( this, false );
     }
 
 }
@@ -612,8 +612,8 @@ void DDZeroOut::processDone(int exitCode, QProcess::ExitStatus exitStatus)
      *
      * ### TODO: really check if the exit is not on an other error and then abort the formatting
      */
-    emit status(QString(),100);
-    emit done(this,true);
+    Q_EMIT status(QString(),100);
+    Q_EMIT done(this,true);
 }
 
 
@@ -665,15 +665,15 @@ void FATFilesystem::exec()
 #endif
             deviceName.isEmpty())
 	{
-                emit status( i18n("Internal error: device not correctly defined."), -1 );
-		emit done(this,false);
+                Q_EMIT status( i18n("Internal error: device not correctly defined."), -1 );
+		Q_EMIT done(this,false);
 		return;
 	}
 
 	if (newfs_fat.isEmpty())
 	{
-		emit status(i18n("Cannot find a program to create FAT filesystems."),-1);
-		emit done(this,false);
+		Q_EMIT status(i18n("Cannot find a program to create FAT filesystems."),-1);
+		Q_EMIT done(this,false);
 		return;
 	}
 
@@ -703,8 +703,8 @@ void FATFilesystem::exec()
 
 	if (!startProcess())
 	{
-		emit status(i18n("Cannot start FAT format program."),-1);
-		emit done(this,false);
+		Q_EMIT status(i18n("Cannot start FAT format program."),-1);
+		Q_EMIT done(this,false);
 	}
 }
 
@@ -716,23 +716,23 @@ void FATFilesystem::processStdOut(const QString &s)
     qCDebug(KFLOPPY_LOG) << s ;
     if (s.contains(QLatin1String( "mounted" ))) // "/dev/fd0 contains a mounted filesystem"
     {
-        emit status(i18n("Floppy is mounted.\nYou need to unmount the floppy first."),-1);
+        Q_EMIT status(i18n("Floppy is mounted.\nYou need to unmount the floppy first."),-1);
         return;
     }
     else if (s.contains(QLatin1String( "busy" ))) // "Device or resource busy"
     {
-        emit status(i18n("Device busy.\nPerhaps you need to unmount the floppy first."),-1);
+        Q_EMIT status(i18n("Device busy.\nPerhaps you need to unmount the floppy first."),-1);
         return;
     }
     else if (s.contains( QLatin1String( "denied" ))) // "Permission denied"
     {
-        emit status( s, -1 );
+        Q_EMIT status( s, -1 );
         return;
     }
 # if 0
     else if ( s.find( "mkdosfs" ) != -1 ) // DEBUG: get the program header and show it!
     {
-        emit status( s, -1 );
+        Q_EMIT status( s, -1 );
         return;
     }
 # endif
@@ -768,15 +768,15 @@ void UFSFilesystem::exec()
 
 	if ( deviceName.isEmpty() )
 	{
-                emit status( i18n("Internal error: device not correctly defined."), -1 );
-		emit done(this,false);
+                Q_EMIT status( i18n("Internal error: device not correctly defined."), -1 );
+		Q_EMIT done(this,false);
 		return;
 	}
 
 	if (newfs.isEmpty())
 	{
-		emit status(i18nc("BSD", "Cannot find a program to create UFS filesystems."),-1);
-		emit done(this,false);
+		Q_EMIT status(i18nc("BSD", "Cannot find a program to create UFS filesystems."),-1);
+		Q_EMIT done(this,false);
 		return;
 	}
 
@@ -793,8 +793,8 @@ void UFSFilesystem::exec()
 
 	if (!startProcess())
 	{
-		emit status(i18nc("BSD", "Cannot start UFS format program."),-1);
-		emit done(this,false);
+		Q_EMIT status(i18nc("BSD", "Cannot start UFS format program."),-1);
+		Q_EMIT done(this,false);
 	}
 }
 #endif
@@ -846,15 +846,15 @@ void Ext2Filesystem::exec()
 #endif
             deviceName.isEmpty() )
 	{
-                emit status( i18n("Internal error: device not correctly defined."), -1 );
-		emit done(this,false);
+                Q_EMIT status( i18n("Internal error: device not correctly defined."), -1 );
+		Q_EMIT done(this,false);
 		return;
 	}
 
 	if (newfs.isEmpty())
 	{
-		emit status(i18n("Cannot find a program to create ext2 filesystems."),-1);
-		emit done(this,false);
+		Q_EMIT status(i18n("Cannot find a program to create ext2 filesystems."),-1);
+		Q_EMIT done(this,false);
 		return;
 	}
 
@@ -870,8 +870,8 @@ void Ext2Filesystem::exec()
 
 	if (!startProcess())
 	{
-		emit status(i18n("Cannot start ext2 format program."),-1);
-		emit done(this,false);
+		Q_EMIT status(i18n("Cannot start ext2 format program."),-1);
+		Q_EMIT done(this,false);
 	}
 }
 
@@ -883,17 +883,17 @@ void Ext2Filesystem::processStdOut(const QString &s)
     qCDebug(KFLOPPY_LOG) << s ;
     if (s.contains(QLatin1String( "mounted" ))) // "/dev/fd0 is mounted; will not make a filesystem here!"
     {
-        emit status(i18n("Floppy is mounted.\nYou need to unmount the floppy first."),-1);
+        Q_EMIT status(i18n("Floppy is mounted.\nYou need to unmount the floppy first."),-1);
         return;
     }
     else if (s.contains(QLatin1String( "busy" ))) // "Device or resource busy"
     {
-        emit status(i18n("Device busy.\nPerhaps you need to unmount the floppy first."),-1);
+        Q_EMIT status(i18n("Device busy.\nPerhaps you need to unmount the floppy first."),-1);
         return;
     }
     else if (s.contains( QLatin1String( "denied" ))) // "Permission denied"
     {
-        emit status( s, -1 );
+        Q_EMIT status( s, -1 );
         return;
     }
 #endif
@@ -944,15 +944,15 @@ void MinixFilesystem::exec()
 
 	if ( deviceName.isEmpty() )
 	{
-                emit status( i18n("Internal error: device not correctly defined."), -1 );
-		emit done(this,false);
+                Q_EMIT status( i18n("Internal error: device not correctly defined."), -1 );
+		Q_EMIT done(this,false);
 		return;
 	}
 
 	if (newfs.isEmpty())
 	{
-		emit status(i18n("Cannot find a program to create Minix filesystems."),-1);
-		emit done(this,false);
+		Q_EMIT status(i18n("Cannot find a program to create Minix filesystems."),-1);
+		Q_EMIT done(this,false);
 		return;
 	}
 
@@ -968,8 +968,8 @@ void MinixFilesystem::exec()
 
 	if (!startProcess())
 	{
-		emit status(i18n("Cannot start Minix format program."),-1);
-		emit done(this,false);
+		Q_EMIT status(i18n("Cannot start Minix format program."),-1);
+		Q_EMIT done(this,false);
 	}
 }
 
@@ -978,17 +978,17 @@ void MinixFilesystem::processStdOut(const QString &s)
     qCDebug(KFLOPPY_LOG) << s ;
     if (s.contains(QLatin1String( "mounted" ))) // "mkfs.minix: /dev/fd0 is mounted; will not make a filesystem here!"
     {
-        emit status(i18n("Floppy is mounted.\nYou need to unmount the floppy first."),-1);
+        Q_EMIT status(i18n("Floppy is mounted.\nYou need to unmount the floppy first."),-1);
         return;
     }
     else if (s.contains(QLatin1String( "busy" ))) // "Device or resource busy"
     {
-        emit status(i18n("Device busy.\nPerhaps you need to unmount the floppy first."),-1);
+        Q_EMIT status(i18n("Device busy.\nPerhaps you need to unmount the floppy first."),-1);
         return;
     }
     else if (s.contains( QLatin1String( "denied" ))) // "Permission denied"
     {
-        emit status( s, -1 );
+        Q_EMIT status( s, -1 );
         return;
     }
 }
