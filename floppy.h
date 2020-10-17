@@ -66,8 +66,6 @@ public:
     void readSettings();
     /// Map stored settings to widget status
     void setWidgets();
-    /// A kind of QString::find()
-    int findKeyWord(QString &, const QString &);
     /// Enable/disable all UI elements
     void setEnabled(bool);
     
