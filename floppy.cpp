@@ -35,8 +35,6 @@
 #include <QFrame>
 #include <QHBoxLayout>
 #include <QGridLayout>
-#include <QKeyEvent>
-#include <QCloseEvent>
 #include <QDBusInterface>
 #include <QDBusReply>
 #include <QPushButton>
