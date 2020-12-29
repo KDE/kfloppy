@@ -36,8 +36,7 @@ set(kfloppy_SRCS main.cpp format.cpp floppy.cpp )
 
 set_property(SOURCE main.cpp APPEND PROPERTY COMPILE_DEFINITIONS "KFLOPPY_VERSION=\"${RELEASE_SERVICE_VERSION}\"")
 
-ecm_qt_declare_logging_category(kfloppy_SRCS HEADER kfloppy_debug.h IDENTIFIER KFLOPPY_LOG CATEGORY_NAME org.kde.kfloppy)
-
+ecm_qt_declare_logging_category(kfloppy_SRCS HEADER kfloppy_debug.h IDENTIFIER KFLOPPY_LOG CATEGORY_NAME org.kde.kfloppy DESCRIPTION "KFloppy" EXPORT KFLOPPY)
 
 add_executable(kfloppy ${kfloppy_SRCS})
 
@@ -50,7 +49,6 @@ install(TARGETS kfloppy  ${INSTALL_TARGETS_DEFAULT_ARGS} )
 
 install(PROGRAMS org.kde.kfloppy.desktop  DESTINATION ${XDG_APPS_INSTALL_DIR})
 install(FILES org.kde.kfloppy.appdata.xml DESTINATION ${KDE_INSTALL_METAINFODIR})
-install(FILES kfloppy.categories DESTINATION ${KDE_INSTALL_LOGGINGCATEGORIESDIR})
 
 # The mimetypes used in this servicemenu (e.g. floppy_unmounted) don't exist anymore.
 # This needs to be done differently.
@@ -68,5 +66,11 @@ ecm_install_icons(ICONS
 )
 
 add_subdirectory(doc)
+
+ecm_qt_install_logging_categories(
+	EXPORT KFLOPPY
+        FILE kfloppy.categories
+        DESTINATION ${KDE_INSTALL_LOGGINGCATEGORIESDIR}
+        )
 
 feature_summary(WHAT ALL FATAL_ON_MISSING_REQUIRED_PACKAGES)
