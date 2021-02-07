@@ -47,12 +47,12 @@ install(TARGETS kfloppy  ${KDE_INSTALL_TARGETS_DEFAULT_ARGS} )
 
 ########### install files ###############
 
-install(PROGRAMS org.kde.kfloppy.desktop  DESTINATION ${XDG_APPS_INSTALL_DIR})
+install(PROGRAMS org.kde.kfloppy.desktop  DESTINATION ${KDE_INSTALL_APPDIR})
 install(FILES org.kde.kfloppy.appdata.xml DESTINATION ${KDE_INSTALL_METAINFODIR})
 
 # The mimetypes used in this servicemenu (e.g. floppy_unmounted) don't exist anymore.
 # This needs to be done differently.
-#install( FILES floppy_format.desktop  DESTINATION ${SERVICES_INSTALL_DIR}/ServiceMenus)
+#install( FILES floppy_format.desktop  DESTINATION ${KDE_INSTALL_KSERVICES5DIR}/ServiceMenus)
 
 ecm_install_icons(ICONS
     128-apps-kfloppy.png
@@ -61,7 +61,7 @@ ecm_install_icons(ICONS
     32-apps-kfloppy.png
     48-apps-kfloppy.png
     64-apps-kfloppy.png
-    DESTINATION ${ICON_INSTALL_DIR}
+    DESTINATION ${KDE_INSTALL_ICONDIR}
     THEME hicolor
 )
 
