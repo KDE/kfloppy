@@ -1,11 +1,11 @@
 /*
 
     This file is part of the KFloppy program, part of the KDE project
-    
+
     Copyright (C) 1997 Bernd Johannes Wuebben <wuebben@math.cornell.edu>
     Copyright (C) 2004, 2005 Nicolas GOUTTE <goutte@kde.org>
     Copyright (C) 2015, 2016 Wolfgang Bauer <wbauer@tmo.at>
-    
+
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
     the Free Software Foundation; either version 2 of the License, or
@@ -25,10 +25,10 @@
 #ifndef FloppyData_included
 #define FloppyData_included
 
+#include <KConfig>
+#include <QCloseEvent>
 #include <QDialog>
 #include <QKeyEvent>
-#include <QCloseEvent>
-#include <KConfig>
 
 class QCheckBox;
 class QLineEdit;
@@ -48,7 +48,7 @@ class FloppyData : public QDialog
     Q_OBJECT
 
 public:
-    explicit FloppyData(QWidget* parent = nullptr);
+    explicit FloppyData(QWidget *parent = nullptr);
     virtual ~FloppyData();
 
     /// Need to overload normal show() in order to mangle caption
@@ -56,10 +56,10 @@ public:
     /// Maps combobox selection to drive and density
     bool findDevice();
     /// set default device
-    bool setInitialDevice(const QString& dev);
+    bool setInitialDevice(const QString &dev);
     /** Override closeEvent() in order to properly close
       the entire application.*/
-    void closeEvent(QCloseEvent*) override;
+    void closeEvent(QCloseEvent *) override;
     /// Writing the user-visible settings.
     void writeSettings();
     /// Reading the user-visible settings.
@@ -68,59 +68,58 @@ public:
     void setWidgets();
     /// Enable/disable all UI elements
     void setEnabled(bool);
-    
-public Q_SLOTS:
-      void quit();
-      void format();
-      void reset();
 
-      void formatStatus(const QString &,int);
-      
+public Q_SLOTS:
+    void quit();
+    void format();
+    void reset();
+
+    void formatStatus(const QString &, int);
+
 protected Q_SLOTS:
 
 private:
-        int verifyconfig;
-        int labelconfig;
-        QString labelnameconfig;
-	int quickformatconfig;
-	QString driveconfig;
-	QString densityconfig;
-	QString filesystemconfig;
+    int verifyconfig;
+    int labelconfig;
+    QString labelnameconfig;
+    int quickformatconfig;
+    QString driveconfig;
+    QString densityconfig;
+    QString filesystemconfig;
 
-	int drive;
-        /// Number of blocks of the floppy (typically 1440)
-	int blocks;
+    int drive;
+    /// Number of blocks of the floppy (typically 1440)
+    int blocks;
 
-	bool formating;
-	//bool abort;
+    bool formating;
+    // bool abort;
 
-        QLabel*       label1;
-        QLabel*       label2;
-	QLabel*       label3;
-	QGroupBox* buttongroup;
-	QCheckBox*    verifylabel;
-	QCheckBox*    labellabel;
-	QLineEdit*    lineedit;
-	QRadioButton* quick;
-        QRadioButton* zerooutformat;
-	QPushButton* quitbutton;
-	QPushButton* helpbutton;
-	QRadioButton* fullformat;
-	QPushButton*  formatbutton;
-	QLabel* frame;
-	QComboBox* deviceComboBox;
-	QComboBox* filesystemComboBox;
-	QComboBox* densityComboBox;
-	QProgressBar* progress;
-	KHelpMenu* helpMenu;
+    QLabel *label1;
+    QLabel *label2;
+    QLabel *label3;
+    QGroupBox *buttongroup;
+    QCheckBox *verifylabel;
+    QCheckBox *labellabel;
+    QLineEdit *lineedit;
+    QRadioButton *quick;
+    QRadioButton *zerooutformat;
+    QPushButton *quitbutton;
+    QPushButton *helpbutton;
+    QRadioButton *fullformat;
+    QPushButton *formatbutton;
+    QLabel *frame;
+    QComboBox *deviceComboBox;
+    QComboBox *filesystemComboBox;
+    QComboBox *densityComboBox;
+    QProgressBar *progress;
+    KHelpMenu *helpMenu;
 
-	KFActionQueue *formatActions;
+    KFActionQueue *formatActions;
 
-        bool m_canLowLevel; ///< Low level formatting is possible (i.e. was fdformat found?)
-        bool m_canZeroOut; ///< Is zero-out possible (i.e. was dd found?)
+    bool m_canLowLevel; ///< Low level formatting is possible (i.e. was fdformat found?)
+    bool m_canZeroOut; ///< Is zero-out possible (i.e. was dd found?)
 protected:
     void keyPressEvent(QKeyEvent *e) override;
-
 };
 
 #endif // FloppyData_included

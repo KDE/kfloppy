@@ -1,7 +1,7 @@
 /*
 
     This file is part of the KFloppy program, part of the KDE project
-    
+
     Copyright (C) 2002 Adriaan de Groot <groot@kde.org>
     Copyright (C) 2004, 2005 Nicolas GOUTTE <goutte@kde.org>
     Copyright (C) 2015, 2016 Wolfgang Bauer <wbauer@tmo.at>
@@ -52,7 +52,7 @@
  * or mke2fs(1). However, for Zip disks, should they ever be supported,
  * this is quite useful since you need to dd, fdisk, disklabel, and
  * newfs them.
-*/
+ */
 
 #include "debug.h"
 #include <QObject>
@@ -64,51 +64,50 @@
  * Basically you can create a KFActionStack (See below)
  * and push a bunch of actions on it, then run exec()
  * on the stack and wait for the done() signal.
-*/
+ */
 class KFAction : public QObject
 {
-Q_OBJECT
+    Q_OBJECT
 
 public:
-	explicit KFAction(QObject *parent = nullptr);
-	virtual ~KFAction();
-	
+    explicit KFAction(QObject *parent = nullptr);
+    virtual ~KFAction();
+
 public Q_SLOTS:
-	/**
-	 * Exec() should return quickly to ensure that the GUI
-	 * thread stays alive. quit() should abort the action.
-	 */
-	virtual void exec();
-	/**
-	 * Quit aborts the action. No done() signal should
-	 * be emitted.
-	 */
-	virtual void quit();
-	
+    /**
+     * Exec() should return quickly to ensure that the GUI
+     * thread stays alive. quit() should abort the action.
+     */
+    virtual void exec();
+    /**
+     * Quit aborts the action. No done() signal should
+     * be emitted.
+     */
+    virtual void quit();
+
 Q_SIGNALS:
-	/**
-	 * done() should always be emitted with this as first
-	 * parameter, to avoid sender() magic and the like.
-	 * @p success indicates whether the action was
-	 * successful.
-	 */
-	void done(KFAction *me,bool success);
+    /**
+     * done() should always be emitted with this as first
+     * parameter, to avoid sender() magic and the like.
+     * @p success indicates whether the action was
+     * successful.
+     */
+    void done(KFAction *me, bool success);
 
-	/**
-	 * Emit this signal to inform the user of interesting
-	 * changes; setting msg to an empty string doesn't
-	 * change any visible user message. @p progress
-	 * indicates the action's progress (if that can be determined)
-	 * and sending -1 leaves the visible indicator unchanged.
-	 */
-	void status(const QString &msg, int progress);
+    /**
+     * Emit this signal to inform the user of interesting
+     * changes; setting msg to an empty string doesn't
+     * change any visible user message. @p progress
+     * indicates the action's progress (if that can be determined)
+     * and sending -1 leaves the visible indicator unchanged.
+     */
+    void status(const QString &msg, int progress);
 
-        /** error() displays a box. It interrupts
-	 * the user's work and should be used with care.
-	 */
-	void error(const QString &msg, const QString &details);
-} ;
-
+    /** error() displays a box. It interrupts
+     * the user's work and should be used with care.
+     */
+    void error(const QString &msg, const QString &details);
+};
 
 /**
  * Acts as a queue and executes the actions in the
@@ -116,31 +115,30 @@ Q_SIGNALS:
  */
 class KFActionQueue : public KFAction
 {
-Q_OBJECT
+    Q_OBJECT
 
 public:
-	explicit KFActionQueue(QObject *parent = nullptr);
-	virtual ~KFActionQueue();
-	
-	/**
-	 * Add a KFAction to the queue. When exec() is called,
-	 * the actions are called one after the other (if each
-	 * action is successful; if any action fails, the whole
-	 * queue fails and the unsuccessful action is the last
-	 * one run.) Actions become the property of the queue
-	 * action. Note that queues can be nested.
-	 */
-	void queue(KFAction *);
-	
-	void exec() override;
+    explicit KFActionQueue(QObject *parent = nullptr);
+    virtual ~KFActionQueue();
+
+    /**
+     * Add a KFAction to the queue. When exec() is called,
+     * the actions are called one after the other (if each
+     * action is successful; if any action fails, the whole
+     * queue fails and the unsuccessful action is the last
+     * one run.) Actions become the property of the queue
+     * action. Note that queues can be nested.
+     */
+    void queue(KFAction *);
+
+    void exec() override;
 
 protected Q_SLOTS:
-	void actionDone(KFAction *,bool);
-	
-private:
-	class KFActionQueue_p *d;
-} ;
+    void actionDone(KFAction *, bool);
 
+private:
+    class KFActionQueue_p *d;
+};
 
 /*
 ** The remainder of the Actions are concrete ones and
@@ -161,11 +159,13 @@ private:
  * Similarly, flags are internal too.
  */
 
-typedef struct { const char * const * devices;
-	int drive;
-	int blocks;
-	int tracks;
-	int flags; } fdinfo;
+typedef struct {
+    const char *const *devices;
+    int drive;
+    int blocks;
+    int tracks;
+    int flags;
+} fdinfo;
 
 class KProcess;
 
@@ -175,81 +175,81 @@ class KProcess;
 
 class FloppyAction : public KFAction
 {
-Q_OBJECT
+    Q_OBJECT
 
 public:
-	explicit FloppyAction(QObject *parent = nullptr);
-	
-	/**
-	 * Kills the running process, if one exists.
-	 */
-    void quit() override;
-	
-	/**
-	 * ConfigureDevice() needs to be called prior to exec()
-	 * or exec() will fail; this indicates which drive and
-	 * density to use.
-         *
-         * \param driveno Number of drive (0 or 1)
-         * \param density Floppy density (in Kilobytes)
-         * \note This same function needs to be
-	 * called on all subclasses in order to configure them
-	 * for which drive to use, _along_ with their local
-	 * configuration functions.
-	 */
-	
-	bool configureDevice(int driveno, int density );
+    explicit FloppyAction(QObject *parent = nullptr);
 
-        /**
-         * \brief Configure the device with a device name
-         *
-         * This is an alternate to FloppyAction::configureDevice
-         * for user-given devices.
-         *
-         * \note It does not work for each type of FloppyAction yet
-         */
-        bool configureDevice( const QString& newDeviceName );
-        
+    /**
+     * Kills the running process, if one exists.
+     */
+    void quit() override;
+
+    /**
+     * ConfigureDevice() needs to be called prior to exec()
+     * or exec() will fail; this indicates which drive and
+     * density to use.
+     *
+     * \param driveno Number of drive (0 or 1)
+     * \param density Floppy density (in Kilobytes)
+     * \note This same function needs to be
+     * called on all subclasses in order to configure them
+     * for which drive to use, _along_ with their local
+     * configuration functions.
+     */
+
+    bool configureDevice(int driveno, int density);
+
+    /**
+     * \brief Configure the device with a device name
+     *
+     * This is an alternate to FloppyAction::configureDevice
+     * for user-given devices.
+     *
+     * \note It does not work for each type of FloppyAction yet
+     */
+    bool configureDevice(const QString &newDeviceName);
+
 protected:
-	const fdinfo *deviceInfo;      ///< Configuration info (Pointer into list of "/dev/..." entries)
-	QString deviceName;  ///< Name of the device
+    const fdinfo *deviceInfo; ///< Configuration info (Pointer into list of "/dev/..." entries)
+    QString deviceName; ///< Name of the device
 
 protected Q_SLOTS:
-        /**
-         * \brief Provide handling of the exit of the external program
-         */
-	virtual void processDone(int, QProcess::ExitStatus);
-	/**
-         * \brief Provide handling of stdout
-         */
-	virtual void processStdOut(const QString &s);
-	/**
-         * \brief Provide handling stderr.
-         *
-	 * The default implementation just sends stderr on
-	 * to processStdOut(), so you need reimplement only
-	 * FloppyAction::processStdOut if you choose.
-	 */
-	virtual void processStdErr(const QString &s);
-	
-protected:
-	KProcess *theProcess;
-	QString theProcessName;  ///< human-readable
+    /**
+     * \brief Provide handling of the exit of the external program
+     */
+    virtual void processDone(int, QProcess::ExitStatus);
+    /**
+     * \brief Provide handling of stdout
+     */
+    virtual void processStdOut(const QString &s);
+    /**
+     * \brief Provide handling stderr.
+     *
+     * The default implementation just sends stderr on
+     * to processStdOut(), so you need reimplement only
+     * FloppyAction::processStdOut if you choose.
+     */
+    virtual void processStdErr(const QString &s);
 
-	/**
-	 * Sets up connections, calls KProcess::start().
-	 * You need to *theProcess << program << args ; first.
-	 */
-		
-	bool startProcess();
+protected:
+    KProcess *theProcess;
+    QString theProcessName; ///< human-readable
+
+    /**
+     * Sets up connections, calls KProcess::start().
+     * You need to *theProcess << program << args ; first.
+     */
+
+    bool startProcess();
 private Q_SLOTS:
-	/**
-	 * These functions read stdout/stderr and call
-	 * processStdOut()/processStdErr() accordingly
-	 */
-	void readStdOut();
-	void readStdErr();
-} ;
+    /**
+     * These functions read stdout/stderr and call
+     * processStdOut()/processStdErr() accordingly
+     */
+    void readStdOut();
+    void readStdErr();
+};
 
 /**
  * Concrete class that runs fdformat(1)
@@ -258,34 +258,33 @@ private Q_SLOTS:
 class FDFormat : public FloppyAction
 {
 public:
-	explicit FDFormat(QObject *parent = nullptr);
-	
-	void exec() override;
+    explicit FDFormat(QObject *parent = nullptr);
 
-	
-	/**
-	 * Concrete classes can provide a runtimeCheck
-	 * function (heck, this is static, so the name
-	 * is up to you) that checks if the required
-	 * applications are available. This way, the
-	 * calling application can decide not to use
-	 * actions whose prerequisites are absent anyway.
-	 */
-	static bool runtimeCheck();
-		
-	/** @p verify instructs fdformat(1) to verify the
-	 * medium as well.
-	 */
-	
-	bool configure(bool verify);
-	
+    void exec() override;
+
+    /**
+     * Concrete classes can provide a runtimeCheck
+     * function (heck, this is static, so the name
+     * is up to you) that checks if the required
+     * applications are available. This way, the
+     * calling application can decide not to use
+     * actions whose prerequisites are absent anyway.
+     */
+    static bool runtimeCheck();
+
+    /** @p verify instructs fdformat(1) to verify the
+     * medium as well.
+     */
+
+    bool configure(bool verify);
+
     void processStdOut(const QString &s) override;
 
 protected:
-	static QString fdformatName;    ///< path to executable.
-	int formatTrackCount;    ///< How many tracks formatted.
-	bool doVerify;
-} ;
+    static QString fdformatName; ///< path to executable.
+    int formatTrackCount; ///< How many tracks formatted.
+    bool doVerify;
+};
 
 /**
  * Zero out disk by running dd(1)
@@ -306,17 +305,17 @@ public:
      * calling application can decide not to use
      * actions whose prerequisites are absent anyway.
      */
-    static bool runtimeCheck();           
+    static bool runtimeCheck();
 
 protected:
     /**
      * \brief Provide handling of the exit of the external program
      */
     void processDone(int exitCode, QProcess::ExitStatus exitStatus) override;
-protected:
-    static QString m_ddName;    ///< path to executable.
-} ;
 
+protected:
+    static QString m_ddName; ///< path to executable.
+};
 
 /**
  * Create an msdos (FAT) filesystem on the floppy.
@@ -324,30 +323,29 @@ protected:
 class FATFilesystem : public FloppyAction
 {
 public:
-	explicit FATFilesystem(QObject *parent = nullptr);
-	
-	void exec() override;
-	
-	static bool runtimeCheck();
+    explicit FATFilesystem(QObject *parent = nullptr);
 
-	/**
-	 * newfs_msdos(1) doesn't support an additional verify,
-	 * but Linux mkdosfs(1) does. Enable additional medium
-	 * verify with @p verify. Disks can be labeled (@p label) with the
-	 * remaining parameters (@p l).
-	 */	
-	bool configure(bool verify, bool label, const QString &l);
-	
-        /// Parse output
-        void processStdOut(const QString &s) override;
-        
+    void exec() override;
+
+    static bool runtimeCheck();
+
+    /**
+     * newfs_msdos(1) doesn't support an additional verify,
+     * but Linux mkdosfs(1) does. Enable additional medium
+     * verify with @p verify. Disks can be labeled (@p label) with the
+     * remaining parameters (@p l).
+     */
+    bool configure(bool verify, bool label, const QString &l);
+
+    /// Parse output
+    void processStdOut(const QString &s) override;
+
 protected:
-	static QString newfs_fat;
-	
-	bool doVerify,doLabel;
-	QString label;
-	
-} ;
+    static QString newfs_fat;
+
+    bool doVerify, doLabel;
+    QString label;
+};
 
 /**
  * Format with Ext2
@@ -355,24 +353,24 @@ protected:
 class Ext2Filesystem : public FloppyAction
 {
 public:
-	explicit Ext2Filesystem(QObject *parent = nullptr);
-	
-	void exec() override;
-	
-	static bool runtimeCheck();
-	
-	/// Same args as FATFilesystem::configure
-	bool configure(bool verify, bool label, const QString &l);
+    explicit Ext2Filesystem(QObject *parent = nullptr);
 
-        /// Parse output
-        void processStdOut(const QString &s) override;
-	
+    void exec() override;
+
+    static bool runtimeCheck();
+
+    /// Same args as FATFilesystem::configure
+    bool configure(bool verify, bool label, const QString &l);
+
+    /// Parse output
+    void processStdOut(const QString &s) override;
+
 protected:
-	static QString newfs;
-	
-	bool doVerify,doLabel;
-	QString label;
-} ;
+    static QString newfs;
+
+    bool doVerify, doLabel;
+    QString label;
+};
 
 #ifdef ANY_BSD
 
@@ -383,18 +381,18 @@ protected:
 class UFSFilesystem : public FloppyAction
 {
 public:
-	explicit UFSFilesystem(QObject *parent = nullptr);
-	
-	void exec() override;
-	
-	static bool runtimeCheck();
-	
+    explicit UFSFilesystem(QObject *parent = nullptr);
+
+    void exec() override;
+
+    static bool runtimeCheck();
+
 protected:
-	static QString newfs;
-	
-	bool doVerify,doLabel;
-	QString label;
-} ;
+    static QString newfs;
+
+    bool doVerify, doLabel;
+    QString label;
+};
 #endif
 
 #ifdef ANY_LINUX
@@ -405,23 +403,24 @@ protected:
 class MinixFilesystem : public FloppyAction
 {
 public:
-	explicit MinixFilesystem(QObject *parent = nullptr);
-	
-   	void exec() override;
+    explicit MinixFilesystem(QObject *parent = nullptr);
 
-	static bool runtimeCheck();
-	
-	/// Same args as FATFilesystem::configure
-	bool configure(bool verify, bool label, const QString &l);
-        
-        /// Parse output
-        void processStdOut(const QString &s) override;
+    void exec() override;
+
+    static bool runtimeCheck();
+
+    /// Same args as FATFilesystem::configure
+    bool configure(bool verify, bool label, const QString &l);
+
+    /// Parse output
+    void processStdOut(const QString &s) override;
+
 protected:
-	static QString newfs;
-	
-	bool doVerify,doLabel;
-	QString label;
-} ;
+    static QString newfs;
+
+    bool doVerify, doLabel;
+    QString label;
+};
 #endif
 
 /**
@@ -432,4 +431,3 @@ protected:
 QString findExecutable(const QString &);
 
 #endif
-

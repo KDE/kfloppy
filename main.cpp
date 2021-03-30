@@ -1,7 +1,7 @@
 /*
 
     This file is part of the KFloppy program, part of the KDE project
-    
+
     Copyright (C) 1997 Bernd Johannes Wuebben <wuebben@math.cornell.edu>
     Copyright (C) 2004, 2005 Nicolas GOUTTE <goutte@kde.org>
     Copyright (C) 2015, 2016 Wolfgang Bauer <wbauer@tmo.at>
@@ -26,22 +26,21 @@
 #include <QApplication>
 #include <QCommandLineParser>
 
-#include <Kdelibs4ConfigMigrator>
 #include <KAboutData>
-#include <KLocalizedString>
 #include <KCrash>
+#include <KLocalizedString>
+#include <Kdelibs4ConfigMigrator>
 
 #include "floppy.h"
 
-static const char description[] =
-	I18N_NOOP("KDE Floppy Disk Utility");
+static const char description[] = I18N_NOOP("KDE Floppy Disk Utility");
 
-int main( int argc, char *argv[] )
+int main(int argc, char *argv[])
 {
     QApplication app(argc, argv);
-    #if QT_VERSION >= QT_VERSION_CHECK(5, 6, 0)
+#if QT_VERSION >= QT_VERSION_CHECK(5, 6, 0)
     QGuiApplication::setFallbackSessionManagementEnabled(false);
-    #endif
+#endif
 
     Kdelibs4ConfigMigrator migrator(QStringLiteral("kfloppy"));
     migrator.setConfigFiles(QStringList() << QStringLiteral("kfloppyrc"));
@@ -49,16 +48,17 @@ int main( int argc, char *argv[] )
 
     KLocalizedString::setApplicationDomain("kfloppy");
     KAboutData aboutData(QStringLiteral("kfloppy"),
-        i18n("KFloppy"),
-        QStringLiteral(KFLOPPY_VERSION), i18n(description), KAboutLicense::GPL,
-        i18n("(c) 1997, Bernd Johannes Wuebben\n"
-        "(c) 2001, Chris Howells\n"
-        "(c) 2002, Adriaan de Groot\n"
-        "(c) 2004, 2005, Nicolas Goutte\n"
-        "(c) 2015, 2016, Wolfgang Bauer"),
-        i18n("KFloppy helps you format floppies with the filesystem of your choice."),
-        QStringLiteral("https://utils.kde.org/projects/kfloppy")
-    );
+                         i18n("KFloppy"),
+                         QStringLiteral(KFLOPPY_VERSION),
+                         i18n(description),
+                         KAboutLicense::GPL,
+                         i18n("(c) 1997, Bernd Johannes Wuebben\n"
+                              "(c) 2001, Chris Howells\n"
+                              "(c) 2002, Adriaan de Groot\n"
+                              "(c) 2004, 2005, Nicolas Goutte\n"
+                              "(c) 2015, 2016, Wolfgang Bauer"),
+                         i18n("KFloppy helps you format floppies with the filesystem of your choice."),
+                         QStringLiteral("https://utils.kde.org/projects/kfloppy"));
 
     aboutData.addAuthor(i18n("Bernd Johannes Wuebben"), i18n("Author and former maintainer"), QStringLiteral("wuebben@kde.org"));
     aboutData.addCredit(i18n("Chris Howells"), i18n("User interface re-design"), QStringLiteral("howells@kde.org"));
@@ -66,7 +66,7 @@ int main( int argc, char *argv[] )
     aboutData.addCredit(i18n("Nicolas Goutte"), i18n("Make KFloppy work again for KDE 3.4"), QStringLiteral("goutte@kde.org"));
     aboutData.addCredit(i18n("Wolfgang Bauer"), i18n("Port KFloppy to KF5"), QStringLiteral("wbauer@tmo.at"));
     // necessary to make the "Translators" tab appear in the About dialog
-    aboutData.setTranslator( i18nc( "NAME OF TRANSLATORS", "Your names" ), i18nc( "EMAIL OF TRANSLATORS", "Your emails" ) );
+    aboutData.setTranslator(i18nc("NAME OF TRANSLATORS", "Your names"), i18nc("EMAIL OF TRANSLATORS", "Your emails"));
     KAboutData::setApplicationData(aboutData);
 
     KCrash::initialize();
@@ -84,7 +84,7 @@ int main( int argc, char *argv[] )
         device = args.at(0);
     }
 
-    FloppyData* floppy  = new FloppyData();
+    FloppyData *floppy = new FloppyData();
     bool autoformat = floppy->setInitialDevice(device);
     floppy->show();
     if (autoformat) {
