@@ -12,8 +12,8 @@ if(NOT UNIX)
   message(FATAL_ERROR "KFloppy is only supposed to be built on Unix platforms.")
 endif(NOT UNIX)
 
-set(KF5_MIN_VERSION "5.58.0")
-set(REQUIRED_QT_VERSION "5.12.0")
+set(KF5_MIN_VERSION "5.80.0")
+set(REQUIRED_QT_VERSION "5.14.0")
 
 find_package(ECM ${KF5_MIN_VERSION} REQUIRED NO_MODULE)
 set(CMAKE_MODULE_PATH ${ECM_MODULE_PATH})
@@ -30,7 +30,8 @@ find_package(Qt5 ${REQUIRED_QT_VERSION} CONFIG REQUIRED Core DBus Widgets)
 find_package(KF5 ${KF5_MIN_VERSION} REQUIRED COMPONENTS I18n CoreAddons Completion DocTools XmlGui)
 find_package(KF5Crash ${KF5_MIN_VERSION} CONFIG REQUIRED)
 
-add_definitions(-DQT_NO_FOREACH)
+add_definitions(-DQT_DISABLE_DEPRECATED_BEFORE=0x050e00)
+add_definitions(-DKF_DISABLE_DEPRECATED_BEFORE_AND_AT=0x055100)
 
 set(kfloppy_SRCS main.cpp format.cpp floppy.cpp )
 
