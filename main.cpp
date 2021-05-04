@@ -84,7 +84,7 @@ int main(int argc, char *argv[])
         device = args.at(0);
     }
 
-    FloppyData *floppy = new FloppyData();
+    auto floppy = new FloppyData();
     bool autoformat = floppy->setInitialDevice(device);
     floppy->show();
     if (autoformat) {

@@ -159,13 +159,13 @@ private:
  * Similarly, flags are internal too.
  */
 
-typedef struct {
+using fdinfo = struct {
     const char *const *devices;
     int drive;
     int blocks;
     int tracks;
     int flags;
-} fdinfo;
+};
 
 class KProcess;
 

@@ -59,22 +59,22 @@ FloppyData::FloppyData(QWidget *parent)
     , m_canLowLevel(false)
     , m_canZeroOut(false)
 {
-    QWidget *widget = new QWidget(this);
+    auto widget = new QWidget(this);
     formating = false;
     // abort = false;
     blocks = 0;
 
-    QVBoxLayout *ml = new QVBoxLayout(widget);
+    auto ml = new QVBoxLayout(widget);
     ml->setSpacing(10);
 
-    QHBoxLayout *h1 = new QHBoxLayout();
+    auto h1 = new QHBoxLayout();
     ml->addItem(h1);
 
-    QVBoxLayout *v1 = new QVBoxLayout();
+    auto v1 = new QVBoxLayout();
     h1->addItem(v1);
     h1->addSpacing(5);
 
-    QGridLayout *g1 = new QGridLayout();
+    auto g1 = new QGridLayout();
     v1->addItem(g1);
 
     deviceComboBox = new KComboBox(false, widget);
@@ -187,7 +187,7 @@ FloppyData::FloppyData(QWidget *parent)
     v1->addSpacing(10);
 
     buttongroup = new QGroupBox(i18n("&Formatting"), this);
-    QVBoxLayout *buttonGroupLayout = new QVBoxLayout(buttongroup);
+    auto buttonGroupLayout = new QVBoxLayout(buttongroup);
 
     quick = new QRadioButton(i18n("Q&uick format"), buttongroup);
     buttonGroupLayout->addWidget(quick);
@@ -247,7 +247,7 @@ FloppyData::FloppyData(QWidget *parent)
         i18n("<qt>Check this if you want a volume label for your floppy."
              " Please note that Minix does not support labels at all.</qt>"));
 
-    QHBoxLayout *h2 = new QHBoxLayout();
+    auto h2 = new QHBoxLayout();
     v1->addItem(h2);
     h2->addSpacing(20);
 
@@ -263,7 +263,7 @@ FloppyData::FloppyData(QWidget *parent)
 
     connect(labellabel, &QAbstractButton::toggled, lineedit, &QWidget::setEnabled);
 
-    QVBoxLayout *v3 = new QVBoxLayout();
+    auto v3 = new QVBoxLayout();
     h1->addItem(v3);
 
     formatbutton = new QPushButton(widget);
@@ -537,7 +537,7 @@ void FloppyData::format()
         formating = false;
         // No fdformat to push
     } else if (zerooutformat->isChecked()) {
-        DDZeroOut *f = new DDZeroOut(this);
+        auto f = new DDZeroOut(this);
         if (userDevice) {
             f->configureDevice(currentComboBoxDevice);
         } else {
@@ -549,14 +549,14 @@ void FloppyData::format()
         formating = false;
         // No fdformat to push
     } else {
-        FDFormat *f = new FDFormat(this);
+        auto f = new FDFormat(this);
         f->configureDevice(drive, blocks);
         f->configure(verifylabel->isChecked());
         formatActions->queue(f);
     }
 
     if (filesystemComboBox->currentText() == i18n("DOS")) {
-        FATFilesystem *f = new FATFilesystem(this);
+        auto f = new FATFilesystem(this);
         f->configure(verifylabel->isChecked(), labellabel->isChecked(), lineedit->text());
         if (userDevice) {
             f->configureDevice(currentComboBoxDevice);
@@ -567,7 +567,7 @@ void FloppyData::format()
     }
 
     else if (filesystemComboBox->currentText() == i18n("ext2")) {
-        Ext2Filesystem *f = new Ext2Filesystem(this);
+        auto f = new Ext2Filesystem(this);
         f->configure(verifylabel->isChecked(), labellabel->isChecked(), lineedit->text());
         if (userDevice) {
             f->configureDevice(currentComboBoxDevice);
@@ -586,7 +586,7 @@ void FloppyData::format()
 
 #ifdef ANY_LINUX
     else if (filesystemComboBox->currentText() == i18n("Minix")) {
-        MinixFilesystem *f = new MinixFilesystem(this);
+        auto f = new MinixFilesystem(this);
         f->configure(verifylabel->isChecked(), labellabel->isChecked(), lineedit->text());
         if (userDevice) {
             f->configureDevice(currentComboBoxDevice);
