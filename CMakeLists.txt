@@ -43,7 +43,7 @@ ecm_qt_declare_logging_category(kfloppy_SRCS HEADER kfloppy_debug.h IDENTIFIER K
 
 add_executable(kfloppy ${kfloppy_SRCS})
 
-target_link_libraries(kfloppy KF5::CoreAddons KF5::I18n KF5::Completion KF5::XmlGui Qt5::DBus KF5::Crash)
+target_link_libraries(kfloppy KF5::CoreAddons KF5::I18n KF5::Completion KF5::XmlGui Qt::DBus KF5::Crash)
 
 install(TARGETS kfloppy  ${KDE_INSTALL_TARGETS_DEFAULT_ARGS} )
 
