@@ -35,13 +35,13 @@ find_package(KF5Crash ${KF5_MIN_VERSION} CONFIG REQUIRED)
 add_definitions(-DQT_DISABLE_DEPRECATED_BEFORE=0x050f00)
 add_definitions(-DKF_DISABLE_DEPRECATED_BEFORE_AND_AT=0x055300)
 
-set(kfloppy_SRCS main.cpp format.cpp floppy.cpp )
+add_executable(kfloppy)
+target_sources(kfloppy PRIVATE main.cpp format.cpp floppy.cpp )
 
 set_property(SOURCE main.cpp APPEND PROPERTY COMPILE_DEFINITIONS "KFLOPPY_VERSION=\"${RELEASE_SERVICE_VERSION}\"")
 
-ecm_qt_declare_logging_category(kfloppy_SRCS HEADER kfloppy_debug.h IDENTIFIER KFLOPPY_LOG CATEGORY_NAME org.kde.kfloppy DESCRIPTION "KFloppy" EXPORT KFLOPPY)
+ecm_qt_declare_logging_category(kfloppy HEADER kfloppy_debug.h IDENTIFIER KFLOPPY_LOG CATEGORY_NAME org.kde.kfloppy DESCRIPTION "KFloppy" EXPORT KFLOPPY)
 
-add_executable(kfloppy ${kfloppy_SRCS})
 
 target_link_libraries(kfloppy KF5::CoreAddons KF5::I18n KF5::Completion KF5::XmlGui Qt::DBus KF5::Crash)
 
