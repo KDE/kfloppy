@@ -38,9 +38,7 @@ static const char description[] = I18N_NOOP("KDE Floppy Disk Utility");
 int main(int argc, char *argv[])
 {
     QApplication app(argc, argv);
-#if QT_VERSION >= QT_VERSION_CHECK(5, 6, 0)
     QGuiApplication::setFallbackSessionManagementEnabled(false);
-#endif
 
     Kdelibs4ConfigMigrator migrator(QStringLiteral("kfloppy"));
     migrator.setConfigFiles(QStringList() << QStringLiteral("kfloppyrc"));
