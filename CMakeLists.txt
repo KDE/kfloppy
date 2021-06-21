@@ -12,7 +12,7 @@ if(NOT UNIX)
   message(FATAL_ERROR "KFloppy is only supposed to be built on Unix platforms.")
 endif(NOT UNIX)
 
-set(KF5_MIN_VERSION "5.82.0")
+set(KF5_MIN_VERSION "5.83.0")
 set(REQUIRED_QT_VERSION "5.15.0")
 
 find_package(ECM ${KF5_MIN_VERSION} REQUIRED NO_MODULE)
