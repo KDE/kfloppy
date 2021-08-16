@@ -12,7 +12,7 @@ if(NOT UNIX)
   message(FATAL_ERROR "KFloppy is only supposed to be built on Unix platforms.")
 endif(NOT UNIX)
 
-set(KF5_MIN_VERSION "5.83.0")
+set(KF5_MIN_VERSION "5.85.0")
 set(REQUIRED_QT_VERSION "5.15.0")
 
 find_package(ECM ${KF5_MIN_VERSION} REQUIRED NO_MODULE)
@@ -25,8 +25,6 @@ include(FeatureSummary)
 include(ECMInstallIcons)
 include(ECMQtDeclareLoggingCategory)
 include(KDEGitCommitHooks)
-set(CMAKE_CXX_STANDARD 17)
-set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 find_package(Qt5 ${REQUIRED_QT_VERSION} CONFIG REQUIRED Core DBus Widgets)
 find_package(KF5 ${KF5_MIN_VERSION} REQUIRED COMPONENTS I18n CoreAddons Completion DocTools XmlGui)
