@@ -71,7 +71,7 @@ class KFAction : public QObject
 
 public:
     explicit KFAction(QObject *parent = nullptr);
-    virtual ~KFAction();
+    ~KFAction() override;
 
 public Q_SLOTS:
     /**
@@ -119,7 +119,7 @@ class KFActionQueue : public KFAction
 
 public:
     explicit KFActionQueue(QObject *parent = nullptr);
-    virtual ~KFActionQueue();
+    ~KFActionQueue() override;
 
     /**
      * Add a KFAction to the queue. When exec() is called,
