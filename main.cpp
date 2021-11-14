@@ -33,8 +33,6 @@
 
 #include "floppy.h"
 
-static const char description[] = I18N_NOOP("KDE Floppy Disk Utility");
-
 int main(int argc, char *argv[])
 {
     QApplication app(argc, argv);
@@ -48,7 +46,7 @@ int main(int argc, char *argv[])
     KAboutData aboutData(QStringLiteral("kfloppy"),
                          i18n("KFloppy"),
                          QStringLiteral(KFLOPPY_VERSION),
-                         i18n(description),
+                         i18n("KDE Floppy Disk Utility"),
                          KAboutLicense::GPL,
                          i18n("(c) 1997, Bernd Johannes Wuebben\n"
                               "(c) 2001, Chris Howells\n"
