@@ -4,12 +4,12 @@
 Dependencies:
 - 'on': ['Linux']
   'require':
-    'frameworks/extra-cmake-modules': '@stable'
-    'frameworks/kcoreaddons': '@stable'
-    'frameworks/ki18n': '@stable'
-    'frameworks/kwidgetsaddons': '@stable'
-    'frameworks/kdoctools': '@stable'
-    'frameworks/kxmlgui': '@stable'
-    'frameworks/kcrash': '@stable'
-    'frameworks/kcompletion': '@stable'
+    'frameworks/extra-cmake-modules': '@latest'
+    'frameworks/kcoreaddons': '@latest'
+    'frameworks/ki18n': '@latest'
+    'frameworks/kwidgetsaddons': '@latest'
+    'frameworks/kdoctools': '@latest'
+    'frameworks/kxmlgui': '@latest'
+    'frameworks/kcrash': '@latest'
+    'frameworks/kcompletion': '@latest'
 
