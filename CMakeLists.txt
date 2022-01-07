@@ -40,7 +40,7 @@ set_package_properties(KF5DocTools PROPERTIES DESCRIPTION
 find_package(KF5Crash ${KF5_MIN_VERSION} CONFIG REQUIRED)
 
 add_definitions(-DQT_DISABLE_DEPRECATED_BEFORE=0x050f00)
-add_definitions(-DKF_DISABLE_DEPRECATED_BEFORE_AND_AT=0x055800)
+add_definitions(-DKF_DISABLE_DEPRECATED_BEFORE_AND_AT=0x055A00)
 
 add_executable(kfloppy)
 target_sources(kfloppy PRIVATE main.cpp format.cpp floppy.cpp )
