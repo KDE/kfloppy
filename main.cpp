@@ -29,8 +29,9 @@
 #include <KAboutData>
 #include <KCrash>
 #include <KLocalizedString>
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
 #include <Kdelibs4ConfigMigrator>
-
+#endif
 #include "floppy.h"
 
 int main(int argc, char *argv[])
@@ -39,11 +40,11 @@ int main(int argc, char *argv[])
     // Not needed in Qt6 (and doesn't exist at all)
 #if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
     QGuiApplication::setFallbackSessionManagementEnabled(false);
-#endif
 
     Kdelibs4ConfigMigrator migrator(QStringLiteral("kfloppy"));
     migrator.setConfigFiles(QStringList() << QStringLiteral("kfloppyrc"));
     migrator.migrate();
+#endif
 
     KLocalizedString::setApplicationDomain("kfloppy");
     KAboutData aboutData(QStringLiteral("kfloppy"),
