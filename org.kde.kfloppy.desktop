@@ -146,6 +146,7 @@ Name[x-test]=xxKFloppyxx
 Name[zh_CN]=KFloppy
 Name[zh_TW]=KDE 軟碟
 Comment=Floppy Formatter
+Comment[ar]=مهيئ الأقراص المرنة
 Comment[ca]=Formatador de disquets
 Comment[ca@valencia]=Formatador de disquets
 Comment[cs]=Formátovač disket
