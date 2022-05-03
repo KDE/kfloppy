@@ -13,3 +13,5 @@ Dependencies:
     'frameworks/kcrash': '@latest'
     'frameworks/kcompletion': '@latest'
 
+Options:
+  require-passing-tests-on: [ 'Linux', 'FreeBSD']
