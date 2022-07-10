@@ -5,6 +5,7 @@
   <project_license>GPL-2.0+</project_license>
   <name>KFloppy</name>
   <name xml:lang="ar">كفلوبي</name>
+  <name xml:lang="bg">KFloppy</name>
   <name xml:lang="ca">KFloppy</name>
   <name xml:lang="ca-valencia">KFloppy</name>
   <name xml:lang="cs">KFloppy</name>
@@ -44,6 +45,7 @@
   <name xml:lang="zh-TW">KFloppy</name>
   <summary>Floppy disk formatter</summary>
   <summary xml:lang="ar">مهيئ الأقراص المرنة</summary>
+  <summary xml:lang="bg">Форматиране на дискети</summary>
   <summary xml:lang="ca">Formatador de disquets</summary>
   <summary xml:lang="ca-valencia">Formatador de disquets</summary>
   <summary xml:lang="cs">Nástroj na formátování disket</summary>
@@ -84,6 +86,7 @@
   <description>
     <p>KFloppy is a utility that provides a straightforward graphical means to format 3.5" and 5.25" floppy disks.</p>
     <p xml:lang="ar">كفلوبي هي أداة مساعدة توفر وسيلة رسومية مباشرة لتهيئة الأقراص المرنة مقاس 3.5 بوصة و 5.25 بوصة.</p>
+    <p xml:lang="bg">KFloppy е помощна програма, която предоставя прости графични средства за форматиране на 3,5- и 5,25-инчови дискети.</p>
     <p xml:lang="ca">El KFloppy és una utilitat que proporciona un mètode gràfic senzill per a formatar disquets de 3,5" i 5,25".</p>
     <p xml:lang="ca-valencia">KFloppy és una utilitat que proporciona un mètode gràfic senzill per a formatar disquets de 3,5" i 5,25".</p>
     <p xml:lang="da">KFloppy er et redskab der grafisk er lige til at gå til for formatering af 3.5"- og 5.25"-disketter.</p>
