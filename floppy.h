@@ -25,7 +25,6 @@
 #ifndef FloppyData_included
 #define FloppyData_included
 
-#include <KConfig>
 #include <QCloseEvent>
 #include <QDialog>
 #include <QKeyEvent>
