@@ -24,6 +24,7 @@
   <name xml:lang="id">KFloppy</name>
   <name xml:lang="is">KFloppy</name>
   <name xml:lang="it">KFloppy</name>
+  <name xml:lang="ka">KFloppy</name>
   <name xml:lang="ko">KFloppy</name>
   <name xml:lang="nl">KFloppy</name>
   <name xml:lang="nn">KFloppy</name>
@@ -65,6 +66,7 @@
   <summary xml:lang="id">Pemformat disk floppy</summary>
   <summary xml:lang="is">Tól til að forsníða disklinga</summary>
   <summary xml:lang="it">Formattatore di dischetti</summary>
+  <summary xml:lang="ka">დისკეტის ფორმატირება</summary>
   <summary xml:lang="ko">플로피 디스크 포맷 도구</summary>
   <summary xml:lang="nl">Diskettes formatteerder</summary>
   <summary xml:lang="nn">Diskettformatering</summary>
