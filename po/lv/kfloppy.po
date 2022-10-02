@@ -1,0 +1,671 @@
+# translation of kfloppy.po to Latvian
+# Copyright (C) 2007, 2008 Free Software Foundation, Inc.
+#
+# Rihards Prieditis <RPrieditis@inbox.lv>, 2007.
+# Maris Nartiss <maris.kde@gmail.com>, 2007.
+# Viesturs Zarins <viesturs.zarins@mii.lu.lv>, 2007, 2008.
+# Viesturs Zariņš <viesturs.zarins@mii.lu.lv>, 2009.
+msgid ""
+msgstr ""
+"Project-Id-Version: kfloppy\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-01-12 00:48+0000\n"
+"PO-Revision-Date: 2009-06-07 20:53+0300\n"
+"Last-Translator: Viesturs Zariņš <viesturs.zarins@mii.lu.lv>\n"
+"Language-Team: Latvian <locale@laka.lv>\n"
+"Language: lv\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 1.0\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n != 0 ? 1 : "
+"2);\n"
+
+#: floppy.cpp:81
+#, kde-format
+msgid "Floppy &drive:"
+msgstr "&Diskešu ierīce:"
+
+#: floppy.cpp:89 floppy.cpp:364 floppy.cpp:654
+#, kde-format
+msgctxt "Primary floppy drive"
+msgid "Primary"
+msgstr "Primārā"
+
+#: floppy.cpp:90 floppy.cpp:366
+#, kde-format
+msgctxt "Secondary floppy drive"
+msgid "Secondary"
+msgstr "Sekundārā"
+
+#: floppy.cpp:92
+#, kde-format
+msgid "<qt>Select the floppy drive.</qt>"
+msgstr "<qt>Norādiet diskešu ierīci.</qt>"
+
+#: floppy.cpp:98
+#, kde-format
+msgid "&Size:"
+msgstr "&Izmērs:"
+
+#: floppy.cpp:104 floppy.cpp:656
+#, kde-format
+msgid "Auto-Detect"
+msgstr "Auto-noteikšana"
+
+#: floppy.cpp:106 floppy.cpp:372 floppy.cpp:658
+#, kde-format
+msgid "3.5\" 1.44MB"
+msgstr "3.5\" 1.44MB"
+
+#: floppy.cpp:107 floppy.cpp:374
+#, kde-format
+msgid "3.5\" 720KB"
+msgstr "3.5\" 720KB"
+
+#: floppy.cpp:108 floppy.cpp:376
+#, kde-format
+msgid "5.25\" 1.2MB"
+msgstr "5.25\" 1.2MB"
+
+#: floppy.cpp:109 floppy.cpp:378
+#, kde-format
+msgid "5.25\" 360KB"
+msgstr "5.25\" 360KB"
+
+#: floppy.cpp:112
+#, kde-format
+msgid "<qt>This allows you to select the floppy disk's size and density.</qt>"
+msgstr "<qt>Ļauj norādīt disketes izmēru un blīvumu.</qt>"
+
+#: floppy.cpp:119
+#, kde-format
+msgid "F&ile system:"
+msgstr "F&ailu sistēma:"
+
+#: floppy.cpp:126 floppy.cpp:136
+#, kde-format
+msgctxt "Linux"
+msgid ""
+"KFloppy supports three file formats under Linux: MS-DOS, Ext2, and Minix"
+msgstr "KFloppy atbalsta trīs failu formātus zem Linux: MS-DOS, Ext2 un Minix"
+
+#: floppy.cpp:128
+#, kde-format
+msgctxt "BSD"
+msgid "KFloppy supports three file formats under BSD: MS-DOS, UFS, and Ext2"
+msgstr "KFloppy atbalsta trīs failu formātus zem BSD: MS-DOS, UFS un Ext2"
+
+#: floppy.cpp:138 floppy.cpp:163 floppy.cpp:558 floppy.cpp:660
+#, kde-format
+msgid "DOS"
+msgstr "DOS"
+
+#: floppy.cpp:140
+#, kde-format
+msgctxt "Linux"
+msgid "Program mkdosfs found."
+msgstr "Programma mkdosfs ir atrasta."
+
+#: floppy.cpp:142
+#, kde-format
+msgctxt "Linux"
+msgid ""
+"Program mkdosfs <b>not found</b>. MSDOS formatting <b>not available</b>."
+msgstr ""
+"Programma mkdosfs <b>netika atrasta</b>. MSDOS formatēšana <b>nav pieejama</"
+"b>."
+
+#: floppy.cpp:146 floppy.cpp:179 floppy.cpp:569
+#, kde-format
+msgid "ext2"
+msgstr "ext2"
+
+#: floppy.cpp:148 floppy.cpp:181
+#, kde-format
+msgid "Program mke2fs found."
+msgstr "Programma mke2fs atrasta."
+
+#: floppy.cpp:150 floppy.cpp:183
+#, kde-format
+msgid "Program mke2fs <b>not found</b>. Ext2 formatting <b>not available</b>"
+msgstr ""
+"Programma mke2fs <b>netika atrasta</b>. Ext2 formatēšana <b>nav pieejama</b>."
+
+#: floppy.cpp:154 floppy.cpp:588
+#, kde-format
+msgid "Minix"
+msgstr "Minix"
+
+#: floppy.cpp:156
+#, kde-format
+msgctxt "Linux"
+msgid "Program mkfs.minix found."
+msgstr "Programma mkfs.minix atrasta."
+
+#: floppy.cpp:158
+#, kde-format
+msgctxt "Linux"
+msgid ""
+"Program mkfs.minix <b>not found</b>. Minix formatting <b>not available</b>"
+msgstr ""
+"Programma mkfs.minix <b>netika atrasta</b>. Minix formatēšana <b>nav "
+"pieejama</b>."
+
+#: floppy.cpp:161
+#, kde-format
+msgctxt "BSD"
+msgid "KFloppy supports two file formats under BSD: MS-DOS and UFS"
+msgstr "KFloppy atbalsta divus faila formātus zem BSD: MS-DOS un UFS"
+
+#: floppy.cpp:165
+#, kde-format
+msgctxt "BSD"
+msgid "Program newfs_msdos found."
+msgstr "Programma newfs_msdos atrasta."
+
+#: floppy.cpp:167
+#, kde-format
+msgctxt "BSD"
+msgid ""
+"Program newfs_msdos <b>not found</b>. MSDOS formatting <b>not available</b>."
+msgstr ""
+"Programma newfs_msdos <b>netika atrasta</b>. MSDOS formatēšana <b>nav "
+"pieejama</b>."
+
+#: floppy.cpp:171 floppy.cpp:487 floppy.cpp:580
+#, kde-format
+msgid "UFS"
+msgstr "UFS"
+
+#: floppy.cpp:173
+#, kde-format
+msgctxt "BSD"
+msgid "Program newfs found."
+msgstr "Programma newfs atrasta."
+
+#: floppy.cpp:175
+#, kde-format
+msgctxt "BSD"
+msgid "Program newfs <b>not found</b>. UFS formatting <b>not available</b>."
+msgstr ""
+"Programma newfs <b>netika atrasta</b>. UFS formatēšana <b>nav pieejama</b>."
+
+#: floppy.cpp:189
+#, kde-format
+msgid "&Formatting"
+msgstr "&Formatēšana"
+
+#: floppy.cpp:192
+#, kde-format
+msgid "Q&uick format"
+msgstr "Ātra &formatēšana"
+
+#: floppy.cpp:196
+#, kde-format
+msgid ""
+"<qt>Quick format is only a high-level format: it creates only a file system."
+"</qt>"
+msgstr ""
+"<qt>Ātrā formatēšana ir tikai augstā līmeņa formatēšana, kura izveido tikai "
+"failu sistēmu.</qt>"
+
+#: floppy.cpp:199
+#, kde-format
+msgid "&Zero out and quick format"
+msgstr "&Nullēt un veikt ātro formatēšanu"
+
+#: floppy.cpp:202
+#, kde-format
+msgid ""
+"<qt>This first erases the floppy by writing zeros and then it creates the "
+"file system.</qt>"
+msgstr ""
+"<qt>Sākumā izdzēš disketi sarakstot visur nulles, tad izveido failu sistēmu."
+"</qt>"
+
+#: floppy.cpp:204
+#, kde-format
+msgid "Fu&ll format"
+msgstr "Pi&lnā formatēšana"
+
+#: floppy.cpp:207
+#, kde-format
+msgid ""
+"Full format is a low-level and high-level format. It erases everything on "
+"the disk."
+msgstr ""
+"Pilnā formatēšana ir zemā un augstā līmeņa formatēšana. Viss tiek dzēsts no "
+"disketes."
+
+#: floppy.cpp:216
+#, kde-format
+msgid "Program fdformat found."
+msgstr "Programma fdformat atrasta."
+
+#: floppy.cpp:220
+#, kde-format
+msgid "Program fdformat <b>not found</b>. Full formatting <b>disabled</b>."
+msgstr ""
+"Programma fdformat <b>netika atrasta</b>. Pilnā formatēšana <b>nav pieejama</"
+"b>."
+
+#: floppy.cpp:226
+#, kde-format
+msgid "Program dd found."
+msgstr "Programma dd atrasta."
+
+#: floppy.cpp:229
+#, kde-format
+msgid "Program dd <b>not found</b>. Zeroing-out <b>disabled</b>."
+msgstr "Programma dd <b>netika atrasta</b>. Nullēšana <b>nav pieejama</b>."
+
+#: floppy.cpp:234
+#, kde-format
+msgid "&Verify integrity"
+msgstr "Pār&baudīt integritāti"
+
+#: floppy.cpp:238
+#, kde-format
+msgid ""
+"<qt>Check this if you want the floppy disk to be checked after formatting. "
+"Please note that the floppy will be checked twice if you have selected full "
+"formatting.</qt>"
+msgstr ""
+"<qt>Atzīmējiet, ja vēlaties, lai disketi pārbauda pēc formatēšanas. "
+"Atcerieties, ka diskete tiks pārbaudīta divas reizes, ja būsiet izvēlējies "
+"pilno formatēšanu.</qt>"
+
+#: floppy.cpp:243
+#, kde-format
+msgid "Volume la&bel:"
+msgstr "Sējuma &etiķete:"
+
+#: floppy.cpp:247
+#, kde-format
+msgid ""
+"<qt>Check this if you want a volume label for your floppy. Please note that "
+"Minix does not support labels at all.</qt>"
+msgstr ""
+"<qt>Atzīmējiet, ja vēlaties etiķeti disketei. Atcerieties, ka Minix "
+"neatbalsta etiķetes.</qt>"
+
+#: floppy.cpp:256 floppy.cpp:652
+#, kde-format
+msgctxt "Volume label, maximal 11 characters"
+msgid "KDE Floppy"
+msgstr "KDE diskete"
+
+#: floppy.cpp:260
+#, kde-format
+msgid ""
+"<qt>This is for the volume label. Due to a limitation of MS-DOS the label "
+"can only be 11 characters long. Please note that Minix does not support "
+"labels, whatever you enter here.</qt>"
+msgstr ""
+"<qt>Šī ir sējuma etiķete. MS-DOS failu sistēmas ierobežojumu dēļ, garums "
+"etiķetei var būt 11 rakstzīmes. Atcerieties, ka Minix neatbalsta etiķetes, "
+"varat vadīt, ko vēlaties.</qt>"
+
+#: floppy.cpp:270 floppy.cpp:469
+#, kde-format
+msgid "&Format"
+msgstr "&Formatēt"
+
+#: floppy.cpp:276
+#, kde-format
+msgid "<qt>Click here to start formatting.</qt>"
+msgstr "<qt>Spiediet šeit, lai sāktu formatēšanu.</qt>"
+
+#: floppy.cpp:301
+#, kde-format
+msgid "<qt>This is the status window, where error messages are displayed.</qt>"
+msgstr "<qt>Statusa logs, attēlo kļūdu paziņojumus.</qt>"
+
+#: floppy.cpp:314
+#, kde-format
+msgid "<qt>Shows progress of the format.</qt>"
+msgstr "<qt>Rāda formatēšanas progresu.</qt>"
+
+#: floppy.cpp:323
+#, kde-format
+msgid ""
+"KFloppy cannot find any of the needed programs for creating file systems; "
+"please check your installation.<br /><br />Log:"
+msgstr ""
+"KFloppy nevar atrast nevienu failu sistēmu izveidošanas programmu, lūdzu "
+"pārbaudiet savu installāciju.<br /><br />Žurnāls:"
+
+#: floppy.cpp:355
+#, kde-format
+msgid "KDE Floppy Formatter"
+msgstr "KDE diskešu formatētājs"
+
+#: floppy.cpp:488
+#, kde-format
+msgctxt "BSD"
+msgid "Formatting with BSD on a user-given device is only possible with UFS"
+msgstr ""
+"Formatēšana ar BSD, uz lietotāja sniegto ierīci, ir iespējam tikai ar UFS"
+
+#: floppy.cpp:495
+#, kde-format
+msgid ""
+"<qt>Formatting will erase all data on the device:<br/><b>%1</b><br/>(Please "
+"check the correctness of the device name.)<br/>Are you sure you wish to "
+"proceed?</qt>"
+msgstr ""
+"<qt>Formatēšana izdzēsīs visus datus no ierīces: <br /><b>%1</b><br />(Lūdzu "
+"pārbaudiet ierīces nosaukuma pareizumu.)<br />Vai esat drošs, ka vēlaties "
+"turpināt?</qt>"
+
+#: floppy.cpp:499 floppy.cpp:511
+#, kde-format
+msgid "Proceed?"
+msgstr "Turpināt?"
+
+#: floppy.cpp:505
+#, kde-format
+msgid "Full formatting of a user-given device is not possible."
+msgstr "Nav iespējams veikt pilnu formatēšanu lietotāja dotai ierīcei."
+
+#: floppy.cpp:509
+#, kde-format
+msgid ""
+"Formatting will erase all data on the disk.\n"
+"Are you sure you wish to proceed?"
+msgstr ""
+"Formatēšana izdzēsīs visus datus no disketes.\n"
+"Vai vēlaties turpināt?"
+
+#: format.cpp:247
+#, kde-format
+msgid "Unexpected drive number %1."
+msgstr "Neparedzēts ierīces numurs %1."
+
+#: format.cpp:257
+#, kde-format
+msgid "Unexpected density number %1."
+msgstr "Neparedzēts blīvuma numurs %1."
+
+#: format.cpp:270
+#, kde-format
+msgid "Cannot find a device for drive %1 and density %2."
+msgstr "Nevar atrast ierīci %1 un blīvumu %2."
+
+#: format.cpp:284
+#, kde-format
+msgid ""
+"Cannot access %1\n"
+"Make sure that the device exists and that you have write permission to it."
+msgstr ""
+"Nevar piekļūt %1\n"
+"Pārliecinieties ka ierīce eksistē, un ka jums ir rakstīšanas atļaujas."
+
+#: format.cpp:316
+#, kde-format
+msgid "The program %1 terminated with an error."
+msgstr "Programma %1 izbeigta ar kļūdu."
+
+#: format.cpp:320
+#, kde-format
+msgid "The program %1 terminated abnormally."
+msgstr "Programma %1 izgāja nepareizi."
+
+#: format.cpp:377 format.cpp:508 format.cpp:597 format.cpp:691 format.cpp:762
+#: format.cpp:852
+#, kde-format
+msgid "Internal error: device not correctly defined."
+msgstr "Iekšējā kļūda: ierīce nav pareizi definēta."
+
+#: format.cpp:383
+#, kde-format
+msgid "Cannot find fdformat."
+msgstr "Nevaru atrast fdformat."
+
+#: format.cpp:410
+#, kde-format
+msgid "Could not start fdformat."
+msgstr "Nevar palaist fdformat."
+
+#: format.cpp:432
+#, kde-format
+msgid "Error formatting track %1."
+msgstr "Kļūda formatējot celiņu %1"
+
+#: format.cpp:435 format.cpp:460
+#, kde-format
+msgid ""
+"Cannot access floppy or floppy drive.\n"
+"Please insert a floppy and make sure that you have selected a valid floppy "
+"drive."
+msgstr ""
+"Nevar piekļūt disketei vai diskešu ierīcei.\n"
+"Lūdzu ievietojiet disketi un pārliecinieties, ka esat atlasījis pareizo "
+"diskešu ierīci."
+
+#: format.cpp:453
+#, kde-format
+msgid "Low-level formatting error at track %1."
+msgstr "Zemā līmeņa formatēšana kļūda celiņā %1."
+
+#: format.cpp:456
+#, kde-format
+msgid "Low-level formatting error: %1"
+msgstr "Zemā līmeņa formatēšanas kļūda: %1"
+
+#: format.cpp:467 format.cpp:647 format.cpp:803 format.cpp:889
+#, kde-format
+msgid ""
+"Device busy.\n"
+"Perhaps you need to unmount the floppy first."
+msgstr ""
+"Ierīce aizņemta.\n"
+"Varbūt sākumā nomontējiet disketi."
+
+#: format.cpp:472
+#, kde-format
+msgid "Low-level format error: %1"
+msgstr "Zemā līmeņa formatēšanas kļūda: %1"
+
+#: format.cpp:514
+#, kde-format
+msgid "Cannot find dd."
+msgstr "Nevar atrast dd."
+
+#: format.cpp:528
+#, kde-format
+msgid "Could not start dd."
+msgstr "Nevar palaist dd."
+
+#: format.cpp:603
+#, kde-format
+msgid "Cannot find a program to create FAT filesystems."
+msgstr "Nevar atrast programmu, lai izveidotu FAT failu sistēmu."
+
+#: format.cpp:630
+#, kde-format
+msgid "Cannot start FAT format program."
+msgstr "Nevar palaist FAT formatēšanas programu."
+
+#: format.cpp:643 format.cpp:799 format.cpp:885
+#, kde-format
+msgid ""
+"Floppy is mounted.\n"
+"You need to unmount the floppy first."
+msgstr ""
+"Diskete ir montēta.\n"
+"Jums sākumā ir jāveic disketes nomontēšana."
+
+#: format.cpp:697
+#, kde-format
+msgctxt "BSD"
+msgid "Cannot find a program to create UFS filesystems."
+msgstr "Nevar atrast UFS failu sistēmas veidošanas programu."
+
+#: format.cpp:714
+#, kde-format
+msgctxt "BSD"
+msgid "Cannot start UFS format program."
+msgstr "Nevar palaist UFS formatēšanas programu."
+
+#: format.cpp:768
+#, kde-format
+msgid "Cannot find a program to create ext2 filesystems."
+msgstr "Nevar atrast ext2 failu sistēmas veidošanas programu."
+
+#: format.cpp:786
+#, kde-format
+msgid "Cannot start ext2 format program."
+msgstr "Nevar palaist ext2 formatēšanas programu."
+
+#: format.cpp:858
+#, kde-format
+msgid "Cannot find a program to create Minix filesystems."
+msgstr "Nevar atrast Minix failu sistēmas veidošanas programu."
+
+#: format.cpp:875
+#, kde-format
+msgid "Cannot start Minix format program."
+msgstr "Nevar palaist Minix formatēšanas programu."
+
+#: main.cpp:51
+#, kde-format
+msgid "KFloppy"
+msgstr "KFloppy"
+
+#: main.cpp:53
+#, kde-format
+msgid "KDE Floppy Disk Utility"
+msgstr "KDE Diskešu utilīta"
+
+#: main.cpp:55
+#, fuzzy, kde-format
+#| msgid ""
+#| "(c) 1997, Bernd Johannes Wuebben\n"
+#| "(c) 2001, Chris Howells\n"
+#| "(c) 2002, Adriaan de Groot\n"
+#| "(c) 2004, 2005, Nicolas Goutte"
+msgid ""
+"(c) 1997, Bernd Johannes Wuebben\n"
+"(c) 2001, Chris Howells\n"
+"(c) 2002, Adriaan de Groot\n"
+"(c) 2004, 2005, Nicolas Goutte\n"
+"(c) 2015, 2016, Wolfgang Bauer"
+msgstr ""
+"(c) 1997, Bernd Johannes Wuebben\n"
+"(c) 2001, Chris Howells\n"
+"(c) 2002, Adriaan de Groot\n"
+"(c) 2004, 2005, Nicolas Goutte"
+
+#: main.cpp:60
+#, kde-format
+msgid "KFloppy helps you format floppies with the filesystem of your choice."
+msgstr "KFloppy palīdz formatēt disketes uz jūsu izvēlēto failu sistēmu."
+
+#: main.cpp:63
+#, kde-format
+msgid "Bernd Johannes Wuebben"
+msgstr "Bernd Johannes Wuebben"
+
+#: main.cpp:63
+#, kde-format
+msgid "Author and former maintainer"
+msgstr "Autors un iepriekšējais uzturētājs"
+
+#: main.cpp:64
+#, kde-format
+msgid "Chris Howells"
+msgstr "Chris Howells"
+
+#: main.cpp:64
+#, kde-format
+msgid "User interface re-design"
+msgstr "Lietotāja interfeisa pārstrāde"
+
+#: main.cpp:65
+#, kde-format
+msgid "Adriaan de Groot"
+msgstr "Adriaan de Groot"
+
+#: main.cpp:65
+#, kde-format
+msgid "Add BSD support"
+msgstr "Pievienoja BSD atbalstu"
+
+#: main.cpp:66
+#, kde-format
+msgid "Nicolas Goutte"
+msgstr "Nicolas Goutte"
+
+#: main.cpp:66
+#, kde-format
+msgid "Make KFloppy work again for KDE 3.4"
+msgstr "Lika KFloppy atkal strādāt zem KDE 3.4"
+
+#: main.cpp:67
+#, kde-format
+msgid "Wolfgang Bauer"
+msgstr ""
+
+#: main.cpp:67
+#, kde-format
+msgid "Port KFloppy to KF5"
+msgstr ""
+
+#: main.cpp:69
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Andris Maziks, Rihards Priedītis"
+
+#: main.cpp:69
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "andris.m@delfi.lv, RPrieditis@inbox.lv"
+
+#: main.cpp:77
+#, kde-format
+msgid "Default device"
+msgstr "Noklusētā ierīce"
+
+#~ msgid "Zero entire disk"
+#~ msgstr "Nullēt visu disketi"
+
+#~ msgid ""
+#~ "Try to write zeroes to the entire disk before adding a filesystem, in "
+#~ "order to check the disk's integrity."
+#~ msgstr ""
+#~ "Mēģināt rakstīt nulles, uz visas disketes, pirms failu sistēmas "
+#~ "pievienošanas, lai pārbaudītu disketes integritāti."
+
+#~ msgid "Enable softupdates"
+#~ msgstr "Ieslēgt mīksto atjaunināšanu"
+
+#~ msgid "UFS Zip100"
+#~ msgstr "UFS Zip100"
+
+#~ msgid "Cannot start dd to zero disk."
+#~ msgstr "Nevar palaist dd, lai nullētu disketi."
+
+#~ msgid "Zeroing disk..."
+#~ msgstr "Nullē disketi..."
+
+#~ msgid "Zeroing disk failed."
+#~ msgstr "Disketes nullēšana neizdevās."
+
+#~ msgid "Cannot start newfs."
+#~ msgstr "Nevar sākt newfs."
+
+#~ msgid "Making filesystem..."
+#~ msgstr "Veidoju failu sistēmu..."
+
+#~ msgid "newfs failed."
+#~ msgstr "Neizdevās newfs."
+
+#~ msgid "Disk formatted successfully."
+#~ msgstr "Diskete veiksmīgi formatēta."
+
+#~ msgid "Zeroing block %1 of %2..."
+#~ msgstr "Bloka %1 no %2 nullēšana..."

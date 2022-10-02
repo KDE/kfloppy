@@ -1,0 +1,661 @@
+# translation of kfloppy.po to Nepali
+# Mahesh Subedi <submanesh@yahoo.com>, 2006.
+# shyam krishna bal <shyamkrishna_bal@yahoo.com>, 2007.
+# Nabin Gautam <nabin@mpp.org.np>, 2007.
+# Narayan Kumar Magar <narayan@mpp.org.np>, 2007.
+msgid ""
+msgstr ""
+"Project-Id-Version: kfloppy\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-01-12 00:48+0000\n"
+"PO-Revision-Date: 2007-08-29 11:03+0545\n"
+"Last-Translator: Narayan Kumar Magar <narayan@mpp.org.np>\n"
+"Language-Team: Nepali <info@mpp.org.np>\n"
+"Language: ne\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n !=1\n"
+"\n"
+"X-Generator: KBabel 1.11.4\n"
+
+#: floppy.cpp:81
+#, kde-format
+msgid "Floppy &drive:"
+msgstr "फ्लपी ड्राइभ:"
+
+#: floppy.cpp:89 floppy.cpp:364 floppy.cpp:654
+#, fuzzy, kde-format
+#| msgid "Primary"
+msgctxt "Primary floppy drive"
+msgid "Primary"
+msgstr "प्राथमिक"
+
+#: floppy.cpp:90 floppy.cpp:366
+#, fuzzy, kde-format
+#| msgid "Secondary"
+msgctxt "Secondary floppy drive"
+msgid "Secondary"
+msgstr "गौण"
+
+#: floppy.cpp:92
+#, kde-format
+msgid "<qt>Select the floppy drive.</qt>"
+msgstr "<qt>फ्लपी ड्राइभ चयन गर्नुहोस्</qt>"
+
+#: floppy.cpp:98
+#, kde-format
+msgid "&Size:"
+msgstr "साइज:"
+
+#: floppy.cpp:104 floppy.cpp:656
+#, kde-format
+msgid "Auto-Detect"
+msgstr "स्वत: पत्ता लगाउनुहोस्"
+
+#: floppy.cpp:106 floppy.cpp:372 floppy.cpp:658
+#, kde-format
+msgid "3.5\" 1.44MB"
+msgstr "3.5\" 1.44MB"
+
+#: floppy.cpp:107 floppy.cpp:374
+#, kde-format
+msgid "3.5\" 720KB"
+msgstr "3.5\" 720KB"
+
+#: floppy.cpp:108 floppy.cpp:376
+#, kde-format
+msgid "5.25\" 1.2MB"
+msgstr "5.25\" 1.2MB"
+
+#: floppy.cpp:109 floppy.cpp:378
+#, kde-format
+msgid "5.25\" 360KB"
+msgstr "5.25\" 360KB"
+
+#: floppy.cpp:112
+#, kde-format
+msgid "<qt>This allows you to select the floppy disk's size and density.</qt>"
+msgstr "<qt>यसले तपाईँलाई फ्लपी डिस्कको साइज र घनत्व चयन गर्न अनुमति दिन्छ ।</qt>"
+
+#: floppy.cpp:119
+#, kde-format
+msgid "F&ile system:"
+msgstr "फाइल प्रणाली:"
+
+#: floppy.cpp:126 floppy.cpp:136
+#, kde-format
+msgctxt "Linux"
+msgid ""
+"KFloppy supports three file formats under Linux: MS-DOS, Ext2, and Minix"
+msgstr ""
+"केडीई फ्लपी ले लिनक्स: अन्तर्गतको तीनवटा फाइल ढाँचा MS-DOS, Ext2 र Minix समर्थन गर्दछ"
+
+#: floppy.cpp:128
+#, kde-format
+msgctxt "BSD"
+msgid "KFloppy supports three file formats under BSD: MS-DOS, UFS, and Ext2"
+msgstr ""
+"केडीई फ्लपीले BSD: अन्तर्गतको तिनवटा फाइल ढाँचा MS-DOS, UFS र Ext2 समर्थन गर्दछ"
+
+#: floppy.cpp:138 floppy.cpp:163 floppy.cpp:558 floppy.cpp:660
+#, kde-format
+msgid "DOS"
+msgstr "DOS"
+
+#: floppy.cpp:140
+#, kde-format
+msgctxt "Linux"
+msgid "Program mkdosfs found."
+msgstr "कार्यक्रम mkdosfs फेला पर्यो ।"
+
+#: floppy.cpp:142
+#, kde-format
+msgctxt "Linux"
+msgid ""
+"Program mkdosfs <b>not found</b>. MSDOS formatting <b>not available</b>."
+msgstr "कार्यक्रम mkdosfs <b>फेला परेन</b> । MSDOS ढाँचा <b>उपलब्ध छैन</b> ।"
+
+#: floppy.cpp:146 floppy.cpp:179 floppy.cpp:569
+#, kde-format
+msgid "ext2"
+msgstr "ext2"
+
+#: floppy.cpp:148 floppy.cpp:181
+#, kde-format
+msgid "Program mke2fs found."
+msgstr "कार्यक्रम mke2fs फेला पर्यो ।"
+
+#: floppy.cpp:150 floppy.cpp:183
+#, kde-format
+msgid "Program mke2fs <b>not found</b>. Ext2 formatting <b>not available</b>"
+msgstr "कार्यक्रम mke2fs <b>फेला परेन </b>। Ext2 ढाँचा <b>उपलब्ध छैन </b>"
+
+#: floppy.cpp:154 floppy.cpp:588
+#, kde-format
+msgid "Minix"
+msgstr "Minix"
+
+#: floppy.cpp:156
+#, kde-format
+msgctxt "Linux"
+msgid "Program mkfs.minix found."
+msgstr "कार्यक्रम mkfs.minix फेला पर्यो ।"
+
+#: floppy.cpp:158
+#, kde-format
+msgctxt "Linux"
+msgid ""
+"Program mkfs.minix <b>not found</b>. Minix formatting <b>not available</b>"
+msgstr "कार्यक्रम mkfs.minix <b>फेला परेन</b> । Minix ढाँचा <b>उपलब्ध छैन</b>"
+
+#: floppy.cpp:161
+#, kde-format
+msgctxt "BSD"
+msgid "KFloppy supports two file formats under BSD: MS-DOS and UFS"
+msgstr "केडीई फ्लपीले BSD: अन्तर्गतको दुईवटा फाइल ढाँचा MS-DOS र UFS समर्थन गर्दछ "
+
+#: floppy.cpp:165
+#, kde-format
+msgctxt "BSD"
+msgid "Program newfs_msdos found."
+msgstr "कार्यक्रम newfs_msdos फेला पर्यो ।"
+
+#: floppy.cpp:167
+#, kde-format
+msgctxt "BSD"
+msgid ""
+"Program newfs_msdos <b>not found</b>. MSDOS formatting <b>not available</b>."
+msgstr "कार्यक्रम newfs_msdos <b>फेला परेन</b> । MSDOS ढाँचा <b>उपलब्ध छैन</b> ।"
+
+#: floppy.cpp:171 floppy.cpp:487 floppy.cpp:580
+#, kde-format
+msgid "UFS"
+msgstr "UFS"
+
+#: floppy.cpp:173
+#, kde-format
+msgctxt "BSD"
+msgid "Program newfs found."
+msgstr "कार्यक्रम newfs फेला परेन ।"
+
+#: floppy.cpp:175
+#, kde-format
+msgctxt "BSD"
+msgid "Program newfs <b>not found</b>. UFS formatting <b>not available</b>."
+msgstr "कार्यक्रम newfs <b>फेला परेन</b> । UFS ढाँचा <b>उपलब्ध छैन</b> ।"
+
+#: floppy.cpp:189
+#, kde-format
+msgid "&Formatting"
+msgstr "ढाँचा"
+
+#: floppy.cpp:192
+#, kde-format
+msgid "Q&uick format"
+msgstr "शीघ्र ढाँचा"
+
+#: floppy.cpp:196
+#, kde-format
+msgid ""
+"<qt>Quick format is only a high-level format: it creates only a file system."
+"</qt>"
+msgstr ""
+"<qt>शीघ्र ढाँचा उच्च‍-स्तरको ढाँचा मात्र हो: यसले केबल फाइल प्रणाली सिर्जना गर्दछ ।</qt>"
+
+#: floppy.cpp:199
+#, kde-format
+msgid "&Zero out and quick format"
+msgstr "जिरो आउट र शिघ्र ढाँचा"
+
+#: floppy.cpp:202
+#, kde-format
+msgid ""
+"<qt>This first erases the floppy by writing zeros and then it creates the "
+"file system.</qt>"
+msgstr ""
+"<qt>यसले पहिले शून्य लेखेर फ्लपी मेट्दछ र त्यसपछि यसले फाइल प्रणाली सिर्जना गर्दछ ।</qt>"
+
+#: floppy.cpp:204
+#, kde-format
+msgid "Fu&ll format"
+msgstr "पूरा ढाँचा"
+
+#: floppy.cpp:207
+#, kde-format
+msgid ""
+"Full format is a low-level and high-level format. It erases everything on "
+"the disk."
+msgstr "पूरा ढाँचा न्यून-स्तर र उच्च-स्तर ढाँचा हो । यसले डिस्कमा सबैकुरा मेट्दछ ।"
+
+#: floppy.cpp:216
+#, kde-format
+msgid "Program fdformat found."
+msgstr "कार्यक्रम fdformat फेला पर्यो ।"
+
+#: floppy.cpp:220
+#, kde-format
+msgid "Program fdformat <b>not found</b>. Full formatting <b>disabled</b>."
+msgstr "कार्यक्रम fdformat <b>फेला परेन</b>। पूरा ढाँचा <b>अक्षम पारिएको छ </b> ।"
+
+#: floppy.cpp:226
+#, kde-format
+msgid "Program dd found."
+msgstr "कार्यक्रम dd फेला पर्यो ।"
+
+#: floppy.cpp:229
+#, kde-format
+msgid "Program dd <b>not found</b>. Zeroing-out <b>disabled</b>."
+msgstr "कार्यक्रम dd <b>फेला परेन </b> । जिरोइङ आउट <b>अक्षम पारियो</b> ।"
+
+#: floppy.cpp:234
+#, kde-format
+msgid "&Verify integrity"
+msgstr "पूर्णता रुजु गर्नुहोस्"
+
+#: floppy.cpp:238
+#, kde-format
+msgid ""
+"<qt>Check this if you want the floppy disk to be checked after formatting. "
+"Please note that the floppy will be checked twice if you have selected full "
+"formatting.</qt>"
+msgstr ""
+"<qt>यदि तपाईँले ढाँचाबद्धता पछि फ्लपी डिस्क जाँच गरियोस भन्ने चाहनुहुन्छ भने यो जाँच "
+"गर्नुहोस् । यदि तपाईँले पूरा ढाँचाबद्धता चयन गर्नुभएको छ भने फ्लपी जाँच दुई पटक गरिन्छ भन्ने "
+"कृपया याद राख्नुहोस् ।</qt>"
+
+#: floppy.cpp:243
+#, kde-format
+msgid "Volume la&bel:"
+msgstr "भोल्युम लेबुल:"
+
+#: floppy.cpp:247
+#, kde-format
+msgid ""
+"<qt>Check this if you want a volume label for your floppy. Please note that "
+"Minix does not support labels at all.</qt>"
+msgstr ""
+"<qt>तपाईँको फ्लपीका लागि भोल्युम लेबुल चाहनुहुन्छ भने यसलाई जाँच गर्नुहोस् । Minix'ले सबै "
+"लेबुल समर्थन नगर्ने कुरा याद राख्नुहोस् ।</qt>"
+
+#: floppy.cpp:256 floppy.cpp:652
+#, kde-format
+msgctxt "Volume label, maximal 11 characters"
+msgid "KDE Floppy"
+msgstr "केडीई फ्लपी"
+
+#: floppy.cpp:260
+#, kde-format
+msgid ""
+"<qt>This is for the volume label. Due to a limitation of MS-DOS the label "
+"can only be 11 characters long. Please note that Minix does not support "
+"labels, whatever you enter here.</qt>"
+msgstr ""
+"<qt>यो भोल्युम लेबुलका लागि हो । MS-DOS को सीमाको कारणले गर्दा लेबुल ११ क्यारेक्टर लामो "
+"मात्र हुन सक्छ । तपाईँले यहाँ जे प्रविष्ट गरेपनि Minix ले लेबुल समर्थन गर्दैन भन्ने कुरा याद "
+"राख्नुहोस् ।</qt>"
+
+#: floppy.cpp:270 floppy.cpp:469
+#, kde-format
+msgid "&Format"
+msgstr "ढाँचाबद्ध गर्नुहोस्"
+
+#: floppy.cpp:276
+#, kde-format
+msgid "<qt>Click here to start formatting.</qt>"
+msgstr "<qt>ढाँचा सुरु गर्न यहाँ क्लिक गर्नुहोस् ।</qt>"
+
+#: floppy.cpp:301
+#, kde-format
+msgid "<qt>This is the status window, where error messages are displayed.</qt>"
+msgstr "<qt>यो वस्तुस्थित सञ्झ्याल हो, जहाँ त्रुटि सन्देश प्रर्दशित हुन्छ ।</qt>"
+
+#: floppy.cpp:314
+#, kde-format
+msgid "<qt>Shows progress of the format.</qt>"
+msgstr "<qt>ढाँचाको प्रगति देखाउँदछ ।</qt>"
+
+#: floppy.cpp:323
+#, fuzzy, kde-format
+#| msgid ""
+#| "KFloppy cannot find any of the needed programs for creating file systems; "
+#| "please check your installation.<br><br>Log:"
+msgid ""
+"KFloppy cannot find any of the needed programs for creating file systems; "
+"please check your installation.<br /><br />Log:"
+msgstr ""
+"केडीई फ्लपीले फाइल प्रणाली सिर्जना गर्नका लागि आवश्यक कुनै कार्यक्रम फेला पार्न सक्दैन; "
+"कृपया तपाईँको स्थापना जाँच गर्नुहोस् ।<br><br>लग:"
+
+#: floppy.cpp:355
+#, kde-format
+msgid "KDE Floppy Formatter"
+msgstr "केडीई फ्लपी ढाँचाकर्ता"
+
+#: floppy.cpp:488
+#, kde-format
+msgctxt "BSD"
+msgid "Formatting with BSD on a user-given device is only possible with UFS"
+msgstr "प्रयोगकर्ता दिइएको यन्त्रमा BSD सँगको ढाँचाबद्धता केबल UFS सँग मात्र सम्भव हुन्छ"
+
+#: floppy.cpp:495
+#, kde-format
+msgid ""
+"<qt>Formatting will erase all data on the device:<br/><b>%1</b><br/>(Please "
+"check the correctness of the device name.)<br/>Are you sure you wish to "
+"proceed?</qt>"
+msgstr ""
+"<qt>ढाँचाबद्ध गर्नाले यन्त्रबाट सबै डेटा मेटिन्छ:<br/><b>%1</b><br/>(कृपया तपाईँको यन्त्र "
+"नामको शुद्धता जाँच गर्नुहोस् ।)<br/>के तपाईँ अगाडि बढ्न निश्चित हुनुहुन्छ ?</qt>"
+
+#: floppy.cpp:499 floppy.cpp:511
+#, kde-format
+msgid "Proceed?"
+msgstr "अगाडि बढ्नुहुन्छ ?"
+
+#: floppy.cpp:505
+#, fuzzy, kde-format
+#| msgctxt "BSD"
+#| msgid "Formatting with BSD on a user-given device is only possible with UFS"
+msgid "Full formatting of a user-given device is not possible."
+msgstr "प्रयोगकर्ता दिइएको यन्त्रमा BSD सँगको ढाँचाबद्धता केबल UFS सँग मात्र सम्भव हुन्छ"
+
+#: floppy.cpp:509
+#, kde-format
+msgid ""
+"Formatting will erase all data on the disk.\n"
+"Are you sure you wish to proceed?"
+msgstr ""
+"ढाँचाबद्ध गर्दा डिस्कमा भएको सबै डेटा मेटिने छ ।\n"
+"तपाईँ अगाडि बढ्न निश्चित हुनु हुन्छ ?"
+
+#: format.cpp:247
+#, kde-format
+msgid "Unexpected drive number %1."
+msgstr "अनपेक्षित ड्राइभ नम्बर %1 ।"
+
+#: format.cpp:257
+#, kde-format
+msgid "Unexpected density number %1."
+msgstr "अनपेक्षित घनत्व नम्बर %1 ।"
+
+#: format.cpp:270
+#, kde-format
+msgid "Cannot find a device for drive %1 and density %2."
+msgstr "%1 ड्राइभ र %2 घनत्वका लागि यन्त्र फेला पार्न सकिँदैन ।"
+
+#: format.cpp:284
+#, kde-format
+msgid ""
+"Cannot access %1\n"
+"Make sure that the device exists and that you have write permission to it."
+msgstr ""
+"%1 पहुँच गर्न सकिँदैन\n"
+"यन्त्र अवस्थित भएको र तपाईँलाई य्यसाई लेख्ने अनुमति भएमा निश्चित गर्नुहोस् ।"
+
+#: format.cpp:316
+#, kde-format
+msgid "The program %1 terminated with an error."
+msgstr "%1 कार्यक्रम एउटा त्रुटिसँग बन्द भयो ।"
+
+#: format.cpp:320
+#, kde-format
+msgid "The program %1 terminated abnormally."
+msgstr "%1 कार्यक्रम असामान्य तरिकाले बन्द भयो ।"
+
+#: format.cpp:377 format.cpp:508 format.cpp:597 format.cpp:691 format.cpp:762
+#: format.cpp:852
+#, kde-format
+msgid "Internal error: device not correctly defined."
+msgstr "आन्तरिक त्रुटि: यन्त्र राम्रोसँग परिभाषित गरिएको छैन ।"
+
+#: format.cpp:383
+#, kde-format
+msgid "Cannot find fdformat."
+msgstr "fdformat फेला पार्न सकिँदैन ।"
+
+#: format.cpp:410
+#, kde-format
+msgid "Could not start fdformat."
+msgstr "fdformat सुरु गर्न सकिँदैन ।"
+
+#: format.cpp:432
+#, kde-format
+msgid "Error formatting track %1."
+msgstr "%1 ट्रयाक ढाँचा गर्दा त्रुटि ।"
+
+#: format.cpp:435 format.cpp:460
+#, kde-format
+msgid ""
+"Cannot access floppy or floppy drive.\n"
+"Please insert a floppy and make sure that you have selected a valid floppy "
+"drive."
+msgstr ""
+"फ्लपी वा फ्लपी ड्राइभमा पहुँच गर्न सकिँदैन ।\n"
+"फ्लपी घुसाउनुहोस् र तपाईँले वैध फ्लपी ड्राइभ चयन गरेको निश्चित गर्नुहोस् ।"
+
+#: format.cpp:453
+#, kde-format
+msgid "Low-level formatting error at track %1."
+msgstr "%1 ट्रयाकमा न्यून-स्तरको ढाँचा त्रुटि ।"
+
+#: format.cpp:456
+#, kde-format
+msgid "Low-level formatting error: %1"
+msgstr "न्यून-स्तरको ढाँचा त्रुटि: %1"
+
+#: format.cpp:467 format.cpp:647 format.cpp:803 format.cpp:889
+#, kde-format
+msgid ""
+"Device busy.\n"
+"Perhaps you need to unmount the floppy first."
+msgstr ""
+"यन्त्र व्यस्त ।\n"
+"सम्भवत तपाईँले फ्लपीलाई पहिला अनमाउन्ट गर्नु आवश्यक छ ।"
+
+#: format.cpp:472
+#, kde-format
+msgid "Low-level format error: %1"
+msgstr "न्यून-स्तर ढाँचा त्रुटि: %1"
+
+#: format.cpp:514
+#, kde-format
+msgid "Cannot find dd."
+msgstr "dd फेला पार्न सकिँदैन ।"
+
+#: format.cpp:528
+#, kde-format
+msgid "Could not start dd."
+msgstr "dd सुरु गर्न सकेन ।"
+
+#: format.cpp:603
+#, kde-format
+msgid "Cannot find a program to create FAT filesystems."
+msgstr "FAT फाइल प्रणाली सिर्जना गर्न कार्यक्रम फेला पार्न सकिँदैन ।"
+
+#: format.cpp:630
+#, kde-format
+msgid "Cannot start FAT format program."
+msgstr "FAT ढाँचा कार्यक्रम सुरु गर्न सकिँदैन ।"
+
+#: format.cpp:643 format.cpp:799 format.cpp:885
+#, kde-format
+msgid ""
+"Floppy is mounted.\n"
+"You need to unmount the floppy first."
+msgstr ""
+"फ्लपी माउन्ट गरिएको छ ।\n"
+"तपाईँले पहिला फ्लपी अनमाउन्ट गर्नु आवश्यक छ ।"
+
+#: format.cpp:697
+#, kde-format
+msgctxt "BSD"
+msgid "Cannot find a program to create UFS filesystems."
+msgstr "UFS फाइल प्रणाली सिर्जना गर्न कार्यक्रम सिर्जना गर्न सकिँदैन ।"
+
+#: format.cpp:714
+#, kde-format
+msgctxt "BSD"
+msgid "Cannot start UFS format program."
+msgstr "UFS ढाँचा कार्यक्रम सुरु गर्न सकिँदैन ।"
+
+#: format.cpp:768
+#, kde-format
+msgid "Cannot find a program to create ext2 filesystems."
+msgstr "ext2 फाइल प्रणाली सिर्जना गर्न कार्यक्रम फेला पार्न सकिँदैन ।"
+
+#: format.cpp:786
+#, kde-format
+msgid "Cannot start ext2 format program."
+msgstr "ext2 ढाँचा कार्यक्रम सुरु गर्न सकिँदैन ।"
+
+#: format.cpp:858
+#, kde-format
+msgid "Cannot find a program to create Minix filesystems."
+msgstr "Minix फाइल प्रणाली सिर्जना गर्न कार्यक्रम फेला पार्न सकिँदैन ।"
+
+#: format.cpp:875
+#, kde-format
+msgid "Cannot start Minix format program."
+msgstr "Minix ढाँचा कार्यक्रम सुरु गर्न सकिँदैन ।"
+
+#: main.cpp:51
+#, kde-format
+msgid "KFloppy"
+msgstr "केडीई फ्लपी"
+
+#: main.cpp:53
+#, kde-format
+msgid "KDE Floppy Disk Utility"
+msgstr "केडीई फ्लपी डिस्क उपयोगिता"
+
+#: main.cpp:55
+#, fuzzy, kde-format
+#| msgid ""
+#| "(c) 1997, Bernd Johannes Wuebben\n"
+#| "(c) 2001, Chris Howells\n"
+#| "(c) 2002, Adriaan de Groot\n"
+#| "(c) 2004, 2005, Nicolas Goutte"
+msgid ""
+"(c) 1997, Bernd Johannes Wuebben\n"
+"(c) 2001, Chris Howells\n"
+"(c) 2002, Adriaan de Groot\n"
+"(c) 2004, 2005, Nicolas Goutte\n"
+"(c) 2015, 2016, Wolfgang Bauer"
+msgstr ""
+"(c) 1997, बर्न्ड जोहान्नेस वुइब्बेन\n"
+"(c) 2001, क्रिस होवेल्स्\n"
+"(c) 2002, छ\n"
+"(c) 2004, 2005, निकोलास गोउट्टे"
+
+#: main.cpp:60
+#, kde-format
+msgid "KFloppy helps you format floppies with the filesystem of your choice."
+msgstr "केडीई फ्लपीले तपाईँको छनोटको फाइल प्रणालीसँग फ्लपीहरू ढाँचाबद्ध गर्न मद्दत गर्दछ ।"
+
+#: main.cpp:63
+#, kde-format
+msgid "Bernd Johannes Wuebben"
+msgstr "बर्न्ड जोहान्नेस वुइब्बेन"
+
+#: main.cpp:63
+#, kde-format
+msgid "Author and former maintainer"
+msgstr "लेखक र पूर्व मर्मतकर्ता"
+
+#: main.cpp:64
+#, kde-format
+msgid "Chris Howells"
+msgstr "क्रिस होवेल्स्"
+
+#: main.cpp:64
+#, kde-format
+msgid "User interface re-design"
+msgstr "प्रयोगकर्ता इन्टरफेस पुन: डिजाइन"
+
+#: main.cpp:65
+#, kde-format
+msgid "Adriaan de Groot"
+msgstr "एड्रिआन डि ग्रूट"
+
+#: main.cpp:65
+#, kde-format
+msgid "Add BSD support"
+msgstr "BSD समर्थन थप्नुहोस्"
+
+#: main.cpp:66
+#, kde-format
+msgid "Nicolas Goutte"
+msgstr "निकोलास गोउट्टे"
+
+#: main.cpp:66
+#, kde-format
+msgid "Make KFloppy work again for KDE 3.4"
+msgstr "केडीई फ्लपीलाई KDE 3.4 का लागि फेरि काम गर्ने बनाउनुहोस्"
+
+#: main.cpp:67
+#, kde-format
+msgid "Wolfgang Bauer"
+msgstr ""
+
+#: main.cpp:67
+#, kde-format
+msgid "Port KFloppy to KF5"
+msgstr ""
+
+#: main.cpp:69
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Mahesh Subedi, श्यामकृष्ण बल, नारायण कुमार मगर"
+
+#: main.cpp:69
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "submanesh@gmail.com, shyamkrishna_bal@yahoo.com, narayan@mpp.org.np"
+
+#: main.cpp:77
+#, kde-format
+msgid "Default device"
+msgstr "पूर्वनिर्धारित यन्त्र"
+
+#~ msgid "Zero entire disk"
+#~ msgstr "पूरै डिस्क शुन्य पार्नुहोस्"
+
+#~ msgid ""
+#~ "Try to write zeroes to the entire disk before adding a filesystem, in "
+#~ "order to check the disk's integrity."
+#~ msgstr ""
+#~ "डिस्कको पूर्णता जाँच गर्नको निम्ति फाइल प्रणाली थप्नु अगाडि पूरै डिस्कमा शुन्य लेख्न "
+#~ "प्रयास गर्नुहोस् ।"
+
+#~ msgid "Enable softupdates"
+#~ msgstr "सफ्ट अपडेट सक्षम पार्नुहोस्"
+
+#~ msgid "UFS Zip100"
+#~ msgstr "UFS Zip100"
+
+#~ msgid "Cannot start dd to zero disk."
+#~ msgstr "जिरो डिस्कमा dd सुरु गर्न सकिँदैन ।"
+
+#~ msgid "Zeroing disk..."
+#~ msgstr "जिरोइङ डिस्क..."
+
+#~ msgid "Zeroing disk failed."
+#~ msgstr "जिरोइङ डिस्क असफल भयो ।"
+
+#~ msgid "Cannot start newfs."
+#~ msgstr "newfs सुरु गर्न सकिँदैन ।"
+
+#~ msgid "Making filesystem..."
+#~ msgstr "फाइल प्रणाली बनाउदै..."
+
+#~ msgid "newfs failed."
+#~ msgstr "newfs असफल भयो ।"
+
+#~ msgid "Disk formatted successfully."
+#~ msgstr "डिस्क सफलताका साथ ढाँचाबद्ध गरियो ।"
+
+#~ msgid "Zeroing block %1 of %2..."
+#~ msgstr "%2 को %1 जिरोइङ खण्ड..."

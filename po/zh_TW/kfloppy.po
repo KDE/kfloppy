@@ -1,0 +1,604 @@
+# translation of kfloppy.po to Chinese Traditional
+# Traditional Chinese Translation of kfloopy
+# Copyright (C) 2002, 2006, 2007, 2008 Free Software Foundation, Inc.
+# Cosmo Train <polaxv@pchome.com.tw>, 2001.
+#  <keanu@ms50.url.com.tw>, 2002.
+# Jeff Huang <s8321414@gmail.com>, 2016.
+#
+# Frank Weng (a.k.a. Franklin) <franklin at goodhorse dot idv dot tw>, 2006, 2007, 2008, 2009.
+# Franklin Weng <franklin at goodhorse dot idv dot tw>, 2007.
+msgid ""
+msgstr ""
+"Project-Id-Version: kfloppy\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-01-12 00:48+0000\n"
+"PO-Revision-Date: 2016-11-10 14:14+0800\n"
+"Last-Translator: Jeff Huang <s8321414@gmail.com>\n"
+"Language-Team: Chinese <kde-i18n-doc@kde.org>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 2.0\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: floppy.cpp:81
+#, kde-format
+msgid "Floppy &drive:"
+msgstr "磁碟裝置(&D)："
+
+#: floppy.cpp:89 floppy.cpp:364 floppy.cpp:654
+#, kde-format
+msgctxt "Primary floppy drive"
+msgid "Primary"
+msgstr "主要的"
+
+#: floppy.cpp:90 floppy.cpp:366
+#, kde-format
+msgctxt "Secondary floppy drive"
+msgid "Secondary"
+msgstr "次要的"
+
+#: floppy.cpp:92
+#, kde-format
+msgid "<qt>Select the floppy drive.</qt>"
+msgstr "<qt>選擇磁碟裝置</qt>"
+
+#: floppy.cpp:98
+#, kde-format
+msgid "&Size:"
+msgstr "大小(&S):"
+
+#: floppy.cpp:104 floppy.cpp:656
+#, kde-format
+msgid "Auto-Detect"
+msgstr "自動偵測"
+
+#: floppy.cpp:106 floppy.cpp:372 floppy.cpp:658
+#, kde-format
+msgid "3.5\" 1.44MB"
+msgstr "3.5\" 1.44MB"
+
+#: floppy.cpp:107 floppy.cpp:374
+#, kde-format
+msgid "3.5\" 720KB"
+msgstr "3.5\" 720KB"
+
+#: floppy.cpp:108 floppy.cpp:376
+#, kde-format
+msgid "5.25\" 1.2MB"
+msgstr "5.25\" 1.2MB"
+
+#: floppy.cpp:109 floppy.cpp:378
+#, kde-format
+msgid "5.25\" 360KB"
+msgstr "5.25\" 360KB"
+
+#: floppy.cpp:112
+#, kde-format
+msgid "<qt>This allows you to select the floppy disk's size and density.</qt>"
+msgstr "<qt>這裡允許您選擇磁碟的大小與密度。</qt>"
+
+#: floppy.cpp:119
+#, kde-format
+msgid "F&ile system:"
+msgstr "檔案系統(&I)："
+
+#: floppy.cpp:126 floppy.cpp:136
+#, kde-format
+msgctxt "Linux"
+msgid ""
+"KFloppy supports three file formats under Linux: MS-DOS, Ext2, and Minix"
+msgstr "KFloppy 支援三種 Linux 的檔案系統格式：MS-DOS，ext2 與 Minix。"
+
+#: floppy.cpp:128
+#, kde-format
+msgctxt "BSD"
+msgid "KFloppy supports three file formats under BSD: MS-DOS, UFS, and Ext2"
+msgstr "KFloppy 支援三種 BSD 的檔案系統格式：MS-DOS，ext2 與 UFS。"
+
+#: floppy.cpp:138 floppy.cpp:163 floppy.cpp:558 floppy.cpp:660
+#, kde-format
+msgid "DOS"
+msgstr "DOS"
+
+#: floppy.cpp:140
+#, kde-format
+msgctxt "Linux"
+msgid "Program mkdosfs found."
+msgstr "找到 mkdosfs。"
+
+#: floppy.cpp:142
+#, kde-format
+msgctxt "Linux"
+msgid ""
+"Program mkdosfs <b>not found</b>. MSDOS formatting <b>not available</b>."
+msgstr "找不到 mkdosfs。無法格式化成 MS-DOS 格式。"
+
+#: floppy.cpp:146 floppy.cpp:179 floppy.cpp:569
+#, kde-format
+msgid "ext2"
+msgstr "ext2fs格式"
+
+#: floppy.cpp:148 floppy.cpp:181
+#, kde-format
+msgid "Program mke2fs found."
+msgstr "找到 mke2fs。"
+
+#: floppy.cpp:150 floppy.cpp:183
+#, kde-format
+msgid "Program mke2fs <b>not found</b>. Ext2 formatting <b>not available</b>"
+msgstr "找不到 mke2fs。無法格式化為 ext2。"
+
+#: floppy.cpp:154 floppy.cpp:588
+#, kde-format
+msgid "Minix"
+msgstr "Minix"
+
+#: floppy.cpp:156
+#, kde-format
+msgctxt "Linux"
+msgid "Program mkfs.minix found."
+msgstr "找到 mkfs.minix。"
+
+#: floppy.cpp:158
+#, kde-format
+msgctxt "Linux"
+msgid ""
+"Program mkfs.minix <b>not found</b>. Minix formatting <b>not available</b>"
+msgstr "找不到 mkfs.minix。無法格式化為 Minix。"
+
+#: floppy.cpp:161
+#, kde-format
+msgctxt "BSD"
+msgid "KFloppy supports two file formats under BSD: MS-DOS and UFS"
+msgstr "KFloppy 支援 BSD 下的兩種檔案格式：MS-DOS 與 UFS。"
+
+#: floppy.cpp:165
+#, kde-format
+msgctxt "BSD"
+msgid "Program newfs_msdos found."
+msgstr "找到 newfs_msdos。"
+
+#: floppy.cpp:167
+#, kde-format
+msgctxt "BSD"
+msgid ""
+"Program newfs_msdos <b>not found</b>. MSDOS formatting <b>not available</b>."
+msgstr "找不到 newfs_msdos。無法格式化為 MSDOS 格式。"
+
+#: floppy.cpp:171 floppy.cpp:487 floppy.cpp:580
+#, kde-format
+msgid "UFS"
+msgstr "UFS"
+
+#: floppy.cpp:173
+#, kde-format
+msgctxt "BSD"
+msgid "Program newfs found."
+msgstr "找到 newfs。"
+
+#: floppy.cpp:175
+#, kde-format
+msgctxt "BSD"
+msgid "Program newfs <b>not found</b>. UFS formatting <b>not available</b>."
+msgstr "找不到 newfs。無法格式化為 UFS。"
+
+#: floppy.cpp:189
+#, kde-format
+msgid "&Formatting"
+msgstr "格式化(&F)"
+
+#: floppy.cpp:192
+#, kde-format
+msgid "Q&uick format"
+msgstr "快速格式化(&U)"
+
+#: floppy.cpp:196
+#, kde-format
+msgid ""
+"<qt>Quick format is only a high-level format: it creates only a file system."
+"</qt>"
+msgstr "<qt>快速格式化為高階格式化：它只會產生檔案系統。</qt>"
+
+#: floppy.cpp:199
+#, kde-format
+msgid "&Zero out and quick format"
+msgstr "全部清除並快速格式化(&Z)"
+
+#: floppy.cpp:202
+#, kde-format
+msgid ""
+"<qt>This first erases the floppy by writing zeros and then it creates the "
+"file system.</qt>"
+msgstr "<qt>它會先清除磁碟中的資料再產生檔案系統。</qt>"
+
+#: floppy.cpp:204
+#, kde-format
+msgid "Fu&ll format"
+msgstr "完整格式化(&L)"
+
+#: floppy.cpp:207
+#, kde-format
+msgid ""
+"Full format is a low-level and high-level format. It erases everything on "
+"the disk."
+msgstr "完整格式化包括低階與高階格式化。它會清除磁碟中的所有東西。"
+
+#: floppy.cpp:216
+#, kde-format
+msgid "Program fdformat found."
+msgstr "找到 fdformat。"
+
+#: floppy.cpp:220
+#, kde-format
+msgid "Program fdformat <b>not found</b>. Full formatting <b>disabled</b>."
+msgstr "找不到 fdformat。關閉完整格式化功能。"
+
+#: floppy.cpp:226
+#, kde-format
+msgid "Program dd found."
+msgstr "找到 dd。"
+
+#: floppy.cpp:229
+#, kde-format
+msgid "Program dd <b>not found</b>. Zeroing-out <b>disabled</b>."
+msgstr "找不到 dd。關閉清除磁碟資料功能。"
+
+#: floppy.cpp:234
+#, kde-format
+msgid "&Verify integrity"
+msgstr "檢查完整性(&V)"
+
+#: floppy.cpp:238
+#, kde-format
+msgid ""
+"<qt>Check this if you want the floppy disk to be checked after formatting. "
+"Please note that the floppy will be checked twice if you have selected full "
+"formatting.</qt>"
+msgstr ""
+"<qt>選取這個選項，在格式化後會做一次檢查。請注意，如果您選擇完整格式化，那會"
+"檢查兩次。</qt>"
+
+#: floppy.cpp:243
+#, kde-format
+msgid "Volume la&bel:"
+msgstr "標籤：(&B)"
+
+#: floppy.cpp:247
+#, kde-format
+msgid ""
+"<qt>Check this if you want a volume label for your floppy. Please note that "
+"Minix does not support labels at all.</qt>"
+msgstr "<qt>選取這個選項，可以輸入磁碟的標籤。注意 Minix 不支援標籤功能。</qt>"
+
+#: floppy.cpp:256 floppy.cpp:652
+#, kde-format
+msgctxt "Volume label, maximal 11 characters"
+msgid "KDE Floppy"
+msgstr "KDE Floppy"
+
+#: floppy.cpp:260
+#, kde-format
+msgid ""
+"<qt>This is for the volume label. Due to a limitation of MS-DOS the label "
+"can only be 11 characters long. Please note that Minix does not support "
+"labels, whatever you enter here.</qt>"
+msgstr ""
+"<qt>這裡可以輸入標籤。MS-DOS 的限制為十一個字元。Minix 則不支援此功能。</qt>"
+
+#: floppy.cpp:270 floppy.cpp:469
+#, kde-format
+msgid "&Format"
+msgstr "格式化(&F)"
+
+#: floppy.cpp:276
+#, kde-format
+msgid "<qt>Click here to start formatting.</qt>"
+msgstr "<qt>按這裡開始格式化。</qt>"
+
+#: floppy.cpp:301
+#, kde-format
+msgid "<qt>This is the status window, where error messages are displayed.</qt>"
+msgstr "<qt>這裡是狀態視窗，會顯示錯誤訊息。</qt>"
+
+#: floppy.cpp:314
+#, kde-format
+msgid "<qt>Shows progress of the format.</qt>"
+msgstr "<qt>顯示格式化進度。</qt>"
+
+#: floppy.cpp:323
+#, kde-format
+msgid ""
+"KFloppy cannot find any of the needed programs for creating file systems; "
+"please check your installation.<br /><br />Log:"
+msgstr ""
+"KFloppy 找不到任何產生檔案系統的程式。請確認您的安裝是否完整。<br /> <br />紀"
+"錄："
+
+#: floppy.cpp:355
+#, kde-format
+msgid "KDE Floppy Formatter"
+msgstr "KDE磁片格式化工具"
+
+#: floppy.cpp:488
+#, kde-format
+msgctxt "BSD"
+msgid "Formatting with BSD on a user-given device is only possible with UFS"
+msgstr "若要在 BSD 上格式化使用者指定的裝置，只能格式化為 UFS。"
+
+#: floppy.cpp:495
+#, kde-format
+msgid ""
+"<qt>Formatting will erase all data on the device:<br/><b>%1</b><br/>(Please "
+"check the correctness of the device name.)<br/>Are you sure you wish to "
+"proceed?</qt>"
+msgstr ""
+"<qt>格式化將會清除磁碟裝置 <b>%1</b>上所有的資料。<br/>請確認裝置名稱是否正"
+"確。<br/> 您確定要進行嗎？</qt>"
+
+#: floppy.cpp:499 floppy.cpp:511
+#, kde-format
+msgid "Proceed?"
+msgstr "處理？"
+
+#: floppy.cpp:505
+#, kde-format
+msgid "Full formatting of a user-given device is not possible."
+msgstr "不能在使用者指定的裝置上進行完整格式化。"
+
+#: floppy.cpp:509
+#, kde-format
+msgid ""
+"Formatting will erase all data on the disk.\n"
+"Are you sure you wish to proceed?"
+msgstr ""
+"格式化將會清除磁碟上所有的資料。\n"
+"你確定要進行嗎？"
+
+#: format.cpp:247
+#, kde-format
+msgid "Unexpected drive number %1."
+msgstr "非預期的裝置編號 %1。"
+
+#: format.cpp:257
+#, kde-format
+msgid "Unexpected density number %1."
+msgstr "非預期的密度數值 %1。"
+
+#: format.cpp:270
+#, kde-format
+msgid "Cannot find a device for drive %1 and density %2."
+msgstr "找不到裝置 %1 與密度值 %2"
+
+#: format.cpp:284
+#, kde-format
+msgid ""
+"Cannot access %1\n"
+"Make sure that the device exists and that you have write permission to it."
+msgstr ""
+"無法存取 %1\n"
+"請確認磁碟裝置是否已在系統中以及您是否具有寫入的權限。"
+
+#: format.cpp:316
+#, kde-format
+msgid "The program %1 terminated with an error."
+msgstr "程式 %1 發生錯誤而結束"
+
+#: format.cpp:320
+#, kde-format
+msgid "The program %1 terminated abnormally."
+msgstr "程式 %1 不正常結束。"
+
+#: format.cpp:377 format.cpp:508 format.cpp:597 format.cpp:691 format.cpp:762
+#: format.cpp:852
+#, kde-format
+msgid "Internal error: device not correctly defined."
+msgstr "內部錯誤：裝置未正確定義。"
+
+#: format.cpp:383
+#, kde-format
+msgid "Cannot find fdformat."
+msgstr "找不到 fdformat。"
+
+#: format.cpp:410
+#, kde-format
+msgid "Could not start fdformat."
+msgstr "無法執行 fdformat。"
+
+#: format.cpp:432
+#, kde-format
+msgid "Error formatting track %1."
+msgstr "格式化磁軌 %1 時發生錯誤。"
+
+#: format.cpp:435 format.cpp:460
+#, kde-format
+msgid ""
+"Cannot access floppy or floppy drive.\n"
+"Please insert a floppy and make sure that you have selected a valid floppy "
+"drive."
+msgstr ""
+"無法存取磁片或磁碟機。\n"
+"請插入磁片並確認已選取了正確的磁碟機。"
+
+#: format.cpp:453
+#, kde-format
+msgid "Low-level formatting error at track %1."
+msgstr "低階格式化在磁軌 %1 發生錯誤。"
+
+#: format.cpp:456
+#, kde-format
+msgid "Low-level formatting error: %1"
+msgstr "低階格式化錯誤：%1"
+
+#: format.cpp:467 format.cpp:647 format.cpp:803 format.cpp:889
+#, kde-format
+msgid ""
+"Device busy.\n"
+"Perhaps you need to unmount the floppy first."
+msgstr ""
+"裝置使用中。\n"
+"也許您應該先卸載磁碟。"
+
+#: format.cpp:472
+#, kde-format
+msgid "Low-level format error: %1"
+msgstr "低階格式化錯誤：%1"
+
+#: format.cpp:514
+#, kde-format
+msgid "Cannot find dd."
+msgstr "找不到 dd。"
+
+#: format.cpp:528
+#, kde-format
+msgid "Could not start dd."
+msgstr "無法執行 dd。"
+
+#: format.cpp:603
+#, kde-format
+msgid "Cannot find a program to create FAT filesystems."
+msgstr "找不到程式產生 FAT 檔案系統。"
+
+#: format.cpp:630
+#, kde-format
+msgid "Cannot start FAT format program."
+msgstr "無法執行 FAT 格式化程式。"
+
+#: format.cpp:643 format.cpp:799 format.cpp:885
+#, kde-format
+msgid ""
+"Floppy is mounted.\n"
+"You need to unmount the floppy first."
+msgstr ""
+"磁碟已掛載。\n"
+"您應該先卸載磁碟。"
+
+#: format.cpp:697
+#, kde-format
+msgctxt "BSD"
+msgid "Cannot find a program to create UFS filesystems."
+msgstr "找不到程式建立 UFS 檔案系統。"
+
+#: format.cpp:714
+#, kde-format
+msgctxt "BSD"
+msgid "Cannot start UFS format program."
+msgstr "無法執行 UFS 格式化程式。"
+
+#: format.cpp:768
+#, kde-format
+msgid "Cannot find a program to create ext2 filesystems."
+msgstr "找不到程式建立 ext2 檔案系統。"
+
+#: format.cpp:786
+#, kde-format
+msgid "Cannot start ext2 format program."
+msgstr "無法執行 ext2 格式化程式。"
+
+#: format.cpp:858
+#, kde-format
+msgid "Cannot find a program to create Minix filesystems."
+msgstr "找不到程式建立 Minix 檔案系統。"
+
+#: format.cpp:875
+#, kde-format
+msgid "Cannot start Minix format program."
+msgstr "無法執行 Minix 格式化程式。"
+
+#: main.cpp:51
+#, kde-format
+msgid "KFloppy"
+msgstr "KFloppy"
+
+#: main.cpp:53
+#, kde-format
+msgid "KDE Floppy Disk Utility"
+msgstr "KDE 磁片工具"
+
+#: main.cpp:55
+#, kde-format
+msgid ""
+"(c) 1997, Bernd Johannes Wuebben\n"
+"(c) 2001, Chris Howells\n"
+"(c) 2002, Adriaan de Groot\n"
+"(c) 2004, 2005, Nicolas Goutte\n"
+"(c) 2015, 2016, Wolfgang Bauer"
+msgstr ""
+"(c) 1997, Bernd Johannes Wuebben\n"
+"(c) 2001, Chris Howells\n"
+"(c) 2002, Adriaan de Groot\n"
+"(c) 2004, 2005, Nicolas Goutte\n"
+"(c) 2015, 2016, Wolfgang Bauer"
+
+#: main.cpp:60
+#, kde-format
+msgid "KFloppy helps you format floppies with the filesystem of your choice."
+msgstr "KFloppy 幫您把磁片格式化成您想要的檔案系統。"
+
+#: main.cpp:63
+#, kde-format
+msgid "Bernd Johannes Wuebben"
+msgstr "Bernd Johannes Wuebben"
+
+#: main.cpp:63
+#, kde-format
+msgid "Author and former maintainer"
+msgstr "作者與前任維護者"
+
+#: main.cpp:64
+#, kde-format
+msgid "Chris Howells"
+msgstr "Chris Howells"
+
+#: main.cpp:64
+#, kde-format
+msgid "User interface re-design"
+msgstr "使用者介面重新設計"
+
+#: main.cpp:65
+#, kde-format
+msgid "Adriaan de Groot"
+msgstr "Adriaan de Groot"
+
+#: main.cpp:65
+#, kde-format
+msgid "Add BSD support"
+msgstr "加入 BSD 支援"
+
+#: main.cpp:66
+#, kde-format
+msgid "Nicolas Goutte"
+msgstr "Nicolas Goutte"
+
+#: main.cpp:66
+#, kde-format
+msgid "Make KFloppy work again for KDE 3.4"
+msgstr "讓 KFloppy 可以在 KDE 3.4 上運作"
+
+#: main.cpp:67
+#, kde-format
+msgid "Wolfgang Bauer"
+msgstr "Wolfgang Bauer"
+
+#: main.cpp:67
+#, kde-format
+msgid "Port KFloppy to KF5"
+msgstr "移植到 KF5"
+
+#: main.cpp:69
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Cosmo Train,龐誠恩"
+
+#: main.cpp:69
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "polaxv@pchome.com.tw,keanu@ms50.url.com.tw"
+
+#: main.cpp:77
+#, kde-format
+msgid "Default device"
+msgstr "預設裝置"

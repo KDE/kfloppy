@@ -1,0 +1,847 @@
+<?xml version="1.0" ?>
+<!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN" "dtd/kdedbx45.dtd" [
+  <!ENTITY kappname "&kfloppy;">
+  <!ENTITY package "kdeutils">
+  <!ENTITY % Ukrainian "INCLUDE"
+> <!-- change language only here -->
+  <!ENTITY % addindex "IGNORE">
+  <!ENTITY BSD "<trademark
+>BSD</trademark
+>">
+  <!ENTITY Minix "<trademark
+>Minix</trademark
+>">
+]>
+<!-- ### TODO Is BSD a trademark or a registrated trademark ? -->
+<!-- ### TODO Is Minix a trademark or a registrated trademark ? -->
+
+<!-- ### TODO Unify use of "disk", "floppy", "diskette", "floppy disk" (and "floppy drive") -->
+
+<book id="kfloppy" lang="&language;">
+<bookinfo>
+
+<title
+>Підручник з засобу для форматування &kfloppy;</title>
+
+<authorgroup>
+<author
+><firstname
+>Thad</firstname
+> <surname
+>McGinnis</surname
+> <affiliation
+><address
+>&Thad.McGinnis.mail; </address
+></affiliation
+> </author>
+
+<author
+><firstname
+>Nicolas</firstname
+> <surname
+>Goutte</surname
+> <affiliation
+><address
+>&Nicolas.Goutte.mail; </address
+></affiliation
+> </author>
+
+<othercredit role="developer"
+><firstname
+>Bernd</firstname
+> <othername
+>Johannes</othername
+> <surname
+>Wuebben</surname
+> <affiliation
+><address
+><email
+>wuebben@math.cornell.edu</email
+></address
+></affiliation>
+<contrib
+>Розробник</contrib>
+</othercredit>
+
+<othercredit role="developer"
+><firstname
+>Chris</firstname
+> <surname
+>Howells</surname
+> <affiliation
+><address
+>&Chris.Howells.mail;</address
+></affiliation>
+<contrib
+>Розробник (зміна інтерфейсу користувача)</contrib>
+</othercredit>
+
+<othercredit role="developer"
+><firstname
+>Adriaan</firstname
+> <surname
+>de Groot</surname
+> <affiliation
+><address
+><email
+>groot@kde.org</email
+></address
+></affiliation>
+<contrib
+>Розробник (додав підтримку &BSD;)</contrib>
+</othercredit>
+
+<othercredit role="developer"
+><firstname
+>Wolfgang</firstname
+> <surname
+>Bauer</surname
+> <affiliation
+><address
+><email
+>wbauer@tmo.at</email
+></address
+></affiliation>
+<contrib
+>Розробник (портування на KF5)</contrib>
+</othercredit>
+
+<othercredit role="reviewer"
+><firstname
+>Lauri</firstname
+> <surname
+>Watts</surname
+> <contrib
+>Рецензент</contrib>
+<affiliation
+><address
+>&Lauri.Watts.mail;</address
+></affiliation>
+</othercredit>
+
+<othercredit role="translator"
+><firstname
+>Юрій</firstname
+><surname
+>Чорноіван</surname
+><affiliation
+><address
+><email
+>yurchor@ukr.net</email
+></address
+></affiliation
+><contrib
+>Переклад українською</contrib
+></othercredit
+> 
+</authorgroup>
+
+<date
+>23 березня 2016 року</date>
+<releaseinfo
+>5.0 (Програми 16.04)</releaseinfo>
+
+<copyright>
+<year
+>2000</year>
+<holder
+>&Thad.McGinnis;</holder>
+</copyright>
+
+<copyright>
+<year
+>2005</year>
+<holder
+>&Nicolas.Goutte;</holder>
+</copyright>
+
+<legalnotice
+>&FDLNotice;</legalnotice>
+
+<abstract
+><para
+>Засіб для форматування &kfloppy; — це програма зі зрозумілим графічним інтерфейсом для форматування 3,5-дюймових та 5,25-дюймових гнучких дисків.</para
+></abstract>
+
+<keywordset>
+<keyword
+>KDE</keyword>
+<keyword
+>kfloppy</keyword>
+<keyword
+>гнучкий диск</keyword>
+<keyword
+>форматування</keyword>
+</keywordset>
+
+</bookinfo>
+
+<chapter id="introduction">
+<title
+>Вступ</title>
+
+<para
+>Засіб для форматування &kfloppy; — це програма зі зрозумілим графічним інтерфейсом для форматування 3,5-дюймових та 5,25-дюймових гнучких дисків. </para>
+
+<note
+><para
+>&kfloppy; використовує для роботи зовнішні програми і тому, у поточній версії, працює <emphasis
+>лише</emphasis
+> у &Linux; і &BSD;. Залежно від того, чи використовуєте ви &kfloppy; у &Linux;, чи у &BSD;, можливості &kfloppy; трохи відрізняються.</para
+></note>
+
+<caution
+><para
+>Переконайтеся, що ваш гнучкий диск <emphasis
+>не</emphasis
+> змонтовано. &kfloppy; не зможе форматувати змонтований гнучкий диск.</para
+></caution>
+
+</chapter>
+
+<chapter id="usingkfloppy">
+<title
+>Користування &kfloppy;</title>
+
+<para
+>Після запуску &kfloppy; відкриває єдине вікно, за допомогою якого користувач може обрати потрібні параметри і контролювати процес форматування. Ці параметри, а також засоби для керування програмою докладно описано нижче.</para>
+
+<caution
+><para
+>Переконайтеся, що ваш гнучкий диск <emphasis
+>не</emphasis
+> змонтовано. &kfloppy; не зможе форматувати змонтований гнучкий диск.</para
+></caution>
+
+<sect1 id="controlsettings">
+<title
+>Параметри керування</title>
+
+<para
+>Параметри можна обрати за допомогою трьох спадних списків, розташованих вгорі вікна програми ліворуч і по центру.</para>
+
+<sect2 id="selectdrive">
+<title
+>Дисковод</title>
+
+<para
+>Натискання стрілочки у верхньому спадному списку з міткою <guilabel
+>Дисковод:</guilabel
+> надасть змогу користувачеві обрати один з двох варіантів:</para>
+
+<itemizedlist>
+<listitem
+><para
+>Основний</para
+></listitem>
+<listitem
+><para
+>Другорядний</para
+></listitem>
+</itemizedlist>
+
+<para
+>Натискання стрілочки у другому згори спадному списку з міткою <guilabel
+>Розмір:</guilabel
+> надасть змогу користувачеві обрати один з чотирьох варіантів:</para>
+
+<itemizedlist>
+<listitem
+><para
+>3.5" 1.44Мб</para
+></listitem>
+<listitem
+><para
+>3.5" 720Kб</para
+></listitem>
+<listitem
+><para
+>5.25" 1.2Мб</para
+></listitem>
+<listitem
+><para
+>5.25" 360Кб</para
+></listitem>
+</itemizedlist>
+
+<para
+>У версії для &Linux; &kfloppy; є також варіант розміру з назвою:</para>
+
+<itemizedlist>
+<listitem
+><para
+>Автоматичне визначення</para
+></listitem>
+</itemizedlist>
+
+<!-- ### TODO: typical floppy disk of a PC has not the hardware to support
+Mac 800KB floppies at all, not only formatting. -->
+<note>
+<para
+>Формат дисків 800Кб використовується <hardware
+>дисководами &Mac;</hardware
+> і не підтримується <hardware
+>дисководами PC</hardware
+>, оскільки ці дисководи нездатні форматувати диски таким чином.</para>
+</note>
+</sect2>
+
+<sect2 id="filesystems">
+<title
+>Файлові системи</title>
+
+<para
+>У третьому спадному списку з міткою «Файлова система» користувач може обрати один з таких варіантів, якщо вони доступні:</para>
+
+<variablelist>
+<varlistentry>
+<term
+>Dos</term>
+<listitem>
+<para
+>Вибір цього варіанта призведе до того, що &kfloppy; встановить для дискети тип файлової системи MS-DOS/&Windows;. Швидше за все, користувачеві слід надати перевагу цій системі, якщо вона чи він буде використовувати цю дискету з відповідними операційними системами, оскільки ці системи не розпізнають дискет з іншими типами файлових систем. (Ця система підтримується у &Linux; і &BSD;.)</para>
+</listitem>
+</varlistentry>
+
+<varlistentry
+> 
+<term
+>ext2</term>
+<listitem>
+<para
+>Вибір цієї системи призведе до того, що &kfloppy; встановить для дискети той тип файлової системи, який найчастіше використовується у &Linux;, але рідко використовується саме для гнучких дисків. (Ця система підтримується у &Linux; і &BSD;.)</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+>UFS</term>
+<listitem>
+<para
+>Вибір цієї файлової системи призведе до того, що &kfloppy; встановить для дискети той тип файлової системи, який найчастіше використовується у <trademark class="registered"
+>FreeBSD</trademark
+>. Користувачеві слід надати перевагу цьому типу файлової системи, якщо вона чи він буде використовувати гнучкий диск лише у <trademark class="registered"
+>FreeBSD</trademark
+>. (Ця система підтримується лише у &BSD;.)</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+>&Minix;</term>
+<listitem>
+<para
+>Вибір цього типу файлової системи призведе до того, що &kfloppy; встановить для дискети тип файлової системи, який досить рідко використовується для гнучких дисків у &Linux;, (Ця система підтримується лише у &Linux;.)</para>
+</listitem>
+</varlistentry>
+</variablelist>
+
+</sect2>
+</sect1>
+
+<sect1 id="formatting-options">
+<title
+>Параметри форматування</title>
+<para
+>На панелі у рамці по центру вікна &kfloppy; ліворуч користувач побачить п’ять параметрів форматування. Згори знаходиться пара перемикачів.</para
+> <note
+><para
+>Цей термін (перемикач) означає набір параметрів, серед яких ви можете обрати лише один -— так само, як ви можете налаштувати лише на один канал з набору каналів радіоприймача у машині.</para
+></note
+><para
+>Два нижніх пункти призначено для встановлення мітки дискети. Ось пояснення:</para>
+
+<sect2>
+<title
+>Метод форматування</title>
+<para
+>&kfloppy; може форматувати диски у один з таких способів:</para>
+<para>
+<variablelist>
+<varlistentry>
+<term
+><guilabel
+>Швидке форматування</guilabel
+></term>
+<listitem>
+<para
+>Цей спосіб просто встановлює нову файлову систему на диск.</para>
+<warning
+><para
+>Всі дані на диску буде втрачено, хоча самі дані витерто не буде.</para
+></warning>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term
+><guilabel
+>Очищення і швидке форматування</guilabel
+></term>
+<listitem>
+<para
+>За цього способу форматування вмісти дискети буде перезаписано нулями, а після цього створено нову файлову систему.</para>
+<warning
+><para
+>Всі дані на диску буде витерто.</para
+></warning>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term
+><guilabel
+>Повне форматування</guilabel
+></term>
+<listitem>
+<para
+>За повного форматування буде перевизначено доріжки і сектори дискети, записано на неї вибрану файлову систему, а потім відбудеться перевірка якості форматування з блокуванням всіх пошкоджених секторів, які буде знайдено.</para>
+<warning
+><para
+>Всі дані на диску буде витерто.</para
+></warning>
+</listitem>
+</varlistentry>
+</variablelist>
+</para>
+</sect2>
+
+<sect2>
+<title
+>Перевірити цілісність</title>
+
+<para
+>Цей параметр наказує &kfloppy; перевірити правильність запису форматування на дискету. Ця операція надасть змогу виявити пошкоджені сектори. </para>
+
+<note
+><para
+>Якщо під час етапу перевірки «Повного форматування» буде знайдено пошкоджені сектори, форматування буде припинено, файлову систему на дискету записано не буде! </para
+></note>
+
+</sect2>
+
+<sect2>
+<title
+>Надпис тому</title>
+
+<para
+>Два пункти, розташовані знизу, надають користувачеві змогу додати (або змінити) мітку дискети. Якщо залишити позначку у полі <guilabel
+>Надпис тому:</guilabel
+>, у полі для введення тексту, розташованому трохи нижче, користувач зможе ввести назву (мітку) дискети, яку буде відформатовано. Після виконання форматування цю мітку буде записано на дискету.</para>
+
+<note
+><para
+>Через обмеження, які накладає файлова система DOS у мітці не повинно бути більше 11 символів. Для спрощення у &kfloppy; робиться припущення, що це обмеження діє для всіх файлових систем.</para
+></note>
+
+<note
+><para
+>У файловій системі &Minix; не передбачено міток томів. У випадку, якщо ви форматуєте дискету цією файловою системою, &kfloppy; не братиме до уваги вказану мітку тому.</para
+></note>
+
+</sect2>
+
+</sect1>
+
+<sect1 id="buttons">
+<title
+>Кнопки</title>
+<para
+>У програмі є три кнопки, розташовані вертикально вздовж правого краю вікна &kfloppy;. </para>
+
+<variablelist>
+<varlistentry>
+<term
+><guibutton
+>Форматувати</guibutton
+></term>
+<listitem>
+<para
+>Ця кнопка розпочинає процес форматування. Тільки-но користувач встановив бажані значення всіх параметрів, вона або він може почати процес форматування натисканням цієї кнопки. Натискання кнопки призведе до зміни інформації, що відображається на двох довгих прямокутних панелях, які займають нижню частину вікна &kfloppy;.</para>
+
+<para
+>Верхня з цих панелей є індикатором стану, у якому показано інформацію щодо процесів, які відбуваються, особливо про помилки, які трапилися під час роботи програми.</para>
+
+<para
+>Нижня панель — це панель поступу. На ній відображається у графічному і числовому вигляді спочатку процес форматування, а потім процес перевірки. Перш ніж розпочнуться ці процеси, він виглядає порожнім — показано лише 0% по центру. Під час кожного з процесів його поступ можна спостерігати у вигляді поступового заповнення панелі кольором зліва праворуч. Паралельно до заповнення, число по центру панелі відображатиме точний відсоток виконання операції.</para>
+
+<note
+><para
+>Оскільки для виконання форматування дискет програма &kfloppy; використовує зовнішні програми, вона покладається на те, що інформація, яку надають ці програми є правильною. На жаль, це не завжди так. Особливо, якщо програми, що записують файлову систему не повертають достатньо даних, отже, на панелі поступу залишається показаним 0%.</para
+></note>
+
+<important>
+<para
+>Переконайтеся, що ваш гнучкий диск <emphasis
+>не</emphasis
+> змонтовано. &kfloppy; не зможе форматувати змонтований гнучкий диск.</para>
+</important>
+
+<note
+><para
+>&kfloppy; <emphasis
+>не</emphasis
+> розмонтовує дискети самостійно, оскільки це може призвести до того, що користувач перезапише дискету з важливими даними на ній.</para
+></note>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guibutton
+>Довідка</guibutton
+></term>
+<listitem>
+<para
+>Відкриває контекстне меню з пунктами, за допомогою яких можна відкрити цей підручник, повідомити про ваду, перемкнути мову програми і переглянути відомості щодо автора і версії &kfloppy; та &kde;.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guibutton
+>Вийти</guibutton
+></term>
+<listitem>
+<para
+>Натискання цієї кнопки завершить роботу &kfloppy;.</para>
+</listitem>
+</varlistentry>
+
+</variablelist>
+
+</sect1>
+</chapter>
+
+<chapter id="command-line">
+<title
+>Параметри командного рядка</title>
+
+<para
+>Хоча у більшості випадків &kfloppy; запускають з меню програм &kde; або за допомогою піктограми стільниці, програму також можна запустити за допомогою командного рядка або вікна термінала. Якщо запуск виконується саме так, до командного рядка можна додати декілька параметрів, а саме:</para
+> 
+
+<variablelist>
+<varlistentry>
+<term
+><command
+>kfloppy <option
+>--help</option
+></command
+></term>
+<listitem
+><para
+>Ця команда покаже список параметрів, доступ до яких можна отримати з командного рядка.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><command
+>kfloppy <option
+>--author</option
+></command
+></term>
+<listitem>
+<para
+>Ця команда покаже список авторів програми &kfloppy; у вікні термінала.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><command
+>kfloppy <option
+>--license</option
+></command
+></term>
+<listitem>
+<para
+>Ця команда покаже дані щодо ліцензування &kfloppy; у вікні термінала.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><command
+>kfloppy <option
+>--version</option
+></command
+></term>
+<listitem>
+<para
+>Ця команда покаже список з інформацією про версію &kfloppy;. Доступ до цього списку можна отримати і за допомогою команди <command
+>kfloppy <option
+>-V</option
+></command
+> </para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><command
+>kfloppy <option
+><replaceable
+>пристрій</replaceable
+></option
+></command
+></term>
+<listitem
+><para
+>Пристрій, який слід форматувати.</para>
+<para
+>Призведе до безпосереднього форматування вказаного пристрою з використанням збережених значень параметрів. У поточній версії передбачено підтримку лише пристроїв /dev/fd0 і /dev/fd1.</para
+></listitem>
+</varlistentry>
+</variablelist
+> 
+
+</chapter
+> 
+
+<chapter id="credits">
+<title
+>Подяки і ліцензування</title>
+
+<!-- ### TODO: verify the copyright dates -->
+<!-- ### TODO: make the copyright list prettier -->
+<para
+>Авторські права на засіб для форматування &kfloppy; &Bernd.Johannes.Wuebben; <email
+>wuebben@math.cornell.edu</email
+>, ©1997–2000</para>
+
+<para
+>Авторські права на програму-засіб для форматування &kfloppy; Adriaan de Groot <email
+>groot@kde.org</email
+>, ©2002</para>
+
+<para
+>Авторські права на програму-засіб для форматування &kfloppy; &Nicolas.Goutte; &Nicolas.Goutte.mail;, ©2004, 2005</para>
+
+<para
+>Авторські права на програму-засіб для форматування &kfloppy; належать Wolfgang Bauer <email
+>wbauer@tmo.at</email
+>, ©2015–2016</para>
+
+<para
+>Авторські права на документацію до програми &Thad.McGinnis; &Thad.McGinnis.mail;, ©2000</para>
+
+<para
+>Цю версію підручника з &kfloppy; засновано на підручнику, написаному &David.Rugge; <email
+>davidrugge@mindspring.com</email
+></para>
+
+<para
+>Переклад українською: Юрій Чорноіван <email
+>yurchor@ukr.net</email
+></para
+> 
+&underFDL; &underGPL; </chapter>
+
+<appendix id="neededprogs">
+<title
+>Необхідні зовнішні програми</title>
+
+<para
+>Як уже згадувалося у цьому підручнику, &kfloppy; працює за допомогою зовнішніх програм, які і виконують різноманітні завдання з форматування.</para>
+
+<note
+><para
+>Якщо однієї з цих програм у системі немає, програма &kfloppy; працюватиме, але відповідний параметр у ній стане недоступним.</para
+></note>
+
+<variablelist>
+<varlistentry>
+<term
+><command
+>fdformat</command
+></term>
+<listitem
+><para
+>Ця програма потрібна для низькорівневого форматування у &Linux; і &BSD;. Якщо її не буде виявлено у системі, параметр <guilabel
+>Повне форматування</guilabel
+> буде вимкнено. </para
+></listitem>
+</varlistentry>
+<varlistentry>
+<term
+><command
+>dd</command
+></term>
+<listitem
+><para
+>Ця програма потрібна для запису дискет нулями у &Linux; і &BSD;. Якщо цієї програми не буде виявлено у системі, параметри <guilabel
+>Очищення і швидке форматування</guilabel
+> буде вимкнено. </para
+></listitem>
+</varlistentry>
+<varlistentry>
+<term
+><command
+>mkdosfs</command
+></term>
+<listitem
+><para
+>Ця програма потрібна для форматування з файловою системою DOS у &Linux;. </para
+></listitem>
+</varlistentry>
+<varlistentry>
+<term
+><command
+>newfs_msdos</command
+></term>
+<listitem
+><para
+>Ця програма потрібна у &BSD; для форматування у форматі DOS. </para
+></listitem>
+</varlistentry>
+<varlistentry>
+<term
+><command
+>newfs</command
+></term>
+<listitem
+><para
+>Ця програма потрібна для форматування з файловою системою UFS у &BSD;. </para
+></listitem>
+</varlistentry>
+<varlistentry>
+<term
+><command
+>mke2fs</command
+></term>
+<listitem
+><para
+>Ця програма потрібна для форматування з файловою системою ext2 у &Linux; і &BSD;. </para
+></listitem>
+</varlistentry>
+<varlistentry>
+<term
+><command
+>mkfs.minix</command
+></term>
+<listitem
+><para
+>Ця програма потрібна для форматування з файловою системою &Minix; у &Linux;. </para
+></listitem>
+</varlistentry>
+</variablelist>
+
+</appendix>
+<appendix id="usergivendevices">
+<title
+>Вказані користувачем пристрої</title>
+
+<sect1 id="ugdintro">
+<title
+>Вступ</title>
+
+<para
+>«Вказані користувачем пристрої» — це робоча назва експериментальної можливості у &kfloppy;. Вона надає можливість користувачеві вказати назву пристрою і використовувати його у програмі майже так само, як <hardware
+>дисковод</hardware
+>.</para>
+
+<para
+>Цю можливість головним чином спрямовано на задоволення потреб користувачів <hardware
+>USB-дисководів</hardware
+> всіх різновидів (зокрема, пристроїв для роботи з <trademark
+>ZIP</trademark
+>) або інших не застарілих <hardware
+>дисководів</hardware
+>.</para>
+
+<note
+><para
+>На жаль, на час написання цієї документації цю можливість важко було назвати дружньою щодо користувача, оскільки користувачеві не надавалося жодної довідкової інформації щодо можливої назви пристрою, а сама програма &kfloppy; навіть не запам’ятовувала назву пристрою між викликами відповідної команди. (Це частково пояснюється міркуваннями безпеки, оскільки назва пристрою <hardware
+>дисковода</hardware
+> може змінитися між перезавантаженнями системи.)</para
+></note>
+
+<note
+><para
+>Оскільки цю можливість було розроблено для &Linux;, версія для &BSD; програми &kfloppy; має дещо менше можливостей, ніж &kfloppy; у &Linux;.</para
+></note>
+
+</sect1>
+
+<sect1 id="ugdmain">
+<title
+>Як користуватися можливістю</title>
+
+<!-- Note to reviewers: "PRimary" and "Secondary" are the default items in the combobox -->
+<para
+>Користуватися «Вказаними користувачем пристроями» дуже просто: вам всього лише слід ввести назву пристрою, наприклад <replaceable
+>/dev/sdz4</replaceable
+>, у спадний список <guilabel
+>Дисковод:</guilabel
+> замість вибору «Основного» або «Другорядного».</para>
+
+<note>
+<para
+>Вводити частину назви пристрою <filename class="directory"
+>/dev/</filename
+> слід з двох причин:</para>
+<itemizedlist>
+<listitem>
+<para
+>Таким чином &kfloppy; визначає, що програму використовують у режим «Вказаного користувачем пристрою».</para>
+</listitem>
+<listitem>
+<para
+>З міркувань безпеки, щоб користувач не ввів до спадного списку ніякої інформації, яку випадково пов’язано з назвою пристрою.</para>
+</listitem>
+</itemizedlist>
+</note>
+
+<para
+>На жаль, використання будь-якого пристрою, замість звичайного дисковода, призводить до декількох наслідків. Головним є той, що тепер ви не зможете обрати параметр <guilabel
+>Повне форматування</guilabel
+>. Якщо ви оберете цей параметр, програма покаже повідомлення про помилку після спроби почати форматування. Але замість цього параметра ви можете скористатися параметром <guilabel
+>Очищення і швидке форматування</guilabel
+>. За цієї умови не буде проведено повного форматування, але всю інформацію на пристрої буде перезаписано нулями, на практиці це майже те саме, зокрема, всі дані на пристрої буде витерто.</para>
+
+<warning
+><para
+>Будьте обережні під час введення назви пристрою. &kfloppy; передасть цю назву у тому вигляді, як ви її ввели, зовнішнім програмам. Зокрема, програма не буде перевіряти (цього також не робитимуть зовнішні програми), чи є пристрій <hardware
+>дисководом</hardware
+>. Якщо ви вкажете назву одного з ваших основних розділів системи, її буде прийнято. (Якщо цей розділ змонтовано, або якщо ви не маєте прав на запис до цього розділу, ймовірно, ви побачите повідомлення про помилку, і найгіршого не станеться.)</para
+></warning>
+
+<note
+><para
+>Навіть якщо ви можете вказати пристрій дисковода у вигляді <filename
+>/dev/fd0u2880</filename
+>, &kfloppy; відмовиться виконувати його <guilabel
+>Повне форматування</guilabel
+>.</para
+></note>
+
+<para
+>У &Linux; ви можете обрати будь-яку з бажаних файлових систем. У &BSD; у поточній версії підтримується лише UFS (її ще не перевірено на час написання цієї документації).</para>
+
+<para
+>Коли ви будете готові до початку процесу форматування, натисніть кнопку <guibutton
+>Форматувати</guibutton
+>, як звичайно. Програма покаже вікно повідомлення, у якому попросить вас перевірити назву пристрою. </para>
+
+<warning
+><para
+>Це останній шанс перевірити назву пристрою перед початком процесу форматування. Після цього буде вже пізно.</para
+></warning>
+
+</sect1>
+
+</appendix>
+
+</book>
+
+<!--
+Local Variables:
+mode: sgml
+sgml-minimize-attributes:nil
+sgml-general-insert-case:lower
+sgml-indent-step:0
+sgml-indent-data:nil
+End:
+
+// vim:ts=2:sw=2:tw=78:noet
+-->

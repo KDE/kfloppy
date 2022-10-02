@@ -1,0 +1,1373 @@
+# translation of kfloppy.po to Galician
+#
+# Xosé <xosecalvo@gmail.com>, 2008, 2012.
+# mvillarino <mvillarino@users.sourceforge.net>, 2008.
+# Marce Villarino <mvillarino@users.sourceforge.net>, 2009.
+# Adrian Chaves Fernandez <adriyetichaves@gmail.com>, 2013, 2016.
+# Adrián Chaves (Gallaecio) <adrian@chaves.io>, 2017, 2019.
+msgid ""
+msgstr ""
+"Project-Id-Version: kfloppy\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-01-12 00:48+0000\n"
+"PO-Revision-Date: 2019-02-15 17:34+0100\n"
+"Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
+"Language-Team: Galician <kde-i18n-doc@kde.org>\n"
+"Language: gl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+
+#: floppy.cpp:81
+#, kde-format
+msgid "Floppy &drive:"
+msgstr "&Disqueteira:"
+
+#: floppy.cpp:89 floppy.cpp:364 floppy.cpp:654
+#, kde-format
+msgctxt "Primary floppy drive"
+msgid "Primary"
+msgstr "Primaria"
+
+#: floppy.cpp:90 floppy.cpp:366
+#, kde-format
+msgctxt "Secondary floppy drive"
+msgid "Secondary"
+msgstr "Secundaria"
+
+#: floppy.cpp:92
+#, kde-format
+msgid "<qt>Select the floppy drive.</qt>"
+msgstr "<qt>Seleccione a disqueteira.</qt>"
+
+#: floppy.cpp:98
+#, kde-format
+msgid "&Size:"
+msgstr "&Tamaño:"
+
+#: floppy.cpp:104 floppy.cpp:656
+#, kde-format
+msgid "Auto-Detect"
+msgstr "Detectar automaticamente"
+
+#: floppy.cpp:106 floppy.cpp:372 floppy.cpp:658
+#, kde-format
+msgid "3.5\" 1.44MB"
+msgstr "3.5\" 1.44MB"
+
+#: floppy.cpp:107 floppy.cpp:374
+#, kde-format
+msgid "3.5\" 720KB"
+msgstr "3.5\" 720KB"
+
+#: floppy.cpp:108 floppy.cpp:376
+#, kde-format
+msgid "5.25\" 1.2MB"
+msgstr "5.25\" 1.2MB"
+
+#: floppy.cpp:109 floppy.cpp:378
+#, kde-format
+msgid "5.25\" 360KB"
+msgstr "5.25\" 360KB"
+
+#: floppy.cpp:112
+#, kde-format
+msgid "<qt>This allows you to select the floppy disk's size and density.</qt>"
+msgstr ""
+"<qt>Isto permítelle seleccionar o tamaño e a densidade do disquete.</qt>"
+
+#: floppy.cpp:119
+#, kde-format
+msgid "F&ile system:"
+msgstr "Sistemas de f&icheiros:"
+
+#: floppy.cpp:126 floppy.cpp:136
+#, kde-format
+msgctxt "Linux"
+msgid ""
+"KFloppy supports three file formats under Linux: MS-DOS, Ext2, and Minix"
+msgstr ""
+"KFloppy é compatíbel con tres formatos de ficheiro en Linux: MS-DOS, Ext2 e "
+"Minix."
+
+#: floppy.cpp:128
+#, kde-format
+msgctxt "BSD"
+msgid "KFloppy supports three file formats under BSD: MS-DOS, UFS, and Ext2"
+msgstr ""
+"KFloppy é compatíbel con tres formatos de ficheiro en BSD: MS-DOS, UFS e "
+"Ext2."
+
+#: floppy.cpp:138 floppy.cpp:163 floppy.cpp:558 floppy.cpp:660
+#, kde-format
+msgid "DOS"
+msgstr "DOS"
+
+#: floppy.cpp:140
+#, kde-format
+msgctxt "Linux"
+msgid "Program mkdosfs found."
+msgstr "Atopouse o programa mkdosfs."
+
+#: floppy.cpp:142
+#, kde-format
+msgctxt "Linux"
+msgid ""
+"Program mkdosfs <b>not found</b>. MSDOS formatting <b>not available</b>."
+msgstr ""
+"<b>Non foi posíbel atopar</b> o programa mkdosfs. <b>Non poderá</b> formatar "
+"en MSDOS."
+
+#: floppy.cpp:146 floppy.cpp:179 floppy.cpp:569
+#, kde-format
+msgid "ext2"
+msgstr "ext2"
+
+#: floppy.cpp:148 floppy.cpp:181
+#, kde-format
+msgid "Program mke2fs found."
+msgstr "Atopouse o programa mke2fs."
+
+#: floppy.cpp:150 floppy.cpp:183
+#, kde-format
+msgid "Program mke2fs <b>not found</b>. Ext2 formatting <b>not available</b>"
+msgstr ""
+"<b>Non foi posíbel atopar</b> o programa mke2fs. <b>Non poderá</b> formatar "
+"en Ext2."
+
+#: floppy.cpp:154 floppy.cpp:588
+#, kde-format
+msgid "Minix"
+msgstr "Minix"
+
+#: floppy.cpp:156
+#, kde-format
+msgctxt "Linux"
+msgid "Program mkfs.minix found."
+msgstr "Atopouse o programa mkfs.minix."
+
+#: floppy.cpp:158
+#, kde-format
+msgctxt "Linux"
+msgid ""
+"Program mkfs.minix <b>not found</b>. Minix formatting <b>not available</b>"
+msgstr ""
+"<b>Non foi posíbel atopar</b> o programa mkfs.minix. <b>Non poderá</b> "
+"formatar en Minix."
+
+#: floppy.cpp:161
+#, kde-format
+msgctxt "BSD"
+msgid "KFloppy supports two file formats under BSD: MS-DOS and UFS"
+msgstr ""
+"KFloppy é compatíbel con dous formatos de ficheiro en BSD: MS-DOS e UFS."
+
+#: floppy.cpp:165
+#, kde-format
+msgctxt "BSD"
+msgid "Program newfs_msdos found."
+msgstr "Atopouse o programa newfs_msdos."
+
+#: floppy.cpp:167
+#, kde-format
+msgctxt "BSD"
+msgid ""
+"Program newfs_msdos <b>not found</b>. MSDOS formatting <b>not available</b>."
+msgstr ""
+"<b>Non foi posíbel atopar</b> o programa newfs_msdos. <b>Non poderá</b> "
+"formatar en MSDOS."
+
+#: floppy.cpp:171 floppy.cpp:487 floppy.cpp:580
+#, kde-format
+msgid "UFS"
+msgstr "UFS"
+
+#: floppy.cpp:173
+#, kde-format
+msgctxt "BSD"
+msgid "Program newfs found."
+msgstr "Atopouse o programa newfs."
+
+#: floppy.cpp:175
+#, kde-format
+msgctxt "BSD"
+msgid "Program newfs <b>not found</b>. UFS formatting <b>not available</b>."
+msgstr ""
+"<b>Non foi posíbel atopar</b> o programa newfs. <b>Non poderá</b> formatar "
+"en UFS."
+
+#: floppy.cpp:189
+#, kde-format
+msgid "&Formatting"
+msgstr "&Formatar"
+
+#: floppy.cpp:192
+#, kde-format
+msgid "Q&uick format"
+msgstr "Formatación &rápida"
+
+#: floppy.cpp:196
+#, kde-format
+msgid ""
+"<qt>Quick format is only a high-level format: it creates only a file system."
+"</qt>"
+msgstr ""
+"<qt>A formatación rápida non é máis que unha formatación de alto nivel: só "
+"crea un sistema de ficheiros.</qt>"
+
+#: floppy.cpp:199
+#, kde-format
+msgid "&Zero out and quick format"
+msgstr "Formatación rápida previo &borrado con ceros"
+
+#: floppy.cpp:202
+#, kde-format
+msgid ""
+"<qt>This first erases the floppy by writing zeros and then it creates the "
+"file system.</qt>"
+msgstr ""
+"<qt>Esta formatación coloca primeiro ceros no disco, borrando os datos, e "
+"despois crea o novo sistema de ficheiros.</qt>"
+
+#: floppy.cpp:204
+#, kde-format
+msgid "Fu&ll format"
+msgstr "Formatación &completa"
+
+#: floppy.cpp:207
+#, kde-format
+msgid ""
+"Full format is a low-level and high-level format. It erases everything on "
+"the disk."
+msgstr ""
+"A formatación completa combina formatación de alto e baixo nivel. Borra todo "
+"o contido do disco."
+
+#: floppy.cpp:216
+#, kde-format
+msgid "Program fdformat found."
+msgstr "Atopouse o programa fdformat."
+
+#: floppy.cpp:220
+#, kde-format
+msgid "Program fdformat <b>not found</b>. Full formatting <b>disabled</b>."
+msgstr ""
+"<b>Non foi posíbel atopar</b> o programa fdformat. <b>Desactivouse</b> a "
+"funcionalidade de formatación completa."
+
+#: floppy.cpp:226
+#, kde-format
+msgid "Program dd found."
+msgstr "Atopouse o programa dd."
+
+#: floppy.cpp:229
+#, kde-format
+msgid "Program dd <b>not found</b>. Zeroing-out <b>disabled</b>."
+msgstr ""
+"<b>Non foi posíbel atopar</b> o programa dd. <b>Desactivouse</b> a "
+"funcionalidade de borrar con ceros o disco."
+
+#: floppy.cpp:234
+#, kde-format
+msgid "&Verify integrity"
+msgstr "&Verificar a integridade."
+
+#: floppy.cpp:238
+#, kde-format
+msgid ""
+"<qt>Check this if you want the floppy disk to be checked after formatting. "
+"Please note that the floppy will be checked twice if you have selected full "
+"formatting.</qt>"
+msgstr ""
+"<qt>Marque esta opción se quere comprobar a integridade do disquete despois "
+"da formatación. Teña en conta que, se escolleu unha formatación completa, a "
+"integridade do disquete comprobarase dúas veces.</qt>"
+
+#: floppy.cpp:243
+#, kde-format
+msgid "Volume la&bel:"
+msgstr "&Etiqueta de volume:"
+
+#: floppy.cpp:247
+#, kde-format
+msgid ""
+"<qt>Check this if you want a volume label for your floppy. Please note that "
+"Minix does not support labels at all.</qt>"
+msgstr ""
+"<qt>Marque esta opción se quere poñerlle unha etiqueta de volume ao "
+"disquete. Teña en conta que o sistema de ficheiros Minix non é compatíbel "
+"con esta funcionalidade.</qt>"
+
+#: floppy.cpp:256 floppy.cpp:652
+#, kde-format
+msgctxt "Volume label, maximal 11 characters"
+msgid "KDE Floppy"
+msgstr "Disquete de KDE"
+
+#: floppy.cpp:260
+#, kde-format
+msgid ""
+"<qt>This is for the volume label. Due to a limitation of MS-DOS the label "
+"can only be 11 characters long. Please note that Minix does not support "
+"labels, whatever you enter here.</qt>"
+msgstr ""
+"<qt>Esta é a etiqueta de volume. Debido ás limitacións de MS-DOS, a etiqueta "
+"só pode ter 11 caracteres. Teña en conta que Minix non é compatíbel coas "
+"etiquetas, sen importar o que insira aquí.</qt>"
+
+#: floppy.cpp:270 floppy.cpp:469
+#, kde-format
+msgid "&Format"
+msgstr "&Formatar"
+
+#: floppy.cpp:276
+#, kde-format
+msgid "<qt>Click here to start formatting.</qt>"
+msgstr "<qt>Prema aquí para iniciar a formatación.</qt>"
+
+#: floppy.cpp:301
+#, kde-format
+msgid "<qt>This is the status window, where error messages are displayed.</qt>"
+msgstr ""
+"<qt>Esta é a xanela de estado, onde se mostran as mensaxes de erro.</qt>"
+
+#: floppy.cpp:314
+#, kde-format
+msgid "<qt>Shows progress of the format.</qt>"
+msgstr "<qt>Mostra o progreso da formatación.</qt>"
+
+#: floppy.cpp:323
+#, kde-format
+msgid ""
+"KFloppy cannot find any of the needed programs for creating file systems; "
+"please check your installation.<br /><br />Log:"
+msgstr ""
+"KFloppy non pode atopar ningún dos programas necesarios para a creación de "
+"sistemas de ficheiros. Comprobe que a instalación está ben.<br /><br /"
+">Rexistro:"
+
+#: floppy.cpp:355
+#, kde-format
+msgid "KDE Floppy Formatter"
+msgstr "Formatador de disquetes de KDE"
+
+#: floppy.cpp:488
+#, kde-format
+msgctxt "BSD"
+msgid "Formatting with BSD on a user-given device is only possible with UFS"
+msgstr "Con BSD, só pode formatar dispositivos do usuario con UFS."
+
+#: floppy.cpp:495
+#, kde-format
+msgid ""
+"<qt>Formatting will erase all data on the device:<br/><b>%1</b><br/>(Please "
+"check the correctness of the device name.)<br/>Are you sure you wish to "
+"proceed?</qt>"
+msgstr ""
+"<qt>Formatar o dispositivo borrará todos os datos:<br/> <b>%1</b><br/> "
+"Aviso: comprobe que o nome do dispositivo é o correcto.<br/> Está seguro de "
+"que quere continuar?</qt>"
+
+#: floppy.cpp:499 floppy.cpp:511
+#, kde-format
+msgid "Proceed?"
+msgstr "Continuar?"
+
+#: floppy.cpp:505
+#, kde-format
+msgid "Full formatting of a user-given device is not possible."
+msgstr ""
+"Non é posíbel realizar unha formatación completa dun dispositivo do usuario."
+
+#: floppy.cpp:509
+#, kde-format
+msgid ""
+"Formatting will erase all data on the disk.\n"
+"Are you sure you wish to proceed?"
+msgstr ""
+"Formatar o disco borrará todos os datos que conteña.\n"
+"Está seguro de que quere continuar?"
+
+#: format.cpp:247
+#, kde-format
+msgid "Unexpected drive number %1."
+msgstr "Non se esperaba o número de disqueteira %1."
+
+#: format.cpp:257
+#, kde-format
+msgid "Unexpected density number %1."
+msgstr "Non se esperaba o número de densidade %1."
+
+#: format.cpp:270
+#, kde-format
+msgid "Cannot find a device for drive %1 and density %2."
+msgstr ""
+"Non se pode atopar un dispositivo para a disqueteira %1 e a densidade %2."
+
+#: format.cpp:284
+#, kde-format
+msgid ""
+"Cannot access %1\n"
+"Make sure that the device exists and that you have write permission to it."
+msgstr ""
+"Non se pode acceder a %1.\n"
+"Asegúrese de que o dispositivo existe e de que ten permisos de escritura nel."
+
+#: format.cpp:316
+#, kde-format
+msgid "The program %1 terminated with an error."
+msgstr "O programa %1 terminou cun erro."
+
+#: format.cpp:320
+#, kde-format
+msgid "The program %1 terminated abnormally."
+msgstr "O programa %1 terminou de maneira anormal."
+
+#: format.cpp:377 format.cpp:508 format.cpp:597 format.cpp:691 format.cpp:762
+#: format.cpp:852
+#, kde-format
+msgid "Internal error: device not correctly defined."
+msgstr ""
+"Produciuse un erro interno: o dispositivo non está definido correctamente."
+
+#: format.cpp:383
+#, kde-format
+msgid "Cannot find fdformat."
+msgstr "Non se pode atopar fdformat."
+
+#: format.cpp:410
+#, kde-format
+msgid "Could not start fdformat."
+msgstr "Non se puido iniciar fdformat."
+
+#: format.cpp:432
+#, kde-format
+msgid "Error formatting track %1."
+msgstr "Produciuse un erro ao formatar a pista %1."
+
+#: format.cpp:435 format.cpp:460
+#, kde-format
+msgid ""
+"Cannot access floppy or floppy drive.\n"
+"Please insert a floppy and make sure that you have selected a valid floppy "
+"drive."
+msgstr ""
+"Non se pode acceder ao disquete ou á disqueteira.\n"
+"Insira un disquete e asegúrese de que seleccionou a disqueteira correcta."
+
+#: format.cpp:453
+#, kde-format
+msgid "Low-level formatting error at track %1."
+msgstr "Produciuse un erro de baixo nivel ao formatar a pista %1."
+
+#: format.cpp:456
+#, kde-format
+msgid "Low-level formatting error: %1"
+msgstr "Produciuse un erro de baixo nivel ao formatar: %1"
+
+#: format.cpp:467 format.cpp:647 format.cpp:803 format.cpp:889
+#, kde-format
+msgid ""
+"Device busy.\n"
+"Perhaps you need to unmount the floppy first."
+msgstr ""
+"O dispositivo está ocupado.\n"
+"Pode que primeiro teña que desmontar o dispositivo."
+
+#: format.cpp:472
+#, kde-format
+msgid "Low-level format error: %1"
+msgstr "Produciuse un erro de formato de baixo nivel: %1"
+
+#: format.cpp:514
+#, kde-format
+msgid "Cannot find dd."
+msgstr "Non se pode atopar dd."
+
+#: format.cpp:528
+#, kde-format
+msgid "Could not start dd."
+msgstr "Non se puido iniciar dd."
+
+#: format.cpp:603
+#, kde-format
+msgid "Cannot find a program to create FAT filesystems."
+msgstr "Non se pode atopar un programa para crear sistemas de ficheiros FAT."
+
+#: format.cpp:630
+#, kde-format
+msgid "Cannot start FAT format program."
+msgstr "Non se pode iniciar o programa para formatar en FAT."
+
+#: format.cpp:643 format.cpp:799 format.cpp:885
+#, kde-format
+msgid ""
+"Floppy is mounted.\n"
+"You need to unmount the floppy first."
+msgstr ""
+"O disquete está montado.\n"
+"Antes de nada ten que desmontalo."
+
+#: format.cpp:697
+#, kde-format
+msgctxt "BSD"
+msgid "Cannot find a program to create UFS filesystems."
+msgstr "Non se pode atopar un programa para crear sistemas de ficheiros UFS."
+
+#: format.cpp:714
+#, kde-format
+msgctxt "BSD"
+msgid "Cannot start UFS format program."
+msgstr "Non se pode iniciar o programa para formatar en UFS."
+
+#: format.cpp:768
+#, kde-format
+msgid "Cannot find a program to create ext2 filesystems."
+msgstr "Non se pode atopar un programa para crear sistemas de ficheiros Ext2."
+
+#: format.cpp:786
+#, kde-format
+msgid "Cannot start ext2 format program."
+msgstr "Non se pode iniciar o programa para formatar en Ext2."
+
+#: format.cpp:858
+#, kde-format
+msgid "Cannot find a program to create Minix filesystems."
+msgstr "Non se pode atopar un programa para crear sistemas de ficheiros Minix."
+
+#: format.cpp:875
+#, kde-format
+msgid "Cannot start Minix format program."
+msgstr "Non se pode iniciar o programa para formatar en Minix."
+
+#: main.cpp:51
+#, kde-format
+msgid "KFloppy"
+msgstr "KFloppy"
+
+#: main.cpp:53
+#, kde-format
+msgid "KDE Floppy Disk Utility"
+msgstr "Utilidade de KDE para disquetes"
+
+#: main.cpp:55
+#, kde-format
+msgid ""
+"(c) 1997, Bernd Johannes Wuebben\n"
+"(c) 2001, Chris Howells\n"
+"(c) 2002, Adriaan de Groot\n"
+"(c) 2004, 2005, Nicolas Goutte\n"
+"(c) 2015, 2016, Wolfgang Bauer"
+msgstr ""
+"© 1997 Bernd Johannes Wuebben\n"
+"© 2001 Chris Howells\n"
+"© 2002 Adriaan de Groot\n"
+"© 2004, 2005 Nicolas Goutte\n"
+"© 2015, 2016 Wolfgang Bauer"
+
+#: main.cpp:60
+#, kde-format
+msgid "KFloppy helps you format floppies with the filesystem of your choice."
+msgstr ""
+"KFloppy axúdao a formatar disquetes co sistema de ficheiros que queira."
+
+#: main.cpp:63
+#, kde-format
+msgid "Bernd Johannes Wuebben"
+msgstr "Bernd Johannes Wuebben"
+
+#: main.cpp:63
+#, kde-format
+msgid "Author and former maintainer"
+msgstr "Autor orixinal e antigo mantedor"
+
+#: main.cpp:64
+#, kde-format
+msgid "Chris Howells"
+msgstr "Chris Howells"
+
+#: main.cpp:64
+#, kde-format
+msgid "User interface re-design"
+msgstr "Novo deseño da interface de usuario."
+
+#: main.cpp:65
+#, kde-format
+msgid "Adriaan de Groot"
+msgstr "Adriaan de Groot"
+
+#: main.cpp:65
+#, kde-format
+msgid "Add BSD support"
+msgstr "Engadir compatibilidade con BSD"
+
+#: main.cpp:66
+#, kde-format
+msgid "Nicolas Goutte"
+msgstr "Nicolas Goutte"
+
+#: main.cpp:66
+#, kde-format
+msgid "Make KFloppy work again for KDE 3.4"
+msgstr "Adaptación de KFloppy a KDE 3.4."
+
+#: main.cpp:67
+#, kde-format
+msgid "Wolfgang Bauer"
+msgstr "Wolfgang Bauer"
+
+#: main.cpp:67
+#, kde-format
+msgid "Port KFloppy to KF5"
+msgstr "Adaptación de KFloppy a KF5."
+
+#: main.cpp:69
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Adrián Chaves Fernández"
+
+#: main.cpp:69
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "adrian@chaves.io"
+
+#: main.cpp:77
+#, kde-format
+msgid "Default device"
+msgstr "Dispositivo predeterminado"
+
+#~ msgid "<firstname>Thad</firstname> <surname>McGinnis</surname>"
+#~ msgstr "<firstname>Thad</firstname> <surname>McGinnis</surname>"
+
+#~ msgid "&Thad.McGinnis.mail;"
+#~ msgstr "&Thad.McGinnis.mail;"
+
+#~ msgid "<firstname>Nicolas</firstname> <surname>Goutte</surname>"
+#~ msgstr "<firstname>Nicolas</firstname> <surname>Goutte</surname>"
+
+#~ msgid "&Nicolas.Goutte.mail;"
+#~ msgstr "&Nicolas.Goutte.mail;"
+
+#~ msgid ""
+#~ "<firstname>Bernd</firstname> <othername>Johannes</othername> "
+#~ "<surname>Wuebben</surname>"
+#~ msgstr ""
+#~ "<firstname>Bernd</firstname> <othername>Johannes</othername> "
+#~ "<surname>Wuebben</surname>"
+
+#~ msgid "wuebben@math.cornell.edu"
+#~ msgstr "wuebben@math.cornell.edu"
+
+#~ msgid "Developer"
+#~ msgstr "Programador"
+
+#~ msgid "<firstname>Chris</firstname> <surname>Howells</surname>"
+#~ msgstr "<firstname>Chris</firstname> <surname>Howells</surname>"
+
+#~ msgid "<firstname>Adriaan</firstname> <surname>de Groot</surname>"
+#~ msgstr "<firstname>Adriaan</firstname> <surname>de Groot</surname>"
+
+#~ msgid "groot@kde.org"
+#~ msgstr "groot@kde.org"
+
+#~ msgid "<firstname>Lauri</firstname> <surname>Watts</surname>"
+#~ msgstr "<firstname>Lauri</firstname> <surname>Watts</surname>"
+
+#~ msgid "Reviewer"
+#~ msgstr "Revisión"
+
+#~ msgid "&Lauri.Watts.mail;"
+#~ msgstr "&Lauri.Watts.mail;"
+
+#~ msgid "ROLES_OF_TRANSLATORS"
+#~ msgstr ""
+#~ "<othercredit role=\"translator\"><firstname>Xosé</"
+#~ "firstname><surname>Calvo </"
+#~ "surname><affiliation><address><email>xosecalvo@edu.xunta.es</email></"
+#~ "address></affiliation><contrib>Tradutor do proxecto Trasno</contrib></"
+#~ "othercredit>"
+
+#~ msgid "2010-07-29"
+#~ msgstr "2010-07-29"
+
+#~ msgid "<releaseinfo>4.5</releaseinfo>"
+#~ msgstr "<releaseinfo>4.5</releaseinfo>"
+
+#~ msgid "&Thad.McGinnis;"
+#~ msgstr "&Thad.McGinnis;"
+
+#~ msgid ""
+#~ "&kfloppy; Formatter is a utility that provides a straightforward "
+#~ "graphical means to format 3.5\" and 5.25\" floppy disks."
+#~ msgstr ""
+#~ "O formatador &kfloppy; é unha utilidade que fornece un medio gráfico para "
+#~ "formatar disquetes de 3.5\" e 5.25\"."
+
+#~ msgid "<keyword>KDE</keyword>"
+#~ msgstr "<keyword>KDE</keyword>"
+
+#~ msgid "kfloppy"
+#~ msgstr "kfloppy"
+
+#~ msgid "format"
+#~ msgstr "formatar"
+
+#~ msgid "Introduction"
+#~ msgstr "Introdución"
+
+#~ msgid ""
+#~ "&kfloppy; depends on external programs and therefore currently works "
+#~ "<emphasis>only</emphasis> with &Linux; and &BSD;. Depending if you are "
+#~ "using &kfloppy; on &Linux; or on &BSD;, &kfloppy; has slightly different "
+#~ "features."
+#~ msgstr ""
+#~ "O &kfloppy; depende de programas externos e, polo tanto, funciona de "
+#~ "momento <emphasis>só</emphasis> co &Linux; e o &BSD;. Dependendo de se se "
+#~ "está a  empregar o &kfloppy; nun &Linux; ou nun &BSD;, pode que o &kfloppy; teña "
+#~ "funcionalidades lixeiramente diferentes."
+
+#~ msgid ""
+#~ "Make sure that your floppy disk is <emphasis>not</emphasis> mounted. "
+#~ "&kfloppy; cannot format a mounted floppy disk."
+#~ msgstr ""
+#~ "Asegúrese de que o disquete <emphasis>non</emphasis> está montado. O  &kfloppy; non pode formatar un disquete montado."
+
+#~ msgid "Using &kfloppy;"
+#~ msgstr "Utilización do &kfloppy;"
+
+#~ msgid ""
+#~ "Starting &kfloppy; opens a single window by which the user may choose "
+#~ "appropriate settings and control the formatting process. These options "
+#~ "and controls are detailed below."
+#~ msgstr ""
+#~ "Ao iniciar o &kfloppy; ábrese unha xanela na que se poden seleccionar as opcións apropiadas e controlar o proceso de formatación. "
+#~ "Estas opcións e controles detállanse máis abaixo."
+
+#~ msgid "Control Settings"
+#~ msgstr "Opcións de control"
+
+#~ msgid ""
+#~ "The settings are chosen by means of three drop down boxes located at the "
+#~ "top left center of &kfloppy;."
+#~ msgstr ""
+#~ "Estas opcións escóllense empregando os tres menús despregábeis situados "
+#~ "no recanto superior esquerdo do &kfloppy;."
+
+#~ msgid ""
+#~ "Clicking on the top drop down box, which is labeled <guilabel>Floppy "
+#~ "drive:</guilabel>, offers the user the following two choices:"
+#~ msgstr ""
+#~ "Ao premer o menú superior, o que ten o nome <guilabel>Unidade lectora de "
+#~ "disquetes:</guilabel>, aparecen as dúas opcións seguintes:"
+
+#~ msgid ""
+#~ "Clicking on the second drop down box from the top, which is labeled "
+#~ "<guilabel>Size:</guilabel>, offers the user the following four choices:"
+#~ msgstr ""
+#~ "Ao premer o segundo menú desde arriba, o que ten o nome <guilabel>Tamaño:"
+#~ "</guilabel>, aparecen as catro opcións seguintes:"
+
+#~ msgid "The &Linux; version of &kfloppy; has also a choice of size named:"
+#~ msgstr ""
+#~ "A versión para &Linux; do &kfloppy; tamén ten unha escolla de tamaño "
+#~ "chamada:"
+
+#~ msgid ""
+#~ "The 800KB disk format used by <hardware>&Mac; floppy drives</hardware> "
+#~ "cannot be supported on <hardware>PC floppy drives</hardware> since they "
+#~ "are not capable of formatting disks in that fashion."
+#~ msgstr ""
+#~ "O formato dos disquetes de 800k usados polas <hardware>unidades de "
+#~ "disquetes  do &Mac;</hardware> non é posíbel nas <hardware>unidades de  disquetes dos PC</hardware>, xa que estes non son quen de formatar "
+#~ "disquetes desa maneira."
+
+#~ msgid ""
+#~ "The third drop down box, labeled File System, offers the user the "
+#~ "following choices, if they are applicable:"
+#~ msgstr ""
+#~ "O terceiro menú, chamado Sistema de Ficheiros, ofrece as escollas "
+#~ "seguintes, de seren aplicábeis:"
+
+#~ msgid "<term>Dos</term>"
+#~ msgstr "<term>Dos</term>"
+
+#~ msgid ""
+#~ "This selection will have &kfloppy; place the MS-DOS/&Windows; type of "
+#~ "file system on the diskette. The user will most likely want to choose "
+#~ "this system if she or he will be using the diskette with those operating "
+#~ "systems as they do not recognize other system types. (This is supported "
+#~ "for &Linux; and &BSD;.)"
+#~ msgstr ""
+#~ "Esta opción fai que o &kfloppy; coloque no disquete o sistema de "
+#~ "ficheiros do MS-DOS/&Windows;. Normalmente este sistema  ficheiros será o preferido se se pretende empregar o disquete neses "
+#~ "sistemas operativos, xa que non recoñecen outros sistemas de ficheiros. "
+#~ "(Isto é posíbel no &Linux; e no &BSD;.)"
+
+#~ msgid ""
+#~ "This selection will have &kfloppy; place the type of file system on the "
+#~ "diskette which is most commonly used with &Linux;, however seldomly on "
+#~ "floppy disks. (This is supported for &Linux; and &BSD;.)"
+#~ msgstr ""
+#~ "Esta opción fai que o &kfloppy; coloque no disquete o tipo de sistema de "
+#~ "ficheiros  máis usado co &Linux;, se ben raramente se emprega nos  disquetes. (Isto é posíbel no &Linux; e no &BSD;.)"
+
+#~ msgid "<term>UFS</term>"
+#~ msgstr "<term>UFS</term>"
+
+#~ msgid ""
+#~ "This selection will have &kfloppy; place the type of file system on the "
+#~ "diskette which is most commonly used with <trademark class=\"registered"
+#~ "\">FreeBSD</trademark>. The user will likely want to choose this system "
+#~ "if he or she will only be using the floppy disk with <trademark class="
+#~ "\"registered\">FreeBSD</trademark>. (This is supported for &BSD; only.)"
+#~ msgstr ""
+#~ "Esta opción fai que o &kfloppy; coloque o sistema de ficheiros máis usado "
+#~ "co <trademark class=\"registered\">FreeBSD</trademark>. Normalmente este "
+#~ "sistema de ficheiros preferirase se só se vai empregar ese disquete co "
+#~ "<trademark class=\"registered\">FreeBSD</trademark>. (Isto é posíbel só "
+#~ "no &BSD;.)"
+
+#~ msgid ""
+#~ "This selection will have &kfloppy; place the type of file system on the "
+#~ "diskette which often used on floppy disks used with &Linux;, (This is "
+#~ "supported for &Linux; only.)"
+#~ msgstr ""
+#~ "Esta opción fai que o &kfloppy; coloque no disquete un sistema de "
+#~ "ficheiros que se emprega con frecuencia no &Linux;. (Isto só é posíbel no "
+#~ "&Linux;.)"
+
+#~ msgid "Formatting Options"
+#~ msgstr "Opcións de formatación"
+
+#~ msgid ""
+#~ "Within the outline of a box in the left center of &kfloppy; the user may "
+#~ "find a set of five formatting options. The top two are a pair of radio "
+#~ "buttons."
+#~ msgstr ""
+#~ "Contidas nunha caixa, na parte central esquerda do &kfloppy;, hai un "
+#~ "conxunto de cinco opcións de formatación. As dúas primeiras son un  par de botóns de radio."
+
+#~ msgid ""
+#~ "This term (radio buttons) indicates a set of options among which only one "
+#~ "can be selected - in the same way that only one preset channel selection "
+#~ "may be set on a car radio."
+#~ msgstr ""
+#~ "Este termo (botóns de radio) indica un conxunto de opcións de entre as "
+#~ "que só se pode seleccionar unha - da mesma maneira que só podemos ter "
+#~ "sintonizada unha emisora na radio dun coche."
+
+#~ msgid ""
+#~ "The bottom two options are for labeling the diskette. All are explained "
+#~ "below:"
+#~ msgstr ""
+#~ "As dúas últimas opcións serven para etiquetar o disquete. Explícanse "
+#~ "todas embaixo:"
+
+#~ msgid "&kfloppy; can format a disk in the following two ways:"
+#~ msgstr "O &kfloppy; pode formatar un disquete de dúas maneiras:"
+
+#~ msgid "This simply puts the new file system on the disk."
+#~ msgstr "Isto simplemente coloca o novo sistema de ficheiros no disco."
+
+#~ msgid ""
+#~ "All data on the disk will be lost, even if the data itself will not "
+#~ "erased."
+#~ msgstr ""
+#~ "Pérdense todos os dados do disco, mesmo se os dados en si non se borran."
+
+#~ msgid "All data on the disk will be erased."
+#~ msgstr "Eliminaranse todos os datos do disco."
+
+#~ msgid ""
+#~ "A full format reallocates the tracks and sectors, puts the selected file "
+#~ "system on the disk, and then verifies the format, blocking out any bad "
+#~ "sectors it finds."
+#~ msgstr ""
+#~ "Unha formatación completa fai unha reasignación das pistas e sectores, "
+#~ "coloca o sistema de ficheiros seleccionado no disquete e, a continuación, "
+#~ "verifica o formato e bloquea todos os sectores danados que atope."
+
+#~ msgid ""
+#~ "This tells &kfloppy; to check that the formatting was correctly written "
+#~ "to the floppy. This allows bad sectors to be identified."
+#~ msgstr ""
+#~ "Isto dille ao &kfloppy; que verifique se a formatación do disquete se "
+#~ "fixo correctamente. Isto permite que se identifiquen os sectores danados."
+
+#~ msgid ""
+#~ "If bad sectors a found during the verify phase of a Full Format, the "
+#~ "formatting is aborted and the file system is not written!"
+#~ msgstr ""
+#~ "Se se atopan sectores estragados durante a fase de verificación dunha "
+#~ "formatación completa, a formatación interrómpese e o sistema de ficheiros "
+#~ "non se grava!"
+
+#~ msgid ""
+#~ "The bottom two features allow the user to add (or change) a label to the "
+#~ "diskette. If the <guilabel>Volume label:</guilabel> check box is selected "
+#~ "then the user can enter a name (label) for the diskette that is to be "
+#~ "formatted in the text box located immediately below. When the diskette is "
+#~ "subsequently formatted the label will be written to the diskette."
+#~ msgstr ""
+#~ "As dúas últimas funcionalidades permiten engadirlle unha etiqueta ao "
+#~ "disquete (ou  alterala). Se a opción <guilabel>Etiqueta do volume:</guilabel> estiver "
+#~ "seleccionada, pódese introducir o nome para o disquete que vai ser "
+#~ "formatada no campo de texto localizado inmediatamente embaixo. Cando o "
+#~ "disquete estiver formatado, escríbese a etiqueta."
+
+#~ msgid ""
+#~ "Due to a limitation of the DOS file system, a label can only be at most "
+#~ "11 characters long. For simplification, &kfloppy; assumes that this limit "
+#~ "is true for all file systems."
+#~ msgstr ""
+#~ "Debido a unha limitación do sistema de ficheiros do DOS, a etiqueta non "
+#~ "pode ter máis de once caracteres. Por simplificación, o &kfloppy; asume "
+#~ "que ese  límite se aplica a todos os sistemas de ficheiros."
+
+#~ msgid ""
+#~ "The file system &Minix; cannot have any volume label. In this case, "
+#~ "&kfloppy; will ignore the volume label."
+#~ msgstr ""
+#~ "O sistema de ficheiros &Minix; non pode ter unha etiqueta de volume. "
+#~ "Neste caso, o &kfloppy; ignora a etiqueta do volume."
+
+#~ msgid "The Buttons"
+#~ msgstr "Os botóns"
+
+#~ msgid ""
+#~ "There are three buttons located vertically along the right side of "
+#~ "&kfloppy;."
+#~ msgstr ""
+#~ "Hai tres botóns situados verticalmente no lado dereito da xanela do "
+#~ "&kfloppy;."
+
+#~ msgid ""
+#~ "This button initiates the formatting process. Once the user is sure that "
+#~ "all the settings are correct he or she may begin the process by clicking "
+#~ "on this button. There will be a change in the two long rectangular boxes "
+#~ "that span the bottom of &kfloppy;."
+#~ msgstr ""
+#~ "Este botón inicia o proceso de formatación. Cando o usuario estiver certo "
+#~ "de que todas as opcións escollidas son correctas, pode dar inicio á "
+#~ "formatación premendo este botón. Posteriormente haberá unha alteración "
+#~ "das dúas caixas rectangulares longas da parte inferior da xanela do "
+#~ "&kfloppy;."
+
+#~ msgid ""
+#~ "The upper box is a status indicator that gives information about the "
+#~ "process underway, especially the error encountered during the processing."
+#~ msgstr ""
+#~ "A caixa superior é o indicador do estado que dá información sobre o "
+#~ "proceso en curso, especialmente os erros que van aparecendo durante o "
+#~ "proceso."
+
+#~ msgid ""
+#~ "The lower box is a progress bar. This displays both graphically and "
+#~ "numerically the progress of first the formatting and then the "
+#~ "verification. Before starting it appears to be empty - showing only the "
+#~ "figure 0% in the center. As each process takes place the progress is "
+#~ "tracked graphically as the box fills from left to right. At the same time "
+#~ "the number in the center will increase reflecting the precise percentage "
+#~ "of the process that has been completed."
+#~ msgstr ""
+#~ "A caixa inferior é unha barra de progreso. Mostra gráfica e numericamente "
+#~ "o progreso da formatación e posteriormente da verificación. Antes de "
+#~ "comezar parece estar baleira - mostrando apenas a figura 0% no centro. A "
+#~ "medida que se realiza cada proceso, este é seguido graficamente polo "
+#~ "enchemento da caixa desde a esquerda para a dereita. Ao mesmo tempo, o "
+#~ "número no centro vai subindo, reflectindo a percentaxe precisa do proceso."
+
+#~ msgid ""
+#~ "As &kfloppy; uses external programs to format the floppy disk, it has to "
+#~ "rely on these programs to give the right information for being able to "
+#~ "display the progress bar. Unfortunately, this is not the case. "
+#~ "Especially, the programs writing the file systems do not return enough "
+#~ "data, so that the progress bar will remain at 0%."
+#~ msgstr ""
+#~ "Dado que o &kfloppy; usa programas externos para formatar o disquete, "
+#~ "tense que basear nestes programas para obter as informacións correctas "
+#~ "para poder mostrar a barra de progreso. Desafortunadamente, este non é o "
+#~ "caso. En concreto, os programas que escriben os sistemas de ficheiros non "
+#~ "envían datos dabondo, razón pola cal a barra de progreso fica no 0%."
+
+#~ msgid ""
+#~ "&kfloppy; does <emphasis>not</emphasis> unmount the floppy by itself, as "
+#~ "this could mean that the user may overwrite a floppy disk with important "
+#~ "data on it."
+#~ msgstr ""
+#~ "O &kfloppy; <emphasis>non</emphasis> desmonta o disquete por si só, dado "
+#~ "que iso podería significar que o usuario podería sobreescribir os datos "
+#~ "dun disquete que conteña datos importantes."
+
+#~ msgid "Help"
+#~ msgstr "Axuda"
+
+#~ msgid ""
+#~ "This invokes a popup menu with actions to open this handbook, report a "
+#~ "bug, switch the application language and display author and version of "
+#~ "&kfloppy; and &kde;."
+#~ msgstr ""
+#~ "Isto chama por un menú emerxente con accións para abrir este manual, "
+#~ "informar dun erro, mudar o idioma do aplicativo e mostrar o autor e a "
+#~ "versión do &kfloppy; e do &kde;."
+
+#~ msgid "Quit"
+#~ msgstr "Saír"
+
+#~ msgid "Clicking on this button will close &kfloppy;."
+#~ msgstr "Premendo este botón féchase o &kfloppy;."
+
+#~ msgid "Command line options"
+#~ msgstr "Opcións da liña de ordes"
+
+#~ msgid ""
+#~ "Though &kfloppy; may most often be started from the &kde; program menu, "
+#~ "or a desktop icon, it can also be opened at the command line prompt of a "
+#~ "terminal window. There are a few options that are available when doing "
+#~ "this. They are:"
+#~ msgstr ""
+#~ "Aínda que a maioría das veces se inicie o &kfloppy; a partir do menú de "
+#~ "programas do &kde;, ou dunha icona do escritorio, tamén se pode abrir "
+#~ "desde a liña de ordes dun terminal. Hai algunhas opcións que se poden "
+#~ "empregar cando se fai así. Son:"
+
+#~ msgid "kfloppy <option>--help</option>"
+#~ msgstr "kfloppy <option>--help</option>"
+
+#~ msgid "This lists the most basic options available at the command line."
+#~ msgstr ""
+#~ "Isto enumera as opcións máis básicas que están dispoñíbeis desde a liña "
+#~ "de ordes."
+
+#~ msgid "kfloppy <option>--help-qt</option>"
+#~ msgstr "kfloppy <option>--help-qt</option>"
+
+#~ msgid ""
+#~ "This lists the options available for changing the way &kfloppy; interacts "
+#~ "with &Qt;."
+#~ msgstr ""
+#~ "Isto enumera as opcións dispoñíbeis para mudar a maneira como "
+#~ "interacciona o &kfloppy; co &Qt;."
+
+#~ msgid "kfloppy <option>--help-kde</option>"
+#~ msgstr "kfloppy <option>--help-kde</option>"
+
+#~ msgid ""
+#~ "This lists the options available for changing the way &kfloppy; interacts "
+#~ "with &kde;."
+#~ msgstr ""
+#~ "Isto enumera as opcións dispoñíbeis para mudar a maneira como o &kfloppy; "
+#~ "interacciona co &kde;."
+
+#~ msgid "kfloppy <option>--help-all</option>"
+#~ msgstr "kfloppy <option>--help-all</option>"
+
+#~ msgid "This lists all of the command line options."
+#~ msgstr "Isto enumera todas as opcións da liña de ordes."
+
+#~ msgid "kfloppy <option>--author</option>"
+#~ msgstr "kfloppy <option>--author</option>"
+
+#~ msgid "Lists &kfloppy;'s author in the terminal window"
+#~ msgstr "Enumera os autores do &kfloppy; na xanela do terminal"
+
+#~ msgid "kfloppy <option>--version</option>"
+#~ msgstr "kfloppy <option>--version</option>"
+
+#~ msgid ""
+#~ "Lists version information for &Qt;, &kde;, and &kfloppy;. Also available "
+#~ "through <command>kfloppy <option>-V</option></command>"
+#~ msgstr ""
+#~ "Lista a información sobre as versións do &Qt;, do &kde;, e do &kfloppy;. "
+#~ "Tamén está dispoñíbel a través de <command>kfloppy <option>-V</option></command>"
+
+#~ msgid "Credits and Licenses"
+#~ msgstr "Créditos e licenzas"
+
+#~ msgid ""
+#~ "&kfloppy; Formatter Program Copyright 1997 - 2000 &Bernd.Johannes."
+#~ "Wuebben; <email>wuebben@math.cornell.edu</email>"
+#~ msgstr ""
+#~ "Programa Formatador &kfloppy;  con Copyright 1997 - 2000 &Bernd.Johannes."
+#~ "Wuebben; <email>wuebben@math.cornell.edu</email>"
+
+#~ msgid ""
+#~ "&kfloppy; Formatter Program Copyright 2002 Adriaan de Groot "
+#~ "<email>groot@kde.org</email>"
+#~ msgstr ""
+#~ "Programa Formatador &kfloppy; con Copyright 2002 de Adriaan de Groot "
+#~ "<email>groot@kde.org</email>"
+
+#~ msgid ""
+#~ "&kfloppy; Formatter Program Copyright 2004, 2005 &Nicolas.Goutte; "
+#~ "&Nicolas.Goutte.mail;"
+#~ msgstr ""
+#~ "Programa Formatador &kfloppy; con Copyright 2004, 2005 de &Nicolas."
+#~ "Goutte; &Nicolas.Goutte.mail;"
+
+#~ msgid ""
+#~ "Documentation Copyright 2000 by &Thad.McGinnis; &Thad.McGinnis.mail;."
+#~ msgstr ""
+#~ "Documentación con Copyright 2000 de &Thad.McGinnis; &Thad.McGinnis.mail;."
+
+#~ msgid ""
+#~ "Documentation Copyright 2005 by &Nicolas.Goutte; &Nicolas.Goutte.mail;."
+#~ msgstr ""
+#~ "Documentación con Copyright 2005 de &Nicolas.Goutte; &Nicolas.Goutte."
+#~ "mail;."
+
+#~ msgid ""
+#~ "This version of the &kfloppy; Handbook is based on the original by &David."
+#~ "Rugge; <email>davidrugge@mindspring.com</email>"
+#~ msgstr ""
+#~ "Esta versión do manual do &kfloppy; baséase na versión orixinal de &David."
+#~ "Rugge; <email>davidrugge@mindspring.com</email>"
+
+#~ msgid "CREDIT_FOR_TRANSLATORS"
+#~ msgstr ""
+#~ "<para>Tradución da documentación: Xosé Calvo - http://trasno.net/</para>"
+
+#~ msgid "&underFDL; &underGPL;"
+#~ msgstr "&underFDL; &underGPL;"
+
+#~ msgid "Needed External Programs"
+#~ msgstr "Programas externos necesarios"
+
+#~ msgid ""
+#~ "As already written earlier in this handbook, &kfloppy; works with the "
+#~ "help of external programs to do the different formatting tasks."
+#~ msgstr ""
+#~ "Como xa se dixo anteriormente neste manual, o &kfloppy; funciona coa "
+#~ "axuda de programas externos para executar as diferentes tarefas de "
+#~ "formatación."
+
+#~ msgid ""
+#~ "If one of the programs is missing, &kfloppy; tries to work nevertheless. "
+#~ "However the corresponding option will not be available."
+#~ msgstr ""
+#~ "Se falta un dos programas, o &kfloppy; tentará funcionar igualmente. "
+#~ "Porén, a opción correspondente non estará dispoñíbel."
+
+#~ msgid ""
+#~ "This program is needed for low-level formatting, on &Linux; and on &BSD;. "
+#~ "If it is missing, <guilabel>Full format</guilabel> will be disabled."
+#~ msgstr ""
+#~ "Este programa é necesario para a formatación a baixo nivel no &Linux; e "
+#~ "no &BSD;. Se falta, desactívase a <guilabel>Formatación completa</"
+#~ "guilabel>."
+
+#~ msgid ""
+#~ "This program is needed for zeroing-out, on &Linux; and on &BSD;. If it is "
+#~ "missing, <guilabel>Zero out and quick format</guilabel> will be disabled."
+#~ msgstr ""
+#~ "Este programa é necesario para limpar o disco con ceros no &Linux; e no "
+#~ "&BSD;. Se falta, desactívase a opción <guilabel>Limpeza con ceros e "
+#~ "formatación  rápida</guilabel>."
+
+#~ msgid "This program is needed for DOS formatting, on &Linux;."
+#~ msgstr "Este programa é necesario para a formatación en DOS no &Linux;."
+
+#~ msgid "This program is needed for DOS formatting, on &BSD;."
+#~ msgstr "Este programa é necesario para a formatación en DOS no &BSD;."
+
+#~ msgid "This program is needed for UFS formatting, on &BSD;."
+#~ msgstr "Este programa é necesario para a formatación en UFS no &BSD;."
+
+#~ msgid "This program is needed for ext2 formatting, on &Linux; and on &BSD;."
+#~ msgstr ""
+#~ "Este programa é necesario para a formatación en ext2 no &Linux; e no "
+#~ "&BSD;."
+
+#~ msgid "This program is needed for &Minix; formatting, on &Linux;."
+#~ msgstr "Este programa é necesario para a formatación en &Minix; no &Linux;."
+
+#~ msgid "User-Given Devices"
+#~ msgstr "Dispositivos indicados polo usuario"
+
+#~ msgid ""
+#~ "\"User Given Devices\" is the work title of a still experimental feature "
+#~ "of &kfloppy;. It allows the user to give a device name and to use it "
+#~ "nearly as if it was a <hardware>floppy drive</hardware>."
+#~ msgstr ""
+#~ "«Dispositivos indicados polo usuario» é o título actual dunha "
+#~ "funcionalidade aínda experimental no &kfloppy;. Permite que o usuario "
+#~ "indique un nome de dispositivo e que o empregue como se fose unha "
+#~ "<hardware>unidade de disquetes</hardware>."
+
+#~ msgid ""
+#~ "This feature is mainly intended as a work-around for users having "
+#~ "<hardware>USB floppy drives</hardware> of any kind (including "
+#~ "<trademark>ZIP</trademark> disk drives) or any other non-legacy "
+#~ "<hardware>floppy drives</hardware>."
+#~ msgstr ""
+#~ "Esta funcionalidade pretende ser unha solución alternativa para os "
+#~ "usuarios que teñan <hardware>unidades de disquetes USB</hardware> de "
+#~ "calquera tipo (incluídas as unidades de discos <trademark>ZIP</"
+#~ "trademark>) ou  outras <hardware>unidades de disquetes non antigas</hardware>."
+
+#~ msgid ""
+#~ "Unfortunately at the time of writing this documentation, the feature is "
+#~ "not very user friendly, as it does not offer any help to the user on how "
+#~ "a device is called and &kfloppy; does not even remember the device name "
+#~ "from call to call. (This is partially a security, as the device of the "
+#~ "<hardware>floppy drive</hardware> might change between reboots.)"
+#~ msgstr ""
+#~ "Desafortunadamente, cando se escribiu esta documentación a funcionalidade "
+#~ "aínda non é doada para o usuario, dado que non lle ofrece ningunha axuda "
+#~ "para saber como se chama un dispositivo determinado e o &kfloppy; nen "
+#~ "sequer recorda o nome do dispositivo de chamada para chamada. (Isto "
+#~ "débese, parcialmente, a factores de seguranza, dado que o dispositivo da "
+#~ "<hardware>unidade de disquetes</hardware> pode mudar entre arranques do "
+#~ "sistema.)"
+
+#~ msgid ""
+#~ "As this feature was developed under &Linux;, the &BSD; version of "
+#~ "&kfloppy; offers less choices than &kfloppy; under &Linux;."
+#~ msgstr ""
+#~ "Dado que esta funcionalidade foi desenvolvida no &Linux;, a versión do  &BSD; ofrece menos opcións que o &kfloppy; no &Linux;."
+
+#~ msgid "Using It"
+#~ msgstr "Utilización"
+
+#~ msgid ""
+#~ "Using \"User Given Devices\" is quite simple, you just need to enter a "
+#~ "device name, for example <replaceable>/dev/sdz4</replaceable> in the "
+#~ "<guilabel>Floppy drive:</guilabel> combobox instead of selecting Primary "
+#~ "or Secondary."
+#~ msgstr ""
+#~ "A utilización de «Dispositivos indicados polo usuario» é bastante simple: "
+#~ "abonda con indicar un nome de dispositivo, como por exemplo, "
+#~ "<replaceable>/dev/sdz4</replaceable> na lista <guilabel>Unidade de "
+#~ "disquetes:</guilabel> en vez de seleccionar Primaria ou Secundaria."
+
+#~ msgid ""
+#~ "You need to enter the <filename class=\"directory\">/dev/</filename> part "
+#~ "of the device for two reasons:"
+#~ msgstr ""
+#~ "Hai que indicar <filename class=\"directory\">/dev/</filename> como parte "
+#~ "do nome do dispositivo por dúas razóns:"
+
+#~ msgid "It is how &kfloppy; recognizes the \"User Given Devices\" mode."
+#~ msgstr ""
+#~ "É como o &kfloppy; recoñece o modo «Dispositivos indicados polo usuario»."
+
+#~ msgid ""
+#~ "It is a security, to avoid that the user writes anything in the combobox "
+#~ "that is by change a device name."
+#~ msgstr ""
+#~ "Serve de seguranza, para evitar que o usuario escriba calquera cousa no "
+#~ "menú despregábel que non sexa válida como nome de dispositivo."
+
+#~ msgid ""
+#~ "Unfortunately, using any device instead of a floppy device has a few "
+#~ "consequences. The major one is that <guilabel>Full Format</guilabel> "
+#~ "cannot be selected anymore. Doing so will result in a error message box "
+#~ "when trying to start the format. However you can use <guilabel>Zero out "
+#~ "and quick format</guilabel> instead. It will not format the device, just "
+#~ "zeroing it out, but in practice it is nearly the same; especially all "
+#~ "data on the device will be erased."
+#~ msgstr ""
+#~ "Desafortunadamente, a utilización de calquera dispositivo en vez dunha "
+#~ "unidade de disquetes ten algunhas consecuencias negativas. A principal é "
+#~ "que deixa de poderse utilizar a <guilabel>Formatación Completa</"
+#~ "guilabel>. Ao facelo aparece unha mensaxe de erro cando se inicia "
+#~ "formatación. Porén, pódese  empregar a opción <guilabel>Limpeza con ceros e formatación rápida</"
+#~ "guilabel> como alternativa. O dispositivo non se formata, só se enche con "
+#~ "ceros, se ben na práctica é case o mesmo; especialmente, elimínanse todos "
+#~ "dados do dispositivo."
+
+#~ msgid ""
+#~ "Be careful when entering the device name. &kfloppy; will pass the device "
+#~ "name as is to the external programs. Especially it does not check (and "
+#~ "the external programs do not check either) if the device is a "
+#~ "<hardware>floppy drive</hardware> device. If you give your any of your "
+#~ "main disk partitions as device, it will be accepted. (If the partition is "
+#~ "mounted or if you cannot write on this device, you will probably get an "
+#~ "error message nevertheless, avoiding the worst.)"
+#~ msgstr ""
+#~ "Tente ben ao indicar o nome do dispositivo. O &kfloppy; pásalle o  nome do dispositivo tal cal aos programas externos. Para alén disto, non "
+#~ "verifica (e tampouco o fan os programas externos) se o dispositivo é "
+#~ "realmente unha <hardware>unidade de disquetes</hardware>. Se se indica "
+#~ "que algunha das particións do disco principal é un dispositivo, acéptase. "
+#~ "(Se a partición estiver montada ou se non se pode escribir neste "
+#~ "dispositivo, aparece unha mensaxe de erro, o que evitará o peor)."
+
+#~ msgid ""
+#~ "Even if you can specify a floppy device like <filename>/dev/fd0u2880</"
+#~ "filename>, &kfloppy; will refuse to make a <guilabel>Full Format</"
+#~ "guilabel> on it."
+#~ msgstr ""
+#~ "Mesmo se se indica un nome de dispositivo do tipo <filename>/dev/"
+#~ "fd0u2880</filename>, o &kfloppy; rexeitará facer unha "
+#~ "<guilabel>Formatación  Completa</guilabel> nel."
+
+#~ msgid ""
+#~ "On &Linux;, you can select any file system that you want. On &BSD;, only "
+#~ "UFS is currently supported (and not tested at time of writing this "
+#~ "documentation)."
+#~ msgstr ""
+#~ "No &Linux; pódese seleccionar calquera sistema de ficheiros que se "
+#~ "desexe. No &BSD;, de momento só é posíbel o UFS (e aínda non se probou "
+#~ "cando se escribiu esta documentación)."
+
+#~ msgid ""
+#~ "When you are ready to format, click on the <guibutton>Format</guibutton> "
+#~ "button as usual. You will get a message box asking you to verify the "
+#~ "device name."
+#~ msgstr ""
+#~ "Cando estea a piques de formatar, prema o botón <guibutton>Formatar</"
+#~ "guibutton> como de costume. Aparece unha xanela de mensaxe que pide que "
+#~ "se verifique o nome do dispositivo."
+
+#~ msgid ""
+#~ "This is the last chance to check the device name before formating. After "
+#~ "it, it is too late."
+#~ msgstr ""
+#~ "Esta é a última oportunidade de verificar o nome do dispositivo antes da "
+#~ "formatación. Despois, xa é demasiado tarde."
+
+#~ msgid "fdformat"
+#~ msgstr "fdformat"
+
+#~ msgid "<command>dd</command>"
+#~ msgstr "<command>dd</command>"
+
+#~ msgid "mkdosfs"
+#~ msgstr "mkdosfs"
+
+#~ msgid "newfs_msdos"
+#~ msgstr "newfs_msdos"
+
+#~ msgid "newfs"
+#~ msgstr "newfs"
+
+#~ msgid "mke2fs"
+#~ msgstr "mke2fs"
+
+#~ msgid "mkfs.minix"
+#~ msgstr "mkfs.minix"
+
+#~ msgid ""
+#~ "This invokes the &kde; help system starting at the &kfloppy; help pages "
+#~ "(this document)."
+#~ msgstr ""
+#~ "Isto invoca o sistema de axuda do &kde; comezando polas páxinas de axuda "
+#~ "do &kfloppy; (este documento)."
+
+#~ msgid "Report Bug"
+#~ msgstr "Comunicar un erro"
+
+#~ msgid "Report a problem to the &kde; team."
+#~ msgstr "Comunicar un erro á equipa do &kde;."
+
+#~ msgid "This displays version and author information of &kfloppy;."
+#~ msgstr "Isto mostra información sobre a versión e autores do &kfloppy;."
+
+#~ msgid "About KDE"
+#~ msgstr "Acerca do KDE"
+
+#~ msgid "This displays version and author information of &kde;."
+#~ msgstr "Isto mostra información sobre a versión e autores do &kde;."

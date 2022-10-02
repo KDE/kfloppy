@@ -1,0 +1,641 @@
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Zlatko Popov <zlatkopopov@fsa-bg.org>, 2006.
+# Yasen Pramatarov <yasen@lindeas.com>, 2011.
+# Mincho Kondarev <mkondarev@yahoo.de>, 2022.
+msgid ""
+msgstr ""
+"Project-Id-Version: kfloppy\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-01-12 00:48+0000\n"
+"PO-Revision-Date: 2022-07-02 13:55+0200\n"
+"Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
+"Language-Team: \n"
+"Language: bg\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 22.04.2\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+
+#: floppy.cpp:81
+#, kde-format
+msgid "Floppy &drive:"
+msgstr "&Устройство:"
+
+#: floppy.cpp:89 floppy.cpp:364 floppy.cpp:654
+#, kde-format
+msgctxt "Primary floppy drive"
+msgid "Primary"
+msgstr "Първо"
+
+#: floppy.cpp:90 floppy.cpp:366
+#, kde-format
+msgctxt "Secondary floppy drive"
+msgid "Secondary"
+msgstr "Второ"
+
+#: floppy.cpp:92
+#, kde-format
+msgid "<qt>Select the floppy drive.</qt>"
+msgstr "<qt>Избор на флопидисково устройство.</qt>"
+
+#: floppy.cpp:98
+#, kde-format
+msgid "&Size:"
+msgstr "&Размер:"
+
+#: floppy.cpp:104 floppy.cpp:656
+#, kde-format
+msgid "Auto-Detect"
+msgstr "Автоматично"
+
+#: floppy.cpp:106 floppy.cpp:372 floppy.cpp:658
+#, kde-format
+msgid "3.5\" 1.44MB"
+msgstr "3.5\" 1.44 МБ"
+
+#: floppy.cpp:107 floppy.cpp:374
+#, kde-format
+msgid "3.5\" 720KB"
+msgstr "3.5\" 720 кБ"
+
+#: floppy.cpp:108 floppy.cpp:376
+#, kde-format
+msgid "5.25\" 1.2MB"
+msgstr "5.25\" 1.2 МБ"
+
+#: floppy.cpp:109 floppy.cpp:378
+#, kde-format
+msgid "5.25\" 360KB"
+msgstr "5.25\" 360 кБ"
+
+#: floppy.cpp:112
+#, kde-format
+msgid "<qt>This allows you to select the floppy disk's size and density.</qt>"
+msgstr "<qt>Избор на размер на диска и плътността.</qt>"
+
+#: floppy.cpp:119
+#, kde-format
+msgid "F&ile system:"
+msgstr "&Файлова система:"
+
+#: floppy.cpp:126 floppy.cpp:136
+#, kde-format
+msgctxt "Linux"
+msgid ""
+"KFloppy supports three file formats under Linux: MS-DOS, Ext2, and Minix"
+msgstr ""
+"Програмата KFloppy поддържа три формата под Линукс: MS-DOS, Ext2 и Minix"
+
+#: floppy.cpp:128
+#, kde-format
+msgctxt "BSD"
+msgid "KFloppy supports three file formats under BSD: MS-DOS, UFS, and Ext2"
+msgstr "Програмата KFloppy поддържа три формата под BSD: MS-DOS, UFS и Ext2"
+
+#: floppy.cpp:138 floppy.cpp:163 floppy.cpp:558 floppy.cpp:660
+#, kde-format
+msgid "DOS"
+msgstr "DOS"
+
+#: floppy.cpp:140
+#, kde-format
+msgctxt "Linux"
+msgid "Program mkdosfs found."
+msgstr "Програмата mkdosfs е намерена."
+
+#: floppy.cpp:142
+#, kde-format
+msgctxt "Linux"
+msgid ""
+"Program mkdosfs <b>not found</b>. MSDOS formatting <b>not available</b>."
+msgstr ""
+"Програмата mkdosfs <b>не е открита</b>. Форматирането с MSDOS <b>не е "
+"възможно</b>."
+
+#: floppy.cpp:146 floppy.cpp:179 floppy.cpp:569
+#, kde-format
+msgid "ext2"
+msgstr "ext2"
+
+#: floppy.cpp:148 floppy.cpp:181
+#, kde-format
+msgid "Program mke2fs found."
+msgstr "Програмата mke2fs е намерена."
+
+#: floppy.cpp:150 floppy.cpp:183
+#, kde-format
+msgid "Program mke2fs <b>not found</b>. Ext2 formatting <b>not available</b>"
+msgstr ""
+"Програмата mke2fs <b>не е открита</b>. Форматирането с ext2 <b>не е "
+"възможно</b>."
+
+#: floppy.cpp:154 floppy.cpp:588
+#, kde-format
+msgid "Minix"
+msgstr "Minix"
+
+#: floppy.cpp:156
+#, kde-format
+msgctxt "Linux"
+msgid "Program mkfs.minix found."
+msgstr "Програмата mkfs.minix е намерена."
+
+#: floppy.cpp:158
+#, kde-format
+msgctxt "Linux"
+msgid ""
+"Program mkfs.minix <b>not found</b>. Minix formatting <b>not available</b>"
+msgstr ""
+"Програмата mkfs.minix <b>не е открита</b>. Форматирането с Minix <b>не е "
+"възможно</b>."
+
+#: floppy.cpp:161
+#, kde-format
+msgctxt "BSD"
+msgid "KFloppy supports two file formats under BSD: MS-DOS and UFS"
+msgstr "Програмата KFloppy поддържа два формата под BSD: MS-DOS и UFS"
+
+#: floppy.cpp:165
+#, kde-format
+msgctxt "BSD"
+msgid "Program newfs_msdos found."
+msgstr "Програмата newfs_msdos е намерена."
+
+#: floppy.cpp:167
+#, kde-format
+msgctxt "BSD"
+msgid ""
+"Program newfs_msdos <b>not found</b>. MSDOS formatting <b>not available</b>."
+msgstr ""
+"Програмата newfs_msdos <b>не е открита</b>. Форматирането с MSDOS <b>не е "
+"възможно</b>."
+
+#: floppy.cpp:171 floppy.cpp:487 floppy.cpp:580
+#, kde-format
+msgid "UFS"
+msgstr "UFS"
+
+#: floppy.cpp:173
+#, kde-format
+msgctxt "BSD"
+msgid "Program newfs found."
+msgstr "Програмата newfs е намерена."
+
+#: floppy.cpp:175
+#, kde-format
+msgctxt "BSD"
+msgid "Program newfs <b>not found</b>. UFS formatting <b>not available</b>."
+msgstr ""
+"Програмата newfs <b>не е открита</b>. Форматирането с UFS <b>не е възможно</"
+"b>."
+
+#: floppy.cpp:189
+#, kde-format
+msgid "&Formatting"
+msgstr "Фор&матиране"
+
+#: floppy.cpp:192
+#, kde-format
+msgid "Q&uick format"
+msgstr "&Бързо форматиране"
+
+#: floppy.cpp:196
+#, kde-format
+msgid ""
+"<qt>Quick format is only a high-level format: it creates only a file system."
+"</qt>"
+msgstr ""
+"<qt>Бързото форматиране работи на високо ниво. То само създава файлвата "
+"система без да прави физическо форматиране и проверка на дискетата за "
+"грешки. Също така, данните се изтриват като се записват нули на тяхно място, "
+"ако бъде намерена програмата \"dd\".</qt>"
+
+#: floppy.cpp:199
+#, kde-format
+msgid "&Zero out and quick format"
+msgstr "&Бързо форматиране"
+
+#: floppy.cpp:202
+#, kde-format
+msgid ""
+"<qt>This first erases the floppy by writing zeros and then it creates the "
+"file system.</qt>"
+msgstr ""
+"<qt>Бързото форматиране работи на високо ниво. То само създава файлвата "
+"система без да прави физическо форматиране и проверка на дискетата за грешки."
+"</qt>"
+
+#: floppy.cpp:204
+#, kde-format
+msgid "Fu&ll format"
+msgstr "&Пълно форматиране"
+
+#: floppy.cpp:207
+#, kde-format
+msgid ""
+"Full format is a low-level and high-level format. It erases everything on "
+"the disk."
+msgstr ""
+"<qt>Пълното форматиране работи на ниско и на високо ниво. То изтрива всичко "
+"на диска, прави физическо форматиране, проверка на дискетата за грешки и "
+"създаване на файлова система.</qt>"
+
+#: floppy.cpp:216
+#, kde-format
+msgid "Program fdformat found."
+msgstr "Програмата fdformat е намерена."
+
+#: floppy.cpp:220
+#, kde-format
+msgid "Program fdformat <b>not found</b>. Full formatting <b>disabled</b>."
+msgstr ""
+"Програмата fdformat не е намерена. Няма възможност за пълно форматиране."
+
+#: floppy.cpp:226
+#, kde-format
+msgid "Program dd found."
+msgstr "Програмата dd е намерена."
+
+#: floppy.cpp:229
+#, kde-format
+msgid "Program dd <b>not found</b>. Zeroing-out <b>disabled</b>."
+msgstr ""
+"Програмата dd не е намерена. Няма възможност за изтриване на данните "
+"(записване на нули във файловете)."
+
+#: floppy.cpp:234
+#, kde-format
+msgid "&Verify integrity"
+msgstr "Проверка &след форматиране"
+
+#: floppy.cpp:238
+#, kde-format
+msgid ""
+"<qt>Check this if you want the floppy disk to be checked after formatting. "
+"Please note that the floppy will be checked twice if you have selected full "
+"formatting.</qt>"
+msgstr ""
+"<qt>Ако отметката е включена, след форматирането ще се извърши проверка на "
+"дискетата за грешки. Имайте предвид, че проверката ще се извърши два пъти, "
+"ако сте избрали пълно форматиране.</qt>"
+
+#: floppy.cpp:243
+#, kde-format
+msgid "Volume la&bel:"
+msgstr "Създаване на &етикет:"
+
+#: floppy.cpp:247
+#, kde-format
+msgid ""
+"<qt>Check this if you want a volume label for your floppy. Please note that "
+"Minix does not support labels at all.</qt>"
+msgstr ""
+"<qt>Създаване на етикет на дискетата. Имайте предвид, че етикетът не се "
+"поддържа на всички файлови системи (примерно Minix).</qt>"
+
+#: floppy.cpp:256 floppy.cpp:652
+#, kde-format
+msgctxt "Volume label, maximal 11 characters"
+msgid "KDE Floppy"
+msgstr "Флопи за KDE"
+
+#: floppy.cpp:260
+#, kde-format
+msgid ""
+"<qt>This is for the volume label. Due to a limitation of MS-DOS the label "
+"can only be 11 characters long. Please note that Minix does not support "
+"labels, whatever you enter here.</qt>"
+msgstr ""
+"<qt>Етикет на дискетата. Имайте предвид, че поради ограничения MS-DOS "
+"поддържа етикети с дължина до 11 знака, а Minix изобщо не поддържа етикети.</"
+"qt>"
+
+#: floppy.cpp:270 floppy.cpp:469
+#, kde-format
+msgid "&Format"
+msgstr "&Форматиране"
+
+#: floppy.cpp:276
+#, kde-format
+msgid "<qt>Click here to start formatting.</qt>"
+msgstr "<qt>Стартиране на форматирането.</qt>"
+
+#: floppy.cpp:301
+#, kde-format
+msgid "<qt>This is the status window, where error messages are displayed.</qt>"
+msgstr ""
+"<qt>Състояние на процеса. Съобщенията за грешка също се показват тук.</qt>"
+
+#: floppy.cpp:314
+#, kde-format
+msgid "<qt>Shows progress of the format.</qt>"
+msgstr "<qt>Показване на състоянието по време на форматирането.</qt>"
+
+#: floppy.cpp:323
+#, kde-format
+msgid ""
+"KFloppy cannot find any of the needed programs for creating file systems; "
+"please check your installation.<br /><br />Log:"
+msgstr ""
+"Програмата не може да намери нито една от външните програми за форматиране и "
+"създаване на файлова система. Моля, проверете инсталацията си.<br /><br /"
+">Отчитане:"
+
+#: floppy.cpp:355
+#, kde-format
+msgid "KDE Floppy Formatter"
+msgstr "Форматиране на дискети в KDE"
+
+#: floppy.cpp:488
+#, kde-format
+msgctxt "BSD"
+msgid "Formatting with BSD on a user-given device is only possible with UFS"
+msgstr ""
+"Форматирането с BSD на зададено от потребителя устройстно не е възможно с "
+"UFS."
+
+#: floppy.cpp:495
+#, kde-format
+msgid ""
+"<qt>Formatting will erase all data on the device:<br/><b>%1</b><br/>(Please "
+"check the correctness of the device name.)<br/>Are you sure you wish to "
+"proceed?</qt>"
+msgstr ""
+"<qt>Форматирането ще изтрие всички данни на устройството<br/><b>%1</b><br/"
+">Моля, проверете името на устройството дали е правилно.<br/>Сигурни ли сте, "
+"че искате да продължите?</qt>"
+
+#: floppy.cpp:499 floppy.cpp:511
+#, kde-format
+msgid "Proceed?"
+msgstr "Да се продължи ли?"
+
+#: floppy.cpp:505
+#, kde-format
+msgid "Full formatting of a user-given device is not possible."
+msgstr ""
+"Пълното форматирането на зададено от потребителя устройство не е възможно."
+
+#: floppy.cpp:509
+#, kde-format
+msgid ""
+"Formatting will erase all data on the disk.\n"
+"Are you sure you wish to proceed?"
+msgstr ""
+"Форматирането ще изтрие всички данни на дискетата.\n"
+"Сигурни ли сте, че искате да продължите?"
+
+#: format.cpp:247
+#, kde-format
+msgid "Unexpected drive number %1."
+msgstr "Грешен номер на устройство %1."
+
+#: format.cpp:257
+#, kde-format
+msgid "Unexpected density number %1."
+msgstr "Грешен номер на обем %1."
+
+#: format.cpp:270
+#, kde-format
+msgid "Cannot find a device for drive %1 and density %2."
+msgstr "Липсва устройство %1 с обем %2."
+
+#: format.cpp:284
+#, kde-format
+msgid ""
+"Cannot access %1\n"
+"Make sure that the device exists and that you have write permission to it."
+msgstr ""
+"Отказан достъп до %1\n"
+"Моля, убедете се, че устройството съществува и имате права за запис."
+
+#: format.cpp:316
+#, kde-format
+msgid "The program %1 terminated with an error."
+msgstr "Програмата %1 завърши с грешка."
+
+#: format.cpp:320
+#, kde-format
+msgid "The program %1 terminated abnormally."
+msgstr "Програмата %1 не завърши нормално."
+
+#: format.cpp:377 format.cpp:508 format.cpp:597 format.cpp:691 format.cpp:762
+#: format.cpp:852
+#, kde-format
+msgid "Internal error: device not correctly defined."
+msgstr "Вътрешна грешка: устройството не е зададено правилно."
+
+#: format.cpp:383
+#, kde-format
+msgid "Cannot find fdformat."
+msgstr "Липсва външната програма \"fdformat\"."
+
+#: format.cpp:410
+#, kde-format
+msgid "Could not start fdformat."
+msgstr "Грешка при стартиране на външната програма \"fdformat\"."
+
+#: format.cpp:432
+#, kde-format
+msgid "Error formatting track %1."
+msgstr "Грешка при форматиране на сектор %1."
+
+#: format.cpp:435 format.cpp:460
+#, kde-format
+msgid ""
+"Cannot access floppy or floppy drive.\n"
+"Please insert a floppy and make sure that you have selected a valid floppy "
+"drive."
+msgstr ""
+"Грешка при достъп до флопидисковото устройство.\n"
+"Моля, поставете дискета и се убедете, че сте избрали правилното флопидисково "
+"устройство."
+
+#: format.cpp:453
+#, kde-format
+msgid "Low-level formatting error at track %1."
+msgstr "Грешка при формат на ниско ниво на пътечка %1."
+
+#: format.cpp:456
+#, kde-format
+msgid "Low-level formatting error: %1"
+msgstr "Грешка при формат на ниско ниво: %1"
+
+#: format.cpp:467 format.cpp:647 format.cpp:803 format.cpp:889
+#, kde-format
+msgid ""
+"Device busy.\n"
+"Perhaps you need to unmount the floppy first."
+msgstr ""
+"Устройството е заето.\n"
+"Може би, трябва да демонтирате флопито първо."
+
+#: format.cpp:472
+#, kde-format
+msgid "Low-level format error: %1"
+msgstr "Грешка при формат на ниско ниво: %1"
+
+#: format.cpp:514
+#, kde-format
+msgid "Cannot find dd."
+msgstr "Липсва външната програма \"dd\"."
+
+#: format.cpp:528
+#, kde-format
+msgid "Could not start dd."
+msgstr "Грешка при стартиране на външната програма \"dd\"."
+
+#: format.cpp:603
+#, kde-format
+msgid "Cannot find a program to create FAT filesystems."
+msgstr "Липсва програма за създаване на файлова система FAT."
+
+#: format.cpp:630
+#, kde-format
+msgid "Cannot start FAT format program."
+msgstr "Грешка при стартиране на програма за създаване на файлова система FAT."
+
+#: format.cpp:643 format.cpp:799 format.cpp:885
+#, kde-format
+msgid ""
+"Floppy is mounted.\n"
+"You need to unmount the floppy first."
+msgstr ""
+"Флопито е монтирано.\n"
+"Трябва да демонтирате флопито първо."
+
+#: format.cpp:697
+#, kde-format
+msgctxt "BSD"
+msgid "Cannot find a program to create UFS filesystems."
+msgstr "Липсва програма за създаване на файлова система UFS."
+
+#: format.cpp:714
+#, kde-format
+msgctxt "BSD"
+msgid "Cannot start UFS format program."
+msgstr "Грешка при стартиране на програма за създаване на файлова система UFS."
+
+#: format.cpp:768
+#, kde-format
+msgid "Cannot find a program to create ext2 filesystems."
+msgstr "Липсва програма за създаване на файлова система ext2."
+
+#: format.cpp:786
+#, kde-format
+msgid "Cannot start ext2 format program."
+msgstr ""
+"Грешка при стартиране на програма за създаване на файлова система ext2."
+
+#: format.cpp:858
+#, kde-format
+msgid "Cannot find a program to create Minix filesystems."
+msgstr "Липсва програма за създаване на файлова система Minix."
+
+#: format.cpp:875
+#, kde-format
+msgid "Cannot start Minix format program."
+msgstr ""
+"Грешка при стартиране на програма за създаване на файлова система Minix."
+
+#: main.cpp:51
+#, kde-format
+msgid "KFloppy"
+msgstr "KFloppy"
+
+#: main.cpp:53
+#, kde-format
+msgid "KDE Floppy Disk Utility"
+msgstr "Помощна програма за форматиране на дискети"
+
+#: main.cpp:55
+#, kde-format
+msgid ""
+"(c) 1997, Bernd Johannes Wuebben\n"
+"(c) 2001, Chris Howells\n"
+"(c) 2002, Adriaan de Groot\n"
+"(c) 2004, 2005, Nicolas Goutte\n"
+"(c) 2015, 2016, Wolfgang Bauer"
+msgstr ""
+"(c) 1997, Bernd Johannes Wuebben\n"
+"(c) 2001, Chris Howells\n"
+"(c) 2002, Adriaan de Groot\n"
+"(c) 2004, 2005, Nicolas Goutte\n"
+"(c) 2015, 2016, Wolfgang Bauer"
+
+#: main.cpp:60
+#, kde-format
+msgid "KFloppy helps you format floppies with the filesystem of your choice."
+msgstr ""
+"Програмата за форматиране на дискети, устройства Zip\n"
+"или дискове от тип LS120 с избрана файлова система."
+
+#: main.cpp:63
+#, kde-format
+msgid "Bernd Johannes Wuebben"
+msgstr "Bernd Johannes Wuebben"
+
+#: main.cpp:63
+#, kde-format
+msgid "Author and former maintainer"
+msgstr "Author and former maintainer"
+
+#: main.cpp:64
+#, kde-format
+msgid "Chris Howells"
+msgstr "Chris Howells"
+
+#: main.cpp:64
+#, kde-format
+msgid "User interface re-design"
+msgstr "User interface re-design"
+
+#: main.cpp:65
+#, kde-format
+msgid "Adriaan de Groot"
+msgstr "Adriaan de Groot"
+
+#: main.cpp:65
+#, kde-format
+msgid "Add BSD support"
+msgstr "Add BSD support"
+
+#: main.cpp:66
+#, kde-format
+msgid "Nicolas Goutte"
+msgstr "Nicolas Goutte"
+
+#: main.cpp:66
+#, kde-format
+msgid "Make KFloppy work again for KDE 3.4"
+msgstr "Make KFloppy work again for KDE 3.4"
+
+#: main.cpp:67
+#, kde-format
+msgid "Wolfgang Bauer"
+msgstr "Wolfgang Bauer"
+
+#: main.cpp:67
+#, kde-format
+msgid "Port KFloppy to KF5"
+msgstr "Порт на KFloppy към KF5"
+
+#: main.cpp:69
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Златко Попов"
+
+#: main.cpp:69
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "zlatkopopov@fsa-bg.org"
+
+#: main.cpp:77
+#, kde-format
+msgid "Default device"
+msgstr "Подразбиращо се устройство"

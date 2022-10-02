@@ -1,0 +1,828 @@
+<?xml version="1.0" ?>
+<!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN" "dtd/kdedbx45.dtd" [
+  <!ENTITY kappname "&kfloppy;">
+  <!ENTITY package "kdeutils">
+  <!ENTITY % Dutch "INCLUDE"
+> <!-- change language only here -->
+  <!ENTITY % addindex "IGNORE">
+  <!ENTITY BSD "<trademark
+>BSD</trademark
+>">
+  <!ENTITY Minix "<trademark
+>Minix</trademark
+>">
+]>
+<!-- ### TODO Is BSD a trademark or a registrated trademark ? -->
+<!-- ### TODO Is Minix a trademark or a registrated trademark ? -->
+
+<!-- ### TODO Unify use of "disk", "floppy", "diskette", "floppy disk" (and "floppy drive") -->
+
+<book id="kfloppy" lang="&language;">
+<bookinfo>
+
+<title
+>Het formatteerhandboek van &kfloppy;</title>
+
+<authorgroup>
+<author
+><firstname
+>Thad</firstname
+> <surname
+>McGinnis</surname
+> <affiliation
+><address
+>&Thad.McGinnis.mail; </address
+></affiliation
+> </author>
+
+<author
+><firstname
+>Nicolas</firstname
+> <surname
+>Goutte</surname
+> <affiliation
+><address
+>&Nicolas.Goutte.mail; </address
+></affiliation
+> </author>
+
+<othercredit role="developer"
+><firstname
+>Bernd</firstname
+> <othername
+>Johannes</othername
+> <surname
+>Wuebben</surname
+> <affiliation
+><address
+><email
+>wuebben@math.cornell.edu</email
+></address
+></affiliation>
+<contrib
+>Ontwikkelaar</contrib>
+</othercredit>
+
+<othercredit role="developer"
+><firstname
+>Chris</firstname
+> <surname
+>Howells</surname
+> <affiliation
+><address
+>&Chris.Howells.mail;</address
+></affiliation>
+<contrib
+>Ontwikkelaar (Herontwerp van de gebruikersinterface)</contrib>
+</othercredit>
+
+<othercredit role="developer"
+><firstname
+>Adriaan</firstname
+> <surname
+>de Groot</surname
+> <affiliation
+><address
+><email
+>groot@kde.org</email
+></address
+></affiliation>
+<contrib
+>Ontwikkelaar (Ondersteuning voor &BSD; toegevoegd)</contrib>
+</othercredit>
+
+<othercredit role="developer"
+><firstname
+>Wolfgang</firstname
+> <surname
+>Bauer</surname
+> <affiliation
+><address
+><email
+>wbauer@tmo.at</email
+></address
+></affiliation>
+<contrib
+>Ontwikkelaar (overzetten naar KF5)</contrib>
+</othercredit>
+
+<othercredit role="reviewer"
+><firstname
+>Lauri</firstname
+> <surname
+>Watts</surname
+> <contrib
+>Nalezer</contrib>
+<affiliation
+><address
+>&Lauri.Watts.mail;</address
+></affiliation>
+</othercredit>
+
+&Rik.van.Achterberg;&Rinse.Devries;&Freek.de.Kruijf; 
+</authorgroup>
+
+<date
+>2016-03-23</date>
+<releaseinfo
+>5.0 (Applications 16.04)</releaseinfo>
+
+<copyright>
+<year
+>2000</year>
+<holder
+>&Thad.McGinnis;</holder>
+</copyright>
+
+<copyright>
+<year
+>2005</year>
+<holder
+>&Nicolas.Goutte;</holder>
+</copyright>
+
+<legalnotice
+>&FDLNotice;</legalnotice>
+
+<abstract
+><para
+>&kfloppy; is een grafisch programma dat recht door zee 3,5" en 5,25" diskettes formatteert.</para
+></abstract>
+
+<keywordset>
+<keyword
+>KDE</keyword>
+<keyword
+>kfloppy</keyword>
+<keyword
+>diskette</keyword>
+<keyword
+>formatteren</keyword>
+</keywordset>
+
+</bookinfo>
+
+<chapter id="introduction">
+<title
+>Inleiding</title>
+
+<para
+>&kfloppy; is een grafisch programma dat recht door zee 3,5" en 5,25" diskettes formatteert. </para>
+
+<note
+><para
+>&kfloppy; is afhankelijk van externe programma's en werkt daarom nu <emphasis
+>alleen</emphasis
+> met &Linux; en &BSD;. Afhankelijk van het gebruik van &kfloppy; op &Linux; of &BSD;, heeft &kfloppy; enige verschillende mogelijkheden.</para
+></note>
+
+<caution
+><para
+>Zorg ervoor dat uw diskette <emphasis
+>niet</emphasis
+> is aangekoppeld. &kfloppy; kan geen aangekoppelde diskettes formatteren.</para
+></caution>
+
+</chapter>
+
+<chapter id="usingkfloppy">
+<title
+>&kfloppy; gebruiken</title>
+
+<para
+>Bij het starten van &kfloppy; wordt er een venster geopend waar de gebruiker de instellingen kan configureren.Deze opties staan hieronder omschreven.</para>
+
+<caution
+><para
+>Zorg ervoor dat uw diskette <emphasis
+>niet</emphasis
+> is aangekoppeld. &kfloppy; kan geen aangekoppelde diskettes formatteren.</para
+></caution>
+
+<sect1 id="controlsettings">
+<title
+>Instellingen</title>
+
+<para
+>De instellingen worden gekozen door middel van drie keuzelijsten aan de linker bovenkant van &kfloppy;.</para>
+
+<sect2 id="selectdrive">
+<title
+>Diskettestation</title>
+
+<para
+>Wanneer u op de bovenste keuzelijst klikt, waar <guilabel
+>Diskettestation:</guilabel
+> op staat, kunt u de volgende twee opties kiezen:</para>
+
+<itemizedlist>
+<listitem
+><para
+>Primair</para
+></listitem>
+<listitem
+><para
+>Secondair</para
+></listitem>
+</itemizedlist>
+
+<para
+>Wanneer u op de tweede keuzelijst klikt, waar <guilabel
+>Grootte:</guilabel
+> op staat, kunt u de volgende vier opties kiezen:</para>
+
+<itemizedlist>
+<listitem
+><para
+>3,5" 1,44MB</para
+></listitem>
+<listitem
+><para
+>3,5" 720KB</para
+></listitem>
+<listitem
+><para
+>5,25" 1,2MB</para
+></listitem>
+<listitem
+><para
+>5,25" 360KB</para
+></listitem>
+</itemizedlist>
+
+<para
+>De &Linux;-versie van &kfloppy; heeft ook een keuze voor grootte genaamd:</para>
+
+<itemizedlist>
+<listitem
+><para
+>Autodetecteren</para
+></listitem>
+</itemizedlist>
+
+<!-- ### TODO: typical floppy disk of a PC has not the hardware to support
+Mac 800KB floppies at all, not only formatting. -->
+<note>
+<para
+>Het disketteformaat 800KB, dat wordt gebruikt door <hardware
+>&Mac;-diskettestations</hardware
+>, kan niet worden gebruikt op <hardware
+>PC-diskettestations</hardware
+>. Deze zijn niet in staat om dit type diskette te formatteren.</para>
+</note>
+</sect2>
+
+<sect2 id="filesystems">
+<title
+>Bestandssystemen</title>
+
+<para
+>De derde keuzelijst, die Bestandssystemen heet, geeft de gebruiker de mogelijkheid om de volgende keuzes te kiezen, als ze toepasselijk zijn:</para>
+
+<variablelist>
+<varlistentry>
+<term
+>Dos</term>
+<listitem>
+<para
+>Met deze keuze zal &kfloppy; het MS-DOS/&Windows;-bestandssysteem op de diskette plaatsen. De gebruiker zal hoogstwaarschijnlijk dit bestandssysteem willen als hij of zij de diskette wil gebruiken met deze besturingssystemen, aangezien die geen andere bestandssystemen herkennen. (Dit wordt ondersteund voor &Linux; en &BSD;).</para>
+</listitem>
+</varlistentry>
+
+<varlistentry
+> 
+<term
+>ext2</term>
+<listitem>
+<para
+>Met deze keuze zal &kfloppy; het bestandssysteem op de diskette zetten dat meestal gebruikt wordt door &Linux;, echter zelden op diskettes. (Dit wordt ondersteund voor &Linux; en &BSD;).</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+>UFS</term>
+<listitem>
+<para
+>Met deze keuze zal &kfloppy; het bestandssysteem op de diskette zetten dat meestal gebruikt wordt door <trademark class="registered"
+>FreeBSD</trademark
+>. De gebruiker zal hoogstwaarschijnlijk dit bestandssysteem willen als hij of zij de diskette wil gebruiken met <trademark class="registered"
+>FreeBSD</trademark
+>. (Dit is alleen ondersteund voor &BSD;).</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+>&Minix;</term>
+<listitem>
+<para
+>Met deze keuze zal &kfloppy; het bestandssysteem op de diskette zetten dat meestal gebruikt wordt door &Linux;. (Dit is alleen ondersteund voor &Linux;).</para>
+</listitem>
+</varlistentry>
+</variablelist>
+
+</sect2>
+</sect1>
+
+<sect1 id="formatting-options">
+<title
+>Formatteeropties</title>
+<para
+>Links midden in het venster van  &kfloppy; zal de gebruiker een set van vijf formatteeropties vinden. De bovenste twee zijn keuzerondjes.</para
+> <note
+><para
+>Deze term (keuzerondjes) stelt een set van opties voor waarvan er maar één kan worden geselecteerd - vergelijkbaar met een autoradio, waar maar één zender tegelijk aan kan staan.</para
+></note
+><para
+>De onderste twee opties zijn om de diskette een naam te geven. Dit wordt hieronder uitgelegd:</para>
+
+<sect2>
+<title
+>Formatteermethode</title>
+<para
+>&kfloppy; kan een diskette formatteren op de volgende twee manieren:</para>
+<para>
+<variablelist>
+<varlistentry>
+<term
+><guilabel
+>Snel formatteren</guilabel
+></term>
+<listitem>
+<para
+>Dit zet eenvoudig het nieuwe bestandssysteem op de schijf.</para>
+<warning
+><para
+>Alle gegevens op de schijf gaan verloren, zelfs als de gegevens zelf niet worden gewist.</para
+></warning>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term
+><guilabel
+>Met nullen vullen en snel formatteren</guilabel
+></term>
+<listitem>
+<para
+>Dit formatteert door het eerst vol te schrijven met nullen, waarna het nieuwe bestandssysteem wordt aangemaakt.</para>
+<warning
+><para
+>Alle gegevens op de schijf worden gewist.</para
+></warning>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term
+><guilabel
+>Volledig formatteren</guilabel
+></term>
+<listitem>
+<para
+>Een volledige formattering reserveert de tracks en sectoren opnieuw, plaatst het gekozen bestandssysteem op de diskette, en formatteert de diskette. Hierbij worden de eventuele gevonden foute sectoren geblokkeerd.</para>
+<warning
+><para
+>Alle gegevens op de schijf worden gewist.</para
+></warning>
+</listitem>
+</varlistentry>
+</variablelist>
+</para>
+</sect2>
+
+<sect2>
+<title
+>Integriteit verifiëren</title>
+
+<para
+>Dit zorgt ervoor dat &kfloppy; controleert of de formattering correct is geschreven. Dit staat toe dat verkeerde sectoren worden geïdentificeerd. </para>
+
+<note
+><para
+>Als er slechte sectors worden gevonden in de verificatiefase van een volledig formatteren, dan het formatteren worden afgebroken en het bestandssysteem wordt niet geschreven! </para
+></note>
+
+</sect2>
+
+<sect2>
+<title
+>Volumelabel</title>
+
+<para
+>De onderste twee opties staan de gebruiker toe om een volumenaam aan de diskette toe te voegen (of om deze te veranderen). Als het keuzevakje <guilabel
+>Volumenaam:</guilabel
+> is geselecteerd kan de gebruiker in het tekstvak eronder een naam invullen voor de diskette die geformatteerd gaat worden. Als de diskette wordt geformatteerd zal de volumenaam naar de diskette worden geschreven.</para>
+
+<note
+><para
+>Vanwege de beperkingen van het DOS-bestandssysteem kan een label hoogstens 11 tekens lang zijn. Ter vereenvoudiging neemt &kfloppy; aan dat deze limiet geldig is voor alle bestandssystemen.</para
+></note>
+
+<note
+><para
+>Het bestandssysteem &Minix; kan geen volumelabel hebben. In dit geval zal &kfloppy; het volumelabel negeren.</para
+></note>
+
+</sect2>
+
+</sect1>
+
+<sect1 id="buttons">
+<title
+>De knoppen</title>
+<para
+>Aan de rechterkant van &kfloppy; staan drie knoppen onder elkaar. </para>
+
+<variablelist>
+<varlistentry>
+<term
+><guibutton
+>Formatteren</guibutton
+></term>
+<listitem>
+<para
+>Deze knop start het formatteerproces. Zodra de gebruiker zeker weet dat alle instellingen correct zijn, mag hij of zij het formatteerproces starten door op deze knop te drukken. Verder zal er een verandering te zien zijn in de twee balken langs de onderzijde van &kfloppy;.</para>
+
+<para
+>Het bovenste balk is een statusindicator die informatie geeft over het gaande proces, speciaal over de fouten die tijdens het proces optreden.</para>
+
+<para
+>Het onderste balk is een voortgangsbalk. Deze laat grafisch en numeriek de voorgang zien van het formatteren, en hierna van het controleren. Voor het starten is deze balk leeg - waarbij het alleen "0%" in het midden laat zien. Als er een proces plaatsvindt, zal de voortgang worden gevolgd, waarbij het vak van links naar rechts wordt gevuld. Tegelijkertijd zal het nummer in het midden verhogen, wat het percentage van het proces voorstelt.</para>
+
+<note
+><para
+>Omdat &kfloppy; externe programma's gebruikt se floppy disk te formatteren, is het van deze programma's afhankelijk om voor de juiste information om in staat te zijn de voortgangsbalk te laten zien. Helaas is dat niet het geval. Speciaal de programma's die het bestandssysteem schrijven geven niet genoeg gegevens terug, zodat de voortgangsbalk op 0% blijft.</para
+></note>
+
+<important>
+<para
+>Zorg ervoor dat uw diskette <emphasis
+>niet</emphasis
+> is aangekoppeld. &kfloppy; kan geen aangekoppelde diskettes formatteren.</para>
+</important>
+
+<note
+><para
+>&kfloppy; koppelt de floppy <emphasis
+>niet</emphasis
+> zelf af, omdat dit zou kunnen betekenen dat de gebruiker een floppy disk met belangrijke gegevens kan overschrijven.</para
+></note>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guibutton
+>Help</guibutton
+></term>
+<listitem>
+<para
+>Dit laat een popup-menu zien met acties om dit handbook te openen, een bug te rapporteren, de taal van de toepassing te veranderen en de auteur en versie van &kfloppy; en &kde; weer te geven.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guibutton
+>Afsluiten</guibutton
+></term>
+<listitem>
+<para
+>Door op deze knop de klikken wordt &kfloppy; afgesloten.</para>
+</listitem>
+</varlistentry>
+
+</variablelist>
+
+</sect1>
+</chapter>
+
+<chapter id="command-line">
+<title
+>Commandoregelopties</title>
+
+<para
+>Ook al wordt &kfloppy; meestal gestart vanaf het &kde;-menu of een bureaubladpictogram, het kan ook geopend worden vanaf de commandoprompt of een terminal-venster. Er zijn een aantal opties die beschikbaar zijn wanneer dit gedaan wordt. Deze zijn:</para
+> 
+
+<variablelist>
+<varlistentry>
+<term
+><command
+>kfloppy <option
+>--help</option
+></command
+></term>
+<listitem
+><para
+>Dit laat de lijst met opties zien die beschikbaar zijn voor de commandoregel.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><command
+>kfloppy <option
+>--author</option
+></command
+></term>
+<listitem>
+<para
+>Dit laat de auteur van &kfloppy; zien in het terminal-venster</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><command
+>kfloppy <option
+>--license</option
+></command
+></term>
+<listitem>
+<para
+>Toont de licentie-informatie van &kfloppy; in het terminal-venster</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><command
+>kfloppy <option
+>--version</option
+></command
+></term>
+<listitem>
+<para
+>Toont versie-informatie van &kfloppy;. Ook beschikbaar door middel van <command
+>kfloppy <option
+>-v</option
+></command
+> </para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><command
+>kfloppy <option
+><replaceable
+>apparaat</replaceable
+></option
+></command
+></term>
+<listitem
+><para
+>Te formatteren apparaat.</para>
+<para
+>Dit zal direct het gegeven apparaat formatteren met de opgeslagen instellingen. Op dit moment worden alleen /dev/fd0 en /dev/fd1 ondersteund.</para
+></listitem>
+</varlistentry>
+</variablelist
+> 
+
+</chapter
+> 
+
+<chapter id="credits">
+<title
+>Dankbetuigingen en licentie</title>
+
+<!-- ### TODO: verify the copyright dates -->
+<!-- ### TODO: make the copyright list prettier -->
+<para
+>&kfloppy; Formatteerprogramma Copyright 1997-2000 &Bernd.Johannes.Wuebben; <email
+>wuebben@math.cornell.edu</email
+></para>
+
+<para
+>&kfloppy; Formatteerprogramma Copyright 2002 Adriaan de Groot <email
+>groot@kde.org</email
+></para>
+
+<para
+>&kfloppy; Formatteerprogramma Copyright 2004, 2005 &Nicolas.Goutte; &Nicolas.Goutte.mail;</para>
+
+<para
+>&kfloppy; Formatteerprogramma Copyright 2015, 2016 Wolfgang Bauer <email
+>wbauer@tmo.at</email
+></para>
+
+<para
+>Documentatie Copyright 2000 door &Thad.McGinnis; &Thad.McGinnis.mail;.</para>
+
+<para
+>Deze versie van het &kfloppy;-handboek is gebaseerd op het origineel door &David.Rugge; <email
+>davidrugge@mindspring.com</email
+></para>
+
+&meld.fouten;&vertaling.rik;&vertaling.rinse;&vertaling.freek; &underFDL; &underGPL; </chapter>
+
+<appendix id="neededprogs">
+<title
+>Benodigde externe programma's</title>
+
+<para
+>Zoals eerder in dit handbook geschreven, werkt &kfloppy; met de hulp van externe programma's voor de verschillende taken voor het formatteren.</para>
+
+<note
+><para
+>Als één van de programma's ontbreekt, zal &kfloppy; toch proberen te werken. De overeenkomstige optie zal niet beschikbaar zijn.</para
+></note>
+
+<variablelist>
+<varlistentry>
+<term
+><command
+>fdformat</command
+></term>
+<listitem
+><para
+>Dit programma is nodig voor het op laag niveau formatteren, op &Linux; en &BSD;. Als het ontbreekt, dan zal <guilabel
+>Volledig formatteren</guilabel
+> zijn uitgeschakeld. </para
+></listitem>
+</varlistentry>
+<varlistentry>
+<term
+><command
+>dd</command
+></term>
+<listitem
+><para
+>Dit programma is nodig voor het vol schrijven met nullen op &Linux; en &BSD;. Als het ontbreekt zal <guilabel
+>Met nullen vullen en snel formatteren</guilabel
+> zijn uitgeschakeld. </para
+></listitem>
+</varlistentry>
+<varlistentry>
+<term
+><command
+>mkdosfs</command
+></term>
+<listitem
+><para
+>Dit programma is nodig voor het met DOS formatteren, op &Linux;. </para
+></listitem>
+</varlistentry>
+<varlistentry>
+<term
+><command
+>newfs_msdos</command
+></term>
+<listitem
+><para
+>Dit programma is nodig voor het met DOS formatteren, op &BSD;. </para
+></listitem>
+</varlistentry>
+<varlistentry>
+<term
+><command
+>newfs</command
+></term>
+<listitem
+><para
+>Dit programma is nodig voor het met UFS formatteren, op &BSD;. </para
+></listitem>
+</varlistentry>
+<varlistentry>
+<term
+><command
+>mke2fs</command
+></term>
+<listitem
+><para
+>Dit programma is nodig voor het met ext2 formatteren, op &Linux; en &BSD;. </para
+></listitem>
+</varlistentry>
+<varlistentry>
+<term
+><command
+>mkfs.minix</command
+></term>
+<listitem
+><para
+>Dit programma is nodig voor het met &Minix; formatteren, op &Linux;. </para
+></listitem>
+</varlistentry>
+</variablelist>
+
+</appendix>
+<appendix id="usergivendevices">
+<title
+>Gebruikergegeven apparaten</title>
+
+<sect1 id="ugdintro">
+<title
+>Inleiding</title>
+
+<para
+>"Gebruikergegeven apparaten" is de werktitel van Nog steeds experimentele functie van &kfloppy;. Het biedt de gebruiker het geven van een naam aan een apparaat en het te gebruiken bijna op dezelfde manier alsof het een <hardware
+>floppy drive</hardware
+> is.</para>
+
+<para
+>Deze functie is hoofdzakelijk bedoeld als een work-around voor gebruikers die een soort van <hardware
+>USB floppy drives</hardware
+> hebben (inclusief <trademark
+>ZIP</trademark
+> disk drives) of andere nieuwerwetse <hardware
+>floppy drives</hardware
+>.</para>
+
+<note
+><para
+>Helaas is op het moment van het maken van deze documentatie, de functie nog niet erg gebruikersvriendelijk, omdat het de gebruiker niet help bij hoe een apparaat wordt genoemd en &kfloppy; zelfs niet de apparaatnaam van aanroep tot aanroep onthoudt. (Dit is gedeeltelijk een beveiliging, omdat het apparaat van de <hardware
+>floppy drive</hardware
+> tussen reboots kan veranderen),</para
+></note>
+
+<note
+><para
+>Omdat deze functie onder &Linux; is ontwikkeld, biedt de &BSD; versie van &kfloppy; minder keuzes dan &kfloppy; onder &Linux;.</para
+></note>
+
+</sect1>
+
+<sect1 id="ugdmain">
+<title
+>Het gebruiken</title>
+
+<!-- Note to reviewers: "PRimary" and "Secondary" are the default items in the combobox -->
+<para
+>Het gebruik van "Gebruikergegeven apparaten" is vrij eenvoudig, u behoeft alleen maar een apparaatnaam in te voeren, bijvoorbeeld <replaceable
+>/dev/sdz4</replaceable
+> in het keuzevak <guilabel
+>Floppy drive:</guilabel
+> in plaats van een Primary of Secondary te kiezen.</para>
+
+<note>
+<para
+>U moet <filename class="directory"
+>/dev/</filename
+> invoeren als onderdeel van het apparaat voor twee redenen:</para>
+<itemizedlist>
+<listitem>
+<para
+>Op deze manier herkent &kfloppy; de modus "Gebruikergegeven apparaten".</para>
+</listitem>
+<listitem>
+<para
+>Het is een beveiliging, om te vermijden dat de gebruiker iets in het keuzevak invult dat toevallig een apparaatnaam is.</para>
+</listitem>
+</itemizedlist>
+</note>
+
+<para
+>Helaas heeft het gebruik van een apparaat in plaats van een floppy disc een paar gevolgen. De belangrijkste is dat <guilabel
+>Volledig formatteren</guilabel
+> niet meer kan worden geselecteerd. Dat wel doen resulteert in een foutmelding wanneer geprobeerd wordt het formatteren te starten. U kunt echter <guilabel
+>Met nullen vullen en snel formatteren</guilabel
+> in plaats daarvan gebruiken. Het zal het apparaat niet formatteren, alleen nullen wegschrijven, maar in de praktijk is dat bijna hetzelfde; speciaal zullen alle gegevens op het apparaat worden gewist.</para>
+
+<warning
+><para
+>Wees voorzichtig bij het invoeren van de apparaatnaam. &kfloppy; geeft de apparaatnaam door zoals deze is naar de externe programma's. Het doet geen controle (en de externe programma's doen dat ook niet) of het apparaat een <hardware
+>floppy drive</hardware
+> is. Als u één van uw hoofd schijfpartities als apparaat meegeeft, dan zal het worden geaccepteerd. (Als de partitie is aangekoppeld of als u niet naar dit apparaat kunt schrijven, dan krijgt u zeer waarschijnlijk een foutboodschap, waarmee het ergste wordt voorkomen).</para
+></warning>
+
+<note
+><para
+>Zelfs als u een floppy-apparaat kunt specificeren zoals <filename
+>/dev/fd0u2880</filename
+>, zal &kfloppy; weigeren om een <guilabel
+>Volledig formatteren</guilabel
+> er op te doen.</para
+></note>
+
+<para
+>Op &Linux;, kunt u elk bestandssysteem dat u wilt selecteren. Op &BSD;, wordt nu alleen UFS ondersteund (en niet getest op het moment dat deze documentatie werd geschreven).</para>
+
+<para
+>Wanneer u klaar bent om te formatteren, klik dan, zoals gebruikelijk, op de knop <guibutton
+>Formatteren</guibutton
+>. U krijgt een bericht waarin gevraagd wordt om de apparaatnaam te verifiëren. </para>
+
+<warning
+><para
+>Dit is de laatst kans om de apparaatnaam te controleren voor het formatteren. Daarna is het te laat.</para
+></warning>
+
+</sect1>
+
+</appendix>
+
+</book>
+
+<!--
+Local Variables:
+mode: sgml
+sgml-minimize-attributes:nil
+sgml-general-insert-case:lower
+sgml-indent-step:0
+sgml-indent-data:nil
+End:
+
+// vim:ts=2:sw=2:tw=78:noet
+-->

@@ -1,0 +1,663 @@
+# translation of kfloppy.po to esperanto
+# Copyright (C) 1998, 2007 Free Software Foundation, Inc.
+# Wolfram Diestel <diestel@rzaix340.rz.uni-leipzig.de>, 1998.
+# Steffen Pietsch <Steffen.Pietsch@BerlinOnline.de>, 2002.
+# Pierre-Marie Pédrot <pedrotpmx@wanadoo.fr>, 2007.
+# Axel Rousseau <axel@esperanto-jeunes.org>, 2009.
+# Esperantaj mesaĝoj por "kfloppy"
+msgid ""
+msgstr ""
+"Project-Id-Version: kfloppy\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-01-12 00:48+0000\n"
+"PO-Revision-Date: 2009-12-29 20:02+0100\n"
+"Last-Translator: Axel Rousseau <axel@esperanto-jeunes.org>\n"
+"Language-Team: Esperanto <kde-i18n-doc@kde.org>\n"
+"Language: eo\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 1.0\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+
+#: floppy.cpp:81
+#, kde-format
+msgid "Floppy &drive:"
+msgstr "&Disketingo:"
+
+#: floppy.cpp:89 floppy.cpp:364 floppy.cpp:654
+#, kde-format
+msgctxt "Primary floppy drive"
+msgid "Primary"
+msgstr "Unua"
+
+#: floppy.cpp:90 floppy.cpp:366
+#, kde-format
+msgctxt "Secondary floppy drive"
+msgid "Secondary"
+msgstr "Dua"
+
+#: floppy.cpp:92
+#, kde-format
+msgid "<qt>Select the floppy drive.</qt>"
+msgstr "<qt>Elektu la disketan legilon.</qt>"
+
+#: floppy.cpp:98
+#, kde-format
+msgid "&Size:"
+msgstr "&Grandeco:"
+
+#: floppy.cpp:104 floppy.cpp:656
+#, kde-format
+msgid "Auto-Detect"
+msgstr "Aŭtomata detekto"
+
+#: floppy.cpp:106 floppy.cpp:372 floppy.cpp:658
+#, kde-format
+msgid "3.5\" 1.44MB"
+msgstr "3.5\" 1.44MB"
+
+#: floppy.cpp:107 floppy.cpp:374
+#, kde-format
+msgid "3.5\" 720KB"
+msgstr "3.5\" 720KB"
+
+#: floppy.cpp:108 floppy.cpp:376
+#, kde-format
+msgid "5.25\" 1.2MB"
+msgstr "5.25\" 1.2MB"
+
+#: floppy.cpp:109 floppy.cpp:378
+#, kde-format
+msgid "5.25\" 360KB"
+msgstr "5.25\" 360KB"
+
+#: floppy.cpp:112
+#, kde-format
+msgid "<qt>This allows you to select the floppy disk's size and density.</qt>"
+msgstr ""
+"<qt>Ĉi tio permesas al vi elekti la disketajn grandecon kaj densecon.</qt>"
+
+#: floppy.cpp:119
+#, kde-format
+msgid "F&ile system:"
+msgstr "Dos&iersistemo:"
+
+#: floppy.cpp:126 floppy.cpp:136
+#, kde-format
+msgctxt "Linux"
+msgid ""
+"KFloppy supports three file formats under Linux: MS-DOS, Ext2, and Minix"
+msgstr ""
+"KDisketo subtenas tri dosierformatojn ĉe Linukso: MS-DOS, Ext2, kaj Minix"
+
+#: floppy.cpp:128
+#, kde-format
+msgctxt "BSD"
+msgid "KFloppy supports three file formats under BSD: MS-DOS, UFS, and Ext2"
+msgstr "KDisketo subtenas tri dosierformatojn ĉe BSD: MS-DOS, UFS, kaj Ext2"
+
+#: floppy.cpp:138 floppy.cpp:163 floppy.cpp:558 floppy.cpp:660
+#, kde-format
+msgid "DOS"
+msgstr "DOS"
+
+#: floppy.cpp:140
+#, kde-format
+msgctxt "Linux"
+msgid "Program mkdosfs found."
+msgstr "Programo mkdosfs trovita."
+
+#: floppy.cpp:142
+#, kde-format
+msgctxt "Linux"
+msgid ""
+"Program mkdosfs <b>not found</b>. MSDOS formatting <b>not available</b>."
+msgstr "Programo mkdosfs <b>ne trovita</b>. MSDOS-formatado <b>ne uzeblas</b>."
+
+#: floppy.cpp:146 floppy.cpp:179 floppy.cpp:569
+#, kde-format
+msgid "ext2"
+msgstr "ext2"
+
+#: floppy.cpp:148 floppy.cpp:181
+#, kde-format
+msgid "Program mke2fs found."
+msgstr "Programo mke2fs trovita."
+
+#: floppy.cpp:150 floppy.cpp:183
+#, kde-format
+msgid "Program mke2fs <b>not found</b>. Ext2 formatting <b>not available</b>"
+msgstr "Programo mke2fs <b>ne trovita</b>. Ext2-formatado <b>ne uzeblas</b>."
+
+#: floppy.cpp:154 floppy.cpp:588
+#, kde-format
+msgid "Minix"
+msgstr "Minix"
+
+#: floppy.cpp:156
+#, kde-format
+msgctxt "Linux"
+msgid "Program mkfs.minix found."
+msgstr "Programo mkfs.minix trovita."
+
+#: floppy.cpp:158
+#, kde-format
+msgctxt "Linux"
+msgid ""
+"Program mkfs.minix <b>not found</b>. Minix formatting <b>not available</b>"
+msgstr ""
+"Programo mkfs.minix <b>ne trovita</b>. Minix-formatado <b>ne uzeblas</b>."
+
+#: floppy.cpp:161
+#, kde-format
+msgctxt "BSD"
+msgid "KFloppy supports two file formats under BSD: MS-DOS and UFS"
+msgstr "KDisketo subtenas du dosierformatojn ĉe BSD: MS-DOS kaj UFS"
+
+#: floppy.cpp:165
+#, kde-format
+msgctxt "BSD"
+msgid "Program newfs_msdos found."
+msgstr "Programo newfs_msdos trovita."
+
+#: floppy.cpp:167
+#, kde-format
+msgctxt "BSD"
+msgid ""
+"Program newfs_msdos <b>not found</b>. MSDOS formatting <b>not available</b>."
+msgstr ""
+"Programo newfs_msdos <b>ne trovita</b>. MSDOS-formatado <b>ne uzeblas</b>."
+
+#: floppy.cpp:171 floppy.cpp:487 floppy.cpp:580
+#, kde-format
+msgid "UFS"
+msgstr "UFS"
+
+#: floppy.cpp:173
+#, kde-format
+msgctxt "BSD"
+msgid "Program newfs found."
+msgstr "Programo newfs trovita."
+
+#: floppy.cpp:175
+#, kde-format
+msgctxt "BSD"
+msgid "Program newfs <b>not found</b>. UFS formatting <b>not available</b>."
+msgstr "Programo newfs <b>ne trovita</b>. UFS-formatado <b>ne uzeblas</b>."
+
+#: floppy.cpp:189
+#, kde-format
+msgid "&Formatting"
+msgstr "&Formatado"
+
+#: floppy.cpp:192
+#, kde-format
+msgid "Q&uick format"
+msgstr "&Rapida formatado"
+
+#: floppy.cpp:196
+#, kde-format
+msgid ""
+"<qt>Quick format is only a high-level format: it creates only a file system."
+"</qt>"
+msgstr ""
+"<qt>Rapida formatado estas nur altnivela formatado: ĝi kreas nur "
+"dosiersistemon.</qt>"
+
+#: floppy.cpp:199
+#, kde-format
+msgid "&Zero out and quick format"
+msgstr "&Nulplenigo kaj rapida formatado"
+
+#: floppy.cpp:202
+#, kde-format
+msgid ""
+"<qt>This first erases the floppy by writing zeros and then it creates the "
+"file system.</qt>"
+msgstr ""
+"<qt>Ĉi tio unue forviŝas la disketon skribante nulojn kaj poste kreas la "
+"dosiersistemon.</qt>"
+
+#: floppy.cpp:204
+#, kde-format
+msgid "Fu&ll format"
+msgstr "&Plena formatado"
+
+#: floppy.cpp:207
+#, kde-format
+msgid ""
+"Full format is a low-level and high-level format. It erases everything on "
+"the disk."
+msgstr ""
+"Plena formatado estas malaltnivela kaj altnivela formatado. Ĝi forviŝas ĉion "
+"sur la disko."
+
+#: floppy.cpp:216
+#, kde-format
+msgid "Program fdformat found."
+msgstr "Programo fdformat trovita."
+
+#: floppy.cpp:220
+#, kde-format
+msgid "Program fdformat <b>not found</b>. Full formatting <b>disabled</b>."
+msgstr ""
+"Programo fdformat <b>ne trovita</b>. Plena formatado <b>ne uzeblas</b>."
+
+#: floppy.cpp:226
+#, kde-format
+msgid "Program dd found."
+msgstr "Programo dd trovita."
+
+#: floppy.cpp:229
+#, kde-format
+msgid "Program dd <b>not found</b>. Zeroing-out <b>disabled</b>."
+msgstr "Programo dd <b>ne trovita</b>. Nulplenigo <b>ne uzeblas</b>."
+
+#: floppy.cpp:234
+#, kde-format
+msgid "&Verify integrity"
+msgstr "&Kontrolu la integrecon"
+
+#: floppy.cpp:238
+#, kde-format
+msgid ""
+"<qt>Check this if you want the floppy disk to be checked after formatting. "
+"Please note that the floppy will be checked twice if you have selected full "
+"formatting.</qt>"
+msgstr ""
+"<qt>Ŝaltu ĉi tion se vi volas kontroli la disketon post la formatado. "
+"Bonvolu rimarki ke la disketo kontrolotas dufoje se vi elektis la plenan "
+"formatadon.</qt>"
+
+#: floppy.cpp:243
+#, kde-format
+msgid "Volume la&bel:"
+msgstr "U&ja nomo:"
+
+#: floppy.cpp:247
+#, kde-format
+msgid ""
+"<qt>Check this if you want a volume label for your floppy. Please note that "
+"Minix does not support labels at all.</qt>"
+msgstr ""
+"<qt>Ŝaltu ĉi tion se vi volas doni ujnomon al via disketo. Bonvolu rimarki "
+"ke Minix ne subtenas la etikedojn neniel.</qt>"
+
+#: floppy.cpp:256 floppy.cpp:652
+#, kde-format
+msgctxt "Volume label, maximal 11 characters"
+msgid "KDE Floppy"
+msgstr "KDisketo"
+
+#: floppy.cpp:260
+#, kde-format
+msgid ""
+"<qt>This is for the volume label. Due to a limitation of MS-DOS the label "
+"can only be 11 characters long. Please note that Minix does not support "
+"labels, whatever you enter here.</qt>"
+msgstr ""
+"<qt>Ĉi tio estas la ujnomo. Pro limigo de MS-DOS la etikedo povas enhavi nur "
+"11 literojn. Bonvolu rimarki, ke Minix ne subtenas etikedojn, malgraŭ ĉio, "
+"kion vi enmetus ĉie.</qt>"
+
+#: floppy.cpp:270 floppy.cpp:469
+#, kde-format
+msgid "&Format"
+msgstr "&Formatu"
+
+#: floppy.cpp:276
+#, kde-format
+msgid "<qt>Click here to start formatting.</qt>"
+msgstr "<qt>Klaku ĉi tie por komenci la formatadon.</qt>"
+
+#: floppy.cpp:301
+#, kde-format
+msgid "<qt>This is the status window, where error messages are displayed.</qt>"
+msgstr "<qt>Ĉi tio estas la stata fenestro, kie erarmesaĝoj montriĝas.</qt>"
+
+#: floppy.cpp:314
+#, kde-format
+msgid "<qt>Shows progress of the format.</qt>"
+msgstr "<qt>Montras la plenumon de la formatado.</qt>"
+
+#: floppy.cpp:323
+#, kde-format
+msgid ""
+"KFloppy cannot find any of the needed programs for creating file systems; "
+"please check your installation.<br /><br />Log:"
+msgstr ""
+"KDisketo ne eblas trovi ian ajn bezonan programon por krei dosiersistemojn. "
+"Bonvolu kontroli vian instalaĵon. <br /> <br />Raporto:"
+
+#: floppy.cpp:355
+#, kde-format
+msgid "KDE Floppy Formatter"
+msgstr "KDE disketa formatilo"
+
+#: floppy.cpp:488
+#, kde-format
+msgctxt "BSD"
+msgid "Formatting with BSD on a user-given device is only possible with UFS"
+msgstr "Ĉe BSD, la formatado per uzanta aparato nur eblas kun UFS"
+
+#: floppy.cpp:495
+#, kde-format
+msgid ""
+"<qt>Formatting will erase all data on the device:<br/><b>%1</b><br/>(Please "
+"check the correctness of the device name.)<br/>Are you sure you wish to "
+"proceed?</qt>"
+msgstr ""
+"<qt>Formatado forviŝos ĉiun datumon sur la disko: <br/><b>%1</b> <br/"
+">(Bonvolu kontroli ke la aparata nomo estas ĝusta.) <br/>Ĉu vi vere volas "
+"daŭrigi?</qt>"
+
+#: floppy.cpp:499 floppy.cpp:511
+#, kde-format
+msgid "Proceed?"
+msgstr "Daŭrigu?"
+
+#: floppy.cpp:505
+#, kde-format
+msgid "Full formatting of a user-given device is not possible."
+msgstr "Plena formatado por uzanta aparato ne eblas."
+
+#: floppy.cpp:509
+#, kde-format
+msgid ""
+"Formatting will erase all data on the disk.\n"
+"Are you sure you wish to proceed?"
+msgstr ""
+"Formatado forviŝos ĉiun datumon sur la disko.\n"
+"Ĉu vi vere volas daŭrigi?"
+
+#: format.cpp:247
+#, kde-format
+msgid "Unexpected drive number %1."
+msgstr "Neatendita legila numero %1."
+
+#: format.cpp:257
+#, kde-format
+msgid "Unexpected density number %1."
+msgstr "Neatendita denseca numero %1."
+
+#: format.cpp:270
+#, kde-format
+msgid "Cannot find a device for drive %1 and density %2."
+msgstr "Ne eblis trovi aparaton por legilo %1 kaj denseco %2."
+
+#: format.cpp:284
+#, kde-format
+msgid ""
+"Cannot access %1\n"
+"Make sure that the device exists and that you have write permission to it."
+msgstr ""
+"Ne povas aliri %1\n"
+"Certigu, ke la aparato ekzistas kaj ke vi havas skribrajton por ĝi."
+
+#: format.cpp:316
+#, kde-format
+msgid "The program %1 terminated with an error."
+msgstr "La programo %1 finis erare."
+
+#: format.cpp:320
+#, kde-format
+msgid "The program %1 terminated abnormally."
+msgstr "La programo %1 finis nenormale."
+
+#: format.cpp:377 format.cpp:508 format.cpp:597 format.cpp:691 format.cpp:762
+#: format.cpp:852
+#, kde-format
+msgid "Internal error: device not correctly defined."
+msgstr "Ena eraro: aparato malĝuste difinita."
+
+#: format.cpp:383
+#, kde-format
+msgid "Cannot find fdformat."
+msgstr "Ne eblis trovi fdformat."
+
+#: format.cpp:410
+#, kde-format
+msgid "Could not start fdformat."
+msgstr "Ne eblis lanĉi fdformat."
+
+#: format.cpp:432
+#, kde-format
+msgid "Error formatting track %1."
+msgstr "Eraro dum la formatado de la trako %1."
+
+#: format.cpp:435 format.cpp:460
+#, kde-format
+msgid ""
+"Cannot access floppy or floppy drive.\n"
+"Please insert a floppy and make sure that you have selected a valid floppy "
+"drive."
+msgstr ""
+"Ne eblas aliri la disketon aŭ la disketlegilon.\n"
+"Bonvolu enmeti disketon kaj certigu, ke vi elektis validan disketlegilon."
+
+#: format.cpp:453
+#, kde-format
+msgid "Low-level formatting error at track %1."
+msgstr "Malaltnivela formata eraro ĉe la trako %1."
+
+#: format.cpp:456
+#, kde-format
+msgid "Low-level formatting error: %1"
+msgstr "Malaltnivela formata eraro: %1."
+
+#: format.cpp:467 format.cpp:647 format.cpp:803 format.cpp:889
+#, kde-format
+msgid ""
+"Device busy.\n"
+"Perhaps you need to unmount the floppy first."
+msgstr ""
+"Aparato okupata.\n"
+"Eble vi devus malkroĉi la disketon unue."
+
+#: format.cpp:472
+#, kde-format
+msgid "Low-level format error: %1"
+msgstr "Malaltnivela formata eraro: %1"
+
+#: format.cpp:514
+#, kde-format
+msgid "Cannot find dd."
+msgstr "Ne eblas trovi dd."
+
+#: format.cpp:528
+#, kde-format
+msgid "Could not start dd."
+msgstr "Ne eblis lanĉi dd."
+
+#: format.cpp:603
+#, kde-format
+msgid "Cannot find a program to create FAT filesystems."
+msgstr "Ne eblas trovi programon kiu kapablas krei FAT-dosiersistemojn."
+
+#: format.cpp:630
+#, kde-format
+msgid "Cannot start FAT format program."
+msgstr "Ne eblis lanĉi FAT-formatan programon."
+
+#: format.cpp:643 format.cpp:799 format.cpp:885
+#, kde-format
+msgid ""
+"Floppy is mounted.\n"
+"You need to unmount the floppy first."
+msgstr ""
+"Disketo kroĉatas.\n"
+"Vi bezonas malkroĉi ĝin unue."
+
+#: format.cpp:697
+#, kde-format
+msgctxt "BSD"
+msgid "Cannot find a program to create UFS filesystems."
+msgstr "Ne eblas trovi programon kiu kapablas krei UFS-dosiersistemojn."
+
+#: format.cpp:714
+#, kde-format
+msgctxt "BSD"
+msgid "Cannot start UFS format program."
+msgstr "Ne eblis lanĉi UFS-formatan programon."
+
+#: format.cpp:768
+#, kde-format
+msgid "Cannot find a program to create ext2 filesystems."
+msgstr "Ne eblas trovi programon kiu kapablas krei ext2 dosiersistemojn."
+
+#: format.cpp:786
+#, kde-format
+msgid "Cannot start ext2 format program."
+msgstr "Ne eblas lanĉi ext2-formatan programon."
+
+#: format.cpp:858
+#, kde-format
+msgid "Cannot find a program to create Minix filesystems."
+msgstr "Ne eblas trovi programon kiu kapablas krei Minix-dosiersistemojn."
+
+#: format.cpp:875
+#, kde-format
+msgid "Cannot start Minix format program."
+msgstr "Ne eblas lanĉi la Minix formatprogramon."
+
+#: main.cpp:51
+#, kde-format
+msgid "KFloppy"
+msgstr "KDisketo"
+
+#: main.cpp:53
+#, kde-format
+msgid "KDE Floppy Disk Utility"
+msgstr "KDE disketilo"
+
+#: main.cpp:55
+#, fuzzy, kde-format
+#| msgid ""
+#| "(c) 1997, Bernd Johannes Wuebben\n"
+#| "(c) 2001, Chris Howells\n"
+#| "(c) 2002, Adriaan de Groot\n"
+#| "(c) 2004, 2005, Nicolas Goutte"
+msgid ""
+"(c) 1997, Bernd Johannes Wuebben\n"
+"(c) 2001, Chris Howells\n"
+"(c) 2002, Adriaan de Groot\n"
+"(c) 2004, 2005, Nicolas Goutte\n"
+"(c) 2015, 2016, Wolfgang Bauer"
+msgstr ""
+"(c) 1997, Bernd Johannes Wuebben\n"
+"(c) 2001, Chris Howells\n"
+"(c) 2002, Adriaan de Groot\n"
+"(c) 2004, 2005, Nicolas Goutte"
+
+#: main.cpp:60
+#, kde-format
+msgid "KFloppy helps you format floppies with the filesystem of your choice."
+msgstr "KDisketo helpas vin por formati disketojn per la vola dosiersistemo."
+
+#: main.cpp:63
+#, kde-format
+msgid "Bernd Johannes Wuebben"
+msgstr "Bernd Johannes Wuebben"
+
+#: main.cpp:63
+#, kde-format
+msgid "Author and former maintainer"
+msgstr "Aŭtoro kaj antaŭa fleganto"
+
+#: main.cpp:64
+#, kde-format
+msgid "Chris Howells"
+msgstr "Chris Howells"
+
+#: main.cpp:64
+#, kde-format
+msgid "User interface re-design"
+msgstr "Novigis la grafikan uzantinterfacon"
+
+#: main.cpp:65
+#, kde-format
+msgid "Adriaan de Groot"
+msgstr "Adriaan de Groot"
+
+#: main.cpp:65
+#, kde-format
+msgid "Add BSD support"
+msgstr "Aldonis la BSD subtenon"
+
+#: main.cpp:66
+#, kde-format
+msgid "Nicolas Goutte"
+msgstr "Nicolas Goutte"
+
+#: main.cpp:66
+#, kde-format
+msgid "Make KFloppy work again for KDE 3.4"
+msgstr "Funkciigis denove KDisketon kun KDE 3.4"
+
+#: main.cpp:67
+#, kde-format
+msgid "Wolfgang Bauer"
+msgstr ""
+
+#: main.cpp:67
+#, kde-format
+msgid "Port KFloppy to KF5"
+msgstr ""
+
+#: main.cpp:69
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Wolfram Diestel,Steffen Pietsch,Pierre-Marie Pédrot"
+
+#: main.cpp:69
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "wolfram@steloj.de,Steffen.Pietsch@BerlinOnline.de,pedrotpmx@wanadoo.fr"
+
+#: main.cpp:77
+#, kde-format
+msgid "Default device"
+msgstr "Defaŭlta aparato"
+
+#~ msgid "Zero entire disk"
+#~ msgstr "Nulplenigu la diskon"
+
+#~ msgid ""
+#~ "Try to write zeroes to the entire disk before adding a filesystem, in "
+#~ "order to check the disk's integrity."
+#~ msgstr ""
+#~ "Provu nulplenigi la tutan diskon antaŭ ol aldoni dosiersistemon, por "
+#~ "kontroli la diskan integrecon."
+
+#~ msgid "Enable softupdates"
+#~ msgstr "Ebligu programajn ĝisdatigojn"
+
+#~ msgid "UFS Zip100"
+#~ msgstr "UFS Zip100"
+
+#~ msgid "Cannot start dd to zero disk."
+#~ msgstr "Ne eblis lanĉi dd por nulplenigi la diskon."
+
+#~ msgid "Zeroing disk..."
+#~ msgstr "Nulplenigante la diskon..."
+
+#~ msgid "Zeroing disk failed."
+#~ msgstr "La nulplenigado fiaskis."
+
+#~ msgid "Cannot start newfs."
+#~ msgstr "Ne eblis lanĉi newfs."
+
+#~ msgid "Making filesystem..."
+#~ msgstr "Kreante la dosiersistemon..."
+
+#~ msgid "newfs failed."
+#~ msgstr "newfs fiaskis."
+
+#~ msgid "Disk formatted successfully."
+#~ msgstr "Formatado de la disko sukcesis."
+
+#~ msgid "Zeroing block %1 of %2..."
+#~ msgstr "Nuplenigante blokon %1 el %2..."

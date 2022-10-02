@@ -1,0 +1,708 @@
+# translation of kfloppy.po to Français
+# traduction de kfloppy.po en français
+# translation of kfloppy.po to
+# KTranslator Generated File
+# Copyright (C) 2003,2004, 2005, 2008 Free Software Foundation, Inc.
+# Robert Jacolin <rjacolin@ifrance.com>, 2003,2004.
+# Matthieu Robin <kde@macolu.org>, 2003.
+# Matthieu Robin <kde@macolu.org>, 2005.
+# Matthieu Robin <matthieu@macolu.org>, 2005.
+# Francescu Garoby <windu.2b@gmail.com>, 2008.
+# Jean-Jacques FINAZZI <mrjay01@users.sourceforge.net>, 2008.
+# Sébastien Renard <Sebastien.Renard@digitalfox.org>, 2008.
+# xavier <xavier.besnard@neuf.fr>, 2013.
+# Johnny Jazeix <jazeix@gmail.com>, 2017.
+#
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: kfloppy\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-01-12 00:48+0000\n"
+"PO-Revision-Date: 2017-05-19 22:07+0100\n"
+"Last-Translator: Johnny Jazeix <jazeix@gmail.com>\n"
+"Language-Team: French <kde-francophone@kde.org>\n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Generator: Lokalize 2.0\n"
+"X-Environment: kde\n"
+"X-Accelerator-Marker: &\n"
+"X-Text-Markup: kde4\n"
+
+#: floppy.cpp:81
+#, kde-format
+msgid "Floppy &drive:"
+msgstr "Lecteur de &disquettes :"
+
+#: floppy.cpp:89 floppy.cpp:364 floppy.cpp:654
+#, kde-format
+msgctxt "Primary floppy drive"
+msgid "Primary"
+msgstr "Primaire"
+
+#: floppy.cpp:90 floppy.cpp:366
+#, kde-format
+msgctxt "Secondary floppy drive"
+msgid "Secondary"
+msgstr "Secondaire"
+
+#: floppy.cpp:92
+#, kde-format
+msgid "<qt>Select the floppy drive.</qt>"
+msgstr "<qt>Sélectionnez le lecteur de disquettes.</qt>"
+
+#: floppy.cpp:98
+#, kde-format
+msgid "&Size:"
+msgstr "&Taille :"
+
+#: floppy.cpp:104 floppy.cpp:656
+#, kde-format
+msgid "Auto-Detect"
+msgstr "Détection automatique"
+
+#: floppy.cpp:106 floppy.cpp:372 floppy.cpp:658
+#, kde-format
+msgid "3.5\" 1.44MB"
+msgstr "3,5 pouces - 1,44 Mo"
+
+#: floppy.cpp:107 floppy.cpp:374
+#, kde-format
+msgid "3.5\" 720KB"
+msgstr "3,5 pouces - 720 ko"
+
+#: floppy.cpp:108 floppy.cpp:376
+#, kde-format
+msgid "5.25\" 1.2MB"
+msgstr "5,25 pouces - 1,2 Mo"
+
+#: floppy.cpp:109 floppy.cpp:378
+#, kde-format
+msgid "5.25\" 360KB"
+msgstr "5,25 pouces - 360 ko"
+
+#: floppy.cpp:112
+#, kde-format
+msgid "<qt>This allows you to select the floppy disk's size and density.</qt>"
+msgstr ""
+"<qt>Ceci vous permet de choisir la taille et la densité de votre disquette.</"
+"qt>"
+
+#: floppy.cpp:119
+#, kde-format
+msgid "F&ile system:"
+msgstr "Système de f&ichiers :"
+
+#: floppy.cpp:126 floppy.cpp:136
+#, kde-format
+msgctxt "Linux"
+msgid ""
+"KFloppy supports three file formats under Linux: MS-DOS, Ext2, and Minix"
+msgstr ""
+"KFloppy prend en charge trois systèmes de fichiers sous Linux : « MS-DOS », "
+"« Ext2 » et « Minix »."
+
+#: floppy.cpp:128
+#, kde-format
+msgctxt "BSD"
+msgid "KFloppy supports three file formats under BSD: MS-DOS, UFS, and Ext2"
+msgstr ""
+"KFloppy prend en charge trois systèmes de fichiers sous BSD : « MS-DOS », "
+"« UFS » et « Ext2 »."
+
+#: floppy.cpp:138 floppy.cpp:163 floppy.cpp:558 floppy.cpp:660
+#, kde-format
+msgid "DOS"
+msgstr "DOS"
+
+#: floppy.cpp:140
+#, kde-format
+msgctxt "Linux"
+msgid "Program mkdosfs found."
+msgstr "Programme « mkdosfs » trouvé."
+
+#: floppy.cpp:142
+#, kde-format
+msgctxt "Linux"
+msgid ""
+"Program mkdosfs <b>not found</b>. MSDOS formatting <b>not available</b>."
+msgstr ""
+"<b>Impossible</b> de trouver le programme « mkdosfs ». Formatage « MS-DOS » "
+"<b>non disponible</b>."
+
+#: floppy.cpp:146 floppy.cpp:179 floppy.cpp:569
+#, kde-format
+msgid "ext2"
+msgstr "ext2"
+
+#: floppy.cpp:148 floppy.cpp:181
+#, kde-format
+msgid "Program mke2fs found."
+msgstr "Programme « mke2fs » trouvé."
+
+#: floppy.cpp:150 floppy.cpp:183
+#, kde-format
+msgid "Program mke2fs <b>not found</b>. Ext2 formatting <b>not available</b>"
+msgstr ""
+"<b>Impossible de trouver</b> le programme « mke2fs ». Formatage « ext2 » "
+"<b>non disponible</b>."
+
+#: floppy.cpp:154 floppy.cpp:588
+#, kde-format
+msgid "Minix"
+msgstr "Minix"
+
+#: floppy.cpp:156
+#, kde-format
+msgctxt "Linux"
+msgid "Program mkfs.minix found."
+msgstr "Programme « mkfs.minix » trouvé."
+
+#: floppy.cpp:158
+#, kde-format
+msgctxt "Linux"
+msgid ""
+"Program mkfs.minix <b>not found</b>. Minix formatting <b>not available</b>"
+msgstr ""
+"<b>Impossible de trouver</b> le programme « mkfs.minix ». Formatage "
+"« Minix » <b>non disponible</b>."
+
+#: floppy.cpp:161
+#, kde-format
+msgctxt "BSD"
+msgid "KFloppy supports two file formats under BSD: MS-DOS and UFS"
+msgstr ""
+"KFloppy prend en charge deux systèmes de fichiers sous BSD : « MS-DOS » et "
+"« UFS »"
+
+#: floppy.cpp:165
+#, kde-format
+msgctxt "BSD"
+msgid "Program newfs_msdos found."
+msgstr "Programme « newfs_msdos » trouvé."
+
+#: floppy.cpp:167
+#, kde-format
+msgctxt "BSD"
+msgid ""
+"Program newfs_msdos <b>not found</b>. MSDOS formatting <b>not available</b>."
+msgstr ""
+"<b>Impossible de trouver</b> le programme « newfs_msdos ». Formatage « MS-"
+"DOS » <b>non disponible</b>."
+
+#: floppy.cpp:171 floppy.cpp:487 floppy.cpp:580
+#, kde-format
+msgid "UFS"
+msgstr "UFS"
+
+#: floppy.cpp:173
+#, kde-format
+msgctxt "BSD"
+msgid "Program newfs found."
+msgstr "Programme « newfs » trouvé."
+
+#: floppy.cpp:175
+#, kde-format
+msgctxt "BSD"
+msgid "Program newfs <b>not found</b>. UFS formatting <b>not available</b>."
+msgstr ""
+"<b>Impossible de trouver</b> le programme « newfs ». Formatage « UFS » "
+"<b>non disponible</b>."
+
+#: floppy.cpp:189
+#, kde-format
+msgid "&Formatting"
+msgstr "&Formatage"
+
+#: floppy.cpp:192
+#, kde-format
+msgid "Q&uick format"
+msgstr "Formatage &rapide"
+
+#: floppy.cpp:196
+#, kde-format
+msgid ""
+"<qt>Quick format is only a high-level format: it creates only a file system."
+"</qt>"
+msgstr ""
+"<qt>Le formatage rapide n'est qu'un formatage de haut niveau. Il ne crée "
+"qu'un système de fichiers.</qt>"
+
+#: floppy.cpp:199
+#, kde-format
+msgid "&Zero out and quick format"
+msgstr "Écriture de &zéros et formatage rapide"
+
+#: floppy.cpp:202
+#, kde-format
+msgid ""
+"<qt>This first erases the floppy by writing zeros and then it creates the "
+"file system.</qt>"
+msgstr ""
+"<qt>Ce mode efface, tout d'abord, la disquette en y écrivant des zéros, puis "
+"créé le système de fichiers.</qt>"
+
+#: floppy.cpp:204
+#, kde-format
+msgid "Fu&ll format"
+msgstr "Formatage comp&let"
+
+#: floppy.cpp:207
+#, kde-format
+msgid ""
+"Full format is a low-level and high-level format. It erases everything on "
+"the disk."
+msgstr ""
+"Le formatage complet est un formatage de bas niveau et de haut niveau. Il "
+"efface tout ce que contient le disque."
+
+#: floppy.cpp:216
+#, kde-format
+msgid "Program fdformat found."
+msgstr "Programme « fdformat » trouvé."
+
+#: floppy.cpp:220
+#, kde-format
+msgid "Program fdformat <b>not found</b>. Full formatting <b>disabled</b>."
+msgstr ""
+"<b>Impossible de trouver</b> le programme « fdformat ». Formatage complet "
+"<b>désactivé</b>."
+
+#: floppy.cpp:226
+#, kde-format
+msgid "Program dd found."
+msgstr "Programme « dd » trouvé."
+
+#: floppy.cpp:229
+#, kde-format
+msgid "Program dd <b>not found</b>. Zeroing-out <b>disabled</b>."
+msgstr ""
+"<b>Impossible de trouver</b> le programme « dd ». Effacement avec des "
+"écritures de zéros <b>désactivé</b>."
+
+#: floppy.cpp:234
+#, kde-format
+msgid "&Verify integrity"
+msgstr "&Vérifier l'intégrité"
+
+#: floppy.cpp:238
+#, kde-format
+msgid ""
+"<qt>Check this if you want the floppy disk to be checked after formatting. "
+"Please note that the floppy will be checked twice if you have selected full "
+"formatting.</qt>"
+msgstr ""
+"<qt>Cochez ceci si vous voulez que la disquette soit vérifiée après le "
+"formatage. Veuillez noter qu'elle sera vérifiée deux fois si vous avez "
+"choisi un formatage complet.</qt>"
+
+#: floppy.cpp:243
+#, kde-format
+msgid "Volume la&bel:"
+msgstr "Nom de &volume :"
+
+#: floppy.cpp:247
+#, kde-format
+msgid ""
+"<qt>Check this if you want a volume label for your floppy. Please note that "
+"Minix does not support labels at all.</qt>"
+msgstr ""
+"<qt>Cochez ceci si vous voulez un nom de volume pour votre disquette. "
+"Veuillez noter que « Minix » ne prend pas du tout en charge les noms de "
+"volume.</qt>"
+
+#: floppy.cpp:256 floppy.cpp:652
+#, kde-format
+msgctxt "Volume label, maximal 11 characters"
+msgid "KDE Floppy"
+msgstr "Disquette KDE"
+
+#: floppy.cpp:260
+#, kde-format
+msgid ""
+"<qt>This is for the volume label. Due to a limitation of MS-DOS the label "
+"can only be 11 characters long. Please note that Minix does not support "
+"labels, whatever you enter here.</qt>"
+msgstr ""
+"<qt>Ceci concerne le nom du volume. En raison d'une limitation de « MS-"
+"DOS », le nom ne peut pas contenir plus de 11 caractères. Veuillez noter que "
+"« Minix » ne prend pas du tout en charge les noms de volume, quel que soit "
+"ce que vous saisissez ici.</qt>"
+
+#: floppy.cpp:270 floppy.cpp:469
+#, kde-format
+msgid "&Format"
+msgstr "&Formater"
+
+#: floppy.cpp:276
+#, kde-format
+msgid "<qt>Click here to start formatting.</qt>"
+msgstr "<qt>Cliquez ici pour commencer le formatage.</qt>"
+
+#: floppy.cpp:301
+#, kde-format
+msgid "<qt>This is the status window, where error messages are displayed.</qt>"
+msgstr ""
+"<qt>Ceci est la fenêtre d'état, dans laquelle sont affichés les messages "
+"d'erreur.</qt>"
+
+#: floppy.cpp:314
+#, kde-format
+msgid "<qt>Shows progress of the format.</qt>"
+msgstr "<qt>Affiche la progression du formatage.</qt>"
+
+#: floppy.cpp:323
+#, kde-format
+msgid ""
+"KFloppy cannot find any of the needed programs for creating file systems; "
+"please check your installation.<br /><br />Log:"
+msgstr ""
+"KFloppy n'a trouvé aucun programme permettant de créer un système de "
+"fichiers. Veuillez vérifier votre installation.<br /><br />Journal :"
+
+#: floppy.cpp:355
+#, kde-format
+msgid "KDE Floppy Formatter"
+msgstr "Formateur KDE de disquettes "
+
+#: floppy.cpp:488
+#, kde-format
+msgctxt "BSD"
+msgid "Formatting with BSD on a user-given device is only possible with UFS"
+msgstr ""
+"Le formatage sous BSD d'un périphérique spécifié par l'utilisateur n'est "
+"possible qu'en « UFS »."
+
+#: floppy.cpp:495
+#, kde-format
+msgid ""
+"<qt>Formatting will erase all data on the device:<br/><b>%1</b><br/>(Please "
+"check the correctness of the device name.)<br/>Are you sure you wish to "
+"proceed?</qt>"
+msgstr ""
+"<qt>Le formatage effacera toutes les données sur le périphérique : <br/><b>"
+"%1</b><br/>Veuillez vérifier l'exactitude du nom du périphérique. <br/"
+">Voulez-vous vraiment continuer ?</qt>"
+
+#: floppy.cpp:499 floppy.cpp:511
+#, kde-format
+msgid "Proceed?"
+msgstr "Continuer ?"
+
+#: floppy.cpp:505
+#, kde-format
+msgid "Full formatting of a user-given device is not possible."
+msgstr "Impossible d'effectuer un formatage complet du périphérique indiqué."
+
+#: floppy.cpp:509
+#, kde-format
+msgid ""
+"Formatting will erase all data on the disk.\n"
+"Are you sure you wish to proceed?"
+msgstr ""
+"Le formatage effacera toutes les données sur le disque.\n"
+"Voulez-vous vraiment continuer ?"
+
+#: format.cpp:247
+#, kde-format
+msgid "Unexpected drive number %1."
+msgstr "Numéro de lecteur inattendu %1."
+
+#: format.cpp:257
+#, kde-format
+msgid "Unexpected density number %1."
+msgstr "Numéro de densité inattendu %1."
+
+#: format.cpp:270
+#, kde-format
+msgid "Cannot find a device for drive %1 and density %2."
+msgstr ""
+"Impossible de trouver un périphérique pour le lecteur %1 de densité %2."
+
+#: format.cpp:284
+#, kde-format
+msgid ""
+"Cannot access %1\n"
+"Make sure that the device exists and that you have write permission to it."
+msgstr ""
+"Impossible d'accéder à %1\n"
+"Veuillez vous assurer que le périphérique existe et que vous avez les "
+"permissions nécessaires pour y écrire."
+
+#: format.cpp:316
+#, kde-format
+msgid "The program %1 terminated with an error."
+msgstr "Le programme « %1 » s'est terminé avec une erreur."
+
+#: format.cpp:320
+#, kde-format
+msgid "The program %1 terminated abnormally."
+msgstr "Le programme « %1 » s'est terminé de façon anormale."
+
+#: format.cpp:377 format.cpp:508 format.cpp:597 format.cpp:691 format.cpp:762
+#: format.cpp:852
+#, kde-format
+msgid "Internal error: device not correctly defined."
+msgstr "Erreur interne : périphérique incorrectement défini."
+
+#: format.cpp:383
+#, kde-format
+msgid "Cannot find fdformat."
+msgstr "Impossible de trouver le programme « fdformat »."
+
+#: format.cpp:410
+#, kde-format
+msgid "Could not start fdformat."
+msgstr "Impossible de démarrer le programme « fdformat »."
+
+#: format.cpp:432
+#, kde-format
+msgid "Error formatting track %1."
+msgstr "Erreur lors du formatage de la piste %1."
+
+#: format.cpp:435 format.cpp:460
+#, kde-format
+msgid ""
+"Cannot access floppy or floppy drive.\n"
+"Please insert a floppy and make sure that you have selected a valid floppy "
+"drive."
+msgstr ""
+"Impossible d'accéder à la disquette ou au lecteur.\n"
+"Veuillez insérer une disquette et vous assurer que vous avez sélectionné un "
+"lecteur de disquette valable."
+
+#: format.cpp:453
+#, kde-format
+msgid "Low-level formatting error at track %1."
+msgstr "Erreur lors du formatage de bas niveau de la piste %1."
+
+#: format.cpp:456
+#, kde-format
+msgid "Low-level formatting error: %1"
+msgstr "Erreur lors du formatage de bas niveau : %1."
+
+#: format.cpp:467 format.cpp:647 format.cpp:803 format.cpp:889
+#, kde-format
+msgid ""
+"Device busy.\n"
+"Perhaps you need to unmount the floppy first."
+msgstr ""
+"Périphérique occupé.\n"
+"Peut-être devez-vous d'abord libérer la disquette ?"
+
+#: format.cpp:472
+#, kde-format
+msgid "Low-level format error: %1"
+msgstr "Erreur lors du formatage de bas niveau : %1."
+
+#: format.cpp:514
+#, kde-format
+msgid "Cannot find dd."
+msgstr "Impossible de trouver le programme « dd »."
+
+#: format.cpp:528
+#, kde-format
+msgid "Could not start dd."
+msgstr "Impossible de démarrer le programme « dd »."
+
+#: format.cpp:603
+#, kde-format
+msgid "Cannot find a program to create FAT filesystems."
+msgstr ""
+"Impossible de trouver un programme pour créer un système de fichiers de type "
+"« FAT »."
+
+#: format.cpp:630
+#, kde-format
+msgid "Cannot start FAT format program."
+msgstr "Impossible de démarrer un programme de formatage en « FAT »."
+
+#: format.cpp:643 format.cpp:799 format.cpp:885
+#, kde-format
+msgid ""
+"Floppy is mounted.\n"
+"You need to unmount the floppy first."
+msgstr ""
+"La disquette est montée.\n"
+"Vous devez d'abord la libérer."
+
+#: format.cpp:697
+#, kde-format
+msgctxt "BSD"
+msgid "Cannot find a program to create UFS filesystems."
+msgstr ""
+"Impossible de trouver un programme pour créer un système de fichiers de type "
+"« UFS »."
+
+#: format.cpp:714
+#, kde-format
+msgctxt "BSD"
+msgid "Cannot start UFS format program."
+msgstr "Impossible de démarrer un programme de formatage en « UFS »."
+
+#: format.cpp:768
+#, kde-format
+msgid "Cannot find a program to create ext2 filesystems."
+msgstr ""
+"Impossible de trouver un programme pour créer un système de fichiers de type "
+"« ext2 »."
+
+#: format.cpp:786
+#, kde-format
+msgid "Cannot start ext2 format program."
+msgstr "Impossible de démarrer un programme de formatage en « ext2 »."
+
+#: format.cpp:858
+#, kde-format
+msgid "Cannot find a program to create Minix filesystems."
+msgstr ""
+"Impossible de trouver un programme pour créer un système de fichiers de type "
+"« Minix »."
+
+#: format.cpp:875
+#, kde-format
+msgid "Cannot start Minix format program."
+msgstr "Impossible de démarrer un programme de formatage en « Minix »."
+
+#: main.cpp:51
+#, kde-format
+msgid "KFloppy"
+msgstr "KFloppy"
+
+#: main.cpp:53
+#, kde-format
+msgid "KDE Floppy Disk Utility"
+msgstr "Utilitaire KDE de formatage de disquettes"
+
+#: main.cpp:55
+#, kde-format
+msgid ""
+"(c) 1997, Bernd Johannes Wuebben\n"
+"(c) 2001, Chris Howells\n"
+"(c) 2002, Adriaan de Groot\n"
+"(c) 2004, 2005, Nicolas Goutte\n"
+"(c) 2015, 2016, Wolfgang Bauer"
+msgstr ""
+"(c) 1997, Bernd Johannes Wuebben\n"
+"(c) 2001, Chris Howells\n"
+"(c) 2002, Adriaan de Groot\n"
+"(c) 2004, 2005, Nicolas Goutte\n"
+"(c) 2015, 2016, Wolfgang Bauer"
+
+#: main.cpp:60
+#, kde-format
+msgid "KFloppy helps you format floppies with the filesystem of your choice."
+msgstr ""
+"KFloppy vous aide à formater des disquettes avec le système de fichiers de "
+"votre choix."
+
+#: main.cpp:63
+#, kde-format
+msgid "Bernd Johannes Wuebben"
+msgstr "Bernd Johannes Wuebben"
+
+#: main.cpp:63
+#, kde-format
+msgid "Author and former maintainer"
+msgstr "Auteur et précédent mainteneur"
+
+#: main.cpp:64
+#, kde-format
+msgid "Chris Howells"
+msgstr "Chris Howells"
+
+#: main.cpp:64
+#, kde-format
+msgid "User interface re-design"
+msgstr "Refonte de l'interface utilisateur"
+
+#: main.cpp:65
+#, kde-format
+msgid "Adriaan de Groot"
+msgstr "Adriaan de Groot"
+
+#: main.cpp:65
+#, kde-format
+msgid "Add BSD support"
+msgstr "Ajout de la prise en charge de BSD"
+
+#: main.cpp:66
+#, kde-format
+msgid "Nicolas Goutte"
+msgstr "Nicolas Goutte"
+
+#: main.cpp:66
+#, kde-format
+msgid "Make KFloppy work again for KDE 3.4"
+msgstr "Réparation de KFloppy pour KDE 3.4"
+
+#: main.cpp:67
+#, kde-format
+msgid "Wolfgang Bauer"
+msgstr "Wolfgang Bauer"
+
+#: main.cpp:67
+#, kde-format
+msgid "Port KFloppy to KF5"
+msgstr "Portage de KFloppy vers KF5"
+
+#: main.cpp:69
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Thibaut Cousin, Robert Jacolin, Francescu Garoby"
+
+#: main.cpp:69
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "cousin@kde.org, rjacolin@ifrance.com, windu.2b@gmail.com"
+
+#: main.cpp:77
+#, kde-format
+msgid "Default device"
+msgstr "Périphérique par défaut"
+
+#~ msgid "Zero entire disk"
+#~ msgstr "Effacer entièrement le disque avec des zéros"
+
+#~ msgid ""
+#~ "Try to write zeroes to the entire disk before adding a filesystem, in "
+#~ "order to check the disk's integrity."
+#~ msgstr ""
+#~ "Essayer d'effacer entièrement le disque avec des zéros avant d'y créer un "
+#~ "système de fichiers, afin de vérifier l'intégrité du disque."
+
+#~ msgid "Enable softupdates"
+#~ msgstr "Activer « Softupdates »"
+
+#~ msgid "UFS Zip100"
+#~ msgstr "UFS Zip100"
+
+#~ msgid "Cannot start dd to zero disk."
+#~ msgstr ""
+#~ "Impossible de démarrer « dd » pour effacer le disque avec des zéros."
+
+#~ msgid "Zeroing disk..."
+#~ msgstr "Effacement du disque avec des zéros..."
+
+#~ msgid "Zeroing disk failed."
+#~ msgstr "L'effacement du disque avec des zéros a échoué."
+
+#~ msgid "Cannot start newfs."
+#~ msgstr "Impossible de démarrer le programme « newfs »."
+
+#~ msgid "Making filesystem..."
+#~ msgstr "Construction du système de fichiers..."
+
+#~ msgid "newfs failed."
+#~ msgstr "Le programme « newfs » a échoué."
+
+#~ msgid "Disk formatted successfully."
+#~ msgstr "Le disque a été formaté avec succès."
+
+#~ msgid "Zeroing block %1 of %2..."
+#~ msgstr "Effacement du bloc %1 sur %2..."

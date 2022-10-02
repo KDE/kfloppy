@@ -1,0 +1,522 @@
+<?xml version="1.0" ?>
+<!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN" "dtd/kdedbx45.dtd" [
+  <!ENTITY kappname "&kfloppy;">
+  <!ENTITY package "kdeutils">
+  <!ENTITY % Russian "INCLUDE"
+> <!-- change language only here -->
+  <!ENTITY % addindex "IGNORE">
+]>
+
+<book lang="&language;">
+<bookinfo>
+
+<title
+>Руководство &kfloppy;</title>
+
+<authorgroup>
+<author
+><firstname
+>Thad</firstname
+> <surname
+>McGinnis</surname
+> <affiliation
+><address
+><email
+>ctmcginnis@compuserve.com</email>
+</address
+></affiliation
+> </author>
+
+<othercredit role="developer"
+><firstname
+>Bernd</firstname
+> <othername
+>Johannes</othername
+> <surname
+>Wuebben</surname
+> <affiliation
+><address
+><email
+>wuebben@math.cornell.edu</email
+></address
+></affiliation>
+<contrib
+>Разработчик</contrib>
+
+</othercredit>
+
+<othercredit role="reviewer"
+><firstname
+>Lauri</firstname
+> <surname
+>Watts</surname
+> <contrib
+>Редактор</contrib>
+<affiliation
+><address
+><email
+>lauri@kde.org</email
+></address
+></affiliation>
+</othercredit>
+<othercredit role="translator"
+><firstname
+>Альберт</firstname
+><surname
+>Валиев</surname
+><affiliation
+><address
+><email
+>arkstone@mail.ru</email
+></address
+></affiliation
+><contrib
+>Перевод на русский</contrib
+></othercredit
+> 
+</authorgroup>
+
+<date
+>2003-09-16</date>
+<releaseinfo
+>2.1</releaseinfo>
+
+<copyright>
+<year
+>2000</year>
+<holder
+>Thad McGinnis</holder>
+</copyright>
+
+<legalnotice
+>&FDLNotice;</legalnotice>
+
+<abstract
+><para
+>&kfloppy; - утилита, позволяющая легко форматировать гибкие диски размером 3.5"и 5.25" дюймов.</para
+></abstract>
+
+<keywordset>
+<keyword
+>KDE</keyword>
+<keyword
+>kfloppy</keyword>
+<keyword
+>floppy</keyword>
+<keyword
+>Форматирование</keyword>
+</keywordset>
+
+</bookinfo>
+
+<chapter id="introduction">
+<title
+>Введение</title>
+
+<para
+>&kfloppy; - утилита, позволяющая легко форматировать гибкие диски размером 3.5"и 5.25" дюймов. </para>
+
+<important
+><para
+>Убедитесь в том, что ваша дискета <emphasis
+>не</emphasis
+> смонтирована. &kfloppy; не может форматировать смонтированные дискеты.</para
+></important>
+
+</chapter>
+
+<chapter id="usingkfloppy">
+<title
+>Использование &kfloppy; </title>
+
+<para
+>При запуске &kfloppy; открывается окно, в котором вы можете выбрать наиболее подходящие настройки и контролировать процесс форматирования дискет. Детальное описание этих настроек вы можете прочитать ниже.</para>
+
+<important
+><para
+>Убедитесь в том, что ваша дискета <emphasis
+>не</emphasis
+> смонтирована. &kfloppy; не может форматировать смонтированные дискеты.</para
+></important>
+
+<sect1 id="controlsettings">
+<title
+>Основные настройки</title>
+
+<para
+>В данных настройках вы можете выбрать дисковод, тип дискет и файловую систему для форматируемой дискеты.</para>
+
+<sect2 id="selectdrive">
+<title
+>Дисковод</title>
+
+<para
+>Нажав на стрелку в выпадающем меню с меткой <guilabel
+>Дисковод:</guilabel
+>, вы можете выбрать следующие типы дисковода:</para>
+
+<itemizedlist>
+<listitem
+><para
+>3.5" 1.44MB</para
+></listitem>
+<listitem
+><para
+>3.5" 720KB</para
+></listitem>
+<listitem
+><para
+>5.25" 1.2MB</para
+></listitem>
+<listitem
+><para
+>5.25" 360KB</para
+></listitem>
+</itemizedlist>
+
+<note>
+<para
+>Дискеты формата 800k, используемые дисководами &Mac;, не пригодны для использования на PC.</para>
+</note>
+</sect2>
+
+<sect2 id="filesystems">
+<title
+><guilabel
+>Файловые системы</guilabel
+></title>
+
+<para
+>При нажатии на стрелку в выпадающем меню с меткой Файловая система вы можете выбрать следующие типы файловой системы:</para>
+
+<variablelist>
+<varlistentry>
+<term
+>Dos</term>
+<listitem>
+<para
+>При выборе этой файловой системы &kfloppy; отформатирует вашу дискету под файловую систему, используемую в MSDOS/&Windows;. Выберите эту файловую систему, если вы собираетесь использовать дискету в этих операционных системах.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry
+> 
+<term
+>ext2</term>
+<listitem>
+<para
+>При выборе этой файловой системы &kfloppy; отформатирует вашу дискету под файловую систему, используемую в &Linux;. Выберите эту файловую систему, если вы собираетесь использовать дискету только в &Linux;.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+>UFS</term>
+<listitem>
+<para
+>При выборе этой файловой системы &kfloppy; отформатирует вашу дискету под файловую систему, используемую в FreeBSD. Выберите эту файловую систему, если вы собираетесь использовать дискету только в FreeBSD.</para>
+</listitem>
+</varlistentry>
+</variablelist>
+
+</sect2>
+</sect1>
+
+<sect1 id="formatting-options">
+<title
+>Параметры форматирования</title>
+<para
+>В центре окна &kfloppy; вы можете настроить некоторые параметры форматирования. При этом два верхних параметра являются взаимоисключающими.</para
+> <note
+><para
+>Под термином "Взаимоисключающие параметры" понимается ряд параметров, из которых можно выбрать только один. </para
+></note
+><para
+>Два нижних параметра предназначены для маркировки дискет. Детальное описание параметров представлено ниже:</para>
+
+<sect2>
+<title
+>Способ форматирования:</title>
+<para
+>&kfloppy; может форматировать дискету двумя способами:</para>
+<para>
+<variablelist>
+<varlistentry>
+<term
+>Быстрое форматирование</term>
+<listitem>
+<para
+>Форматирование этим способом просто создаст файловую систему на дискете. Все данные на дискете будут удалены. Однако если вы выберете плотность, отличную от плотности вашей дискеты, то &kfloppy; перераспределит дорожки и сектора перед созданием файловой системы.</para>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term
+>Полное форматирование</term>
+<listitem>
+<para
+>Форматирование этим способом перераспределяет дорожки и сектора, создаёт выбранную вами файловую систему и проверяет дискету на плохие сектора.</para>
+</listitem>
+</varlistentry>
+</variablelist>
+</para>
+</sect2>
+
+<sect2>
+<title
+>Проверить поверхность</title>
+
+<para
+>При включении данного параметра &kfloppy; проверит правильность форматирования и пометит найденные плохие сектора. </para>
+</sect2>
+
+<sect2>
+<title
+>Метка</title>
+
+<para
+>В двух нижних параметрах можно назначить метку для форматируемой дискеты. Метку для дискеты можно ввести в поле ввода, расположенное ниже флажка <guilabel
+>Метка:</guilabel
+>. После окончания форматирования метка будет записана на дискету.</para>
+
+</sect2>
+
+</sect1>
+
+<sect1 id="buttons">
+<title
+>Кнопки</title>
+<para
+>В правой части окна &kfloppy; расположены следующие три кнопки: </para>
+
+<variablelist>
+<varlistentry>
+<term
+><guibutton
+>Форматирование</guibutton
+></term
+> <listitem
+><para
+>Нажатие этой кнопки запускает процесс форматирования. Если вы уверены в правильности настроек, можете начать форматирование дискеты, нажав на эту кнопку. При этом вместо кнопки <guibutton
+>Форматирование</guibutton
+> на кнопке появится кнопка <guibutton
+>Отмена</guibutton
+>. Процесс форматирования будет отображаться в двух прямоугольных полях, расположенных в самом низу окна программы.</para>
+
+<para
+>Верхнее поле является индикатором состояния, в нем будет отображаться информация о ходе процесса, а также специфические детали форматирования и процесс проверки дискеты. </para>
+
+<para
+>В нижнем поле расположен индикатор выполнения, в котором отображается процесс форматирования, а затем и проверки поверхности в виде цветной полосы и числа. До того, как вы запустите процесс форматирования, это поле будет пустым, и по его центру будет видна только цифра 0%. Когда же вы начнёте форматировать дискету, цветная полоса будет постепенно, по мере выполнения, заполнять поле слева направо, а число по центру будет отображать ход выполнения задачи в процентах.</para>
+
+<important>
+<para
+>Убедитесь в том, что ваша дискета <emphasis
+>не</emphasis
+> смонтирована. &kfloppy; не может форматировать смонтированные дискеты.</para>
+</important>
+
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guibutton
+>Помощь</guibutton
+></term>
+<listitem>
+<para
+>Нажатие на эту кнопку запускает центр помощи &kde; с выводом справки по &kfloppy; (этот документ).</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guibutton
+>Сообщить об ошибке</guibutton
+></term>
+<listitem>
+<para
+>Сообщить об ошибке в программе команде разработчиков &kde;.</para>
+</listitem
+> 
+</varlistentry>
+
+<varlistentry>
+<term
+><guibutton
+>О программе KFloppy</guibutton
+></term>
+<listitem>
+<para
+>Нажатие этой кнопки выводит сведения о версии и авторах программы.</para>
+</listitem
+> 
+</varlistentry>
+
+<varlistentry>
+<term
+><guibutton
+>О KDE</guibutton
+></term>
+<listitem>
+<para
+>Нажатие этой кнопки выводит сведения о версии и авторах программы.</para>
+</listitem
+> 
+</varlistentry>
+
+
+<varlistentry>
+<term
+><guibutton
+>Выход</guibutton
+></term>
+<listitem>
+<para
+>Нажатие на эту кнопку закрывает &kfloppy;.</para>
+</listitem>
+</varlistentry>
+
+</variablelist>
+
+</sect1>
+</chapter>
+
+<chapter id="command-line">
+<title
+>Параметры командной строки</title>
+
+<para
+>Помимо запуска &kfloppy; из главного меню &kde;, вы можете запустить &kfloppy; из командной строки в окне терминала. При этом доступны несколько аргументов:</para
+> 
+
+<variablelist>
+<varlistentry>
+<term
+><command
+>kfloppy <option
+>--help</option
+></command
+></term>
+<listitem
+><para
+>Данная команда выводит справку по основным параметрам командной строки.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><command
+>kfloppy <option
+>--help-qt</option
+></command
+></term>
+<listitem
+><para
+>Данная команда выводит список параметров, с помощью которых вы можете настроить параметры &kfloppy;, связанные с библиотекой &Qt;.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry
+> 
+<term
+><command
+>kfloppy <option
+>--help-kde</option
+></command
+></term>
+<listitem>
+<para
+>Данная команда выводит список параметров, с помощью которых вы можете настроить параметры &kfloppy;, связанные с KDE.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><command
+>kfloppy <option
+>--help-all</option
+></command
+></term>
+<listitem>
+<para
+>Данная команда вывод список всех аргументов командной строки.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><command
+>kfloppy <option
+>--author</option
+></command
+></term>
+<listitem>
+<para
+>Данная команда выводит информацию об авторе &kfloppy; в окне терминала.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><command
+>kfloppy <option
+>--version</option
+></command
+></term>
+<listitem>
+<para
+>Данная команда выводит информацию о версии &Qt;, &kde;, и &kfloppy;. Эта информация также доступна при запуске команды <command
+>kfloppy <option
+>-V</option
+></command
+> </para>
+</listitem>
+</varlistentry>
+</variablelist
+> 
+
+</chapter
+> 
+
+<chapter id="credits">
+<title
+>Авторские права и лицензирование</title>
+
+<para
+>&kfloppy; - Copyright 2000 Bernd Johannes Wuebben <email
+>wuebben@math.cornell.edu</email
+></para>
+
+<para
+>Документация - Copyright 2000 by Thad McGinnis <email
+>ctmcginnis@compuserve.com</email
+>.</para>
+
+<para
+>Данная версия руководства пользователя &kfloppy; основана на оригинальной версии, написанной David Rugge <email
+>davidrugge@mindspring.com</email
+></para>
+&underFDL; &underGPL; </chapter>
+
+<appendix id="installation">
+<title
+>Установка</title>
+
+&install.intro.documentation;
+&install.compile.documentation;
+
+</appendix>
+</book>
+
+<!--
+Local Variables:
+mode: sgml
+sgml-minimize-attributes:nil
+sgml-general-insert-case:lower
+sgml-indent-step:0
+sgml-indent-data:nil
+End:
+
+// vim:ts=2:sw=2:tw=78:noet
+-->

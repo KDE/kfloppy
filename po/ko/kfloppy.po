@@ -1,0 +1,622 @@
+# Translation of kfloppy to Korean.
+# Copyright (C) 1999-2001, 2007-2008 Free Software Foundation, Inc.
+# Byeong-Chan Kim <redhands@linux.sarnag.net>, 1999.
+# Kim jaehwan <myri7@yahoo.co.kr>, 2001.
+# Shinjo Park <kde@peremen.name>, 2007, 2008, 2009, 2016, 2020.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: kfloppy\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-01-12 00:48+0000\n"
+"PO-Revision-Date: 2020-04-05 12:50+0200\n"
+"Last-Translator: Shinjo Park <kde@peremen.name>\n"
+"Language-Team: Korean <kde-kr@kde.org>\n"
+"Language: ko\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Lokalize 19.04.3\n"
+
+#: floppy.cpp:81
+#, kde-format
+msgid "Floppy &drive:"
+msgstr "플로피 드라이브(&D):"
+
+#: floppy.cpp:89 floppy.cpp:364 floppy.cpp:654
+#, kde-format
+msgctxt "Primary floppy drive"
+msgid "Primary"
+msgstr "주"
+
+#: floppy.cpp:90 floppy.cpp:366
+#, kde-format
+msgctxt "Secondary floppy drive"
+msgid "Secondary"
+msgstr "보조"
+
+#: floppy.cpp:92
+#, kde-format
+msgid "<qt>Select the floppy drive.</qt>"
+msgstr "<qt>플로피 드라이브를 선택하십시오.</qt>"
+
+#: floppy.cpp:98
+#, kde-format
+msgid "&Size:"
+msgstr "크기(&S):"
+
+#: floppy.cpp:104 floppy.cpp:656
+#, kde-format
+msgid "Auto-Detect"
+msgstr "자동 감지"
+
+#: floppy.cpp:106 floppy.cpp:372 floppy.cpp:658
+#, kde-format
+msgid "3.5\" 1.44MB"
+msgstr "3.5\" 1.44MB"
+
+#: floppy.cpp:107 floppy.cpp:374
+#, kde-format
+msgid "3.5\" 720KB"
+msgstr "3.5\" 720KB"
+
+#: floppy.cpp:108 floppy.cpp:376
+#, kde-format
+msgid "5.25\" 1.2MB"
+msgstr "5.25\" 1.2MB"
+
+#: floppy.cpp:109 floppy.cpp:378
+#, kde-format
+msgid "5.25\" 360KB"
+msgstr "5.25\" 360KB"
+
+#: floppy.cpp:112
+#, kde-format
+msgid "<qt>This allows you to select the floppy disk's size and density.</qt>"
+msgstr "<qt>플로피 디스크의 크기와 용량을 선택할 수 있습니다.</qt>"
+
+#: floppy.cpp:119
+#, kde-format
+msgid "F&ile system:"
+msgstr "파일 시스템(&I):"
+
+#: floppy.cpp:126 floppy.cpp:136
+#, kde-format
+msgctxt "Linux"
+msgid ""
+"KFloppy supports three file formats under Linux: MS-DOS, Ext2, and Minix"
+msgstr ""
+"KFloppy는 리눅스에서 다음 세 파일 형식을 지원합니다: MS-DOS, Ext2, Minix"
+
+#: floppy.cpp:128
+#, kde-format
+msgctxt "BSD"
+msgid "KFloppy supports three file formats under BSD: MS-DOS, UFS, and Ext2"
+msgstr "KFloppy는 BSD에서 다음 세 파일 형식을 지원합니다: MS-DOS, UFS, Ext2"
+
+#: floppy.cpp:138 floppy.cpp:163 floppy.cpp:558 floppy.cpp:660
+#, kde-format
+msgid "DOS"
+msgstr "DOS"
+
+#: floppy.cpp:140
+#, kde-format
+msgctxt "Linux"
+msgid "Program mkdosfs found."
+msgstr "mkdosfs 프로그램을 찾았습니다."
+
+#: floppy.cpp:142
+#, kde-format
+msgctxt "Linux"
+msgid ""
+"Program mkdosfs <b>not found</b>. MSDOS formatting <b>not available</b>."
+msgstr ""
+"mkdosfs 프로그램을 <b>찾을 수 없습니다.</b> MSDOS 포맷을 <b>사용할 수 없습니"
+"다.</b>"
+
+#: floppy.cpp:146 floppy.cpp:179 floppy.cpp:569
+#, kde-format
+msgid "ext2"
+msgstr "ext2"
+
+#: floppy.cpp:148 floppy.cpp:181
+#, kde-format
+msgid "Program mke2fs found."
+msgstr "mke2fs 프로그램을 찾았습니다."
+
+#: floppy.cpp:150 floppy.cpp:183
+#, kde-format
+msgid "Program mke2fs <b>not found</b>. Ext2 formatting <b>not available</b>"
+msgstr ""
+"mke2fs 프로그램을 <b>찾을 수 없습니다.</b> Ext2 포맷을 <b>사용할 수 없습니다."
+"</b>"
+
+#: floppy.cpp:154 floppy.cpp:588
+#, kde-format
+msgid "Minix"
+msgstr "Minix"
+
+#: floppy.cpp:156
+#, kde-format
+msgctxt "Linux"
+msgid "Program mkfs.minix found."
+msgstr "mkfs.minix 프로그램을 찾았습니다."
+
+#: floppy.cpp:158
+#, kde-format
+msgctxt "Linux"
+msgid ""
+"Program mkfs.minix <b>not found</b>. Minix formatting <b>not available</b>"
+msgstr ""
+"mkfs.minix 프로그램을 <b>찾을 수 없습니다.</b> Minix 포맷을 <b>사용할 수 없습"
+"니다.</b>"
+
+#: floppy.cpp:161
+#, kde-format
+msgctxt "BSD"
+msgid "KFloppy supports two file formats under BSD: MS-DOS and UFS"
+msgstr "KFloppy는 BSD에서 다음 두 파일 형식을 지원합니다: MS-DOS, UFS"
+
+#: floppy.cpp:165
+#, kde-format
+msgctxt "BSD"
+msgid "Program newfs_msdos found."
+msgstr "newfs_msdos 프로그램을 찾았습니다."
+
+#: floppy.cpp:167
+#, kde-format
+msgctxt "BSD"
+msgid ""
+"Program newfs_msdos <b>not found</b>. MSDOS formatting <b>not available</b>."
+msgstr ""
+"newfs_msdos 프로그램을 <b>찾을 수 없습니다.</b> MSDOS 포맷을 <b>사용할 수 없"
+"습니다.</b>"
+
+#: floppy.cpp:171 floppy.cpp:487 floppy.cpp:580
+#, kde-format
+msgid "UFS"
+msgstr "UFS"
+
+#: floppy.cpp:173
+#, kde-format
+msgctxt "BSD"
+msgid "Program newfs found."
+msgstr "newfs 프로그램을 찾았습니다."
+
+#: floppy.cpp:175
+#, kde-format
+msgctxt "BSD"
+msgid "Program newfs <b>not found</b>. UFS formatting <b>not available</b>."
+msgstr ""
+"newfs 프로그램을 <b>찾을 수 없습니다.</b> UFS 포맷을 <b>사용할 수 없습니다.</"
+"b>"
+
+#: floppy.cpp:189
+#, kde-format
+msgid "&Formatting"
+msgstr "포맷 형식(&F)"
+
+#: floppy.cpp:192
+#, kde-format
+msgid "Q&uick format"
+msgstr "빠른 포맷(&U)"
+
+#: floppy.cpp:196
+#, kde-format
+msgid ""
+"<qt>Quick format is only a high-level format: it creates only a file system."
+"</qt>"
+msgstr "<qt>빠른 포맷은 고 수준 포맷입니다. 파일 시스템만 생성합니다.</qt>"
+
+#: floppy.cpp:199
+#, kde-format
+msgid "&Zero out and quick format"
+msgstr "0으로 채우고 빠른 포맷(&Z)"
+
+#: floppy.cpp:202
+#, kde-format
+msgid ""
+"<qt>This first erases the floppy by writing zeros and then it creates the "
+"file system.</qt>"
+msgstr ""
+"<qt>플로피 디스크에 0을 써 넣어서 지운 다음 파일 시스템을 생성합니다.</qt>"
+
+#: floppy.cpp:204
+#, kde-format
+msgid "Fu&ll format"
+msgstr "완전 포맷(&L)"
+
+#: floppy.cpp:207
+#, kde-format
+msgid ""
+"Full format is a low-level and high-level format. It erases everything on "
+"the disk."
+msgstr ""
+"완전 포맷은 저수준 및 고수준 포맷입니다. 디스크의 모든 것을 삭제합니다."
+
+#: floppy.cpp:216
+#, kde-format
+msgid "Program fdformat found."
+msgstr "fdformat 프로그램을 찾았습니다."
+
+#: floppy.cpp:220
+#, kde-format
+msgid "Program fdformat <b>not found</b>. Full formatting <b>disabled</b>."
+msgstr ""
+"fdformat 프로그램을 <b>찾을 수 없습니다.</b> 완전 포맷을 <b>사용할 수 없습니"
+"다.</b>"
+
+#: floppy.cpp:226
+#, kde-format
+msgid "Program dd found."
+msgstr "dd 프로그램을 찾았습니다."
+
+#: floppy.cpp:229
+#, kde-format
+msgid "Program dd <b>not found</b>. Zeroing-out <b>disabled</b>."
+msgstr ""
+"dd 프로그램을 <b>찾을 수 없습니다.</b> 0으로 채우기를 <b>사용할 수 없습니다."
+"</b>"
+
+#: floppy.cpp:234
+#, kde-format
+msgid "&Verify integrity"
+msgstr "무결성 검사(&V)"
+
+#: floppy.cpp:238
+#, kde-format
+msgid ""
+"<qt>Check this if you want the floppy disk to be checked after formatting. "
+"Please note that the floppy will be checked twice if you have selected full "
+"formatting.</qt>"
+msgstr ""
+"<qt>포맷한 다음 플로피 디스크를 검사합니다. 완전 포맷을 선택한 경우 두 번 검"
+"사됩니다.</qt>"
+
+#: floppy.cpp:243
+#, kde-format
+msgid "Volume la&bel:"
+msgstr "볼륨 레이블(&B):"
+
+#: floppy.cpp:247
+#, kde-format
+msgid ""
+"<qt>Check this if you want a volume label for your floppy. Please note that "
+"Minix does not support labels at all.</qt>"
+msgstr ""
+"<qt>플로피의 볼륨 레이블을 지정하려면 선택하십시오. Minix는 볼륨 레이블을 지"
+"원하지 않습니다.</qt>"
+
+#: floppy.cpp:256 floppy.cpp:652
+#, kde-format
+msgctxt "Volume label, maximal 11 characters"
+msgid "KDE Floppy"
+msgstr "KDE 플로피"
+
+#: floppy.cpp:260
+#, kde-format
+msgid ""
+"<qt>This is for the volume label. Due to a limitation of MS-DOS the label "
+"can only be 11 characters long. Please note that Minix does not support "
+"labels, whatever you enter here.</qt>"
+msgstr ""
+"<qt>이것은 볼륨 레이블입니다. MS-DOS의 제한으로 인하여 볼륨 레이블은 영문 최"
+"대 11글자까지 사용할 수 있습니다. Minix의 경우 여기에 무엇을 입력하든지 레이"
+"블을 지원하지 않습니다.</qt>"
+
+#: floppy.cpp:270 floppy.cpp:469
+#, kde-format
+msgid "&Format"
+msgstr "포맷(&F)"
+
+#: floppy.cpp:276
+#, kde-format
+msgid "<qt>Click here to start formatting.</qt>"
+msgstr "<qt>포맷을 시작하려면 클릭하십시오.</qt>"
+
+#: floppy.cpp:301
+#, kde-format
+msgid "<qt>This is the status window, where error messages are displayed.</qt>"
+msgstr "<qt>이 곳은 오류 메시지가 표시되는 상태 표시줄입니다.</qt>"
+
+#: floppy.cpp:314
+#, kde-format
+msgid "<qt>Shows progress of the format.</qt>"
+msgstr "<qt>포맷의 진행 상태입니다.</qt>"
+
+#: floppy.cpp:323
+#, kde-format
+msgid ""
+"KFloppy cannot find any of the needed programs for creating file systems; "
+"please check your installation.<br /><br />Log:"
+msgstr ""
+"KFloppy에서 파일 시스템을 만드는 데 필요한 프로그램을 찾을 수 없습니다. 설치 "
+"상태를 확인해 주십시오.<br /><br />로그:"
+
+#: floppy.cpp:355
+#, kde-format
+msgid "KDE Floppy Formatter"
+msgstr "KDE 플로피 포맷 도구"
+
+#: floppy.cpp:488
+#, kde-format
+msgctxt "BSD"
+msgid "Formatting with BSD on a user-given device is only possible with UFS"
+msgstr "BSD에서 사용자 정의 장치에 포맷하는 것은 UFS만 가능합니다."
+
+#: floppy.cpp:495
+#, kde-format
+msgid ""
+"<qt>Formatting will erase all data on the device:<br/><b>%1</b><br/>(Please "
+"check the correctness of the device name.)<br/>Are you sure you wish to "
+"proceed?</qt>"
+msgstr ""
+"<qt>포맷 과정은 다음 장치의 데이터를 모두 지웁니다:<br /><b>%1</b><br />장치 "
+"이름이 올바른지 확인하십시오.<br />계속 진행하시겠습니까?</qt>"
+
+#: floppy.cpp:499 floppy.cpp:511
+#, kde-format
+msgid "Proceed?"
+msgstr "계속 진행하시겠습니까?"
+
+#: floppy.cpp:505
+#, kde-format
+msgid "Full formatting of a user-given device is not possible."
+msgstr "사용자가 지정한 장치를 전체 포맷할 수 없습니다."
+
+#: floppy.cpp:509
+#, kde-format
+msgid ""
+"Formatting will erase all data on the disk.\n"
+"Are you sure you wish to proceed?"
+msgstr ""
+"포맷 과정은 디스크의 모든 데이터를 지웁니다.\n"
+"계속 진행하시겠습니까?"
+
+#: format.cpp:247
+#, kde-format
+msgid "Unexpected drive number %1."
+msgstr "예상하지 못한 드라이브 번호 %1."
+
+#: format.cpp:257
+#, kde-format
+msgid "Unexpected density number %1."
+msgstr "예상하지 못한 밀도 번호 %1."
+
+#: format.cpp:270
+#, kde-format
+msgid "Cannot find a device for drive %1 and density %2."
+msgstr "드라이브 %1, 밀도 %2에 해당하는 장치를 찾을 수 없습니다."
+
+#: format.cpp:284
+#, kde-format
+msgid ""
+"Cannot access %1\n"
+"Make sure that the device exists and that you have write permission to it."
+msgstr ""
+"%1에 접근할 수 없습니다.\n"
+"장치가 존재하며 쓰기 권한이 있는지 확인하십시오."
+
+#: format.cpp:316
+#, kde-format
+msgid "The program %1 terminated with an error."
+msgstr "프로그램 %1이(가) 오류를 반환하고 종료되었습니다."
+
+#: format.cpp:320
+#, kde-format
+msgid "The program %1 terminated abnormally."
+msgstr "프로그램 %1이(가) 비정상적으로 종료되었습니다."
+
+#: format.cpp:377 format.cpp:508 format.cpp:597 format.cpp:691 format.cpp:762
+#: format.cpp:852
+#, kde-format
+msgid "Internal error: device not correctly defined."
+msgstr "내부 오류: 장치가 올바르게 정의되지 않았습니다."
+
+#: format.cpp:383
+#, kde-format
+msgid "Cannot find fdformat."
+msgstr "fdformat을 찾을 수 없습니다."
+
+#: format.cpp:410
+#, kde-format
+msgid "Could not start fdformat."
+msgstr "fdformat을 시작할 수 없습니다."
+
+#: format.cpp:432
+#, kde-format
+msgid "Error formatting track %1."
+msgstr "트랙 %1을(를) 포맷하는 중 오류가 발생했습니다."
+
+#: format.cpp:435 format.cpp:460
+#, kde-format
+msgid ""
+"Cannot access floppy or floppy drive.\n"
+"Please insert a floppy and make sure that you have selected a valid floppy "
+"drive."
+msgstr ""
+"플로피나 플로피 드라이브에 접근할 수 없습니다\n"
+"플로피를 삽입하고 올바른 플로피 드라이브를 선택했는지 확인하십시오."
+
+#: format.cpp:453
+#, kde-format
+msgid "Low-level formatting error at track %1."
+msgstr "트랙 %1을(를) 포맷하는 중 오류가 발생했습니다."
+
+#: format.cpp:456
+#, kde-format
+msgid "Low-level formatting error: %1"
+msgstr "저수준 포맷 오류: %1"
+
+#: format.cpp:467 format.cpp:647 format.cpp:803 format.cpp:889
+#, kde-format
+msgid ""
+"Device busy.\n"
+"Perhaps you need to unmount the floppy first."
+msgstr ""
+"장치가 사용 중입니다.\n"
+"플로피를 마운트 해제해야 할 수 있습니다."
+
+#: format.cpp:472
+#, kde-format
+msgid "Low-level format error: %1"
+msgstr "저수준 포맷 오류: %1"
+
+#: format.cpp:514
+#, kde-format
+msgid "Cannot find dd."
+msgstr "dd를 찾을 수 없습니다."
+
+#: format.cpp:528
+#, kde-format
+msgid "Could not start dd."
+msgstr "dd를 시작할 수 없습니다."
+
+#: format.cpp:603
+#, kde-format
+msgid "Cannot find a program to create FAT filesystems."
+msgstr "FAT 파일 시스템을 만드는 프로그램을 찾을 수 없습니다."
+
+#: format.cpp:630
+#, kde-format
+msgid "Cannot start FAT format program."
+msgstr "FAT 포맷 프로그램을 시작할 수 없습니다."
+
+#: format.cpp:643 format.cpp:799 format.cpp:885
+#, kde-format
+msgid ""
+"Floppy is mounted.\n"
+"You need to unmount the floppy first."
+msgstr ""
+"플로피가 마운트되어 있습니다.\n"
+"먼저 마운트 해제하십시오."
+
+#: format.cpp:697
+#, kde-format
+msgctxt "BSD"
+msgid "Cannot find a program to create UFS filesystems."
+msgstr "UFS 파일 시스템을 만드는 프로그램을 찾을 수 없습니다."
+
+#: format.cpp:714
+#, kde-format
+msgctxt "BSD"
+msgid "Cannot start UFS format program."
+msgstr "UFS 포맷 프로그램을 시작할 수 없습니다."
+
+#: format.cpp:768
+#, kde-format
+msgid "Cannot find a program to create ext2 filesystems."
+msgstr "ext2 파일 시스템을 만드는 프로그램을 찾을 수 없습니다."
+
+#: format.cpp:786
+#, kde-format
+msgid "Cannot start ext2 format program."
+msgstr "ext2 포맷 프로그램을 시작할 수 없습니다."
+
+#: format.cpp:858
+#, kde-format
+msgid "Cannot find a program to create Minix filesystems."
+msgstr "Minix 파일 시스템을 만드는 프로그램을 찾을 수 없습니다."
+
+#: format.cpp:875
+#, kde-format
+msgid "Cannot start Minix format program."
+msgstr "Minix 포맷 프로그램을 시작할 수 없습니다."
+
+#: main.cpp:51
+#, kde-format
+msgid "KFloppy"
+msgstr "KFloppy"
+
+#: main.cpp:53
+#, kde-format
+msgid "KDE Floppy Disk Utility"
+msgstr "KDE 플로피 디스크 도구"
+
+#: main.cpp:55
+#, kde-format
+msgid ""
+"(c) 1997, Bernd Johannes Wuebben\n"
+"(c) 2001, Chris Howells\n"
+"(c) 2002, Adriaan de Groot\n"
+"(c) 2004, 2005, Nicolas Goutte\n"
+"(c) 2015, 2016, Wolfgang Bauer"
+msgstr ""
+"(c) 1997, Bernd Johannes Wuebben\n"
+"(c) 2001, Chris Howells\n"
+"(c) 2002, Adriaan de Groot\n"
+"(c) 2004, 2005, Nicolas Goutte\n"
+"(c) 2015, 2016, Wolfgang Bauer"
+
+#: main.cpp:60
+#, kde-format
+msgid "KFloppy helps you format floppies with the filesystem of your choice."
+msgstr "KFloppy는 선택한 파일 시스템으로 플로피를 포맷합니다."
+
+#: main.cpp:63
+#, kde-format
+msgid "Bernd Johannes Wuebben"
+msgstr "Bernd Johannes Wuebben"
+
+#: main.cpp:63
+#, kde-format
+msgid "Author and former maintainer"
+msgstr "작성자와 이전 관리자"
+
+#: main.cpp:64
+#, kde-format
+msgid "Chris Howells"
+msgstr "Chris Howells"
+
+#: main.cpp:64
+#, kde-format
+msgid "User interface re-design"
+msgstr "사용자 인터페이스 재설계"
+
+#: main.cpp:65
+#, kde-format
+msgid "Adriaan de Groot"
+msgstr "Adriaan de Groot"
+
+#: main.cpp:65
+#, kde-format
+msgid "Add BSD support"
+msgstr "BSD 지원 추가"
+
+#: main.cpp:66
+#, kde-format
+msgid "Nicolas Goutte"
+msgstr "Nicolas Goutte"
+
+#: main.cpp:66
+#, kde-format
+msgid "Make KFloppy work again for KDE 3.4"
+msgstr "KDE 3.4에서 동작하도록 다시 정리"
+
+#: main.cpp:67
+#, kde-format
+msgid "Wolfgang Bauer"
+msgstr "Wolfgang Bauer"
+
+#: main.cpp:67
+#, kde-format
+msgid "Port KFloppy to KF5"
+msgstr "KF5 포팅"
+
+#: main.cpp:69
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "박신조"
+
+#: main.cpp:69
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "kde@peremen.name"
+
+#: main.cpp:77
+#, kde-format
+msgid "Default device"
+msgstr "기본 장치"

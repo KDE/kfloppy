@@ -1,0 +1,660 @@
+# translation of kfloppy.po to
+# Copyright (C) 2003, 2004, 2006, 2007 Free Software Foundation, Inc.
+# Waseem Bakr <bakr@mit.edu>, 2001.
+# Nuriddin Aminagha <nuriddin@haydarlinux.org>, 2003.
+# Nuriddin Aminagha <nuriddin@eminaga.de>, 2003.
+# Munzir Taha <munzir@kacst.edu.sa>, 2004.
+# Khaled Hosny <dr.khaled.hosny@gmail.com>, 2006.
+# Fahad Al-Saidi <fahad.alsaidi@gmail.com>, 2007.
+# Youssef Chahibi <chahibi@gmail.com>, 2007.
+# Zayed Al-Saidi <zayed.alsaidi@gmail.com>, 2010, 2022.
+msgid ""
+msgstr ""
+"Project-Id-Version: kfloppy\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-01-12 00:48+0000\n"
+"PO-Revision-Date: 2022-01-19 22:35+0400\n"
+"Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
+"Language-Team: ar\n"
+"Language: ar\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
+"&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
+"X-Generator: Lokalize 21.07.70\n"
+
+#: floppy.cpp:81
+#, kde-format
+msgid "Floppy &drive:"
+msgstr "سواقة الأقراص المرنة:"
+
+#: floppy.cpp:89 floppy.cpp:364 floppy.cpp:654
+#, kde-format
+msgctxt "Primary floppy drive"
+msgid "Primary"
+msgstr "رئيسي"
+
+#: floppy.cpp:90 floppy.cpp:366
+#, kde-format
+msgctxt "Secondary floppy drive"
+msgid "Secondary"
+msgstr "ثانوي"
+
+#: floppy.cpp:92
+#, kde-format
+msgid "<qt>Select the floppy drive.</qt>"
+msgstr "<qt>إختر سواقة الأقراص المرنة.</qt>"
+
+#: floppy.cpp:98
+#, kde-format
+msgid "&Size:"
+msgstr "ال&حجم:"
+
+#: floppy.cpp:104 floppy.cpp:656
+#, kde-format
+msgid "Auto-Detect"
+msgstr "كشف تلقائي"
+
+#: floppy.cpp:106 floppy.cpp:372 floppy.cpp:658
+#, kde-format
+msgid "3.5\" 1.44MB"
+msgstr "3.5\" 1.44م.بايت"
+
+#: floppy.cpp:107 floppy.cpp:374
+#, kde-format
+msgid "3.5\" 720KB"
+msgstr "3.5\" 720ك.بايت"
+
+#: floppy.cpp:108 floppy.cpp:376
+#, kde-format
+msgid "5.25\" 1.2MB"
+msgstr "5.25\" 1.2م.بايت"
+
+#: floppy.cpp:109 floppy.cpp:378
+#, kde-format
+msgid "5.25\" 360KB"
+msgstr "5.25\" 360ك.بايت"
+
+#: floppy.cpp:112
+#, kde-format
+msgid "<qt>This allows you to select the floppy disk's size and density.</qt>"
+msgstr "<qt>يسمح لك هذا باختيار حجم وسعة القرص المرن.</qt>"
+
+#: floppy.cpp:119
+#, kde-format
+msgid "F&ile system:"
+msgstr "نظام ال&ملفات:"
+
+#: floppy.cpp:126 floppy.cpp:136
+#, kde-format
+msgctxt "Linux"
+msgid ""
+"KFloppy supports three file formats under Linux: MS-DOS, Ext2, and Minix"
+msgstr ""
+"يدعم KFloppy ثلاث من أنواع تهيئة القرص المرن فى لينكس: MS-DOS، Ext2، و Minix"
+
+#: floppy.cpp:128
+#, kde-format
+msgctxt "BSD"
+msgid "KFloppy supports three file formats under BSD: MS-DOS, UFS, and Ext2"
+msgstr ""
+"يدعم KFloppy ثلاث من أنواع تهيئة القرص المرن فى BSD:  MS-DOS، UFS، و Ext2"
+
+#: floppy.cpp:138 floppy.cpp:163 floppy.cpp:558 floppy.cpp:660
+#, kde-format
+msgid "DOS"
+msgstr "دوس"
+
+#: floppy.cpp:140
+#, kde-format
+msgctxt "Linux"
+msgid "Program mkdosfs found."
+msgstr "وجد برنامج mkdosfs."
+
+#: floppy.cpp:142
+#, kde-format
+msgctxt "Linux"
+msgid ""
+"Program mkdosfs <b>not found</b>. MSDOS formatting <b>not available</b>."
+msgstr "<b>تعذر ايجاد</b> البرنامج mkdosfs.<b>لا تتوفر</b> تهيئة MSDOS."
+
+#: floppy.cpp:146 floppy.cpp:179 floppy.cpp:569
+#, kde-format
+msgid "ext2"
+msgstr "ext2"
+
+#: floppy.cpp:148 floppy.cpp:181
+#, kde-format
+msgid "Program mke2fs found."
+msgstr "وجد البرنامج mke2fs."
+
+#: floppy.cpp:150 floppy.cpp:183
+#, kde-format
+msgid "Program mke2fs <b>not found</b>. Ext2 formatting <b>not available</b>"
+msgstr "<b>تعذر ايجاد</b> البرنامج mke2fs.<b>لا تتوفر</b> تهيئة Ext2."
+
+#: floppy.cpp:154 floppy.cpp:588
+#, kde-format
+msgid "Minix"
+msgstr "Minix"
+
+#: floppy.cpp:156
+#, kde-format
+msgctxt "Linux"
+msgid "Program mkfs.minix found."
+msgstr "وجد البرنامج mkfs.minix."
+
+#: floppy.cpp:158
+#, kde-format
+msgctxt "Linux"
+msgid ""
+"Program mkfs.minix <b>not found</b>. Minix formatting <b>not available</b>"
+msgstr "<b>تعذر ايجاد</b> البرنامج mkfs.minix.<b>لا تتوفر</b> تهيئة Minix."
+
+#: floppy.cpp:161
+#, kde-format
+msgctxt "BSD"
+msgid "KFloppy supports two file formats under BSD: MS-DOS and UFS"
+msgstr "يدعم KFloppy اثنان من أنواع تهيئة القرص المرن فى BSD:  MS-DOS، و UFS"
+
+#: floppy.cpp:165
+#, kde-format
+msgctxt "BSD"
+msgid "Program newfs_msdos found."
+msgstr "وجد البرنامج newfs_msdos."
+
+#: floppy.cpp:167
+#, kde-format
+msgctxt "BSD"
+msgid ""
+"Program newfs_msdos <b>not found</b>. MSDOS formatting <b>not available</b>."
+msgstr "<b>تعذر ايجاد</b> البرنامج newfs_msdos.<b>لا تتوفر</b> تهيئة MSDOS."
+
+#: floppy.cpp:171 floppy.cpp:487 floppy.cpp:580
+#, kde-format
+msgid "UFS"
+msgstr "UFS"
+
+#: floppy.cpp:173
+#, kde-format
+msgctxt "BSD"
+msgid "Program newfs found."
+msgstr "وجد البرنامج newfs."
+
+#: floppy.cpp:175
+#, kde-format
+msgctxt "BSD"
+msgid "Program newfs <b>not found</b>. UFS formatting <b>not available</b>."
+msgstr "<b>تعذر ايجاد</b> البرنامج newfs.<b>لا تتوفر</b> تهيئة UFS."
+
+#: floppy.cpp:189
+#, kde-format
+msgid "&Formatting"
+msgstr "جارى ال&تهيئة"
+
+#: floppy.cpp:192
+#, kde-format
+msgid "Q&uick format"
+msgstr "تهيئة &سريعة"
+
+#: floppy.cpp:196
+#, kde-format
+msgid ""
+"<qt>Quick format is only a high-level format: it creates only a file system."
+"</qt>"
+msgstr ""
+"<qt>التهيئة السريعة هى تهيأة مستوى عالى فقط: فهى تنشئ نظام ملفات فقط.</qt>"
+
+#: floppy.cpp:199
+#, kde-format
+msgid "&Zero out and quick format"
+msgstr "ملأ بأصفار وتهيئة سريعة"
+
+#: floppy.cpp:202
+#, kde-format
+msgid ""
+"<qt>This first erases the floppy by writing zeros and then it creates the "
+"file system.</qt>"
+msgstr ""
+"<qt>يقوم هذا أولا بمسح القرص المرن عن طريق كتابة أصفار عليه ثم ينشئ نظام "
+"ملفات.</qt>"
+
+#: floppy.cpp:204
+#, kde-format
+msgid "Fu&ll format"
+msgstr "ت&هيئة كاملة"
+
+#: floppy.cpp:207
+#, kde-format
+msgid ""
+"Full format is a low-level and high-level format. It erases everything on "
+"the disk."
+msgstr ""
+"التهيئة الكاملة هى تهيئة مستوى سفلى (تهيئة أولية) و تهيئة مستوى عالى. تقوم "
+"بمسح كل شئ على القرص."
+
+#: floppy.cpp:216
+#, kde-format
+msgid "Program fdformat found."
+msgstr "وجد البرنامج fdformat."
+
+#: floppy.cpp:220
+#, kde-format
+msgid "Program fdformat <b>not found</b>. Full formatting <b>disabled</b>."
+msgstr "<b>تعذر ايجاد</b> البرنامج fdformat. <b>تم  تعطيل</b> التهيئة الكاملة."
+
+#: floppy.cpp:226
+#, kde-format
+msgid "Program dd found."
+msgstr "وجد البرنامج dd."
+
+#: floppy.cpp:229
+#, kde-format
+msgid "Program dd <b>not found</b>. Zeroing-out <b>disabled</b>."
+msgstr "<b>تعذر ايجاد</b> البرنامج dd. <b>تم  تعطيل</b> الملأ بالأصفار."
+
+#: floppy.cpp:234
+#, kde-format
+msgid "&Verify integrity"
+msgstr "الت&حقّق من الصلاحية"
+
+#: floppy.cpp:238
+#, kde-format
+msgid ""
+"<qt>Check this if you want the floppy disk to be checked after formatting. "
+"Please note that the floppy will be checked twice if you have selected full "
+"formatting.</qt>"
+msgstr ""
+"<qt>اختر هذا اذاكنت ترغب فى التحقق من صلاحية القرص المرن بعد تهيئته. من فضلك "
+"لاحظ أن القرص سيختبر مرتين اذا اخترت التهيئة الكاملة.</qt>"
+
+#: floppy.cpp:243
+#, kde-format
+msgid "Volume la&bel:"
+msgstr "&عنوان القرص:"
+
+#: floppy.cpp:247
+#, kde-format
+msgid ""
+"<qt>Check this if you want a volume label for your floppy. Please note that "
+"Minix does not support labels at all.</qt>"
+msgstr ""
+"<qt>اختر هذا اذا كنت ترغب فى ضع عنوان للقرص المرن.  من فضلك لا حظ أن Minix "
+"لا يدعم العناوين على أى حال.</qt>"
+
+#: floppy.cpp:256 floppy.cpp:652
+#, kde-format
+msgctxt "Volume label, maximal 11 characters"
+msgid "KDE Floppy"
+msgstr "KDE Floppy"
+
+#: floppy.cpp:260
+#, kde-format
+msgid ""
+"<qt>This is for the volume label. Due to a limitation of MS-DOS the label "
+"can only be 11 characters long. Please note that Minix does not support "
+"labels, whatever you enter here.</qt>"
+msgstr ""
+"<qt>هذا من أجل عنوان القرص.  بسبب التقييد فى MS-DOS لا يمكن أن يزيد العنوان "
+"عن 11 رمز.  من فضلك لا حظ أن  Minix لا يدعم العناوين بغض النظر عما تدخله هنا."
+"</qt>"
+
+#: floppy.cpp:270 floppy.cpp:469
+#, kde-format
+msgid "&Format"
+msgstr "&هيء"
+
+#: floppy.cpp:276
+#, kde-format
+msgid "<qt>Click here to start formatting.</qt>"
+msgstr "<qt>انقر هنا لتبدأ التهيئة.</qt>"
+
+#: floppy.cpp:301
+#, kde-format
+msgid "<qt>This is the status window, where error messages are displayed.</qt>"
+msgstr "<qt>هذه هى نافذة الحالة، حيث ستظهر رسائل الخطأ.</qt>"
+
+#: floppy.cpp:314
+#, kde-format
+msgid "<qt>Shows progress of the format.</qt>"
+msgstr "<qt>اعرض تقدم التهيئة.</qt>"
+
+#: floppy.cpp:323
+#, kde-format
+msgid ""
+"KFloppy cannot find any of the needed programs for creating file systems; "
+"please check your installation.<br /><br />Log:"
+msgstr ""
+"لا يستطيع KFloppy ايجاد أى من البرامج الضرورية لإنشاء أنظمة الملفات؛ من فضلك "
+"تأكد من تثبيتك لها. <br /><br />السجل:"
+
+#: floppy.cpp:355
+#, kde-format
+msgid "KDE Floppy Formatter"
+msgstr "برنامج كدى لتهيئة الأقراص المرنة"
+
+#: floppy.cpp:488
+#, kde-format
+msgctxt "BSD"
+msgid "Formatting with BSD on a user-given device is only possible with UFS"
+msgstr "لا يمكن تهيئة جهاز معطى من المستخدم فى BSD سوى بـUFS "
+
+#: floppy.cpp:495
+#, kde-format
+msgid ""
+"<qt>Formatting will erase all data on the device:<br/><b>%1</b><br/>(Please "
+"check the correctness of the device name.)<br/>Are you sure you wish to "
+"proceed?</qt>"
+msgstr ""
+"<qt>عملية التهيئة ستقوم بإزالة كافة البيانات الموجودة على الجهاز: <br/><b>"
+"%1</b> <br/>(من فضلك تأكد من صحة اسم الجهاز.) <br/>هل ترغب حقًا في المتابعة؟</"
+"qt>"
+
+#: floppy.cpp:499 floppy.cpp:511
+#, kde-format
+msgid "Proceed?"
+msgstr "المتابعة؟"
+
+#: floppy.cpp:505
+#, kde-format
+msgid "Full formatting of a user-given device is not possible."
+msgstr "لا يمكن تهيئة الجهاز المعطى تهيئة كاملة."
+
+#: floppy.cpp:509
+#, kde-format
+msgid ""
+"Formatting will erase all data on the disk.\n"
+"Are you sure you wish to proceed?"
+msgstr ""
+"عملية التهيئة ستقوم بإزالة كافة البيانات الموجودة على القرص.\n"
+"هل ترغب حقًا في المتابعة؟"
+
+#: format.cpp:247
+#, kde-format
+msgid "Unexpected drive number %1."
+msgstr "رقم سواقة غير متوقع %1."
+
+#: format.cpp:257
+#, kde-format
+msgid "Unexpected density number %1."
+msgstr "رقم سعة غير متوقع %1."
+
+#: format.cpp:270
+#, kde-format
+msgid "Cannot find a device for drive %1 and density %2."
+msgstr "لا يمكن العثور على جهاز للسواقة %1 والسعة %2."
+
+#: format.cpp:284
+#, kde-format
+msgid ""
+"Cannot access %1\n"
+"Make sure that the device exists and that you have write permission to it."
+msgstr ""
+"لا أستطيع الوصول إلى %1\n"
+"تأكد من أن الجهاز موجود وأنك تملك إذنا بالكتابة إليه."
+
+#: format.cpp:316
+#, kde-format
+msgid "The program %1 terminated with an error."
+msgstr "لقد انتهى البرنامج %1 بسبب خطأ."
+
+#: format.cpp:320
+#, kde-format
+msgid "The program %1 terminated abnormally."
+msgstr "لقد انتهى البرنامج %1 بشكل غير طبيعى."
+
+#: format.cpp:377 format.cpp:508 format.cpp:597 format.cpp:691 format.cpp:762
+#: format.cpp:852
+#, kde-format
+msgid "Internal error: device not correctly defined."
+msgstr "خطأ داخلى: الجهاز غير معرّف بشكل صحيح."
+
+#: format.cpp:383
+#, kde-format
+msgid "Cannot find fdformat."
+msgstr "لا يمكن إيجاد fdformat."
+
+#: format.cpp:410
+#, kde-format
+msgid "Could not start fdformat."
+msgstr "لا يمكن تشغيل fdformat."
+
+#: format.cpp:432
+#, kde-format
+msgid "Error formatting track %1."
+msgstr "خطأ عند تهيئة المسار %1."
+
+#: format.cpp:435 format.cpp:460
+#, kde-format
+msgid ""
+"Cannot access floppy or floppy drive.\n"
+"Please insert a floppy and make sure that you have selected a valid floppy "
+"drive."
+msgstr ""
+"لا أستطيع الوصول إلى القرص المرن أو إلى مشغل الأقراص.\n"
+"يرجى إدخال القرص المرن والتأكد من أنك قد اخترت مشغل الأقراص الصحيح."
+
+#: format.cpp:453
+#, kde-format
+msgid "Low-level formatting error at track %1."
+msgstr "خطأ عند التهيئة الأولى للمسار %1."
+
+#: format.cpp:456
+#, kde-format
+msgid "Low-level formatting error: %1"
+msgstr "خطأ عند التهيئة الأولية: %1"
+
+#: format.cpp:467 format.cpp:647 format.cpp:803 format.cpp:889
+#, kde-format
+msgid ""
+"Device busy.\n"
+"Perhaps you need to unmount the floppy first."
+msgstr ""
+"الجهاز مشغول.\n"
+"ربما تحتاج الغاء ضم القرص المرن أولا."
+
+#: format.cpp:472
+#, kde-format
+msgid "Low-level format error: %1"
+msgstr "خطأ عند التهيئة الأولية: %1"
+
+#: format.cpp:514
+#, kde-format
+msgid "Cannot find dd."
+msgstr "لا يمكن إيجاد dd."
+
+#: format.cpp:528
+#, kde-format
+msgid "Could not start dd."
+msgstr "لا يمكن تشغيل dd."
+
+#: format.cpp:603
+#, kde-format
+msgid "Cannot find a program to create FAT filesystems."
+msgstr "لا يمكن العثور على برنامج لإنشاء نظام ملفات FAT."
+
+#: format.cpp:630
+#, kde-format
+msgid "Cannot start FAT format program."
+msgstr "لا يمكن تشغيل برنامج تهيئة FAT."
+
+#: format.cpp:643 format.cpp:799 format.cpp:885
+#, kde-format
+msgid ""
+"Floppy is mounted.\n"
+"You need to unmount the floppy first."
+msgstr ""
+"القرص المرن مضموم.\n"
+"تحتاج الى الغاء ضمّه أولا."
+
+#: format.cpp:697
+#, kde-format
+msgctxt "BSD"
+msgid "Cannot find a program to create UFS filesystems."
+msgstr "لا يمكن العثور على برنامج لإنشاء نظام ملفات UFS ."
+
+#: format.cpp:714
+#, kde-format
+msgctxt "BSD"
+msgid "Cannot start UFS format program."
+msgstr "لا يمكن تشغيل برنامج تهيئة UFS."
+
+#: format.cpp:768
+#, kde-format
+msgid "Cannot find a program to create ext2 filesystems."
+msgstr "لا يمكن العثور على برنامج لإنشاء نظام ملفات ext2."
+
+#: format.cpp:786
+#, kde-format
+msgid "Cannot start ext2 format program."
+msgstr "لا يمكن تشغيل برنامج تهيئة ext2."
+
+#: format.cpp:858
+#, kde-format
+msgid "Cannot find a program to create Minix filesystems."
+msgstr "لا يمكن العثور على برنامج لإنشاء نظام ملفات Minix."
+
+#: format.cpp:875
+#, kde-format
+msgid "Cannot start Minix format program."
+msgstr "لا يمكن تشغيل برنامج تهيئة Minix."
+
+#: main.cpp:51
+#, kde-format
+msgid "KFloppy"
+msgstr "KFloppy"
+
+#: main.cpp:53
+#, kde-format
+msgid "KDE Floppy Disk Utility"
+msgstr "أداة كيدي للأقراص المرنة"
+
+#: main.cpp:55
+#, kde-format
+msgid ""
+"(c) 1997, Bernd Johannes Wuebben\n"
+"(c) 2001, Chris Howells\n"
+"(c) 2002, Adriaan de Groot\n"
+"(c) 2004, 2005, Nicolas Goutte\n"
+"(c) 2015, 2016, Wolfgang Bauer"
+msgstr ""
+"(c) 1997, Bernd Johannes Wuebben\n"
+"(c) 2001, Chris Howells\n"
+"(c) 2002, Adriaan de Groot\n"
+"(c) 2004, 2005, Nicolas Goutte\n"
+"(c) 2015, 2016, Wolfgang Bauer"
+
+#: main.cpp:60
+#, kde-format
+msgid "KFloppy helps you format floppies with the filesystem of your choice."
+msgstr "يساعدك KFloppy  على تهيئة الأقراص المرنة بنظام ملفات من اختيارك."
+
+#: main.cpp:63
+#, kde-format
+msgid "Bernd Johannes Wuebben"
+msgstr "Bernd Johannes Wuebben"
+
+#: main.cpp:63
+#, kde-format
+msgid "Author and former maintainer"
+msgstr "المؤلف والمشرف السابق"
+
+#: main.cpp:64
+#, kde-format
+msgid "Chris Howells"
+msgstr "Chris Howells"
+
+#: main.cpp:64
+#, kde-format
+msgid "User interface re-design"
+msgstr "إعادة تصميم واجهة المستخدم"
+
+#: main.cpp:65
+#, kde-format
+msgid "Adriaan de Groot"
+msgstr "Adriaan de Groot"
+
+#: main.cpp:65
+#, kde-format
+msgid "Add BSD support"
+msgstr "إضافة دعم BSD"
+
+#: main.cpp:66
+#, kde-format
+msgid "Nicolas Goutte"
+msgstr "Nicolas Goutte"
+
+#: main.cpp:66
+#, kde-format
+msgid "Make KFloppy work again for KDE 3.4"
+msgstr "جعل KFloppy يعمل مرة أخرى لكدى 3.4"
+
+#: main.cpp:67
+#, kde-format
+msgid "Wolfgang Bauer"
+msgstr "Wolfgang Bauer"
+
+#: main.cpp:67
+#, kde-format
+msgid "Port KFloppy to KF5"
+msgstr "النقل إلى إطار عمل كدي ٥"
+
+#: main.cpp:69
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "وسيم بكر, عصام بايزيدي, خالد حسنى , فهد السعيدي"
+
+#: main.cpp:69
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr ""
+"bakr@arabeyes.org, bayazidi@arabeyes.org, dr.khaled.hosny@gmail.com,Fahad."
+"alsaidi@gmail.com"
+
+#: main.cpp:77
+#, kde-format
+msgid "Default device"
+msgstr "الجهاز الافتراضي"
+
+#~ msgid "Zero entire disk"
+#~ msgstr "قرص إدخال صفر"
+
+#~ msgid ""
+#~ "Try to write zeroes to the entire disk before adding a filesystem, in "
+#~ "order to check the disk's integrity."
+#~ msgstr ""
+#~ "حاول لكتابة أصفار للقرص المدخل قبل إضافة ملفات النظام، في حالة فحص صلاحية "
+#~ "القرص."
+
+#~ msgid "Enable softupdates"
+#~ msgstr "مكن تحديثات البرنامج"
+
+#~ msgid "UFS Zip100"
+#~ msgstr "UFS Zip100"
+
+#~ msgid "Cannot start dd to zero disk."
+#~ msgstr "لا يمكن تشغيل برنامج dd  لتصفير القرص."
+
+#~ msgid "Zeroing disk..."
+#~ msgstr "تصفير القرص..."
+
+#~ msgid "Zeroing disk failed."
+#~ msgstr "فشل تصفير القرص."
+
+#~ msgid "Cannot start newfs."
+#~ msgstr "لا يمكن تشغيل newfs."
+
+#~ msgid "Making filesystem..."
+#~ msgstr "إنشاء ملفات النظام..."
+
+#~ msgid "newfs failed."
+#~ msgstr "فشل newfs."
+
+#~ msgid "Disk formatted successfully."
+#~ msgstr "هييئ القرص بنجاح."
+
+#~ msgid "Zeroing block %1 of %2..."
+#~ msgstr "تصفير المقطع %1 من  %2..."

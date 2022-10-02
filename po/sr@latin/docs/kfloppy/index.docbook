@@ -1,0 +1,974 @@
+<?xml version="1.0" ?>
+<!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN" "dtd/kdedbx45.dtd" [
+  <!ENTITY kappname-n '<application>K‑flopi</application>'>
+  <!ENTITY kappname-g '<application>K‑flopija</application>'>
+  <!ENTITY kappname-d '<application>K‑flopiju</application>'>
+  <!ENTITY kappname-a '<application>K‑flopi</application>'>
+  <!ENTITY kappname-i '<application>K‑flopijem</application>'>
+  <!ENTITY kappname-l '<application>K‑flopiju</application>'>
+  <!ENTITY package "kdeutils">
+  <!ENTITY % Serbian-Latin "INCLUDE"
+> <!-- change language only here -->
+  <!ENTITY % addindex "IGNORE">
+  <!ENTITY BSD "<trademark
+>BSD</trademark
+>">
+  <!ENTITY Minix "<trademark
+>Minix</trademark
+>">
+]>
+<!-- ### TODO Is BSD a trademark or a registrated trademark ? -->
+<!-- ### TODO Is Minix a trademark or a registrated trademark ? -->
+
+<!-- ### TODO Unify use of "disk", "floppy", "diskette", "floppy disk" (and "floppy drive") -->
+
+<book id="kfloppy" lang="&language;">
+<bookinfo>
+
+<title
+>Priručnik za <application
+>K‑flopi</application
+></title>
+
+<authorgroup>
+<author
+><firstname
+>Tad</firstname
+> <surname
+>Makginis</surname
+> <affiliation
+><address
+>&Thad.McGinnis.mail; </address
+></affiliation
+> </author>
+
+<author
+><firstname
+>Nikola</firstname
+> <surname
+>Gut</surname
+> <affiliation
+><address
+>&Nicolas.Goutte.mail; </address
+></affiliation
+> </author>
+
+<othercredit role="developer"
+><firstname
+>Bernd</firstname
+> <othername
+>Johanes</othername
+> <surname
+>Viben</surname
+> <affiliation
+><address
+><email
+>wuebben@math.cornell.edu</email
+></address
+></affiliation>
+<contrib
+>programer</contrib>
+</othercredit>
+
+<othercredit role="developer"
+><firstname
+>Kris</firstname
+> <surname
+>Hauels</surname
+> <affiliation
+><address
+>&Chris.Howells.mail;</address
+></affiliation>
+<contrib
+>programer (redizajniranje korisničkog sučelja)</contrib>
+</othercredit>
+
+<othercredit role="developer"
+><firstname
+>Adrijan</firstname
+> <surname
+>de Grot</surname
+> <affiliation
+><address
+><email
+>groot@kde.org</email
+></address
+></affiliation>
+<contrib
+>programer (podrška za BSD)</contrib>
+</othercredit>
+
+<othercredit role="developer"
+><firstname
+>Volfgang</firstname
+> <surname
+>Bauer</surname
+> <affiliation
+><address
+><email
+>wbauer@tmo.at</email
+></address
+></affiliation>
+<contrib
+>programer (prenos na KF5)</contrib>
+</othercredit>
+
+<othercredit role="reviewer"
+><firstname
+>Lori</firstname
+> <surname
+>Vots</surname
+> <contrib
+>pregledač</contrib>
+<affiliation
+><address
+>&Lauri.Watts.mail;</address
+></affiliation>
+</othercredit>
+
+<othercredit role="translator"
+><firstname
+>Dragan</firstname
+><surname
+>Pantelić</surname
+><affiliation
+><address
+><email
+>falcon-10@gmx.de</email
+></address
+></affiliation
+><contrib
+>prevod</contrib
+></othercredit
+> 
+</authorgroup>
+
+<date
+>23. 3. 2016.</date>
+<releaseinfo
+>5.0 (Programi KDE‑a 16.04)</releaseinfo>
+
+<copyright>
+<year
+>2000</year>
+<holder
+>Tad Makginis</holder>
+</copyright>
+
+<copyright>
+<year
+>2005</year>
+<holder
+>Nikola Gut</holder>
+</copyright>
+
+<legalnotice
+>&FDLNotice;</legalnotice>
+
+<abstract
+><para
+><application
+>K‑flopi</application
+> je alatka koja pruža jednostavan grafički način za formatiranje 3,5" i 5,25" disketa.</para
+></abstract>
+
+<keywordset>
+<keyword
+>KDE</keyword>
+<keyword
+>K‑flopi</keyword>
+<keyword
+>disketa</keyword>
+<keyword
+>formatiranje</keyword>
+</keywordset>
+
+</bookinfo>
+
+<chapter id="introduction">
+<title
+>Uvod</title>
+
+<para
+><application
+>K‑flopi</application
+> je alatka koja pruža jednostavan grafički način za formatiranje 3,5" i 5,25" disketa. </para>
+
+<note
+><para
+><application
+>K‑flopi</application
+> zavisi od spoljašnjih programa i stoga trenutno radi <emphasis
+>samo</emphasis
+> pod Linuxom i BSD‑om. Prema tome da li se koristi na Linuxu ili BSD‑u, <application
+>K‑flopi</application
+> ima nešto drugačije mogućnosti.</para
+></note>
+
+<caution
+><para
+>Uverite se da disketa <emphasis
+>nije</emphasis
+> montirana. <application
+>K‑flopi</application
+> ne može da formatira montirane diskete.</para
+></caution>
+
+</chapter>
+
+<chapter id="usingkfloppy">
+<title
+>Korišćenje <application
+>K‑flopija</application
+></title>
+
+<para
+>Po pokretanju <application
+>K‑flopija</application
+> dobija se prozor u kojem korisnik može izabrati prikladne postavke i upravljati procesom formatiranja, kako će biti opisano u narednom.</para>
+
+<caution
+><para
+>Uverite se da disketa <emphasis
+>nije</emphasis
+> montirana. <application
+>K‑flopi</application
+> ne može da formatira montirane diskete.</para
+></caution>
+
+<sect1 id="controlsettings">
+<title
+>Upravljačke postavke</title>
+
+<para
+>Postavke se biraju preko tri padajuća spiska u gornjem levom delu <application
+>K‑flopija</application
+>.</para>
+
+<sect2 id="selectdrive">
+<title
+><guilabel
+>Flopi jedinica:</guilabel
+></title>
+
+<para
+>Klik na prvi padajući spisak, <guilabel
+>Flopi jedinica:</guilabel
+>, nudi korisniku sledeća dva izbora:</para>
+
+<itemizedlist>
+<listitem
+><para
+>primarna</para
+></listitem>
+<listitem
+><para
+>sekundarna</para
+></listitem>
+</itemizedlist>
+
+<para
+>Klik na drugi padajući spisak s vrha, <guilabel
+>Veličina:</guilabel
+>, nudi sledeća četiri izbora:</para>
+
+<itemizedlist>
+<listitem
+><para
+>3,5" 1,44 MB</para
+></listitem>
+<listitem
+><para
+>3,5" 720 kB</para
+></listitem>
+<listitem
+><para
+>5,25" 1,2 MB</para
+></listitem>
+<listitem
+><para
+>5,25" 360 kB</para
+></listitem>
+</itemizedlist>
+
+<para
+>Verzija <application
+>K‑flopija</application
+> za Linux ima i peti izbor veličine:</para>
+
+<itemizedlist>
+<listitem
+><para
+>automatski otkrij</para
+></listitem>
+</itemizedlist>
+
+<!-- ### TODO: typical floppy disk of a PC has not the hardware to support
+Mac 800KB floppies at all, not only formatting. -->
+<note>
+<para
+>Format disketa od 800 kB, koji koriste <hardware
+>flopi jedinice na .Macu</hardware
+>, ne može biti podržan na <hardware
+>PC flopi jedinicama</hardware
+>, pošto nisu u stanju da tako formatiraju diskove.</para>
+</note>
+</sect2>
+
+<sect2 id="filesystems">
+<title
+>Fajl sistem:</title>
+
+<para
+>Treći padajući spisak, <guilabel
+>Fajl sistem:</guilabel
+>, nudi sledeće izbore, ako su primenljivi:</para>
+
+<variablelist>
+<varlistentry>
+<term
+>DOS</term>
+<listitem>
+<para
+>Ovaj izbor govori <application
+>K‑flopiju</application
+> da postavi na disketu fajl sistem pogodan za DOS/Windows. Korisnik će najverovatnije izabrati ovo ako želi da koristi disketu na tim operativnim sistemima, pošto oni ne prepoznaju druge fajl sisteme. (Podržan na Linuxu i BSD‑u.)</para>
+</listitem>
+</varlistentry>
+
+<varlistentry
+> 
+<term
+>ext2</term>
+<listitem>
+<para
+>Ovaj izbor govori <application
+>K‑flopiju</application
+> da postavi na disketu fajl sistem koji se često koristi pod Linuxom, mada retko na disketama. (Podržan na Linuxu i BSD‑u.)</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+>UFS</term>
+<listitem>
+<para
+>Ovaj izbor govori <application
+>K‑flopiju</application
+> da postavi na disketu fajl sistem koji se često koristi pod FreeBSD‑om. Korisnik će najverovatnije izabrati ovo ako želi da koristi disketu samo pod FreeBSD‑om. (Podržan samo na BSD‑u.)</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+>Minix</term>
+<listitem>
+<para
+>Ovaj izbor govori <application
+>K‑flopiju</application
+> da postavi na disketu fajl sistem koji se često koristi na disketama pod Linuxom. (Podržan samo u Linuxu.) </para>
+</listitem>
+</varlistentry>
+</variablelist>
+
+</sect2>
+</sect1>
+
+<sect1 id="formatting-options">
+<title
+>Opcije formatiranja</title>
+<para
+>U grupi levo u prozoru <application
+>K‑flopija</application
+>, nalazi se skup od pet opcija za formatiranje. Prve dve odozgo su radio dugmad.</para
+> <note
+><para
+>Ovaj izraz, „radio dugmad“, označava skup opcija od kojih se može izabrati tačno jedna — baš kao što se na radio aparatu može prebaciti na tačno jedan pretpodešeni kanal.</para
+></note
+><para
+>Dve opcije na dnu su za etiketiranje diskete. Sve su objašnjene u narednom.</para>
+
+<sect2>
+<title
+>Metod formatiranja</title>
+<para
+><application
+>K‑flopi</application
+> može da formatira disketu na dva načina:</para>
+<para>
+<variablelist>
+<varlistentry>
+<term
+><guilabel
+>Brzo formatiraj</guilabel
+></term>
+<listitem>
+<para
+>Jednostavno stavlja novi fajl sistem na disketu.</para>
+<warning
+><para
+>Postojeći podaci na disketi više neće biti dostupni, mada neće biti fizički obrisani.</para
+></warning>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term
+><guilabel
+>Nuliraj i brzo formatiraj</guilabel
+></term>
+<listitem>
+<para
+>Prvo upisuje nule na disketu, pa onda stvara nov fajl sistem.</para>
+<warning
+><para
+>Svi postojeći podaci na disku biće obrisani. </para
+></warning>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term
+><guilabel
+>Potpuno formatiraj</guilabel
+></term>
+<listitem>
+<para
+>Potpuno formatiranje ponovo dodeljuje staze i sektore, stavlja izabrani fajl sistem na disketu, a zatim overava formatiranje, blokirajući sve loše sektore koje nađe.</para>
+<warning
+><para
+>Svi postojeći podaci na disku biće obrisani. </para
+></warning>
+</listitem>
+</varlistentry>
+</variablelist>
+</para>
+</sect2>
+
+<sect2>
+<title
+>Proveri celovitost</title>
+
+<para
+>Ovo govori <application
+>K‑flopiju</application
+> da proveri da li je disketa pravilno formatirana, omogućavajući otkrivanje loših sektora. </para>
+
+<note
+><para
+>Ako se loši sektori otkriju tokom faze overavanja u punom formatiranju, formatiranje će biti prekinuto i fajl sistem neće biti upisan. </para
+></note>
+
+</sect2>
+
+<sect2>
+<title
+>Etiketa diskete:</title>
+
+<para
+>Dve opcije na dnu omogućavaju korisniku da doda (ili izmeni) etiketu diskete. Ako je popunjena kućica <guilabel
+>Etiketa diskete:</guilabel
+>, korisnik može uneti ime (etiketu) za disketu koja treba da se formatira, u polju odmah ispod. Pošto se disketa formatira, etiketa će biti upisana na nju.</para>
+
+<note
+><para
+>Zbog ograničenja DOS fajl sistema, etiketa može sadržati najviše 11 znakova. Jednostavnosti radi, <application
+>K‑flopi</application
+> uzima da ovo ograničenje važi za sve fajl sisteme.</para
+></note>
+
+<note
+><para
+>Fajl sistem Minixa ne podržava etikete. Ako se izabere, <application
+>K‑flopi</application
+> će ignorisati etiketu diskete. </para
+></note>
+
+</sect2>
+
+</sect1>
+
+<sect1 id="buttons">
+<title
+>Dugmad</title>
+<para
+>Tri dugmeta su smeštena uspravno duž desne strane <application
+>K‑flopija</application
+>. </para>
+
+<variablelist>
+<varlistentry>
+<term
+><guibutton
+>Formatiraj</guibutton
+></term>
+<listitem>
+<para
+>Pokreće proces formatiranja. Pošto se korisnik uveri da su sve postavke ispravne, može započeti proces formatiranja klikom na ovo dugme. Tada će se promeniti dva dugačka pravougaona okvira preko dna <application
+>K‑flopija</application
+>.</para>
+
+<para
+>Gornji okvir je pokazatelj stanja koji pruža informacije o tekućem procesu, posebno greškama na koje se naiđe u toku obrade.</para>
+
+<para
+>Donji okvir je traka napretka. Ona i grafički i brojevno prikazuje napredak, prvo formatiranja a zatim overavanja. Pre pokretanja je prazna, pokazujući samo broj 0% u sredini. Čim formatiranje započne, napredak se prati grafički tako što se traka ispunjava sleva nadesno. Istovremeno se povećava broj u sredini, tako da odražava procentualnu dovršenost procesa.</para>
+
+<note
+><para
+>Pošto <application
+>K‑flopi</application
+> za formatiranje disketa koristi spoljašnje programe, mora se osloniti na njih za dobijanje pravih informacija za prikaz trake napretka. Nažalost, ovo obično ne radi najbolje. Programi koji pišu fajl sisteme retko vraćaju dovoljno podataka, tako da će traka napretka ostati na 0%.</para
+></note>
+
+<important>
+<para
+>Uverite se da disketa <emphasis
+>nije</emphasis
+> montirana. <application
+>K‑flopi</application
+> ne može da formatira montirane diskete.</para>
+</important>
+
+<note
+><para
+><application
+>K‑flopi</application
+> <emphasis
+>ne</emphasis
+> demontira diskete, pošto bi tada korisnik lako mogao da prebriše disketu s važnim podacima na njoj.</para
+></note>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guibutton
+>Pomoć</guibutton
+></term>
+<listitem>
+<para
+>Otvara meni sa radnjama za otvaranje ovog priručnika, prijavljivanje greške, promenu jezika programa i prikazivanje podataka o autorima i izdanju <application
+>K‑flopija</application
+> i KDE‑a.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guibutton
+>Napusti</guibutton
+></term>
+<listitem>
+<para
+>Klik na ovo dugme zatvara <application
+>K‑flopi</application
+>.</para>
+</listitem>
+</varlistentry>
+
+</variablelist>
+
+</sect1>
+</chapter>
+
+<chapter id="command-line">
+<title
+>Opcije komandne linije</title>
+
+<para
+>Mada se <application
+>K‑flopi</application
+> najčešće pokreće iz programskog menija KDE‑a ili preko ikonice na površi, može se pokrenuti i kroz komandnu liniju terminalskog prozora. Tada je na raspolaganju nekoliko opcija:</para
+> 
+
+<variablelist>
+<varlistentry>
+<term
+><command
+>kfloppy <option
+>--help</option
+></command
+></term>
+<listitem
+><para
+>Nabraja opcije komandne linije.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><command
+>kfloppy <option
+>--author</option
+></command
+></term>
+<listitem>
+<para
+>Navodi autora <application
+>K‑flopija</application
+> u terminalskom prozoru.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><command
+>kfloppy <option
+>--license</option
+></command
+></term>
+<listitem>
+<para
+>Prikazuje informacije o licenciranju <application
+>K‑flopija</application
+> u terminalskom prozoru.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><command
+>kfloppy <option
+>--version</option
+></command
+></term>
+<listitem>
+<para
+>Navodi informacije o izdanju za <application
+>K‑flopi</application
+>. Isto se dobija i na <command
+>kfloppy <option
+>-v</option
+></command
+>. </para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><command
+>kfloppy <option
+><replaceable
+>uređaj</replaceable
+></option
+></command
+></term>
+<listitem
+><para
+>Uređaj za formatiranje.</para>
+<para
+>Ovo će neposredno formatirati zadati uređaj, prema sačuvanim postavkama. Trenutno podržano samo za <literal
+>/dev/fd0</literal
+> i <literal
+>/dev/fd1</literal
+>.</para
+></listitem>
+</varlistentry>
+</variablelist
+> 
+
+</chapter
+> 
+
+<chapter id="credits">
+<title
+>Zasluge i licenca</title>
+
+<!-- ### TODO: verify the copyright dates -->
+<!-- ### TODO: make the copyright list prettier -->
+<para
+>Program: © 1997–2000, <personname
+><firstname
+>Bernd</firstname
+> <othername
+>Johanes</othername
+> <surname
+>Viben</surname
+></personname
+> <email
+>wuebben@math.cornell.edu</email
+>.</para>
+
+<para
+>Program: © 2002, <personname
+><firstname
+>Adrijan</firstname
+> <surname
+>de Grot</surname
+></personname
+> <email
+>groot@kde.org</email
+>.</para>
+
+<para
+>Program: © 2004, 2005, <personname
+><firstname
+>Nikola</firstname
+> <surname
+>Gut</surname
+></personname
+> &Nicolas.Goutte.mail;.</para>
+
+<para
+>Program: © 2015, 2016, <personname
+><firstname
+>Volfgang</firstname
+> <surname
+>Bauer</surname
+></personname
+> <email
+>wbauer@tmo.at</email
+>.</para>
+
+<para
+>Dokumentacija: © 2000, <personname
+><firstname
+>Tad</firstname
+> <surname
+>Makginis</surname
+></personname
+> &Thad.McGinnis.mail;.</para>
+
+<para
+>Ova verzija priručnika za <application
+>K‑flopi</application
+> zasnovana je na prvobitnoj <personname
+><firstname
+>Dejvida</firstname
+> <surname
+>Ragija</surname
+></personname
+> <email
+>davidrugge@mindspring.com</email
+>.</para>
+
+<para
+>Preveo Dragan Pantelić <email
+>falcon-10@gmx.de</email
+>.</para
+> 
+&underFDL; &underGPL; </chapter>
+
+<appendix id="neededprogs">
+<title
+>Neophodni dodatni programi</title>
+
+<para
+>Kao što je ranije pomenuto, <application
+>K‑flopi</application
+> se služi različitim spoljašnjim programima za izvođenje formatiranja.</para>
+
+<note
+><para
+>Ako neki od tih programa nedostaje, <application
+>K‑flopi</application
+> će se svejedno pokrenuti, ali neke opcije neće biti dostupne.</para
+></note>
+
+<variablelist>
+<varlistentry>
+<term
+><command
+>fdformat</command
+></term>
+<listitem
+><para
+>Potreban za formatiranje niskog nivoa na Linuxu i BSD‑u. Ako nedostaje, biće isključeno <guilabel
+>Potpuno formatiraj</guilabel
+>. </para
+></listitem>
+</varlistentry>
+<varlistentry>
+<term
+><command
+>dd</command
+></term>
+<listitem
+><para
+>Potreban za nuliranje na Linuxu i BSD‑u. Ako nedostaje, biće isključeno <guilabel
+>Nuliraj i brzo formatiraj</guilabel
+>. </para
+></listitem>
+</varlistentry>
+<varlistentry>
+<term
+><command
+>mkdosfs</command
+></term>
+<listitem
+><para
+>Potreban za formatiranje na DOS pod Linuxom. </para
+></listitem>
+</varlistentry>
+<varlistentry>
+<term
+><command
+>newfs_msdos</command
+></term>
+<listitem
+><para
+>Potreban za formatiranje na DOS pod BSD‑om. </para
+></listitem>
+</varlistentry>
+<varlistentry>
+<term
+><command
+>newfs</command
+></term>
+<listitem
+><para
+>Potreban za formatiranje na UFS pod BSD‑om. </para
+></listitem>
+</varlistentry>
+<varlistentry>
+<term
+><command
+>mke2fs</command
+></term>
+<listitem
+><para
+>Potreban za formatiranje na ext2 pod Linuxom i BSD‑om. </para
+></listitem>
+</varlistentry>
+<varlistentry>
+<term
+><command
+>mkfs.minix</command
+></term>
+<listitem
+><para
+>Potreban za formatiranje na Minix pod Linuxom. </para
+></listitem>
+</varlistentry>
+</variablelist>
+
+</appendix>
+<appendix id="usergivendevices">
+<title
+>Korisnički zadati uređaji</title>
+
+<sect1 id="ugdintro">
+<title
+>Uvod</title>
+
+<para
+>Ovo je jedna još uvek eksperimentalna mogućnost <application
+>K‑flopija</application
+>. Omogućava korisniku da navede ime uređaja i koristi ga skoro isto kao da je <hardware
+>flopi jedinica</hardware
+>.</para>
+
+<para
+>Ova mogućnost zamišljena je pre svega kao zaobilazak za razne vrste <hardware
+>USB flopi jedinica</hardware
+> (uključujući zip jedinice), ili bilo koje druge specijalne <hardware
+>flopi jedinice</hardware
+>.</para>
+
+<note
+><para
+>Nažalost, u trenutku pisanja teksta, ova mogućnost nije previše predusretljiva. Ne pruža korisniku nikakvu pomoć u vezi sa imenima uređaja, a <application
+>K‑flopi</application
+> čak i ne pamti imena između pokretanja (doduše, delimično i bezbednost radi, jer bi se fizička <hardware
+>flopi jedinica</hardware
+> mogla promeniti između podizanja).</para
+></note>
+
+<note
+><para
+>Pošto je ova mogućnost razvijena pod Linuxom, verzija <application
+>K‑flopija</application
+> za BSD daje manje izbora nego pod Linuxom.</para
+></note>
+
+</sect1>
+
+<sect1 id="ugdmain">
+<title
+>Korišćenje</title>
+
+<!-- Note to reviewers: "PRimary" and "Secondary" are the default items in the combobox -->
+<para
+>Upotreba korisnički zadatih uređaja sasvim je prosta. Treba samo da unesete ime uređaja, na primer <filename
+>/dev/sdz4</filename
+>, u polje <guilabel
+>Flopi jedinica:</guilabel
+> (umesto da izaberete <guilabel
+>primarna</guilabel
+> ili <guilabel
+>sekundarna</guilabel
+>).</para>
+
+<note>
+<para
+>Deo <filename class="directory"
+>/dev/</filename
+> u imenu uređaja morate uneti iz dva razloga:</para>
+<itemizedlist>
+<listitem>
+<para
+>Tako <application
+>K‑flopi</application
+> prepoznaje režim korisnički zadatih uređaja.</para>
+</listitem>
+<listitem>
+<para
+>Bezbednosti radi, da se izbegne da se nešto proizvoljno uneseno slučajno poklopi sa imenom uređaja.</para>
+</listitem>
+</itemizedlist>
+</note>
+
+<para
+>Nažalost, zadavanje bilo kakvog uređaja osim flopija povlači neke nepovoljnosti. Glavna je da se više ne može izabrati <guilabel
+>Potpuno formatiraj</guilabel
+>; ako se pokuša, prijavljuje se greška na početku formatiranja. <guilabel
+>Nuliraj i brzo formatiraj</guilabel
+> se pak može koristiti. Neće formatirati uređaj, već će ga samo nulirati, ali je to praktično isto; posebno što će biti obrisani svi podaci sa uređaja.</para>
+
+<warning
+><para
+>Budite pažljivi kad unosite ime uređaja. <application
+>K‑flopi</application
+> će ga takvo kakvo je proslediti spoljašnjim programima. Ne proverava, niti to čine spoljašnji programi, da li je zaista u pitanju <hardware
+>flopi jedinica</hardware
+>. Ako kao uređaj zadate neku od particija hard‑diska, biće prihvaćen. Ako je particija montirana ili ako ne možete da pišete na taj uređaj, verovatno ćete ipak dobiti poruku o grešci, čime će najgore biti sprečeno.</para
+></warning>
+
+<note
+><para
+>Čak i ako zadate flopi uređaj kao što je <filename
+>/dev/fd0u2880</filename
+>, <application
+>K‑flopi</application
+> će odbiti da izvrši potpuno formatiranje nad njime.</para
+></note>
+
+<para
+>Pod Linuxom možete izabrati bilo koji fajl sistem. Pod BSD‑om trenutno je podržan samo UFS (ali još uvek nije ispitan u trenutku pisanja teksta).</para>
+
+<para
+>Kad ste spremni za formatiranje, kliknite kao obično na dugme <guibutton
+>Formatiraj</guibutton
+>. Iskočiće dijalog koji će tražiti da potvrdite ime uređaja. </para>
+
+<warning
+><para
+>Ovo je poslednja šansa da proverite ime uređaja pre formatiranja. Posle toga je prekasno.</para
+></warning>
+
+</sect1>
+
+</appendix>
+
+</book>
+
+<!--
+Local Variables:
+mode: sgml
+sgml-minimize-attributes:nil
+sgml-general-insert-case:lower
+sgml-indent-step:0
+sgml-indent-data:nil
+End:
+
+// vim:ts=2:sw=2:tw=78:noet
+-->

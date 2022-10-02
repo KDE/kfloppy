@@ -1,0 +1,835 @@
+<?xml version="1.0" ?>
+<!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN" "dtd/kdedbx45.dtd" [
+  <!ENTITY kappname "&kfloppy;">
+  <!ENTITY package "kdeutils">
+  <!ENTITY % Estonian  "INCLUDE"
+> <!-- change language only here -->
+  <!ENTITY % addindex "IGNORE">
+  <!ENTITY BSD "<trademark
+>BSD</trademark
+>">
+  <!ENTITY Minix "<trademark
+>Minix</trademark
+>">
+]>
+<!-- ### TODO Is BSD a trademark or a registrated trademark ? -->
+<!-- ### TODO Is Minix a trademark or a registrated trademark ? -->
+
+<!-- ### TODO Unify use of "disk", "floppy", "diskette", "floppy disk" (and "floppy drive") -->
+
+<book id="kfloppy" lang="&language;">
+<bookinfo>
+
+<title
+>&kfloppy; vormindamistööriista käsiraamat</title>
+
+<authorgroup>
+<author
+><firstname
+>Thad</firstname
+> <surname
+>McGinnis</surname
+> <affiliation
+><address
+>&Thad.McGinnis.mail; </address
+></affiliation
+> </author>
+
+<author
+><firstname
+>Nicolas</firstname
+> <surname
+>Goutte</surname
+> <affiliation
+><address
+>&Nicolas.Goutte.mail; </address
+></affiliation
+> </author>
+
+<othercredit role="developer"
+><firstname
+>Bernd</firstname
+> <othername
+>Johannes</othername
+> <surname
+>Wuebben</surname
+> <affiliation
+><address
+><email
+>wuebben@math.cornell.edu</email
+></address
+></affiliation>
+<contrib
+>Arendaja</contrib>
+</othercredit>
+
+<othercredit role="developer"
+><firstname
+>Chris</firstname
+> <surname
+>Howells</surname
+> <affiliation
+><address
+>&Chris.Howells.mail;</address
+></affiliation>
+<contrib
+>Arendaja (kasutajaliidese ümberkujundamine)</contrib>
+</othercredit>
+
+<othercredit role="developer"
+><firstname
+>Adriaan</firstname
+> <surname
+>de Groot</surname
+> <affiliation
+><address
+><email
+>groot@kde.org</email
+></address
+></affiliation>
+<contrib
+>Arendaja (&BSD; toetuse lisamine)</contrib>
+</othercredit>
+
+<othercredit role="reviewer"
+><firstname
+>Lauri</firstname
+> <surname
+>Watts</surname
+> <contrib
+>Korrigeerija</contrib>
+<affiliation
+><address
+>&Lauri.Watts.mail;</address
+></affiliation>
+</othercredit>
+
+<othercredit role="translator"
+><firstname
+>Marek</firstname
+><surname
+>Laane</surname
+><affiliation
+><address
+><email
+>bald@starman.ee</email
+></address
+></affiliation
+><contrib
+>Tõlge eesti keelde</contrib
+></othercredit
+> 
+</authorgroup>
+
+<date
+>2013-05-25</date>
+<releaseinfo
+>4.9 (&kde; 4.11)</releaseinfo>
+
+<copyright>
+<year
+>2000</year>
+<holder
+>&Thad.McGinnis;</holder>
+</copyright>
+
+<copyright>
+<year
+>2005</year>
+<holder
+>&Nicolas.Goutte;</holder>
+</copyright>
+
+<legalnotice
+>&FDLNotice;</legalnotice>
+
+<abstract
+><para
+>&kfloppy; vormindamistööriist on utiliit, mis pakub graafilist võimalust vormindada 3,5" ja 5,25" diskette.</para
+></abstract>
+
+<keywordset>
+<keyword
+>KDE</keyword>
+<keyword
+>kfloppy</keyword>
+<keyword
+>diskett</keyword>
+<keyword
+>vormindamine</keyword>
+</keywordset>
+
+</bookinfo>
+
+<chapter id="introduction">
+<title
+>Sissejuhatus</title>
+
+<para
+>&kfloppy; vormindamistööriist on utiliit, mis pakub graafilist võimalust vormindada 3,5" ja 5,25" diskette. </para>
+
+<note
+><para
+>&kfloppy; sõltub välistest programmidest ja seepärast töötab praegu <emphasis
+>ainult</emphasis
+> &Linux;is ja &BSD;-s. Sõltuvalt sellest, kas kasutad &kfloppy;t &Linux;is või &BSD;-s, on &kfloppy;l veidi erinevad võimalused.</para
+></note>
+
+<caution
+><para
+>Kontrolli, et diskett <emphasis
+>ei ole</emphasis
+> ühendatud. &kfloppy; ei saa vormindada ühendatud disketti.</para
+></caution>
+
+</chapter>
+
+<chapter id="usingkfloppy">
+<title
+>&kfloppy; kasutamine</title>
+
+<para
+>&kfloppy; käivitamine avab akna, kus kasutaja saab valida sobivad seadistused ning kontrollida vormindamise käiku. Neid võimalusi alljärgnevalt kirjeldataksegi.</para>
+
+<caution
+><para
+>Kontrolli, et diskett <emphasis
+>ei ole</emphasis
+> ühendatud. &kfloppy; ei saa vormindada ühendatud disketti.</para
+></caution>
+
+<sect1 id="controlsettings">
+<title
+>Tegevuse kontrollimine</title>
+
+<para
+>Seadistamine toimub kolme rippmenüüga kasti abil, mis asuvad &kfloppy; ülaosas.</para>
+
+<sect2 id="selectdrive">
+<title
+>Disketiseade</title>
+
+<para
+>Klõps ülemisel kastil nimetusega <guilabel
+>Disketiseade:</guilabel
+> võimaldab valida kahe võimaluse vahel:</para>
+
+<itemizedlist>
+<listitem
+><para
+>Esimene</para
+></listitem>
+<listitem
+><para
+>Teine</para
+></listitem>
+</itemizedlist>
+
+<para
+>Klõps ülevalt teisel kastil nimetusega <guilabel
+>Maht:</guilabel
+> võimaldab valida nelja võimaluse vahel:</para>
+
+<itemizedlist>
+<listitem
+><para
+>3.5" 1.44MB</para
+></listitem>
+<listitem
+><para
+>3.5" 720KB</para
+></listitem>
+<listitem
+><para
+>5.25" 1.2MB</para
+></listitem>
+<listitem
+><para
+>5.25" 360KB</para
+></listitem>
+</itemizedlist>
+
+<para
+>&kfloppy; &Linux;i versioonil on veel üks suuruse valik: </para>
+
+<itemizedlist>
+<listitem
+><para
+>Automaatne tuvastamine</para
+></listitem>
+</itemizedlist>
+
+<!-- ### TODO: typical floppy disk of a PC has not the hardware to support
+Mac 800KB floppies at all, not only formatting. -->
+<note>
+<para
+>800KB kettavormingut kasutavaid <hardware
+>&Mac;i disketiseadmeid</hardware
+> ei ole võimalik toetada <hardware
+>PC kettaseadmetel</hardware
+>, sest viimased lihtsalt ei suuda diskette selliselt vormindada.</para>
+</note>
+</sect2>
+
+<sect2 id="filesystems">
+<title
+>Failisüsteem</title>
+
+<para
+>Kolmas kast nimega Failisüsteem pakub järgmisi võimalusi:</para>
+
+<variablelist>
+<varlistentry>
+<term
+>DOS</term>
+<listitem>
+<para
+>Selle valimine sunnib &kfloppy; tekitama disketile MS-DOS/&Windows; tüüpi failisüsteemi. See on mõttekas valida juhul, kui disketti soovitakse kasutada ka neis operatsioonisüsteemides, sest nood muud vormingut ei tunnista. (Seda võimalust toetab nii &Linux; kui &BSD;.)</para>
+</listitem>
+</varlistentry>
+
+<varlistentry
+> 
+<term
+>ext2</term>
+<listitem>
+<para
+>Selle valimine sunnib &kfloppy; tekitama disketile failisüsteemi, mis on &Linux;i maailmas kõige levinum, kuigi diskettidel vähelevinud. (Seda võimalust toetab nii &Linux; kui &BSD;.)</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+>UFS</term>
+<listitem>
+<para
+>Selle valimine sunnib &kfloppy; tekitama disketile failisüsteemi, mis on <trademark class="registered"
+>FreeBSD</trademark
+> maailmas kõige levinum. Kui soovitakse disketti kasutada vaid <trademark class="registered"
+>FreeBSD</trademark
+> süsteemis, on see mõistlik valik. (Seda võimalust toetab ainult &BSD;.)</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+>&Minix;</term>
+<listitem>
+<para
+>Selle valimine sunnib &kfloppy; tekitama disketile failisüsteemi, mida kasutatakse sageli &Linux;i diskettidel. (Seda võimalust toetab ainult &Linux;.)</para>
+</listitem>
+</varlistentry>
+</variablelist>
+
+</sect2>
+</sect1>
+
+<sect1 id="formatting-options">
+<title
+>Vormindamise valikud</title>
+<para
+>Raamistatud kastis &kfloppy; akna keskel saab kasutada viit seadistamisvõimalust. Esimesed kaks on raadionupud.</para
+> <note
+><para
+>Raadionupp tähendab võimalusi, kus saab valida ainult ühe kasuks - umbes nii, nagu autoraadiol on korraga võimalik ainult üks eelnevalt määratud kanal.</para
+></note
+><para
+>Alumised kaks võimalust käivad disketi nimetuse kohta. Alljärgnevalt kirjeldatakse kõiki võimalusi:</para>
+
+<sect2>
+<title
+>Vormindamise meetod</title>
+<para
+>&kfloppy; võib flopiketast vormindada kahel viisil:</para>
+<para>
+<variablelist>
+<varlistentry>
+<term
+><guilabel
+>Kiirvormindus</guilabel
+></term>
+<listitem>
+<para
+>See lihtsalt tekitab flopikettale uue failisüsteemi.</para>
+<warning
+><para
+>Kõik varasemad andmed lähevad kaduma, isegi kui neid ei kustutata.</para
+></warning>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term
+><guilabel
+>Kiirvormindus nullidega</guilabel
+></term>
+<listitem>
+<para
+>Selle korral kirjutatakse kõigepealt disketile nullid ja seejärel luuakse uus failisüsteem.</para>
+<warning
+><para
+>Kõik disketi andmed lähevad kaotsi.</para
+></warning>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term
+><guilabel
+>Täielik vormindamine</guilabel
+></term>
+<listitem>
+<para
+>Täielik vormindamine jagab rajad ja sektorid ümber, tekitab kettale valitud failisüsteemi ning seejärel kontrollib seda, blokeerides kõik leitud vigased sektorid.</para>
+<warning
+><para
+>Kõik disketi andmed lähevad kaotsi.</para
+></warning>
+</listitem>
+</varlistentry>
+</variablelist>
+</para>
+</sect2>
+
+<sect2>
+<title
+>Kontrollimine</title>
+
+<para
+>See sunnib &kfloppy; kontrollima, kas vormindamise käigus sai failisüsteem korrektselt kirjutatud. Nii saab tuvastada vigased sektorid. </para>
+
+<note
+><para
+>Kui täieliku vormindamise kontrollimisfaasis leitakse vigaseid sektoreid, katkestatakse vormindamine ja failisüsteemi ei looda! </para
+></note>
+
+</sect2>
+
+<sect2>
+<title
+>Pealdis</title>
+
+<para
+>Alumised kaks võimalust lubavad määrata või muuta disketi pealdist. Kui kast <guilabel
+>Pealdis:</guilabel
+> on märgitud, saab kirjutada disketi pealdise ehk nime selle all asuvasse tekstikasti. Kui nüüd disketti vormindama asutakse, kirjutatakse disketile ka selle nimi.</para>
+
+<note
+><para
+>DOS-failisüsteemi piirangute tõttu saab pealdise pikkuseks olla maksimaalselt 11 märki. Ühtluse mõttes eeldab &kfloppy;, et samasugune piirang kehtib ka muude failisüsteemide korral.</para
+></note>
+
+<note
+><para
+>&Minix;i failisüsteemis ei ole üldse pealdis võimalik ning sel juhul &kfloppy; lihtsalt ignoreerib seda.</para
+></note>
+
+</sect2>
+
+</sect1>
+
+<sect1 id="buttons">
+<title
+>Nupud</title>
+<para
+>&kfloppy; paremas servas asub kolm üksteise kohale paigutatud nuppu. </para>
+
+<variablelist>
+<varlistentry>
+<term
+><guibutton
+>Vorminda</guibutton
+></term>
+<listitem>
+<para
+>See nupp käivitab vormindamise. Kui oled kindel, et kõik seadistused on korrektsed ja just sellised, nagu soovid, saab sellele nupule vajutades vormindamist alustada. Tekkivaid muutusi võib näha kahes &kfloppy; allservas asuvas laias ristkülikus.</para>
+
+<para
+>Ülemine neist on olekuindikaator, mis annab teavet käimasoleva protsessi, eriti selle käigus esinevate vigade kohta.</para>
+
+<para
+>Alumine on edenemisriba. See näitab nii graafiliselt kui numbrites esmalt vormindamise ja seejärel kontrollimise edenemist. Enne käivitamist on see tühi, ainult keskel asub kirje 0%. Vormindamise ajal aga muutub kasti värv vasakult paremale vastavalt protsessi edenemisele. Samal ajal suureneb ka keskel asuv protsenti väljendav number.</para>
+
+<note
+><para
+>Et &kfloppy; kasutab diskettide vormindamiseks väliseid programme, peab ta lootma just nende programmide infole, et näidata edenemisribal tõele vastavat infot. Alati ei pruugi see paraku nii olla. Eriti just failisüsteemi kirjutavad programmid ei kipu piisavalt andmeid tagastama, nii et edenemisriba võib sel juhul näidata 0%.</para
+></note>
+
+<important>
+<para
+>Kontrolli, et diskett <emphasis
+>ei ole</emphasis
+> ühendatud. &kfloppy; ei saa vormindada ühendatud disketti.</para>
+</important>
+
+<note
+><para
+>&kfloppy; <emphasis
+>ei lahuta</emphasis
+> disketti ise, sest see võiks kaasa tuua ohu, et kasutaja kirjutab üle olulisi andmeid sisaldava disketi.</para
+></note>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guibutton
+>Abi</guibutton
+></term>
+<listitem>
+<para
+>See avab hüpikmenüü, kus saab avada käesoleva käsiraamatu, anda teada veast, vahetada rakenduse keelt ning näha &kfloppy; ja &kde; autorit ja versiooni.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guibutton
+>Välju</guibutton
+></term>
+<listitem>
+<para
+>Klõps sellel nupul sulgeb &kfloppy;.</para>
+</listitem>
+</varlistentry>
+
+</variablelist>
+
+</sect1>
+</chapter>
+
+<chapter id="command-line">
+<title
+>Käsurea võtmed</title>
+
+<para
+>Kuigi usutavasti käivitatakse &kfloppy; üldjuhul &kde; rakenduste menüüst või töölaual asuva ikooni abil, saab seda teha ka terminaliaknas käsurealt. Sellisel juhul saab kasutada teatud võtmeid, nimelt:</para
+> 
+
+<variablelist>
+<varlistentry>
+<term
+><command
+>kfloppy <option
+>--help</option
+></command
+></term>
+<listitem
+><para
+>Näitab peamisi võtmeid, mida käsurea puhul saab kasutada.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><command
+>kfloppy <option
+>--help-qt</option
+></command
+></term>
+<listitem
+><para
+>Näitab võtmeid, mille abil saab muuta &kfloppy; ja &Qt; koostööd.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry
+> 
+<term
+><command
+>kfloppy <option
+>--help-kde</option
+></command
+></term>
+<listitem>
+<para
+>Näitab võtmeid, mille abil saab muuta &kfloppy; ja &kde; koostööd.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><command
+>kfloppy <option
+>--help-all</option
+></command
+></term>
+<listitem>
+<para
+>Näitab kõiki käsurea võtmeid.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><command
+>kfloppy <option
+>--author</option
+></command
+></term>
+<listitem>
+<para
+>Näitab terminaliaknas &kfloppy; autorit</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><command
+>kfloppy <option
+>--version</option
+></command
+></term>
+<listitem>
+<para
+>Näitab &Qt;, &kde; ja &kfloppy; versiooni. Sama tulemuse annab käsk <command
+>kfloppy <option
+>-V</option
+></command
+> </para>
+</listitem>
+</varlistentry>
+</variablelist
+> 
+
+</chapter
+> 
+
+<chapter id="credits">
+<title
+>Autorid ja litsents</title>
+
+<!-- ### TODO: verify the copyright dates -->
+<!-- ### TODO: make the copyright list prettier -->
+<para
+>&kfloppy; vormindamistööriista autoriõigus 1997 - 2000: &Bernd.Johannes.Wuebben; <email
+>wuebben@math.cornell.edu</email
+></para>
+
+<para
+>&kfloppy; vormindamistööriista autoriõigus 2002: Adriaan de Groot <email
+>groot@kde.org</email
+></para>
+
+<para
+>&kfloppy; vormindamistööriista autoriõigus 2004, 2005: &Nicolas.Goutte; &Nicolas.Goutte.mail;</para>
+
+<para
+>Dokumentatsiooni autoriõigus 2000: &Thad.McGinnis; &Thad.McGinnis.mail;.</para>
+
+<para
+>&kfloppy; käsiraamatu käesolev versioon tugineb &David.Rugge; <email
+>davidrugge@mindspring.com</email
+> originaalile</para>
+
+<para
+>Tõlge eesti keelde: Marek Laane <email
+>bald@starman.ee</email
+></para
+> 
+&underFDL; &underGPL; </chapter>
+
+<appendix id="neededprogs">
+<title
+>Vajalikud välised programmid</title>
+
+<para
+>Nagu eespool juba mainitud, vajab &kfloppy; mitmesuguste vormindamistoimingute sooritamiseks väliste programmide abi.</para>
+
+<note
+><para
+>Kui mõni neist peaks puuduma, üritab &kfloppy; siiski teha, mis teha annab, kuid puuduva programmiga seotud võimalusi mõistagi kasutada ei saa.</para
+></note>
+
+<variablelist>
+<varlistentry>
+<term
+><command
+>fdformat</command
+></term>
+<listitem
+><para
+>Seda programmi on vaja süvataseme vormindamiseks &Linux;is ja &BSD;-s. Kui see puudub, ei ole <guilabel
+>täielik vormindamine</guilabel
+> võimalik. </para
+></listitem>
+</varlistentry>
+<varlistentry>
+<term
+><command
+>dd</command
+></term>
+<listitem
+><para
+>Seda programmi on vaja nullide kirjutamiseks &Linux;is ja &BSD;-s. Kui see puudub, ei ole <guilabel
+>kiirvormindus nullidega</guilabel
+> võimalik. </para
+></listitem>
+</varlistentry>
+<varlistentry>
+<term
+><command
+>mkdosfs</command
+></term>
+<listitem
+><para
+>Seda programmi on vaja DOS-i vormindamiseks &Linux;is. </para
+></listitem>
+</varlistentry>
+<varlistentry>
+<term
+><command
+>newfs_msdos</command
+></term>
+<listitem
+><para
+>Seda programmi on vaja DOS-i vormindamiseks &BSD;-s. </para
+></listitem>
+</varlistentry>
+<varlistentry>
+<term
+><command
+>newfs</command
+></term>
+<listitem
+><para
+>Seda programmi on vaja UFS-i vormindamiseks &BSD;-s. </para
+></listitem>
+</varlistentry>
+<varlistentry>
+<term
+><command
+>mke2fs</command
+></term>
+<listitem
+><para
+>Seda programmi on vaja ext2 vormindamiseks &Linux;is ja &BSD;-s. </para
+></listitem>
+</varlistentry>
+<varlistentry>
+<term
+><command
+>mkfs.minix</command
+></term>
+<listitem
+><para
+>Seda programmi on vaja &Minix;i vormindamiseks &Linux;is. </para
+></listitem>
+</varlistentry>
+</variablelist>
+
+</appendix>
+<appendix id="usergivendevices">
+<title
+>Kasutaja määratud seadmed</title>
+
+<sect1 id="ugdintro">
+<title
+>Sissejuhatus</title>
+
+<para
+>"Kasutaja määratud seadmed" on töönimetus &kfloppy; ühele veel eksperimentaalsele omadusele. See lubab kasutajal määrata seadme nime ja kasutada seda enam-vähem samamoodi nagu <hardware
+>disketiseade</hardware
+>t.</para>
+
+<para
+>Peamiselt on see mõeldud neile kasutajatele, kellel on mis tahes laadi <hardware
+>USB disketiseadmed</hardware
+> või mingi muu ebatüüpiline <hardware
+>disketiseadmed</hardware
+>.</para>
+
+<note
+><para
+>Paraku ei olnud käsiraamatu kirjutamise ajal see võimalus veel kuigi kasutajasõbralik, pakkumata kasutajale abi seadme nimetamise kohta. &kfloppy; ei suuda veel isegi kahe väljakutse vahel seadme nime meelde jätta (tõsi, osaliselt on selle taga turvakaalutlused, sest <hardware
+>disketiseadme</hardware
+> seade võib taaskäivitamisega muutuda).</para
+></note>
+
+<note
+><para
+>Et seda võimalust arendati &Linux;i keskkonnas, pakub &kfloppy; &BSD; versioon veel vähem võimalusi kui &kfloppy; &Linux;is.</para
+></note>
+
+</sect1>
+
+<sect1 id="ugdmain">
+<title
+>Kasutamine</title>
+
+<!-- Note to reviewers: "PRimary" and "Secondary" are the default items in the combobox -->
+<para
+>"Kasutaja määratud seadmete" kasutamine on tegelikult päris lihtne: sul tuleb vaid anda kastis <guilabel
+>Disketiseade:</guilabel
+> seadme nimi, näiteks <replaceable
+>/dev/sdz4</replaceable
+>, mitte aga valida esimene või teine seade.</para>
+
+<note>
+<para
+>Seadme nimes tuleb osa <filename class="directory"
+>/dev/</filename
+> anda kahel põhjusel:</para>
+<itemizedlist>
+<listitem>
+<para
+>Nii tunneb &kfloppy; ära "Kasutaja määratud seadmete" režiimi.</para>
+</listitem>
+<listitem>
+<para
+>Turvakaalutlustel - nii välditakse võimalust, et kasutaja kirjutaks kasti midagi, mis juhuslikult sobib kokku seadme nimega.</para>
+</listitem>
+</itemizedlist>
+</note>
+
+<para
+>Paraku on mis tahes muu seadme kasutamisel disketiseadme asemel omad tagajärjed. Peamine neist on see, et <guilabel
+>täielik vormindamine</guilabel
+> ei ole võimalik. Selle valimisel näidatakse kohe veateadet. Küll saab kasutada <guilabel
+>kiirvormindust nullidega</guilabel
+>. See ei vorminda seadet, vaid ainult kirjutab selle nulle täis, kuid praktikas on tulemus üsna sarnane. Igatahes lähevad seadmel olnud andmed kaotsi.</para>
+
+<warning
+><para
+>Seadme nime andmisel tasub olla ettevaatlik. &kfloppy; edastab seadme nime välistele programmidele just sellisel kujul, nagu sa selle sisestad. Sealjuures ei kontrollita (ja seda ei tee ka välised programmid), kas antud seade on ikka <hardware
+>disketiseade</hardware
+>. Kui annd näiteks hoopis mõne oma kõvaketta partitsiooni, ei tee rakendus ega välised programmid selle peale teist nägugi. Kui partitsioon on ühendatud või sul puudub sellel kirjutamisõigus, saad küll ilmselt veateate, mis aitab ehk halvimat vältida.</para
+></warning>
+
+<note
+><para
+>Isegi kui määrad disketiseadme, näiteks <filename
+>/dev/fd0u2880</filename
+>, ei võta &kfloppy; ette <guilabel
+>täielikku vormindamist</guilabel
+>.</para
+></note>
+
+<para
+>&Linux;is saab valida suvalise failisüsteemi, &BSD;-s on praegu toetatud ainult UFS (ja seegi ei olnud käsiraamatu kirjutamise ajaks testitud).</para>
+
+<para
+>Kui oled vormindamiseks valmis, klõpsa nupule <guibutton
+>Vorminda</guibutton
+>. Selle peale ilmub teatekast, mis palub kontrollida seadme nime. </para>
+
+<warning
+><para
+>See on viimane võimalus seadme nime kontrollida, enne kui vormindamine algab. Pärast seda on liiga hilja midagi enam muuta.</para
+></warning>
+
+</sect1>
+
+</appendix>
+
+</book>
+
+<!--
+Local Variables:
+mode: sgml
+sgml-minimize-attributes:nil
+sgml-general-insert-case:lower
+sgml-indent-step:0
+sgml-indent-data:nil
+End:
+
+// vim:ts=2:sw=2:tw=78:noet
+-->

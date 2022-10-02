@@ -1,0 +1,846 @@
+<?xml version="1.0" ?>
+<!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN" "dtd/kdedbx45.dtd" [
+  <!ENTITY kappname "&kfloppy;">
+  <!ENTITY package "kdeutils">
+  <!ENTITY % Swedish "INCLUDE"
+> <!-- change language only here -->
+  <!ENTITY % addindex "IGNORE">
+  <!ENTITY BSD "<trademark
+>BSD</trademark
+>">
+  <!ENTITY Minix "<trademark
+>Minix</trademark
+>">
+]>
+<!-- ### TODO Is BSD a trademark or a registrated trademark ? -->
+<!-- ### TODO Is Minix a trademark or a registrated trademark ? -->
+
+<!-- ### TODO Unify use of "disk", "floppy", "diskette", "floppy disk" (and "floppy drive") -->
+
+<book id="kfloppy" lang="&language;">
+<bookinfo>
+
+<title
+>Handbok &kfloppy; diskettformaterare</title>
+
+<authorgroup>
+<author
+><firstname
+>Thad</firstname
+> <surname
+>McGinnis</surname
+> <affiliation
+><address
+>&Thad.McGinnis.mail; </address
+></affiliation
+> </author>
+
+<author
+><firstname
+>Nicolas</firstname
+> <surname
+>Goutte</surname
+> <affiliation
+><address
+>&Nicolas.Goutte.mail; </address
+></affiliation
+> </author>
+
+<othercredit role="developer"
+><firstname
+>Bernd</firstname
+> <othername
+>Johannes</othername
+> <surname
+>Wuebben</surname
+> <affiliation
+><address
+><email
+>wuebben@math.cornell.edu</email
+></address
+></affiliation>
+<contrib
+>Utvecklare</contrib>
+</othercredit>
+
+<othercredit role="developer"
+><firstname
+>Chris</firstname
+> <surname
+>Howells</surname
+> <affiliation
+><address
+>&Chris.Howells.mail;</address
+></affiliation>
+<contrib
+>Utvecklare (omkonstruktion av användargränssnitt)</contrib>
+</othercredit>
+
+<othercredit role="developer"
+><firstname
+>Adriaan</firstname
+> <surname
+>de Groot</surname
+> <affiliation
+><address
+><email
+>groot@kde.org</email
+></address
+></affiliation>
+<contrib
+>Utvecklare (tillägg av &BSD;-stöd)</contrib>
+</othercredit>
+
+<othercredit role="developer"
+><firstname
+>Wolfgang</firstname
+> <surname
+>Bauer</surname
+> <affiliation
+><address
+><email
+>wbauer@tmo.at</email
+></address
+></affiliation>
+<contrib
+>Utvecklare (konvertering till KF5)</contrib>
+</othercredit>
+
+<othercredit role="reviewer"
+><firstname
+>Lauri</firstname
+> <surname
+>Watts</surname
+> <contrib
+>Granskare</contrib>
+<affiliation
+><address
+>&Lauri.Watts.mail;</address
+></affiliation>
+</othercredit>
+
+<othercredit role="translator"
+> <firstname
+>Stefan</firstname
+> <surname
+>Asserhäll</surname
+> <affiliation
+><address
+><email
+>stefan.asserhall@bredband.net</email
+></address
+></affiliation
+> <contrib
+>Översättare</contrib
+></othercredit
+> 
+</authorgroup>
+
+<date
+>2016-03-23</date>
+<releaseinfo
+>5.0 (program 16.04)</releaseinfo>
+
+<copyright>
+<year
+>2000</year>
+<holder
+>&Thad.McGinnis;</holder>
+</copyright>
+
+<copyright>
+<year
+>2005</year>
+<holder
+>&Nicolas.Goutte;</holder>
+</copyright>
+
+<legalnotice
+>&FDLNotice;</legalnotice>
+
+<abstract
+><para
+>&kfloppy; diskettformaterare är ett verktyg som ger en enkel grafisk metod att formatera 3.5" and 5.25" disketter.</para
+></abstract>
+
+<keywordset>
+<keyword
+>KDE</keyword>
+<keyword
+>kfloppy</keyword>
+<keyword
+>diskett</keyword>
+<keyword
+>formatera</keyword>
+</keywordset>
+
+</bookinfo>
+
+<chapter id="introduction">
+<title
+>Inledning</title>
+
+<para
+>&kfloppy; diskettformaterare är ett verktyg som ger en enkel grafisk metod att formatera 3.5" and 5.25" disketter. </para>
+
+<note
+><para
+>&kfloppy; beror på externa program och fungerar därför för närvarande <emphasis
+>bara</emphasis
+> med &Linux; och &BSD;. Beroende på om du använder &kfloppy; med &Linux; eller &BSD;, har &kfloppy; något annorlunda funktioner.</para
+></note>
+
+<caution
+><para
+>Försäkra dig om att din diskettenhet <emphasis
+>inte</emphasis
+> är monterad. &kfloppy; kan inte formatera en monterade diskett.</para
+></caution>
+
+</chapter>
+
+<chapter id="usingkfloppy">
+<title
+>Att använda &kfloppy;</title>
+
+<para
+>När &kfloppy; startas öppnas ett enda fönster där användaren kan välja lämpliga inställningar och styra formateringsförloppet. De här alternativen och styrinställningarna beskrivs i detalj nedan.</para>
+
+<caution
+><para
+>Försäkra dig om att din diskettenhet <emphasis
+>inte</emphasis
+> är monterad. &kfloppy; kan inte formatera en monterade diskett.</para
+></caution>
+
+<sect1 id="controlsettings">
+<title
+>Styrinställningar</title>
+
+<para
+>Inställningarna väljs med tre kombinationsrutor som finns i övre vänstra hörnet av &kfloppy;.</para>
+
+<sect2 id="selectdrive">
+<title
+>Diskettenhet</title>
+
+<para
+>Genom att klicka på den översta rutan, som heter <guilabel
+>Diskettenhet</guilabel
+>, får användaren följande två val:</para>
+
+<itemizedlist>
+<listitem
+><para
+>Primär</para
+></listitem>
+<listitem
+><para
+>Sekundär</para
+></listitem>
+</itemizedlist>
+
+<para
+>Genom att klicka på den andra kombinationsrutan uppifrån, som heter <guilabel
+>Storlek</guilabel
+>, får användaren följande fyra val:</para>
+
+<itemizedlist>
+<listitem
+><para
+>3.5" 1.44MB</para
+></listitem>
+<listitem
+><para
+>3.5" 720KB</para
+></listitem>
+<listitem
+><para
+>5.25" 1.2MB</para
+></listitem>
+<listitem
+><para
+>5.25" 360KB</para
+></listitem>
+</itemizedlist>
+
+<para
+>&Linux;-versionen av &kfloppy; har också ett val av storlek som heter:</para>
+
+<itemizedlist>
+<listitem
+><para
+>Identifiera automatiskt</para
+></listitem>
+</itemizedlist>
+
+<!-- ### TODO: typical floppy disk of a PC has not the hardware to support
+Mac 800KB floppies at all, not only formatting. -->
+<note>
+<para
+>Diskettformatet 800k som används av <hardware
+>&Mac;</hardware
+> diskettenheter kan inte stödas på <hardware
+>PC-diskettenheter</hardware
+>, eftersom de inte har möjlighet att formatera disketter på det sättet.</para>
+</note>
+</sect2>
+
+<sect2 id="filesystems">
+<title
+>Filsystem</title>
+
+<para
+>Den tredje kombinationsrutan, som heter filsystem, erbjuder användaren följande va, om de är tillämpliga:</para>
+
+<variablelist>
+<varlistentry>
+<term
+>Dos</term>
+<listitem>
+<para
+>Det här valet gör att &kfloppy; lägger ett filsystem av MS-DOS/&Windows; typ på disketten. Användaren bör troligen välja det här systemet om hon eller han ska använda disketten med de operativsystemen, eftersom de inte känner igen andra systemtyper. (Det stöds för &Linux; och &BSD;.)</para>
+</listitem>
+</varlistentry>
+
+<varlistentry
+> 
+<term
+>ext2</term>
+<listitem>
+<para
+>Det här valet gör att &kfloppy; lägger ett filsystem på disketten som är det som oftast används med &Linux;, men dock sällan för disketter. (Det stöds för &Linux; och &BSD;.)</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+>UFS</term>
+<listitem>
+<para
+>Det här valet gör att &kfloppy; lägger ett filsystem på disketten som är det som oftast används med <trademark class="registered"
+>FreeBSD</trademark
+>. Användaren bör troligen välja det här systemet om han eller hon bara ska använda disketten med <trademark class="registered"
+>FreeBSD</trademark
+>. (Det stöds bara för &BSD;.)</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+>&Minix;</term>
+<listitem>
+<para
+>Det här valet gör att &kfloppy; lägger ett filsystem på disketten som är det som oftast används på disketter som används med &Linux;. (Det stöds bara för &Linux;.)</para>
+</listitem>
+</varlistentry>
+</variablelist>
+
+</sect2>
+</sect1>
+
+<sect1 id="formatting-options">
+<title
+>Formateringsalternativ</title>
+<para
+>Innanför en ruta i mitten till vänser i &kfloppy; hittar användaren en uppsättning med fem formateringsalternativ. De översta två är ett par med alternativknappar.</para
+> <note
+><para
+>Det här uttrycket (alternativknappar) anger ett antal alternativ där bara ett kan väljas, på samma sätt som bara en förinställd kanal kan väljas på en bilradio.</para
+></note
+><para
+>De nedre två alternativen är till för att ge disketten en etikett. Alla förklaras nedan:</para>
+
+<sect2>
+<title
+>Formateringsmetod</title>
+<para
+>&kfloppy; kan formatera en diskett på följande två sätt:</para>
+<para>
+<variablelist>
+<varlistentry>
+<term
+><guilabel
+>Snabbformatering</guilabel
+></term>
+<listitem>
+<para
+>Det här skriver helt enkelt det nya filsystemet på disketten.</para>
+<warning
+><para
+>All data på disketten går förlorad, även om data själv inte kommer att raderas.</para
+></warning>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term
+><guilabel
+>Nollställ och snabbformatera</guilabel
+></term>
+<listitem>
+<para
+>Den här formateringen skriver först nollor på disketten och skapar därefter det nya filsystemet.</para>
+<warning
+><para
+>All data på disketten raderas.</para
+></warning>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term
+><guilabel
+>Fullständig formatering</guilabel
+></term>
+<listitem>
+<para
+>En fullständig formatering flyttar spåren och sektorerna, lägger det valda filsystemet på disketten, och verifierar sedan formatet samt tar bort eventuella dåliga sektorer som hittas.</para>
+<warning
+><para
+>All data på disketten raderas.</para
+></warning>
+</listitem>
+</varlistentry>
+</variablelist>
+</para>
+</sect2>
+
+<sect2>
+<title
+>Verifiera integritet</title>
+
+<para
+>Det här talar om för &kfloppy; att den ska kontrollera att formatering skrevs på ett riktigt sätt till disketten. Det här möjliggör att dåliga sektorer kan identifieras. </para>
+
+<note
+><para
+>Om felaktiga sektorer hittas under verifieringsfasen av en fullständig formatering, avbryts formateringen och filsystemet skrivs inte. </para
+></note>
+
+</sect2>
+
+<sect2>
+<title
+>Volymetikett</title>
+
+<para
+>De nedre två funktionerna låter användaren lägga till (eller ändra) en etikett för disketten. Om kryssrutan <guilabel
+>Volymetikett</guilabel
+> är markerad, kan användaren skriva in ett namn (en etikett) för disketten som ska formateras i textrutan som finns omedelbart nedanför. När disketten därefter formateras, skrivs etiketten till den.</para>
+
+<note
+><para
+>På grund av en begränsning i filsystemet DOS kan en etikett vara som mest 11 tecken lång. Som en förenkling antar &kfloppy; att begränsningen gäller för alla filsystem.</para
+></note>
+
+<note
+><para
+>Filsystemet &Minix; kan inte ha någon volymetikett. I detta fall ignorerar &kfloppy; volymetiketten.</para
+></note>
+
+</sect2>
+
+</sect1>
+
+<sect1 id="buttons">
+<title
+>Knapparna</title>
+<para
+>Det finns tre knappar som är placerade vertikalt längs högra sidan i &kfloppy;. </para>
+
+<variablelist>
+<varlistentry>
+<term
+><guibutton
+>Formatera</guibutton
+></term>
+<listitem>
+<para
+>Den här knappen startar formateringsprocessen. När användaren väl är säker på att alla inställningar är riktiga, kan han eller hon börja processen genom att klicka på den här knappen. Då ändras de två långa rektangulära rutorna som täcker botten på &kfloppy;.</para>
+
+<para
+>Den övre rutan är en statusrad som ger information om förloppet som pågår, i synnerhet fel som uppstår under behandlingen.</para>
+
+<para
+>Den nedre rutan är en stapel som anger förloppet. Den visar både grafiskt och numeriskt förloppet först för formateringen och sedan för verifieringen. Innan formateringen startar verkar den vara tom, och visar bara talet 0% i mitten. När varje steg sker följs förloppet grafiskt genom att rutan fylls från vänster till höger. På samma gång så ökas talet i mitten för att motsvara det exakta procenttalet av förloppet som är färdigt.</para>
+
+<note
+><para
+>Eftersom &kfloppy; använder externa program för att formatera disketten, måste det förlita sig på att dessa program ger rätt information för att kunna visa förloppsraden. Tyvärr är detta inte fallet. I synnerhet returnerar inte programmen som skriver filsystem tillräckligt med data, så förloppsraden förblir på 0 %.</para
+></note>
+
+<important>
+<para
+>Försäkra dig om att din diskettenhet <emphasis
+>inte</emphasis
+> är monterad. &kfloppy; kan inte formatera en monterade diskett.</para>
+</important>
+
+<note
+><para
+>&kfloppy; avmonterar <emphasis
+>inte</emphasis
+> disketten själv, eftersom det skulle kunna betyda att användaren skriver över en diskett med viktig data.</para
+></note>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guibutton
+>Hjälp</guibutton
+></term>
+<listitem>
+<para
+>Det här visar en sammanhangsberoende meny med åtgärder för att öppna den här handboken, rapportera ett fel, byta programmets språk, och visa upphovsmän samt version av &kfloppy; och &kde;.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guibutton
+>Avsluta</guibutton
+></term>
+<listitem>
+<para
+>Att klicka på den här knappen stänger &kfloppy;.</para>
+</listitem>
+</varlistentry>
+
+</variablelist>
+
+</sect1>
+</chapter>
+
+<chapter id="command-line">
+<title
+>Kommandoradsväljare</title>
+
+<para
+>Även om &kfloppy; oftast startas från &kde;:s programmeny, eller en ikon på skrivbordet, kan den också startas från kommandoraden i ett terminalfönster. Det finns några väljare som är tillgängliga när man gör det. De är:</para
+> 
+
+<variablelist>
+<varlistentry>
+<term
+><command
+>kfloppy <option
+>--help</option
+></command
+></term>
+<listitem
+><para
+>Visar alternativen som är tillgängliga från kommandoraden.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><command
+>kfloppy <option
+>--author</option
+></command
+></term>
+<listitem>
+<para
+>Visar &kfloppy;s upphovsman i terminalfönstret</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><command
+>kfloppy <option
+>--license</option
+></command
+></term>
+<listitem>
+<para
+>Visar licensinformation om &kfloppy; i terminalfönstret</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><command
+>kfloppy <option
+>--version</option
+></command
+></term>
+<listitem>
+<para
+>Visar information om versioner av &kfloppy;. Också tillgängligt med <command
+>kfloppy <option
+>-v</option
+></command
+> </para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><command
+>kfloppy <option
+><replaceable
+>enhet</replaceable
+></option
+></command
+></term>
+<listitem
+><para
+>Enhet att formatera.</para>
+<para
+>Formaterar direkt angiven enhet med sparade inställningar. Stöder för närvarande bara /dev/fd0 och /dev/fd1.</para
+></listitem>
+</varlistentry>
+</variablelist
+> 
+
+</chapter
+> 
+
+<chapter id="credits">
+<title
+>Tack till och licens</title>
+
+<!-- ### TODO: verify the copyright dates -->
+<!-- ### TODO: make the copyright list prettier -->
+<para
+>&kfloppy; formateringsprogram Copyright 1997 - 2000 &Bernd.Johannes.Wuebben; <email
+>wuebben@math.cornell.edu</email
+></para>
+
+<para
+>&kfloppy; formateringsprogram Copyright 2002 Adriaan de Groot <email
+>groot@kde.org</email
+></para>
+
+<para
+>&kfloppy; formateringsprogram Copyright 2004, 2005 &Nicolas.Goutte; &Nicolas.Goutte.mail;</para>
+
+<para
+>&kfloppy; formateringsprogram Copyright 2015, 2016 Wolfgang Bauer <email
+>wbauer@tmo.at</email
+></para>
+
+<para
+>Dokumentation Copyright 2000 av &Thad.McGinnis; &Thad.McGinnis.mail;.</para>
+
+<para
+>Den här versionen av &kfloppy;s handbok är baserad på originalet av &David.Rugge; <email
+>davidrugge@mindspring.com</email
+></para>
+
+<para
+>Översättning Stefan Asserhäll <email
+>stefan.asserhall@bredband.net</email
+></para
+> &underFDL; &underGPL; </chapter>
+
+<appendix id="neededprogs">
+<title
+>Externa program som behövs</title>
+
+<para
+>Som redan tidigare skrivits i den här handboken, arbetar &kfloppy; med hjälp av externa program för de olika formateringsuppgifterna.</para>
+
+<note
+><para
+>Om något av dessa program saknas, försöker &kfloppy; fungera ändå. Dock är motsvarande alternativ inte tillgängliga.</para
+></note>
+
+<variablelist>
+<varlistentry>
+<term
+><command
+>fdformat</command
+></term>
+<listitem
+><para
+>Programmet behövs för lågnivåformatering på &Linux; och &BSD;. Om det saknas, är <guilabel
+>Fullständig formatering</guilabel
+> inaktiverat. </para
+></listitem>
+</varlistentry>
+<varlistentry>
+<term
+><command
+>dd</command
+></term>
+<listitem
+><para
+>Programmet behövs för nollställning på &Linux; och &BSD;. Om det saknas, är <guilabel
+>Nollställ och snabbformatera</guilabel
+> inaktiverat. </para
+></listitem>
+</varlistentry>
+<varlistentry>
+<term
+><command
+>mkdosfs</command
+></term>
+<listitem
+><para
+>Programmet behövs för DOS-formatering på &Linux;. </para
+></listitem>
+</varlistentry>
+<varlistentry>
+<term
+><command
+>newfs_msdos</command
+></term>
+<listitem
+><para
+>Programmet behövs för DOS-formatering på &BSD;. </para
+></listitem>
+</varlistentry>
+<varlistentry>
+<term
+><command
+>newfs</command
+></term>
+<listitem
+><para
+>Programmet behövs för UFS-formatering på &BSD;. </para
+></listitem>
+</varlistentry>
+<varlistentry>
+<term
+><command
+>mke2fs</command
+></term>
+<listitem
+><para
+>Programmet behövs för ext2-formatering på &Linux; och &BSD;. </para
+></listitem>
+</varlistentry>
+<varlistentry>
+<term
+><command
+>mkfs.minix</command
+></term>
+<listitem
+><para
+>Programmet behövs för &Minix;-formatering på &Linux;. </para
+></listitem>
+</varlistentry>
+</variablelist>
+
+</appendix>
+<appendix id="usergivendevices">
+<title
+>Användardefinierade enheter</title>
+
+<sect1 id="ugdintro">
+<title
+>Inledning</title>
+
+<para
+>"Användardefinierade enheter" är arbetsnamnet på en fortfarande experimentell funktion i &kfloppy;. Den låter användaren ange ett enhetsnamn och använda det nästan som om det var en <hardware
+>diskettenhet</hardware
+>.</para>
+
+<para
+>Funktionen är i huvudsak avsett som ett sätt att gå förbi problem för användare som har <hardware
+>USB-diskettenheter</hardware
+> av något slag (inklusive <trademark
+>ZIP</trademark
+>-disketter) eller andra <hardware
+>diskettenheter</hardware
+> som inte är av standardtyp.</para>
+
+<note
+><para
+>Tyvärr är funktionen inte särskilt användarvänlig när det här skrivs, eftersom den inte erbjuder användaren någon hjälp med vad en enhet heter, och &kfloppy; inte ens kommer ihåg enhetsnamnet från anrop till anrop. (Det beror delvis på säkerhetsskäl, eftersom enhetsnamnet på <hardware
+>diskettenheten</hardware
+> kan ändras mellan omstarter.)</para
+></note>
+
+<note
+><para
+>Eftersom funktionen utvecklades på &Linux;, erbjuder &BSD;-versionen av &kfloppy; färre val än &kfloppy; på &Linux;.</para
+></note>
+
+</sect1>
+
+<sect1 id="ugdmain">
+<title
+>Använda den</title>
+
+<!-- Note to reviewers: "PRimary" and "Secondary" are the default items in the combobox -->
+<para
+>Att använda "Användardefinierade enheter" är mycket enkelt. Du behöver bara skriva in ett enhetsnamn, till exempel <replaceable
+>/dev/sdz4</replaceable
+> i kombinationsrutan <guilabel
+>Diskettenhet:</guilabel
+> istället för att välja Primär eller Sekundär.</para>
+
+<note>
+<para
+>Du måste skriva in <filename class="directory"
+>/dev/</filename
+> i enhetsnamnet av två skäl:</para>
+<itemizedlist>
+<listitem>
+<para
+>Det är sättet som &kfloppy; känner igen läget "Användardefinierade enheter".</para>
+</listitem>
+<listitem>
+<para
+>Av säkerhetsskäl, för att undvika att användaren skriver in något i kombinationsrutan som av en slump är ett enhetsnamn.</para>
+</listitem>
+</itemizedlist>
+</note>
+
+<para
+>Att använda en annan enhet än en diskettenhet får tyvärr några konsekvenser. Den största är att <guilabel
+>Fullständig formatering</guilabel
+> inte längre kan väljas. Görs det visas en felmeddelanderuta vid försök att starta formateringen. Du kan dock använda <guilabel
+>Nollställ och snabbformatera</guilabel
+> istället. Det formaterar inte enheten, utan nollställer den bara, men i praktiken är det nästan samma sak, i synnerhet raderas all data på enheten.</para>
+
+<warning
+><para
+>Var försiktig när du skriver in enhetsnamnet. &kfloppy; skickar enhetsnamnet som det är till externa program. Det kontrollerar i synnerhet inte om enheten är en <hardware
+>diskettenhet</hardware
+> (och de externa programmen gör inte det heller). Om du anger någon av partitionerna på dina huvuddisk som enhet, accepteras den. (Om partitionen är monterad, eller om du inte kan skriva på enheten, får du troligen ett felmeddelande ändå, som undviker det värsta.)</para
+></warning>
+
+<note
+><para
+>Även om du kan ange en diskettenhet som <filename
+>/dev/fd0u2880</filename
+>, vägrar &kfloppy; utföra <guilabel
+>Fullständig formatering</guilabel
+> för den.</para
+></note>
+
+<para
+>Du kan välja vilket filsystem du vill på &Linux;. På &BSD;, stöd för närvarande bara UFS (och det har inte testats när den här dokumentationen skrivs).</para>
+
+<para
+>När du är klar att formatera, klicka på knappen <guibutton
+>Formatera</guibutton
+> som vanligt. Du får en meddelanderuta som ber dig att kontrollera enhetsnamnet. </para>
+
+<warning
+><para
+>Det är sista chansen att kontrollera enhetsnamnet innan formatering. Därefter är det för sent.</para
+></warning>
+
+</sect1>
+
+</appendix>
+
+</book>
+
+<!--
+Local Variables:
+mode: sgml
+sgml-minimize-attributes:nil
+sgml-general-insert-case:lower
+sgml-indent-step:0
+sgml-indent-data:nil
+End:
+
+// vim:ts=2:sw=2:tw=78:noet
+-->
