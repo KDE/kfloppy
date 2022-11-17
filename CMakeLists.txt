@@ -41,7 +41,7 @@ set_package_properties(KF5DocTools PROPERTIES DESCRIPTION
 find_package(KF5Crash ${KF5_MIN_VERSION} CONFIG REQUIRED)
 
 ecm_set_disabled_deprecation_versions(QT 5.15.2
-    KF 5.91
+    KF 5.100
 )
 
 
