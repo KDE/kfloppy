@@ -1,0 +1,830 @@
+<?xml version="1.0" ?>
+<!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN" "dtd/kdedbx45.dtd" [
+  <!ENTITY kappname "&kfloppy;">
+  <!ENTITY package "kdeutils">
+  <!ENTITY % Catalan  "INCLUDE"
+> <!-- change language only here -->
+  <!ENTITY % addindex "IGNORE">
+  <!ENTITY BSD "<trademark
+>BSD</trademark
+>">
+  <!ENTITY Minix "<trademark
+>Minix</trademark
+>">
+]>
+<!-- ### TODO Is BSD a trademark or a registrated trademark ? -->
+<!-- ### TODO Is Minix a trademark or a registrated trademark ? -->
+
+<!-- ### TODO Unify use of "disk", "floppy", "diskette", "floppy disk" (and "floppy drive") -->
+
+<book id="kfloppy" lang="&language;">
+<bookinfo>
+
+<title
+>El manual del formatador &kfloppy;</title>
+
+<authorgroup>
+<author
+><firstname
+>Thad</firstname
+> <surname
+>McGinnis</surname
+> <affiliation
+><address
+>&Thad.McGinnis.mail; </address
+></affiliation
+> </author>
+
+<author
+><firstname
+>Nicolas</firstname
+> <surname
+>Goutte</surname
+> <affiliation
+><address
+>&Nicolas.Goutte.mail; </address
+></affiliation
+> </author>
+
+<othercredit role="developer"
+><firstname
+>Bernd</firstname
+> <othername
+>Johannes</othername
+> <surname
+>Wuebben</surname
+> <affiliation
+><address
+><email
+>wuebben@math.cornell.edu</email
+></address
+></affiliation>
+<contrib
+>Desenvolupador</contrib>
+</othercredit>
+
+<othercredit role="developer"
+><firstname
+>Chris</firstname
+> <surname
+>Howells</surname
+> <affiliation
+><address
+>&Chris.Howells.mail;</address
+></affiliation>
+<contrib
+>Desenvolupador (Redisseny de la interfície d'usuari)</contrib>
+</othercredit>
+
+<othercredit role="developer"
+><firstname
+>Adriaan</firstname
+> <surname
+>de Groot</surname
+> <affiliation
+><address
+><email
+>groot@kde.org</email
+></address
+></affiliation>
+<contrib
+>Desenvolupador (Afegí la implementació del &BSD;)</contrib>
+</othercredit>
+
+<othercredit role="developer"
+><firstname
+>Wolfgang</firstname
+> <surname
+>Bauer</surname
+> <affiliation
+><address
+><email
+>wbauer@tmo.at</email
+></address
+></affiliation>
+<contrib
+>Desenvolupador (Adaptació als KF5)</contrib>
+</othercredit>
+
+<othercredit role="reviewer"
+><firstname
+>Lauri</firstname
+> <surname
+>Watts</surname
+> <contrib
+>Revisor</contrib>
+<affiliation
+><address
+>&Lauri.Watts.mail;</address
+></affiliation>
+</othercredit>
+
+&traductor.JosepMa.Ferrer; 
+</authorgroup>
+
+<date
+>23 de març de 2016</date>
+<releaseinfo
+>5.0 (Aplicacions 16.04)</releaseinfo>
+
+<copyright>
+<year
+>2000</year>
+<holder
+>&Thad.McGinnis;</holder>
+</copyright>
+
+<copyright>
+<year
+>2005</year>
+<holder
+>&Nicolas.Goutte;</holder>
+</copyright>
+
+<legalnotice
+>&FDLNotice;</legalnotice>
+
+<abstract
+><para
+>El formatador &kfloppy; és una utilitat que proporciona un mètode gràfic senzill per a formatar disquets de 3,5" i 5,25".</para
+></abstract>
+
+<keywordset>
+<keyword
+>KDE</keyword>
+<keyword
+>kfloppy</keyword>
+<keyword
+>disquet</keyword>
+<keyword
+>format</keyword>
+</keywordset>
+
+</bookinfo>
+
+<chapter id="introduction">
+<title
+>Introducció</title>
+
+<para
+>El formatador &kfloppy; és una utilitat que proporciona un mètode gràfic senzill per a formatar disquets de 3,5" i 5,25". </para>
+
+<note
+><para
+>El &kfloppy; depèn de programes externs i, per tant, actualment <emphasis
+>només</emphasis
+> funciona amb el &Linux; i el &BSD;. Depenent de si esteu utilitzant el &kfloppy; al &Linux; o al &BSD;, el &kfloppy; té característiques lleugerament diferents.</para
+></note>
+
+<caution
+><para
+>Assegureu-vos que el disquet <emphasis
+>no</emphasis
+> estigui muntat. El &kfloppy; no pot formatar un disquet muntat.</para
+></caution>
+
+</chapter>
+
+<chapter id="usingkfloppy">
+<title
+>Ús del &kfloppy;</title>
+
+<para
+>En iniciar el &kfloppy; s'obrirà una finestra única amb la qual l'usuari podrà triar la configuració adequada i controlar el procés de formatació. Aquestes opcions i controls es detallen a continuació.</para>
+
+<caution
+><para
+>Assegureu-vos que el disquet <emphasis
+>no</emphasis
+> estigui muntat. El &kfloppy; no pot formatar un disquet muntat.</para
+></caution>
+
+<sect1 id="controlsettings">
+<title
+>Opcions de control</title>
+
+<para
+>Les opcions es trien mitjançant tres llistes desplegables situades a la part superior esquerra del &kfloppy;.</para>
+
+<sect2 id="selectdrive">
+<title
+>Unitat de disquet</title>
+
+<para
+>En fer clic a la llista desplegable superior, que s'etiqueta com a <guilabel
+>Unitat de disquet:</guilabel
+>, s'ofereix a l'usuari les dues opcions següents:</para>
+
+<itemizedlist>
+<listitem
+><para
+>Primària</para
+></listitem>
+<listitem
+><para
+>Secundària</para
+></listitem>
+</itemizedlist>
+
+<para
+>En fer clic a la segona llista desplegable de la part superior, que s'etiqueta com a <guilabel
+>Mida:</guilabel
+>, s'ofereix a l'usuari les quatre opcions següents:</para>
+
+<itemizedlist>
+<listitem
+><para
+>3,5" 1,44MB</para
+></listitem>
+<listitem
+><para
+>3,5" 720KB</para
+></listitem>
+<listitem
+><para
+>5,25" 1,2MB</para
+></listitem>
+<listitem
+><para
+>5,25" 360KB</para
+></listitem>
+</itemizedlist>
+
+<para
+>La versió &Linux; del &kfloppy; també té una opció de mida anomenada:</para>
+
+<itemizedlist>
+<listitem
+><para
+>Detecta automàticament</para
+></listitem>
+</itemizedlist>
+
+<!-- ### TODO: typical floppy disk of a PC has not the hardware to support
+Mac 800KB floppies at all, not only formatting. -->
+<note>
+<para
+>El format de disc de 800kB utilitzat per <hardware
+>unitats de disquet de &Mac;</hardware
+> no està permesa en <hardware
+>unitats de disquet de PC</hardware
+> ja que no són capaces de formatar discos d'aquesta manera.</para>
+</note>
+</sect2>
+
+<sect2 id="filesystems">
+<title
+>Sistemes de fitxers</title>
+
+<para
+>La tercera llista desplegable, anomenada Sistema de fitxers, ofereix a l'usuari les opcions següents, si són aplicables:</para>
+
+<variablelist>
+<varlistentry>
+<term
+>DOS</term>
+<listitem>
+<para
+>Aquesta selecció farà que el &kfloppy; creï el tipus de sistema de fitxers MS-DOS/&Windows; al disquet. El més probable és que l'usuari/a vulgui triar aquest sistema si utilitza el disquet amb aquests sistemes operatius, ja que no reconeixen altres tipus de sistemes. (Això és compatible amb el &Linux; i el &BSD;).</para>
+</listitem>
+</varlistentry>
+
+<varlistentry
+> 
+<term
+>ext2</term>
+<listitem>
+<para
+>Aquesta selecció farà que el &kfloppy; creï el tipus de sistema de fitxers en el disquet, el qual s'utilitza normalment al &Linux;, però rarament en disquets. (Això és compatible amb el &Linux; i el &BSD;).</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+>UFS</term>
+<listitem>
+<para
+>Aquesta selecció farà que el &kfloppy; creï el tipus de sistema de fitxers al disquet que s'utilitza normalment amb el <trademark class="registered"
+>FreeBSD</trademark
+>. És probable que l'usuari vulgui triar aquest sistema si només utilitza el disquet amb el <trademark class="registered"
+>FreeBSD</trademark
+>. (Això és compatible només amb el &BSD;).</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+>&Minix;</term>
+<listitem>
+<para
+>Aquesta selecció farà que el &kfloppy; creï el tipus de sistema de fitxers al disquet que s'utilitza sovint en disquets usats amb el &Linux;. (Això només és compatible amb el &Linux;).</para>
+</listitem>
+</varlistentry>
+</variablelist>
+
+</sect2>
+</sect1>
+
+<sect1 id="formatting-options">
+<title
+>Opcions de format</title>
+<para
+>Dins del contorn d'un quadre al centre esquerre del &kfloppy; l'usuari pot trobar un conjunt de cinc opcions de formatació. Les dues superiors són un parell de botons d'opció.</para
+> <note
+><para
+>Aquest terme (botons d'opció) indica un conjunt d'opcions entre les quals només se'n pot seleccionar una, de la mateixa manera que només es pot establir una selecció de canal preestablert en una ràdio de cotxe.</para
+></note
+><para
+>Les dues opcions inferiors són per a etiquetar el disquet. Totes s'expliquen a continuació:</para>
+
+<sect2>
+<title
+>Mètode de formatació</title>
+<para
+>El &kfloppy; pot formatar un disc de les dues maneres següents:</para>
+<para>
+<variablelist>
+<varlistentry>
+<term
+><guilabel
+>Format ràpid</guilabel
+></term>
+<listitem>
+<para
+>Això senzillament crea el sistema de fitxers nou al disc.</para>
+<warning
+><para
+>Es perdran totes les dades del disc, encara que les dades no s'esborrin.</para
+></warning>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term
+><guilabel
+>Esborrat amb zeros i format ràpid</guilabel
+></term>
+<listitem>
+<para
+>Aquest format primer posa zeros al disc i després crea el sistema de fitxers nou.</para>
+<warning
+><para
+>S'esborraran totes les dades del disc.</para
+></warning>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term
+><guilabel
+>Format complet</guilabel
+></term>
+<listitem>
+<para
+>Un format complet reassigna les pistes i sectors, crea el sistema de fitxers seleccionat al disc, i després verifica el format, bloquejant els sectors dolents que trobi.</para>
+<warning
+><para
+>S'esborraran totes les dades del disc.</para
+></warning>
+</listitem>
+</varlistentry>
+</variablelist>
+</para>
+</sect2>
+
+<sect2>
+<title
+>Verifica la integritat</title>
+
+<para
+>Això indica al &kfloppy; que comprovi que el format s'ha escrit correctament al disquet. Això permet identificar els sectors dolents. </para>
+
+<note
+><para
+>Si es troben sectors dolents durant la fase de verificació d'un format complet, el format s'interromprà i el sistema de fitxers no s'escriurà! </para
+></note>
+
+</sect2>
+
+<sect2>
+<title
+>Etiqueta del volum</title>
+
+<para
+>Les dues funcions inferiors permeten a l'usuari afegir (o canviar) una etiqueta al disquet. Si la casella de selecció <guilabel
+>Etiqueta de volum:</guilabel
+> està seleccionada, l'usuari podrà introduir un nom (etiqueta) per al disquet que s'ha de formatar en el quadre de text situat immediatament a sota. Quan el disquet es formati posteriorment, l'etiqueta s'escriurà al disquet.</para>
+
+<note
+><para
+>A causa d'una limitació del sistema de fitxers DOS, una etiqueta només pot tenir 11 caràcters com a màxim. Per a simplificar, el &kfloppy; assumeix que aquest límit és cert per a tots els sistemes de fitxers.</para
+></note>
+
+<note
+><para
+>El sistema de fitxers &Minix; no pot tenir cap etiqueta de volum. En aquest cas, el &kfloppy; ignorarà l'etiqueta de volum.</para
+></note>
+
+</sect2>
+
+</sect1>
+
+<sect1 id="buttons">
+<title
+>Els botons</title>
+<para
+>Hi ha tres botons situats verticalment al llarg del costat dret del &kfloppy;. </para>
+
+<variablelist>
+<varlistentry>
+<term
+><guibutton
+>Format</guibutton
+></term>
+<listitem>
+<para
+>Aquest botó inicia el procés de formatació. Un cop l'usuari estigui segur que totes les opcions de configuració són correctes, pot començar el procés fent clic en aquest botó. Hi haurà un canvi en els dos quadres rectangulars llargs que abasten la part inferior del &kfloppy;.</para>
+
+<para
+>El quadre superior és un indicador d'estat que dona informació sobre el procés en curs, especialment els errors trobats durant el processament.</para>
+
+<para
+>El quadre inferior és una barra de progrés. Això mostra gràficament i numèricament el progrés primer del format i després de la verificació. Abans d'iniciar-la sembla estar buida, mostrant només la figura 0% al centre. A mesura que té lloc cada procés, el progrés en fa un seguiment gràfic omplint el quadre d'esquerra a dreta. Al mateix temps, el número del centre augmentarà reflectint el percentatge exacte del procés que s'ha completat.</para>
+
+<note
+><para
+>Com que el &kfloppy; utilitza programes externs per a formatar el disquet, ha de confiar en aquests programes per a proporcionar la informació adequada per a poder mostrar la barra de progrés. Per desgràcia, no és així. Especialment, els programes que escriuen els sistemes de fitxers no retornen prou dades, de manera que la barra de progrés romandrà al 0%.</para
+></note>
+
+<important>
+<para
+>Assegureu-vos que el disquet <emphasis
+>no</emphasis
+> estigui muntat. El &kfloppy; no pot formatar un disquet muntat.</para>
+</important>
+
+<note
+><para
+>El &kfloppy; <emphasis
+>no</emphasis
+> desmunta el disquet per si mateix, ja que això podria significar que l'usuari pot sobreescriure un disquet amb dades importants en ell.</para
+></note>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guibutton
+>Ajuda</guibutton
+></term>
+<listitem>
+<para
+>Això invoca un menú emergent amb accions per a obrir aquest manual, informar d'un error, canviar el llenguatge de l'aplicació i mostrar l'autor i la versió del &kfloppy; i el &kde;.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guibutton
+>Surt</guibutton
+></term>
+<listitem>
+<para
+>En fer clic en aquest botó es tancarà el &kfloppy;.</para>
+</listitem>
+</varlistentry>
+
+</variablelist>
+
+</sect1>
+</chapter>
+
+<chapter id="command-line">
+<title
+>Opcions de la línia d'ordres</title>
+
+<para
+>Tot i que és més probable que inicieu el &kfloppy; des del menú del &kde; o des d'una icona de l'escriptori, també es pot obrir a la línia d'ordres d'una finestra de terminal. Hi ha algunes opcions que estaran disponibles quan ho feu així. Aquestes són:</para
+> 
+
+<variablelist>
+<varlistentry>
+<term
+><command
+>kfloppy <option
+>--help</option
+></command
+></term>
+<listitem
+><para
+>Llista les opcions disponibles a la línia d'ordres.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><command
+>kfloppy <option
+>--author</option
+></command
+></term>
+<listitem>
+<para
+>Llista als autors del &kfloppy; a la finestra de terminal</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><command
+>kfloppy <option
+>--license</option
+></command
+></term>
+<listitem>
+<para
+>Mostra la informació de la llicència del &kfloppy; a la finestra de terminal</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><command
+>kfloppy <option
+>--version</option
+></command
+></term>
+<listitem>
+<para
+>Llista la informació de la versió del &kfloppy;. També disponible a través de <command
+>kfloppy <option
+>-v</option
+></command
+> </para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><command
+>kfloppy <option
+><replaceable
+>dispositiu</replaceable
+></option
+></command
+></term>
+<listitem
+><para
+>Dispositiu a formatar.</para>
+<para
+>Això formatarà directament el dispositiu indicat utilitzant la configuració desada. De moment només es permet /dev/fd0 i /dev/fd1.</para
+></listitem>
+</varlistentry>
+</variablelist
+> 
+
+</chapter
+> 
+
+<chapter id="credits">
+<title
+>Crèdits i llicència</title>
+
+<!-- ### TODO: verify the copyright dates -->
+<!-- ### TODO: make the copyright list prettier -->
+<para
+>Copyright del programa formatador &kfloppy; 1997 - 2000 &Bernd.Johannes.Wuebben; <email
+>wuebben@math.cornell.edu</email
+></para>
+
+<para
+>Copyright del programa formatador &kfloppy; 2002 Adriaan de Groot <email
+>groot@kde.org</email
+></para>
+
+<para
+>Copyright del programa formatador &kfloppy; 2004, 2005 &Nicolas.Goutte; &Nicolas.Goutte.mail;</para>
+
+<para
+>Copyright del programa formatador &kfloppy; 2015, 2016 Wolfgang Bauer <email
+>wbauer@tmo.at</email
+></para>
+
+<para
+>Copyright de la documentació 2000 de &Thad.McGinnis; &Thad.McGinnis.mail;.</para>
+
+<para
+>Aquesta versió del manual del &kfloppy; està basada en l'original de &David.Rugge; <email
+>davidrugge@mindspring.com</email
+></para>
+
+<para
+>Traductor de la documentació: &credits.JosepMa.Ferrer;</para
+> &underFDL; &underGPL; </chapter>
+
+<appendix id="neededprogs">
+<title
+>Programes externs necessaris</title>
+
+<para
+>Com ja s'ha escrit anteriorment en aquest manual, el &kfloppy; funciona amb l'ajuda de programes externs per a fer les diferents tasques de formatació.</para>
+
+<note
+><para
+>Si falta un dels programes, el &kfloppy; intenta funcionar igualment. No obstant això, l'opció corresponent no estarà disponible.</para
+></note>
+
+<variablelist>
+<varlistentry>
+<term
+><command
+>fdformat</command
+></term>
+<listitem
+><para
+>Aquest programa és necessari per a formatar a baix nivell, al &Linux; i al &BSD;. Si falta, el <guilabel
+>Format complet</guilabel
+> es desactivarà. </para
+></listitem>
+</varlistentry>
+<varlistentry>
+<term
+><command
+>dd</command
+></term>
+<listitem
+><para
+>Aquest programa és necessari per a esborrar amb zeros, al &Linux; i al &BSD;. Si falta, <guilabel
+>Esborrat amb zeros i format ràpid</guilabel
+> es desactivarà. </para
+></listitem>
+</varlistentry>
+<varlistentry>
+<term
+><command
+>mkdosfs</command
+></term>
+<listitem
+><para
+>Aquest programa és necessari per a formatar DOS, al &Linux;. </para
+></listitem>
+</varlistentry>
+<varlistentry>
+<term
+><command
+>newfs_msdos</command
+></term>
+<listitem
+><para
+>Aquest programa és necessari per a formatar DOS, al &BSD;. </para
+></listitem>
+</varlistentry>
+<varlistentry>
+<term
+><command
+>newfs</command
+></term>
+<listitem
+><para
+>Aquest programa és necessari per a formatar UFS, al &BSD;. </para
+></listitem>
+</varlistentry>
+<varlistentry>
+<term
+><command
+>mke2fs</command
+></term>
+<listitem
+><para
+>Aquest programa és necessari per a formatar «ext2», al &Linux; i al &BSD;. </para
+></listitem>
+</varlistentry>
+<varlistentry>
+<term
+><command
+>mkfs.minix</command
+></term>
+<listitem
+><para
+>Aquest programa és necessari per a formatar &Minix;, al &Linux;. </para
+></listitem>
+</varlistentry>
+</variablelist>
+
+</appendix>
+<appendix id="usergivendevices">
+<title
+>Dispositius indicats d'usuari</title>
+
+<sect1 id="ugdintro">
+<title
+>Introducció</title>
+
+<para
+>«Dispositius indicats d'usuari» és el títol de treball d'una característica encara experimental del &kfloppy;. Permet a l'usuari indicar un nom de dispositiu i utilitzar-lo gairebé com si fos una <hardware
+>unitat de disquet</hardware
+>.</para>
+
+<para
+>Aquesta característica està pensada principalment com una solució per als usuaris que tenen <hardware
+>unitats de disquet USB</hardware
+> de qualsevol tipus (incloent unitats de disc <trademark
+>ZIP</trademark
+>) o qualsevol altra <hardware
+>unitat de disquet</hardware
+> no antiga.</para>
+
+<note
+><para
+>Malauradament en el moment d'escriure aquesta documentació, la característica no és molt fàcil d'emprar, ja que no ofereix cap ajuda a l'usuari sobre com es crida un dispositiu i el &kfloppy; ni tan sols recorda el nom del dispositiu entre les crides. (Això és parcialment una protecció, ja que el dispositiu de la <hardware
+>unitat de disquet</hardware
+> podria canviar entre reinicis).</para
+></note>
+
+<note
+><para
+>Com que aquesta característica es va desenvolupar amb el &Linux;, la versió &BSD; del &kfloppy; ofereix menys opcions que el &kfloppy; amb el &Linux;.</para
+></note>
+
+</sect1>
+
+<sect1 id="ugdmain">
+<title
+>Utilitzant-lo</title>
+
+<!-- Note to reviewers: "PRimary" and "Secondary" are the default items in the combobox -->
+<para
+>L'ús de «Dispositius indicats d'usuari» és molt senzill, només cal introduir un nom de dispositiu, per exemple <replaceable
+>/dev/sdz4</replaceable
+> al quadre combinat <guilabel
+>Unitat de disquet:</guilabel
+> en lloc de seleccionar primari o secundari.</para>
+
+<note>
+<para
+>Heu d'introduir la part <filename class="directory"
+>/dev/</filename
+> del dispositiu per dos motius:</para>
+<itemizedlist>
+<listitem>
+<para
+>És com el &kfloppy; reconeix el mode «Dispositius indicats d'usuari».</para>
+</listitem>
+<listitem>
+<para
+>És una protecció, per evitar que l'usuari escrigui qualsevol cosa en el quadre combinat que sigui per casualitat un nom de dispositiu.</para>
+</listitem>
+</itemizedlist>
+</note>
+
+<para
+>Malauradament, utilitzar qualsevol dispositiu en lloc d'un dispositiu de disquet té algunes conseqüències. El més important és que <guilabel
+>Format complet</guilabel
+> ja no es pot seleccionar. Fer-ho donarà lloc a un quadre de missatge d'error en intentar iniciar el format. No obstant això, podeu utilitzar <guilabel
+>Esborrat amb zeros i format ràpid</guilabel
+> en el seu lloc. No formatarà el dispositiu, només l'esborrarà amb zeros, però en la pràctica és gairebé el mateix; especialment totes les dades del dispositiu s'esborraran.</para>
+
+<warning
+><para
+>Aneu amb compte quan introduïu el nom del dispositiu. El &kfloppy; passarà el nom del dispositiu tal com està als programes externs. Especialment no comprova (i els programes externs tampoc ho fan) si el dispositiu és un dispositiu d'<hardware
+>unitat de disquet</hardware
+>. Si doneu qualsevol de les vostres particions de disc principals com a dispositiu, s'acceptarà. (Si la partició està muntada o si no podeu escriure en aquest dispositiu, probablement obtindreu un missatge d'error, evitant el pitjor).</para
+></warning>
+
+<note
+><para
+>Fins i tot si podeu especificar un dispositiu de disquet com <filename
+>/dev/fd0u2880</filename
+>, el &kfloppy; es negarà a fer un <guilabel
+>Format complet</guilabel
+> en ell.</para
+></note>
+
+<para
+>En el &Linux;, podreu seleccionar qualsevol sistema de fitxers que vulgueu. En el &BSD;, actualment només és compatible UFS (i no es prova en el moment d'escriure aquesta documentació).</para>
+
+<para
+>Quan estigueu a punt per formatar, feu clic al botó <guibutton
+>Format</guibutton
+> com de costum. Obtindreu un quadre de missatge demanant-vos que verifiqueu el nom del dispositiu. </para>
+
+<warning
+><para
+>Aquesta és l'última oportunitat de comprovar el nom del dispositiu abans de formatar-lo. Després, serà massa tard.</para
+></warning>
+
+</sect1>
+
+</appendix>
+
+</book>
+
+<!--
+Local Variables:
+mode: sgml
+sgml-minimize-attributes:nil
+sgml-general-insert-case:lower
+sgml-indent-step:0
+sgml-indent-data:nil
+End:
+
+// vim:ts=2:sw=2:tw=78:noet
+-->
