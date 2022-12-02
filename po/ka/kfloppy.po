@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: kfloppy\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-01-12 00:48+0000\n"
-"PO-Revision-Date: 2022-09-29 08:42+0200\n"
+"PO-Revision-Date: 2022-12-01 23:39+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.1.1\n"
+"X-Generator: Poedit 3.2\n"
 
 #: floppy.cpp:81
 #, kde-format
@@ -244,7 +244,7 @@ msgstr ""
 #: floppy.cpp:234
 #, kde-format
 msgid "&Verify integrity"
-msgstr ""
+msgstr "&მთლიანობის შემოწმება"
 
 #: floppy.cpp:238
 #, kde-format
@@ -444,7 +444,7 @@ msgstr ""
 #: format.cpp:630
 #, kde-format
 msgid "Cannot start FAT format program."
-msgstr ""
+msgstr "FAT-ის ფორმატირების პროგრამის გაშვების შეცდომა."
 
 #: format.cpp:643 format.cpp:799 format.cpp:885
 #, kde-format
@@ -463,7 +463,7 @@ msgstr ""
 #, kde-format
 msgctxt "BSD"
 msgid "Cannot start UFS format program."
-msgstr ""
+msgstr ".UFS-ის ფორმატირების პროგრამის გაშვების შეცდომა"
 
 #: format.cpp:768
 #, kde-format
@@ -473,7 +473,7 @@ msgstr ""
 #: format.cpp:786
 #, kde-format
 msgid "Cannot start ext2 format program."
-msgstr ""
+msgstr "EXT2-ის ფორმატირების პროგრამის გაშვების შეცდომა."
 
 #: format.cpp:858
 #, kde-format
@@ -483,7 +483,7 @@ msgstr ""
 #: format.cpp:875
 #, kde-format
 msgid "Cannot start Minix format program."
-msgstr ""
+msgstr "Minix-ის ფორმატირების პროგრამის გაშვების შეცდომა."
 
 #: main.cpp:51
 #, kde-format
@@ -493,7 +493,7 @@ msgstr "KFloppy"
 #: main.cpp:53
 #, kde-format
 msgid "KDE Floppy Disk Utility"
-msgstr ""
+msgstr "KDE -ის დისკეტების პროგრამა"
 
 #: main.cpp:55
 #, kde-format
@@ -518,7 +518,7 @@ msgstr "Bernd Johannes Wuebben"
 #: main.cpp:63
 #, kde-format
 msgid "Author and former maintainer"
-msgstr ""
+msgstr "ავტორი და ყოფილი ლიდერი"
 
 #: main.cpp:64
 #, kde-format
@@ -528,7 +528,7 @@ msgstr "Chris Howells"
 #: main.cpp:64
 #, kde-format
 msgid "User interface re-design"
-msgstr ""
+msgstr "მომხმარების ინტერფეისის დიზაინის გაუმჯობესება"
 
 #: main.cpp:65
 #, kde-format
@@ -538,7 +538,7 @@ msgstr "Adriaan de Groot"
 #: main.cpp:65
 #, kde-format
 msgid "Add BSD support"
-msgstr ""
+msgstr "BSD-ის მხარდაჭერის დამატება"
 
 #: main.cpp:66
 #, kde-format
@@ -553,12 +553,12 @@ msgstr ""
 #: main.cpp:67
 #, kde-format
 msgid "Wolfgang Bauer"
-msgstr ""
+msgstr "Wolfgang Bauer"
 
 #: main.cpp:67
 #, kde-format
 msgid "Port KFloppy to KF5"
-msgstr ""
+msgstr "KFloppy -ის KF5-ზე გატანა"
 
 #: main.cpp:69
 #, kde-format
@@ -575,4 +575,4 @@ msgstr "Temuri.doghonadze@gmail.com"
 #: main.cpp:77
 #, kde-format
 msgid "Default device"
-msgstr ""
+msgstr "ნაგულისხმებ მოწყობილობა"
