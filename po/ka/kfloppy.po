@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: kfloppy\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-01-12 00:48+0000\n"
-"PO-Revision-Date: 2022-12-06 09:15+0100\n"
+"PO-Revision-Date: 2022-12-11 08:50+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -288,7 +288,7 @@ msgstr "&ფორმატირება"
 #: floppy.cpp:276
 #, kde-format
 msgid "<qt>Click here to start formatting.</qt>"
-msgstr ""
+msgstr "<qt>ფორმატირების დასაწყებად დააწკაპუნეთ.</qt>"
 
 #: floppy.cpp:301
 #, kde-format
@@ -298,7 +298,7 @@ msgstr ""
 #: floppy.cpp:314
 #, kde-format
 msgid "<qt>Shows progress of the format.</qt>"
-msgstr ""
+msgstr "<qt>ფორმატირების მიმდინარეობის ჩვენება.</qt>"
 
 #: floppy.cpp:323
 #, kde-format
@@ -310,7 +310,7 @@ msgstr ""
 #: floppy.cpp:355
 #, kde-format
 msgid "KDE Floppy Formatter"
-msgstr ""
+msgstr "KDE -ის დისკეტების ფორმატირების პროგრამა"
 
 #: floppy.cpp:488
 #, kde-format
@@ -368,12 +368,12 @@ msgstr ""
 #: format.cpp:316
 #, kde-format
 msgid "The program %1 terminated with an error."
-msgstr ""
+msgstr "პროგრამა %1 შეცდომით დასრულდა."
 
 #: format.cpp:320
 #, kde-format
 msgid "The program %1 terminated abnormally."
-msgstr ""
+msgstr "პროგრამა %1 არანორმალურად დასრულდა."
 
 #: format.cpp:377 format.cpp:508 format.cpp:597 format.cpp:691 format.cpp:762
 #: format.cpp:852
@@ -394,7 +394,7 @@ msgstr ""
 #: format.cpp:432
 #, kde-format
 msgid "Error formatting track %1."
-msgstr ""
+msgstr "ტრეკის %1 ფორმატირების შეცდომა."
 
 #: format.cpp:435 format.cpp:460
 #, kde-format
