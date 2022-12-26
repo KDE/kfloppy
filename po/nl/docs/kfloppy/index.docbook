@@ -499,7 +499,7 @@ Mac 800KB floppies at all, not only formatting. -->
 
 <chapter id="command-line">
 <title
->Commandoregelopties</title>
+>Opdrachtregel-opties</title>
 
 <para
 >Ook al wordt &kfloppy; meestal gestart vanaf het &kde;-menu of een bureaubladpictogram, het kan ook geopend worden vanaf de commandoprompt of een terminal-venster. Er zijn een aantal opties die beschikbaar zijn wanneer dit gedaan wordt. Deze zijn:</para
