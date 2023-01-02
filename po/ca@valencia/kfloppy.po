@@ -353,7 +353,7 @@ msgstr "Formatador de disquet de KDE"
 msgctxt "BSD"
 msgid "Formatting with BSD on a user-given device is only possible with UFS"
 msgstr ""
-"La formatació des del BSD en un dispositiu d'un usuari determinat només és "
+"La formatació des de BSD en un dispositiu d'un usuari determinat només és "
 "possible amb UFS"
 
 #: floppy.cpp:495
@@ -600,7 +600,7 @@ msgstr "Adriaan de Groot"
 #: main.cpp:65
 #, kde-format
 msgid "Add BSD support"
-msgstr "Afig la implementació del BSD"
+msgstr "Afig la implementació de BSD"
 
 #: main.cpp:66
 #, kde-format
