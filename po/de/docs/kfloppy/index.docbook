@@ -2,15 +2,10 @@
 <!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN" "dtd/kdedbx45.dtd" [
   <!ENTITY kappname "&kfloppy;">
   <!ENTITY package "kdeutils">
-  <!ENTITY % German "INCLUDE"
-> <!-- change language only here -->
+  <!ENTITY % English "INCLUDE" > <!-- change language only here -->
   <!ENTITY % addindex "IGNORE">
-  <!ENTITY BSD "<trademark
->BSD</trademark
->">
-  <!ENTITY Minix "<trademark
->Minix</trademark
->">
+  <!ENTITY BSD "<trademark>BSD</trademark>">
+  <!ENTITY Minix "<trademark>Minix</trademark>">
 ]>
 <!-- ### TODO Is BSD a trademark or a registrated trademark ? -->
 <!-- ### TODO Is Minix a trademark or a registrated trademark ? -->
@@ -20,318 +15,203 @@
 <book id="kfloppy" lang="&language;">
 <bookinfo>
 
-<title
->Das Handbuch zu &kfloppy;</title>
+<title>The &kfloppy; Formatter Handbook</title>
 
 <authorgroup>
-<author
-><firstname
->Thad</firstname
-> <surname
->McGinnis</surname
-> <affiliation
-><address
->&Thad.McGinnis.mail; </address
-></affiliation
-> </author>
+<author>
+<firstname>Thad</firstname>
+<surname>McGinnis</surname>
+<affiliation><address>&Thad.McGinnis.mail;
+</address></affiliation> </author>
 
-<author
-><firstname
->Nicolas</firstname
-> <surname
->Goutte</surname
-> <affiliation
-><address
->&Nicolas.Goutte.mail; </address
-></affiliation
-> </author>
+<author>
+<firstname>Nicolas</firstname>
+<surname>Goutte</surname>
+<affiliation><address>&Nicolas.Goutte.mail;
+</address></affiliation> </author>
 
-<othercredit role="developer"
-><firstname
->Bernd</firstname
-> <othername
->Johannes</othername
-> <surname
->Wuebben</surname
-> <affiliation
-><address
-><email
->wuebben@math.cornell.edu</email
-></address
-></affiliation>
-<contrib
->Entwickler</contrib>
+<othercredit role="developer">
+<firstname>Bernd</firstname>
+<othername>Johannes</othername>
+<surname>Wuebben</surname>
+<affiliation><address><email>wuebben@math.cornell.edu</email></address></affiliation>
+<contrib>Developer</contrib>
 </othercredit>
 
-<othercredit role="developer"
-><firstname
->Chris</firstname
-> <surname
->Howells</surname
-> <affiliation
-><address
->&Chris.Howells.mail;</address
-></affiliation>
-<contrib
->Entwickler (Überarbeitung der Benutzeroberfläche)</contrib>
+<othercredit role="developer">
+<firstname>Chris</firstname>
+<surname>Howells</surname>
+<affiliation><address>&Chris.Howells.mail;</address></affiliation>
+<contrib>Developer (User Interface re-design)</contrib>
 </othercredit>
 
-<othercredit role="developer"
-><firstname
->Adriaan</firstname
-> <surname
->de Groot</surname
-> <affiliation
-><address
-><email
->groot@kde.org</email
-></address
-></affiliation>
-<contrib
->Entwickler (Hinzufügen der Unterstützung für &BSD;)</contrib>
+<othercredit role="developer">
+<firstname>Adriaan</firstname>
+<surname>de Groot</surname>
+<affiliation><address><email>groot@kde.org</email></address></affiliation>
+<contrib>Developer (Add &BSD; support)</contrib>
 </othercredit>
 
-<othercredit role="developer"
-><firstname
->Wolfgang</firstname
-> <surname
->Bauer</surname
-> <affiliation
-><address
-><email
->wbauer@tmo.at</email
-></address
-></affiliation>
-<contrib
->Entwickler (Portierung zu KF5)</contrib>
+<othercredit role="developer">
+<firstname>Wolfgang</firstname>
+<surname>Bauer</surname>
+<affiliation><address><email>wbauer@tmo.at</email></address></affiliation>
+<contrib>Developer (Port to KF5)</contrib>
 </othercredit>
 
-<othercredit role="reviewer"
-><firstname
->Lauri</firstname
-> <surname
->Watts</surname
-> <contrib
->Korrektur</contrib>
-<affiliation
-><address
->&Lauri.Watts.mail;</address
-></affiliation>
+<othercredit role="reviewer">
+<firstname>Lauri</firstname>
+<surname>Watts</surname>
+<contrib>Reviewer</contrib>
+<affiliation><address>&Lauri.Watts.mail;</address></affiliation>
 </othercredit>
 
-<othercredit role="translator"
-><firstname
->Gregor</firstname
-><surname
->Zumstein</surname
-><contrib
->Übersetzung von</contrib
-><affiliation
-><address
-><email
->zumstein@ssd.ethz.ch</email
-></address
-></affiliation
-></othercredit
-> 
+<!-- TRANS:ROLES_OF_TRANSLATORS -->
 </authorgroup>
 
-<date
->2016-03-23</date>
-<releaseinfo
->5.0 (Anwendungen 16.04)</releaseinfo>
+<date>2016-03-23</date>
+<releaseinfo>5.0 (Applications 16.04)</releaseinfo>
 
 <copyright>
-<year
->2000</year>
-<holder
->&Thad.McGinnis;</holder>
+<year>2000</year>
+<holder>&Thad.McGinnis;</holder>
 </copyright>
 
 <copyright>
-<year
->2005</year>
-<holder
->&Nicolas.Goutte;</holder>
+<year>2005</year>
+<holder>&Nicolas.Goutte;</holder>
 </copyright>
 
-<legalnotice
->&FDLNotice;</legalnotice>
+<legalnotice>&FDLNotice;</legalnotice>
 
-<abstract
-><para
->&kfloppy; ist ein einfaches Programm zum Formatieren von 3.5" - und 5.25"-Disketten.</para
-></abstract>
+<abstract><para>&kfloppy; Formatter is a utility that provides a
+straightforward graphical means to format 3.5" and 5.25" floppy
+disks.</para></abstract>
 
 <keywordset>
-<keyword
->KDE</keyword>
-<keyword
->kfloppy</keyword>
-<keyword
->diskette</keyword>
-<keyword
->formatieren</keyword>
+<keyword>KDE</keyword>
+<keyword>kfloppy</keyword>
+<keyword>floppy</keyword>
+<keyword>format</keyword>
 </keywordset>
 
 </bookinfo>
 
 <chapter id="introduction">
-<title
->Einleitung</title>
+<title>Introduction</title>
 
-<para
->&kfloppy; ist ein einfaches Programm zum Formatieren von 3.5" - und 5.25"-Disketten. </para>
+<para>&kfloppy; Formatter is a utility that provides a straightforward
+graphical means to format 3.5" and 5.25" floppy disks. </para>
 
-<note
-><para
->&kfloppy; verwendet externe Programme und arbeitet darum derzeit <emphasis
->nur</emphasis
-> mit &Linux; und &BSD;. Abhängig davon, ob Sie &kfloppy; unter &Linux; oder &BSD; verwenden, bietet es leicht unterschiedliche Funktionalitäten.</para
-></note>
+<note><para>&kfloppy; depends on external programs and therefore
+currently works <emphasis>only</emphasis> with &Linux; and &BSD;. Depending if you are
+using &kfloppy; on &Linux; or on &BSD;, &kfloppy; has slightly different
+features.</para></note>
 
-<caution
-><para
->Vergewissern Sie sich, dass die Diskette <emphasis
->nicht</emphasis
-> eingebunden (gemountet) ist. &kfloppy; kann keine eingebundenen Disketten formatieren.</para
-></caution>
+<caution><para>Make sure that your floppy disk is <emphasis>not</emphasis>
+mounted.  &kfloppy; cannot format a mounted floppy disk.</para></caution>
 
 </chapter>
 
 <chapter id="usingkfloppy">
-<title
->Arbeiten mit &kfloppy;</title>
+<title>Using &kfloppy;</title>
 
-<para
->Beim Start von &kfloppy; ist ein einzelnes Fenster geöffnet, in dem die gewünschten Einstellungen vorgenommen und der Formatiervorgang überprüft werden können. Die zur Verfügung stehenden Einstellungen werden im Folgenden vorgestellt.</para>
+<para>Starting &kfloppy; opens a single window by which the user may
+choose appropriate settings and control the formatting process.  These
+options and controls are detailed below.</para>
 
-<caution
-><para
->Vergewissern Sie sich, dass die Diskette <emphasis
->nicht</emphasis
-> eingebunden (gemountet) ist. &kfloppy; kann keine eingebundenen Disketten formatieren.</para
-></caution>
+<caution><para>Make sure that your floppy disk is <emphasis>not</emphasis>
+mounted.  &kfloppy; cannot format a mounted floppy disk.</para></caution>
 
 <sect1 id="controlsettings">
-<title
->Steuerungseinstellungen</title>
+<title>Control Settings</title>
 
-<para
->Die Steuerungseinstellungen werden mit Hilfe von drei Auswahlfeldern vorgenommen. Diese befinden sich in der linken oberen Ecke des &kfloppy;-Fensters.</para>
+<para>The settings are chosen by means of three drop down boxes located
+at the top left center of &kfloppy;.</para>
 
 <sect2 id="selectdrive">
-<title
->Diskettenlaufwerk</title>
+<title>Floppy Drive</title>
 
-<para
->Ein Klick auf das oberste Auswahlfeld mit dem Namen <guilabel
->Diskettenlaufwerk</guilabel
->, erlaubt die Auswahl aus zwei Möglichkeiten:</para>
+<para>Clicking on the top drop down box, which is labeled
+<guilabel>Floppy drive:</guilabel>, offers the user the following
+two choices:</para>
 
 <itemizedlist>
-<listitem
-><para
->Primär</para
-></listitem>
-<listitem
-><para
->Sekundär</para
-></listitem>
+<listitem><para>Primary</para></listitem>
+<listitem><para>Secondary</para></listitem>
 </itemizedlist>
 
-<para
->Ein Klick auf das mittlere Auswahlfeld mit dem Namen <guilabel
->Größe</guilabel
->, erlaubt die Auswahl aus vier Möglichkeiten:</para>
+<para>Clicking on the second drop down box from the top, which is labeled
+<guilabel>Size:</guilabel>, offers the user the following
+four choices:</para>
 
 <itemizedlist>
-<listitem
-><para
->3.5" 1.44MB</para
-></listitem>
-<listitem
-><para
->3.5" 720KB</para
-></listitem>
-<listitem
-><para
->5.25" 1.2MB</para
-></listitem>
-<listitem
-><para
->5.25" 360KB</para
-></listitem>
+<listitem><para>3.5" 1.44MB</para></listitem>
+<listitem><para>3.5" 720KB</para></listitem>
+<listitem><para>5.25" 1.2MB</para></listitem>
+<listitem><para>5.25" 360KB</para></listitem>
 </itemizedlist>
 
-<para
->Die &Linux;-Version von &kfloppy; bietet darüber hinaus eine weitere Größe an:</para>
+<para>The &Linux; version of &kfloppy; has also a choice of size named:</para>
 
 <itemizedlist>
-<listitem
-><para
->Automatisch erkennen</para
-></listitem>
+<listitem><para>Auto-Detect</para></listitem>
 </itemizedlist>
 
 <!-- ### TODO: typical floppy disk of a PC has not the hardware to support
 Mac 800KB floppies at all, not only formatting. -->
 <note>
-<para
->Das 800 KByte Diskettenformat, das von alten <hardware
->&Mac;-Diskettenlaufwerken</hardware
-> benutzt wird, kann nicht eingestellt werden, da die PC-Diskettenlaufwerke dieses Format nicht unterstützen.</para>
+<para>The 800KB disk format used by <hardware>&Mac; floppy drives</hardware> cannot be
+supported on <hardware>PC floppy drives</hardware> since they are not capable of formatting
+disks in that fashion.</para>
 </note>
 </sect2>
 
 <sect2 id="filesystems">
-<title
->Dateisysteme</title>
+<title>File Systems</title>
 
-<para
->Das dritte Auswahlfeld mit dem Namen <guimenuitem
->Dateisystem</guimenuitem
-> erlaubt ,sofern vorhanden, die Auswahl aus den folgenden Möglichkeiten:</para>
+<para>The third drop down box, labeled File System, offers the user the
+following choices, if they are applicable:</para>
 
 <variablelist>
 <varlistentry>
-<term
->DOS</term>
+<term>Dos</term>
 <listitem>
-<para
->Mit dieser Einstellung formatiert &kfloppy; die Diskette mit dem MSDOS/&Windows; Dateisystem (FAT) formatieren. Wenn Dateien mit diesen beiden Systemen ausgetauscht werden müssen, ist dies die einzig sinnvolle Einstellung, da diese Systeme keine anderen Formate lesen können. (Unterstützt unter &Linux; und &BSD;.)</para>
+<para>This selection will have &kfloppy; place the MS-DOS/&Windows; type
+of file system on the diskette.  The user will most likely want to
+choose this system if she or he will be using the diskette with those
+operating systems as they do not recognize other system types.
+(This is supported for &Linux; and &BSD;.)</para>
 </listitem>
 </varlistentry>
 
-<varlistentry
-> 
-<term
->ext2</term>
+<varlistentry> 
+<term>ext2</term>
 <listitem>
-<para
->Mit dieser Einstellung formatiert &kfloppy; die Diskette mit dem unter &Linux; gebräuchlichen Dateisystem, das aber nur selten für Disketten benutzt wird. (Unterstützt unter &Linux; und &BSD;.)</para>
-</listitem>
-</varlistentry>
-
-<varlistentry>
-<term
->UFS</term>
-<listitem>
-<para
->Mit dieser Einstellung formatiert &kfloppy; die Diskette mit dem unter <trademark class="registered"
->FreeBSD</trademark
-> gebräuchlichen Dateisystem. Eine Formatierung mit diesem Dateisystem ist sinnvoll, wenn Daten nur mit <trademark class="registered"
->FreeBSD</trademark
->-Systemen ausgetauscht werden sollen. (Unterstützt nur unter &BSD;.)</para>
+<para>This selection will have &kfloppy; place the type of file system
+on the diskette which is most commonly used with &Linux;, however
+seldomly on floppy disks.
+(This is supported for &Linux; and &BSD;.)</para>
 </listitem>
 </varlistentry>
 
 <varlistentry>
-<term
->&Minix;</term>
+<term>UFS</term>
 <listitem>
-<para
->Mit dieser Einstellung formatiert &kfloppy; die Diskette mit dem unter &Linux; gebräuchlichen Dateisystem. Eine Formatierung mit diesem Dateisystem macht Sinn, wenn Daten nur mit anderen &Linux;-Rechnern ausgetauscht werden sollen.</para>
+<para>This selection will have &kfloppy; place the type of file system
+on the diskette which is most commonly used with <trademark class="registered">FreeBSD</trademark>.  The user will
+likely want to choose this system if he or she will only be using the
+floppy disk with <trademark class="registered">FreeBSD</trademark>.
+(This is supported for &BSD; only.)</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term>&Minix;</term>
+<listitem>
+<para>This selection will have &kfloppy; place the type of file system
+on the diskette which often used on floppy disks used with &Linux;,
+(This is supported for &Linux; only.)</para>
 </listitem>
 </varlistentry>
 </variablelist>
@@ -340,64 +220,41 @@ Mac 800KB floppies at all, not only formatting. -->
 </sect1>
 
 <sect1 id="formatting-options">
-<title
->Formatierungseinstellungen</title>
-<para
->Im Kästchen links in der Mitte des &kfloppy;-Fensters finden sich fünf Einstellungen zur Formatierung. Die drei oberen sind Auswahlknöpfe.</para
-> <note
-><para
->Auswahlknöpfe stellen eine Möglichkeit dar, genau einen Eintrag aus einer Liste zu wählen, ähnlich wie die Senderwahltasten bei einem Autoradio.</para
-></note
-><para
->Die beiden untersten Einstellungen dienen dem Bezeichnen der Diskette. Sie sind im Folgenden erläutert:</para>
+<title>Formatting Options</title>
+<para>Within the outline of a box in the left center of &kfloppy; the user
+may find a set of five formatting options.  The top two are a pair of radio
+buttons.</para> <note><para>This term (radio buttons) indicates a set of options among
+which only one can be selected - in the same way that only one preset
+channel selection may be set on a car radio.</para></note><para>The
+bottom two options are for labeling the diskette.  All are explained
+below:</para>
 
 <sect2>
-<title
->Formatieren</title>
-<para
->&kfloppy; kann eine Diskette auf zwei Arten formatieren:</para>
+<title>Formatting Method</title>
+<para>&kfloppy; can format a disk in the following two ways:</para>
 <para>
 <variablelist>
 <varlistentry>
-<term
-><guilabel
->Schnellformatierung</guilabel
-></term>
+<term><guilabel>Quick Format</guilabel></term>
 <listitem>
-<para
->Hierdurch wird nur das neue Dateisystem auf die Diskette geschrieben.</para>
-<warning
-><para
->Alle Daten auf der Diskette gehen verloren, auch wenn die Daten selbst nicht gelöscht werden.</para
-></warning>
+<para>This simply puts the new file system on the disk.</para>
+<warning><para>All data on the disk will be lost, even if the data itself will not be erased.</para></warning>
 </listitem>
 </varlistentry>
 <varlistentry>
-<term
-><guilabel
->Ausnullen und Schnellformatierung</guilabel
-></term>
+<term><guilabel>Zero out and quick format</guilabel></term>
 <listitem>
-<para
->Diese Methode schreibt Nullbytes auf die Diskette und erstellt dann das neue Dateisystem.</para>
-<warning
-><para
->Alle Daten auf der Diskette werden gelöscht.</para
-></warning>
+<para>This format first puts zeros on the disk and then creates the new file system.</para>
+<warning><para>All data on the disk will be erased.</para></warning>
 </listitem>
 </varlistentry>
 <varlistentry>
-<term
-><guilabel
->Vollständige Formatierung</guilabel
-></term>
+<term><guilabel>Full Format</guilabel></term>
 <listitem>
-<para
->Eine vollständige Formatierung erzeugt zuerst alle Spuren und Sektoren neu, schreibt dann das Dateisystem auf die Diskette und verifiziert die Formatierung. Defekte Sektoren werden ermittelt und als solche gekennzeichnet.</para>
-<warning
-><para
->Alle Daten auf der Diskette werden gelöscht.</para
-></warning>
+<para>A full format reallocates the tracks and sectors, puts the selected
+file system on the disk, and then verifies the format, blocking out any bad
+sectors it finds.</para>
+<warning><para>All data on the disk will be erased.</para></warning>
 </listitem>
 </varlistentry>
 </variablelist>
@@ -405,106 +262,97 @@ Mac 800KB floppies at all, not only formatting. -->
 </sect2>
 
 <sect2>
-<title
->Integrität prüfen</title>
+<title>Verify Integrity</title>
 
-<para
->Das Ankreuzfeld <guilabel
->Integrität prüfen</guilabel
-> bewirkt, dass &kfloppy; überprüft, ob die Formatierung korrekt durchgeführt wurde. Hierdurch können defekte Sektoren erkannt werden. </para>
+<para>This tells &kfloppy; to check that the formatting was correctly
+written to the floppy.  This allows bad sectors to be identified.
+</para>
 
-<note
-><para
->Werden defekte Sektoren bei der Prüfung durch die Vollständige Formatierung gefunden, wird die Formatierung abgebrochen und das Dateisystem nicht auf die Diskette geschrieben. </para
-></note>
+<note><para>If bad sectors are found during the verify phase of a Full Format,
+the formatting is aborted and the file system is not written!
+</para></note>
 
 </sect2>
 
 <sect2>
-<title
->Datenträgerbezeichnung</title>
+<title>Volume Label</title>
 
-<para
->Die untersten beiden Eingabemöglichkeiten erlauben, eine Datenträgerbezeichnung hinzuzufügen oder zu ändern. Ist das Ankreuzfeld <guilabel
->Datenträgerbezeichnung:</guilabel
-> markiert, kann eine Datenträgerbezeichnung angegeben werden. Diese wird nach dem Formatieren als Name (Datenträgerbezeichnung) auf die Diskette geschrieben.</para>
+<para>The bottom two features allow the user to add (or change) a
+label to the diskette.  If the <guilabel>Volume label:</guilabel> check
+box is selected then the user can enter a name (label) for the
+diskette that is to be formatted in the text box located immediately
+below.  When the diskette is subsequently formatted the label will be
+written to the diskette.</para>
 
-<note
-><para
->Bedingt durch eine Einschränkung des DOS-Dateisystems kann eine Datenträgerbezeichnung maximal 11 Zeichen haben. &kfloppy; nimmt der Einfachheit halber an, dass diese Einschränkung für alle Dateisysteme gilt.</para
-></note>
+<note><para>Due to a limitation of the DOS file system, a label can only be
+at most 11 characters long. For simplification, &kfloppy; assumes that
+this limit is true for all file systems.</para></note>
 
-<note
-><para
->Das Dateisystem &Minix; unterstützt keine Datenträgerbezeichnung. In diesem Fall ignoriert &kfloppy; die Datenträgerbezeichnung.</para
-></note>
+<note><para>The file system &Minix; cannot have any volume label. In this
+case, &kfloppy; will ignore the volume label.</para></note>
 
 </sect2>
 
 </sect1>
 
 <sect1 id="buttons">
-<title
->Die Knöpfe</title>
-<para
->Auf der rechten Seite des &kfloppy;-Fenster befinden sich drei Knöpfe. </para>
+<title>The Buttons</title>
+<para>There are three buttons located vertically along the right side of
+&kfloppy;. </para>
 
 <variablelist>
 <varlistentry>
-<term
-><guibutton
->Formatieren</guibutton
-></term>
+<term><guibutton>Format</guibutton></term>
 <listitem>
-<para
->Mit diesem Knopf wird der Formatierungsvorgang gestartet. Während des Formatierungsprozesses ändert sich auch die Darstellung in den beiden rechteckigen Bereichen, die im unteren Bereich von &kfloppy; angezeigt werden.</para>
+<para>This button
+initiates the formatting process.  Once the user is sure that all the
+settings are correct he or she may begin the process by clicking on
+this button.
+There will be a change in the two long rectangular boxes
+that span the bottom of &kfloppy;.</para>
 
-<para
->Der obere Bereich ist eine Statusanzeige mit Informationen über den Fortschritt der Formatierung und zeigt insbesondere auch aufgetretene Fehler an.</para>
+<para>The upper box is a status indicator that gives information about the
+process underway, especially the error encountered during the processing.</para>
 
-<para
->Während der Formatierung wird der Fortschritt im untersten Teil des &kfloppy;-Fensters angezeigt. Es werden ein Fortschrittsbalken und der Fortschritt des Vorgangs in Prozent angezeigt. Vor Beginn des Vorgangs erscheint dieser Bereich leer und zeigt in der Mitte den Wert 0% an. Bei jedem Vorgang wird der Fortschritt grafisch durch den Füllgrad des Bereichs angezeigt. Gleichzeitig ändert sich die Prozentangabe in der Mitte entsprechend.</para>
+<para>The lower box is a progress bar.  This displays both graphically
+and numerically the progress of first the formatting and then the
+verification.  Before starting it appears to be empty - showing only
+the figure 0% in the center.  As each process
+takes place the progress is tracked graphically as the box fills from
+left to right.  At the same time the number in the center will
+increase reflecting the precise percentage of the process that has
+been completed.</para>
 
-<note
-><para
->Da &kfloppy; zum Formatieren der Disketten externe Programme verwendet, ist es darauf angewiesen, dass es von diesen korrekte Informationen über den Fortschritt des laufenden Vorgangs erhält. Unglücklicherweise funktioniert das nicht. Insbesondere die Programme, die das Dateisystem schreiben, liefern nicht genügend Informationen zurück, sodass der Fortschrittsbalken bei 0% stehen bleibt.</para
-></note>
+<note><para>As &kfloppy; uses external programs to format the floppy disk,
+it has to rely on these programs to give the right information for
+being able to display the progress bar. Unfortunately, this is not the
+case. Especially, the programs writing the file systems do not return
+enough data, so that the progress bar will remain at 0%.</para></note>
 
 <important>
-<para
->Vergewissern Sie sich, dass die Diskette <emphasis
->nicht</emphasis
-> eingebunden (gemountet) ist. &kfloppy; kann keine eingebundenen Disketten formatieren.</para>
+<para>Make sure that your floppy disk is <emphasis>not</emphasis> mounted.
+&kfloppy; cannot format a mounted floppy disk.</para>
 </important>
 
-<note
-><para
->&kfloppy; hängt eine Diskette <emphasis
->nicht</emphasis
-> selbst aus. Hierdurch könnten versehentlich wichtige Daten überschrieben werden.</para
-></note>
+<note><para>&kfloppy; does <emphasis>not</emphasis> unmount the
+floppy by itself, as this could mean that the user may overwrite a floppy
+disk with important data on it.</para></note>
 </listitem>
 </varlistentry>
 
 <varlistentry>
-<term
-><guibutton
->Hilfe</guibutton
-></term>
+<term><guibutton>Help</guibutton></term>
 <listitem>
-<para
->Damit wird ein Aufklappmenü angezeigt, das Aktionen wie das Öffnen dieses Handbuchs, das Erstellen eines Fehlerberichts, den Wechsel der Sprache für diese Anwendung und die Anzeige von Autor und Version von &kfloppy; und &kde; enthält.</para>
+<para>This invokes a popup menu with actions to open this handbook,
+report a bug, switch the application language and display author and version of
+&kfloppy; and &kde;.</para>
 </listitem>
 </varlistentry>
 
 <varlistentry>
-<term
-><guibutton
->Beenden</guibutton
-></term>
+<term><guibutton>Quit</guibutton></term>
 <listitem>
-<para
->Ein Klick auf diesen Knopf beendet &kfloppy;.</para>
+<para>Clicking on this button will close &kfloppy;.</para>
 </listitem>
 </varlistentry>
 
@@ -514,326 +362,217 @@ Mac 800KB floppies at all, not only formatting. -->
 </chapter>
 
 <chapter id="command-line">
-<title
->Befehlszeilenparameter</title>
+<title>Command line options</title>
 
-<para
->&kfloppy; wird zwar meistens aus dem &kde;-Programmmenü oder von der Arbeitsfläche aus gestartet. Es ist jedoch auch möglich, es direkt von der Befehlszeile aufzurufen. Folgende Parameter stehen dabei zur Verfügung:</para
-> 
+<para>Though &kfloppy; may most often be started from the &kde; program menu,
+or a desktop icon, it can also be opened at the command line prompt of a
+terminal window.  There are a few options that are available when doing
+this.  They are:</para> 
 
 <variablelist>
 <varlistentry>
-<term
-><command
->kfloppy <option
->--help</option
-></command
-></term>
-<listitem
-><para
->Zeigt die vorhandenen Befehlszeilenparameter an.</para>
+<term><command>kfloppy <option>--help</option></command></term>
+<listitem><para>This lists the options available at the command
+line.</para>
 </listitem>
 </varlistentry>
 
 <varlistentry>
-<term
-><command
->kfloppy <option
->--author</option
-></command
-></term>
+<term><command>kfloppy <option>--author</option></command></term>
 <listitem>
-<para
->Gibt den Autor von &kfloppy; im Terminalfenster aus.</para>
+<para>Lists &kfloppy;'s author in the terminal window</para>
 </listitem>
 </varlistentry>
 
 <varlistentry>
-<term
-><command
->kfloppy <option
->--license</option
-></command
-></term>
+<term><command>kfloppy <option>--license</option></command></term>
 <listitem>
-<para
->Zeigt Informationen zu den Lizenzbestimmungen für &kfloppy; im Terminalfenster an.</para>
+<para>Shows license information for &kfloppy; in the terminal window</para>
 </listitem>
 </varlistentry>
 
 <varlistentry>
-<term
-><command
->kfloppy <option
->--version</option
-></command
-></term>
+<term><command>kfloppy <option>--version</option></command></term>
 <listitem>
-<para
->Zeigt die Versionen von &kfloppy; an. Dieser Parameter kann mit <command
->kfloppy <option
->-v</option
-></command
-> abgekürzt werden. </para>
+<para>Lists version information for &kfloppy;. Also available
+through <command>kfloppy <option>-v</option></command> </para>
 </listitem>
 </varlistentry>
 
 <varlistentry>
-<term
-><command
->kfloppy <option
-><replaceable
->device</replaceable
-></option
-></command
-></term>
-<listitem
-><para
->Das Gerät zum Formatieren</para>
-<para
->Dies formatiert das angegebene Derät direkt und verwendet die gespeicherten Einstellungen. Zurzeit werden nur die Geräte "/dev/fd0" und "/dev/fd1" unterstützt.</para
-></listitem>
+<term><command>kfloppy <option><replaceable>device</replaceable></option></command></term>
+<listitem><para>Device to format.</para>
+<para>This will directly format the given device using the saved settings.
+Only supported at the moment are /dev/fd0 and /dev/fd1.</para></listitem>
 </varlistentry>
-</variablelist
-> 
+</variablelist> 
 
-</chapter
-> 
+</chapter> 
 
 <chapter id="credits">
-<title
->Danksagungen und Lizenz</title>
+<title>Credits and License</title>
 
 <!-- ### TODO: verify the copyright dates -->
 <!-- ### TODO: make the copyright list prettier -->
-<para
->&kfloppy;, das Diskettenformatierprogramm: Copyright 1997-2000 &Bernd.Johannes.Wuebben; <email
->wuebben@math.cornell.edu</email
-></para>
+<para>&kfloppy; Formatter Program Copyright 1997 - 2000 &Bernd.Johannes.Wuebben;
+<email>wuebben@math.cornell.edu</email></para>
 
-<para
->&kfloppy;, das Diskettenformatierungsprogramm, Copyright 2002 Adriaan de Groot <email
->groot@kde.org</email
-></para>
+<para>&kfloppy; Formatter Program Copyright 2002 Adriaan de Groot
+<email>groot@kde.org</email></para>
 
-<para
->&kfloppy;, das Diskettenformatierungsprogramm Copyright 2004, 2005 &Nicolas.Goutte; &Nicolas.Goutte.mail;</para>
+<para>&kfloppy; Formatter Program Copyright 2004, 2005 &Nicolas.Goutte;
+&Nicolas.Goutte.mail;</para>
 
-<para
->&kfloppy;, das Diskettenformatierungsprogramm, Copyright 2015, 2016 Wolfgang Bauer <email
->wbauer@tmo.at</email
-></para>
+<para>&kfloppy; Formatter Program Copyright 2015, 2016 Wolfgang Bauer
+<email>wbauer@tmo.at</email></para>
 
-<para
->Copyright für die Dokumentation 2000 &Thad.McGinnis; &Thad.McGinnis.mail;.</para>
+<para>Documentation Copyright 2000 by &Thad.McGinnis;
+&Thad.McGinnis.mail;.</para>
 
-<para
->Diese Version des Handbuchs zu &kfloppy; basiert auf der ursprünglichen Version von &David.Rugge; <email
->davidrugge@mindspring.com</email
-></para>
+<para>This version of the &kfloppy; Handbook is based on the original by
+&David.Rugge; <email>davidrugge@mindspring.com</email></para>
 
-<para
->Übersetzung Gregor Zumstein <email
->zumstein@ssd.ethz.ch</email
-></para
-> &underFDL; &underGPL; </chapter>
+<!-- TRANS:CREDIT_FOR_TRANSLATORS -->
+&underFDL;
+&underGPL;
+
+</chapter>
 
 <appendix id="neededprogs">
-<title
->Benötigte externe Programme</title>
+<title>Needed External Programs</title>
 
-<para
->Wie bereits in diesem Handbuch erwähnt arbeitet &kfloppy; mit externen Programmen, um die verschiedenen Formatierungsvorgänge durchzuführen.</para>
+<para>As already written earlier in this handbook, &kfloppy; works
+with the help of external programs to do the different formatting tasks.</para>
 
-<note
-><para
->Fehlt eines dieser Programme können Sie &kfloppy; trotzdem benutzen, allerdings steht dann die entsprechende Funktionalität nicht zur Verfügung.</para
-></note>
+<note><para>If one of the programs is missing, &kfloppy; tries to work nevertheless.
+However the corresponding option will not be available.</para></note>
 
 <variablelist>
 <varlistentry>
-<term
-><command
->fdformat</command
-></term>
-<listitem
-><para
->Dieses Programm wird zur Low-Level-Formatierung unter &Linux; und &BSD; benötigt. Fehlt dieses Programm, steht die Funktion <guilabel
->Vollständige Formatierung</guilabel
-> nicht zur Verfügung. </para
-></listitem>
+<term><command>fdformat</command></term>
+<listitem><para>This program is needed for low-level formatting,
+on &Linux; and on &BSD;. If it is missing,
+<guilabel>Full format</guilabel> will be disabled.
+</para></listitem>
 </varlistentry>
 <varlistentry>
-<term
-><command
->dd</command
-></term>
-<listitem
-><para
->Dieses Programm wird zum Ausnullen unter &Linux; und &BSD; benötigt. Fehlt dieses Programm, steht die Funktion <guilabel
->Ausnullen und Schnellformatierung</guilabel
-> nicht zur Verfügung. </para
-></listitem>
+<term><command>dd</command></term>
+<listitem><para>This program is needed for zeroing-out,
+on &Linux; and on &BSD;. If it is missing,
+<guilabel>Zero out and quick format</guilabel> will be disabled.
+</para></listitem>
 </varlistentry>
 <varlistentry>
-<term
-><command
->mkdosfs</command
-></term>
-<listitem
-><para
->Diese Programm wird zur Formatierung im DOS-Format unter &Linux; benötigt. </para
-></listitem>
+<term><command>mkdosfs</command></term>
+<listitem><para>This program is needed for DOS formatting,
+on &Linux;.
+</para></listitem>
 </varlistentry>
 <varlistentry>
-<term
-><command
->newfs_msdos</command
-></term>
-<listitem
-><para
->Diese Programm wird zur Formatierung im DOS-Format unter &BSD; benötigt. </para
-></listitem>
+<term><command>newfs_msdos</command></term>
+<listitem><para>This program is needed for DOS formatting,
+on &BSD;.
+</para></listitem>
 </varlistentry>
 <varlistentry>
-<term
-><command
->newfs</command
-></term>
-<listitem
-><para
->Dieses Programm wird zum Formatieren im UFS-Format unter &BSD; benötigt. </para
-></listitem>
+<term><command>newfs</command></term>
+<listitem><para>This program is needed for UFS formatting,
+on &BSD;.
+</para></listitem>
 </varlistentry>
 <varlistentry>
-<term
-><command
->mke2fs</command
-></term>
-<listitem
-><para
->Dieses Programm wird zur Formatierung im ext2-Format unter &Linux; und &BSD; benötigt. </para
-></listitem>
+<term><command>mke2fs</command></term>
+<listitem><para>This program is needed for ext2 formatting,
+on &Linux; and on &BSD;.
+</para></listitem>
 </varlistentry>
 <varlistentry>
-<term
-><command
->mkfs.minix</command
-></term>
-<listitem
-><para
->Dieses Programm wird zur Formatierung im &Minix;-Format unter &Linux; benötigt. </para
-></listitem>
+<term><command>mkfs.minix</command></term>
+<listitem><para>This program is needed for &Minix; formatting,
+on &Linux;.
+</para></listitem>
 </varlistentry>
 </variablelist>
 
 </appendix>
 <appendix id="usergivendevices">
-<title
->Benutzerdefinierte Geräte</title>
+<title>User-Given Devices</title>
 
 <sect1 id="ugdintro">
-<title
->Einleitung</title>
+<title>Introduction</title>
 
-<para
-><quote
->Benutzerdefinierte Geräte</quote
-> ist der Arbeitstitel einer noch im Experimentierstadium befindlichen Funktion von &kfloppy;. Der Benutzer kann hiermit einen Gerätenamen übergeben und dieses dann fast wie ein <hardware
->Diskettenlaufwerk</hardware
-> verwenden.</para>
+<para>"User Given Devices" is the work title of a still experimental feature of
+&kfloppy;. It allows the user to give a device name and to use it nearly
+as if it was a <hardware>floppy drive</hardware>.</para>
 
-<para
->Diese Funktion dient hauptsächlich als Zwischenlösung für Benutzer, die <hardware
->USB-Diskettenlaufwerke</hardware
-> jeglicher Art (einschließlich <trademark
->ZIP</trademark
->-Laufwerke) oder andere ungewöhnliche <hardware
->Diskettenlaufwerke</hardware
-> haben.</para>
+<para>This feature is mainly intended as a work-around for users having
+<hardware>USB floppy drives</hardware> of any kind
+(including <trademark>ZIP</trademark> disk drives) or any other non-legacy
+<hardware>floppy drives</hardware>.</para>
 
-<note
-><para
->Unglücklicherweise ist diese Funktion zum Zeitpunkt der Erstellung dieser Dokumentation nicht besonders benutzerfreundlich, da es keinerlei Hilfestellung bei der Benennung eines Gerätes gibt und &kfloppy; diesen zwischen zwei Aufrufen auch wieder vergisst. (Dies geschieht teilweise aus Sicherheitsgründen, da sich der Gerätename des <hardware
->Diskettenlaufwerks</hardware
-> nach einem Neustart des Systems ändern kann.)</para
-></note>
+<note><para>Unfortunately at the time of writing this documentation, the feature
+is not very user friendly, as it does not offer any help to the user on how
+a device is called and &kfloppy; does not even remember the device name from
+call to call. (This is partially a security, as the device of the
+<hardware>floppy drive</hardware> might change between reboots.)</para></note>
 
-<note
-><para
->Da diese Funktion unter &Linux; entwickelt wurde, bietet die &BSD;-Version von &kfloppy; weniger Möglichkeiten als &kfloppy; unter &Linux;.</para
-></note>
+<note><para>As this feature was developed under &Linux;, the &BSD; version
+of &kfloppy; offers less choices than &kfloppy; under &Linux;.</para></note>
 
 </sect1>
 
 <sect1 id="ugdmain">
-<title
->Verwendung</title>
+<title>Using It</title>
 
 <!-- Note to reviewers: "PRimary" and "Secondary" are the default items in the combobox -->
-<para
->Die Verwendung <quote
->benutzerdefinierter Geräte</quote
-> ist relativ einfach. Sie müssen dazu anstelle der vorgegebenen Einträge den Gerätenamen, beispielsweise <replaceable
->/dev/sdz4</replaceable
-> in das Kombinationsfeld <guilabel
->Diskettenlaufwerk</guilabel
-> eingeben.</para>
+<para>Using "User Given Devices" is quite simple, you just need to enter
+a device name, for example <replaceable>/dev/sdz4</replaceable>
+in the <guilabel>Floppy drive:</guilabel> combobox instead of
+selecting Primary or Secondary.</para>
 
 <note>
-<para
->Sie müssen den <filename class="directory"
->/dev/</filename
->-Teil des Gerätenamens aus zwei Gründen mit angeben:</para>
+<para>You need to enter the <filename class="directory">/dev/</filename>
+part of the device for two reasons:</para>
 <itemizedlist>
 <listitem>
-<para
->&kfloppy; erkennt hieran ein <quote
->benutzerdefiniertes Gerät</quote
->.</para>
+<para>It is how &kfloppy; recognizes the "User Given Devices" mode.</para>
 </listitem>
 <listitem>
-<para
->Aus Sicherheitsgründen soll verhindert werden, dass der Benutzer irgendetwas in das Kombinationsfeld einträgt, das zufällig ein Gerätename ist.</para>
+<para>It is a security, to avoid that the user writes anything in the combobox
+that is by chance a device name.</para>
 </listitem>
 </itemizedlist>
 </note>
 
-<para
->Unglücklicherweise hat die Verwendung eines Gerätes anstelle eines Diskettenlaufwerks einige Konsequenzen. Die bedeutendste ist, dass die Auswahlmöglichkeit <guilabel
->Vollständige Formatierung</guilabel
-> nicht mehr zur Verfügung steht. Jeder Versuch bringt eine Fehlermeldung, wenn die Formatierung gestartet wird. Sie können aber stattdessen die Einstellung <guilabel
->Ausnullen und Schnellformatierung</guilabel
-> verwenden. Dabei wird zwar nicht das Gerät formatiert, aber sämtliche Daten werden mit Nullbytes überschrieben und gelöscht, was beinah das Selbe ist.</para>
+<para>Unfortunately, using any device instead of a floppy device has a few
+consequences. The major one is that <guilabel>Full Format</guilabel> cannot be
+selected anymore. Doing so will result in a error message box when trying to
+start the format. However you can use <guilabel>Zero out and quick format</guilabel>
+instead. It will not format the device, just zeroing it out, but in practice it is
+nearly the same; especially all data on the device will be erased.</para>
 
-<warning
-><para
->Seien Sie vorsichtig bei der Eingabe des Gerätenamens. &kfloppy; übergibt diesen Gerätenamen genau so an die externen Programme. Insbesondere erfolgt keine Überprüfung (auch nicht durch die externen Programme), ob es sich um ein <hardware
->Diskettenlaufwerk</hardware
-> handelt. Geben Sie hier eine ihrer Festplattenpartitionen an, wird auch diese akzeptiert. (Ist die Partition eingebunden oder schreibgeschützt, erhalten sie allerdings wahrscheinlich eine Fehlermeldung, und das Schlimmste wird verhindert.)</para
-></warning>
+<warning><para>Be careful when entering the device name. &kfloppy; will pass
+the device name as is to the external programs. Especially it does not check
+(and the external programs do not check either) if the device is a
+<hardware>floppy drive</hardware> device. If you give your any of your main
+disk partitions as device, it will be accepted. (If the partition is mounted
+or if you cannot write on this device, you
+will probably get an error message nevertheless, avoiding the worst.)</para></warning>
 
-<note
-><para
->Selbst wenn Sie ein Gerät für ein Diskettenlaufwerk wie <filename
->/dev/fd0u2880</filename
-> angeben können, verweigert &kfloppy; das Ausführen der Funktion <guilabel
->Vollständige Formatierung</guilabel
-> darauf.</para
-></note>
+<note><para>Even if you can specify a floppy device like
+<filename>/dev/fd0u2880</filename>, &kfloppy; will refuse to make a 
+<guilabel>Full Format</guilabel> on it.</para></note>
 
-<para
->Unter &Linux; können Sie jedes gewünschte Dateisystem wählen, unter &BSD; wird derzeit nur UFS unterstützt (wobei diese Funktion zum Zeitpunkt der Erstellung dieser Dokumentation nicht getestet ist).</para>
+<para>On &Linux;, you can select any file system that you want. On &BSD;,
+only UFS is currently supported (and not tested at time of writing this
+documentation).</para>
 
-<para
->Wenn Sie zum Formatieren bereit sind, drücken Sie wie sonst auf den Knopf <guibutton
->Formatieren</guibutton
->. Es erscheint dann ein Fenster, in dem der Gerätename bestätigt werden muss. </para>
+<para>When you are ready to format, click on the <guibutton>Format</guibutton>
+button as usual. You will get a message box asking you to verify the device name.
+</para>
 
-<warning
-><para
->Das ist die letzte Gelegenheit zur Überprüfung des angegebenen Gerätenamens vor dem Formatieren. Danach ist es zu spät.</para
-></warning>
+<warning><para>This is the last chance to check the device name before formating.
+After it, it is too late.</para></warning>
 
 </sect1>
 
