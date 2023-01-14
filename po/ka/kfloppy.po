@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: kfloppy\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-01-12 00:48+0000\n"
-"PO-Revision-Date: 2022-09-29 08:42+0200\n"
+"PO-Revision-Date: 2023-01-14 04:03+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.1.1\n"
+"X-Generator: Poedit 3.2.2\n"
 
 #: floppy.cpp:81
 #, kde-format
@@ -86,12 +86,16 @@ msgctxt "Linux"
 msgid ""
 "KFloppy supports three file formats under Linux: MS-DOS, Ext2, and Minix"
 msgstr ""
+"KFloppy -ს ლინუქსის ქვეშ სამი ფაილის ფორმატის მხარდაჭერა გააჩნია: MS-DOS, "
+"Ext2 და Minix"
 
 #: floppy.cpp:128
 #, kde-format
 msgctxt "BSD"
 msgid "KFloppy supports three file formats under BSD: MS-DOS, UFS, and Ext2"
 msgstr ""
+"KFloppy -ს BSD-ის ქვეშ სამი ფაილის ფორმატის მხარდაჭერა გააჩნია: MS-DOS, Ext2 "
+"და Minix"
 
 #: floppy.cpp:138 floppy.cpp:163 floppy.cpp:558 floppy.cpp:660
 #, kde-format
@@ -110,6 +114,8 @@ msgctxt "Linux"
 msgid ""
 "Program mkdosfs <b>not found</b>. MSDOS formatting <b>not available</b>."
 msgstr ""
+"პროგრამა mkdosfs <b>ვერ ვიპოვე</b>. MSDOS -ით ფორმატირება<b>ხელმიუწვდომელია</"
+"b>."
 
 #: floppy.cpp:146 floppy.cpp:179 floppy.cpp:569
 #, kde-format
@@ -125,6 +131,7 @@ msgstr "ნაპოვნია პროგრამა mke2fs."
 #, kde-format
 msgid "Program mke2fs <b>not found</b>. Ext2 formatting <b>not available</b>"
 msgstr ""
+"პროგრამა mke2fs <b>ვერ ვიპოვე</b>. Ext2 -ით ფორმატირება<b>ხელმიუწვდომელია</b>"
 
 #: floppy.cpp:154 floppy.cpp:588
 #, kde-format
@@ -143,6 +150,8 @@ msgctxt "Linux"
 msgid ""
 "Program mkfs.minix <b>not found</b>. Minix formatting <b>not available</b>"
 msgstr ""
+"პროგრამა mkfs.minix<b>ვერ ვიპოვე</b>. Minix -ით "
+"ფორმატირება<b>ხელმიუწვდომელია</b>"
 
 #: floppy.cpp:161
 #, kde-format
@@ -230,6 +239,7 @@ msgstr "ნაპოვნია პროგრამა fdformat."
 #, kde-format
 msgid "Program fdformat <b>not found</b>. Full formatting <b>disabled</b>."
 msgstr ""
+"პროგრამა fdformat <b>ვერ ვიპოვე</b>. სრული ფორმატირება <b>გათიშულია</b>."
 
 #: floppy.cpp:226
 #, kde-format
@@ -239,12 +249,12 @@ msgstr "ნაპოვნია პროგრამა dd."
 #: floppy.cpp:229
 #, kde-format
 msgid "Program dd <b>not found</b>. Zeroing-out <b>disabled</b>."
-msgstr ""
+msgstr "პროგრამა dd <b>ვერ ვიპოვე</b>. ნულებით შევსება <b>გათიშულია</b>."
 
 #: floppy.cpp:234
 #, kde-format
 msgid "&Verify integrity"
-msgstr ""
+msgstr "&მთლიანობის შემოწმება"
 
 #: floppy.cpp:238
 #, kde-format
@@ -288,7 +298,7 @@ msgstr "&ფორმატირება"
 #: floppy.cpp:276
 #, kde-format
 msgid "<qt>Click here to start formatting.</qt>"
-msgstr ""
+msgstr "<qt>ფორმატირების დასაწყებად დააწკაპუნეთ.</qt>"
 
 #: floppy.cpp:301
 #, kde-format
@@ -298,7 +308,7 @@ msgstr ""
 #: floppy.cpp:314
 #, kde-format
 msgid "<qt>Shows progress of the format.</qt>"
-msgstr ""
+msgstr "<qt>ფორმატირების მიმდინარეობის ჩვენება.</qt>"
 
 #: floppy.cpp:323
 #, kde-format
@@ -310,7 +320,7 @@ msgstr ""
 #: floppy.cpp:355
 #, kde-format
 msgid "KDE Floppy Formatter"
-msgstr ""
+msgstr "KDE -ის დისკეტების ფორმატირების პროგრამა"
 
 #: floppy.cpp:488
 #, kde-format
@@ -346,17 +356,17 @@ msgstr ""
 #: format.cpp:247
 #, kde-format
 msgid "Unexpected drive number %1."
-msgstr ""
+msgstr "ამძრავის მოულოდნელი ნომერი %1."
 
 #: format.cpp:257
 #, kde-format
 msgid "Unexpected density number %1."
-msgstr ""
+msgstr "სიმკვრივის მოულოდნელი ნომერი %1."
 
 #: format.cpp:270
 #, kde-format
 msgid "Cannot find a device for drive %1 and density %2."
-msgstr ""
+msgstr "მოწყობილობის პოვნა ამძრავისთვის %1 და სიმკვრივისთვის %2 ვერ ვიპოვე."
 
 #: format.cpp:284
 #, kde-format
@@ -368,33 +378,33 @@ msgstr ""
 #: format.cpp:316
 #, kde-format
 msgid "The program %1 terminated with an error."
-msgstr ""
+msgstr "პროგრამა %1 შეცდომით დასრულდა."
 
 #: format.cpp:320
 #, kde-format
 msgid "The program %1 terminated abnormally."
-msgstr ""
+msgstr "პროგრამა %1 არანორმალურად დასრულდა."
 
 #: format.cpp:377 format.cpp:508 format.cpp:597 format.cpp:691 format.cpp:762
 #: format.cpp:852
 #, kde-format
 msgid "Internal error: device not correctly defined."
-msgstr ""
+msgstr "შიდა შეცდომა: მოწყობილობის აღწერა არასწორია."
 
 #: format.cpp:383
 #, kde-format
 msgid "Cannot find fdformat."
-msgstr ""
+msgstr "'fdformat'-ის აღმოჩენის შეცდომა."
 
 #: format.cpp:410
 #, kde-format
 msgid "Could not start fdformat."
-msgstr ""
+msgstr "'fdformat'-ის გაშვების შეცდომა."
 
 #: format.cpp:432
 #, kde-format
 msgid "Error formatting track %1."
-msgstr ""
+msgstr "ტრეკის %1 ფორმატირების შეცდომა."
 
 #: format.cpp:435 format.cpp:460
 #, kde-format
@@ -407,12 +417,12 @@ msgstr ""
 #: format.cpp:453
 #, kde-format
 msgid "Low-level formatting error at track %1."
-msgstr ""
+msgstr "დაბალი დონის ფორმატირების შეცდომა ტრეკზე %1."
 
 #: format.cpp:456
 #, kde-format
 msgid "Low-level formatting error: %1"
-msgstr ""
+msgstr "დაბალი დონის ფორმატირების შეცდომა: %1"
 
 #: format.cpp:467 format.cpp:647 format.cpp:803 format.cpp:889
 #, kde-format
@@ -420,31 +430,33 @@ msgid ""
 "Device busy.\n"
 "Perhaps you need to unmount the floppy first."
 msgstr ""
+"მოწყობილობა დაკავებულია.\n"
+"ალბათ, ჯერ საჭიროა, მოხსნათ დისკეტა."
 
 #: format.cpp:472
 #, kde-format
 msgid "Low-level format error: %1"
-msgstr ""
+msgstr "დაბალი დონის ფორმატირების შეცდომა: %1"
 
 #: format.cpp:514
 #, kde-format
 msgid "Cannot find dd."
-msgstr ""
+msgstr "'dd' ვერ ვიპოვე."
 
 #: format.cpp:528
 #, kde-format
 msgid "Could not start dd."
-msgstr ""
+msgstr "'dd'-ის გაშვების პროგრაა."
 
 #: format.cpp:603
 #, kde-format
 msgid "Cannot find a program to create FAT filesystems."
-msgstr ""
+msgstr "FAT ფაილური სისტემების შექმნის პროგრამა ვერ ვიპოვე."
 
 #: format.cpp:630
 #, kde-format
 msgid "Cannot start FAT format program."
-msgstr ""
+msgstr "FAT-ის ფორმატირების პროგრამის გაშვების შეცდომა."
 
 #: format.cpp:643 format.cpp:799 format.cpp:885
 #, kde-format
@@ -452,38 +464,40 @@ msgid ""
 "Floppy is mounted.\n"
 "You need to unmount the floppy first."
 msgstr ""
+"დისკეტა მიმაგრებულია.\n"
+"საჭიროა, ჯერ მოხსნათ ის."
 
 #: format.cpp:697
 #, kde-format
 msgctxt "BSD"
 msgid "Cannot find a program to create UFS filesystems."
-msgstr ""
+msgstr "UFS ფაილური სისტემების შექმნის პროგრამა ვერ ვიპოვე."
 
 #: format.cpp:714
 #, kde-format
 msgctxt "BSD"
 msgid "Cannot start UFS format program."
-msgstr ""
+msgstr ".UFS-ის ფორმატირების პროგრამის გაშვების შეცდომა."
 
 #: format.cpp:768
 #, kde-format
 msgid "Cannot find a program to create ext2 filesystems."
-msgstr ""
+msgstr "Ext2 ფაილური სისტემების შექმნის პროგრამა ვერ ვიპოვე."
 
 #: format.cpp:786
 #, kde-format
 msgid "Cannot start ext2 format program."
-msgstr ""
+msgstr "EXT2-ის ფორმატირების პროგრამის გაშვების შეცდომა."
 
 #: format.cpp:858
 #, kde-format
 msgid "Cannot find a program to create Minix filesystems."
-msgstr ""
+msgstr "Minix ფაილური სისტემების შექმნის პროგრამა ვერ ვიპოვე."
 
 #: format.cpp:875
 #, kde-format
 msgid "Cannot start Minix format program."
-msgstr ""
+msgstr "Minix-ის ფორმატირების პროგრამის გაშვების შეცდომა."
 
 #: main.cpp:51
 #, kde-format
@@ -493,7 +507,7 @@ msgstr "KFloppy"
 #: main.cpp:53
 #, kde-format
 msgid "KDE Floppy Disk Utility"
-msgstr ""
+msgstr "KDE -ის დისკეტების პროგრამა"
 
 #: main.cpp:55
 #, kde-format
@@ -518,7 +532,7 @@ msgstr "Bernd Johannes Wuebben"
 #: main.cpp:63
 #, kde-format
 msgid "Author and former maintainer"
-msgstr ""
+msgstr "ავტორი და ყოფილი ლიდერი"
 
 #: main.cpp:64
 #, kde-format
@@ -528,7 +542,7 @@ msgstr "Chris Howells"
 #: main.cpp:64
 #, kde-format
 msgid "User interface re-design"
-msgstr ""
+msgstr "მომხმარების ინტერფეისის დიზაინის გაუმჯობესება"
 
 #: main.cpp:65
 #, kde-format
@@ -538,7 +552,7 @@ msgstr "Adriaan de Groot"
 #: main.cpp:65
 #, kde-format
 msgid "Add BSD support"
-msgstr ""
+msgstr "BSD-ის მხარდაჭერის დამატება"
 
 #: main.cpp:66
 #, kde-format
@@ -553,12 +567,12 @@ msgstr ""
 #: main.cpp:67
 #, kde-format
 msgid "Wolfgang Bauer"
-msgstr ""
+msgstr "Wolfgang Bauer"
 
 #: main.cpp:67
 #, kde-format
 msgid "Port KFloppy to KF5"
-msgstr ""
+msgstr "KFloppy -ის KF5-ზე გატანა"
 
 #: main.cpp:69
 #, kde-format
@@ -575,4 +589,4 @@ msgstr "Temuri.doghonadze@gmail.com"
 #: main.cpp:77
 #, kde-format
 msgid "Default device"
-msgstr ""
+msgstr "ნაგულისხმებ მოწყობილობა"
