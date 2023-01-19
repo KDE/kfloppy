@@ -46,7 +46,7 @@ ecm_set_disabled_deprecation_versions(QT 5.15.2
 
 
 add_executable(kfloppy)
-target_sources(kfloppy PRIVATE main.cpp format.cpp floppy.cpp )
+target_sources(kfloppy PRIVATE main.cpp format.cpp floppy.cpp format.h floppy.h)
 
 set_property(SOURCE main.cpp APPEND PROPERTY COMPILE_DEFINITIONS "KFLOPPY_VERSION=\"${RELEASE_SERVICE_VERSION}\"")
 
