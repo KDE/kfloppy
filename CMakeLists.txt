@@ -12,10 +12,10 @@ if(NOT UNIX)
   message(FATAL_ERROR "KFloppy is only supposed to be built on Unix platforms.")
 endif(NOT UNIX)
 
-set(KF5_MIN_VERSION "5.91.0")
+set(KF_MIN_VERSION "5.91.0")
 set(REQUIRED_QT_VERSION "5.15.2")
 
-find_package(ECM ${KF5_MIN_VERSION} REQUIRED NO_MODULE)
+find_package(ECM ${KF_MIN_VERSION} REQUIRED NO_MODULE)
 set(CMAKE_MODULE_PATH ${ECM_MODULE_PATH})
 
 include(KDEInstallDirs)
@@ -32,13 +32,13 @@ kde_clang_format(${ALL_CLANG_FORMAT_SOURCE_FILES})
 
 
 find_package(Qt${QT_MAJOR_VERSION} ${REQUIRED_QT_VERSION} CONFIG REQUIRED Core DBus Widgets)
-find_package(KF5 ${KF5_MIN_VERSION} REQUIRED COMPONENTS I18n CoreAddons Completion XmlGui)
-find_package(KF5DocTools ${KF5_MIN_VERSION})
+find_package(KF5 ${KF_MIN_VERSION} REQUIRED COMPONENTS I18n CoreAddons Completion XmlGui)
+find_package(KF5DocTools ${KF_MIN_VERSION})
 set_package_properties(KF5DocTools PROPERTIES DESCRIPTION
     "Tools to generate documentation"
     TYPE OPTIONAL
 )
-find_package(KF5Crash ${KF5_MIN_VERSION} CONFIG REQUIRED)
+find_package(KF5Crash ${KF_MIN_VERSION} CONFIG REQUIRED)
 
 ecm_set_disabled_deprecation_versions(QT 5.15.2
     KF 5.101
