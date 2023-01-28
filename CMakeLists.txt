@@ -63,6 +63,10 @@ ecm_qt_declare_logging_category(kfloppy HEADER kfloppy_debug.h IDENTIFIER KFLOPP
 target_link_libraries(kfloppy KF${KF_MAJOR_VERSION}::CoreAddons KF${KF_MAJOR_VERSION}::I18n KF${KF_MAJOR_VERSION}::Completion
     KF${KF_MAJOR_VERSION}::XmlGui Qt${QT_MAJOR_VERSION}::DBus KF${KF_MAJOR_VERSION}::Crash)
 
+if (TARGET Qt::Core5Compat)
+    target_link_libraries(kfloppy Qt::Core5Compat)
+endif()
+
 install(TARGETS kfloppy  ${KDE_INSTALL_TARGETS_DEFAULT_ARGS} )
 
 
