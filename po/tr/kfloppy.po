@@ -14,7 +14,7 @@ msgstr ""
 "Project-Id-Version: kdeutils-kde4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-01-12 00:48+0000\n"
-"PO-Revision-Date: 2023-01-18 22:34+0300\n"
+"PO-Revision-Date: 2023-02-02 20:41+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -59,28 +59,28 @@ msgstr "Otomatik Algıla"
 #: floppy.cpp:106 floppy.cpp:372 floppy.cpp:658
 #, kde-format
 msgid "3.5\" 1.44MB"
-msgstr "3,5\" 1,44MB"
+msgstr "3,5\" 1,44 MB"
 
 #: floppy.cpp:107 floppy.cpp:374
 #, kde-format
 msgid "3.5\" 720KB"
-msgstr "3,5\" 720KB"
+msgstr "3,5\" 720 KB"
 
 #: floppy.cpp:108 floppy.cpp:376
 #, kde-format
 msgid "5.25\" 1.2MB"
-msgstr "5,25\" 1,2MB"
+msgstr "5,25\" 1,2 MB"
 
 #: floppy.cpp:109 floppy.cpp:378
 #, kde-format
 msgid "5.25\" 360KB"
-msgstr "5,25\" 360KB"
+msgstr "5,25\" 360 KB"
 
 #: floppy.cpp:112
 #, kde-format
 msgid "<qt>This allows you to select the floppy disk's size and density.</qt>"
 msgstr ""
-"<qt>Bu disketlerin büyüklük ve yoğunluklarını seçmenize izin verir.</qt>"
+"<qt>Bu, disketlerin büyüklük ve yoğunluklarını seçmenize izin verir.</qt>"
 
 #: floppy.cpp:119
 #, kde-format
@@ -93,13 +93,14 @@ msgctxt "Linux"
 msgid ""
 "KFloppy supports three file formats under Linux: MS-DOS, Ext2, and Minix"
 msgstr ""
-"KFloppy, Linux altında üç dosya formatını destekler: MS-DOS, Ext2 ve Minix"
+"K Disket, Linux altında üç dosya sistemini destekler: MS-DOS, Ext2 ve Minix"
 
 #: floppy.cpp:128
 #, kde-format
 msgctxt "BSD"
 msgid "KFloppy supports three file formats under BSD: MS-DOS, UFS, and Ext2"
-msgstr "KFloppy, BSD altında üç dosya formatını destekler: MS-DOS, UFS ve Ext2"
+msgstr ""
+"K Disket, BSD altında üç dosya sistemini destekler: MS-DOS, UFS ve Ext2"
 
 #: floppy.cpp:138 floppy.cpp:163 floppy.cpp:558 floppy.cpp:660
 #, kde-format
@@ -110,7 +111,7 @@ msgstr "DOS"
 #, kde-format
 msgctxt "Linux"
 msgid "Program mkdosfs found."
-msgstr "mkdosfs uygulaması bulundu."
+msgstr "mkdosfs programı bulundu."
 
 #: floppy.cpp:142
 #, kde-format
@@ -118,8 +119,8 @@ msgctxt "Linux"
 msgid ""
 "Program mkdosfs <b>not found</b>. MSDOS formatting <b>not available</b>."
 msgstr ""
-"mkdosfs uygulaması <b>bulunamadı</b>. MSDOS biçimlendirmesi <b>olanaklı "
-"değil</b>."
+"mkdosfs programı <b>bulunamadı</b>. MSDOS biçimlendirmesi <b>olanaklı değil</"
+"b>."
 
 #: floppy.cpp:146 floppy.cpp:179 floppy.cpp:569
 #, kde-format
@@ -129,14 +130,13 @@ msgstr "ext2"
 #: floppy.cpp:148 floppy.cpp:181
 #, kde-format
 msgid "Program mke2fs found."
-msgstr "mke2fs uygulaması bulundu."
+msgstr "mke2fs programı bulundu."
 
 #: floppy.cpp:150 floppy.cpp:183
 #, kde-format
 msgid "Program mke2fs <b>not found</b>. Ext2 formatting <b>not available</b>"
 msgstr ""
-"mke2fs uygulaması <b>bulunamadı</b>. Ext2 biçimlendirmesi <b>olanaklı değil</"
-"b>"
+"mke2fs programı <b>bulunamadı</b>. Ext2 biçimlendirmesi <b>olanaklı değil</b>"
 
 #: floppy.cpp:154 floppy.cpp:588
 #, kde-format
@@ -147,7 +147,7 @@ msgstr "Minix"
 #, kde-format
 msgctxt "Linux"
 msgid "Program mkfs.minix found."
-msgstr "mkfs.minix uygulaması bulundu."
+msgstr "mkfs.minix programı bulundu."
 
 #: floppy.cpp:158
 #, kde-format
@@ -155,20 +155,20 @@ msgctxt "Linux"
 msgid ""
 "Program mkfs.minix <b>not found</b>. Minix formatting <b>not available</b>"
 msgstr ""
-"mkfs.minix uygulaması <b>bulunamadı</b>. Minix biçimlendirmesi <b>olanaklı "
+"mkfs.minix programı <b>bulunamadı</b>. Minix biçimlendirmesi <b>olanaklı "
 "değil</b>."
 
 #: floppy.cpp:161
 #, kde-format
 msgctxt "BSD"
 msgid "KFloppy supports two file formats under BSD: MS-DOS and UFS"
-msgstr "KFloppy, BSD altında iki dosya formatını destekler: MS-DOS ve UFS"
+msgstr "K Disket, BSD altında iki dosya sistemini destekler: MS-DOS ve UFS"
 
 #: floppy.cpp:165
 #, kde-format
 msgctxt "BSD"
 msgid "Program newfs_msdos found."
-msgstr "newfs_msdos uygulaması bulundu."
+msgstr "newfs_msdos programı bulundu."
 
 #: floppy.cpp:167
 #, kde-format
@@ -176,7 +176,7 @@ msgctxt "BSD"
 msgid ""
 "Program newfs_msdos <b>not found</b>. MSDOS formatting <b>not available</b>."
 msgstr ""
-"newfs_msdos uygulaması <b>bulunamadı</b>. MSDOS biçimlendirmesi <b>olanaklı "
+"newfs_msdos programı <b>bulunamadı</b>. MSDOS biçimlendirmesi <b>olanaklı "
 "değil</b>."
 
 #: floppy.cpp:171 floppy.cpp:487 floppy.cpp:580
@@ -188,20 +188,19 @@ msgstr "UFS"
 #, kde-format
 msgctxt "BSD"
 msgid "Program newfs found."
-msgstr "newfs uygulaması bulundu."
+msgstr "newfs programı bulundu."
 
 #: floppy.cpp:175
 #, kde-format
 msgctxt "BSD"
 msgid "Program newfs <b>not found</b>. UFS formatting <b>not available</b>."
 msgstr ""
-"newfs uygulaması <b>bulunamadı</b>. UFS biçimlendirmesi <b>olanaklı değil</"
-"b>."
+"newfs programı <b>bulunamadı</b>. UFS biçimlendirmesi <b>olanaklı değil</b>."
 
 #: floppy.cpp:189
 #, kde-format
 msgid "&Formatting"
-msgstr "&Biçimlendiriliyor"
+msgstr "&Biçimlendirme"
 
 #: floppy.cpp:192
 #, kde-format
@@ -302,7 +301,7 @@ msgstr ""
 #, kde-format
 msgctxt "Volume label, maximal 11 characters"
 msgid "KDE Floppy"
-msgstr "KDE Disketi"
+msgstr "Disket-1"
 
 #: floppy.cpp:260
 #, kde-format
@@ -342,13 +341,13 @@ msgid ""
 "KFloppy cannot find any of the needed programs for creating file systems; "
 "please check your installation.<br /><br />Log:"
 msgstr ""
-"KFloppy, dosya sistemleri oluşturmak için gerekli uygulamaların hiçbirini "
+"K Disket, dosya sistemleri oluşturmak için gerekli uygulamaların hiçbirini "
 "bulamadı, lütfen kurulumunuzu gözden geçirin. <br /><br />Günlük kaydı:"
 
 #: floppy.cpp:355
 #, kde-format
 msgid "KDE Floppy Formatter"
-msgstr "KDE Disket Biçimlendirici"
+msgstr "KDE Disket Biçimlendiricisi"
 
 #: floppy.cpp:488
 #, kde-format
@@ -544,12 +543,12 @@ msgstr "Minix biçimlendirme programı başlatılamadı."
 #: main.cpp:51
 #, kde-format
 msgid "KFloppy"
-msgstr "KFloppy"
+msgstr "K Disket"
 
 #: main.cpp:53
 #, kde-format
 msgid "KDE Floppy Disk Utility"
-msgstr "KDE Disket Yardımcı Programı"
+msgstr "KDE Disket İzlencesi"
 
 #: main.cpp:55
 #, kde-format
@@ -570,7 +569,7 @@ msgstr ""
 #, kde-format
 msgid "KFloppy helps you format floppies with the filesystem of your choice."
 msgstr ""
-"KFloppy, taşınabilir ortamları (disketler, Zip veya LS120 diskler gibi) "
+"K Disket, taşınabilir ortamları (disketler, Zip veya LS120 diskler gibi) "
 "istediğiniz dosya yapısında biçimlendirmenize yardım eder."
 
 #: main.cpp:63
@@ -611,7 +610,7 @@ msgstr "Nicolas Goutte"
 #: main.cpp:66
 #, kde-format
 msgid "Make KFloppy work again for KDE 3.4"
-msgstr "KFloppy Uygulamasını KDE 3.4 için tekrar çalışabilir yaptı"
+msgstr "K Disket Uygulamasını KDE 3.4 için tekrar çalışabilir yaptı"
 
 #: main.cpp:67
 #, kde-format
@@ -621,7 +620,7 @@ msgstr "Wolfgang Bauer"
 #: main.cpp:67
 #, kde-format
 msgid "Port KFloppy to KF5"
-msgstr "KFloppy için KF5 geçişi"
+msgstr "K Disket için KF5 geçişi"
 
 #: main.cpp:69
 #, kde-format
