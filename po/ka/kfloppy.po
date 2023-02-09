@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: kfloppy\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-01-12 00:48+0000\n"
-"PO-Revision-Date: 2023-01-14 04:03+0100\n"
+"PO-Revision-Date: 2023-02-08 07:40+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -73,7 +73,7 @@ msgstr "5.25\" 360კბ"
 #: floppy.cpp:112
 #, kde-format
 msgid "<qt>This allows you to select the floppy disk's size and density.</qt>"
-msgstr ""
+msgstr "<qt>საშუალებას გაძლევთ, დისკეტის ზომა და სიმკვრივე აირჩიოთ.</qt>"
 
 #: floppy.cpp:119
 #, kde-format
@@ -158,6 +158,7 @@ msgstr ""
 msgctxt "BSD"
 msgid "KFloppy supports two file formats under BSD: MS-DOS and UFS"
 msgstr ""
+"KFloppy -ს BSD-ის ქვეშ ორი ფაილის ფორმატის მხარდაჭერა გააჩნია: MS-DOS და UFS"
 
 #: floppy.cpp:165
 #, kde-format
@@ -171,6 +172,8 @@ msgctxt "BSD"
 msgid ""
 "Program newfs_msdos <b>not found</b>. MSDOS formatting <b>not available</b>."
 msgstr ""
+"პროგრამა newfs_msdos<b>ვერ ვიპოვე</b>. MSDOS -ით "
+"ფორმატირება<b>ხელმიუწვდომელია</b>."
 
 #: floppy.cpp:171 floppy.cpp:487 floppy.cpp:580
 #, kde-format
@@ -188,6 +191,7 @@ msgstr ".ნაპოვნია პროგრამა news."
 msgctxt "BSD"
 msgid "Program newfs <b>not found</b>. UFS formatting <b>not available</b>."
 msgstr ""
+"პროგრამა newfs<b>ვერ ვიპოვე</b>. UFS -ით ფორმატირება<b>ხელმიუწვდომელია</b>."
 
 #: floppy.cpp:189
 #, kde-format
@@ -205,6 +209,8 @@ msgid ""
 "<qt>Quick format is only a high-level format: it creates only a file system."
 "</qt>"
 msgstr ""
+"<qt>სწრაფი ფორმატირება მხოლოდ მაღალი დონის ფორმატია: ის მხოლოდ ფაილურ "
+"სისტემას ქმნის.</qt>"
 
 #: floppy.cpp:199
 #, kde-format
@@ -217,6 +223,8 @@ msgid ""
 "<qt>This first erases the floppy by writing zeros and then it creates the "
 "file system.</qt>"
 msgstr ""
+"<qt>ეს ჯერ წაშლის დისკეტას მასზე ნულების ჩაწერით და შემდეგ შექმნის ფაილურ "
+"სისტემას.</qt>"
 
 #: floppy.cpp:204
 #, kde-format
@@ -229,6 +237,8 @@ msgid ""
 "Full format is a low-level and high-level format. It erases everything on "
 "the disk."
 msgstr ""
+"სრული ფორმატი დაბალი დონის და მაღალი დონის ფორმატია. ის დისკზე ყველაფერს "
+"წაშლის."
 
 #: floppy.cpp:216
 #, kde-format
@@ -263,6 +273,8 @@ msgid ""
 "Please note that the floppy will be checked twice if you have selected full "
 "formatting.</qt>"
 msgstr ""
+"<qt>ჩართეთ, თუ გნებავთ, ფორმატირების შემდეგ დისკეტა შემოწმდეს. დაიმახსოვრეთ, "
+"რომ თუ აირჩევთ სრულ ფორმატირებას, დისკეტა ორჯერ შემოწმდება.</qt>"
 
 #: floppy.cpp:243
 #, kde-format
@@ -275,6 +287,8 @@ msgid ""
 "<qt>Check this if you want a volume label for your floppy. Please note that "
 "Minix does not support labels at all.</qt>"
 msgstr ""
+"<qt>ჩართეთ, თუ გნებავთ, დისკეტაზე ჭდე დაადოთ. დაიმახსოვრეთ, რომ Minix-ს "
+"დისკის ჭდეების მხარდაჭერა საერთოდ არ გააჩნია.</qt>"
 
 #: floppy.cpp:256 floppy.cpp:652
 #, kde-format
@@ -289,6 +303,9 @@ msgid ""
 "can only be 11 characters long. Please note that Minix does not support "
 "labels, whatever you enter here.</qt>"
 msgstr ""
+"<qt>ეს ამ ტომის ჭდეა. MS-DOS-ის ლიმიტების გამო ის მხოლოდ 11 სიმბოლოს "
+"შეიძლება შეიცავდეს. დაიმახსოვრეთ, რომ Minix-ს ჭდეების მხარდაჭერა არ გააჩნია."
+"</qt>"
 
 #: floppy.cpp:270 floppy.cpp:469
 #, kde-format
@@ -303,7 +320,7 @@ msgstr "<qt>ფორმატირების დასაწყებად 
 #: floppy.cpp:301
 #, kde-format
 msgid "<qt>This is the status window, where error messages are displayed.</qt>"
-msgstr ""
+msgstr "<qt>ეს სტატუსის ფანჯარაა, სადაც შეცდომები გამოჩნდება.</qt>"
 
 #: floppy.cpp:314
 #, kde-format
@@ -316,6 +333,8 @@ msgid ""
 "KFloppy cannot find any of the needed programs for creating file systems; "
 "please check your installation.<br /><br />Log:"
 msgstr ""
+"KFloppy-მა ვერ იპოვა ფაილური სისტემების შესაქმნელი პროგრამები. შეამოწმეთ "
+"თქვენი ფაილები.<br /><br />ჟურნალი:"
 
 #: floppy.cpp:355
 #, kde-format
@@ -327,6 +346,8 @@ msgstr "KDE -ის დისკეტების ფორმატირე�
 msgctxt "BSD"
 msgid "Formatting with BSD on a user-given device is only possible with UFS"
 msgstr ""
+"მომხმარებლის მიერ მითითებული მოწყობილობის BSD-ით დაფორმატება მხოლოდ UFS-ით "
+"შეგიძლიათ"
 
 #: floppy.cpp:495
 #, kde-format
@@ -335,6 +356,9 @@ msgid ""
 "check the correctness of the device name.)<br/>Are you sure you wish to "
 "proceed?</qt>"
 msgstr ""
+"<qt>დაფორმატება გაანადგურებს მონაცემებს მოწყობილობაზე:<br/><b>%1</b><br/"
+">(შეამოწმეთ მოწყობილობის სახელის სისწორე.)<br/>დარწმუნებული ბრძანდებით, რომ "
+"გნებავთ, გააგრძელოთ?</qt>"
 
 #: floppy.cpp:499 floppy.cpp:511
 #, kde-format
@@ -345,6 +369,7 @@ msgstr "დავიწყო?"
 #, kde-format
 msgid "Full formatting of a user-given device is not possible."
 msgstr ""
+"მომხმარებლის მიერ მითითებული მოწყობილობის სრული ფორმატირება შეუძლებელია."
 
 #: floppy.cpp:509
 #, kde-format
@@ -352,6 +377,8 @@ msgid ""
 "Formatting will erase all data on the disk.\n"
 "Are you sure you wish to proceed?"
 msgstr ""
+"დაფორმატება დისკზე მონაცემებს მთლიანად გაანადგურებს.\n"
+"დარწმუნებული ბრძანდებით, რომ გნებავთ, გააგრძელოთ?"
 
 #: format.cpp:247
 #, kde-format
@@ -374,6 +401,8 @@ msgid ""
 "Cannot access %1\n"
 "Make sure that the device exists and that you have write permission to it."
 msgstr ""
+"%1-სთან წვდომის შეცდომა\n"
+"დარწმუნდით, რომ მოწყობილობა არსებობს და მასზე წვდომა გაგაჩნიათ."
 
 #: format.cpp:316
 #, kde-format
@@ -413,6 +442,8 @@ msgid ""
 "Please insert a floppy and make sure that you have selected a valid floppy "
 "drive."
 msgstr ""
+"დისკეტასთან ან დისკეტის ამძრავთან წვდომის შეცდომა.\n"
+"ჩადეთ დისკეტა და დარწმუნდით, რომ სწორი ამძრავი აირჩიეთ."
 
 #: format.cpp:453
 #, kde-format
@@ -518,11 +549,18 @@ msgid ""
 "(c) 2004, 2005, Nicolas Goutte\n"
 "(c) 2015, 2016, Wolfgang Bauer"
 msgstr ""
+"(c) 1997, Bernd Johannes Wuebben\n"
+"(c) 2001, Chris Howells\n"
+"(c) 2002, Adriaan de Groot\n"
+"(c) 2004, 2005, Nicolas Goutte\n"
+"(c) 2015, 2016, Wolfgang Bauer"
 
 #: main.cpp:60
 #, kde-format
 msgid "KFloppy helps you format floppies with the filesystem of your choice."
 msgstr ""
+"KFloppy დაგეხმარებთ თქვენი დისკეტები თქვენი არჩეული ფაილური სისტემით "
+"დააფორმატოთ."
 
 #: main.cpp:63
 #, kde-format
@@ -562,7 +600,7 @@ msgstr "Nicolas Goutte"
 #: main.cpp:66
 #, kde-format
 msgid "Make KFloppy work again for KDE 3.4"
-msgstr ""
+msgstr "აამუშავა KFloppy KDE 3.4-სთვის"
 
 #: main.cpp:67
 #, kde-format
