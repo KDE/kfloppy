@@ -103,7 +103,7 @@
 ></address
 ></affiliation>
 <contrib
->Desenvolvedor (Porte para o KF5)</contrib>
+>Desenvolvedor (Migração para o KF5)</contrib>
 </othercredit>
 
 <othercredit role="reviewer"
@@ -368,7 +368,7 @@ Mac 800KB floppies at all, not only formatting. -->
 >Isto simplesmente coloca o novo sistema de arquivos no disco.</para>
 <warning
 ><para
->Todos os dados no disco serão perdidos, mesmo que os dados em si não se apaguem.</para
+>Todos os dados no disco serão perdidos, mesmo que os dados em si não sejam apagados.</para
 ></warning>
 </listitem>
 </varlistentry>
@@ -634,8 +634,7 @@ Mac 800KB floppies at all, not only formatting. -->
 >Tradução de Marcus Gama <email
 >marcus.gama@gmail.com</email
 ></para
-> 
-&underFDL; &underGPL; </chapter>
+> &underFDL; &underGPL; </chapter>
 
 <appendix id="neededprogs">
 <title
