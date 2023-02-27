@@ -39,6 +39,9 @@ else()
 endif()
 
 find_package(Qt${QT_MAJOR_VERSION} ${REQUIRED_QT_VERSION} CONFIG REQUIRED Core DBus Widgets)
+if (QT_MAJOR_VERSION STREQUAL "6")
+    find_package(Qt6Core5Compat)
+endif()
 find_package(KF${KF_MAJOR_VERSION} ${KF_MIN_VERSION} REQUIRED COMPONENTS I18n CoreAddons Completion XmlGui)
 find_package(KF5DocTools ${KF_MIN_VERSION})
 set_package_properties(KF${KF_MAJOR_VERSION}DocTools PROPERTIES DESCRIPTION
