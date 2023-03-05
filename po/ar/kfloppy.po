@@ -528,7 +528,7 @@ msgstr "KFloppy"
 #: main.cpp:53
 #, kde-format
 msgid "KDE Floppy Disk Utility"
-msgstr "أداة كيدي للأقراص المرنة"
+msgstr "أداة كِيدِي للأقراص المرنة"
 
 #: main.cpp:55
 #, kde-format
@@ -598,7 +598,7 @@ msgstr "Wolfgang Bauer"
 #: main.cpp:67
 #, kde-format
 msgid "Port KFloppy to KF5"
-msgstr "النقل إلى إطار عمل كدي ٥"
+msgstr "النقل إلى إطار عمل كِيدِي ٥"
 
 #: main.cpp:69
 #, kde-format
