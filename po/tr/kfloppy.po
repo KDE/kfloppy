@@ -14,7 +14,7 @@ msgstr ""
 "Project-Id-Version: kdeutils-kde4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-01-12 00:48+0000\n"
-"PO-Revision-Date: 2023-02-02 20:41+0300\n"
+"PO-Revision-Date: 2023-03-21 15:14+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -22,7 +22,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 22.12.1\n"
+"X-Generator: Lokalize 22.12.3\n"
 
 #: floppy.cpp:81
 #, kde-format
@@ -286,7 +286,7 @@ msgstr ""
 #: floppy.cpp:243
 #, kde-format
 msgid "Volume la&bel:"
-msgstr "Bölüm &etiketi:"
+msgstr "Disk bölümü &etiketi:"
 
 #: floppy.cpp:247
 #, kde-format
@@ -294,7 +294,7 @@ msgid ""
 "<qt>Check this if you want a volume label for your floppy. Please note that "
 "Minix does not support labels at all.</qt>"
 msgstr ""
-"<qt>Disketinize bir sürücü etiketi vermek istiyorsanız burayı imleyin. "
+"<qt>Disketinize bir disk bölümü etiketi vermek istiyorsanız burayı imleyin. "
 "Minix'in etiketleri tümüyle desteklemediğini unutmayın. </qt>"
 
 #: floppy.cpp:256 floppy.cpp:652
@@ -310,9 +310,9 @@ msgid ""
 "can only be 11 characters long. Please note that Minix does not support "
 "labels, whatever you enter here.</qt>"
 msgstr ""
-"<qt>Bu sürücü etiketi içindir. MS-DOS'a ait bir kısıtlama nedeniyle yalnızca "
-"11 karakter uzunluğunda olabilir. Minix'in, -buraya ne girerseniz girin-, "
-"etiketleri desteklemeyeceğini unutmayın, </qt>"
+"<qt>Bu, disk bölümü etiketi içindir. MS-DOS'a ait bir kısıtlama nedeniyle "
+"yalnızca 11 karakter uzunluğunda olabilir. Minix'in, -buraya ne girerseniz "
+"girin-, etiketleri desteklemeyeceğini unutmayın, </qt>"
 
 #: floppy.cpp:270 floppy.cpp:469
 #, kde-format
