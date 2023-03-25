@@ -800,9 +800,9 @@ Mac 800KB floppies at all, not only formatting. -->
 
 <warning
 ><para
->Aygıt adını girerken dikkatli olun. &kfloppy; aygıt adını olduğu gibi harici programlara iletecektir. Özellikle aygıt <hardware
+>Aygıt adını girerken dikkatli olun. &kfloppy; aygıt adını olduğu gibi dış programlara iletecektir. Özellikle aygıt <hardware
 >disket sürücüsü</hardware
-> aygıtıysa, denetlemez (ve harici programlar da denetlemez). Ana disk bölümlerinizden herhangi birini aygıt olarak verirseniz kabul edilecektir. (Eğer bölüm takılıysa veya bu aygıtta yazamıyorsanız muhtemelen en kötü durumdan kaçınarak bir hata iletisi alırsınız.)</para
+> ise denetlemez (ve dış programlar da denetlemez). Ana disk bölüntülerinizden herhangi birini aygıt olarak verirseniz kabul edilecektir. (Eğer bölüm takılıysa veya bu aygıtta yazamıyorsanız büyük olasılıkla en kötü durumdan kaçınarak bir hata iletisi alırsınız.)</para
 ></warning>
 
 <note
