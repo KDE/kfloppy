@@ -2,10 +2,15 @@
 <!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN" "dtd/kdedbx45.dtd" [
   <!ENTITY kappname "&kfloppy;">
   <!ENTITY package "kdeutils">
-  <!ENTITY % English "INCLUDE" > <!-- change language only here -->
+  <!ENTITY % Turkish "INCLUDE"
+> <!-- change language only here -->
   <!ENTITY % addindex "IGNORE">
-  <!ENTITY BSD "<trademark>BSD</trademark>">
-  <!ENTITY Minix "<trademark>Minix</trademark>">
+  <!ENTITY BSD "<trademark
+>BSD</trademark
+>">
+  <!ENTITY Minix "<trademark
+>Minix</trademark
+>">
 ]>
 <!-- ### TODO Is BSD a trademark or a registrated trademark ? -->
 <!-- ### TODO Is Minix a trademark or a registrated trademark ? -->
@@ -15,203 +20,318 @@
 <book id="kfloppy" lang="&language;">
 <bookinfo>
 
-<title>The &kfloppy; Formatter Handbook</title>
+<title
+>&kfloppy; Biçimlendirici El Kitabı</title>
 
 <authorgroup>
-<author>
-<firstname>Thad</firstname>
-<surname>McGinnis</surname>
-<affiliation><address>&Thad.McGinnis.mail;
-</address></affiliation> </author>
+<author
+><firstname
+>Thad</firstname
+> <surname
+>McGinnis</surname
+> <affiliation
+><address
+>&Thad.McGinnis.mail; </address
+></affiliation
+> </author>
 
-<author>
-<firstname>Nicolas</firstname>
-<surname>Goutte</surname>
-<affiliation><address>&Nicolas.Goutte.mail;
-</address></affiliation> </author>
+<author
+><firstname
+>Nicolas</firstname
+> <surname
+>Goutte</surname
+> <affiliation
+><address
+>&Nicolas.Goutte.mail; </address
+></affiliation
+> </author>
 
-<othercredit role="developer">
-<firstname>Bernd</firstname>
-<othername>Johannes</othername>
-<surname>Wuebben</surname>
-<affiliation><address><email>wuebben@math.cornell.edu</email></address></affiliation>
-<contrib>Developer</contrib>
+<othercredit role="developer"
+><firstname
+>Bernd</firstname
+> <othername
+>Johannes</othername
+> <surname
+>Wuebben</surname
+> <affiliation
+><address
+><email
+>wuebben@math.cornell.edu</email
+></address
+></affiliation>
+<contrib
+>Geliştirici</contrib>
 </othercredit>
 
-<othercredit role="developer">
-<firstname>Chris</firstname>
-<surname>Howells</surname>
-<affiliation><address>&Chris.Howells.mail;</address></affiliation>
-<contrib>Developer (User Interface re-design)</contrib>
+<othercredit role="developer"
+><firstname
+>Chris</firstname
+> <surname
+>Howells</surname
+> <affiliation
+><address
+>&Chris.Howells.mail;</address
+></affiliation>
+<contrib
+>Geliştirici (Kullanıcı arayüzünün yeniden tasarımı)</contrib>
 </othercredit>
 
-<othercredit role="developer">
-<firstname>Adriaan</firstname>
-<surname>de Groot</surname>
-<affiliation><address><email>groot@kde.org</email></address></affiliation>
-<contrib>Developer (Add &BSD; support)</contrib>
+<othercredit role="developer"
+><firstname
+>Adriaan</firstname
+> <surname
+>de Groot</surname
+> <affiliation
+><address
+><email
+>groot@kde.org</email
+></address
+></affiliation>
+<contrib
+>Geliştirici (&BSD; desteği)</contrib>
 </othercredit>
 
-<othercredit role="developer">
-<firstname>Wolfgang</firstname>
-<surname>Bauer</surname>
-<affiliation><address><email>wbauer@tmo.at</email></address></affiliation>
-<contrib>Developer (Port to KF5)</contrib>
+<othercredit role="developer"
+><firstname
+>Wolfgang</firstname
+> <surname
+>Bauer</surname
+> <affiliation
+><address
+><email
+>wbauer@tmo.at</email
+></address
+></affiliation>
+<contrib
+>Geliştirici (KF5 geçişi)</contrib>
 </othercredit>
 
-<othercredit role="reviewer">
-<firstname>Lauri</firstname>
-<surname>Watts</surname>
-<contrib>Reviewer</contrib>
-<affiliation><address>&Lauri.Watts.mail;</address></affiliation>
+<othercredit role="reviewer"
+><firstname
+>Lauri</firstname
+> <surname
+>Watts</surname
+> <contrib
+>Gözden Geçiren</contrib>
+<affiliation
+><address
+>&Lauri.Watts.mail;</address
+></affiliation>
 </othercredit>
 
-<!-- TRANS:ROLES_OF_TRANSLATORS -->
+<othercredit role="translator"
+><firstname
+>Kaan</firstname
+><surname
+>Özdinçer</surname
+><affiliation
+><address
+><email
+>kaanozdincer@gmail.com</email
+></address
+></affiliation
+><contrib
+>Çeviri</contrib
+></othercredit
+> 
 </authorgroup>
 
-<date>2016-03-23</date>
-<releaseinfo>5.0 (Applications 16.04)</releaseinfo>
+<date
+>2016-03-23</date>
+<releaseinfo
+>5.0 (Uygulamalar 16.04)</releaseinfo>
 
 <copyright>
-<year>2000</year>
-<holder>&Thad.McGinnis;</holder>
+<year
+>2000</year>
+<holder
+>&Thad.McGinnis;</holder>
 </copyright>
 
 <copyright>
-<year>2005</year>
-<holder>&Nicolas.Goutte;</holder>
+<year
+>2005</year>
+<holder
+>&Nicolas.Goutte;</holder>
 </copyright>
 
-<legalnotice>&FDLNotice;</legalnotice>
+<legalnotice
+>&FDLNotice;</legalnotice>
 
-<abstract><para>&kfloppy; Formatter is a utility that provides a
-straightforward graphical means to format 3.5" and 5.25" floppy
-disks.</para></abstract>
+<abstract
+><para
+>&kfloppy; Biçimlendirici, 3.5" ve 5.25" disketleri biçimlendirmek için basit bir grafiksel arayüz sağlayan bir yardımcı programdır.</para
+></abstract>
 
 <keywordset>
-<keyword>KDE</keyword>
-<keyword>kfloppy</keyword>
-<keyword>floppy</keyword>
-<keyword>format</keyword>
+<keyword
+>KDE</keyword>
+<keyword
+>k disket</keyword>
+<keyword
+>disket</keyword>
+<keyword
+>biçimlendirme</keyword>
 </keywordset>
 
 </bookinfo>
 
 <chapter id="introduction">
-<title>Introduction</title>
+<title
+>Giriş</title>
 
-<para>&kfloppy; Formatter is a utility that provides a straightforward
-graphical means to format 3.5" and 5.25" floppy disks. </para>
+<para
+>&kfloppy; Biçimlendirici, 3.5" ve 5.25" disketleri biçimlendirmek için basit bir grafiksel arayüz sağlayan bir yardımcı programdır. </para>
 
-<note><para>&kfloppy; depends on external programs and therefore
-currently works <emphasis>only</emphasis> with &Linux; and &BSD;. Depending if you are
-using &kfloppy; on &Linux; or on &BSD;, &kfloppy; has slightly different
-features.</para></note>
+<note
+><para
+>&kfloppy; dış programlara bağımlıdır ve bu nedenle <emphasis
+>yalnızca</emphasis
+> &Linux; ve &BSD; üzerinde çalışmaktadır. &kfloppy;'i &Linux; veya &BSD; üzerinde çalıştırmanıza bağlı olarak, &kfloppy; biraz farklı özellikler gösterecektir.</para
+></note>
 
-<caution><para>Make sure that your floppy disk is <emphasis>not</emphasis>
-mounted.  &kfloppy; cannot format a mounted floppy disk.</para></caution>
+<caution
+><para
+>Disketinizin bağlıdır <emphasis
+>olmadığından</emphasis
+> emin olur. &kfloppy;, bağlı olan disketleri biçimlendiremez.</para
+></caution>
 
 </chapter>
 
 <chapter id="usingkfloppy">
-<title>Using &kfloppy;</title>
+<title
+>&kfloppy; Kullanımı</title>
 
-<para>Starting &kfloppy; opens a single window by which the user may
-choose appropriate settings and control the formatting process.  These
-options and controls are detailed below.</para>
+<para
+>&kfloppy; başlatıldığında, kullanıcının uygun ayarları seçebileceği ve biçimlendirme işlemini denetleyebileceği tek bir pencere açar. Bu seçenekler ve denetimler aşağıda ayrıntılandırılmıştır.</para>
 
-<caution><para>Make sure that your floppy disk is <emphasis>not</emphasis>
-mounted.  &kfloppy; cannot format a mounted floppy disk.</para></caution>
+<caution
+><para
+>Disketinizin bağlıdır <emphasis
+>olmadığından</emphasis
+> emin olur. &kfloppy;, bağlı olan disketleri biçimlendiremez.</para
+></caution>
 
 <sect1 id="controlsettings">
-<title>Control Settings</title>
+<title
+>Denetim Ayarları</title>
 
-<para>The settings are chosen by means of three drop down boxes located
-at the top left center of &kfloppy;.</para>
+<para
+>Ayarlar, &kfloppy;'in sol üst orta bölümünde bulunan üç açılır kutu aracılığıyla seçilir.</para>
 
 <sect2 id="selectdrive">
-<title>Floppy Drive</title>
+<title
+>Disket Sürücü</title>
 
-<para>Clicking on the top drop down box, which is labeled
-<guilabel>Floppy drive:</guilabel>, offers the user the following
-two choices:</para>
+<para
+><guilabel
+>Disket sürücü:</guilabel
+> etiketli açılır kutuya tıklamak, kullanıcıya iki seçenek sunar:</para>
 
 <itemizedlist>
-<listitem><para>Primary</para></listitem>
-<listitem><para>Secondary</para></listitem>
+<listitem
+><para
+>Birincil</para
+></listitem>
+<listitem
+><para
+>İkincil</para
+></listitem>
 </itemizedlist>
 
-<para>Clicking on the second drop down box from the top, which is labeled
-<guilabel>Size:</guilabel>, offers the user the following
-four choices:</para>
+<para
+>Yukarıdaki <guilabel
+>Boyut:</guilabel
+> etiketli ikinci açılır kutuya tıklamak, kullanıcıya dört seçenek sunar:</para>
 
 <itemizedlist>
-<listitem><para>3.5" 1.44MB</para></listitem>
-<listitem><para>3.5" 720KB</para></listitem>
-<listitem><para>5.25" 1.2MB</para></listitem>
-<listitem><para>5.25" 360KB</para></listitem>
+<listitem
+><para
+>3,5" 1,44 MB</para
+></listitem>
+<listitem
+><para
+>3,5" 720 KB</para
+></listitem>
+<listitem
+><para
+>5,25" 1,2 MB</para
+></listitem>
+<listitem
+><para
+>5,25" 360 KB</para
+></listitem>
 </itemizedlist>
 
-<para>The &Linux; version of &kfloppy; has also a choice of size named:</para>
+<para
+>&kfloppy;'in &Linux; sürümü, iki tane daha seçeneğe sahiptir:</para>
 
 <itemizedlist>
-<listitem><para>Auto-Detect</para></listitem>
+<listitem
+><para
+>Otomatik Algıla</para
+></listitem>
 </itemizedlist>
 
 <!-- ### TODO: typical floppy disk of a PC has not the hardware to support
 Mac 800KB floppies at all, not only formatting. -->
 <note>
-<para>The 800KB disk format used by <hardware>&Mac; floppy drives</hardware> cannot be
-supported on <hardware>PC floppy drives</hardware> since they are not capable of formatting
-disks in that fashion.</para>
+<para
+><hardware
+>Mac disket sürücüleri</hardware
+> tarafından kullanılan 800KB disket biçimi, <hardware
+>PC disket sürücüleri</hardware
+> tarafından desteklenmez; çünkü PC'ler disketleri bu sistemle biçimlendiremezler.</para>
 </note>
 </sect2>
 
 <sect2 id="filesystems">
-<title>File Systems</title>
+<title
+>Dosya Sistemleri</title>
 
-<para>The third drop down box, labeled File System, offers the user the
-following choices, if they are applicable:</para>
+<para
+>Dosya Sistemi etiketli üçüncü açılır kutu, uygulanabilir olması durumunda kullanıcıya aşağıdaki seçenekleri sunar:</para>
 
 <variablelist>
 <varlistentry>
-<term>Dos</term>
+<term
+>Dos</term>
 <listitem>
-<para>This selection will have &kfloppy; place the MS-DOS/&Windows; type
-of file system on the diskette.  The user will most likely want to
-choose this system if she or he will be using the diskette with those
-operating systems as they do not recognize other system types.
-(This is supported for &Linux; and &BSD;.)</para>
+<para
+>Bu seçimde &kfloppy;, diskete MS-DOS/&Windows; dosya sistemini koyar. Kullanıcı, disketi yalnızca bu işletim sistemleriyle kullanacaksa büyük olasılıkla başka sistemleri bilmeyeceği için bunu seçmek isteyecektir. (Bu, &Linux; ve &BSD; için desteklenir.)</para>
 </listitem>
 </varlistentry>
 
-<varlistentry> 
-<term>ext2</term>
+<varlistentry
+> 
+<term
+>ext2</term>
 <listitem>
-<para>This selection will have &kfloppy; place the type of file system
-on the diskette which is most commonly used with &Linux;, however
-seldomly on floppy disks.
-(This is supported for &Linux; and &BSD;.)</para>
-</listitem>
-</varlistentry>
-
-<varlistentry>
-<term>UFS</term>
-<listitem>
-<para>This selection will have &kfloppy; place the type of file system
-on the diskette which is most commonly used with <trademark class="registered">FreeBSD</trademark>.  The user will
-likely want to choose this system if he or she will only be using the
-floppy disk with <trademark class="registered">FreeBSD</trademark>.
-(This is supported for &BSD; only.)</para>
+<para
+>Bu seçimde &kfloppy;, diskete &Linux; ile yaygın olarak kullanılan; ancak disketlere pek ulaşmayan dosya sistemi türünü koyar. (Bu, &Linux; ve &BSD; için desteklenir.)</para>
 </listitem>
 </varlistentry>
 
 <varlistentry>
-<term>&Minix;</term>
+<term
+>UFS</term>
 <listitem>
-<para>This selection will have &kfloppy; place the type of file system
-on the diskette which often used on floppy disks used with &Linux;,
-(This is supported for &Linux; only.)</para>
+<para
+>Bu seçimde &kfloppy;, diskete <trademark class="registered"
+>FreeBSD</trademark
+> ile yaygın olarak kullanılan dosya sistemi türünü koyar. Kullanıcı, bu sistemi yalnızca <trademark class="registered"
+>FreeBSD</trademark
+> kullanıcılarıyla dosya paylaşacaksa seçmelidir. (Bu, yalnızca &BSD; için desteklenir.)</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+>&Minix;</term>
+<listitem>
+<para
+>Bu seçimde &kfloppy;, diskete &Linux; ile yaygın olarak kullanılan dosya sistemi türünü koyar. (Bu, yalnızca &Linux; için desteklenir.)</para>
 </listitem>
 </varlistentry>
 </variablelist>
@@ -220,41 +340,64 @@ on the diskette which often used on floppy disks used with &Linux;,
 </sect1>
 
 <sect1 id="formatting-options">
-<title>Formatting Options</title>
-<para>Within the outline of a box in the left center of &kfloppy; the user
-may find a set of five formatting options.  The top two are a pair of radio
-buttons.</para> <note><para>This term (radio buttons) indicates a set of options among
-which only one can be selected - in the same way that only one preset
-channel selection may be set on a car radio.</para></note><para>The
-bottom two options are for labeling the diskette.  All are explained
-below:</para>
+<title
+>Biçimlendirme Seçenekleri</title>
+<para
+>&kfloppy;'in sol orta bölümündeki bir kutunun ana hatları içinde kullanıcı beş biçimlendirme seçeneği belirleyebilir. İlk ikisi bir çift radyo düğmesidir.</para
+> <note
+><para
+>Bu terim (radyo düğmeleri), bir otomobil radyosunda yalnızca bir önceden ayarlanmış kanal seçimi yapılabileceği gibi, yalnızca birinin seçilebileceği bir dizi seçenek gösterir.</para
+></note
+><para
+>Alttaki iki seçenek, disketin etiketlenmesi içindir. Aşağıda hepsi açıklanmıştır:</para>
 
 <sect2>
-<title>Formatting Method</title>
-<para>&kfloppy; can format a disk in the following two ways:</para>
+<title
+>Biçimlendirme Yöntemi</title>
+<para
+>&kfloppy;, bir disketi iki yolla biçimlendirebilir:</para>
 <para>
 <variablelist>
 <varlistentry>
-<term><guilabel>Quick Format</guilabel></term>
+<term
+><guilabel
+>Hızlı Biçimlendirme</guilabel
+></term>
 <listitem>
-<para>This simply puts the new file system on the disk.</para>
-<warning><para>All data on the disk will be lost, even if the data itself will not be erased.</para></warning>
+<para
+>Bu, basitçe yeni dosya sistemini diskete yazar.</para>
+<warning
+><para
+>Veriler silinmeyecek; ancak disketteki tüm veri kaybolacaktır.</para
+></warning>
 </listitem>
 </varlistentry>
 <varlistentry>
-<term><guilabel>Zero out and quick format</guilabel></term>
+<term
+><guilabel
+>Sıfır yazma ve hızlı biçimlendirme</guilabel
+></term>
 <listitem>
-<para>This format first puts zeros on the disk and then creates the new file system.</para>
-<warning><para>All data on the disk will be erased.</para></warning>
+<para
+>Bu biçimlendirme, ilk olarak disketi sıfırlar ve ardından yeni dosya sistemi oluşturur.</para>
+<warning
+><para
+>Disketteki tüm veri silinecektir.</para
+></warning>
 </listitem>
 </varlistentry>
 <varlistentry>
-<term><guilabel>Full Format</guilabel></term>
+<term
+><guilabel
+>Tam Biçimlendirme</guilabel
+></term>
 <listitem>
-<para>A full format reallocates the tracks and sectors, puts the selected
-file system on the disk, and then verifies the format, blocking out any bad
-sectors it finds.</para>
-<warning><para>All data on the disk will be erased.</para></warning>
+<para
+>Tam bir biçimlendirme, izleri ve dilimleri yeniden ayırır, seçilen dosya sistemini diskete yazar ve sonra bulduğu kötü dilimleri engelleyerek biçimlendirmeyi doğrular.</para>
+<warning
+><para
+>Disketteki tüm veri silinecektir.</para
+></warning>
 </listitem>
 </varlistentry>
 </variablelist>
@@ -262,97 +405,104 @@ sectors it finds.</para>
 </sect2>
 
 <sect2>
-<title>Verify Integrity</title>
+<title
+>Bütünlüğü Doğrulama</title>
 
-<para>This tells &kfloppy; to check that the formatting was correctly
-written to the floppy.  This allows bad sectors to be identified.
-</para>
+<para
+>Bu, &kfloppy; ile biçimlendirmenin diskete doğru yazıldığını denetlemesini söyler. Bu, kötü dilimlerin tanımlanmasına izin verir. </para>
 
-<note><para>If bad sectors are found during the verify phase of a Full Format,
-the formatting is aborted and the file system is not written!
-</para></note>
+<note
+><para
+>Tam Biçimlendirmenin doğrulama fazında kötü dilimler bulunursa biçimlendirme iptal edilir ve dosya sistem yazılmaz! </para
+></note>
 
 </sect2>
 
 <sect2>
-<title>Volume Label</title>
+<title
+>Bölüm Etiketi</title>
 
-<para>The bottom two features allow the user to add (or change) a
-label to the diskette.  If the <guilabel>Volume label:</guilabel> check
-box is selected then the user can enter a name (label) for the
-diskette that is to be formatted in the text box located immediately
-below.  When the diskette is subsequently formatted the label will be
-written to the diskette.</para>
+<para
+>Alttaki iki özellik, kullanıcının bir etiketi diskete eklemesine (veya değiştirmesine) izin verir. <guilabel
+>Bölüm etiketi:</guilabel
+> onay kutusu seçilirse, kullanıcı, hemen altında bulunan metin kutusuna biçimlendirilecek disket için bir ad (etiket) girebilir. Disket daha sonra biçimlendirildiğinde etiket diskete yazılır.</para>
 
-<note><para>Due to a limitation of the DOS file system, a label can only be
-at most 11 characters long. For simplification, &kfloppy; assumes that
-this limit is true for all file systems.</para></note>
+<note
+><para
+>DOS dosya sisteminin kısıtlamaları nedeniyle, bir etiket en fazla 11 karakter uzunluğunda olabilir. Basitleştirmek için &kfloppy; bu sınırın tüm dosya sistemleri için geçerli olduğunu varsayar.</para
+></note>
 
-<note><para>The file system &Minix; cannot have any volume label. In this
-case, &kfloppy; will ignore the volume label.</para></note>
+<note
+><para
+>&Minix; dosya sistemi, bölüm etiketlerine sahip değildir. Bu nedenle, &kfloppy; etiketi yok sayacaktır.</para
+></note>
 
 </sect2>
 
 </sect1>
 
 <sect1 id="buttons">
-<title>The Buttons</title>
-<para>There are three buttons located vertically along the right side of
-&kfloppy;. </para>
+<title
+>Düğmeler</title>
+<para
+>&kfloppy;'in sağ tarafında dikey olarak bulunan üç düğme vardır. </para>
 
 <variablelist>
 <varlistentry>
-<term><guibutton>Format</guibutton></term>
+<term
+><guibutton
+>Biçimlendir</guibutton
+></term>
 <listitem>
-<para>This button
-initiates the formatting process.  Once the user is sure that all the
-settings are correct he or she may begin the process by clicking on
-this button.
-There will be a change in the two long rectangular boxes
-that span the bottom of &kfloppy;.</para>
+<para
+>Bu düğme, biçimlendirme işlemini başlatır. Kullanıcı tüm ayarların doğru olduğundan emin olduktan sonra bu düğmeye basarak işlemi başlatabilirsiniz. &kfloppy;'in alt kısmına duran iki dikdörtgen kutuda değişiklikler olacaktır.</para>
 
-<para>The upper box is a status indicator that gives information about the
-process underway, especially the error encountered during the processing.</para>
+<para
+>Üstteki kutu, işlem boyunca, özellikle işleme sırasında karşılaşılan hata hakkında bilgi veren bir durum göstergesidir.</para>
 
-<para>The lower box is a progress bar.  This displays both graphically
-and numerically the progress of first the formatting and then the
-verification.  Before starting it appears to be empty - showing only
-the figure 0% in the center.  As each process
-takes place the progress is tracked graphically as the box fills from
-left to right.  At the same time the number in the center will
-increase reflecting the precise percentage of the process that has
-been completed.</para>
+<para
+>Alttaki kutu, bir ilerleme çubuğudur. Bu hem biçimlendirmenin, hem de doğrulamanın ilerlemesini grafiksel ve sayısal olarak görüntüler. Başlamadan önce boş olarak görünür - sadece %​0 merkezde gösterilir. Her işlem gerçekleştiğinde ilerleme, kutu soldan sağa doğru dolarken grafik olarak izlenir. Aynı zamanda, merkezdeki sayı, tamamlanan işlemin kesin yüzdesini artarak yansıtır.</para>
 
-<note><para>As &kfloppy; uses external programs to format the floppy disk,
-it has to rely on these programs to give the right information for
-being able to display the progress bar. Unfortunately, this is not the
-case. Especially, the programs writing the file systems do not return
-enough data, so that the progress bar will remain at 0%.</para></note>
+<note
+><para
+>&kfloppy;, disketi biçimlendirmek için dış programlar kullanır, ilerleme çubuğunu görüntüleyebilmek, doğru bilgileri vermek için bu programlara güvenmek zorundadır. Ne yazık ki, sorun bu değildir. Özellikle, dosya sistemlerini yazan programlar yeterli veriyi döndürmezse ilerleme çubuğu %​0 kalacaktır.</para
+></note>
 
 <important>
-<para>Make sure that your floppy disk is <emphasis>not</emphasis> mounted.
-&kfloppy; cannot format a mounted floppy disk.</para>
+<para
+>Disketinizin bağlıdır <emphasis
+>olmadığından</emphasis
+> emin olur. &kfloppy;, bağlı olan disketleri biçimlendiremez.</para>
 </important>
 
-<note><para>&kfloppy; does <emphasis>not</emphasis> unmount the
-floppy by itself, as this could mean that the user may overwrite a floppy
-disk with important data on it.</para></note>
+<note
+><para
+>&kfloppy;, disketin kendisiyle bağlantısını <emphasis
+>kesmez</emphasis
+> bu, kullanıcının önemli veriler içeren bir disketin üzerine yazdığı anlamına gelebilir.</para
+></note>
 </listitem>
 </varlistentry>
 
 <varlistentry>
-<term><guibutton>Help</guibutton></term>
+<term
+><guibutton
+>Yardım</guibutton
+></term>
 <listitem>
-<para>This invokes a popup menu with actions to open this handbook,
-report a bug, switch the application language and display author and version of
-&kfloppy; and &kde;.</para>
+<para
+>Bu, bu el kitabını açmak, bir hata bildirmek, uygulama dilini değiştirmek, &kfloppy; ve &kde;'nin yazar ve sürümünü görüntülemek için eylemler içeren bir açılır menüyü çağırır.</para>
 </listitem>
 </varlistentry>
 
 <varlistentry>
-<term><guibutton>Quit</guibutton></term>
+<term
+><guibutton
+>Çık</guibutton
+></term>
 <listitem>
-<para>Clicking on this button will close &kfloppy;.</para>
+<para
+>Bu düğmeye basmak, &kfloppy;'i kapatacaktır.</para>
 </listitem>
 </varlistentry>
 
@@ -362,217 +512,320 @@ report a bug, switch the application language and display author and version of
 </chapter>
 
 <chapter id="command-line">
-<title>Command line options</title>
+<title
+>Komut satırı seçenekleri</title>
 
-<para>Though &kfloppy; may most often be started from the &kde; program menu,
-or a desktop icon, it can also be opened at the command line prompt of a
-terminal window.  There are a few options that are available when doing
-this.  They are:</para> 
+<para
+>&kfloppy;, &kde; program menüsünden veya bir masaüstü simgesinden başlatılabilir; ancak bir uçbirim penceresinin komut satırıyla da açılabilir. Bunu yaparken kullanılabilir birkaç seçenek vardır. Bunlar:</para
+> 
 
 <variablelist>
 <varlistentry>
-<term><command>kfloppy <option>--help</option></command></term>
-<listitem><para>This lists the options available at the command
-line.</para>
+<term
+><command
+>kfloppy <option
+>--help</option
+></command
+></term>
+<listitem
+><para
+>Bu, komut satırında kullanılabilir seçenekleri listeler.</para>
 </listitem>
 </varlistentry>
 
 <varlistentry>
-<term><command>kfloppy <option>--author</option></command></term>
+<term
+><command
+>kfloppy <option
+>--author</option
+></command
+></term>
 <listitem>
-<para>Lists &kfloppy;'s author in the terminal window</para>
+<para
+>&kfloppy;'in yazarını uçbirim penceresinde listeler</para>
 </listitem>
 </varlistentry>
 
 <varlistentry>
-<term><command>kfloppy <option>--license</option></command></term>
+<term
+><command
+>kfloppy <option
+>--license</option
+></command
+></term>
 <listitem>
-<para>Shows license information for &kfloppy; in the terminal window</para>
+<para
+>&kfloppy;'in lisansını uçbirim penceresinde gösterir</para>
 </listitem>
 </varlistentry>
 
 <varlistentry>
-<term><command>kfloppy <option>--version</option></command></term>
+<term
+><command
+>kfloppy <option
+>--version</option
+></command
+></term>
 <listitem>
-<para>Lists version information for &kfloppy;. Also available
-through <command>kfloppy <option>-v</option></command> </para>
+<para
+>&kfloppy;'in sürüm bilgisini listeler. Ayrıca, <command
+>kfloppy <option
+>-v</option
+></command
+> ile görülebilir. </para>
 </listitem>
 </varlistentry>
 
 <varlistentry>
-<term><command>kfloppy <option><replaceable>device</replaceable></option></command></term>
-<listitem><para>Device to format.</para>
-<para>This will directly format the given device using the saved settings.
-Only supported at the moment are /dev/fd0 and /dev/fd1.</para></listitem>
+<term
+><command
+>kfloppy <option
+><replaceable
+>aygıt</replaceable
+></option
+></command
+></term>
+<listitem
+><para
+>Biçimlendirilecek olan aygıt.</para>
+<para
+>Bu, kaydedilen ayarları kullanarak verilen aygıtı doğrudan biçimlendirecektir. Şu an sadece /dev/fd0 ve /dev/fd1 desteklenmektedir.</para
+></listitem>
 </varlistentry>
-</variablelist> 
+</variablelist
+> 
 
-</chapter> 
+</chapter
+> 
 
 <chapter id="credits">
-<title>Credits and License</title>
+<title
+>Emeği Geçenler ve Lisans</title>
 
 <!-- ### TODO: verify the copyright dates -->
 <!-- ### TODO: make the copyright list prettier -->
-<para>&kfloppy; Formatter Program Copyright 1997 - 2000 &Bernd.Johannes.Wuebben;
-<email>wuebben@math.cornell.edu</email></para>
+<para
+>&kfloppy; Biçimlendirici Program Telif hakkı 1997 - 2000 &Bernd.Johannes.Wuebben; <email
+>wuebben@math.cornell.edu</email
+></para>
 
-<para>&kfloppy; Formatter Program Copyright 2002 Adriaan de Groot
-<email>groot@kde.org</email></para>
+<para
+>&kfloppy; Biçimlendirici Program Telif hakkı 2002 Adriaan de Groot <email
+>groot@kde.org</email
+></para>
 
-<para>&kfloppy; Formatter Program Copyright 2004, 2005 &Nicolas.Goutte;
-&Nicolas.Goutte.mail;</para>
+<para
+>&kfloppy; Biçimlendirici Program Telif hakkı 2004, 2005 &Nicolas.Goutte; &Nicolas.Goutte.mail;</para>
 
-<para>&kfloppy; Formatter Program Copyright 2015, 2016 Wolfgang Bauer
-<email>wbauer@tmo.at</email></para>
+<para
+>&kfloppy; Biçimlendirici Program Telif hakkı 2015, 2016 Wolfgang Bauer <email
+>wbauer@tmo.at</email
+></para>
 
-<para>Documentation Copyright 2000 by &Thad.McGinnis;
-&Thad.McGinnis.mail;.</para>
+<para
+>Belgelendirme Telif hakkı 2000 - &Thad.McGinnis; &Thad.McGinnis.mail;.</para>
 
-<para>This version of the &kfloppy; Handbook is based on the original by
-&David.Rugge; <email>davidrugge@mindspring.com</email></para>
+<para
+>&kfloppy; El Kitabı'nın bu sürümü, özgün &David.Rugge; sürümünün üstüne yazılmıştır <email
+>davidrugge@mindspring.com</email
+></para>
 
-<!-- TRANS:CREDIT_FOR_TRANSLATORS -->
-&underFDL;
-&underGPL;
-
-</chapter>
+<para
+>Kaan Özdinçer<email
+>kaanozdincer@gmail.com</email
+></para
+> &underFDL; &underGPL; </chapter>
 
 <appendix id="neededprogs">
-<title>Needed External Programs</title>
+<title
+>Gerekli Dış Programlar</title>
 
-<para>As already written earlier in this handbook, &kfloppy; works
-with the help of external programs to do the different formatting tasks.</para>
+<para
+>Daha önce bu el kitabında yazılmış olan &kfloppy; farklı biçimlendirme görevlerini yapmak için dış programlarla birlikte çalışır.</para>
 
-<note><para>If one of the programs is missing, &kfloppy; tries to work nevertheless.
-However the corresponding option will not be available.</para></note>
+<note
+><para
+>Programlardan biri eksikse &kfloppy; yine de çalışmaya çalışır. Bununla birlikte, ilgili seçenek kullanılamayacaktır.</para
+></note>
 
 <variablelist>
 <varlistentry>
-<term><command>fdformat</command></term>
-<listitem><para>This program is needed for low-level formatting,
-on &Linux; and on &BSD;. If it is missing,
-<guilabel>Full format</guilabel> will be disabled.
-</para></listitem>
+<term
+><command
+>fdformat</command
+></term>
+<listitem
+><para
+>Bu program, &Linux; ve &BSD; üzerinde, alt düzey biçimlendirmeye gereksinim duyar. Kurulu değilse <guilabel
+>Tam biçimlendirme</guilabel
+> kapatılacaktır. </para
+></listitem>
 </varlistentry>
 <varlistentry>
-<term><command>dd</command></term>
-<listitem><para>This program is needed for zeroing-out,
-on &Linux; and on &BSD;. If it is missing,
-<guilabel>Zero out and quick format</guilabel> will be disabled.
-</para></listitem>
+<term
+><command
+>dd</command
+></term>
+<listitem
+><para
+>Bu program, &Linux; ve &BSD; üzerinde, sıfır çıktılı biçimlendirmeye gereksinim duyar. Kurulu değilse <guilabel
+>Sıfır çıktılı ve hızlı biçimlendirme</guilabel
+> kapatılacaktır. </para
+></listitem>
 </varlistentry>
 <varlistentry>
-<term><command>mkdosfs</command></term>
-<listitem><para>This program is needed for DOS formatting,
-on &Linux;.
-</para></listitem>
+<term
+><command
+>mkdosfs</command
+></term>
+<listitem
+><para
+>Bu program, &Linux; üzerinde DOS biçimlendirmeye gereksinim duyar. </para
+></listitem>
 </varlistentry>
 <varlistentry>
-<term><command>newfs_msdos</command></term>
-<listitem><para>This program is needed for DOS formatting,
-on &BSD;.
-</para></listitem>
+<term
+><command
+>newfs_msdos</command
+></term>
+<listitem
+><para
+>Bu program, &BSD; üzerinde DOS biçimlendirmeye gereksinim duyar. </para
+></listitem>
 </varlistentry>
 <varlistentry>
-<term><command>newfs</command></term>
-<listitem><para>This program is needed for UFS formatting,
-on &BSD;.
-</para></listitem>
+<term
+><command
+>newfs</command
+></term>
+<listitem
+><para
+>Bu program, &BSD; üzerinde UFS biçimlendirmeye gereksinim duyar. </para
+></listitem>
 </varlistentry>
 <varlistentry>
-<term><command>mke2fs</command></term>
-<listitem><para>This program is needed for ext2 formatting,
-on &Linux; and on &BSD;.
-</para></listitem>
+<term
+><command
+>mke2fs</command
+></term>
+<listitem
+><para
+>Bu program, &Linux; üzerinde ext2 biçimlendirmeye gereksinim duyar. </para
+></listitem>
 </varlistentry>
 <varlistentry>
-<term><command>mkfs.minix</command></term>
-<listitem><para>This program is needed for &Minix; formatting,
-on &Linux;.
-</para></listitem>
+<term
+><command
+>mkfs.minix</command
+></term>
+<listitem
+><para
+>Bu program, &Linux; üzerinde &Minix; biçimlendirmeye gereksinim duyar. </para
+></listitem>
 </varlistentry>
 </variablelist>
 
 </appendix>
 <appendix id="usergivendevices">
-<title>User-Given Devices</title>
+<title
+>Kullanıcı Tarafından Verilen Aygıtlar</title>
 
 <sect1 id="ugdintro">
-<title>Introduction</title>
+<title
+>Giriş</title>
 
-<para>"User Given Devices" is the work title of a still experimental feature of
-&kfloppy;. It allows the user to give a device name and to use it nearly
-as if it was a <hardware>floppy drive</hardware>.</para>
+<para
+>"Kullanıcı Tarafından Verilen Aygıtlar", &kfloppy;'in deneysel özelliğinin çalışma biçimidir. Kullanıcının bir aygıt adı vermesini ve bunu bir <hardware
+>disket sürücüsü</hardware
+> gibi kullanmasını sağlar.</para>
 
-<para>This feature is mainly intended as a work-around for users having
-<hardware>USB floppy drives</hardware> of any kind
-(including <trademark>ZIP</trademark> disk drives) or any other non-legacy
-<hardware>floppy drives</hardware>.</para>
+<para
+>Bu özellik, esas olarak <hardware
+>USB disket sürücüleri</hardware
+> (<trademark
+>ZIP</trademark
+> disk sürücüleri de dahil olmak üzere) veya herhangi bir diğer eski olmayan <hardware
+>disket sürücülerine </hardware
+> sahip kullanıcılar için geçici bir çözüm olarak tasarlanmıştır.</para>
 
-<note><para>Unfortunately at the time of writing this documentation, the feature
-is not very user friendly, as it does not offer any help to the user on how
-a device is called and &kfloppy; does not even remember the device name from
-call to call. (This is partially a security, as the device of the
-<hardware>floppy drive</hardware> might change between reboots.)</para></note>
+<note
+><para
+>Ne yazık ki, bu belgelendirme yazıldığı sırada bu özellik, kullanıcıya kolaylık sağlamıyordu; çünkü kullanıcıya bir aygıtın nasıl çağrıldığına dair herhangi bir yardım sunmuyor ve &kfloppy;, aramayı çağıran aygıtın adını bile anımsamıyor. (<hardware
+>disket sürücüsü</hardware
+> aygıtı, yeniden başlatma arasında değişebileceğinden kısmen bir güvenlik niteliğindedir.)</para
+></note>
 
-<note><para>As this feature was developed under &Linux;, the &BSD; version
-of &kfloppy; offers less choices than &kfloppy; under &Linux;.</para></note>
+<note
+><para
+>Bu özellik &Linux; altında geliştirildi, &kfloppy;'in &BSD; sürümü &Linux; sürümden daha az özellikle gelmektedir.</para
+></note>
 
 </sect1>
 
 <sect1 id="ugdmain">
-<title>Using It</title>
+<title
+>Kullanma</title>
 
 <!-- Note to reviewers: "PRimary" and "Secondary" are the default items in the combobox -->
-<para>Using "User Given Devices" is quite simple, you just need to enter
-a device name, for example <replaceable>/dev/sdz4</replaceable>
-in the <guilabel>Floppy drive:</guilabel> combobox instead of
-selecting Primary or Secondary.</para>
+<para
+>"Kullanıcı Tarafında Verilen Aygıtlar", oldukça kolaydır, siz aygıtı ismini girersiniz, örneğin <guilabel
+>Disket sürücü:</guilabel
+> içine <replaceable
+>/dev/sdz4</replaceable
+> ve Birincil ve İkincil diskler seçilebilir.</para>
 
 <note>
-<para>You need to enter the <filename class="directory">/dev/</filename>
-part of the device for two reasons:</para>
+<para
+>İki nedenden dolayı aygıtın <filename class="directory"
+>/dev/</filename
+> bölümünü girmeniz gerekir:</para>
 <itemizedlist>
 <listitem>
-<para>It is how &kfloppy; recognizes the "User Given Devices" mode.</para>
+<para
+>Bu, &kfloppy; "Kullanıcı Tarafından Verilen Aygıtlar" kipini nasıl tanıdığıdır.</para>
 </listitem>
 <listitem>
-<para>It is a security, to avoid that the user writes anything in the combobox
-that is by chance a device name.</para>
+<para
+>Bu, kullanıcıların tesadüfen bir aygıt adı olan kutuya bir şey yazmasını önlemek için bir güvenliktir.</para>
 </listitem>
 </itemizedlist>
 </note>
 
-<para>Unfortunately, using any device instead of a floppy device has a few
-consequences. The major one is that <guilabel>Full Format</guilabel> cannot be
-selected anymore. Doing so will result in a error message box when trying to
-start the format. However you can use <guilabel>Zero out and quick format</guilabel>
-instead. It will not format the device, just zeroing it out, but in practice it is
-nearly the same; especially all data on the device will be erased.</para>
+<para
+>Ne yazık ki, disket yerine herhangi bir aygıtı kullanmak birkaç sonuca varmaktadır. Büyük olanı, <guilabel
+>Tam Biçimlendirme</guilabel
+> artık seçilemez. Bunu yaparsanız, biçimlendirme başlatmaya çalışılırken bir hata iletisi kutusu görüntülenir. Bunun yerine <guilabel
+>Sıfır çıktılı ve hızlı biçimlendirme</guilabel
+> kullanabilirsiniz. Aygıtı biçimlendirmez, yalnızca sıfırlar; ancak pratikte neredeyse aynıdır, özellikle de aygıttaki tüm veriler silinir.</para>
 
-<warning><para>Be careful when entering the device name. &kfloppy; will pass
-the device name as is to the external programs. Especially it does not check
-(and the external programs do not check either) if the device is a
-<hardware>floppy drive</hardware> device. If you give your any of your main
-disk partitions as device, it will be accepted. (If the partition is mounted
-or if you cannot write on this device, you
-will probably get an error message nevertheless, avoiding the worst.)</para></warning>
+<warning
+><para
+>Aygıt adını girerken dikkatli olun. &kfloppy; aygıt adını olduğu gibi dış programlara iletecektir. Özellikle aygıt <hardware
+>disket sürücüsü</hardware
+> ise denetlemez (ve dış programlar da denetlemez). Ana disk bölüntülerinizden herhangi birini aygıt olarak verirseniz kabul edilecektir. (Eğer bölüm takılıysa veya bu aygıtta yazamıyorsanız büyük olasılıkla en kötü durumdan kaçınarak bir hata iletisi alırsınız.)</para
+></warning>
 
-<note><para>Even if you can specify a floppy device like
-<filename>/dev/fd0u2880</filename>, &kfloppy; will refuse to make a 
-<guilabel>Full Format</guilabel> on it.</para></note>
+<note
+><para
+><filename
+>/dev/fd0u2880</filename
+> gibi bir disket aygıtı belirleseniz bile, &kfloppy; üzerinde bir <guilabel
+>Tam Biçimlendirme</guilabel
+> yapmayı reddedecektir.</para
+></note>
 
-<para>On &Linux;, you can select any file system that you want. On &BSD;,
-only UFS is currently supported (and not tested at time of writing this
-documentation).</para>
+<para
+>&Linux;'ta istediğiniz herhangi bir dosya sistemini seçebilirsiniz. &BSD;'de yalnızca UFS şu anda desteklenmektedir (ve bu belgeleri yazarken sınanmamıştır).</para>
 
-<para>When you are ready to format, click on the <guibutton>Format</guibutton>
-button as usual. You will get a message box asking you to verify the device name.
-</para>
+<para
+>Biçimlendirmeye hazır olduğunuzda <guibutton
+>Biçimlendir</guibutton
+> düğmesine her zamanki gibi tıklayın. Aygıtın adını doğrulamanızı isteyen bir ileti kutusu alacaksınız. </para>
 
-<warning><para>This is the last chance to check the device name before formating.
-After it, it is too late.</para></warning>
+<warning
+><para
+>Biçimlendirmeden önce aygıt adını denetlemek için son şans budur. Bundan sonra çok geç olacaktır.</para
+></warning>
 
 </sect1>
 
