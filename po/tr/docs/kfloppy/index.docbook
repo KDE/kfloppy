@@ -768,11 +768,11 @@ Mac 800KB floppies at all, not only formatting. -->
 
 <!-- Note to reviewers: "PRimary" and "Secondary" are the default items in the combobox -->
 <para
->"Kullanıcı Tarafında Verilen Aygıtlar", oldukça kolaydır, siz aygıtı ismini girersiniz, örneğin <guilabel
+>"Kullanıcı Tarafında Verilen Aygıtlar", oldukça kolaydır, siz aygıtın adını girersiniz; örneğin Birincil ve İkincil diskleri seçmek yerine <guilabel
 >Disket sürücü:</guilabel
-> içine <replaceable
+> çoklu kutusundan <replaceable
 >/dev/sdz4</replaceable
-> ve Birincil ve İkincil diskler seçilebilir.</para>
+> ve seçilebilir.</para>
 
 <note>
 <para
@@ -786,7 +786,7 @@ Mac 800KB floppies at all, not only formatting. -->
 </listitem>
 <listitem>
 <para
->Bu, kullanıcıların tesadüfen bir aygıt adı olan kutuya bir şey yazmasını önlemek için bir güvenliktir.</para>
+>Kullanıcının çoklu kutuya şans eseri bir aygıt adı olan herhangi bir şey yazmasını önlemek için bir güvenliktir.</para>
 </listitem>
 </itemizedlist>
 </note>
