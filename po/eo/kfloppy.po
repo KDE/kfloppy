@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: kfloppy\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-01-12 00:48+0000\n"
-"PO-Revision-Date: 2023-01-06 12:00+0100\n"
+"PO-Revision-Date: 2023-06-06 22:02+0100\n"
 "Last-Translator: Oliver Kellogg <okellogg@users.sourceforge.net>\n"
 "Language-Team: Esperanto <kde-i18n-doc@kde.org>\n"
 "Language: eo\n"
@@ -595,12 +595,12 @@ msgstr "Funkciigis denove KDisketon kun KDE 3.4"
 #: main.cpp:67
 #, kde-format
 msgid "Wolfgang Bauer"
-msgstr ""
+msgstr "Wolfgang Bauer"
 
 #: main.cpp:67
 #, kde-format
 msgid "Port KFloppy to KF5"
-msgstr ""
+msgstr "Portado de KFloppy al KF5"
 
 #: main.cpp:69
 #, kde-format
