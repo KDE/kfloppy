@@ -13,6 +13,7 @@
   <name xml:lang="de">KFloppy</name>
   <name xml:lang="el">KFloppy</name>
   <name xml:lang="en-GB">KFloppy</name>
+  <name xml:lang="eo">KFloppy</name>
   <name xml:lang="es">KFloppy</name>
   <name xml:lang="et">KFloppy</name>
   <name xml:lang="eu">KFloppy</name>
@@ -55,6 +56,7 @@
   <summary xml:lang="de">Diskettenformatierer</summary>
   <summary xml:lang="el">Φορμάρισμα εύκαμπτου δίσκου</summary>
   <summary xml:lang="en-GB">Floppy disk formatter</summary>
+  <summary xml:lang="eo">Disketformatilo</summary>
   <summary xml:lang="es">Formateador de disquetes</summary>
   <summary xml:lang="et">Disketi vormindamise tööriist</summary>
   <summary xml:lang="eu">Diskete formateatzailea</summary>
