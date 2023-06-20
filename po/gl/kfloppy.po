@@ -330,7 +330,7 @@ msgstr "<qt>Prema aquí para iniciar a formatación.</qt>"
 #, kde-format
 msgid "<qt>This is the status window, where error messages are displayed.</qt>"
 msgstr ""
-"<qt>Esta é a xanela de estado, onde se mostran as mensaxes de erro.</qt>"
+"<qt>Esta é a xanela de estado, onde se amosan as mensaxes de erro.</qt>"
 
 #: floppy.cpp:314
 #, kde-format
