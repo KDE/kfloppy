@@ -403,7 +403,7 @@ msgstr "Non se esperaba o número de densidade %1."
 #, kde-format
 msgid "Cannot find a device for drive %1 and density %2."
 msgstr ""
-"Non se pode atopar un dispositivo para a disqueteira %1 e a densidade %2."
+"Non é posíbel atopar un dispositivo para a disqueteira %1 e a densidade %2."
 
 #: format.cpp:284
 #, kde-format
@@ -411,7 +411,7 @@ msgid ""
 "Cannot access %1\n"
 "Make sure that the device exists and that you have write permission to it."
 msgstr ""
-"Non se pode acceder a %1.\n"
+"Non é posíbel acceder a %1.\n"
 "Asegúrese de que o dispositivo existe e de que ten permisos de escritura nel."
 
 #: format.cpp:316
@@ -434,12 +434,12 @@ msgstr ""
 #: format.cpp:383
 #, kde-format
 msgid "Cannot find fdformat."
-msgstr "Non se pode atopar fdformat."
+msgstr "Non é posíbel atopar fdformat."
 
 #: format.cpp:410
 #, kde-format
 msgid "Could not start fdformat."
-msgstr "Non se puido iniciar fdformat."
+msgstr "Non foi posíbel iniciar fdformat."
 
 #: format.cpp:432
 #, kde-format
@@ -453,7 +453,7 @@ msgid ""
 "Please insert a floppy and make sure that you have selected a valid floppy "
 "drive."
 msgstr ""
-"Non se pode acceder ao disquete ou á disqueteira.\n"
+"Non é posíbel acceder ao disquete ou á disqueteira.\n"
 "Insira un disquete e asegúrese de que seleccionou a disqueteira correcta."
 
 #: format.cpp:453
@@ -483,22 +483,22 @@ msgstr "Produciuse un erro de formato de baixo nivel: %1"
 #: format.cpp:514
 #, kde-format
 msgid "Cannot find dd."
-msgstr "Non se pode atopar dd."
+msgstr "Non é posíbel atopar dd."
 
 #: format.cpp:528
 #, kde-format
 msgid "Could not start dd."
-msgstr "Non se puido iniciar dd."
+msgstr "Non foi posíbel iniciar dd."
 
 #: format.cpp:603
 #, kde-format
 msgid "Cannot find a program to create FAT filesystems."
-msgstr "Non se pode atopar un programa para crear sistemas de ficheiros FAT."
+msgstr "Non é posíbel atopar un programa para crear sistemas de ficheiros FAT."
 
 #: format.cpp:630
 #, kde-format
 msgid "Cannot start FAT format program."
-msgstr "Non se pode iniciar o programa para formatar en FAT."
+msgstr "Non é posíbel iniciar o programa para formatar en FAT."
 
 #: format.cpp:643 format.cpp:799 format.cpp:885
 #, kde-format
@@ -513,33 +513,35 @@ msgstr ""
 #, kde-format
 msgctxt "BSD"
 msgid "Cannot find a program to create UFS filesystems."
-msgstr "Non se pode atopar un programa para crear sistemas de ficheiros UFS."
+msgstr "Non é posíbel atopar un programa para crear sistemas de ficheiros UFS."
 
 #: format.cpp:714
 #, kde-format
 msgctxt "BSD"
 msgid "Cannot start UFS format program."
-msgstr "Non se pode iniciar o programa para formatar en UFS."
+msgstr "Non é posíbel iniciar o programa para formatar en UFS."
 
 #: format.cpp:768
 #, kde-format
 msgid "Cannot find a program to create ext2 filesystems."
-msgstr "Non se pode atopar un programa para crear sistemas de ficheiros Ext2."
+msgstr ""
+"Non é posíbel atopar un programa para crear sistemas de ficheiros Ext2."
 
 #: format.cpp:786
 #, kde-format
 msgid "Cannot start ext2 format program."
-msgstr "Non se pode iniciar o programa para formatar en Ext2."
+msgstr "Non é posíbel iniciar o programa para formatar en Ext2."
 
 #: format.cpp:858
 #, kde-format
 msgid "Cannot find a program to create Minix filesystems."
-msgstr "Non se pode atopar un programa para crear sistemas de ficheiros Minix."
+msgstr ""
+"Non é posíbel atopar un programa para crear sistemas de ficheiros Minix."
 
 #: format.cpp:875
 #, kde-format
 msgid "Cannot start Minix format program."
-msgstr "Non se pode iniciar o programa para formatar en Minix."
+msgstr "Non é posíbel iniciar o programa para formatar en Minix."
 
 #: main.cpp:51
 #, kde-format
