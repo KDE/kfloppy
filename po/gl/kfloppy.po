@@ -366,8 +366,8 @@ msgid ""
 "proceed?</qt>"
 msgstr ""
 "<qt>Formatar o dispositivo borrará todos os datos:<br/> <b>%1</b><br/> "
-"Aviso: comprobe que o nome do dispositivo é o correcto.<br/> Está seguro de "
-"que quere continuar?</qt>"
+"Aviso: comprobe que o nome do dispositivo é o correcto.<br/> Seguro que "
+"quere continuar?</qt>"
 
 #: floppy.cpp:499 floppy.cpp:511
 #, kde-format
@@ -387,7 +387,7 @@ msgid ""
 "Are you sure you wish to proceed?"
 msgstr ""
 "Formatar o disco borrará todos os datos que conteña.\n"
-"Está seguro de que quere continuar?"
+"Seguro que quere continuar?"
 
 #: format.cpp:247
 #, kde-format
