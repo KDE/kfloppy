@@ -2,7 +2,7 @@
 # Translation of kfloppy.po to Slovenian
 # -*- mode:po; coding:iso-latin-2; -*- kfloppy Slovenian message catalogue.
 # Copyright (C) 2001,2003, 2004, 2005 Free Software Foundation, Inc.
-# $Id: kfloppy.po 1616848 2022-01-12 01:34:23Z scripty $
+# $Id: kfloppy.po 1664120 2023-11-05 13:15:21Z scripty $
 # $Source$
 #
 # Marko Samastur <markos@elite.org>, 2000.
@@ -15,7 +15,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kfloppy\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-01-12 00:48+0000\n"
+"POT-Creation-Date: 2023-11-05 12:40+0000\n"
 "PO-Revision-Date: 2016-03-26 19:12+0100\n"
 "Last-Translator: Andrej Mernik <andrejm@ubuntu.si>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
