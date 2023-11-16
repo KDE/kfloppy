@@ -620,7 +620,7 @@ msgstr "Wolfgang Bauer"
 #: main.cpp:67
 #, kde-format
 msgid "Port KFloppy to KF5"
-msgstr "Adaptació de KFloppy al KF5"
+msgstr "Adaptació de KFloppy als KF5"
 
 #: main.cpp:69
 #, kde-format
