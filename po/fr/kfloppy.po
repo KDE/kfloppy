@@ -10,7 +10,7 @@
 # Francescu Garoby <windu.2b@gmail.com>, 2008.
 # Jean-Jacques FINAZZI <mrjay01@users.sourceforge.net>, 2008.
 # Sébastien Renard <Sebastien.Renard@digitalfox.org>, 2008.
-# xavier <xavier.besnard@neuf.fr>, 2013.
+# Xavier Besnard <xavier.besnard@kde.org>, 2013.
 # Johnny Jazeix <jazeix@gmail.com>, 2017.
 #
 #
