@@ -618,7 +618,7 @@ void FloppyData::formatStatus(const QString &s, int p)
 
 void FloppyData::writeSettings()
 {
-    KConfigGroup config = KSharedConfig::openConfig()->group("GeneralData");
+    KConfigGroup config = KSharedConfig::openConfig()->group(QStringLiteral("GeneralData"));
 
     densityconfig = densityComboBox->currentText().trimmed();
     filesystemconfig = filesystemComboBox->currentText().trimmed();
@@ -645,7 +645,7 @@ void FloppyData::writeSettings()
 
 void FloppyData::readSettings()
 {
-    KConfigGroup config = KSharedConfig::openConfig()->group("GeneralData");
+    KConfigGroup config = KSharedConfig::openConfig()->group(QStringLiteral("GeneralData"));
 
     verifyconfig = config.readEntry("Verify", 1);
     labelconfig = config.readEntry("CreateLabel", 1);
