@@ -196,5 +196,5 @@ X-DocPath=kfloppy/index.html
 Exec=kfloppy -qwindowtitle %c
 Icon=kfloppy
 Type=Application
-X-KDE-StartupNotify=true
+StartupNotify=true
 Categories=Qt;KDE;Utility;X-KDE-Utilities-Peripherals;
