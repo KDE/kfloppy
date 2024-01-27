@@ -268,7 +268,7 @@ Mac 800KB floppies at all, not only formatting. -->
 >unitats de disquet de &Mac;</hardware
 > no està permesa en <hardware
 >unitats de disquet de PC</hardware
-> ja que no són capaces de formatar discos d'aquesta manera.</para>
+>, ja que no són capaces de formatar discos d'aquesta manera.</para>
 </note>
 </sect2>
 
@@ -285,7 +285,7 @@ Mac 800KB floppies at all, not only formatting. -->
 >DOS</term>
 <listitem>
 <para
->Aquesta selecció farà que el &kfloppy; creï el tipus de sistema de fitxers MS-DOS/&Windows; al disquet. El més probable és que l'usuari/a vulgui triar aquest sistema si utilitza el disquet amb aquests sistemes operatius, ja que no reconeixen altres tipus de sistemes. (Això és compatible amb el &Linux; i el &BSD;).</para>
+>Aquesta selecció farà que el &kfloppy; creï el tipus de sistema de fitxers MS-DOS/&Windows; al disquet. El més probable és que l'usuari/ària vulgui triar aquest sistema si utilitza el disquet amb aquests sistemes operatius, ja que no reconeixen altres tipus de sistemes. (Això és compatible amb el &Linux; i el &BSD;).</para>
 </listitem>
 </varlistentry>
 
@@ -726,7 +726,7 @@ Mac 800KB floppies at all, not only formatting. -->
 <para
 >Aquesta característica està pensada principalment com una solució per als usuaris que tenen <hardware
 >unitats de disquet USB</hardware
-> de qualsevol tipus (incloent unitats de disc <trademark
+> de qualsevol tipus (incloent-hi unitats de disc <trademark
 >ZIP</trademark
 >) o qualsevol altra <hardware
 >unitat de disquet</hardware
@@ -770,7 +770,7 @@ Mac 800KB floppies at all, not only formatting. -->
 </listitem>
 <listitem>
 <para
->És una protecció, per evitar que l'usuari escrigui qualsevol cosa en el quadre combinat que sigui per casualitat un nom de dispositiu.</para>
+>És una protecció, per a evitar que l'usuari escrigui qualsevol cosa en el quadre combinat que sigui per casualitat un nom de dispositiu.</para>
 </listitem>
 </itemizedlist>
 </note>
@@ -784,7 +784,7 @@ Mac 800KB floppies at all, not only formatting. -->
 
 <warning
 ><para
->Aneu amb compte quan introduïu el nom del dispositiu. El &kfloppy; passarà el nom del dispositiu tal com està als programes externs. Especialment no comprova (i els programes externs tampoc ho fan) si el dispositiu és un dispositiu d'<hardware
+>Aneu amb compte quan introduïu el nom del dispositiu. El &kfloppy; passarà el nom del dispositiu tal com està als programes externs. Especialment, no comprova (i els programes externs tampoc ho fan) si el dispositiu és un dispositiu d'<hardware
 >unitat de disquet</hardware
 >. Si doneu qualsevol de les vostres particions de disc principals com a dispositiu, s'acceptarà. (Si la partició està muntada o si no podeu escriure en aquest dispositiu, probablement obtindreu un missatge d'error, evitant el pitjor).</para
 ></warning>
@@ -802,7 +802,7 @@ Mac 800KB floppies at all, not only formatting. -->
 >En el &Linux;, podreu seleccionar qualsevol sistema de fitxers que vulgueu. En el &BSD;, actualment només és compatible UFS (i no es prova en el moment d'escriure aquesta documentació).</para>
 
 <para
->Quan estigueu a punt per formatar, feu clic al botó <guibutton
+>Quan estigueu a punt per a formatar, feu clic al botó <guibutton
 >Format</guibutton
 > com de costum. Obtindreu un quadre de missatge demanant-vos que verifiqueu el nom del dispositiu. </para>
 
