@@ -43,7 +43,7 @@ if (QT_MAJOR_VERSION STREQUAL "6")
     find_package(Qt6Core5Compat)
 endif()
 find_package(KF${KF_MAJOR_VERSION} ${KF_MIN_VERSION} REQUIRED COMPONENTS I18n CoreAddons Completion XmlGui)
-find_package(KF5DocTools ${KF_MIN_VERSION})
+find_package(KF${KF_MAJOR_VERSION}DocTools ${KF_MIN_VERSION})
 set_package_properties(KF${KF_MAJOR_VERSION}DocTools PROPERTIES DESCRIPTION
     "Tools to generate documentation"
     TYPE OPTIONAL
@@ -99,7 +99,7 @@ ecm_qt_install_logging_categories(
         DESTINATION ${KDE_INSTALL_LOGGINGCATEGORIESDIR}
         )
 ki18n_install(po)
-if (KF5DocTools_FOUND)
+if (KF${KF_MAJOR_VERSION}DocTools_FOUND)
     kdoctools_install(po)
     add_subdirectory(doc)
 endif()
