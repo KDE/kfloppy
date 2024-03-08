@@ -39,9 +39,6 @@ else()
 endif()
 
 find_package(Qt${QT_MAJOR_VERSION} ${REQUIRED_QT_VERSION} CONFIG REQUIRED Core DBus Widgets)
-if (QT_MAJOR_VERSION STREQUAL "6")
-    find_package(Qt6Core5Compat)
-endif()
 find_package(KF${KF_MAJOR_VERSION} ${KF_MIN_VERSION} REQUIRED COMPONENTS I18n CoreAddons Completion XmlGui)
 find_package(KF${KF_MAJOR_VERSION}DocTools ${KF_MIN_VERSION})
 set_package_properties(KF${KF_MAJOR_VERSION}DocTools PROPERTIES DESCRIPTION
@@ -65,10 +62,6 @@ ecm_qt_declare_logging_category(kfloppy HEADER kfloppy_debug.h IDENTIFIER KFLOPP
 
 target_link_libraries(kfloppy KF${KF_MAJOR_VERSION}::CoreAddons KF${KF_MAJOR_VERSION}::I18n KF${KF_MAJOR_VERSION}::Completion
     KF${KF_MAJOR_VERSION}::XmlGui Qt${QT_MAJOR_VERSION}::DBus KF${KF_MAJOR_VERSION}::Crash)
-
-if (TARGET Qt::Core5Compat)
-    target_link_libraries(kfloppy Qt::Core5Compat)
-endif()
 
 install(TARGETS kfloppy  ${KDE_INSTALL_TARGETS_DEFAULT_ARGS} )
 

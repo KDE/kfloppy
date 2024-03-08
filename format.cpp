@@ -27,7 +27,7 @@
 #include <unistd.h>
 
 #include "qplatformdefs.h"
-#include <QRegExp>
+#include <QRegularExpression>
 #include <QStandardPaths>
 #include <QTimer>
 
@@ -446,10 +446,10 @@ void FDFormat::processStdOut(const QString &s)
     }
 #elif defined(ANY_LINUX)
     DEBUGS(s);
-    QRegExp regexp(QStringLiteral("([0-9]+)"));
+    const QRegularExpression regexp(QStringLiteral("([0-9]+)"));
     if (s.startsWith(QLatin1String("bad data at cyl")) || s.contains(QLatin1String("Problem reading cylinder"))) {
-        if (regexp.indexIn(s) > -1) {
-            const int track = regexp.cap(1).toInt();
+        if (const auto match = regexp.match(s); match.hasMatch()) {
+            const int track = match.capturedView(1).toInt();
             Q_EMIT status(i18n("Low-level formatting error at track %1.", track), -1);
         } else {
             // This error should not happen
@@ -473,9 +473,9 @@ void FDFormat::processStdOut(const QString &s)
         return;
     }
     // Check for numbers at last (as /dev/fd0u1440 has numbers too)
-    else if (regexp.indexIn(s) > -1) {
+    else if (const auto match = regexp.match(s); match.hasMatch()) {
         // Normal track number (formatting or verifying)
-        const int p = regexp.cap(1).toInt();
+        const int p = match.capturedView(1).toInt();
         if ((p >= 0) && (p < deviceInfo->tracks)) {
             Q_EMIT status(QString(), p * 100 / deviceInfo->tracks);
         }
