@@ -1,0 +1,848 @@
+<?xml version="1.0" ?>
+<!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN" "dtd/kdedbx45.dtd" [
+  <!ENTITY kappname "&kfloppy;">
+  <!ENTITY package "kdeutils">
+  <!ENTITY % Slovenian "INCLUDE"
+> <!-- change language only here -->
+  <!ENTITY % addindex "IGNORE">
+  <!ENTITY BSD "<trademark
+>BSD</trademark
+>">
+  <!ENTITY Minix "<trademark
+>Minix</trademark
+>">
+]>
+<!-- ### TODO Is BSD a trademark or a registrated trademark ? -->
+<!-- ### TODO Is Minix a trademark or a registrated trademark ? -->
+
+<!-- ### TODO Unify use of "disk", "floppy", "diskette", "floppy disk" (and "floppy drive") -->
+
+<book id="kfloppy" lang="&language;">
+<bookinfo>
+
+<title
+>Priročnik za &kfloppy;</title>
+
+<authorgroup>
+<author
+><firstname
+>Thad</firstname
+> <surname
+>McGinnis</surname
+> <affiliation
+><address
+>&Thad.McGinnis.mail; </address
+></affiliation
+> </author>
+
+<author
+><firstname
+>Nicolas</firstname
+> <surname
+>Goutte</surname
+> <affiliation
+><address
+>&Nicolas.Goutte.mail; </address
+></affiliation
+> </author>
+
+<othercredit role="developer"
+><firstname
+>Bernd</firstname
+> <othername
+>Johannes</othername
+> <surname
+>Wuebben</surname
+> <affiliation
+><address
+><email
+>wuebben@math.cornell.edu</email
+></address
+></affiliation>
+<contrib
+>Razvijalec</contrib>
+</othercredit>
+
+<othercredit role="developer"
+><firstname
+>Chris</firstname
+> <surname
+>Howells</surname
+> <affiliation
+><address
+>&Chris.Howells.mail;</address
+></affiliation>
+<contrib
+>Razvijalec  (Ponovni dizajn uporabniškega vmesnika)</contrib>
+</othercredit>
+
+<othercredit role="developer"
+><firstname
+>Adriaan</firstname
+> <surname
+>de Groot</surname
+> <affiliation
+><address
+><email
+>groot@kde.org</email
+></address
+></affiliation>
+<contrib
+>Razvijalec (Doda podporo &BSD;)</contrib>
+</othercredit>
+
+<othercredit role="developer"
+><firstname
+>Wolfgang</firstname
+> <surname
+>Bauer</surname
+> <affiliation
+><address
+><email
+>wbauer@tmo.at</email
+></address
+></affiliation>
+<contrib
+>Razvijalec (Prenos na KF5)</contrib>
+</othercredit>
+
+<othercredit role="reviewer"
+><firstname
+>Lauri</firstname
+> <surname
+>Watts</surname
+> <contrib
+>Pregled</contrib>
+<affiliation
+><address
+>&Lauri.Watts.mail;</address
+></affiliation>
+</othercredit>
+
+<othercredit role="translator"
+><firstname
+>Andrej</firstname
+> <surname
+>Vernekar</surname
+><affiliation
+><address
+><email
+>andrej.vernekar@moj.net</email
+></address
+></affiliation
+><contrib
+>Prevod</contrib
+></othercredit
+> 
+</authorgroup>
+
+<date
+>23.03.2016</date>
+<releaseinfo
+>5.0 (Applications 16.04)</releaseinfo>
+
+<copyright>
+<year
+>2000</year>
+<holder
+>&Thad.McGinnis;</holder>
+</copyright>
+
+<copyright>
+<year
+>2005</year>
+<holder
+>&Nicolas.Goutte;</holder>
+</copyright>
+
+<legalnotice
+>&FDLNotice;</legalnotice>
+
+<abstract
+><para
+>&kfloppy; je pripomoček, ki ponuja grafičen način formatiranja 3.5" in 5.5" disket.</para
+></abstract>
+
+<keywordset>
+<keyword
+>KDE</keyword>
+<keyword
+>kfloppy</keyword>
+<keyword
+>disketa</keyword>
+<keyword
+>format</keyword>
+</keywordset>
+
+</bookinfo>
+
+<chapter id="introduction">
+<title
+>Uvod</title>
+
+<para
+>&kfloppy; je pripomoček, ki ponuja grafičen način formatiranja 3.5" in 5.5" disket. </para>
+
+<note
+><para
+>&kfloppy; je odvisen od zunanjih programov in zato trenutno deluje<emphasis
+>samo</emphasis
+> z &Linux; in &BSD;. Odvisno, če uporabljate&kfloppy; na &Linux; ali na &BSD;, &kfloppy; ima nekoliko drugačne lastnosti.</para
+></note>
+
+<caution
+><para
+>Prepričajte se, da disketa <emphasis
+>ni</emphasis
+> priklopljena. &kfloppy; ne more formatirati priklopljene diskete.</para
+></caution>
+
+</chapter>
+
+<chapter id="usingkfloppy">
+<title
+>Uporaba &kfloppy;</title>
+
+<para
+>Ob zagonu &kfloppy; se odpre eno samo okno, v katerem lahko uporabnik izbere ustrezne nastavitve in nadzira proces formatiranja. Te možnosti in kontrole so podrobneje opisen spodaj.</para>
+
+<caution
+><para
+>Prepričajte se, da disketa <emphasis
+>ni</emphasis
+> priklopljena. &kfloppy; ne more formatirati priklopljene diskete.</para
+></caution>
+
+<sect1 id="controlsettings">
+<title
+>Krmilne nastavitve</title>
+
+<para
+>Nastavitve se določijo v treh spustnih poljih, ki se nahajajo levo od sredine na vrhu &kfloppy;a.</para>
+
+<sect2 id="selectdrive">
+<title
+>Disketni pogon</title>
+
+<para
+>Klik na vrhnje spustno polje, ki je označeno z <guilabel
+>Disketni pogon</guilabel
+> ponuja uporabniku naslednje štiri izbire:</para>
+
+<itemizedlist>
+<listitem
+><para
+>Primarni</para
+></listitem>
+<listitem
+><para
+>Sekundarni</para
+></listitem>
+</itemizedlist>
+
+<para
+>Klik na vrhnje spustno polje, ki je označeno z <guilabel
+>Disketni pogon</guilabel
+> ponuja uporabniku naslednje štiri izbire:</para>
+
+<itemizedlist>
+<listitem
+><para
+>3.5" 1.44MB</para
+></listitem>
+<listitem
+><para
+>3.5" 720KB</para
+></listitem>
+<listitem
+><para
+>5.25" 1.2MB</para
+></listitem>
+<listitem
+><para
+>5.25" 360KB</para
+></listitem>
+</itemizedlist>
+
+<para
+>&Linux; različica &kfloppy; ima tudi izbiro velikosti z imenom:</para>
+
+<itemizedlist>
+<listitem
+><para
+>Samodejno zaznavanje</para
+></listitem>
+</itemizedlist>
+
+<!-- ### TODO: typical floppy disk of a PC has not the hardware to support
+Mac 800KB floppies at all, not only formatting. -->
+<note>
+<para
+>Format velikosti 800k na disketnih pogonih PC ne more biti podprt, saj ti niso sposobni formatirati disk na ta način.</para>
+</note>
+</sect2>
+
+<sect2 id="filesystems">
+<title
+>Datotečni sistemi</title>
+
+<para
+>Tretje spustno polje, označeno z Datotečni sistem, ponuja uporabniku naslednji izbiri:</para>
+
+<variablelist>
+<varlistentry>
+<term
+>Dos</term>
+<listitem>
+<para
+>Ob uporabi te izbire bo &kfloppy; na disketi ustvaril datotečni sistem tipa MSDOS/Windows. Uporabnik bo najverjetneje želel izbrati ta sistem, če bo uporabljal disketo s tema operacijskima sistemoma, saj sploh ne poznata drugih datotečnih sistemov.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry
+> 
+<term
+>ext2fs</term>
+<listitem>
+<para
+>S tem izborom bo &kfloppy; postavil vrsto datotečnega sistema nadisketo, ki se najpogosteje uporablja v &Linux;u, vendar le redkokdaj na disketah. (To je podprto na &Linux;u in &BSD;.)</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+>UFS</term>
+<listitem>
+<para
+>Ob uporabi te izbire bo &kfloppy; na disketi ustvaril datotečni sistem, ki je najpogosteje uporabljen v Linuxu. Uporabnik bo najverjetneje želel izbrati ta sistem, če bo uporabljal disketo le na Linuxu. S tem izborom bo &kfloppy; postavil vrsto datotečnega sistema nadisketo, ki se najpogosteje uporablja v <trademark class="registered"
+>FreeBSD</trademark
+>. Uporabnik bo verjetno želel izbrati ta sistem, če on ali ona bo uporabljal samo disketo z <trademark class="registered"
+>FreeBSD</trademark
+>. (To je podprto samo za &BSD;.)</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+>&Minix;</term>
+<listitem>
+<para
+>S tem izborom bo &kfloppy; postavil vrsto datotečnega sistema nadisketo, ki se pogosto uporablja na disketah, ki se uporabljajo v &Linux;u, (To jepodprto samo za &Linux;.)</para>
+</listitem>
+</varlistentry>
+</variablelist>
+
+</sect2>
+</sect1>
+
+<sect1 id="formatting-options">
+<title
+>Možnosti formatiranja</title>
+<para
+>Zgoraj levo od sredine &kfloppy;a bo uporabnik našel nabor petih možnosti formatiranja. Vrhnji dve sta par izbirnih polj.</para
+> <note
+><para
+>Ta izraz označuje nabor možnosti, od katerih lahko izberete le eno - podobno, kot lahko izberete le en kanal na v atomobilskem radiu.</para
+></note
+><para
+>Spodnji dve možnosti sta za označevanje diskete. Obe sta razloženi spodaj:</para>
+
+<sect2>
+<title
+>Metoda formatiranja</title>
+<para
+>&kfloppy; lahko formatira disk na naslednja načina:</para>
+<para>
+<variablelist>
+<varlistentry>
+<term
+><guilabel
+>Hitro formatiranje</guilabel
+></term>
+<listitem>
+<para
+>To preprosto postavi nov datotečni sistem na disk.</para>
+<warning
+><para
+>Vsi podatki na disku bodo izgubljeni, tudi če sami podatki ne bodoizbrisani.</para
+></warning>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term
+><guilabel
+>Izničenje in hitro formatiranje</guilabel
+></term>
+<listitem>
+<para
+>Ta format najprej postavi ničle na disk in nato ustvari nov datotečni sistem.</para>
+<warning
+><para
+>Vsi podatki na disku bodo izbrisani.</para
+></warning>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term
+><guilabel
+>Popolno formatiranje</guilabel
+></term>
+<listitem>
+<para
+>Popolno formatiranje premesti sledi in sektorje, zapiše izbrani datotečni sistem na disk in nato preveri formatiranje in blokira vse slabe sektorje, ki jih najde.</para>
+<warning
+><para
+>Vsi podatki na disku bodo izbrisani.</para
+></warning>
+</listitem>
+</varlistentry>
+</variablelist>
+</para>
+</sect2>
+
+<sect2>
+<title
+>Preveri celovitost</title>
+
+<para
+>To sporoči &kfloppy; da preveri, ali je bilo oblikovanje pravilno zapisano na disketo. To omogoča prepoznavanje slabih sektorjev. </para>
+
+<note
+><para
+>Če so med fazo preverjanja celotnega formata najdeni slabi sektorji, je formatiranje prekinjeno in datotečni sistem ni zapisan! </para
+></note>
+
+</sect2>
+
+<sect2>
+<title
+>Oznaka volumna</title>
+
+<para
+>Spodnji dve zmožnosti omogočata uporabniku, da doda (ali pa spremeni) oznako diskete. Če je polje <guilabel
+>Ustvari oznako</guilabel
+> izbrano, potem lahko uporabnik vnese ime (oznako) za disketo v polje, ki se nahaja tik pod njo. Ko je nato disketa formatirana, se oznaka zapiše na nanjo.</para>
+
+<note
+><para
+>Zaradi omejitev datotečnega sistema DOS je lahko oznaka dolga največ 11 znakov. Za poenostavitev &kfloppy; predpostavlja, da ta omejitev velja za vse datotečne sisteme.</para
+></note>
+
+<note
+><para
+>Datotečni sistem &Minix; ne more imeti oznake nosilca. V tem primeru &kfloppy; bo prezrl oznako nosilca.</para
+></note>
+
+</sect2>
+
+</sect1>
+
+<sect1 id="buttons">
+<title
+>Gumbi</title>
+<para
+>Navpično na desni strani &kfloppy; so razporejeni štirje gumbi. Če pričnemo od spodaj navzgor, so to: </para>
+
+<variablelist>
+<varlistentry>
+<term
+><guibutton
+>Formatiraj</guibutton
+></term>
+<listitem>
+<para
+>Ta gumb sproži proces formatiranja. Ko je uporabnik enkrat prepričan, da so nastavitve pravilne, lahko prične proces s klikom na ta gumb. V primeru, da je disketa na pravilnem mestu in so parametri nastavljeni pravilno, bo uporabnik videl nekaj sprememb. Oznaka na gumbu se bo spremenila z <guibutton
+>Formatiraj</guibutton
+> v <guibutton
+>Prekliči</guibutton
+>, kar nakazuje, da bo še en klik na ta gumb prekinil formatiranje. Še več, v dveh podolgovatih poljih, ki se raztezata na dnu okna se bodo prav tako zgodile spremembe.</para>
+
+<para
+>Zgornje polje je indikator, ki podaja informacije o tekočem procesu. Vsebovalo bo specifične podrobnosti o tipu formatiranja. Ko &kfloppy; vstopi v fazo preverjanja, bo to prikazano.</para>
+
+<para
+>Spodnje je prikazovalnik napredka. Ta prikazuje napredek tako grafično kot tudi numerično najprej napredek formatiranja, nato pa še preverjanja. pred pričetkom je videti prazno - le v sredini prikazuje vrednost <guilabel
+>0%</guilabel
+>. Stanje procesa se grafično spremlja z leve proti desni. Hkrati bo številka v sredini odsevala natančen odstotek, ki ga je proces opravil.</para>
+
+<note
+><para
+>Kot &kfloppy; uporablja zunanje programe za formatiranje diskete, se mora zanašati na te programe, da zagotovijo prave informacije, da lahko prikaže vrstico napredka. Na žalost temu ni tako. Predvsem programi, ki pišejo datotečne sisteme, ne vrnejo dovolj podatkov, tako da bo vrstica napredka ostala na 0 %.</para
+></note>
+
+<important>
+<para
+>Prepričajte se, da disketa <emphasis
+>ni</emphasis
+> priklopljena. &kfloppy; ne more formatirati priklopljene diskete.</para>
+</important>
+
+<note
+><para
+>&kfloppy; diskete <emphasis
+>ne</emphasis
+> odklopi sama, ker to lahko pomeni, da lahko uporabnik prepiše disketo s pomembnimi podatki na njej.</para
+></note>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guibutton
+>Pomoč</guibutton
+></term>
+<listitem>
+<para
+>To prikliče pojavni meni z dejanji za odpiranje tega priročnika, poročanje o napaki, preklop jezika aplikacije in prikaz avtorja in različice &kfloppy; in &kde;.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guibutton
+>Končaj</guibutton
+></term>
+<listitem>
+<para
+>Klik na ta gumb bo zaprl &kfloppy;.</para>
+</listitem>
+</varlistentry>
+
+</variablelist>
+
+</sect1>
+</chapter>
+
+<chapter id="command-line">
+<title
+>Možnosti ukazne vrstice</title>
+
+<para
+>Čeprav se &kfloppy; najpogosteje požene s programskim menujem KDE ali pa z namizno ikono, ga lahko odprete tudi iz ukazne vrstice terminalskega okna. Ob tem je na voljo nekaj možnosti:</para
+> 
+
+<variablelist>
+<varlistentry>
+<term
+><command
+>kfloppy <option
+>--help</option
+></command
+></term>
+<listitem
+><para
+>To izpiše najbolj osnovne možnosti, ki so dosegljive z ukazne vrstice.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><command
+>kfloppy <option
+>--author</option
+></command
+></term>
+<listitem>
+<para
+>V terminalskem oknu našteje avtorje &kfloppy;a</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><command
+>kfloppy <option
+>--help</option
+></command
+></term>
+<listitem>
+<para
+>Prikaže informacije o licenci za &kfloppy; v oknu terminala</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><command
+>kfloppy <option
+>--version</option
+></command
+></term>
+<listitem>
+<para
+>Izpiše informacije za Qt, KDE in &kfloppy;. Dosegljivo tudi z <command
+>kfloppy <option
+>-V</option
+></command
+> </para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><command
+>kfloppy <option
+><replaceable
+>device</replaceable
+></option
+></command
+></term>
+<listitem
+><para
+>Naprava za formatiranje.</para>
+<para
+>To bo neposredno formatiralo dano napravo z uporabo shranjenih nastavitev. Trenutno sta podprta samo /dev/fd0 in /dev/fd1.</para
+></listitem>
+</varlistentry>
+</variablelist
+> 
+
+</chapter
+> 
+
+<chapter id="credits">
+<title
+>Zahvale in licence</title>
+
+<!-- ### TODO: verify the copyright dates -->
+<!-- ### TODO: make the copyright list prettier -->
+<para
+>&kfloppy; Formatter Program Copyright 1997 - 2000 &Bernd.Johannes.Wuebben; <email
+>wuebben@math.cornell.edu</email
+></para>
+
+<para
+>&kfloppy; Formatter Program Copyright 2002 Adriaan de Groot <email
+>groot@kde.org</email
+></para>
+
+<para
+>&kfloppy; Formatter Program Copyright 2004, 2005 &Nicolas.Goutte; &Nicolas.Goutte.mail;</para>
+
+<para
+>&kfloppy; Formatter Program Copyright 2015, 2016 Wolfgang Bauer <email
+>wbauer@tmo.at</email
+></para>
+
+<para
+>Documentation Copyright 2000 by &Thad.McGinnis; &Thad.McGinnis.mail;.</para>
+
+<para
+>Ta različica Priročnika za &kfloppy; je osnovana na originalu Davida Ruggeja <email
+>davidrugge@mindspring.com</email
+></para>
+
+<para
+>Prevod: Andrej Vernekar <email
+>andrej.vernekar@moj.net</email
+></para
+> &underFDL; &underGPL; </chapter>
+
+<appendix id="neededprogs">
+<title
+>Potrebni zunanji programi</title>
+
+<para
+>Kot je bilo že napisano v tem priročniku, &kfloppy; deluje s pomočjozunanjih programov za izvajanje različnih nalog oblikovanja.</para>
+
+<note
+><para
+>Če eden od programov manjka, &kfloppy; kljub temu poskuša delati.Vendar ustrezna možnost ne bo na voljo.</para
+></note>
+
+<variablelist>
+<varlistentry>
+<term
+><command
+>fdformat</command
+></term>
+<listitem
+><para
+>Ta program je potreben za nizkonivojsko oblikovanje v &Linux; in na &BSD;. čemanjka, bo <guilabel
+>Popolno formatiranje</guilabel
+> onemogočeno. </para
+></listitem>
+</varlistentry>
+<varlistentry>
+<term
+><command
+>dd</command
+></term>
+<listitem
+><para
+>Ta program je potreben za ničle v &Linux; in na &BSD;. Če manjka, bosta <guilabel
+>Izničenje in hitro formatiranje</guilabel
+> onemogočena. </para
+></listitem>
+</varlistentry>
+<varlistentry>
+<term
+><command
+>mkdosfs</command
+></term>
+<listitem
+><para
+>Ta program je potreben za DOS formatiranje v &Linux;. </para
+></listitem>
+</varlistentry>
+<varlistentry>
+<term
+><command
+>newfs_msdos</command
+></term>
+<listitem
+><para
+>Ta program je potreben za DOS formatiranje na &BSD;. </para
+></listitem>
+</varlistentry>
+<varlistentry>
+<term
+><command
+>newfs</command
+></term>
+<listitem
+><para
+>Ta program je potreben za formatiranje UFS v &BSD;. </para
+></listitem>
+</varlistentry>
+<varlistentry>
+<term
+><command
+>mke2fs</command
+></term>
+<listitem
+><para
+>Ta program je potreben za formatiranje ext2 v &Linux; in na &BSD;. </para
+></listitem>
+</varlistentry>
+<varlistentry>
+<term
+><command
+>mkfs.minix</command
+></term>
+<listitem
+><para
+>Ta program je potreben za &Minix; formatiranje v &Linux;. </para
+></listitem>
+</varlistentry>
+</variablelist>
+
+</appendix>
+<appendix id="usergivendevices">
+<title
+>Uporabniške naprave</title>
+
+<sect1 id="ugdintro">
+<title
+>Uvod</title>
+
+<para
+>"Uporabniške naprave" je delovni naslov še vedno eksperimentalne funkcije &kfloppy;. Uporabniku omogoča, da da ime napravi in jo uporablja skoraj tako, kot če bi šlo za <hardware
+>disketno enoto</hardware
+>.</para>
+
+<para
+>Ta funkcija je v glavnem mišljena kot rešitev za uporabnike, ki imajo <hardware
+>disketne pogone USB</hardware
+> katere koli vrste (vključno z diskovnimi pogoni <trademark
+>ZIP</trademark
+>) ali katere koli druge nestarejše <hardware
+>disketne pogone </hardware
+>.</para>
+
+<note
+><para
+>Na žalost v času pisanja te dokumentacije funkcija ni zelo prijazna do uporabnika, saj uporabniku ne ponuja nobene pomoči pri tem, kako se naprava pokliče in &kfloppy; ne spomni niti imena naprave od klica do klica. (To je delno varnost, saj se lahko naprava <hardware
+>disketnega pogona</hardware
+> med ponovnimi zagoni spremeni.)</para
+></note>
+
+<note
+><para
+>Ker je bila ta funkcija razvita pod &Linux;, je &BSD; različica &kfloppy; ponuja manj možnosti kot &kfloppy; pod &Linux;.</para
+></note>
+
+</sect1>
+
+<sect1 id="ugdmain">
+<title
+>Uporaba</title>
+
+<!-- Note to reviewers: "PRimary" and "Secondary" are the default items in the combobox -->
+<para
+>Uporaba »Uporabniško podanih naprav« je povsem preprosta, vnesti morate le ime naprave, na primer <replaceable
+>/dev/sdz4</replaceable
+> v spustno polje <guilabel
+>Floppy drive:</guilabel
+> namesto da izberete Primarno ali Sekundarno.</para>
+
+<note>
+<para
+>Del naprave <filename class="directory"
+>/dev/</filename
+> morate vnesti iz dveh razlogov:</para>
+<itemizedlist>
+<listitem>
+<para
+>Tako &kfloppy; prepozna način "Uporabniške naprave".</para>
+</listitem>
+<listitem>
+<para
+>Gre za varnost, da bi se izognili temu, da bi uporabnik v kombinirano polje napisal karkoli, kar je po naključju ime naprave.</para>
+</listitem>
+</itemizedlist>
+</note>
+
+<para
+>Na žalost ima uporaba katere koli naprave namesto disketne naprave nekaj posledic. Glavna je, da <guilabel
+>Polnega formatiranja</guilabel
+> ni več mogoče izbrati. Če to storite, se bo ob poskusu zagona formatiranja prikazalo sporočilo o napaki. Vendar pa lahko namesto tega uporabite <guilabel
+>Izničenje in hitro formatiranje</guilabel
+>. Naprave ne bo formatiral, le izničil jo bo, a v praksi je skoraj enako; predvsem bodo izbrisani vsi podatki na napravi.</para>
+
+<warning
+><para
+>Bodite previdni pri vnosu imena naprave. &kfloppy; bo zunanjim programom posredoval ime naprave, kakršno je. Še posebej ne preverja (in tudi zunanji programi ne preverjajo), če je naprava <hardware
+>floppy drive</hardware
+>. Če kot napravo podate katero koli od vaših glavnih diskovnih particij, bo sprejeta. (Če je particija priklopljena ali če ne morete pisati na to napravo, boste kljub temu verjetno prejeli sporočilo o napaki, da se izognete najhujšemu.)</para
+></warning>
+
+<note
+><para
+>Tudi če lahko določite disketno napravo, kot je <filename
+>/dev/fd0u2880</filename
+>, &kfloppy; bo zavrnil izdelavo <guilabel
+>Popolno formatiranje</guilabel
+> na njem.</para
+></note>
+
+<para
+>Na &Linux;u lahko izberete poljuben datotečni sistem, ki ga želite. Na &BSD; je trenutno podprt samo UFS (in ni bil testiran v času pisanja te dokumentacije).</para>
+
+<para
+>Ko ste pripravljeni na formatiranje, kot običajno kliknite gumb <guibutton
+>Format</guibutton
+>. Dobili boste okno s sporočilom, v katerem boste morali preveriti ime naprave. </para>
+
+<warning
+><para
+>To je zadnja priložnost, da preverite ime naprave pred formatiranjem. Po tem je prepozno.</para
+></warning>
+
+</sect1>
+
+</appendix>
+
+</book>
+
+<!--
+Local Variables:
+mode: sgml
+sgml-minimize-attributes:nil
+sgml-general-insert-case:lower
+sgml-indent-step:0
+sgml-indent-data:nil
+End:
+
+// vim:ts=2:sw=2:tw=78:noet
+-->
