@@ -19,14 +19,14 @@ msgstr ""
 "Project-Id-Version: kfloppy\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-11-05 12:40+0000\n"
-"PO-Revision-Date: 2024-03-07 15:32+0200\n"
+"PO-Revision-Date: 2024-03-31 09:09+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 23.08.4\n"
+"X-Generator: Lokalize 23.08.5\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
 #: floppy.cpp:81
@@ -35,13 +35,13 @@ msgid "Floppy &drive:"
 msgstr "כונן &תקליטונים:"
 
 #: floppy.cpp:89 floppy.cpp:364 floppy.cpp:654
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "Primary floppy drive"
 msgid "Primary"
 msgstr "ראשי"
 
 #: floppy.cpp:90 floppy.cpp:366
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "Secondary floppy drive"
 msgid "Secondary"
 msgstr "משני"
@@ -256,7 +256,7 @@ msgstr "התוכנה dd נמצאה."
 #: floppy.cpp:229
 #, kde-format
 msgid "Program dd <b>not found</b>. Zeroing-out <b>disabled</b>."
-msgstr ""
+msgstr "התוכנית dd <b>לא נמצאה</b>. איפוס <b>מושבת</b>."
 
 #: floppy.cpp:234
 #, kde-format
@@ -542,7 +542,7 @@ msgstr ""
 #: main.cpp:63
 #, kde-format
 msgid "Bernd Johannes Wuebben"
-msgstr ""
+msgstr "ברנד יוהאנס וויבן"
 
 #: main.cpp:63
 #, kde-format
@@ -552,7 +552,7 @@ msgstr "יוצר ומתחזק לשעבר"
 #: main.cpp:64
 #, kde-format
 msgid "Chris Howells"
-msgstr ""
+msgstr "כריס האוולס"
 
 #: main.cpp:64
 #, kde-format
@@ -562,7 +562,7 @@ msgstr "עיצוב מחדש של ממשק המשתמש"
 #: main.cpp:65
 #, kde-format
 msgid "Adriaan de Groot"
-msgstr ""
+msgstr "אדריאן דה גרוט"
 
 #: main.cpp:65
 #, kde-format
@@ -572,7 +572,7 @@ msgstr "הוספת תמיכה ב־BSD"
 #: main.cpp:66
 #, kde-format
 msgid "Nicolas Goutte"
-msgstr ""
+msgstr "ניקולס גוט"
 
 #: main.cpp:66
 #, kde-format
@@ -582,12 +582,12 @@ msgstr "גרם ל־KFloppy לעבוד שוב ב־KDE 3.4"
 #: main.cpp:67
 #, kde-format
 msgid "Wolfgang Bauer"
-msgstr ""
+msgstr "וולפגנג באואר"
 
 #: main.cpp:67
 #, kde-format
 msgid "Port KFloppy to KF5"
-msgstr ""
+msgstr "הסבת KFloppy ל־KF5"
 
 #: main.cpp:69
 #, kde-format
