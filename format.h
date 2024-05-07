@@ -159,7 +159,7 @@ private:
  * Similarly, flags are internal too.
  */
 
-using fdinfo = struct {
+struct fdinfo {
     const char *const *devices;
     int drive;
     int blocks;
