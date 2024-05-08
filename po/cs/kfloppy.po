@@ -2,21 +2,22 @@
 # This file is distributed under the same license as the PACKAGE package.
 # Vít Pelčák <vit@pelcak.org>, 2011, 2014, 2016, 2023.
 # Tomáš Chvátal <tomas.chvatal@gmail.com>, 2013.
+# SPDX-FileCopyrightText: 2024 Vit Pelcak <vpelcak@suse.cz>
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: kfloppy\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-11-05 12:40+0000\n"
-"PO-Revision-Date: 2023-02-03 13:41+0100\n"
-"Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
+"PO-Revision-Date: 2024-04-26 11:01+0200\n"
+"Last-Translator: Vit Pelcak <vpelcak@suse.cz>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
 "Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Generator: Lokalize 22.12.1\n"
+"X-Generator: Lokalize 24.02.2\n"
 
 #: floppy.cpp:81
 #, kde-format
@@ -391,7 +392,7 @@ msgid ""
 "Cannot access %1\n"
 "Make sure that the device exists and that you have write permission to it."
 msgstr ""
-"Není možné přistoupit na %1\n"
+"Nelze přistoupit na %1\n"
 "Ujistěte se, že zařízení existuje a že máte příslušná práva k zápisu."
 
 #: format.cpp:316
@@ -418,7 +419,7 @@ msgstr "Nelze nalézt fdformat."
 #: format.cpp:410
 #, kde-format
 msgid "Could not start fdformat."
-msgstr "Není možné spustit fdformat."
+msgstr "Nelze spustit fdformat."
 
 #: format.cpp:432
 #, kde-format
@@ -469,12 +470,12 @@ msgstr "Nelze nalézt dd."
 #: format.cpp:528
 #, kde-format
 msgid "Could not start dd."
-msgstr "Není možné spustit dd."
+msgstr "Nelze spustit dd."
 
 #: format.cpp:603
 #, kde-format
 msgid "Cannot find a program to create FAT filesystems."
-msgstr "Není možné nalézt program pro vytvoření souborového systému FAT."
+msgstr "Nelze nalézt program pro vytvoření souborového systému FAT."
 
 #: format.cpp:630
 #, kde-format
@@ -494,7 +495,7 @@ msgstr ""
 #, kde-format
 msgctxt "BSD"
 msgid "Cannot find a program to create UFS filesystems."
-msgstr "Není možné nalézt program pro vytvoření souborového systému UFS."
+msgstr "Nelze nalézt program pro vytvoření souborového systému UFS."
 
 #: format.cpp:714
 #, kde-format
@@ -505,7 +506,7 @@ msgstr "Není možné spustit program pro formátování UFS."
 #: format.cpp:768
 #, kde-format
 msgid "Cannot find a program to create ext2 filesystems."
-msgstr "Není možné nalézt program pro vytvoření souborového systému ext2."
+msgstr "Nelze nalézt program pro vytvoření souborového systému ext2."
 
 #: format.cpp:786
 #, kde-format
@@ -515,12 +516,12 @@ msgstr "Není možné spustit program pro formátování ext2."
 #: format.cpp:858
 #, kde-format
 msgid "Cannot find a program to create Minix filesystems."
-msgstr "Není možné nalézt program pro vytvoření souborového systému Minix."
+msgstr "Nelze nalézt program pro vytvoření souborového systému Minix."
 
 #: format.cpp:875
 #, kde-format
 msgid "Cannot start Minix format program."
-msgstr "Není možné spustit program pro formátování Minix."
+msgstr "Nelze spustit program pro formátování Minix."
 
 #: main.cpp:51
 #, kde-format
