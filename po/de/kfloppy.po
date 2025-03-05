@@ -625,13 +625,13 @@ msgstr "Portierung von KFloppy zu KF5"
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr "Gregor Zumstein"
+msgstr "Deutsches KDE-Übersetzungsteam"
 
 #: main.cpp:69
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr "gz@orchester-bremgarten.ch"
+msgstr "kde-i18n-de@kde.org"
 
 #: main.cpp:77
 #, kde-format
