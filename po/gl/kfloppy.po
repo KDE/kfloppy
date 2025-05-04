@@ -628,7 +628,7 @@ msgstr "Adaptación de KFloppy a KF5."
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr "Adrián Chaves Fernández"
+msgstr "Adrián Chaves"
 
 #: main.cpp:69
 #, kde-format
