@@ -320,7 +320,7 @@ msgstr "&Formata"
 #: floppy.cpp:276
 #, kde-format
 msgid "<qt>Click here to start formatting.</qt>"
-msgstr "<qt>Feu clic ací per a iniciar la formatació.</qt>"
+msgstr "<qt>Cliqueu ací per a iniciar la formatació.</qt>"
 
 #: floppy.cpp:301
 #, kde-format
@@ -570,7 +570,7 @@ msgstr ""
 msgid "KFloppy helps you format floppies with the filesystem of your choice."
 msgstr ""
 "KFloppy ajuda en la formatació de disquets amb el sistema de fitxers que "
-"escolliu."
+"trieu."
 
 #: main.cpp:63
 #, kde-format
