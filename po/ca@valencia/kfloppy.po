@@ -62,7 +62,7 @@ msgstr "3,5\" 1,44MB"
 #: floppy.cpp:107 floppy.cpp:374
 #, kde-format
 msgid "3.5\" 720KB"
-msgstr "3,5\" 720KB"
+msgstr "3,5\" 720 KB"
 
 #: floppy.cpp:108 floppy.cpp:376
 #, kde-format
@@ -72,7 +72,7 @@ msgstr "5,25\" 1,2MB"
 #: floppy.cpp:109 floppy.cpp:378
 #, kde-format
 msgid "5.25\" 360KB"
-msgstr "5,25\" 360KB"
+msgstr "5,25\" 360 KB"
 
 #: floppy.cpp:112
 #, kde-format
