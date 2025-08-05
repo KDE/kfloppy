@@ -53,7 +53,7 @@ msgstr "ال&حجم:"
 #: floppy.cpp:104 floppy.cpp:656
 #, kde-format
 msgid "Auto-Detect"
-msgstr "كشف تلقائي"
+msgstr "كشف آليّ"
 
 #: floppy.cpp:106 floppy.cpp:372 floppy.cpp:658
 #, kde-format
@@ -616,7 +616,7 @@ msgstr ""
 #: main.cpp:77
 #, kde-format
 msgid "Default device"
-msgstr "الجهاز الافتراضي"
+msgstr "الجهاز المبدئي"
 
 #~ msgid "Zero entire disk"
 #~ msgstr "قرص إدخال صفر"
