@@ -42,7 +42,7 @@ msgstr "Secundària"
 #: floppy.cpp:92
 #, kde-format
 msgid "<qt>Select the floppy drive.</qt>"
-msgstr "<qt>Seleccioneu la unitat de disquet.</qt>"
+msgstr "<qt>Trieu la unitat de disquet.</qt>"
 
 #: floppy.cpp:98
 #, kde-format
