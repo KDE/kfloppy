@@ -475,13 +475,13 @@ Mac 800KB floppies at all, not only formatting. -->
 >El cuadro de arriba es un indicador del estado que da información sobre el proceso que se está llevando a cabo (especialmente los errores ocurridos durante el proceso).</para>
 
 <para
->El cuadro inferior es una barra de progreso. Esta muestra tanto gráfica como numéricamente primero el progreso de formateo, y luego el de verificación. Antes de comenzar aparece vacío - mostrando solo el número <guilabel
->0%</guilabel
-> en el centro. A medida que avanza el proceso, su progreso se muestra gráficamente rellenándose el cuadro de izquierda a derecha. Al mismo tiempo, el número del centro se incrementará reflejando el porcentaje exacto del proceso completado.</para>
+>El cuadro inferior es una barra de progreso. Esta muestra tanto gráfica como numéricamente primero el progreso de formateo, y luego el de verificación. Antes de comenzar aparece vacío (mostrando solo el número <guilabel
+>0 %</guilabel
+> en el centro). A medida que avanza el proceso, su progreso se muestra gráficamente rellenándose el cuadro de izquierda a derecha. Al mismo tiempo, el número del centro se incrementará reflejando el porcentaje exacto del proceso completado.</para>
 
 <note
 ><para
->Como &kfloppy; usa programas externos para formatear el disquete, debe confiar en ellos para obtener la información correcta necesaria para mostrar la barra de progreso. Desafortunadamente, esto no siempre es posible. Especialmente, los programas que escriben los sistemas de archivos no devuelven datos suficientes, de modo que la barra de progreso permanece en 0%.</para
+>Como &kfloppy; usa programas externos para formatear el disquete, debe confiar en ellos para obtener la información correcta necesaria para mostrar la barra de progreso. Desafortunadamente, esto no siempre es posible. Especialmente, los programas que escriben los sistemas de archivos no devuelven datos suficientes, de modo que la barra de progreso permanece en 0 %.</para
 ></note>
 
 <important>

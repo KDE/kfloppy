@@ -1,17 +1,16 @@
-# translation of kfloppy.po to Spanish
-# Translation to spanish
-# Copyright (C) 2000-2002
+# Spanish translations for kfloppy.po package.
+# Copyright (C) 2000-2025 This file is copyright:
+# This file is distributed under the same license as the kfloppy package.
 #
-# Pablo de Vicente <vicente@oan.es>, 2000-2002.
-# Eloy Cuadra <eloihr2@eresmas.com>, 2003.
-# Eloy Cuadra <ecuadra@eloihr.net>, 2004, 2005, 2007, 2008, 2009, 2016.
-# Javier Viñal <fjvinal@gmail.com>, 2013.
+# SPDX-FileCopyrightText: 2000-2002 Pablo de Vicente <vicente@oan.es>
+# SPDX-FileCopyrightText: 2003, 2004, 2005, 2007, 2008, 2009, 2016, 2025 Eloy Cuadra <ecuadra@eloihr.net>
+# SPDX-FileCopyrightText: 2013 Javier Viñal <fjvinal@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: kfloppy\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-11-05 12:40+0000\n"
-"PO-Revision-Date: 2016-03-26 11:22+0100\n"
+"PO-Revision-Date: 2025-09-20 21:01+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
