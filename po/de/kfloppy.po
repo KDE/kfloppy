@@ -1,9 +1,9 @@
-# Gregor Zumstein <zumstein@ssd.ethz.ch>, 2003, 2004, 2005.
-# Stephan Johach <hunsum@gmx.de>, 2004, 2005, 2006.
-# Thomas Reitelbach <tr@erdfunkstelle.de>, 2007, 2008.
-# Gregor Zumstein <gz@orchester-bremgarten.ch>, 2007.
-# Burkhard Lück <lueck@hube-lueck.de>, 2009, 2016, 2017, 2021.
-# Frederik Schwarzer <schwarzer@kde.org>, 2010, 2011, 2012, 2014.
+# SPDX-FileCopyrightText: 2003, 2004, 2005 Gregor Zumstein <zumstein@ssd.ethz.ch>
+# SPDX-FileCopyrightText: 2004, 2005, 2006 Stephan Johach <hunsum@gmx.de>
+# SPDX-FileCopyrightText: 2007, 2008 Thomas Reitelbach <tr@erdfunkstelle.de>
+# SPDX-FileCopyrightText: 2007 Gregor Zumstein <gz@orchester-bremgarten.ch>
+# SPDX-FileCopyrightText: 2009, 2016, 2017, 2021 Burkhard Lück <lueck@hube-lueck.de>
+# SPDX-FileCopyrightText: 2010, 2011, 2012, 2014 Frederik Schwarzer <schwarzer@kde.org>
 msgid ""
 msgstr ""
 "Project-Id-Version: kfloppy\n"
