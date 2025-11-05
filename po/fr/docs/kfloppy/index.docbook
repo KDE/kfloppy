@@ -204,14 +204,14 @@
 >Réglages</title>
 
 <para
->Les réglages se font au moyen des trois boîtes déroulantes situées en haut à gauche de &kfloppy;.</para>
+>Les réglages se font au moyen des trois boites déroulantes situées en haut à gauche de &kfloppy;.</para>
 
 <sect2 id="selectdrive">
 <title
 >Lecteur</title>
 
 <para
->En cliquant sur la boîte déroulante du haut, intitulée <guilabel
+>En cliquant sur la boite déroulante du haut, intitulée <guilabel
 >Lecteur de disquette : </guilabel
 >, l'utilisateur aura les deux choix suivants : </para>
 
@@ -227,7 +227,7 @@
 </itemizedlist>
 
 <para
->En cliquant sur la seconde boîte déroulante en partant du haut, intitulée <guilabel
+>En cliquant sur la seconde boite déroulante en partant du haut, intitulée <guilabel
 >Taille : </guilabel
 >, l'utilisateur aura les quatre choix suivants : </para>
 
@@ -329,7 +329,7 @@ Mac 800KB floppies at all, not only formatting. -->
 <title
 >Options de formatage</title>
 <para
->Dans la boîte encadrée vers le centre de &kfloppy;, l'utilisateur trouvera un lot de quatre options de formatage. Les deux options du haut sont des boutons radio.</para
+>Dans la boite encadrée vers le centre de &kfloppy;, l'utilisateur trouvera un lot de quatre options de formatage. Les deux options du haut sont des boutons radio.</para
 > <note
 ><para
 >Ce terme (boutons radio) indique des options qui s'excluent - de la même manière qu'une radio ne peut recevoir qu'une seule station à la fois avec ses boutons de présélection.</para
@@ -447,7 +447,7 @@ Mac 800KB floppies at all, not only formatting. -->
 >La zone du haut est un indicateur qui donne des informations sur le processus sous-jacent, en particulier sur l'erreur éventuelle rencontrée dans le processus.</para>
 
 <para
->La zone du bas est une barre de progression. Elle affiche à la fois graphiquement et numériquement l'avancement d'abord du formatage, puis de la vérification. Avant de commencer, elle apparaît vide - montrant le chiffre 0 % au centre. Au fur et à mesure que chaque processus s'exécute, la progression est suivie graphiquement et la zone se remplit de la gauche vers la droite. Simultanément, le nombre au centre augmente de manière à représenter le pourcentage exact du processus qui est déjà effectué.</para>
+>La zone du bas est une barre de progression. Elle affiche à la fois graphiquement et numériquement l'avancement d'abord du formatage, puis de la vérification. Avant de commencer, elle apparait vide - montrant le chiffre 0 % au centre. Au fur et à mesure que chaque processus s'exécute, la progression est suivie graphiquement et la zone se remplit de la gauche vers la droite. Simultanément, le nombre au centre augmente de manière à représenter le pourcentage exact du processus qui est déjà effectué.</para>
 
 <note
 ><para
@@ -477,7 +477,7 @@ Mac 800KB floppies at all, not only formatting. -->
 ></term>
 <listitem>
 <para
->Ceci fait apparaître un menu contextuel et des actions pour ouvrir ce manuel, signaler un bogue, modifier la langue du logiciel et afficher les noms des auteurs et la version de &kfloppy; et &kde;.</para>
+>Ceci fait apparaitre un menu contextuel et des actions pour ouvrir ce manuel, signaler un bogue, modifier la langue du logiciel et afficher les noms des auteurs et la version de &kfloppy; et &kde;.</para>
 </listitem>
 </varlistentry>
 
@@ -760,7 +760,7 @@ Mac 800KB floppies at all, not only formatting. -->
 
 <note>
 <para
->Vous devez saisir la chaîne <filename class="directory"
+>Vous devez saisir la chaine <filename class="directory"
 >/dev/</filename
 > pour deux raisons :</para>
 <itemizedlist>
@@ -770,7 +770,7 @@ Mac 800KB floppies at all, not only formatting. -->
 </listitem>
 <listitem>
 <para
->Ceci est une sécurité évitant une écriture parasite de l'utilisateur dans la boîte de saisie, qui pourrait être le nom d'un périphérique.</para>
+>Ceci est une sécurité évitant une écriture parasite de l'utilisateur dans la boite de saisie, qui pourrait être le nom d'un périphérique.</para>
 </listitem>
 </itemizedlist>
 </note>
@@ -804,7 +804,7 @@ Mac 800KB floppies at all, not only formatting. -->
 <para
 >Lorsque vous êtes prêt à formater, cliquez sur le bouton <guibutton
 >Formater</guibutton
-> comme d'habitude. Vous obtiendrez une boîte de message vous demandant de vérifier le nom du périphérique. </para>
+> comme d'habitude. Vous obtiendrez une boite de message vous demandant de vérifier le nom du périphérique. </para>
 
 <warning
 ><para
