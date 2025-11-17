@@ -2,7 +2,7 @@
 # Translation of kfloppy.po to Slovenian
 # -*- mode:po; coding:iso-latin-2; -*- kfloppy Slovenian message catalogue.
 # Copyright (C) 2001,2003, 2004, 2005 Free Software Foundation, Inc.
-# $Id: kfloppy.po 1664120 2023-11-05 13:15:21Z scripty $
+# $Id: kfloppy.po 1722990 2025-11-17 09:39:34Z scripty $
 # $Source$
 #
 # Marko Samastur <markos@elite.org>, 2000.

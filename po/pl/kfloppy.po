@@ -1,4 +1,4 @@
-# Version: $Revision: 1681059 $
+# Version: $Revision: 1722990 $
 # translation of kfloppy.po to Polish
 # translation of kfloppy.po to
 # KTranslator Generated File
