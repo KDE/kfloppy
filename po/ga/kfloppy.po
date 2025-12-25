@@ -2,20 +2,22 @@
 # Copyright (C) 2009 This_file_is_part_of_KDE
 # This file is distributed under the same license as the kfloppy package.
 # Kevin Scannell <kscanne@gmail.com>, 2009.
+# SPDX-FileCopyrightText: 2025 Charlotte <altronic25@protonmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: kdeutils/kfloppy.po\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-17 09:01+0000\n"
-"PO-Revision-Date: 2004-12-03 14:52-0500\n"
-"Last-Translator: Kevin Scannell <kscanne@gmail.com>\n"
-"Language-Team: Irish <gaeilge-gnulinux@lists.sourceforge.net>\n"
+"PO-Revision-Date: 2025-12-24 11:48+0000\n"
+"Last-Translator: Charlotte <altronic25@protonmail.com>\n"
+"Language-Team: Irish\n"
 "Language: ga\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=5; plural=n==1 ? 0 : n==2 ? 1 : n<7 ? 2 : n < 11 ? "
 "3 : 4\n"
+"X-Generator: Lokalize 25.12.0\n"
 
 #: floppy.cpp:81
 #, kde-format
@@ -542,12 +544,7 @@ msgid "KDE Floppy Disk Utility"
 msgstr "Uirlis Diosca Fhlapaigh KDE"
 
 #: main.cpp:55
-#, fuzzy, kde-format
-#| msgid ""
-#| "(c) 1997, Bernd Johannes Wuebben\n"
-#| "(c) 2001, Chris Howells\n"
-#| "(c) 2002, Adriaan de Groot\n"
-#| "(c) 2004, 2005, Nicolas Goutte"
+#, kde-format
 msgid ""
 "(c) 1997, Bernd Johannes Wuebben\n"
 "(c) 2001, Chris Howells\n"
@@ -558,7 +555,8 @@ msgstr ""
 "© 1997, Bernd Johannes Wuebben\n"
 "© 2001, Chris Howells\n"
 "© 2002, Adriaan de Groot\n"
-"© 2004, 2005, Nicolas Goutte"
+"© 2004, 2005, Nicolas Goutte\n"
+"© 2015, 2016, Wolfgang Bauer"
 
 #: main.cpp:60
 #, kde-format
@@ -610,12 +608,12 @@ msgstr "Dheisigh sé KFloppy le haghaidh KDE 3.4"
 #: main.cpp:67
 #, kde-format
 msgid "Wolfgang Bauer"
-msgstr ""
+msgstr "Wolfgang Bauer"
 
 #: main.cpp:67
 #, kde-format
 msgid "Port KFloppy to KF5"
-msgstr ""
+msgstr "Aistrigh KFloppy chun KF5"
 
 #: main.cpp:69
 #, kde-format
