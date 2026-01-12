@@ -442,7 +442,7 @@ msgstr "No s'ha pogut iniciar fdformat."
 #: format.cpp:432
 #, kde-format
 msgid "Error formatting track %1."
-msgstr "S'ha produït un error en formatar la pista %1."
+msgstr "S'ha produït un error mentre es formatava la pista %1."
 
 #: format.cpp:435 format.cpp:460
 #, kde-format
@@ -458,12 +458,12 @@ msgstr ""
 #: format.cpp:453
 #, kde-format
 msgid "Low-level formatting error at track %1."
-msgstr "S'ha produït un error en formatar a baix nivell a la pista %1."
+msgstr "S'ha produït un error mentre es formatava a baix nivell a la pista %1."
 
 #: format.cpp:456
 #, kde-format
 msgid "Low-level formatting error: %1"
-msgstr "S'ha produït un error en formatar a baix nivell: %1"
+msgstr "S'ha produït un error mentre es formatava a baix nivell: %1"
 
 #: format.cpp:467 format.cpp:647 format.cpp:803 format.cpp:889
 #, kde-format
@@ -477,7 +477,7 @@ msgstr ""
 #: format.cpp:472
 #, kde-format
 msgid "Low-level format error: %1"
-msgstr "S'ha produït un error en formatar a baix nivell: %1"
+msgstr "S'ha produït un error mentre es formatava a baix nivell: %1"
 
 #: format.cpp:514
 #, kde-format
