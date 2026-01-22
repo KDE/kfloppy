@@ -425,7 +425,6 @@ void FloppyData::quit()
         formatActions->quit();
     writeSettings();
     qApp->quit();
-    delete this;
 }
 
 void FloppyData::setEnabled(bool b)
