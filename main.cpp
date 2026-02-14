@@ -25,6 +25,7 @@
 
 #include <QApplication>
 #include <QCommandLineParser>
+#include <QIcon>
 
 #include <KAboutData>
 #include <KCrash>
