@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kfloppy\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 09:01+0000\n"
+"POT-Creation-Date: 2026-02-15 02:24+0000\n"
 "PO-Revision-Date: 2013-10-18 20:14+0000\n"
 "Last-Translator: Samir Ribić <Unknown>\n"
 "Language-Team: Bosanski <lokal@lugbih.org>\n"
@@ -28,7 +28,7 @@ msgstr ""
 msgid "Floppy &drive:"
 msgstr "Flopi &uređaj:"
 
-#: floppy.cpp:89 floppy.cpp:364 floppy.cpp:654
+#: floppy.cpp:89 floppy.cpp:364 floppy.cpp:653
 #, kde-format
 msgctxt "Primary floppy drive"
 msgid "Primary"
@@ -50,12 +50,12 @@ msgstr "<qt>Izaberite flopi uređaj.</qt>"
 msgid "&Size:"
 msgstr "&Veličina:"
 
-#: floppy.cpp:104 floppy.cpp:656
+#: floppy.cpp:104 floppy.cpp:655
 #, kde-format
 msgid "Auto-Detect"
 msgstr "Automatski otkrij"
 
-#: floppy.cpp:106 floppy.cpp:372 floppy.cpp:658
+#: floppy.cpp:106 floppy.cpp:372 floppy.cpp:657
 #, kde-format
 msgid "3.5\" 1.44MB"
 msgstr "3.5\" 1.44MB"
@@ -100,7 +100,7 @@ msgctxt "BSD"
 msgid "KFloppy supports three file formats under BSD: MS-DOS, UFS, and Ext2"
 msgstr "KFloppy podržava tri formata datoteka pod BSD-om: MS-DOS, UFS i Ext2"
 
-#: floppy.cpp:138 floppy.cpp:163 floppy.cpp:558 floppy.cpp:660
+#: floppy.cpp:138 floppy.cpp:163 floppy.cpp:557 floppy.cpp:659
 #, kde-format
 msgid "DOS"
 msgstr "DOS"
@@ -120,7 +120,7 @@ msgstr ""
 "Program mkdosfs <b>nije nađen</b>. Formatiranje za MSDOS <b>nije dostupno</"
 "b>."
 
-#: floppy.cpp:146 floppy.cpp:179 floppy.cpp:569
+#: floppy.cpp:146 floppy.cpp:179 floppy.cpp:568
 #, kde-format
 msgid "ext2"
 msgstr "ext2"
@@ -136,7 +136,7 @@ msgid "Program mke2fs <b>not found</b>. Ext2 formatting <b>not available</b>"
 msgstr ""
 "Program mke2fs <b>nije nađen</b>. Formatiranje na ext2 <b>nije dostupno</b>"
 
-#: floppy.cpp:154 floppy.cpp:588
+#: floppy.cpp:154 floppy.cpp:587
 #, kde-format
 msgid "Minix"
 msgstr "Minix"
@@ -177,7 +177,7 @@ msgstr ""
 "Program newfs_msdos <b>nije nađen</b>. Formatiranje na MSDOS <b>nije "
 "dostupno</b>."
 
-#: floppy.cpp:171 floppy.cpp:487 floppy.cpp:580
+#: floppy.cpp:171 floppy.cpp:486 floppy.cpp:579
 #, kde-format
 msgid "UFS"
 msgstr "UFS"
@@ -292,7 +292,7 @@ msgstr ""
 "<qt>Označite ovo ako hoćete da disketa ima oznaku (volume label). Imajte na "
 "umu da Minix uopšte ne podržava oznake.</qt>"
 
-#: floppy.cpp:256 floppy.cpp:652
+#: floppy.cpp:256 floppy.cpp:651
 #, kde-format
 msgctxt "Volume label, maximal 11 characters"
 msgid "KDE Floppy"
@@ -308,7 +308,7 @@ msgstr ""
 "<qt>Ovo je za oznaku diskete. Zbog ograničenja MS-DOS-a oznaka može biti "
 "duga samo 11 znakova. Minix ne podržava oznake, šta god unijeli ovdje.</qt>"
 
-#: floppy.cpp:270 floppy.cpp:469
+#: floppy.cpp:270 floppy.cpp:468
 #, kde-format
 msgid "&Format"
 msgstr "&Formatiraj"
@@ -342,7 +342,7 @@ msgstr ""
 msgid "KDE Floppy Formatter"
 msgstr "KDE program za formatiranje disketa"
 
-#: floppy.cpp:488
+#: floppy.cpp:487
 #, kde-format
 msgctxt "BSD"
 msgid "Formatting with BSD on a user-given device is only possible with UFS"
@@ -350,7 +350,7 @@ msgstr ""
 "Formatiranje sa BSD-om na uređaju zadatom od korisnika moguće je samo sa UFS-"
 "om"
 
-#: floppy.cpp:495
+#: floppy.cpp:494
 #, kde-format
 msgid ""
 "<qt>Formatting will erase all data on the device:<br/><b>%1</b><br/>(Please "
@@ -361,17 +361,17 @@ msgstr ""
 ">(Provjerite ispravnost imena uređaja.)<br/>Sigurni ste da želite da "
 "nastavite?</qt>"
 
-#: floppy.cpp:499 floppy.cpp:511
+#: floppy.cpp:498 floppy.cpp:510
 #, kde-format
 msgid "Proceed?"
 msgstr "Da nastavim?"
 
-#: floppy.cpp:505
+#: floppy.cpp:504
 #, kde-format
 msgid "Full formatting of a user-given device is not possible."
 msgstr "Potpuno formatiranje korisnički zadatog uređaja nije moguće."
 
-#: floppy.cpp:509
+#: floppy.cpp:508
 #, kde-format
 msgid ""
 "Formatting will erase all data on the disk.\n"
@@ -531,17 +531,17 @@ msgstr "Ne mogu da nađem program za pravljenje sistema datoteka Minix."
 msgid "Cannot start Minix format program."
 msgstr "Ne mogu da pokrenem program za Minix formatiranje."
 
-#: main.cpp:51
+#: main.cpp:52
 #, kde-format
 msgid "KFloppy"
 msgstr "KFloppy"
 
-#: main.cpp:53
+#: main.cpp:54
 #, kde-format
 msgid "KDE Floppy Disk Utility"
 msgstr "KDE floppy disk alat"
 
-#: main.cpp:55
+#: main.cpp:56
 #, fuzzy, kde-format
 #| msgid ""
 #| "(c) 1997, Bernd Johannes Wuebben\n"
@@ -560,75 +560,75 @@ msgstr ""
 "(c) 2002, Adriaan de Groot\n"
 "(c) 2004, 2005, Nicolas Goutte"
 
-#: main.cpp:60
+#: main.cpp:61
 #, kde-format
 msgid "KFloppy helps you format floppies with the filesystem of your choice."
 msgstr ""
 "KFloppy vam pomaže da formatirate diskete za sistem datoteka po vašem izboru."
 
-#: main.cpp:63
+#: main.cpp:64
 #, kde-format
 msgid "Bernd Johannes Wuebben"
 msgstr "Bernd Johannes Wuebben"
 
-#: main.cpp:63
+#: main.cpp:64
 #, kde-format
 msgid "Author and former maintainer"
 msgstr "Autor i raniji održavalac"
 
-#: main.cpp:64
+#: main.cpp:65
 #, kde-format
 msgid "Chris Howells"
 msgstr "Chris Howells"
 
-#: main.cpp:64
+#: main.cpp:65
 #, kde-format
 msgid "User interface re-design"
 msgstr "Redizajn korisničkog interfejsa"
 
-#: main.cpp:65
+#: main.cpp:66
 #, kde-format
 msgid "Adriaan de Groot"
 msgstr "Adriaan de Groot"
 
-#: main.cpp:65
+#: main.cpp:66
 #, kde-format
 msgid "Add BSD support"
 msgstr "Dodaj BSD podršku"
 
-#: main.cpp:66
+#: main.cpp:67
 #, kde-format
 msgid "Nicolas Goutte"
 msgstr "Nicolas Goutte"
 
-#: main.cpp:66
+#: main.cpp:67
 #, kde-format
 msgid "Make KFloppy work again for KDE 3.4"
 msgstr "Učinio da KFloppy ponovo radi u KDE-u 3.4"
 
-#: main.cpp:67
+#: main.cpp:68
 #, kde-format
 msgid "Wolfgang Bauer"
 msgstr ""
 
-#: main.cpp:67
+#: main.cpp:68
 #, kde-format
 msgid "Port KFloppy to KF5"
 msgstr ""
 
-#: main.cpp:69
+#: main.cpp:70
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
 msgstr "Vedran Ljubović, Samir Ribić"
 
-#: main.cpp:69
+#: main.cpp:70
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "Vljubovic@smartnet.ba,samir.ribic@etf.unsa.ba"
 
-#: main.cpp:77
+#: main.cpp:80
 #, kde-format
 msgid "Default device"
 msgstr "Podrazumijevani uređaj"

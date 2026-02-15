@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: KDE 4.3\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 09:01+0000\n"
+"POT-Creation-Date: 2026-02-15 02:24+0000\n"
 "PO-Revision-Date: 2021-01-02 14:47+0100\n"
 "Last-Translator: Kristóf Kiszel <kiszel.kristof@gmail.com>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -21,7 +21,7 @@ msgstr ""
 msgid "Floppy &drive:"
 msgstr "Floppy-meg&hajtó:"
 
-#: floppy.cpp:89 floppy.cpp:364 floppy.cpp:654
+#: floppy.cpp:89 floppy.cpp:364 floppy.cpp:653
 #, kde-format
 msgctxt "Primary floppy drive"
 msgid "Primary"
@@ -43,12 +43,12 @@ msgstr "<qt>Válassza ki a floppy-meghajtót.</qt>"
 msgid "&Size:"
 msgstr "Mé&ret:"
 
-#: floppy.cpp:104 floppy.cpp:656
+#: floppy.cpp:104 floppy.cpp:655
 #, kde-format
 msgid "Auto-Detect"
 msgstr "Automatikus"
 
-#: floppy.cpp:106 floppy.cpp:372 floppy.cpp:658
+#: floppy.cpp:106 floppy.cpp:372 floppy.cpp:657
 #, kde-format
 msgid "3.5\" 1.44MB"
 msgstr "3,5\" 1,44MB"
@@ -95,7 +95,7 @@ msgstr ""
 "A KFloppy BSD-alapú rendszerekben három fájlrendszert támogat: MS-DOS, UFS "
 "és Ext2"
 
-#: floppy.cpp:138 floppy.cpp:163 floppy.cpp:558 floppy.cpp:660
+#: floppy.cpp:138 floppy.cpp:163 floppy.cpp:557 floppy.cpp:659
 #, kde-format
 msgid "DOS"
 msgstr "DOS"
@@ -115,7 +115,7 @@ msgstr ""
 "Az mkdosfs program <b>nem található</b>. Az MS-DOS formátum <b>nem "
 "használható</b>."
 
-#: floppy.cpp:146 floppy.cpp:179 floppy.cpp:569
+#: floppy.cpp:146 floppy.cpp:179 floppy.cpp:568
 #, kde-format
 msgid "ext2"
 msgstr "ext2"
@@ -132,7 +132,7 @@ msgstr ""
 "Az mke2fs program <b>nem található</b>. Az Ext2 formátum <b>nem választható</"
 "b>."
 
-#: floppy.cpp:154 floppy.cpp:588
+#: floppy.cpp:154 floppy.cpp:587
 #, kde-format
 msgid "Minix"
 msgstr "Minix"
@@ -174,7 +174,7 @@ msgstr ""
 "A newfs_msdos program <b>nem található</b>. Az MSDOS formátum <b>nem "
 "használható</b>."
 
-#: floppy.cpp:171 floppy.cpp:487 floppy.cpp:580
+#: floppy.cpp:171 floppy.cpp:486 floppy.cpp:579
 #, kde-format
 msgid "UFS"
 msgstr "UFS"
@@ -291,7 +291,7 @@ msgstr ""
 "<qt>Jelölje be ezt, ha lemezcímkét szeretne tenni a lemezre. A Minix "
 "fájlrendszer nem támogatja lemezcímkék használatát.</qt>"
 
-#: floppy.cpp:256 floppy.cpp:652
+#: floppy.cpp:256 floppy.cpp:651
 #, kde-format
 msgctxt "Volume label, maximal 11 characters"
 msgid "KDE Floppy"
@@ -308,7 +308,7 @@ msgstr ""
 "hosszúságú lehet. A Minix nem támogatja lemezcímkék használatát, ezért abban "
 "az esetben mindegy, mi kerül ide.</qt>"
 
-#: floppy.cpp:270 floppy.cpp:469
+#: floppy.cpp:270 floppy.cpp:468
 #, kde-format
 msgid "&Format"
 msgstr "&Formázás"
@@ -342,7 +342,7 @@ msgstr ""
 msgid "KDE Floppy Formatter"
 msgstr "KDE floppyformázó"
 
-#: floppy.cpp:488
+#: floppy.cpp:487
 #, kde-format
 msgctxt "BSD"
 msgid "Formatting with BSD on a user-given device is only possible with UFS"
@@ -350,7 +350,7 @@ msgstr ""
 "Felhasználói eszköz formázása BSD rendszerekben csak UFS fájlrendszerrel "
 "lehetséges"
 
-#: floppy.cpp:495
+#: floppy.cpp:494
 #, kde-format
 msgid ""
 "<qt>Formatting will erase all data on the device:<br/><b>%1</b><br/>(Please "
@@ -361,17 +361,17 @@ msgstr ""
 ">(Ellenőrizze, helyes-e az eszköznév.)<br/>Biztosan tovább szeretne lépni?</"
 "qt>"
 
-#: floppy.cpp:499 floppy.cpp:511
+#: floppy.cpp:498 floppy.cpp:510
 #, kde-format
 msgid "Proceed?"
 msgstr "Folytatás?"
 
-#: floppy.cpp:505
+#: floppy.cpp:504
 #, kde-format
 msgid "Full formatting of a user-given device is not possible."
 msgstr "Felhasználói eszköz teljes formázása nem lehetséges."
 
-#: floppy.cpp:509
+#: floppy.cpp:508
 #, kde-format
 msgid ""
 "Formatting will erase all data on the disk.\n"
@@ -531,17 +531,17 @@ msgstr "Nem található Minix fájlrendszer létrehozására alkalmas program."
 msgid "Cannot start Minix format program."
 msgstr "A Minix-formátumú formázóprogramot nem sikerült elindítani."
 
-#: main.cpp:51
+#: main.cpp:52
 #, kde-format
 msgid "KFloppy"
 msgstr "KFloppy"
 
-#: main.cpp:53
+#: main.cpp:54
 #, kde-format
 msgid "KDE Floppy Disk Utility"
 msgstr "KDE-s floppyformázó"
 
-#: main.cpp:55
+#: main.cpp:56
 #, kde-format
 msgid ""
 "(c) 1997, Bernd Johannes Wuebben\n"
@@ -556,76 +556,76 @@ msgstr ""
 "(c) Nicolas Goutte, 2004, 2005.\n"
 "(c) Wolfgang Bauer, 2015, 2016."
 
-#: main.cpp:60
+#: main.cpp:61
 #, kde-format
 msgid "KFloppy helps you format floppies with the filesystem of your choice."
 msgstr ""
 "A KFloppy segítségével floppy lemezek formázását és a szükséges fájlrendszer "
 "létrehozását lehet elvégezni."
 
-#: main.cpp:63
+#: main.cpp:64
 #, kde-format
 msgid "Bernd Johannes Wuebben"
 msgstr "Bernd Johannes Wuebben"
 
-#: main.cpp:63
+#: main.cpp:64
 #, kde-format
 msgid "Author and former maintainer"
 msgstr "Szerző, korábbi karbantartó"
 
-#: main.cpp:64
+#: main.cpp:65
 #, kde-format
 msgid "Chris Howells"
 msgstr "Chris Howells"
 
-#: main.cpp:64
+#: main.cpp:65
 #, kde-format
 msgid "User interface re-design"
 msgstr "A kezelőfelület áttervezése"
 
-#: main.cpp:65
+#: main.cpp:66
 #, kde-format
 msgid "Adriaan de Groot"
 msgstr "Adriaan de Groot"
 
-#: main.cpp:65
+#: main.cpp:66
 #, kde-format
 msgid "Add BSD support"
 msgstr "BSD-támogatás"
 
-#: main.cpp:66
+#: main.cpp:67
 #, kde-format
 msgid "Nicolas Goutte"
 msgstr "Nicolas Goutte"
 
-#: main.cpp:66
+#: main.cpp:67
 #, kde-format
 msgid "Make KFloppy work again for KDE 3.4"
 msgstr "A KFloppy használhatóvá tétele a KDE 3.4-ben"
 
-#: main.cpp:67
+#: main.cpp:68
 #, kde-format
 msgid "Wolfgang Bauer"
 msgstr "Wolfgang Bauer"
 
-#: main.cpp:67
+#: main.cpp:68
 #, kde-format
 msgid "Port KFloppy to KF5"
 msgstr "A KFloppy portolója KF5-re"
 
-#: main.cpp:69
+#: main.cpp:70
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
 msgstr "Kiszel Kristóf,Sári Gábor,Szántó Tamás"
 
-#: main.cpp:69
+#: main.cpp:70
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "kiszel.kristof@gmail.com,saga@mail.externet.hu,tszanto@interware.hu"
 
-#: main.cpp:77
+#: main.cpp:80
 #, kde-format
 msgid "Default device"
 msgstr "Az alapértelmezett eszköz"

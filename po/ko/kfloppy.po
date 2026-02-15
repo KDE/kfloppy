@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kfloppy\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 09:01+0000\n"
+"POT-Creation-Date: 2026-02-15 02:24+0000\n"
 "PO-Revision-Date: 2020-04-05 12:50+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -24,7 +24,7 @@ msgstr ""
 msgid "Floppy &drive:"
 msgstr "플로피 드라이브(&D):"
 
-#: floppy.cpp:89 floppy.cpp:364 floppy.cpp:654
+#: floppy.cpp:89 floppy.cpp:364 floppy.cpp:653
 #, kde-format
 msgctxt "Primary floppy drive"
 msgid "Primary"
@@ -46,12 +46,12 @@ msgstr "<qt>플로피 드라이브를 선택하십시오.</qt>"
 msgid "&Size:"
 msgstr "크기(&S):"
 
-#: floppy.cpp:104 floppy.cpp:656
+#: floppy.cpp:104 floppy.cpp:655
 #, kde-format
 msgid "Auto-Detect"
 msgstr "자동 감지"
 
-#: floppy.cpp:106 floppy.cpp:372 floppy.cpp:658
+#: floppy.cpp:106 floppy.cpp:372 floppy.cpp:657
 #, kde-format
 msgid "3.5\" 1.44MB"
 msgstr "3.5\" 1.44MB"
@@ -95,7 +95,7 @@ msgctxt "BSD"
 msgid "KFloppy supports three file formats under BSD: MS-DOS, UFS, and Ext2"
 msgstr "KFloppy는 BSD에서 다음 세 파일 형식을 지원합니다: MS-DOS, UFS, Ext2"
 
-#: floppy.cpp:138 floppy.cpp:163 floppy.cpp:558 floppy.cpp:660
+#: floppy.cpp:138 floppy.cpp:163 floppy.cpp:557 floppy.cpp:659
 #, kde-format
 msgid "DOS"
 msgstr "DOS"
@@ -115,7 +115,7 @@ msgstr ""
 "mkdosfs 프로그램을 <b>찾을 수 없습니다.</b> MSDOS 포맷을 <b>사용할 수 없습니"
 "다.</b>"
 
-#: floppy.cpp:146 floppy.cpp:179 floppy.cpp:569
+#: floppy.cpp:146 floppy.cpp:179 floppy.cpp:568
 #, kde-format
 msgid "ext2"
 msgstr "ext2"
@@ -132,7 +132,7 @@ msgstr ""
 "mke2fs 프로그램을 <b>찾을 수 없습니다.</b> Ext2 포맷을 <b>사용할 수 없습니다."
 "</b>"
 
-#: floppy.cpp:154 floppy.cpp:588
+#: floppy.cpp:154 floppy.cpp:587
 #, kde-format
 msgid "Minix"
 msgstr "Minix"
@@ -173,7 +173,7 @@ msgstr ""
 "newfs_msdos 프로그램을 <b>찾을 수 없습니다.</b> MSDOS 포맷을 <b>사용할 수 없"
 "습니다.</b>"
 
-#: floppy.cpp:171 floppy.cpp:487 floppy.cpp:580
+#: floppy.cpp:171 floppy.cpp:486 floppy.cpp:579
 #, kde-format
 msgid "UFS"
 msgstr "UFS"
@@ -288,7 +288,7 @@ msgstr ""
 "<qt>플로피의 볼륨 레이블을 지정하려면 선택하십시오. Minix는 볼륨 레이블을 지"
 "원하지 않습니다.</qt>"
 
-#: floppy.cpp:256 floppy.cpp:652
+#: floppy.cpp:256 floppy.cpp:651
 #, kde-format
 msgctxt "Volume label, maximal 11 characters"
 msgid "KDE Floppy"
@@ -305,7 +305,7 @@ msgstr ""
 "대 11글자까지 사용할 수 있습니다. Minix의 경우 여기에 무엇을 입력하든지 레이"
 "블을 지원하지 않습니다.</qt>"
 
-#: floppy.cpp:270 floppy.cpp:469
+#: floppy.cpp:270 floppy.cpp:468
 #, kde-format
 msgid "&Format"
 msgstr "포맷(&F)"
@@ -339,13 +339,13 @@ msgstr ""
 msgid "KDE Floppy Formatter"
 msgstr "KDE 플로피 포맷 도구"
 
-#: floppy.cpp:488
+#: floppy.cpp:487
 #, kde-format
 msgctxt "BSD"
 msgid "Formatting with BSD on a user-given device is only possible with UFS"
 msgstr "BSD에서 사용자 정의 장치에 포맷하는 것은 UFS만 가능합니다."
 
-#: floppy.cpp:495
+#: floppy.cpp:494
 #, kde-format
 msgid ""
 "<qt>Formatting will erase all data on the device:<br/><b>%1</b><br/>(Please "
@@ -355,17 +355,17 @@ msgstr ""
 "<qt>포맷 과정은 다음 장치의 데이터를 모두 지웁니다:<br /><b>%1</b><br />장치 "
 "이름이 올바른지 확인하십시오.<br />계속 진행하시겠습니까?</qt>"
 
-#: floppy.cpp:499 floppy.cpp:511
+#: floppy.cpp:498 floppy.cpp:510
 #, kde-format
 msgid "Proceed?"
 msgstr "계속 진행하시겠습니까?"
 
-#: floppy.cpp:505
+#: floppy.cpp:504
 #, kde-format
 msgid "Full formatting of a user-given device is not possible."
 msgstr "사용자가 지정한 장치를 전체 포맷할 수 없습니다."
 
-#: floppy.cpp:509
+#: floppy.cpp:508
 #, kde-format
 msgid ""
 "Formatting will erase all data on the disk.\n"
@@ -524,17 +524,17 @@ msgstr "Minix 파일 시스템을 만드는 프로그램을 찾을 수 없습니
 msgid "Cannot start Minix format program."
 msgstr "Minix 포맷 프로그램을 시작할 수 없습니다."
 
-#: main.cpp:51
+#: main.cpp:52
 #, kde-format
 msgid "KFloppy"
 msgstr "KFloppy"
 
-#: main.cpp:53
+#: main.cpp:54
 #, kde-format
 msgid "KDE Floppy Disk Utility"
 msgstr "KDE 플로피 디스크 도구"
 
-#: main.cpp:55
+#: main.cpp:56
 #, kde-format
 msgid ""
 "(c) 1997, Bernd Johannes Wuebben\n"
@@ -549,74 +549,74 @@ msgstr ""
 "(c) 2004, 2005, Nicolas Goutte\n"
 "(c) 2015, 2016, Wolfgang Bauer"
 
-#: main.cpp:60
+#: main.cpp:61
 #, kde-format
 msgid "KFloppy helps you format floppies with the filesystem of your choice."
 msgstr "KFloppy는 선택한 파일 시스템으로 플로피를 포맷합니다."
 
-#: main.cpp:63
+#: main.cpp:64
 #, kde-format
 msgid "Bernd Johannes Wuebben"
 msgstr "Bernd Johannes Wuebben"
 
-#: main.cpp:63
+#: main.cpp:64
 #, kde-format
 msgid "Author and former maintainer"
 msgstr "작성자와 이전 관리자"
 
-#: main.cpp:64
+#: main.cpp:65
 #, kde-format
 msgid "Chris Howells"
 msgstr "Chris Howells"
 
-#: main.cpp:64
+#: main.cpp:65
 #, kde-format
 msgid "User interface re-design"
 msgstr "사용자 인터페이스 재설계"
 
-#: main.cpp:65
+#: main.cpp:66
 #, kde-format
 msgid "Adriaan de Groot"
 msgstr "Adriaan de Groot"
 
-#: main.cpp:65
+#: main.cpp:66
 #, kde-format
 msgid "Add BSD support"
 msgstr "BSD 지원 추가"
 
-#: main.cpp:66
+#: main.cpp:67
 #, kde-format
 msgid "Nicolas Goutte"
 msgstr "Nicolas Goutte"
 
-#: main.cpp:66
+#: main.cpp:67
 #, kde-format
 msgid "Make KFloppy work again for KDE 3.4"
 msgstr "KDE 3.4에서 동작하도록 다시 정리"
 
-#: main.cpp:67
+#: main.cpp:68
 #, kde-format
 msgid "Wolfgang Bauer"
 msgstr "Wolfgang Bauer"
 
-#: main.cpp:67
+#: main.cpp:68
 #, kde-format
 msgid "Port KFloppy to KF5"
 msgstr "KF5 포팅"
 
-#: main.cpp:69
+#: main.cpp:70
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
 msgstr "박신조"
 
-#: main.cpp:69
+#: main.cpp:70
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "kde@peremen.name"
 
-#: main.cpp:77
+#: main.cpp:80
 #, kde-format
 msgid "Default device"
 msgstr "기본 장치"

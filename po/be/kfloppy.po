@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kfloppy\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 09:01+0000\n"
+"POT-Creation-Date: 2026-02-15 02:24+0000\n"
 "PO-Revision-Date: 2007-04-04 17:15+0300\n"
 "Last-Translator: Darafei Praliaskouski <komzpa@licei2.com>\n"
 "Language-Team: Belarusian (Official spelling) <i18n@mova.org>\n"
@@ -24,7 +24,7 @@ msgstr ""
 msgid "Floppy &drive:"
 msgstr "Дыскавод:"
 
-#: floppy.cpp:89 floppy.cpp:364 floppy.cpp:654
+#: floppy.cpp:89 floppy.cpp:364 floppy.cpp:653
 #, fuzzy, kde-format
 msgctxt "Primary floppy drive"
 msgid "Primary"
@@ -46,12 +46,12 @@ msgstr "<qt>Вылучыце дыскавод.</qt>"
 msgid "&Size:"
 msgstr "Памер:"
 
-#: floppy.cpp:104 floppy.cpp:656
+#: floppy.cpp:104 floppy.cpp:655
 #, fuzzy, kde-format
 msgid "Auto-Detect"
 msgstr "Аўтавызначэнне"
 
-#: floppy.cpp:106 floppy.cpp:372 floppy.cpp:658
+#: floppy.cpp:106 floppy.cpp:372 floppy.cpp:657
 #, fuzzy, kde-format
 msgid "3.5\" 1.44MB"
 msgstr "3.5\" 1.44MБ"
@@ -98,7 +98,7 @@ msgid "KFloppy supports three file formats under BSD: MS-DOS, UFS, and Ext2"
 msgstr ""
 "У гэтай праграме пад BSD падтрымліваюцца файлавыя сістэмы: MS-DOS, UFS і Ext2"
 
-#: floppy.cpp:138 floppy.cpp:163 floppy.cpp:558 floppy.cpp:660
+#: floppy.cpp:138 floppy.cpp:163 floppy.cpp:557 floppy.cpp:659
 #, fuzzy, kde-format
 msgid "DOS"
 msgstr "МS-DOS"
@@ -118,7 +118,7 @@ msgstr ""
 "Праграма mkdosfs <b>не знойдзеная</b>. Фарматаванне пад файлавую сістэму MS-"
 "DOS <b>не даступна</b>."
 
-#: floppy.cpp:146 floppy.cpp:179 floppy.cpp:569
+#: floppy.cpp:146 floppy.cpp:179 floppy.cpp:568
 #, fuzzy, kde-format
 msgid "ext2"
 msgstr "ext2"
@@ -135,7 +135,7 @@ msgstr ""
 "Праграма mke2fs <b>не знойдзеная</b>. Фарматаванне пад файлавую сістэму Ext2 "
 "<b>не даступна</b>"
 
-#: floppy.cpp:154 floppy.cpp:588
+#: floppy.cpp:154 floppy.cpp:587
 #, fuzzy, kde-format
 msgid "Minix"
 msgstr "Minix"
@@ -177,7 +177,7 @@ msgstr ""
 "Праграма newfs_msdos <b>не знойдзеная</b>. Фарматаванне пад файлавую сістэму "
 "MS-DOS <b>не даступна</b>."
 
-#: floppy.cpp:171 floppy.cpp:487 floppy.cpp:580
+#: floppy.cpp:171 floppy.cpp:486 floppy.cpp:579
 #, fuzzy, kde-format
 msgid "UFS"
 msgstr "UFS"
@@ -289,7 +289,7 @@ msgstr ""
 "<qt>Уключыце параметр для магчымасці ўказання пазнакі дыскеты. Нататка: "
 "файлавая сістэма Minix не падтрымлівае пазнакі дыскет.</qt>"
 
-#: floppy.cpp:256 floppy.cpp:652
+#: floppy.cpp:256 floppy.cpp:651
 #, fuzzy, kde-format
 msgctxt "Volume label, maximal 11 characters"
 msgid "KDE Floppy"
@@ -306,7 +306,7 @@ msgstr ""
 "павінна перавышаць 11 знакаў. Нататка: файлавая сістэма Minix не "
 "падтрымлівае пазнакі дыскет.</qt>"
 
-#: floppy.cpp:270 floppy.cpp:469
+#: floppy.cpp:270 floppy.cpp:468
 #, fuzzy, kde-format
 msgid "&Format"
 msgstr "Фарматаваць"
@@ -340,14 +340,14 @@ msgstr ""
 msgid "KDE Floppy Formatter"
 msgstr "Фарматаванне дыскет у KDE"
 
-#: floppy.cpp:488
+#: floppy.cpp:487
 #, fuzzy, kde-format
 msgctxt "BSD"
 msgid "Formatting with BSD on a user-given device is only possible with UFS"
 msgstr ""
 "Фарматаванне карыстацкай прылады на BSD з файлавай сістэмай UFS немагчыма"
 
-#: floppy.cpp:495
+#: floppy.cpp:494
 #, fuzzy, kde-format
 msgid ""
 "<qt>Formatting will erase all data on the device:<br/><b>%1</b><br/>(Please "
@@ -357,18 +357,18 @@ msgstr ""
 "<qt>Фарматаванне знішчыць усю інфармацыю на прыладзе: <br/><b>%1</b><br/"
 ">(праверце імя прылады)<br/>Вы ўпэўненыя ў неабходнасці працягу?</qt>"
 
-#: floppy.cpp:499 floppy.cpp:511
+#: floppy.cpp:498 floppy.cpp:510
 #, fuzzy, kde-format
 msgid "Proceed?"
 msgstr "Працягнуць?"
 
-#: floppy.cpp:505
+#: floppy.cpp:504
 #, fuzzy, kde-format
 msgid "Full formatting of a user-given device is not possible."
 msgstr ""
 "Фарматаванне карыстацкай прылады на BSD з файлавай сістэмай UFS немагчыма"
 
-#: floppy.cpp:509
+#: floppy.cpp:508
 #, fuzzy, kde-format
 msgid ""
 "Formatting will erase all data on the disk.\n"
@@ -528,17 +528,17 @@ msgstr ""
 msgid "Cannot start Minix format program."
 msgstr "Не атрымліваецца запусціць праграму фарматавання Minix."
 
-#: main.cpp:51
+#: main.cpp:52
 #, fuzzy, kde-format
 msgid "KFloppy"
 msgstr "KFloppy"
 
-#: main.cpp:53
+#: main.cpp:54
 #, fuzzy, kde-format
 msgid "KDE Floppy Disk Utility"
 msgstr "Утыліта фарматавання дыскет"
 
-#: main.cpp:55
+#: main.cpp:56
 #, kde-format
 msgid ""
 "(c) 1997, Bernd Johannes Wuebben\n"
@@ -548,76 +548,76 @@ msgid ""
 "(c) 2015, 2016, Wolfgang Bauer"
 msgstr ""
 
-#: main.cpp:60
+#: main.cpp:61
 #, fuzzy, kde-format
 msgid "KFloppy helps you format floppies with the filesystem of your choice."
 msgstr ""
 "KFloppy дапаможа адфарматаваць гнуткія дыскі пад файлавую сістэму па вашым "
 "выбары."
 
-#: main.cpp:63
+#: main.cpp:64
 #, kde-format
 msgid "Bernd Johannes Wuebben"
 msgstr ""
 
-#: main.cpp:63
+#: main.cpp:64
 #, fuzzy, kde-format
 msgid "Author and former maintainer"
 msgstr "Аўтар і бягучае суправаджэнне"
 
-#: main.cpp:64
+#: main.cpp:65
 #, kde-format
 msgid "Chris Howells"
 msgstr ""
 
-#: main.cpp:64
+#: main.cpp:65
 #, fuzzy, kde-format
 msgid "User interface re-design"
 msgstr "Інтэрфейс карыстача перапрацаваны"
 
-#: main.cpp:65
+#: main.cpp:66
 #, kde-format
 msgid "Adriaan de Groot"
 msgstr ""
 
-#: main.cpp:65
+#: main.cpp:66
 #, fuzzy, kde-format
 msgid "Add BSD support"
 msgstr "Дадаць падтрымку BSD"
 
-#: main.cpp:66
+#: main.cpp:67
 #, kde-format
 msgid "Nicolas Goutte"
 msgstr ""
 
-#: main.cpp:66
+#: main.cpp:67
 #, fuzzy, kde-format
 msgid "Make KFloppy work again for KDE 3.4"
 msgstr "Партаванне KFloppy на KDE 3.4"
 
-#: main.cpp:67
+#: main.cpp:68
 #, kde-format
 msgid "Wolfgang Bauer"
 msgstr ""
 
-#: main.cpp:67
+#: main.cpp:68
 #, kde-format
 msgid "Port KFloppy to KF5"
 msgstr ""
 
-#: main.cpp:69
+#: main.cpp:70
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
 msgstr ""
 
-#: main.cpp:69
+#: main.cpp:70
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr ""
 
-#: main.cpp:77
+#: main.cpp:80
 #, fuzzy, kde-format
 msgid "Default device"
 msgstr "Прылада па змаўчанні"

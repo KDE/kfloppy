@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kfloppy\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 09:01+0000\n"
+"POT-Creation-Date: 2026-02-15 02:24+0000\n"
 "PO-Revision-Date: 2008-12-19 10:25+0700\n"
 "Last-Translator: Khoem Sokhem <khoemsokhem@khmeros.info>\n"
 "Language-Team: Khmer <support@khmeros.info>\n"
@@ -25,7 +25,7 @@ msgstr ""
 msgid "Floppy &drive:"
 msgstr "ដ្រាយ​ថាស​ទន់ ៖"
 
-#: floppy.cpp:89 floppy.cpp:364 floppy.cpp:654
+#: floppy.cpp:89 floppy.cpp:364 floppy.cpp:653
 #, fuzzy, kde-format
 msgctxt "Primary floppy drive"
 msgid "Primary"
@@ -47,12 +47,12 @@ msgstr "<qt>ជ្រើស​ដ្រាយ​ថាស​ទន់ ។</qt>"
 msgid "&Size:"
 msgstr "ទំហំ ៖"
 
-#: floppy.cpp:104 floppy.cpp:656
+#: floppy.cpp:104 floppy.cpp:655
 #, fuzzy, kde-format
 msgid "Auto-Detect"
 msgstr "​​រកឃើញ​ស្វ័យ​ប្រវត្តិ"
 
-#: floppy.cpp:106 floppy.cpp:372 floppy.cpp:658
+#: floppy.cpp:106 floppy.cpp:372 floppy.cpp:657
 #, fuzzy, kde-format
 msgid "3.5\" 1.44MB"
 msgstr "3.5\" 1.44 មេកាបៃ"
@@ -95,7 +95,7 @@ msgctxt "BSD"
 msgid "KFloppy supports three file formats under BSD: MS-DOS, UFS, and Ext2"
 msgstr "KFloppy BSD DOS UFS និង"
 
-#: floppy.cpp:138 floppy.cpp:163 floppy.cpp:558 floppy.cpp:660
+#: floppy.cpp:138 floppy.cpp:163 floppy.cpp:557 floppy.cpp:659
 #, fuzzy, kde-format
 msgid "DOS"
 msgstr "DOS"
@@ -113,7 +113,7 @@ msgid ""
 "Program mkdosfs <b>not found</b>. MSDOS formatting <b>not available</b>."
 msgstr "កម្មវិធី<b></b><b></b>."
 
-#: floppy.cpp:146 floppy.cpp:179 floppy.cpp:569
+#: floppy.cpp:146 floppy.cpp:179 floppy.cpp:568
 #, fuzzy, kde-format
 msgid "ext2"
 msgstr "ext2"
@@ -128,7 +128,7 @@ msgstr "រកឃើញ​កម្មវិធី mke2fs ។"
 msgid "Program mke2fs <b>not found</b>. Ext2 formatting <b>not available</b>"
 msgstr "<b>រក​មិន​ឃើញ</b>កម្មវិធី mke2fs ។ ការ​ធ្វើ​ទ្រង់ទ្រាយ Ext2<b>មិន​អាច​ប្រើ​បាន</b>"
 
-#: floppy.cpp:154 floppy.cpp:588
+#: floppy.cpp:154 floppy.cpp:587
 #, fuzzy, kde-format
 msgid "Minix"
 msgstr "Minix"
@@ -165,7 +165,7 @@ msgid ""
 "Program newfs_msdos <b>not found</b>. MSDOS formatting <b>not available</b>."
 msgstr "កម្មវិធី<b></b><b></b>."
 
-#: floppy.cpp:171 floppy.cpp:487 floppy.cpp:580
+#: floppy.cpp:171 floppy.cpp:486 floppy.cpp:579
 #, fuzzy, kde-format
 msgid "UFS"
 msgstr "UFS"
@@ -274,7 +274,7 @@ msgstr ""
 "<qt>ពិនិត្យ​វា ប្រសិនបើ​អ្នក​ចង់​បាន​ស្លាក​សំឡេងសម្រាប់​ថាស​ទន់​របស់​អ្នក ។ សូម​ចំណាំថា Minix មិន​គាំទ្រ​ស្លាក​"
 "ទាល់​តែ​សោះ ។</qt>"
 
-#: floppy.cpp:256 floppy.cpp:652
+#: floppy.cpp:256 floppy.cpp:651
 #, fuzzy, kde-format
 msgctxt "Volume label, maximal 11 characters"
 msgid "KDE Floppy"
@@ -290,7 +290,7 @@ msgstr ""
 "<qt>វា​សម្រាប់​ស្លាក​កម្រិត​សំឡេង ។ ដោយ​សារតែ​ការកម្រិត​របស់ MS-DOS ស្លាក​អាច​មានប្រវែង​តែ ១១ "
 "តួអក្សរ​ប៉ុណ្ណោះ ។ សូមចំណាំ​ថា Minix មិន​គាំទ្រ​ស្លាក អ្វី​ក៏​ដោយ​អ្នក​បញ្ចូលនៅ​ទីនេះ ។</qt>"
 
-#: floppy.cpp:270 floppy.cpp:469
+#: floppy.cpp:270 floppy.cpp:468
 #, fuzzy, kde-format
 msgid "&Format"
 msgstr "ទ្រង់ទ្រាយ​"
@@ -322,13 +322,13 @@ msgstr "KFloppy នៃ​ កម្មវិធី សម្រាប់<br /><b
 msgid "KDE Floppy Formatter"
 msgstr "ឧបករណ៍​ធ្វើ​ទ្រង់ទ្រាយ​ថាស​ទន់​របស់ KDE"
 
-#: floppy.cpp:488
+#: floppy.cpp:487
 #, fuzzy, kde-format
 msgctxt "BSD"
 msgid "Formatting with BSD on a user-given device is only possible with UFS"
 msgstr "​ទ្រង់​ទ្រាយ ជាមួយ BSD លើ a ជា ជាមួយ UFS"
 
-#: floppy.cpp:495
+#: floppy.cpp:494
 #, fuzzy, kde-format
 msgid ""
 "<qt>Formatting will erase all data on the device:<br/><b>%1</b><br/>(Please "
@@ -338,17 +338,17 @@ msgstr ""
 "<qt>ការ​ធ្វើ​ទ្រង់ទ្រាយ​នឹង​លុប​ទិន្នន័យ​ទាំង​អស់នៅ​លើ​ឧបករណ៍ ៖<br/><b>%1</b><br/>(សូម​ពិនិត្យ​ភាព​ត្រឹមត្រូវ​"
 "នៃ​ឈ្មោះ​របស់​ឧបករណ៍ ។)<br/>តើ​អ្នក​ប្រាកដ​ជា​ចង់​ធ្វើ​បន្ត​ឬ ?</qt>"
 
-#: floppy.cpp:499 floppy.cpp:511
+#: floppy.cpp:498 floppy.cpp:510
 #, fuzzy, kde-format
 msgid "Proceed?"
 msgstr "ធ្វើ​បន្ត ?"
 
-#: floppy.cpp:505
+#: floppy.cpp:504
 #, fuzzy, kde-format
 msgid "Full formatting of a user-given device is not possible."
 msgstr "​ទ្រង់​ទ្រាយ ជាមួយ BSD លើ a ជា ជាមួយ UFS"
 
-#: floppy.cpp:509
+#: floppy.cpp:508
 #, fuzzy, kde-format
 msgid ""
 "Formatting will erase all data on the disk.\n"
@@ -507,17 +507,17 @@ msgstr "មិនអាច​រកឃើញ​កម្មវិធី​មួ
 msgid "Cannot start Minix format program."
 msgstr "មិន​អាច​ចាប់​ផ្ដើម​កម្មវិធី​ធ្វើ​ទ្រង់ទ្រាយ Minix ។"
 
-#: main.cpp:51
+#: main.cpp:52
 #, fuzzy, kde-format
 msgid "KFloppy"
 msgstr "KFloppy"
 
-#: main.cpp:53
+#: main.cpp:54
 #, fuzzy, kde-format
 msgid "KDE Floppy Disk Utility"
 msgstr "ឧបករណ៍​ថាស​ទន់​របស់ KDE"
 
-#: main.cpp:55
+#: main.cpp:56
 #, fuzzy, kde-format
 msgid ""
 "(c) 1997, Bernd Johannes Wuebben\n"
@@ -527,74 +527,74 @@ msgid ""
 "(c) 2015, 2016, Wolfgang Bauer"
 msgstr "c n c n c n c"
 
-#: main.cpp:60
+#: main.cpp:61
 #, fuzzy, kde-format
 msgid "KFloppy helps you format floppies with the filesystem of your choice."
 msgstr "KFloppy ជួយ​អ្នក​ធ្វើ​ទ្រង់ទ្រាយ​ថាសទន់ ទៅ​តាម​ប្រព័ន្ធ​ឯកសារ​ដែល​អ្នក​ចង់​បាន ។"
 
-#: main.cpp:63
+#: main.cpp:64
 #, kde-format
 msgid "Bernd Johannes Wuebben"
 msgstr ""
 
-#: main.cpp:63
+#: main.cpp:64
 #, fuzzy, kde-format
 msgid "Author and former maintainer"
 msgstr "អ្នក​និពន្ធ និង​អ្នក​ថែទាំ​ពីមុន"
 
-#: main.cpp:64
+#: main.cpp:65
 #, fuzzy, kde-format
 msgid "Chris Howells"
 msgstr "Chris Howells"
 
-#: main.cpp:64
+#: main.cpp:65
 #, fuzzy, kde-format
 msgid "User interface re-design"
 msgstr "រចនា​ចំណុច​ប្រទាក់​អ្នក​ប្រើ​ឡើង​វិញ"
 
-#: main.cpp:65
+#: main.cpp:66
 #, kde-format
 msgid "Adriaan de Groot"
 msgstr ""
 
-#: main.cpp:65
+#: main.cpp:66
 #, fuzzy, kde-format
 msgid "Add BSD support"
 msgstr "បន្ថែម​ការ​គាំទ្រ BSD"
 
-#: main.cpp:66
+#: main.cpp:67
 #, kde-format
 msgid "Nicolas Goutte"
 msgstr ""
 
-#: main.cpp:66
+#: main.cpp:67
 #, fuzzy, kde-format
 msgid "Make KFloppy work again for KDE 3.4"
 msgstr "ធ្វើ​ឲ្យ KFloppy ដំណើរ​ការ​ម្ដង​ទៀត​សម្រាប់ KDE 3.4"
 
-#: main.cpp:67
+#: main.cpp:68
 #, kde-format
 msgid "Wolfgang Bauer"
 msgstr ""
 
-#: main.cpp:67
+#: main.cpp:68
 #, kde-format
 msgid "Port KFloppy to KF5"
 msgstr ""
 
-#: main.cpp:69
+#: main.cpp:70
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
 msgstr "ខឹម សុខែម, ​អេង វណ្ណៈ, អោក ពិសិដ្ឋ​"
 
-#: main.cpp:69
+#: main.cpp:70
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "khoemsokhem@khmeros.info,​​evannak@khmeros.info,piseth_dv@khmeros.info"
 
-#: main.cpp:77
+#: main.cpp:80
 #, fuzzy, kde-format
 msgid "Default device"
 msgstr "ឧបករណ៍​លំនាំ​ដើម"

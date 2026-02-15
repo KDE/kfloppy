@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kfloppy\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 09:01+0000\n"
+"POT-Creation-Date: 2026-02-15 02:24+0000\n"
 "PO-Revision-Date: 2007-08-29 11:03+0545\n"
 "Last-Translator: Narayan Kumar Magar <narayan@mpp.org.np>\n"
 "Language-Team: Nepali <info@mpp.org.np>\n"
@@ -24,7 +24,7 @@ msgstr ""
 msgid "Floppy &drive:"
 msgstr "फ्लपी ड्राइभ:"
 
-#: floppy.cpp:89 floppy.cpp:364 floppy.cpp:654
+#: floppy.cpp:89 floppy.cpp:364 floppy.cpp:653
 #, fuzzy, kde-format
 #| msgid "Primary"
 msgctxt "Primary floppy drive"
@@ -48,12 +48,12 @@ msgstr "<qt>फ्लपी ड्राइभ चयन गर्नुहो�
 msgid "&Size:"
 msgstr "साइज:"
 
-#: floppy.cpp:104 floppy.cpp:656
+#: floppy.cpp:104 floppy.cpp:655
 #, kde-format
 msgid "Auto-Detect"
 msgstr "स्वत: पत्ता लगाउनुहोस्"
 
-#: floppy.cpp:106 floppy.cpp:372 floppy.cpp:658
+#: floppy.cpp:106 floppy.cpp:372 floppy.cpp:657
 #, kde-format
 msgid "3.5\" 1.44MB"
 msgstr "3.5\" 1.44MB"
@@ -98,7 +98,7 @@ msgid "KFloppy supports three file formats under BSD: MS-DOS, UFS, and Ext2"
 msgstr ""
 "केडीई फ्लपीले BSD: अन्तर्गतको तिनवटा फाइल ढाँचा MS-DOS, UFS र Ext2 समर्थन गर्दछ"
 
-#: floppy.cpp:138 floppy.cpp:163 floppy.cpp:558 floppy.cpp:660
+#: floppy.cpp:138 floppy.cpp:163 floppy.cpp:557 floppy.cpp:659
 #, kde-format
 msgid "DOS"
 msgstr "DOS"
@@ -116,7 +116,7 @@ msgid ""
 "Program mkdosfs <b>not found</b>. MSDOS formatting <b>not available</b>."
 msgstr "कार्यक्रम mkdosfs <b>फेला परेन</b> । MSDOS ढाँचा <b>उपलब्ध छैन</b> ।"
 
-#: floppy.cpp:146 floppy.cpp:179 floppy.cpp:569
+#: floppy.cpp:146 floppy.cpp:179 floppy.cpp:568
 #, kde-format
 msgid "ext2"
 msgstr "ext2"
@@ -131,7 +131,7 @@ msgstr "कार्यक्रम mke2fs फेला पर्यो ।"
 msgid "Program mke2fs <b>not found</b>. Ext2 formatting <b>not available</b>"
 msgstr "कार्यक्रम mke2fs <b>फेला परेन </b>। Ext2 ढाँचा <b>उपलब्ध छैन </b>"
 
-#: floppy.cpp:154 floppy.cpp:588
+#: floppy.cpp:154 floppy.cpp:587
 #, kde-format
 msgid "Minix"
 msgstr "Minix"
@@ -168,7 +168,7 @@ msgid ""
 "Program newfs_msdos <b>not found</b>. MSDOS formatting <b>not available</b>."
 msgstr "कार्यक्रम newfs_msdos <b>फेला परेन</b> । MSDOS ढाँचा <b>उपलब्ध छैन</b> ।"
 
-#: floppy.cpp:171 floppy.cpp:487 floppy.cpp:580
+#: floppy.cpp:171 floppy.cpp:486 floppy.cpp:579
 #, kde-format
 msgid "UFS"
 msgstr "UFS"
@@ -278,7 +278,7 @@ msgstr ""
 "<qt>तपाईँको फ्लपीका लागि भोल्युम लेबुल चाहनुहुन्छ भने यसलाई जाँच गर्नुहोस् । Minix'ले सबै "
 "लेबुल समर्थन नगर्ने कुरा याद राख्नुहोस् ।</qt>"
 
-#: floppy.cpp:256 floppy.cpp:652
+#: floppy.cpp:256 floppy.cpp:651
 #, kde-format
 msgctxt "Volume label, maximal 11 characters"
 msgid "KDE Floppy"
@@ -295,7 +295,7 @@ msgstr ""
 "मात्र हुन सक्छ । तपाईँले यहाँ जे प्रविष्ट गरेपनि Minix ले लेबुल समर्थन गर्दैन भन्ने कुरा याद "
 "राख्नुहोस् ।</qt>"
 
-#: floppy.cpp:270 floppy.cpp:469
+#: floppy.cpp:270 floppy.cpp:468
 #, kde-format
 msgid "&Format"
 msgstr "ढाँचाबद्ध गर्नुहोस्"
@@ -332,13 +332,13 @@ msgstr ""
 msgid "KDE Floppy Formatter"
 msgstr "केडीई फ्लपी ढाँचाकर्ता"
 
-#: floppy.cpp:488
+#: floppy.cpp:487
 #, kde-format
 msgctxt "BSD"
 msgid "Formatting with BSD on a user-given device is only possible with UFS"
 msgstr "प्रयोगकर्ता दिइएको यन्त्रमा BSD सँगको ढाँचाबद्धता केबल UFS सँग मात्र सम्भव हुन्छ"
 
-#: floppy.cpp:495
+#: floppy.cpp:494
 #, kde-format
 msgid ""
 "<qt>Formatting will erase all data on the device:<br/><b>%1</b><br/>(Please "
@@ -348,19 +348,19 @@ msgstr ""
 "<qt>ढाँचाबद्ध गर्नाले यन्त्रबाट सबै डेटा मेटिन्छ:<br/><b>%1</b><br/>(कृपया तपाईँको यन्त्र "
 "नामको शुद्धता जाँच गर्नुहोस् ।)<br/>के तपाईँ अगाडि बढ्न निश्चित हुनुहुन्छ ?</qt>"
 
-#: floppy.cpp:499 floppy.cpp:511
+#: floppy.cpp:498 floppy.cpp:510
 #, kde-format
 msgid "Proceed?"
 msgstr "अगाडि बढ्नुहुन्छ ?"
 
-#: floppy.cpp:505
+#: floppy.cpp:504
 #, fuzzy, kde-format
 #| msgctxt "BSD"
 #| msgid "Formatting with BSD on a user-given device is only possible with UFS"
 msgid "Full formatting of a user-given device is not possible."
 msgstr "प्रयोगकर्ता दिइएको यन्त्रमा BSD सँगको ढाँचाबद्धता केबल UFS सँग मात्र सम्भव हुन्छ"
 
-#: floppy.cpp:509
+#: floppy.cpp:508
 #, kde-format
 msgid ""
 "Formatting will erase all data on the disk.\n"
@@ -519,17 +519,17 @@ msgstr "Minix फाइल प्रणाली सिर्जना गर्
 msgid "Cannot start Minix format program."
 msgstr "Minix ढाँचा कार्यक्रम सुरु गर्न सकिँदैन ।"
 
-#: main.cpp:51
+#: main.cpp:52
 #, kde-format
 msgid "KFloppy"
 msgstr "केडीई फ्लपी"
 
-#: main.cpp:53
+#: main.cpp:54
 #, kde-format
 msgid "KDE Floppy Disk Utility"
 msgstr "केडीई फ्लपी डिस्क उपयोगिता"
 
-#: main.cpp:55
+#: main.cpp:56
 #, fuzzy, kde-format
 #| msgid ""
 #| "(c) 1997, Bernd Johannes Wuebben\n"
@@ -548,74 +548,74 @@ msgstr ""
 "(c) 2002, छ\n"
 "(c) 2004, 2005, निकोलास गोउट्टे"
 
-#: main.cpp:60
+#: main.cpp:61
 #, kde-format
 msgid "KFloppy helps you format floppies with the filesystem of your choice."
 msgstr "केडीई फ्लपीले तपाईँको छनोटको फाइल प्रणालीसँग फ्लपीहरू ढाँचाबद्ध गर्न मद्दत गर्दछ ।"
 
-#: main.cpp:63
+#: main.cpp:64
 #, kde-format
 msgid "Bernd Johannes Wuebben"
 msgstr "बर्न्ड जोहान्नेस वुइब्बेन"
 
-#: main.cpp:63
+#: main.cpp:64
 #, kde-format
 msgid "Author and former maintainer"
 msgstr "लेखक र पूर्व मर्मतकर्ता"
 
-#: main.cpp:64
+#: main.cpp:65
 #, kde-format
 msgid "Chris Howells"
 msgstr "क्रिस होवेल्स्"
 
-#: main.cpp:64
+#: main.cpp:65
 #, kde-format
 msgid "User interface re-design"
 msgstr "प्रयोगकर्ता इन्टरफेस पुन: डिजाइन"
 
-#: main.cpp:65
+#: main.cpp:66
 #, kde-format
 msgid "Adriaan de Groot"
 msgstr "एड्रिआन डि ग्रूट"
 
-#: main.cpp:65
+#: main.cpp:66
 #, kde-format
 msgid "Add BSD support"
 msgstr "BSD समर्थन थप्नुहोस्"
 
-#: main.cpp:66
+#: main.cpp:67
 #, kde-format
 msgid "Nicolas Goutte"
 msgstr "निकोलास गोउट्टे"
 
-#: main.cpp:66
+#: main.cpp:67
 #, kde-format
 msgid "Make KFloppy work again for KDE 3.4"
 msgstr "केडीई फ्लपीलाई KDE 3.4 का लागि फेरि काम गर्ने बनाउनुहोस्"
 
-#: main.cpp:67
+#: main.cpp:68
 #, kde-format
 msgid "Wolfgang Bauer"
 msgstr ""
 
-#: main.cpp:67
+#: main.cpp:68
 #, kde-format
 msgid "Port KFloppy to KF5"
 msgstr ""
 
-#: main.cpp:69
+#: main.cpp:70
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
 msgstr "Mahesh Subedi, श्यामकृष्ण बल, नारायण कुमार मगर"
 
-#: main.cpp:69
+#: main.cpp:70
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "submanesh@gmail.com, shyamkrishna_bal@yahoo.com, narayan@mpp.org.np"
 
-#: main.cpp:77
+#: main.cpp:80
 #, kde-format
 msgid "Default device"
 msgstr "पूर्वनिर्धारित यन्त्र"

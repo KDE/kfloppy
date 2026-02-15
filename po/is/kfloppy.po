@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kfloppy\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 09:01+0000\n"
+"POT-Creation-Date: 2026-02-15 02:24+0000\n"
 "PO-Revision-Date: 2022-09-21 19:59+0000\n"
 "Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
 "Language-Team: Icelandic\n"
@@ -29,7 +29,7 @@ msgstr ""
 msgid "Floppy &drive:"
 msgstr "&Disklingadrif:"
 
-#: floppy.cpp:89 floppy.cpp:364 floppy.cpp:654
+#: floppy.cpp:89 floppy.cpp:364 floppy.cpp:653
 #, kde-format
 msgctxt "Primary floppy drive"
 msgid "Primary"
@@ -51,12 +51,12 @@ msgstr "<qt>Veldu disklingadrif.</qt>"
 msgid "&Size:"
 msgstr "&Stærð:"
 
-#: floppy.cpp:104 floppy.cpp:656
+#: floppy.cpp:104 floppy.cpp:655
 #, kde-format
 msgid "Auto-Detect"
 msgstr "Finna sjálkrafa"
 
-#: floppy.cpp:106 floppy.cpp:372 floppy.cpp:658
+#: floppy.cpp:106 floppy.cpp:372 floppy.cpp:657
 #, kde-format
 msgid "3.5\" 1.44MB"
 msgstr "3.5\" 1.44MB"
@@ -99,7 +99,7 @@ msgctxt "BSD"
 msgid "KFloppy supports three file formats under BSD: MS-DOS, UFS, and Ext2"
 msgstr "KFloppy styður þrjú skráarsnið á BSD: MS-DOS, UFS, og Ext2"
 
-#: floppy.cpp:138 floppy.cpp:163 floppy.cpp:558 floppy.cpp:660
+#: floppy.cpp:138 floppy.cpp:163 floppy.cpp:557 floppy.cpp:659
 #, kde-format
 msgid "DOS"
 msgstr "DOS"
@@ -118,7 +118,7 @@ msgid ""
 msgstr ""
 "Forritið mkdosfs <b>fannst ekki</b>. MSDOS forsníðing er <b>ekki fáanleg</b>."
 
-#: floppy.cpp:146 floppy.cpp:179 floppy.cpp:569
+#: floppy.cpp:146 floppy.cpp:179 floppy.cpp:568
 #, kde-format
 msgid "ext2"
 msgstr "ext2"
@@ -134,7 +134,7 @@ msgid "Program mke2fs <b>not found</b>. Ext2 formatting <b>not available</b>"
 msgstr ""
 "Forritið mke2fs <b>fannst ekki</b>. Ext2 forsníðing er <b>ekki fáanleg</b>."
 
-#: floppy.cpp:154 floppy.cpp:588
+#: floppy.cpp:154 floppy.cpp:587
 #, kde-format
 msgid "Minix"
 msgstr "Minix"
@@ -175,7 +175,7 @@ msgstr ""
 "Forritið newfs_msdos <b>fannst ekki</b>. MSDOS forsníðing er <b>ekki "
 "fáanleg</b>."
 
-#: floppy.cpp:171 floppy.cpp:487 floppy.cpp:580
+#: floppy.cpp:171 floppy.cpp:486 floppy.cpp:579
 #, kde-format
 msgid "UFS"
 msgstr "UFS"
@@ -286,7 +286,7 @@ msgstr ""
 "<qt>Veldu þetta ef þú vilt merki á disklinginn. Athugaðu að Minix styður "
 "ekki notkun af merkingum.</qt>"
 
-#: floppy.cpp:256 floppy.cpp:652
+#: floppy.cpp:256 floppy.cpp:651
 #, kde-format
 msgctxt "Volume label, maximal 11 characters"
 msgid "KDE Floppy"
@@ -303,7 +303,7 @@ msgstr ""
 "verið lengra en 11 stafir. Athugaðu að Minix styður ekki notkun af merkingum."
 "</qt>"
 
-#: floppy.cpp:270 floppy.cpp:469
+#: floppy.cpp:270 floppy.cpp:468
 #, kde-format
 msgid "&Format"
 msgstr "&Forsníða"
@@ -337,13 +337,13 @@ msgstr ""
 msgid "KDE Floppy Formatter"
 msgstr "KDE disklingatól"
 
-#: floppy.cpp:488
+#: floppy.cpp:487
 #, kde-format
 msgctxt "BSD"
 msgid "Formatting with BSD on a user-given device is only possible with UFS"
 msgstr "Forsníðing á notandaskilgreint tæki með BSD er bara mögulegt með UFS"
 
-#: floppy.cpp:495
+#: floppy.cpp:494
 #, kde-format
 msgid ""
 "<qt>Formatting will erase all data on the device:<br/><b>%1</b><br/>(Please "
@@ -354,17 +354,17 @@ msgstr ""
 ">(Athugaðu að rétt tæki sé valið.)<br/>Ertu viss um að þú viljir halda áfram?"
 "</qt>"
 
-#: floppy.cpp:499 floppy.cpp:511
+#: floppy.cpp:498 floppy.cpp:510
 #, kde-format
 msgid "Proceed?"
 msgstr "Halda áfram?"
 
-#: floppy.cpp:505
+#: floppy.cpp:504
 #, kde-format
 msgid "Full formatting of a user-given device is not possible."
 msgstr "Forsníðing á notandaskilgreint tæki er ekki möguleg."
 
-#: floppy.cpp:509
+#: floppy.cpp:508
 #, kde-format
 msgid ""
 "Formatting will erase all data on the disk.\n"
@@ -524,17 +524,17 @@ msgstr "Get ekki fundið tól til að búa til Minix skráarkerfi."
 msgid "Cannot start Minix format program."
 msgstr "Gat ekki ræst Minix forsniðstólið."
 
-#: main.cpp:51
+#: main.cpp:52
 #, kde-format
 msgid "KFloppy"
 msgstr "KFloppy"
 
-#: main.cpp:53
+#: main.cpp:54
 #, kde-format
 msgid "KDE Floppy Disk Utility"
 msgstr "KDE disklingatól"
 
-#: main.cpp:55
+#: main.cpp:56
 #, kde-format
 msgid ""
 "(c) 1997, Bernd Johannes Wuebben\n"
@@ -549,76 +549,76 @@ msgstr ""
 "(c) 2004, 2005, Nicolas Goutte\n"
 "(c) 2015, 2016, Wolfgang Bauer"
 
-#: main.cpp:60
+#: main.cpp:61
 #, kde-format
 msgid "KFloppy helps you format floppies with the filesystem of your choice."
 msgstr ""
 "KFloppy gerir þér kleyft að forsníða disklinga með skráarkerfi að þínu vali."
 
-#: main.cpp:63
+#: main.cpp:64
 #, kde-format
 msgid "Bernd Johannes Wuebben"
 msgstr "Bernd Johannes Wuebben"
 
-#: main.cpp:63
+#: main.cpp:64
 #, kde-format
 msgid "Author and former maintainer"
 msgstr "Höfundur og fyrrum umsjónarmaður"
 
-#: main.cpp:64
+#: main.cpp:65
 #, kde-format
 msgid "Chris Howells"
 msgstr "Chris Howells"
 
-#: main.cpp:64
+#: main.cpp:65
 #, kde-format
 msgid "User interface re-design"
 msgstr "Endurhönnun notandaviðmóts"
 
-#: main.cpp:65
+#: main.cpp:66
 #, kde-format
 msgid "Adriaan de Groot"
 msgstr "Adriaan de Groot"
 
-#: main.cpp:65
+#: main.cpp:66
 #, kde-format
 msgid "Add BSD support"
 msgstr "Bætti við BSD stuðningi"
 
-#: main.cpp:66
+#: main.cpp:67
 #, kde-format
 msgid "Nicolas Goutte"
 msgstr "Nicolas Goutte"
 
-#: main.cpp:66
+#: main.cpp:67
 #, kde-format
 msgid "Make KFloppy work again for KDE 3.4"
 msgstr "Fékk KFloppy til að virka aftur með KDE 3.4"
 
-#: main.cpp:67
+#: main.cpp:68
 #, kde-format
 msgid "Wolfgang Bauer"
 msgstr "Wolfgang Bauer"
 
-#: main.cpp:67
+#: main.cpp:68
 #, kde-format
 msgid "Port KFloppy to KF5"
 msgstr "Aðlögun KFloppy að KF5"
 
-#: main.cpp:69
+#: main.cpp:70
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
 msgstr ""
 "Richard Allen, Bjarni R. Einarsson, Guðjón I. Guðjónsson, Pjetur G. Hjaltason"
 
-#: main.cpp:69
+#: main.cpp:70
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "ra@ra.is, bre@klaki.is, gudjonh@hi.is, pjetur@pjetur.net"
 
-#: main.cpp:77
+#: main.cpp:80
 #, kde-format
 msgid "Default device"
 msgstr "Sjálfgefið tæki"

@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kfloppy\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 09:01+0000\n"
+"POT-Creation-Date: 2026-02-15 02:24+0000\n"
 "PO-Revision-Date: 2019-09-17 09:59+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: Dutch <kde-i18n-nl@kde.org>\n"
@@ -32,7 +32,7 @@ msgstr ""
 msgid "Floppy &drive:"
 msgstr "&Diskettestation:"
 
-#: floppy.cpp:89 floppy.cpp:364 floppy.cpp:654
+#: floppy.cpp:89 floppy.cpp:364 floppy.cpp:653
 #, kde-format
 msgctxt "Primary floppy drive"
 msgid "Primary"
@@ -54,12 +54,12 @@ msgstr "<qt>Selecteer het diskettestation.</qt>"
 msgid "&Size:"
 msgstr "&Grootte:"
 
-#: floppy.cpp:104 floppy.cpp:656
+#: floppy.cpp:104 floppy.cpp:655
 #, kde-format
 msgid "Auto-Detect"
 msgstr "Autodetecteren"
 
-#: floppy.cpp:106 floppy.cpp:372 floppy.cpp:658
+#: floppy.cpp:106 floppy.cpp:372 floppy.cpp:657
 #, kde-format
 msgid "3.5\" 1.44MB"
 msgstr "3,5\" 1,44MB"
@@ -107,7 +107,7 @@ msgstr ""
 "KFloppy biedt ondersteuning voor drie bestandssystemen onder BSD: MS-DOS, "
 "UFS en Ext2"
 
-#: floppy.cpp:138 floppy.cpp:163 floppy.cpp:558 floppy.cpp:660
+#: floppy.cpp:138 floppy.cpp:163 floppy.cpp:557 floppy.cpp:659
 #, kde-format
 msgid "DOS"
 msgstr "DOS"
@@ -127,7 +127,7 @@ msgstr ""
 "Programma mkdosfs <b>niet gevonden</b>. Het formatteren in MSDOS is <b>niet "
 "beschikbaar</b>."
 
-#: floppy.cpp:146 floppy.cpp:179 floppy.cpp:569
+#: floppy.cpp:146 floppy.cpp:179 floppy.cpp:568
 #, kde-format
 msgid "ext2"
 msgstr "ext2"
@@ -144,7 +144,7 @@ msgstr ""
 "Programma mke2fs <b>niet gevonden</b>. Het formatteren in Ext2 is <b>niet "
 "beschikbaar</b>."
 
-#: floppy.cpp:154 floppy.cpp:588
+#: floppy.cpp:154 floppy.cpp:587
 #, kde-format
 msgid "Minix"
 msgstr "Minix"
@@ -187,7 +187,7 @@ msgstr ""
 "Programma newfs_msdos <b>niet gevonden</b>. Het formatteren in MSDOS is "
 "<b>niet beschikbaar</b>."
 
-#: floppy.cpp:171 floppy.cpp:487 floppy.cpp:580
+#: floppy.cpp:171 floppy.cpp:486 floppy.cpp:579
 #, kde-format
 msgid "UFS"
 msgstr "UFS"
@@ -307,7 +307,7 @@ msgstr ""
 "<qt>Schakel dit in als u een volumelabel voor uw diskette wilt aanmaken. Let "
 "op: Minix biedt geen ondersteuning voor labels.</qt>"
 
-#: floppy.cpp:256 floppy.cpp:652
+#: floppy.cpp:256 floppy.cpp:651
 #, kde-format
 msgctxt "Volume label, maximal 11 characters"
 msgid "KDE Floppy"
@@ -324,7 +324,7 @@ msgstr ""
 "label maar 11 lettertekens lang zijn. Let op: Minix biedt geen ondersteuning "
 "voor labels, de tekst die u hier invoert zal dan niet gebruikt worden.</qt>"
 
-#: floppy.cpp:270 floppy.cpp:469
+#: floppy.cpp:270 floppy.cpp:468
 #, kde-format
 msgid "&Format"
 msgstr "&Formatteren"
@@ -359,7 +359,7 @@ msgstr ""
 msgid "KDE Floppy Formatter"
 msgstr "KDE Floppy Formatteerder"
 
-#: floppy.cpp:488
+#: floppy.cpp:487
 #, kde-format
 msgctxt "BSD"
 msgid "Formatting with BSD on a user-given device is only possible with UFS"
@@ -367,7 +367,7 @@ msgstr ""
 "Het formatteren met BSD op een door de gebruiker opgegeven station is alleen "
 "mogelijk met UFS"
 
-#: floppy.cpp:495
+#: floppy.cpp:494
 #, kde-format
 msgid ""
 "<qt>Formatting will erase all data on the device:<br/><b>%1</b><br/>(Please "
@@ -378,17 +378,17 @@ msgstr ""
 ">(Controleer a.u.b. of de stationsnaam correct is.)<br/>Bent u zeker dat u "
 "verder wilt gaan?</qt>"
 
-#: floppy.cpp:499 floppy.cpp:511
+#: floppy.cpp:498 floppy.cpp:510
 #, kde-format
 msgid "Proceed?"
 msgstr "Verder gaan?"
 
-#: floppy.cpp:505
+#: floppy.cpp:504
 #, kde-format
 msgid "Full formatting of a user-given device is not possible."
 msgstr "Het volledig formatteren van het apparaat is niet mogelijk."
 
-#: floppy.cpp:509
+#: floppy.cpp:508
 #, kde-format
 msgid ""
 "Formatting will erase all data on the disk.\n"
@@ -559,17 +559,17 @@ msgstr ""
 "Het programma voor het aanmaken van Minix-bestandssystemen kon niet gestart "
 "worden."
 
-#: main.cpp:51
+#: main.cpp:52
 #, kde-format
 msgid "KFloppy"
 msgstr "KFloppy"
 
-#: main.cpp:53
+#: main.cpp:54
 #, kde-format
 msgid "KDE Floppy Disk Utility"
 msgstr "KDE Floppydisk-hulpprogramma"
 
-#: main.cpp:55
+#: main.cpp:56
 #, kde-format
 msgid ""
 "(c) 1997, Bernd Johannes Wuebben\n"
@@ -584,64 +584,64 @@ msgstr ""
 "(c) 2004, 2005, Nicolas Goutte\n"
 "(c) 2015, 2016, Wolfgang Bauer"
 
-#: main.cpp:60
+#: main.cpp:61
 #, kde-format
 msgid "KFloppy helps you format floppies with the filesystem of your choice."
 msgstr ""
 "Met KFloppy kunt u diskettes formatteren en voorzien van een bestandssysteem "
 "naar keuze."
 
-#: main.cpp:63
+#: main.cpp:64
 #, kde-format
 msgid "Bernd Johannes Wuebben"
 msgstr "Bernd Johannes Wuebben"
 
-#: main.cpp:63
+#: main.cpp:64
 #, kde-format
 msgid "Author and former maintainer"
 msgstr "Auteur en voormalig onderhouder"
 
-#: main.cpp:64
+#: main.cpp:65
 #, kde-format
 msgid "Chris Howells"
 msgstr "Chris Howells"
 
-#: main.cpp:64
+#: main.cpp:65
 #, kde-format
 msgid "User interface re-design"
 msgstr "Herontwerp van de gebruikersinterface"
 
-#: main.cpp:65
+#: main.cpp:66
 #, kde-format
 msgid "Adriaan de Groot"
 msgstr "Adriaan de Groot"
 
-#: main.cpp:65
+#: main.cpp:66
 #, kde-format
 msgid "Add BSD support"
 msgstr "Toevoegen van ondersteuning voor BSD"
 
-#: main.cpp:66
+#: main.cpp:67
 #, kde-format
 msgid "Nicolas Goutte"
 msgstr "Nicolas Goutte"
 
-#: main.cpp:66
+#: main.cpp:67
 #, kde-format
 msgid "Make KFloppy work again for KDE 3.4"
 msgstr "KFloppy geschikt gemaakt voor KDE 3.4"
 
-#: main.cpp:67
+#: main.cpp:68
 #, kde-format
 msgid "Wolfgang Bauer"
 msgstr "Wolfgang Bauer"
 
-#: main.cpp:67
+#: main.cpp:68
 #, kde-format
 msgid "Port KFloppy to KF5"
 msgstr "KFloppy overzetten naar KF5"
 
-#: main.cpp:69
+#: main.cpp:70
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
@@ -649,13 +649,13 @@ msgstr ""
 "Rinse de Vries - 2000 tot 2002; 2004; 2005; 2007,Wilbert Berendsen - 2003,"
 "Tom Albers  2004,Kristof Bal - 2008"
 
-#: main.cpp:69
+#: main.cpp:70
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "rinsedevries@kde.nl,,,"
 
-#: main.cpp:77
+#: main.cpp:80
 #, kde-format
 msgid "Default device"
 msgstr "Standaard apparaat"

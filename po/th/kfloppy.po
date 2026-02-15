@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kfloppy\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 09:01+0000\n"
+"POT-Creation-Date: 2026-02-15 02:24+0000\n"
 "PO-Revision-Date: 2010-05-01 10:44+0700\n"
 "Last-Translator: Thanomsub Noppaburana <donga.nb@gmail.com>\n"
 "Language-Team: Thai <thai-l10n@googlegroups.com>\n"
@@ -23,7 +23,7 @@ msgstr ""
 msgid "Floppy &drive:"
 msgstr "ไ&ดรฟ์ฟลอปปี้:"
 
-#: floppy.cpp:89 floppy.cpp:364 floppy.cpp:654
+#: floppy.cpp:89 floppy.cpp:364 floppy.cpp:653
 #, kde-format
 msgctxt "Primary floppy drive"
 msgid "Primary"
@@ -45,12 +45,12 @@ msgstr "<qt>เลือกไดรฟ์ของฟลอปปี</qt>"
 msgid "&Size:"
 msgstr "&ขนาด:"
 
-#: floppy.cpp:104 floppy.cpp:656
+#: floppy.cpp:104 floppy.cpp:655
 #, kde-format
 msgid "Auto-Detect"
 msgstr "ตรวจสอบอัตโนมัติ"
 
-#: floppy.cpp:106 floppy.cpp:372 floppy.cpp:658
+#: floppy.cpp:106 floppy.cpp:372 floppy.cpp:657
 #, kde-format
 msgid "3.5\" 1.44MB"
 msgstr "3.5\" 1.44 เมกะไบต์"
@@ -97,7 +97,7 @@ msgstr ""
 "ฟลอปปี้-K รองรับระบบแฟ้มภายใต้ BSD สามระบบคือ: แบบดอส (DOS), แบบ UFS, และแบบลินุกซ์ "
 "(Ext2)"
 
-#: floppy.cpp:138 floppy.cpp:163 floppy.cpp:558 floppy.cpp:660
+#: floppy.cpp:138 floppy.cpp:163 floppy.cpp:557 floppy.cpp:659
 #, kde-format
 msgid "DOS"
 msgstr "แบบดอส (DOS)"
@@ -117,7 +117,7 @@ msgstr ""
 "<b>ไม่พบ</b>โปรแกรม mkdosfs การฟอร์แมตแผ่นเป็นแบบดอส (DOS) <b>จะไม่สามารถใช้งานได้</"
 "b>"
 
-#: floppy.cpp:146 floppy.cpp:179 floppy.cpp:569
+#: floppy.cpp:146 floppy.cpp:179 floppy.cpp:568
 #, kde-format
 msgid "ext2"
 msgstr "แบบลินุกซ์ (ext2)"
@@ -134,7 +134,7 @@ msgstr ""
 "<b>ไม่พบ</b>โปรแกรม mke2fs การฟอร์แมตแผ่นเป็นแบบลินุกซ์ (Ext2) "
 "<b>จะไม่สามารถใช้งานได้</b>"
 
-#: floppy.cpp:154 floppy.cpp:588
+#: floppy.cpp:154 floppy.cpp:587
 #, kde-format
 msgid "Minix"
 msgstr "แบบมินิกซ์ (Minix)"
@@ -175,7 +175,7 @@ msgstr ""
 "<b>ไม่พบ</b>โปรแกรม newfs_msdos การฟอร์แมตแผ่นเป็นแบบดอส (DOS) "
 "<b>จะไม่สามารถใช้งานได้</b>"
 
-#: floppy.cpp:171 floppy.cpp:487 floppy.cpp:580
+#: floppy.cpp:171 floppy.cpp:486 floppy.cpp:579
 #, kde-format
 msgid "UFS"
 msgstr "แบบ UFS"
@@ -289,7 +289,7 @@ msgstr ""
 "<qt>ใช้ตัวเลือกนี้หากต้องการกำหนดชื่อให้กับแผ่นดิสก์ แต่ในรูปแบบมินิกซ์ (Minix) "
 "จะไม่รองรับการตั้งชื่อให้แผ่น</qt>"
 
-#: floppy.cpp:256 floppy.cpp:652
+#: floppy.cpp:256 floppy.cpp:651
 #, kde-format
 msgctxt "Volume label, maximal 11 characters"
 msgid "KDE Floppy"
@@ -305,7 +305,7 @@ msgstr ""
 "<qt>นี่เป็นชื่อของแผ่นโดยมีความยาวของชื่อได้ 11 ตัวอักษรตามข้อจำกัดของระบบดอส "
 "แต่ชื่อแผ่นนี้จะไม่สามารถใช้งานได้กับระบบมินิกซ์</qt>"
 
-#: floppy.cpp:270 floppy.cpp:469
+#: floppy.cpp:270 floppy.cpp:468
 #, kde-format
 msgid "&Format"
 msgstr "&ฟอร์แมต"
@@ -339,13 +339,13 @@ msgstr ""
 msgid "KDE Floppy Formatter"
 msgstr "เครื่องมือฟอร์แมตแผ่นฟลอปปี้ของ KDE"
 
-#: floppy.cpp:488
+#: floppy.cpp:487
 #, kde-format
 msgctxt "BSD"
 msgid "Formatting with BSD on a user-given device is only possible with UFS"
 msgstr "การทำการฟอร์แมตด้วยระบบ BSD บนอุปกรณ์ที่กำหนดมาจะฟอร์แมตได้ในรูปแบบ UFS เท่านั้น"
 
-#: floppy.cpp:495
+#: floppy.cpp:494
 #, kde-format
 msgid ""
 "<qt>Formatting will erase all data on the device:<br/><b>%1</b><br/>(Please "
@@ -356,17 +356,17 @@ msgstr ""
 ">(โปรดตรวจสอบด้วยว่าชื่ออุปกรณ์ถูกต้องหรือไม่)<br />คุณแน่ใจว่าต้องการจะฟอร์แมตจริงหรือไม่ ?</"
 "qt>"
 
-#: floppy.cpp:499 floppy.cpp:511
+#: floppy.cpp:498 floppy.cpp:510
 #, kde-format
 msgid "Proceed?"
 msgstr "ฟอร์แมตหรือไม่ ?"
 
-#: floppy.cpp:505
+#: floppy.cpp:504
 #, kde-format
 msgid "Full formatting of a user-given device is not possible."
 msgstr "การทำการฟอร์แมตแบบเต็มรูปแบบของอุปกรณ์ที่ผู้ใช้กำหนดมา เป็นไปไม่ได้"
 
-#: floppy.cpp:509
+#: floppy.cpp:508
 #, kde-format
 msgid ""
 "Formatting will erase all data on the disk.\n"
@@ -527,17 +527,17 @@ msgstr "ไม่พบโปรแกรมสำหรับใช้สร้
 msgid "Cannot start Minix format program."
 msgstr "ไม่สามารถเรียกใช้โปรแกรมฟอร์แมตแบบมินิกซ์ (Minix) ได้"
 
-#: main.cpp:51
+#: main.cpp:52
 #, kde-format
 msgid "KFloppy"
 msgstr "ฟลอปปี้-K"
 
-#: main.cpp:53
+#: main.cpp:54
 #, kde-format
 msgid "KDE Floppy Disk Utility"
 msgstr "เครื่องมือฟอร์แมตแผ่นฟลอปปี้ของ KDE"
 
-#: main.cpp:55
+#: main.cpp:56
 #, fuzzy, kde-format
 #| msgid ""
 #| "(c) 1997, Bernd Johannes Wuebben\n"
@@ -556,74 +556,74 @@ msgstr ""
 "สงวนลิขสิทธิ์ (c) 2002, Adriaan de Groot\n"
 "สงวนลิขสิทธิ์ (c) 2004, 2005, Nicolas Goutte"
 
-#: main.cpp:60
+#: main.cpp:61
 #, kde-format
 msgid "KFloppy helps you format floppies with the filesystem of your choice."
 msgstr "โปรแกรมฟลอปปี้-K, ช่วยคุณในการฟอร์แมตแผ่นฟลอปปี้เป็นระบบแฟ้มตามที่คุณกำหนด"
 
-#: main.cpp:63
+#: main.cpp:64
 #, kde-format
 msgid "Bernd Johannes Wuebben"
 msgstr "Bernd Johannes Wuebben"
 
-#: main.cpp:63
+#: main.cpp:64
 #, kde-format
 msgid "Author and former maintainer"
 msgstr "ผู้เขียนและผู้ดูแลอย่างเป็นทางการ"
 
-#: main.cpp:64
+#: main.cpp:65
 #, kde-format
 msgid "Chris Howells"
 msgstr "Chris Howells"
 
-#: main.cpp:64
+#: main.cpp:65
 #, kde-format
 msgid "User interface re-design"
 msgstr "ออกแบบส่วนติดต่อผู้ใช้ตัวใหม่"
 
-#: main.cpp:65
+#: main.cpp:66
 #, kde-format
 msgid "Adriaan de Groot"
 msgstr "Adriaan de Groot"
 
-#: main.cpp:65
+#: main.cpp:66
 #, kde-format
 msgid "Add BSD support"
 msgstr "เพิ่มส่วนรองรับระบบ BSD"
 
-#: main.cpp:66
+#: main.cpp:67
 #, kde-format
 msgid "Nicolas Goutte"
 msgstr "Nicolas Goutte"
 
-#: main.cpp:66
+#: main.cpp:67
 #, kde-format
 msgid "Make KFloppy work again for KDE 3.4"
 msgstr "ทำให้ฟลอปปี้-K ใช้งานได้อีกครั้งบน KDE 3.4"
 
-#: main.cpp:67
+#: main.cpp:68
 #, kde-format
 msgid "Wolfgang Bauer"
 msgstr ""
 
-#: main.cpp:67
+#: main.cpp:68
 #, kde-format
 msgid "Port KFloppy to KF5"
 msgstr ""
 
-#: main.cpp:69
+#: main.cpp:70
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
 msgstr "ถนอมทรัพย์ นพบูรณ์"
 
-#: main.cpp:69
+#: main.cpp:70
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "donga.nb@gmail.com"
 
-#: main.cpp:77
+#: main.cpp:80
 #, kde-format
 msgid "Default device"
 msgstr "อุปกรณ์ปริยาย"

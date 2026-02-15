@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kfloppy\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 09:01+0000\n"
+"POT-Creation-Date: 2026-02-15 02:24+0000\n"
 "PO-Revision-Date: 2019-09-29 12:28+0500\n"
 "Last-Translator: Victor Ibragimov <victor.ibragimov@gmail.com>\n"
 "Language-Team: English <kde-i18n-doc@kde.org>\n"
@@ -27,7 +27,7 @@ msgstr ""
 msgid "Floppy &drive:"
 msgstr "Гардонандаи диски нарм:"
 
-#: floppy.cpp:89 floppy.cpp:364 floppy.cpp:654
+#: floppy.cpp:89 floppy.cpp:364 floppy.cpp:653
 #, fuzzy, kde-format
 #| msgid "Primary"
 msgctxt "Primary floppy drive"
@@ -51,12 +51,12 @@ msgstr ""
 msgid "&Size:"
 msgstr "Андоза:"
 
-#: floppy.cpp:104 floppy.cpp:656
+#: floppy.cpp:104 floppy.cpp:655
 #, kde-format
 msgid "Auto-Detect"
 msgstr ""
 
-#: floppy.cpp:106 floppy.cpp:372 floppy.cpp:658
+#: floppy.cpp:106 floppy.cpp:372 floppy.cpp:657
 #, kde-format
 msgid "3.5\" 1.44MB"
 msgstr "3.5\" 1.44Мб"
@@ -99,7 +99,7 @@ msgctxt "BSD"
 msgid "KFloppy supports three file formats under BSD: MS-DOS, UFS, and Ext2"
 msgstr ""
 
-#: floppy.cpp:138 floppy.cpp:163 floppy.cpp:558 floppy.cpp:660
+#: floppy.cpp:138 floppy.cpp:163 floppy.cpp:557 floppy.cpp:659
 #, kde-format
 msgid "DOS"
 msgstr "DOS"
@@ -117,7 +117,7 @@ msgid ""
 "Program mkdosfs <b>not found</b>. MSDOS formatting <b>not available</b>."
 msgstr ""
 
-#: floppy.cpp:146 floppy.cpp:179 floppy.cpp:569
+#: floppy.cpp:146 floppy.cpp:179 floppy.cpp:568
 #, kde-format
 msgid "ext2"
 msgstr "ext2"
@@ -132,7 +132,7 @@ msgstr ""
 msgid "Program mke2fs <b>not found</b>. Ext2 formatting <b>not available</b>"
 msgstr ""
 
-#: floppy.cpp:154 floppy.cpp:588
+#: floppy.cpp:154 floppy.cpp:587
 #, kde-format
 msgid "Minix"
 msgstr ""
@@ -169,7 +169,7 @@ msgid ""
 "Program newfs_msdos <b>not found</b>. MSDOS formatting <b>not available</b>."
 msgstr ""
 
-#: floppy.cpp:171 floppy.cpp:487 floppy.cpp:580
+#: floppy.cpp:171 floppy.cpp:486 floppy.cpp:579
 #, kde-format
 msgid "UFS"
 msgstr "UFS"
@@ -272,7 +272,7 @@ msgid ""
 "Minix does not support labels at all.</qt>"
 msgstr ""
 
-#: floppy.cpp:256 floppy.cpp:652
+#: floppy.cpp:256 floppy.cpp:651
 #, kde-format
 msgctxt "Volume label, maximal 11 characters"
 msgid "KDE Floppy"
@@ -286,7 +286,7 @@ msgid ""
 "labels, whatever you enter here.</qt>"
 msgstr ""
 
-#: floppy.cpp:270 floppy.cpp:469
+#: floppy.cpp:270 floppy.cpp:468
 #, kde-format
 msgid "&Format"
 msgstr "&Шаклбандинамоӣ"
@@ -318,13 +318,13 @@ msgstr ""
 msgid "KDE Floppy Formatter"
 msgstr "KDE Шаклбандии Диски Нарм"
 
-#: floppy.cpp:488
+#: floppy.cpp:487
 #, kde-format
 msgctxt "BSD"
 msgid "Formatting with BSD on a user-given device is only possible with UFS"
 msgstr ""
 
-#: floppy.cpp:495
+#: floppy.cpp:494
 #, fuzzy, kde-format
 msgid ""
 "<qt>Formatting will erase all data on the device:<br/><b>%1</b><br/>(Please "
@@ -334,17 +334,17 @@ msgstr ""
 "Шаклбандинамои ҳама додаҳои дар диск бударо пок мекунад.\n"
 "Дар ҳақиқат мехоҳед, ки давом диҳед?"
 
-#: floppy.cpp:499 floppy.cpp:511
+#: floppy.cpp:498 floppy.cpp:510
 #, kde-format
 msgid "Proceed?"
 msgstr "Давом диҳам?"
 
-#: floppy.cpp:505
+#: floppy.cpp:504
 #, kde-format
 msgid "Full formatting of a user-given device is not possible."
 msgstr ""
 
-#: floppy.cpp:509
+#: floppy.cpp:508
 #, kde-format
 msgid ""
 "Formatting will erase all data on the disk.\n"
@@ -501,17 +501,17 @@ msgstr "Барои офаридани низоми файлии ext2 барно�
 msgid "Cannot start Minix format program."
 msgstr "Оғози барномаи шаклбандинамоии ext2-ро нашуда истодааст."
 
-#: main.cpp:51
+#: main.cpp:52
 #, kde-format
 msgid "KFloppy"
 msgstr "KДиски Нарм"
 
-#: main.cpp:53
+#: main.cpp:54
 #, fuzzy, kde-format
 msgid "KDE Floppy Disk Utility"
 msgstr "KDE барномаи Пуштибони Шаклбандинамоии Диски Нарм"
 
-#: main.cpp:55
+#: main.cpp:56
 #, kde-format
 msgid ""
 "(c) 1997, Bernd Johannes Wuebben\n"
@@ -521,7 +521,7 @@ msgid ""
 "(c) 2015, 2016, Wolfgang Bauer"
 msgstr ""
 
-#: main.cpp:60
+#: main.cpp:61
 #, fuzzy, kde-format
 msgid "KFloppy helps you format floppies with the filesystem of your choice."
 msgstr ""
@@ -529,69 +529,69 @@ msgstr ""
 "нарм, дискҳои Zip ё LS120)\n"
 "бо низоми файлӣ бо хоҳиши шумо."
 
-#: main.cpp:63
+#: main.cpp:64
 #, kde-format
 msgid "Bernd Johannes Wuebben"
 msgstr ""
 
-#: main.cpp:63
+#: main.cpp:64
 #, fuzzy, kde-format
 msgid "Author and former maintainer"
 msgstr "Муаллиф, Ҳамроҳии ҷорӣ"
 
-#: main.cpp:64
+#: main.cpp:65
 #, kde-format
 msgid "Chris Howells"
 msgstr ""
 
-#: main.cpp:64
+#: main.cpp:65
 #, kde-format
 msgid "User interface re-design"
 msgstr "Интерфейси корванд боз тарроҳӣ гаштааст"
 
-#: main.cpp:65
+#: main.cpp:66
 #, kde-format
 msgid "Adriaan de Groot"
 msgstr ""
 
-#: main.cpp:65
+#: main.cpp:66
 #, kde-format
 msgid "Add BSD support"
 msgstr "Пуштибонии BSD-ро илова кунед"
 
-#: main.cpp:66
+#: main.cpp:67
 #, kde-format
 msgid "Nicolas Goutte"
 msgstr ""
 
-#: main.cpp:66
+#: main.cpp:67
 #, kde-format
 msgid "Make KFloppy work again for KDE 3.4"
 msgstr ""
 
-#: main.cpp:67
+#: main.cpp:68
 #, kde-format
 msgid "Wolfgang Bauer"
 msgstr ""
 
-#: main.cpp:67
+#: main.cpp:68
 #, kde-format
 msgid "Port KFloppy to KF5"
 msgstr ""
 
-#: main.cpp:69
+#: main.cpp:70
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
 msgstr "Абророва Хиромон"
 
-#: main.cpp:69
+#: main.cpp:70
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "H_Abrorova@rambler.ru"
 
-#: main.cpp:77
+#: main.cpp:80
 #, fuzzy, kde-format
 msgid "Default device"
 msgstr "Дастгоҳ бо Нобаёнӣ"

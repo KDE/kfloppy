@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeutils/kfloppy.po\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 09:01+0000\n"
+"POT-Creation-Date: 2026-02-15 02:24+0000\n"
 "PO-Revision-Date: 2025-12-24 11:48+0000\n"
 "Last-Translator: Charlotte <altronic25@protonmail.com>\n"
 "Language-Team: Irish\n"
@@ -23,7 +23,7 @@ msgstr ""
 msgid "Floppy &drive:"
 msgstr "Tiomántán &diosca fhlapaigh:"
 
-#: floppy.cpp:89 floppy.cpp:364 floppy.cpp:654
+#: floppy.cpp:89 floppy.cpp:364 floppy.cpp:653
 #, kde-format
 msgctxt "Primary floppy drive"
 msgid "Primary"
@@ -45,12 +45,12 @@ msgstr "<qt>Roghnaigh an tiomántán.</qt>"
 msgid "&Size:"
 msgstr "&Méid:"
 
-#: floppy.cpp:104 floppy.cpp:656
+#: floppy.cpp:104 floppy.cpp:655
 #, kde-format
 msgid "Auto-Detect"
 msgstr "Braith go hUathoibríoch"
 
-#: floppy.cpp:106 floppy.cpp:372 floppy.cpp:658
+#: floppy.cpp:106 floppy.cpp:372 floppy.cpp:657
 #, kde-format
 msgid "3.5\" 1.44MB"
 msgstr "3.5\" 1.44MB"
@@ -97,7 +97,7 @@ msgstr ""
 "Tacaíonn KFloppy le trí fhormáid chomhaid ar chóras BSD: MS-DOS, UFS, agus "
 "Ext2"
 
-#: floppy.cpp:138 floppy.cpp:163 floppy.cpp:558 floppy.cpp:660
+#: floppy.cpp:138 floppy.cpp:163 floppy.cpp:557 floppy.cpp:659
 #, kde-format
 msgid "DOS"
 msgstr "DOS"
@@ -116,7 +116,7 @@ msgid ""
 msgstr ""
 "Ríomhchlár mkdosfs <b>gan aimsiú</b>. <b>Níl</b> formáidiú MSDOS ar fáil."
 
-#: floppy.cpp:146 floppy.cpp:179 floppy.cpp:569
+#: floppy.cpp:146 floppy.cpp:179 floppy.cpp:568
 #, kde-format
 msgid "ext2"
 msgstr "ext2"
@@ -132,7 +132,7 @@ msgid "Program mke2fs <b>not found</b>. Ext2 formatting <b>not available</b>"
 msgstr ""
 "Ríomhchlár mke2fs <b>gan aimsiú</b>. <b>Níl</b> formáidiú Ext2 ar fáil."
 
-#: floppy.cpp:154 floppy.cpp:588
+#: floppy.cpp:154 floppy.cpp:587
 #, kde-format
 msgid "Minix"
 msgstr "Minix"
@@ -172,7 +172,7 @@ msgid ""
 msgstr ""
 "Ríomhchlár newfs_msdos <b>gan aimsiú</b>. <b>Níl</b> formáidiú MSDOS ar fáil."
 
-#: floppy.cpp:171 floppy.cpp:487 floppy.cpp:580
+#: floppy.cpp:171 floppy.cpp:486 floppy.cpp:579
 #, kde-format
 msgid "UFS"
 msgstr "UFS"
@@ -291,7 +291,7 @@ msgstr ""
 "flapach. Tabhair faoi deara nach dtacaíonn Minix le lipéid ar chor ar bith.</"
 "qt>"
 
-#: floppy.cpp:256 floppy.cpp:652
+#: floppy.cpp:256 floppy.cpp:651
 #, kde-format
 msgctxt "Volume label, maximal 11 characters"
 msgid "KDE Floppy"
@@ -308,7 +308,7 @@ msgstr ""
 "cheadaítear lipéad atá níos faide ná 11 carachtar. Tabhair faoi deara nach "
 "dtacaíonn Minix le lipéid, is cuma céard a chuireann tú isteach anseo.</qt>"
 
-#: floppy.cpp:270 floppy.cpp:469
+#: floppy.cpp:270 floppy.cpp:468
 #, kde-format
 msgid "&Format"
 msgstr "&Formáid"
@@ -344,14 +344,14 @@ msgstr ""
 msgid "KDE Floppy Formatter"
 msgstr "Uirlis Fhormáidithe Dioscaí Flapacha"
 
-#: floppy.cpp:488
+#: floppy.cpp:487
 #, kde-format
 msgctxt "BSD"
 msgid "Formatting with BSD on a user-given device is only possible with UFS"
 msgstr ""
 "Tá formáidiú BSD ar ghléas sainithe ag an úsáideoir indéanta le UFS amháin"
 
-#: floppy.cpp:495
+#: floppy.cpp:494
 #, kde-format
 msgid ""
 "<qt>Formatting will erase all data on the device:<br/><b>%1</b><br/>(Please "
@@ -362,18 +362,18 @@ msgstr ""
 "><b>%1</b><br/>(Bí cinnte go bhfuil an gléas ceart agat.)<br/>An bhfuil tú "
 "cinnte gur mhaith leat dul ar aghaidh leis an bhformáidiú?</qt>"
 
-#: floppy.cpp:499 floppy.cpp:511
+#: floppy.cpp:498 floppy.cpp:510
 #, kde-format
 msgid "Proceed?"
 msgstr "Lean ar aghaidh?"
 
-#: floppy.cpp:505
+#: floppy.cpp:504
 #, kde-format
 msgid "Full formatting of a user-given device is not possible."
 msgstr ""
 "Ní féidir formáidiú iomlán a dhéanamh ar ghléas sainithe ag an úsáideoir."
 
-#: floppy.cpp:509
+#: floppy.cpp:508
 #, kde-format
 msgid ""
 "Formatting will erase all data on the disk.\n"
@@ -532,17 +532,17 @@ msgstr "Ní féidir ríomhchlár a aimsiú a chruthaíonn córais comhad Minix."
 msgid "Cannot start Minix format program."
 msgstr "Ní féidir ríomhchlár formáidithe Minix a thosú."
 
-#: main.cpp:51
+#: main.cpp:52
 #, kde-format
 msgid "KFloppy"
 msgstr "KFloppy"
 
-#: main.cpp:53
+#: main.cpp:54
 #, kde-format
 msgid "KDE Floppy Disk Utility"
 msgstr "Uirlis Diosca Fhlapaigh KDE"
 
-#: main.cpp:55
+#: main.cpp:56
 #, kde-format
 msgid ""
 "(c) 1997, Bernd Johannes Wuebben\n"
@@ -557,76 +557,76 @@ msgstr ""
 "© 2004, 2005, Nicolas Goutte\n"
 "© 2015, 2016, Wolfgang Bauer"
 
-#: main.cpp:60
+#: main.cpp:61
 #, kde-format
 msgid "KFloppy helps you format floppies with the filesystem of your choice."
 msgstr ""
 "Cabhraíonn KFloppy leat dioscaí flapacha a fhormáidiú le do rogha chórais "
 "comhad."
 
-#: main.cpp:63
+#: main.cpp:64
 #, kde-format
 msgid "Bernd Johannes Wuebben"
 msgstr "Bernd Johannes Wuebben"
 
-#: main.cpp:63
+#: main.cpp:64
 #, kde-format
 msgid "Author and former maintainer"
 msgstr "Údar agus iarchothaitheoir"
 
-#: main.cpp:64
+#: main.cpp:65
 #, kde-format
 msgid "Chris Howells"
 msgstr "Chris Howells"
 
-#: main.cpp:64
+#: main.cpp:65
 #, kde-format
 msgid "User interface re-design"
 msgstr "Athdhearadh an chomhéadain úsáideora"
 
-#: main.cpp:65
+#: main.cpp:66
 #, kde-format
 msgid "Adriaan de Groot"
 msgstr "Adriaan de Groot"
 
-#: main.cpp:65
+#: main.cpp:66
 #, kde-format
 msgid "Add BSD support"
 msgstr "Tacaíocht BSD"
 
-#: main.cpp:66
+#: main.cpp:67
 #, kde-format
 msgid "Nicolas Goutte"
 msgstr "Nicolas Goutte"
 
-#: main.cpp:66
+#: main.cpp:67
 #, kde-format
 msgid "Make KFloppy work again for KDE 3.4"
 msgstr "Dheisigh sé KFloppy le haghaidh KDE 3.4"
 
-#: main.cpp:67
+#: main.cpp:68
 #, kde-format
 msgid "Wolfgang Bauer"
 msgstr "Wolfgang Bauer"
 
-#: main.cpp:67
+#: main.cpp:68
 #, kde-format
 msgid "Port KFloppy to KF5"
 msgstr "Aistrigh KFloppy chun KF5"
 
-#: main.cpp:69
+#: main.cpp:70
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
 msgstr "Séamus Ó Ciardhuáin,Kevin Scannell"
 
-#: main.cpp:69
+#: main.cpp:70
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "seoc@iolfree.ie,kscanne@gmail.com"
 
-#: main.cpp:77
+#: main.cpp:80
 #, kde-format
 msgid "Default device"
 msgstr "Gléas réamhshocraithe"

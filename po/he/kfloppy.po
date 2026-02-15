@@ -18,7 +18,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kfloppy\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 09:01+0000\n"
+"POT-Creation-Date: 2026-02-15 02:24+0000\n"
 "PO-Revision-Date: 2024-09-02 00:14+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
@@ -34,7 +34,7 @@ msgstr ""
 msgid "Floppy &drive:"
 msgstr "כונן &תקליטונים:"
 
-#: floppy.cpp:89 floppy.cpp:364 floppy.cpp:654
+#: floppy.cpp:89 floppy.cpp:364 floppy.cpp:653
 #, kde-format
 msgctxt "Primary floppy drive"
 msgid "Primary"
@@ -56,12 +56,12 @@ msgstr "<qt>נא לבחור כונן תקליטונים.</qt>"
 msgid "&Size:"
 msgstr "&גודל:"
 
-#: floppy.cpp:104 floppy.cpp:656
+#: floppy.cpp:104 floppy.cpp:655
 #, kde-format
 msgid "Auto-Detect"
 msgstr "זיהוי־אוטומטי"
 
-#: floppy.cpp:106 floppy.cpp:372 floppy.cpp:658
+#: floppy.cpp:106 floppy.cpp:372 floppy.cpp:657
 #, kde-format
 msgid "3.5\" 1.44MB"
 msgstr "3.5 אינטש 1.44 מ״ב"
@@ -107,7 +107,7 @@ msgid "KFloppy supports three file formats under BSD: MS-DOS, UFS, and Ext2"
 msgstr ""
 "התוכנה KFloppy תומכת בשלושה סוגי מערכות קבצים תחת BSD‏: MS-DOS‏, UFS ו־Ext2"
 
-#: floppy.cpp:138 floppy.cpp:163 floppy.cpp:558 floppy.cpp:660
+#: floppy.cpp:138 floppy.cpp:163 floppy.cpp:557 floppy.cpp:659
 #, kde-format
 msgid "DOS"
 msgstr "DOS"
@@ -125,7 +125,7 @@ msgid ""
 "Program mkdosfs <b>not found</b>. MSDOS formatting <b>not available</b>."
 msgstr "התוכנה mkdosfs <b>לא נמצאה</b> .<b>אי אפשר</b> לאתחל ל־MSDOS."
 
-#: floppy.cpp:146 floppy.cpp:179 floppy.cpp:569
+#: floppy.cpp:146 floppy.cpp:179 floppy.cpp:568
 #, kde-format
 msgid "ext2"
 msgstr "ext2"
@@ -140,7 +140,7 @@ msgstr "התוכנה mke2fs נמצאה."
 msgid "Program mke2fs <b>not found</b>. Ext2 formatting <b>not available</b>"
 msgstr "התוכנה mke2fs <b>לא נמצאה</b> אתחול Ext2 <b>לא אפשרי</b>"
 
-#: floppy.cpp:154 floppy.cpp:588
+#: floppy.cpp:154 floppy.cpp:587
 #, kde-format
 msgid "Minix"
 msgstr "Minix"
@@ -177,7 +177,7 @@ msgid ""
 "Program newfs_msdos <b>not found</b>. MSDOS formatting <b>not available</b>."
 msgstr "התוכנה newfs_msdos <b>לא נמצאה</b> פרמוט MSDOS <b>לא אפשרי</b>."
 
-#: floppy.cpp:171 floppy.cpp:487 floppy.cpp:580
+#: floppy.cpp:171 floppy.cpp:486 floppy.cpp:579
 #, kde-format
 msgid "UFS"
 msgstr "UFS"
@@ -287,7 +287,7 @@ msgstr ""
 "<qt>נא לסמן את זה כדי שתהיה תווית כרך לתקליטון שלך. נא לשים לב שב־Minix אין "
 "תמיכה בתוויות כלל.</qt>"
 
-#: floppy.cpp:256 floppy.cpp:652
+#: floppy.cpp:256 floppy.cpp:651
 #, kde-format
 msgctxt "Volume label, maximal 11 characters"
 msgid "KDE Floppy"
@@ -304,7 +304,7 @@ msgstr ""
 "תווים. נא לשים לב שב־Minix אין תמיכה בתוויות, כך שאין משמעות למה שייכתב כאן."
 "</qt>"
 
-#: floppy.cpp:270 floppy.cpp:469
+#: floppy.cpp:270 floppy.cpp:468
 #, kde-format
 msgid "&Format"
 msgstr "&אתחל"
@@ -338,13 +338,13 @@ msgstr ""
 msgid "KDE Floppy Formatter"
 msgstr "מאתחל התקליטונים של KDE"
 
-#: floppy.cpp:488
+#: floppy.cpp:487
 #, kde-format
 msgctxt "BSD"
 msgid "Formatting with BSD on a user-given device is only possible with UFS"
 msgstr "אתחול עם BSD של התקן שסופק על ידי המשתמש אפשרי רק עם UDF"
 
-#: floppy.cpp:495
+#: floppy.cpp:494
 #, kde-format
 msgid ""
 "<qt>Formatting will erase all data on the device:<br/><b>%1</b><br/>(Please "
@@ -354,17 +354,17 @@ msgstr ""
 "<qt>אתחול ימחק את כל הנתונים שבהתקן:<br/><b>%1</b><br/>(נא לבדוק ששם ההתקן "
 "נכון.)<br/>להמשיך?</qt>"
 
-#: floppy.cpp:499 floppy.cpp:511
+#: floppy.cpp:498 floppy.cpp:510
 #, kde-format
 msgid "Proceed?"
 msgstr "האם להמשיך?"
 
-#: floppy.cpp:505
+#: floppy.cpp:504
 #, kde-format
 msgid "Full formatting of a user-given device is not possible."
 msgstr "אתחול מלא של התקן שסופק על ידי המשתמש אינו אפשרי."
 
-#: floppy.cpp:509
+#: floppy.cpp:508
 #, kde-format
 msgid ""
 "Formatting will erase all data on the disk.\n"
@@ -523,17 +523,17 @@ msgstr "אי אפשר ליצור את מערכת הקבצים Minix."
 msgid "Cannot start Minix format program."
 msgstr "אי אפשר להפעיל את תוכנית הפרמוט Minix."
 
-#: main.cpp:51
+#: main.cpp:52
 #, kde-format
 msgid "KFloppy"
 msgstr "KFloppy"
 
-#: main.cpp:53
+#: main.cpp:54
 #, kde-format
 msgid "KDE Floppy Disk Utility"
 msgstr "כלי התקליטונים של KDE"
 
-#: main.cpp:55
+#: main.cpp:56
 #, kde-format
 msgid ""
 "(c) 1997, Bernd Johannes Wuebben\n"
@@ -548,74 +548,74 @@ msgstr ""
 "‏(c) 2004,‏ 2005, ניקולס גוטה\n"
 "‏(c) 2015,‏ 2016, וולפגנג באואר"
 
-#: main.cpp:60
+#: main.cpp:61
 #, kde-format
 msgid "KFloppy helps you format floppies with the filesystem of your choice."
 msgstr "KFloppy מסייע לך לאתחל תקליטונים עם מערכות קבצים לבחירתך."
 
-#: main.cpp:63
+#: main.cpp:64
 #, kde-format
 msgid "Bernd Johannes Wuebben"
 msgstr "ברנד יוהאנס וויבן"
 
-#: main.cpp:63
+#: main.cpp:64
 #, kde-format
 msgid "Author and former maintainer"
 msgstr "יוצר ומתחזק לשעבר"
 
-#: main.cpp:64
+#: main.cpp:65
 #, kde-format
 msgid "Chris Howells"
 msgstr "כריס האוולס"
 
-#: main.cpp:64
+#: main.cpp:65
 #, kde-format
 msgid "User interface re-design"
 msgstr "עיצוב מחדש של ממשק המשתמש"
 
-#: main.cpp:65
+#: main.cpp:66
 #, kde-format
 msgid "Adriaan de Groot"
 msgstr "אדריאן דה גרוט"
 
-#: main.cpp:65
+#: main.cpp:66
 #, kde-format
 msgid "Add BSD support"
 msgstr "הוספת תמיכה ב־BSD"
 
-#: main.cpp:66
+#: main.cpp:67
 #, kde-format
 msgid "Nicolas Goutte"
 msgstr "ניקולס גוט"
 
-#: main.cpp:66
+#: main.cpp:67
 #, kde-format
 msgid "Make KFloppy work again for KDE 3.4"
 msgstr "גרם ל־KFloppy לעבוד שוב ב־KDE 3.4"
 
-#: main.cpp:67
+#: main.cpp:68
 #, kde-format
 msgid "Wolfgang Bauer"
 msgstr "וולפגנג באואר"
 
-#: main.cpp:67
+#: main.cpp:68
 #, kde-format
 msgid "Port KFloppy to KF5"
 msgstr "הסבת KFloppy ל־KF5"
 
-#: main.cpp:69
+#: main.cpp:70
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
 msgstr "צוות התרגום של KDE ישראל"
 
-#: main.cpp:69
+#: main.cpp:70
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "mbd1987@gmail.com"
 
-#: main.cpp:77
+#: main.cpp:80
 #, kde-format
 msgid "Default device"
 msgstr "התקן ברירת מחדל"
