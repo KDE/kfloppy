@@ -7,13 +7,13 @@
 # Khaled Hosny <dr.khaled.hosny@gmail.com>, 2006.
 # Fahad Al-Saidi <fahad.alsaidi@gmail.com>, 2007.
 # Youssef Chahibi <chahibi@gmail.com>, 2007.
-# SPDX-FileCopyrightText: 2010, 2022, 2025 Zayed Al-Saidi <zayed.alsaidi@gmail.com>
+# SPDX-FileCopyrightText: 2010, 2022, 2025, 2026 Zayed Al-Saidi <zayed.alsaidi@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: kfloppy\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-02-15 02:24+0000\n"
-"PO-Revision-Date: 2025-08-14 09:27+0400\n"
+"PO-Revision-Date: 2026-02-26 12:35+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -452,7 +452,7 @@ msgid ""
 "Perhaps you need to unmount the floppy first."
 msgstr ""
 "الجهاز مشغول.\n"
-"ربما تحتاج الغاء ضم القرص المرن أولا."
+"ربما تحتاج إلغاء وصل القرص المرن أولا."
 
 #: format.cpp:472
 #, kde-format
@@ -485,8 +485,8 @@ msgid ""
 "Floppy is mounted.\n"
 "You need to unmount the floppy first."
 msgstr ""
-"القرص المرن مضموم.\n"
-"تحتاج الى الغاء ضمّه أولا."
+"القرص المرن موصول.\n"
+"تحتاج إلى إلغاء وصله أولا."
 
 #: format.cpp:697
 #, kde-format
