@@ -269,7 +269,7 @@ msgid ""
 "Please note that the floppy will be checked twice if you have selected full "
 "formatting.</qt>"
 msgstr ""
-"<qt>Zaškrtnite pokiaľ chcete, aby bola disketa po naformátování "
+"<qt>Zaškrtnite pokiaľ chcete, aby bola disketa po naformátovaní "
 "skontrolovaná. Pokiaľ ste vybrali úplné formátovanie, tak ku kontrole "
 "diskety dôjde dvakrát.</qt>"
 
@@ -301,7 +301,7 @@ msgid ""
 "labels, whatever you enter here.</qt>"
 msgstr ""
 "<qt>Toto je miesto pre pomenovanie diskety. Kvôli obmedzeniam systému MS-DOS "
-"je dľžka názvu diskety limitovaná na 11 znakov. Pretože systém Minix "
+"je dĺžka názvu diskety limitovaná na 11 znakov. Pretože systém Minix "
 "nepodporuje pomenovanie disket, bude táto položka pri tomto formáte "
 "ignorovaná.</qt>"
 
@@ -353,7 +353,7 @@ msgid ""
 "proceed?</qt>"
 msgstr ""
 "<qt>Formátovanie zmaže všetky data na diskete:<br/><b>%1</b><br/>(Prosím "
-"overte správnost názvu zariadenia.)<br/>Naozaj chcete pokračovat?</qt>"
+"overte správnosť názvu zariadenia.)<br/>Naozaj chcete pokračovať?</qt>"
 
 #: floppy.cpp:498 floppy.cpp:510
 #, kde-format
@@ -455,7 +455,7 @@ msgid ""
 "Device busy.\n"
 "Perhaps you need to unmount the floppy first."
 msgstr ""
-"Zariadenie je zaneprazdnené.\n"
+"Zariadenie je zaneprázdnené.\n"
 "Možno bude potrebné disketovú mechaniku odpojiť."
 
 #: format.cpp:472
