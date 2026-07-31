@@ -280,7 +280,7 @@ Mac 800KB floppies at all, not only formatting. -->
 <para
 >Das 800 KByte Diskettenformat, das von alten <hardware
 >&Mac;-Diskettenlaufwerken</hardware
-> benutzt wird, kann nicht eingestellt werden, da die PC-Diskettenlaufwerke dieses Format nicht unterstützen.</para>
+> verwendet wird, kann nicht eingestellt werden, da die PC-Diskettenlaufwerke dieses Format nicht unterstützen.</para>
 </note>
 </sect2>
 
@@ -309,7 +309,7 @@ Mac 800KB floppies at all, not only formatting. -->
 >ext2</term>
 <listitem>
 <para
->Mit dieser Einstellung formatiert &kfloppy; die Diskette mit dem unter &Linux; gebräuchlichen Dateisystem, das aber nur selten für Disketten benutzt wird. (Unterstützt unter &Linux; und &BSD;.)</para>
+>Mit dieser Einstellung formatiert &kfloppy; die Diskette mit dem unter &Linux; gebräuchlichen Dateisystem, das aber nur selten für Disketten verwendet wird. (Unterstützt unter &Linux; und &BSD;.)</para>
 </listitem>
 </varlistentry>
 
@@ -647,7 +647,7 @@ Mac 800KB floppies at all, not only formatting. -->
 
 <note
 ><para
->Fehlt eines dieser Programme können Sie &kfloppy; trotzdem benutzen, allerdings steht dann die entsprechende Funktionalität nicht zur Verfügung.</para
+>Fehlt eines dieser Programme können Sie &kfloppy; trotzdem verwenden, allerdings steht dann die entsprechende Funktionalität nicht zur Verfügung.</para
 ></note>
 
 <variablelist>
