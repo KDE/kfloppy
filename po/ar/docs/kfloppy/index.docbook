@@ -1,0 +1,846 @@
+<?xml version="1.0" ?>
+<!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN" "dtd/kdedbx45.dtd" [
+  <!ENTITY kappname "&kfloppy;">
+  <!ENTITY package "kdeutils">
+  <!ENTITY % Arabic "INCLUDE"
+> <!-- change language only here -->
+  <!ENTITY % addindex "IGNORE">
+  <!ENTITY BSD "<trademark
+>BSD</trademark
+>">
+  <!ENTITY Minix "<trademark
+>Minix</trademark
+>">
+]>
+<!-- ### TODO Is BSD a trademark or a registrated trademark ? -->
+<!-- ### TODO Is Minix a trademark or a registrated trademark ? -->
+
+<!-- ### TODO Unify use of "disk", "floppy", "diskette", "floppy disk" (and "floppy drive") -->
+
+<book id="kfloppy" lang="&language;">
+<bookinfo>
+
+<title
+>دليل أداة تهيئة كفلوبي</title>
+
+<authorgroup>
+<author
+><firstname
+>Thad</firstname
+> <surname
+>McGinnis</surname
+> <affiliation
+><address
+>&Thad.McGinnis.mail; </address
+></affiliation
+> </author>
+
+<author
+><firstname
+>Nicolas</firstname
+> <surname
+>Goutte</surname
+> <affiliation
+><address
+>&Nicolas.Goutte.mail; </address
+></affiliation
+> </author>
+
+<othercredit role="developer"
+><firstname
+>Bernd</firstname
+> <othername
+>Johannes</othername
+> <surname
+>Wuebben</surname
+> <affiliation
+><address
+><email
+>wuebben@math.cornell.edu</email
+></address
+></affiliation>
+<contrib
+>مطوّر</contrib>
+</othercredit>
+
+<othercredit role="developer"
+><firstname
+>Chris</firstname
+> <surname
+>Howells</surname
+> <affiliation
+><address
+>&Chris.Howells.mail;</address
+></affiliation>
+<contrib
+>مطور (إعادة تصميم واجهة المستخدم)</contrib>
+</othercredit>
+
+<othercredit role="developer"
+><firstname
+>Adriaan</firstname
+> <surname
+>de Groot</surname
+> <affiliation
+><address
+><email
+>groot@kde.org</email
+></address
+></affiliation>
+<contrib
+>Developer (Add &BSD; support)</contrib>
+</othercredit>
+
+<othercredit role="developer"
+><firstname
+>Wolfgang</firstname
+> <surname
+>Bauer</surname
+> <affiliation
+><address
+><email
+>wbauer@tmo.at</email
+></address
+></affiliation>
+<contrib
+>مطور (نقل إلى KF5)</contrib>
+</othercredit>
+
+<othercredit role="reviewer"
+><firstname
+>Lauri</firstname
+> <surname
+>Watts</surname
+> <contrib
+>مُراجِع</contrib>
+<affiliation
+><address
+>&Lauri.Watts.mail;</address
+></affiliation>
+</othercredit>
+
+<othercredit role="translator"
+><firstname
+>زايد</firstname
+><surname
+>السعيدي</surname
+><affiliation
+><address
+><email
+>zayed.alsaidi@gmail.com</email
+></address
+></affiliation
+><contrib
+>التّرجمة العربيّة</contrib
+></othercredit
+> 
+</authorgroup>
+
+<date
+>2016-03-23</date>
+<releaseinfo
+>5.0 (تطبيقات 16.04)</releaseinfo>
+
+<copyright>
+<year
+>2000</year>
+<holder
+>&Thad.McGinnis;</holder>
+</copyright>
+
+<copyright>
+<year
+>2005</year>
+<holder
+>&Nicolas.Goutte;</holder>
+</copyright>
+
+<legalnotice
+>&FDLNotice;</legalnotice>
+
+<abstract
+><para
+>أداة تهيئة كفلوبي هي أداة مساعدة توفر وسيلة رسومية مباشرة لتهيئة أقراص مرنة مقاس 3.5 بوصة و5.25 بوصة.</para
+></abstract>
+
+<keywordset>
+<keyword
+>كيدي</keyword>
+<keyword
+>كفلوبي</keyword>
+<keyword
+>قرص مرن</keyword>
+<keyword
+>تنسيق</keyword>
+</keywordset>
+
+</bookinfo>
+
+<chapter id="introduction">
+<title
+>مقدمة</title>
+
+<para
+>أداة تهيئة كفلوبي هي أداة مساعدة توفر وسيلة رسومية مباشرة لتهيئة أقراص مرنة مقاس 3.5 بوصة و5.25 بوصة. </para>
+
+<note
+><para
+>تعتمد كفلوبي على برامج خارجية، ولذلك تعمل <emphasis
+>فقط</emphasis
+> حاليًا مع &Linux; و&BSD;. اعتمادًا على ما إذا كنت تستخدم كفلوبي على &Linux; أو على &BSD;، فإن كفلوبي تتمتع بميزات مختلفة قليلًا.</para
+></note>
+
+<caution
+><para
+>تأكد من أن القرص المرن <emphasis
+>غير</emphasis
+> موصول. لا تستطيع كفلوبي تهيئة قرص مرن موصول.</para
+></caution>
+
+</chapter>
+
+<chapter id="usingkfloppy">
+<title
+>استخدام كفلوبي</title>
+
+<para
+>يؤدي بدء كفلوبي إلى فتح نافذة واحدة يمكن للمستخدم من خلالها اختيار الإعدادات المناسبة والتحكم في عملية التهيئة. تُفصّل هذه الخيارات وعناصر التحكم أدناه.</para>
+
+<caution
+><para
+>تأكد من أن القرص المرن <emphasis
+>غير</emphasis
+> موصول. لا تستطيع كفلوبي تهيئة قرص مرن موصول.</para
+></caution>
+
+<sect1 id="controlsettings">
+<title
+>إعدادات التحكم</title>
+
+<para
+>تُختار الإعدادات بواسطة ثلاثة مربعات منسدلة تقع في أعلى يسار وسط كفلوبي.</para>
+
+<sect2 id="selectdrive">
+<title
+>قرص مرن</title>
+
+<para
+>يؤدي النقر على المربع المنسدل العلوي، المُوسوم بـ <guilabel
+>محرك الأقراص المرنة:</guilabel
+>، إلى تقديم الخيارين التاليين للمستخدم:</para>
+
+<itemizedlist>
+<listitem
+><para
+>أولي</para
+></listitem>
+<listitem
+><para
+>ثانوي</para
+></listitem>
+</itemizedlist>
+
+<para
+>يؤدي النقر على المربع المنسدل الثاني من الأعلى، المُوسوم بـ <guilabel
+>الحجم:</guilabel
+>، إلى تقديم الخيارات الأربعة التالية للمستخدم:</para>
+
+<itemizedlist>
+<listitem
+><para
+>3.5" 1.44م.بايت</para
+></listitem>
+<listitem
+><para
+>3.5" 720ك.بايت</para
+></listitem>
+<listitem
+><para
+>5.25" 1.2م.بايت</para
+></listitem>
+<listitem
+><para
+>5.25" 360ك.بايت</para
+></listitem>
+</itemizedlist>
+
+<para
+>تحتوي نسخة &Linux; من كفلوبي أيضًا على خيار حجم يُسمى:</para>
+
+<itemizedlist>
+<listitem
+><para
+>كشف آليّ</para
+></listitem>
+</itemizedlist>
+
+<!-- ### TODO: typical floppy disk of a PC has not the hardware to support
+Mac 800KB floppies at all, not only formatting. -->
+<note>
+<para
+>لا يمكن دعم تنسيق القرص 800 كيلوبايت المستخدم بواسطة <hardware
+>محركات الأقراص المرنة &Mac;</hardware
+> على <hardware
+>محركات الأقراص المرنة للحاسوب الشخصي</hardware
+> لأنها غير قادرة على تهيئة الأقراص بهذه الطريقة.</para>
+</note>
+</sect2>
+
+<sect2 id="filesystems">
+<title
+>أنظمة الملفّات</title>
+
+<para
+>يقدم المربع المنسدل الثالث، المُوسوم بنظام الملفات، الخيارات التالية للمستخدم، إذا كانت قابلة للتطبيق:</para>
+
+<variablelist>
+<varlistentry>
+<term
+>Dos</term>
+<listitem>
+<para
+>سيؤدي هذا التحديد إلى جعل كفلوبي تضع نظام ملفات من نوع MS-DOS/&Windows; على القرص المرن. سيرغب المستخدم على الأرجح في اختيار هذا النظام إذا كان سيستخدم القرص المرن مع أنظمة التشغيل تلك لأنها لا تتعرف على أنواع الأنظمة الأخرى. (هذا مدعوم لـ &Linux; و&BSD;.)</para>
+</listitem>
+</varlistentry>
+
+<varlistentry
+> 
+<term
+>ext2</term>
+<listitem>
+<para
+>سيؤدي هذا التحديد إلى جعل كفلوبي تضع نوع نظام الملفات على القرص المرن الأكثر استخدامًا مع &Linux;، ولكن نادرًا على الأقراص المرنة. (هذا مدعوم لـ &Linux; و&BSD;.)</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+>UFS</term>
+<listitem>
+<para
+>سيؤدي هذا التحديد إلى جعل كفلوبي تضع نوع نظام الملفات على القرص المرن الأكثر استخدامًا مع <trademark class="registered"
+>FreeBSD</trademark
+>. سيرغب المستخدم على الأرجح في اختيار هذا النظام إذا كان سيستخدم القرص المرن فقط مع <trademark class="registered"
+>FreeBSD</trademark
+>. (هذا مدعوم لـ &BSD; فقط.)</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+>&Minix;</term>
+<listitem>
+<para
+>سيؤدي هذا التحديد إلى جعل كفلوبي تضع نوع نظام الملفات على القرص المرن المستخدم غالبًا على الأقراص المرنة المستخدمة مع &Linux;. (هذا مدعوم لـ &Linux; فقط.)</para>
+</listitem>
+</varlistentry>
+</variablelist>
+
+</sect2>
+</sect1>
+
+<sect1 id="formatting-options">
+<title
+>خيارات التنسيق</title>
+<para
+>داخل حدود مربع في يسار وسط كفلوبي، قد يجد المستخدم مجموعة من خمسة خيارات تهيئة. الخياران العلويان هما زوج من أزرار الاختيار.</para
+> <note
+><para
+>يشير هذا المصطلح (أزرار الاختيار) إلى مجموعة من الخيارات يمكن اختيار واحد منها فقط - بنفس الطريقة التي يمكن بها ضبط اختيار قناة مسبقة واحدة فقط على راديو السيارة.</para
+></note
+><para
+>الخياران السفليان هما لوضع لصيقة على القرص المرن. جميعها موضحة أدناه:</para>
+
+<sect2>
+<title
+>طريقة التهيئة</title>
+<para
+>يمكن لـ كفلوبي تهيئة قرص بالطريقتين التاليتين:</para>
+<para>
+<variablelist>
+<varlistentry>
+<term
+><guilabel
+>تهيئة سريعة</guilabel
+></term>
+<listitem>
+<para
+>هذا ببساطة يضع نظام الملفات الجديد على القرص.</para>
+<warning
+><para
+>ستُفقد جميع البيانات على القرص، حتى لو لم تُمحَ البيانات نفسها.</para
+></warning>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term
+><guilabel
+>املأ بأصفار وتهيئة سريعة</guilabel
+></term>
+<listitem>
+<para
+>هذا التنسيق يضع أصفارًا أولًا على القرص ثم ينشئ نظام الملفات الجديد.</para>
+<warning
+><para
+>ستُمسح جميع البيانات على القرص.</para
+></warning>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term
+><guilabel
+>تهيئة كاملة</guilabel
+></term>
+<listitem>
+<para
+>التنسيق الكامل يعيد توزيع المسارات والقطاعات، ويضع نظام الملفات المختار على القرص، ثم يتحقق من التنسيق، مع حجب أي قطاعات تالفة يجدها.</para>
+<warning
+><para
+>ستُمسح جميع البيانات على القرص.</para
+></warning>
+</listitem>
+</varlistentry>
+</variablelist>
+</para>
+</sect2>
+
+<sect2>
+<title
+>تحقّق من الصلاحية</title>
+
+<para
+>يخبر هذا كفلوبي بالتحقق من أن التنسيق كُتب بشكل صحيح على القرص المرن. هذا يسمح بتحديد القطاعات التالفة. </para>
+
+<note
+><para
+>إذا وُجدت قطاعات تالفة أثناء مرحلة التحقق من التنسيق الكامل، يُلغى التنسيق ولا يُكتب نظام الملفات! </para
+></note>
+
+</sect2>
+
+<sect2>
+<title
+>عنوان القرص</title>
+
+<para
+>الميزتان السفليتان تسمحان للمستخدم بإضافة (أو تغيير) لصيقة للقرص المرن. إذا كان مربع الاختيار <guilabel
+>لصيقة الحجم:</guilabel
+> محددًا، يمكن للمستخدم إدخال اسم (لصيقة) للقرص المرن المراد تنسيقه في مربع النص الموجود أسفله مباشرة. عندما يُنسق القرص المرن لاحقًا، ستُكتب اللصيقة على القرص.</para>
+
+<note
+><para
+>بسبب قيود نظام ملفات DOS، يمكن أن تكون اللصيقة بطول 11 حرفًا كحد أقصى. للتبسيط، يفترض كفلوبي أن هذا الحد صحيح لجميع أنظمة الملفات.</para
+></note>
+
+<note
+><para
+>نظام الملفات &Minix; لا يمكن أن يحتوي على أي لصيقة حجم. في هذه الحالة، سيتجاهل كفلوبي لصيقة الحجم.</para
+></note>
+
+</sect2>
+
+</sect1>
+
+<sect1 id="buttons">
+<title
+>الأزرار</title>
+<para
+>هناك ثلاثة أزرار موضوعة عموديًا على طول الجانب الأيمن من كفلوبي. </para>
+
+<variablelist>
+<varlistentry>
+<term
+><guibutton
+>التنسيق</guibutton
+></term>
+<listitem>
+<para
+>هذا الزر يبدأ عملية التنسيق. بمجرد أن يتأكد المستخدم من أن جميع الإعدادات صحيحة، يمكنه بدء العملية بالنقر على هذا الزر. سيكون هناك تغيير في المربعين المستطيلين الطويلين اللذين يمتدان عبر الجزء السفلي من كفلوبي.</para>
+
+<para
+>المربع العلوي هو مؤشر حالة يعطي معلومات عن العملية الجارية، خاصة الخطأ الذي يُواجه أثناء المعالجة.</para>
+
+<para
+>المربع السفلي هو شريط تقدم. يعرض هذا بيانيًا وعدديًا تقدم التنسيق أولًا ثم التحقق. قبل البدء، يبدو فارغًا - يُظهر فقط الرقم 0% في المنتصف. مع حدوث كل عملية، يُتتبع التقدم بيانيًا بينما يمتلئ المربع من اليسار إلى اليمين. في نفس الوقت، سيزداد الرقم في المنتصف ليعكس النسبة المئوية الدقيقة للعملية التي أُكملت.</para>
+
+<note
+><para
+>بما أن كفلوبي يستخدم برامج خارجية لتنسيق القرص المرن، فعليه الاعتماد على هذه البرامج لإعطاء المعلومات الصحيحة لعرض شريط التقدم. لسوء الحظ، هذا ليس هو الحال. خاصة أن البرامج التي تكتب أنظمة الملفات لا تُرجع بيانات كافية، لذا سيبقى شريط التقدم عند 0%.</para
+></note>
+
+<important>
+<para
+>تأكد من أن القرص المرن <emphasis
+>غير</emphasis
+> موصول. لا تستطيع كفلوبي تهيئة قرص مرن موصول.</para>
+</important>
+
+<note
+><para
+>كفلوبي <emphasis
+>لا</emphasis
+> يفصل القرص المرن بنفسه، لأن هذا قد يعني أن المستخدم قد يكتب فوق قرص مرن يحتوي على بيانات مهمة.</para
+></note>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guibutton
+>مساعدة</guibutton
+></term>
+<listitem>
+<para
+>هذا يستدعي قائمة منبثقة بإجراءات لفتح هذا الدليل، والإبلاغ عن خطأ، وتبديل لغة التطبيق، وعرض المؤلف والإصدار لـ كفلوبي و &kde;.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guibutton
+>أنهِ</guibutton
+></term>
+<listitem>
+<para
+>النقر على هذا الزر سيغلق كفلوبي.</para>
+</listitem>
+</varlistentry>
+
+</variablelist>
+
+</sect1>
+</chapter>
+
+<chapter id="command-line">
+<title
+>خيارات سطر الأوامر</title>
+
+<para
+>على الرغم من أن كفلوبي قد يُبدأ غالبًا من قائمة برامج &kde;، أو أيقونة سطح المكتب، إلا أنه يمكن أيضًا فتحه من موجه سطر الأوامر في نافذة طرفية. هناك بعض الخيارات المتاحة عند القيام بذلك. وهي:</para
+> 
+
+<variablelist>
+<varlistentry>
+<term
+><command
+>kfloppy <option
+>--help</option
+></command
+></term>
+<listitem
+><para
+>يسرد هذا الخيارات المتاحة في سطر الأوامر.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><command
+>kfloppy <option
+>--author</option
+></command
+></term>
+<listitem>
+<para
+>يسرد مؤلف كفلوبي في نافذة الطرفية</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><command
+>kfloppy <option
+>--license</option
+></command
+></term>
+<listitem>
+<para
+>يظهر معلومات الترخيص لـ كفلوبي في نافذة الطرفية</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><command
+>kfloppy <option
+>--version</option
+></command
+></term>
+<listitem>
+<para
+>يسرد معلومات الإصدار لـ كفلوبي. متاح أيضًا من خلال <command
+>kfloppy <option
+>-v</option
+></command
+> </para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><command
+>kfloppy <option
+><replaceable
+>جهاز</replaceable
+></option
+></command
+></term>
+<listitem
+><para
+>الجهاز المراد تنسيقه.</para>
+<para
+>هذا سينسق الجهاز المعطى مباشرة باستخدام الإعدادات المحفوظة. المدعومة حاليًا فقط هي /dev/fd0 و /dev/fd1.</para
+></listitem>
+</varlistentry>
+</variablelist
+> 
+
+</chapter
+> 
+
+<chapter id="credits">
+<title
+>الحقوق والترخيص</title>
+
+<!-- ### TODO: verify the copyright dates -->
+<!-- ### TODO: make the copyright list prettier -->
+<para
+>برنامج تنسيق كفلوبي حقوق النشر 1997 - 2000 &Bernd.Johannes.Wuebben; <email
+>wuebben@math.cornell.edu</email
+></para>
+
+<para
+>برنامج تنسيق كفلوبي حقوق الطبع 2002 أدريان دي غروت <email
+>groot@kde.org</email
+></para>
+
+<para
+>برنامج تنسيق كفلوبي حقوق الطبع 2004، 2005 &Nicolas.Goutte; &Nicolas.Goutte.mail;</para>
+
+<para
+>برنامج تنسيق كفلوبي حقوق الطبع 2015، 2016 فولفغانغ باور <email
+>wbauer@tmo.at</email
+></para>
+
+<para
+>حقوق طبع التوثيق 2000 بواسطة &Thad.McGinnis; &Thad.McGinnis.mail;.</para>
+
+<para
+>هذه النسخة من دليل كفلوبي مبنية على الأصلية بواسطة &David.Rugge; <email
+>davidrugge@mindspring.com</email
+></para>
+
+<para
+>الترجمة: زايد السعيدي <email
+>zayed.alsaidi@gmail.com</email
+></para
+> &underFDL; &underGPL; </chapter>
+
+<appendix id="neededprogs">
+<title
+>البرامج الخارجية المطلوبة</title>
+
+<para
+>كما كُتب سابقًا في هذا الدليل، يعمل كفلوبي بمساعدة برامج خارجية لأداء مهام التنسيق المختلفة.</para>
+
+<note
+><para
+>إذا كان أحد البرامج مفقودًا، يحاول كفلوبي العمل رغم ذلك. ومع ذلك، لن يكون الخيار المقابل متاحًا.</para
+></note>
+
+<variablelist>
+<varlistentry>
+<term
+><command
+>fdformat</command
+></term>
+<listitem
+><para
+>هذا البرنامج مطلوب للتنسيق منخفض المستوى، على &Linux; وعلى &BSD;. إذا كان مفقودًا، سيُعطّل <guilabel
+>تنسيق كامل</guilabel
+>. </para
+></listitem>
+</varlistentry>
+<varlistentry>
+<term
+><command
+>dd</command
+></term>
+<listitem
+><para
+>هذا البرنامج مطلوب للتصفير، على &Linux; وعلى &BSD;. إذا كان مفقودًا، سيُعطّل <guilabel
+>تصفير وتنسيق سريع</guilabel
+>. </para
+></listitem>
+</varlistentry>
+<varlistentry>
+<term
+><command
+>mkdosfs</command
+></term>
+<listitem
+><para
+>هذا البرنامج مطلوب لتنسيق DOS، على &Linux;. </para
+></listitem>
+</varlistentry>
+<varlistentry>
+<term
+><command
+>newfs_msdos</command
+></term>
+<listitem
+><para
+>هذا البرنامج مطلوب لتنسيق DOS، على &BSD;. </para
+></listitem>
+</varlistentry>
+<varlistentry>
+<term
+><command
+>newfs</command
+></term>
+<listitem
+><para
+>هذا البرنامج مطلوب لتنسيق UFS، على &BSD;. </para
+></listitem>
+</varlistentry>
+<varlistentry>
+<term
+><command
+>mke2fs</command
+></term>
+<listitem
+><para
+>هذا البرنامج مطلوب لتنسيق ext2، على &Linux; وعلى &BSD;. </para
+></listitem>
+</varlistentry>
+<varlistentry>
+<term
+><command
+>mkfs.minix</command
+></term>
+<listitem
+><para
+>هذا البرنامج مطلوب لتنسيق &Minix;، على &Linux;. </para
+></listitem>
+</varlistentry>
+</variablelist>
+
+</appendix>
+<appendix id="usergivendevices">
+<title
+>الأجهزة التي يحددها المستخدم</title>
+
+<sect1 id="ugdintro">
+<title
+>مقدمة</title>
+
+<para
+>"الأجهزة التي يحددها المستخدم" هو عنوان عمل لميزة لا تزال تجريبية في كفلوبي. تتيح للمستخدم إعطاء اسم جهاز واستخدامه تقريبًا كما لو كان <hardware
+>محرك أقراص مرنة</hardware
+>.</para>
+
+<para
+>هذه الميزة مخصصة أساسًا كحل بديل للمستخدمين الذين لديهم <hardware
+>محركات أقراص مرنة USB</hardware
+> من أي نوع (بما في ذلك <trademark
+>محركات أقراص ZIP</trademark
+>) أو أي <hardware
+>محركات أقراص مرنة</hardware
+> غير تقليدية أخرى.</para>
+
+<note
+><para
+>لسوء الحظ، في وقت كتابة هذا التوثيق، الميزة ليست سهلة الاستخدام جدًا، لأنها لا تقدم أي مساعدة للمستخدم حول كيفية تسمية الجهاز ولا يتذكر كفلوبي حتى اسم الجهاز من استدعاء إلى آخر. (هذا جزئيًا لأمن، لأن جهاز <hardware
+>محرك الأقراص المرنة</hardware
+> قد يتغير بين عمليات إعادة التشغيل.)</para
+></note>
+
+<note
+><para
+>نظرًا لأن هذه الميزة طُوّرت تحت &Linux;، فإن إصدار &BSD; من كفلوبي يقدم خيارات أقل من كفلوبي تحت &Linux;.</para
+></note>
+
+</sect1>
+
+<sect1 id="ugdmain">
+<title
+>استخدامها</title>
+
+<!-- Note to reviewers: "PRimary" and "Secondary" are the default items in the combobox -->
+<para
+>استخدام "الأجهزة التي يحددها المستخدم" بسيط جدًا، تحتاج فقط إلى إدخال اسم جهاز، على سبيل المثال <replaceable
+>/dev/sdz4</replaceable
+> في مربع التحرير والسرد <guilabel
+>محرك الأقراص المرنة:</guilabel
+> بدلًا من تحديد أساسي أو ثانوي.</para>
+
+<note>
+<para
+>تحتاج إلى إدخال جزء <filename class="directory"
+>/dev/</filename
+> من الجهاز لسببين:</para>
+<itemizedlist>
+<listitem>
+<para
+>هكذا يتعرف كفلوبي على وضع "الأجهزة التي يحددها المستخدم".</para>
+</listitem>
+<listitem>
+<para
+>إنه إجراء أمني، لتجنب أن يكتب المستخدم أي شيء في مربع التحرير والسرد قد يكون اسم جهاز بالصدفة.</para>
+</listitem>
+</itemizedlist>
+</note>
+
+<para
+>لسوء الحظ، استخدام أي جهاز بدلًا من جهاز مرن له بعض العواقب. العواقب الرئيسية هي أنه لا يمكن اختيار <guilabel
+>تنسيق كامل</guilabel
+> بعد الآن. القيام بذلك سيؤدي إلى ظهور مربع رسالة خطأ عند محاولة بدء التنسيق. ومع ذلك يمكنك استخدام <guilabel
+>تصفير وتنسيق سريع</guilabel
+> بدلًا من ذلك. لن يقوم بتنسيق الجهاز، فقط بتصفييره، لكن عمليًا هو نفسه تقريبًا؛ خاصة أن جميع البيانات على الجهاز ستُمحى.</para>
+
+<warning
+><para
+>كن حذرًا عند إدخال اسم الجهاز. سيمرر كفلوبي اسم الجهاز كما هو إلى البرامج الخارجية. خاصة أنه لا يتحقق (والبرامج الخارجية لا تتحقق أيضًا) إذا كان الجهاز هو جهاز <hardware
+>محرك أقراص مرنة</hardware
+>. إذا أعطيت أيًا من أقسام القرص الرئيسية لديك كجهاز، فسيُقبل. (إذا كان القسم موصولًا أو إذا لم تتمكن من الكتابة على هذا الجهاز، فستحصل على الأرجح على رسالة خطأ رغم ذلك، مما يتجنب الأسوأ.)</para
+></warning>
+
+<note
+><para
+>حتى إذا كان بإمكانك تحديد جهاز مرن مثل <filename
+>/dev/fd0u2880</filename
+>، سيرفض كفلوبي إجراء <guilabel
+>تنسيق كامل</guilabel
+> عليه.</para
+></note>
+
+<para
+>على &Linux;، يمكنك اختيار أي نظام ملفات تريده. على &BSD;، فقط UFS مدعوم حاليًا (ولم يُختبر في وقت كتابة هذا التوثيق).</para>
+
+<para
+>عندما تكون مستعدًا للتنسيق، انقر على الزر <guibutton
+>تنسيق</guibutton
+> كالمعتاد. ستظهر لك نافذة رسالة تطلب منك التحقق من اسم الجهاز. </para>
+
+<warning
+><para
+>هذه هي الفرصة الأخيرة للتحقق من اسم الجهاز قبل التنسيق. بعدها، سيكون الأوان قد فات.</para
+></warning>
+
+</sect1>
+
+</appendix>
+
+</book>
+
+<!--
+Local Variables:
+mode: sgml
+sgml-minimize-attributes:nil
+sgml-general-insert-case:lower
+sgml-indent-step:0
+sgml-indent-data:nil
+End:
+
+// vim:ts=2:sw=2:tw=78:noet
+-->
